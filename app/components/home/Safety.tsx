@@ -26,7 +26,7 @@ const Safety = () => {
       {/* Content */}
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_2fr] gap-x-10 mt-12">
         {/* Phone Image */}
-        <div className="w-full max-w-[220px] md:max-w-[360px] mx-auto">
+        <div className="w-full max-w-[220px] md:max-w-[360px] mx-auto flex items-center justify-center">
           <Image
             src="/images/Phone-1.png"
             width={500}
@@ -39,7 +39,7 @@ const Safety = () => {
         {/* Mobile Safety Cards */}
         <div className="mt-6 xl:mt-0 space-y-6 xl:hidden">
           {/* Card 1 */}
-          <div className="w-full max-w-[331px] md:max-w-[500px] lg:max-w-[700px] mx-auto bg-[#F6E6E6] rounded-[8px] p-6">
+          <div className="w-full max-w-full md:max-w-full lg:max-w-full mx-auto bg-[#F6E6E6] rounded-[8px] p-6">
             <h3 className="text-[#010418] font-semibold leading-[120%] tracking-[-5%] text-[24px] md:text-[28px] mb-4">
               Verified Drivers
             </h3>
@@ -53,7 +53,7 @@ const Safety = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="w-full max-w-[331px] md:max-w-[500px] lg:max-w-[700px] mx-auto bg-[#EBF3FE] rounded-[8px] p-6">
+          <div className="w-full max-w-full md:max-w-full lg:max-w-full mx-auto bg-[#EBF3FE] rounded-[8px] p-6">
             <h3 className="text-[#010418] font-semibold leading-[120%] tracking-[-5%] text-[24px] md:text-[28px] mb-4">
               Live Tracking
             </h3>
@@ -66,14 +66,14 @@ const Safety = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="w-full max-w-[331px] md:max-w-[500px] lg:max-w-[700px] mx-auto bg-[#E9F9EE] rounded-[8px] p-6">
+          <div className="w-full max-w-full md:max-w-full lg:max-w-full mx-auto bg-[#E9F9EE] rounded-[8px] p-6">
             <h3 className="text-[#010418] font-semibold leading-[120%] tracking-[-5%] text-[24px] md:text-[28px] mb-4">
               SOS & 24/7 Support
             </h3>
             <p className="text-[14px] leading-[153%] tracking-[-2%] text-[#333]">
-              Safety doesn’t stop once the ride starts. If anything feels off,
+              Safety doesn&apos;t stop once the ride starts. If anything feels off,
               our in-app SOS button instantly connects you to emergency support.
-              And whether it’s day or night, our team is always available to
+              And whether it&apos;s day or night, our team is always available to
               assist you, resolve issues, and make sure every ride ends well.
             </p>
           </div>

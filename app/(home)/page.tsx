@@ -1,9 +1,9 @@
 "use client";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import About from "../components/home/About";
 import AnyRide from "../components/home/AnyRide";
 import Blog from "../components/home/Blog";
-import Guides from "../components/home/hero/About";
 import Hero from "../components/home/hero/Hero";
 import Pricing from "../components/home/Pricing/Pricing";
 import Safety from "../components/home/Safety";
@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Header /> 
       <Hero />
-      <Guides />
+      <About />
       <AnyRide />
       <Values />
       <Pricing />

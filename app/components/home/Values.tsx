@@ -32,7 +32,7 @@ const Values = () => {
             {AnyRideFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="w-full bg-gray-50 rounded-lg p-6 md:p-8 lg:p-10"
+                className="w-full max-w-full bg-gray-50 rounded-lg p-6 md:p-8 lg:p-10"
               >
                 <div className="flex items-center gap-4 md:gap-6 lg:gap-8">
                   {/* Number */}

@@ -12,7 +12,7 @@ const Logo = () => {
           height={200}
           width={200}
           alt="logo"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
         />
       </div>
     </Link>

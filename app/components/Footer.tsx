@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 w-full max-w-full xl:gap-x-12 gap-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 w-full max-w-full xl:gap-x-12 gap-y-6">
             {/* Company Links */}
             <div>
               <h3 className="text-text-black font-semibold mb-4 text-[20px] md:text-[24px]">

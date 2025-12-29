@@ -71,50 +71,50 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "../ui/Button";
 import SubTitle from "../ui/Subtitle";
-import { GuideContents, GuideItem } from "@/app/utils/Content";
+// import { GuideContents, GuideItem } from "@/app/utils/Content";
 
-// export interface GuideItem {
-//   title: string;
-//   text: string;
-//   color: string;
-// }
+export interface GuideItem {
+  title: string;
+  text: string;
+  color: string;
+}
 
-// export const GuideContents: Record<"Rider" | "Driver", GuideItem[]> = {
-//   Rider: [
-//     {
-//       title: "Get Ride Requests Instantly",
-//       text: "Go online and AnyRide will connect you with riders nearby. Check the pickup location, estimated distance, and fare before you accept.",
-//       color: "bg-[#F6E6E6]"
-//     },
-//     {
-//       title: "Navigate Smoothly",
-//       text: "Follow clear directions, see the rider's details, and enjoy verified pickup info. Focus on the ride — no guesswork involved.",
-//       color: "bg-[#EBF3FE]"
-//     },
-//     {
-//       title: "Track Earnings Effortlessly",
-//       text: "Complete rides and watch your earnings update in real-time. Monitor daily totals, bonuses, and payment methods seamlessly.",
-//       color: "bg-[#E9F9EE]"
-//     }
-//   ],
-//   Driver: [
-//     {
-//       title: "Receive Delivery Requests",
-//       text: "Go online and get notifications for deliveries in your area. Review package details, delivery location, and expected earnings before starting.",
-//       color: "bg-[#FFF4E6]"
-//     },
-//     {
-//       title: "Deliver with Confidence",
-//       text: "Follow step-by-step navigation, see recipient info, and get real-time updates for smooth handoffs. Avoid confusion and delays.",
-//       color: "bg-[#E6F7FF]"
-//     },
-//     {
-//       title: "Manage Earnings & Performance",
-//       text: "Track all completed deliveries and your earnings instantly. Monitor bonuses, daily summaries, and payments — all in one dashboard.",
-//       color: "bg-[#E9F9F3]"
-//     }
-//   ]
-// };
+export const GuideContents: Record<"Rider" | "Driver", GuideItem[]> = {
+  Rider: [
+    {
+      title: "Get Ride Requests Instantly",
+      text: "Go online and AnyRide will connect you with riders nearby. Check the pickup location, estimated distance, and fare before you accept.",
+      color: "bg-[#F6E6E6]"
+    },
+    {
+      title: "Navigate Smoothly",
+      text: "Follow clear directions, see the rider's details, and enjoy verified pickup info. Focus on the ride — no guesswork involved.",
+      color: "bg-[#EBF3FE]"
+    },
+    {
+      title: "Track Earnings Effortlessly",
+      text: "Complete rides and watch your earnings update in real-time. Monitor daily totals, bonuses, and payment methods seamlessly.",
+      color: "bg-[#E9F9EE]"
+    }
+  ],
+  Driver: [
+    {
+      title: "Receive Delivery Requests",
+      text: "Go online and get notifications for deliveries in your area. Review package details, delivery location, and expected earnings before starting.",
+      color: "bg-[#FFF4E6]"
+    },
+    {
+      title: "Deliver with Confidence",
+      text: "Follow step-by-step navigation, see recipient info, and get real-time updates for smooth handoffs. Avoid confusion and delays.",
+      color: "bg-[#E6F7FF]"
+    },
+    {
+      title: "Manage Earnings & Performance",
+      text: "Track all completed deliveries and your earnings instantly. Monitor bonuses, daily summaries, and payments — all in one dashboard.",
+      color: "bg-[#E9F9F3]"
+    }
+  ]
+};
 
 
 const About = () => {
@@ -122,7 +122,7 @@ const About = () => {
 
   return (
     <section className="">
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[2fr_1fr] xl:grid-cols-[2fr_1fr] h-full gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-[2fr_1fr] h-full gap-16">
         {/* LEFT SIDE */}
         <div className="h-full w-full flex flex-col items-center md:items-start justify-center py-6 md:py-16.5 px-4 lg-[1024]:px-10">
           <div className="mb-6">
@@ -175,7 +175,7 @@ const About = () => {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="w-full h-full hidden md:hidden lg:block xl:block">
+        <div className="w-full h-full hidden md:hidden lg:hidden xl:block">
           <Image
             src="/images/About-img.png"
             width={500}

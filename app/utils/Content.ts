@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     title: "Home",
-    router: "/home",
+    router: "/",
   },
   {
     title: "About",
@@ -22,23 +22,7 @@ export const navLinks = [
   },
 ];
 
-export const GuideContents = [
-    {
-        title:"Receive ride requests",
-        text:"Once you’re online, AnyRide will connect you to nearby riders looking for a trip. See pickup details, distance, and fare estimate before accepting.",
-        color:"bg-[#F6E6E6]"
-    },
-    {
-        title:"Pick up with confidence",
-        text:"Get clear navigation, rider name, and verified pickup details. No confusion — just a smooth handoff with real‑time updates.",
-        color:"bg-[#EBF3FE]"
-    },
-    {
-        title:"Earn seamlessly, Track everything",
-        text:"Complete trips and see your earnings update instantly. View bonuses, daily summaries, and track performance — all in one place. Cash, card, or wallet payments are handled smoothly.",
-        color:"bg-[#E9F9EE]"
-    }
-]
+
 
 
 export const AnyRideFeatures = [
@@ -82,3 +66,42 @@ export const SafetyFeatures = [
     }
 ]
 
+export const FaqContent = [
+    {
+        question:"How do I become an AnyRide driver?",
+        answer:"UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
+    },
+    {
+        question:"What documents do I need to register?",
+        answer:"UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
+    },
+    {
+        question:"How are earnings calculated?",
+        answer:"UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
+    },
+    {
+        question:"Can I register more than one vehicle?",
+        answer:"UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
+    }
+]
+
+export const aboutContent = [
+{
+    img:"/images/box.png",
+    title:"Car rides",
+    text:"Comfort & capacity",
+    color:"#F9EEEE"
+},
+{
+    img:"/images/box-1.png",
+    title:"Motorcycles",
+    text:"Speed & flexibility",
+    color:"#F2F7FE"
+},
+{
+    img:"/images/box-2.png",
+    title:"Safety-first",
+    text:"Verified drivers",
+    color:"#F0FBF4"
+}
+]
