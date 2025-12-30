@@ -105,3 +105,78 @@ export const aboutContent = [
     color:"#F0FBF4"
 }
 ]
+
+
+export const WhyContent = [
+  {
+    title: "Car rides",
+    text: "Best for comfort",
+    points: [
+      "More luggage / more space",
+      "Ideal for longer trips",
+    ],
+  },
+  {
+    title: "Motorcycles",
+    text: "Best for speed",
+    points: [
+      "Navigate traffic faster",
+      "Great for short trips",
+    ],
+  },
+];
+
+
+export interface ForEveryoneItem {
+  icon: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+export const forEveryoneData: ForEveryoneItem[] = [
+  {
+    icon: "/icons/individual.svg",
+    title: "Riders",
+    subtitle: "Fast, fair, and reliable.",
+    description:
+      "Easy booking, clear pricing, and a safety-focused experience for everyday movement.",
+  },
+  {
+    icon: "/icons/drivers.svg",
+    title: "Drivers",
+    subtitle: "Opportunity with clarity.",
+    description:
+      "Transparent performance, flexible earnings, and support for both car and motorcycle drivers.",
+  },
+  {
+    icon: "/icons/partners.svg",
+    title: "Partners",
+    subtitle: "Scale with fleets.",
+    description:
+      "Fleet management and business integrations designed for companies that manage multiple vehicles.",
+  },
+];
+
+export const aboutValues =[
+  {
+    number:"01",
+    title:"Trust",
+    description:"Every driver and trip is verified, ensuring peace of mind for all."
+  },
+  {
+    number:"02",
+    title:"Speed",
+    description:"Quick matching, smooth rides, and instant payments — no unnecessary delays."
+  },
+  {
+    number:"03",
+    title:"Fairness",
+    description:"Transparent pricing for riders, fair earnings for drivers."
+  },
+  {
+    number:"04",
+    title:"Safety",
+    description:"Transparent pricing for riders, fair earnings for drivers."
+  }
+]

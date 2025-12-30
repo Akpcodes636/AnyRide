@@ -29,13 +29,13 @@ export default function AboutHero() {
             
 
           </div>
-          <div className="">
+          <div className="h-[377px] md:h-[377px] lg:h-[578px] ">
             <Image
               src="/images/AboutHero.png"
               width={500}
               height={500}
               alt="about image"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-[8px]"
             />
           </div>
         </div>
