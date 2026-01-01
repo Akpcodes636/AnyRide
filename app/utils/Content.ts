@@ -1,16 +1,16 @@
 export const navLinks = [
   {
-    title: "Home",
-    router: "/",
+    title: "rider",
+    router: "/services/rider",
   },
   {
     title: "About",
     router: "/about",
   },
+
   {
-    title: "Services",
-    router: "/services",
-    hasDropdown: true,
+    title: "driver",
+    router: "/services/drivers"
   },
   {
     title: "Partners",
@@ -178,5 +178,29 @@ export const aboutValues =[
     number:"04",
     title:"Safety",
     description:"Transparent pricing for riders, fair earnings for drivers."
+  }
+]
+
+
+export const FaqContents = [
+  {
+    "question": "Who qualifies as a partner?",
+    "answer": "Partners are individuals or businesses who own vehicles and wish to provide rides through the AnyRide platform. They must meet our vehicle and driver eligibility requirements."
+  },
+  {
+    "question": "Can I register motorcycles only?",
+    "answer": "Yes, we allow motorcycles as well as cars, but the vehicle type must meet local safety and licensing regulations."
+  },
+  {
+    "question": "How do payouts work?",
+    "answer": "Payouts are processed weekly and are transferred directly to your bank account. You can also view your earnings and transaction history in the app."
+  },
+  {
+    "question": "Can I manage multiple drivers?",
+    "answer": "Yes, fleet owners can manage multiple drivers under a single account. Each driver will have a separate profile, and you can monitor their activity and earnings."
+  },
+  {
+    "question": "Is there a minimum fleet size?",
+    "answer": "There is no strict minimum fleet size for individual drivers, but for business partners managing fleets, having multiple vehicles may unlock additional features and incentives."
   }
 ]

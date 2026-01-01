@@ -1,139 +1,243 @@
+// "use client";
+
+// import React from "react";
+// import Link from "next/link";
+// import { useTranslations } from "next-intl";
+// import Logo from "./ui/Logo";
+
+// interface FooterLink {
+//   label: string;
+//   href: string;
+// }
+
+// interface FooterSection {
+//   title: string;
+//   links: FooterLink[];
+// }
+
+// interface FooterData {
+//   description: string;
+//   sections: {
+//     company: FooterSection;
+//     help: FooterSection;
+//     legal: FooterSection;
+//   };
+//   copyright: string;
+// }
+
+// const Footer = () => {
+//   const t = useTranslations("Footer");
+//   const sections = t("sections", { returnObjects: true }) as FooterData["sections"];
+//   console.log(sections);
+
+//   return (
+//     <footer className="w-full bg-[#F5F5F7]">
+//       {/* Main Footer Content */}
+//       <div className="container py-7.25 lg:py-18">
+//         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12">
+//           {/* Brand Section */}
+//           <div className="space-y-4 max-w-full">
+//             <div className="mb-7">
+//               <Logo />
+//             </div>
+//             <p className="text-[16px] text-[#333333] leading-[160%] tracking-[-2%] w-full max-w-full md:max-w-118.75 lg:max-w-125 xl:max-w-102.5">
+//               {t("description")}
+//             </p>
+//           </div>
+
+//           {/* Footer Links */}
+//           <div className="grid grid-cols-1 lg:grid-cols-3 xl:gap-x-12 gap-y-6">
+//             {/* Company */}
+//             <div>
+//               <h3 className="text-[#111111] font-semibold mb-4 text-[20px] sm:text-[24px]">
+//                 {sections.company.title}
+//               </h3>
+//               <ul className="space-y-3">
+//                 {sections.company.links.map((link) => (
+//                   <li key={link.href}>
+//                     <Link
+//                       href={link.href}
+//                       className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
+//                     >
+//                       {link.label}
+//                     </Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </div>
+
+//             {/* Help */}
+//             <div>
+//               <h3 className="text-[#111111] font-semibold mb-4 text-[20px] sm:text-[24px]">
+//                 {sections.help.title}
+//               </h3>
+//               <ul className="space-y-3">
+//                 {sections.help.links.map((link) => (
+//                   <li key={link.href}>
+//                     <Link
+//                       href={link.href}
+//                       className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
+//                     >
+//                       {link.label}
+//                     </Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </div>
+
+//             {/* Legal */}
+//             <div>
+//               <h3 className="text-[#111111] font-semibold mb-4 text-[20px] sm:text-[24px]">
+//                 {sections.legal.title}
+//               </h3>
+//               <ul className="space-y-3">
+//                 {sections.legal.links.map((link) => (
+//                   <li key={link.href}>
+//                     <Link
+//                       href={link.href}
+//                       className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
+//                     >
+//                       {link.label}
+//                     </Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Bottom Bar */}
+//       <div className="border-t border-gray-300">
+//         <div className="px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+//           <p className="text-[16px] text-gray-600 text-center">
+//             {t("copyright")}{" "}
+//             <Link
+//               href="https://techenex.com"
+//               className="text-[#333333] leading-[160%] text-[16px] tracking-[-2%] font-bold"
+//             >
+//               Techenex
+//             </Link>
+//           </p>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
+
+
 "use client";
+
 import React from "react";
-import Logo from "./ui/Logo";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import Logo from "./ui/Logo";
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+interface FooterData {
+  description: string;
+  sections: {
+    company: FooterSection;
+    help: FooterSection;
+    legal: FooterSection;
+  };
+  copyright: string;
+}
 
 const Footer = () => {
+  const t = useTranslations("Footer");
+
+  // Build sections object in code, strings come from t()
+  const sections: FooterData["sections"] = {
+    company: {
+      title: t("sections.company.title"),
+      links: [
+        { label: t("sections.company.links.0.label"), href: "/about" },
+        { label: t("sections.company.links.1.label"), href: "/Blog" },
+        { label: t("sections.company.links.2.label"), href: "/Cities" },
+      ],
+    },
+    help: {
+      title: t("sections.help.title"),
+      links: [
+        { label: t("sections.help.links.0.label"), href: "/Support" },
+        { label: t("sections.help.links.1.label"), href: "/Safety" },
+        { label: t("sections.help.links.1.label"), href: "/Pricing" },
+      ],
+    },
+    legal: {
+      title: t("sections.legal.title"),
+      links: [
+        { label: t("sections.legal.links.0.label"), href: "/Terms" },
+        { label: t("sections.legal.links.1.label"), href: "/Privacy" },
+        { label: t("sections.legal.links.1.label"), href: "/Cookies" },
+      ],
+    },
+  };
+
   return (
     <footer className="w-full bg-[#F5F5F7]">
       {/* Main Footer Content */}
-      <div className="container  py-7.25  lg:py-18">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12">
+      <div className="container py-7.25 lg:py-18">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="space-y-4 max-w-full">
             <div className="mb-7">
               <Logo />
             </div>
             <p className="text-[16px] text-[#333333] leading-[160%] tracking-[-2%] w-full max-w-full md:max-w-118.75 lg:max-w-125 xl:max-w-102.5">
-              We're building the most trusted local ride network — designed for
-              passengers and real people. Affordable, safe, and always there
-              when you need it.
+              {t("description")}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 w-full max-w-full xl:gap-x-12 gap-y-6">
-            {/* Company Links */}
-            <div>
-              <h3 className="text-text-black font-semibold mb-4 text-[20px] md:text-[24px]">
-                Company
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Cities
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Help Links */}
-            <div>
-             <h3 className="text-text-black font-semibold mb-4 text-[20px] md:text-[24px]">Help</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                   className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                   className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Safety
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                 className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Pricing
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal Links */}
-            <div>
-               <h3 className="text-text-black font-semibold mb-4 text-[20px] md:text-[24px]">Legal</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                   className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                  className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
-                  >
-                    Cookies
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Footer Links */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 xl:gap-x-12 gap-y-6">
+            {Object.values(sections).map((section) => (
+              <div key={section.title}>
+                <h3 className="text-[#111111] font-semibold mb-4 text-[20px] sm:text-[24px]">
+                  {section.title}
+                </h3>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-300">
-        <div className="px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <p className="text-[16px] text-gray-600 text-center">
-              © 2025 AnyRide. Made for everyone on the move.
-              <Link
-                href="techenex.com "
-                className=" text-[#333333] leading-[160%] text-[16px] tracking-[-2%] font-bold"
-              >
-                Techenex
-              </Link>
-            </p>
-          </div>
+        <div className="px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p className="text-[16px] text-gray-600 text-center">
+            {t("copyright")}{" "}
+            <Link
+              href="https://techenex.com"
+              className="text-[#333333] leading-[160%] text-[16px] tracking-[-2%] font-bold"
+            >
+              Techenex
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

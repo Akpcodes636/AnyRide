@@ -1,0 +1,397 @@
+{
+  "HomePage": {
+    "hero": {
+      "tagline": "Wa Karibu, Wa Kirafiki, Wa Haraka",
+      "title": "Pata safari. Pata kipato. Yote kwenye AnyRide.",
+      "description": "Safari za haraka, salama na za bei nafuu katika jiji lako. Iwe unaenda mahali fulani au unasaidia wengine kufika pale — AnyRide inakusogeza.",
+      "placeholderPickup": "Weka mahali pa kukuchukua",
+      "placeholderDestination": "Weka mahali unakokwenda",
+      "buttonCheckAvailability": "Angalia Upatikanaji",
+      "mobileInfo": "Bado haipatikani",
+      "desktopInfo": "Safari zinapatikana katika eneo lako"
+    },
+    "sections": {
+      "ridesNearby": "Safari zinapatikana katika eneo lako",
+      "guides": "Miongozo",
+      "howItWorks": "Jinsi AnyRide inavyofanya kazi"
+    },
+
+    "guides": {
+      "subtitle": "Miongozo",
+      "title": "Jinsi Anyride inavyofanya kazi",
+      "description": "AnyRide inafanya usafiri wako kuwa rahisi — kutoka safari za kila siku hadi matembezi ya wikendi. Fungua tu programu, omba safari, na uko njiani.",
+      "tabs": {
+        "rider": "Abiria",
+        "driver": "Dereva"
+      },
+      "rider": [
+        {
+          "title": "Pata Maombi ya Safari Papo Hapo",
+          "text": "Ingia mtandaoni na AnyRide itakunganisha na abiria walioko karibu nawe. Angalia mahali pa kuchukua, umbali unaokadiriwa, na nauli kabla hujaidhinisha."
+        },
+        {
+          "title": "Safiri kwa Urahisi",
+          "text": "Fuata maelekezo wazi, ona maelezo ya abiria, na furahia taarifa za kuchukua zilizothibitishwa. Zingatia safari — hakuna utata."
+        },
+        {
+          "title": "Fuatilia Mapato Bila Shida",
+          "text": "Maliza safari na tazama mapato yako yakisasishwa mara kwa mara. Fuatilia jumla za kila siku, bonasi, na njia za malipo kwa urahisi."
+        }
+      ],
+      "driver": [
+        {
+          "title": "Pokea Maombi ya Utoaji",
+          "text": "Ingia mtandaoni na upokee arifa za utoaji katika eneo lako. Kagua maelezo ya kifurushi, mahali pa utoaji, na mapato yanayotarajiwa kabla ya kuanza."
+        },
+        {
+          "title": "Peleka kwa Ujasiri",
+          "text": "Fuata mwongozo hatua kwa hatua, ona taarifa za mpokeaji, na upate masasisho ya mara kwa mara kwa utoaji mzuri. Epuka mkanganyiko na ucheleweshaji."
+        },
+        {
+          "title": "Simamia Mapato na Utendaji",
+          "text": "Fuatilia utoaji wote uliokamilika na mapato yako papo hapo. Fuatilia bonasi, muhtasari wa kila siku, na malipo — yote kwenye dashibodi moja."
+        }
+      ]
+    },
+
+    "howItWorks": {
+      "intro": "AnyRide inafanya usafiri wako kuwa rahisi — kutoka safari za kila siku hadi matembezi ya wikendi. Fungua tu programu, omba safari, na uko njiani.",
+      "steps": [
+        {
+          "title": "Pata Maombi ya Safari Papo Hapo",
+          "description": "Ingia mtandaoni na AnyRide itakunganisha na abiria walioko karibu nawe. Angalia mahali pa kuchukua, umbali unaokadiriwa, na nauli kabla hujaidhinisha."
+        },
+        {
+          "title": "Safiri kwa Urahisi",
+          "description": "Fuata maelekezo wazi, ona maelezo ya abiria, na furahia taarifa za kuchukua zilizothibitishwa. Zingatia safari — hakuna utata."
+        },
+        {
+          "title": "Fuatilia Mapato Bila Shida",
+          "description": "Maliza safari na tazama mapato yako yakisasishwa mara kwa mara. Fuatilia jumla za kila siku, bonasi, na njia za malipo kwa urahisi."
+        }
+      ]
+    },
+
+    "appDownload": {
+      "title": "Pakua programu ya AnyRide",
+      "description": "AnyRide inakupeleka unakotaka kwenda kwa bei nafuu zaidi. Programu inahesabu gharama ya safari yako kiotomatiki na inaonyesha gari lako kwenye ramani kwa wakati halisi. Ni ya haraka, rahisi, na inafanya kazi na iOS na Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Inaaminiwa na watumiaji zaidi ya 1125"
+      }
+    },
+
+    "values": {
+      "subtitle": "Maadili Yetu",
+      "title": "Kwa Nini Uchague AnyRide",
+      "description": "AnyRide imeundwa kwa ajili ya barabara za karibu na watu halisi. Tunaweka safari kuwa za bei nafuu, madereva kuthibitishwa, na malipo kuwa rahisi — ili uweze kusafiri au kuendesha bila wasiwasi.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Kuchukua Haraka",
+          "description": "Hakuna kusubiri kwa muda mrefu. Unganishwa na dereva wa karibu kwa sekunde, popote ulipo."
+        },
+        {
+          "number": "02",
+          "title": "Safari Salama",
+          "description": "Kila dereva na gari vimethibitishwa. Pia, unaweza kushiriki safari yako au kufikia msaada wakati wowote."
+        },
+        {
+          "number": "03",
+          "title": "Bei Wazi",
+          "description": "Jua nauli yako kabla ya kusafiri. Hakuna malipo ya siri, hakuna mshangao — bei nzuri tu."
+        },
+        {
+          "number": "04",
+          "title": "Msaada wa Saa 24/7",
+          "description": "Una swali au tatizo? Timu yetu ipo hapa saa 24 kusaidia, mchana na usiku."
+        }
+      ]
+    },
+
+    "pricing": {
+      "title": "Safari Nzuri. Bei Wazi.",
+      "subtitle": "Jua nauli yako kabla ya kusafiri.",
+      "description": "Fika unakokwenda haraka zaidi, salama zaidi, na kwa haki.",
+           "form": {
+        "pickupLabel": "Weka mahali pa kukuchukua",
+        "pickupPlaceholder": "Abuja, Nigeria",
+        "destinationLabel": "Weka mahali unakokwenda",
+        "destinationPlaceholder": "Abuja, Nigeria",
+        "rideTypeLabel": "Weka aina ya safari",
+        "rideTypePlaceholder": "Chagua jiji",
+        "locationBadge": "Abuja, Nigeria",
+        "checkPrices": "Angalia bei",
+        "loginInstead": "Ingia badala yake",
+        "options": [
+          "Abuja, Nigeria",
+          "Lagos, Nigeria",
+          "Port Harcourt, Nigeria"
+        ]
+      }
+    },
+
+    "safety": {
+      "title": "Usalama wako ni wa kwanza. Daima.",
+      "description": "Uthibitishaji mkali wa madereva na magari, ufuatiliaji wa GPS wa moja kwa moja, kushiriki safari, na kitufe cha SOS kwenye programu.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Madereva Waliothibitishwa",
+          "description": "Kila dereva na gari vinakaguliwa kikamilifu kabla ya kuanza. Tunathibitisha nyaraka za utambulisho, leseni za udereva, na ukaguzi wa historia ili usafiri kwa ujasiri daima."
+        },
+        {
+          "number": "02",
+          "title": "Ufuatiliaji wa Moja kwa Moja",
+          "description": "Fuatilia safari yako kwa wakati halisi na shiriki safari yako na marafiki au familia kwa amani ya akili."
+        },
+        {
+          "number": "03",
+          "title": "SOS na Msaada wa 24/7",
+          "description": "Tumia kitufe cha SOS cha programu kufikia msaada wa dharura papo hapo. Timu yetu inapatikana mchana na usiku."
+        }
+      ]
+    },
+  "blog": {
+    "label": "Blogi",
+    "title": "Karibuni kwenye blogi yetu",
+    "subtitle": "Vidokezo, hadithi, na taarifa kwa abiria na madereva.",
+    "posts": [
+      {
+        "id": 1,
+        "category": "Kikorporate",
+        "date": "Novemba 4",
+        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria",
+        "featured": true
+      },
+      {
+        "id": 2,
+        "category": "Kikorporate",
+        "date": "Novemba 4",
+        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
+      },
+      {
+        "id": 3,
+        "category": "Kikorporate",
+        "date": "Novemba 4",
+        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
+      },
+      {
+        "id": 4,
+        "category": "Kikorporate",
+        "date": "Novemba 4",
+        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
+      }
+    ]
+  }
+},
+  "AboutPage": {
+    "hero": {
+      "title": "Kuhusu AnyRide",
+      "subtitle": "Kusogeza watu na maisha kwa usalama, karibu, kwa kuaminika.",
+      "description": "AnyRide inaunganisha abiria na madereva waliothibitishwa wakitumia magari na pikipiki. Imeundwa kwa ajili ya usafiri wa kila siku, matembezi, safari fupi kwa kuzingatia usalama, haki, na uhalisia wa karibu."
+    },
+
+    "services": [
+      {
+        "type": "Safari za gari",
+        "title": "Utulivu na uwezo"
+      },
+      {
+        "type": "Pikipiki",
+        "title": "Kasi na unyumbufu"
+      },
+      {
+        "type": "Usalama kwanza",
+        "title": "Madereva waliothibitishwa"
+      }
+    ],
+
+    "whatWeDo": {
+      "title": "AnyRide ni nini?",
+      "description": "AnyRide ni zaidi ya programu tu ya safari — ni harakati iliyojengwa kuzunguka uhuru, uaminifu, na urahisi wa kila siku. Tulianza AnyRide na lengo moja rahisi: kufanya usafiri katika miji kuwa rahisi zaidi, salama zaidi, na wenye thawabu zaidi kwa kila mtu — iwe unachukua safari ya haraka au unapata kipato nyuma ya usukani. Tunaelewa maana ya kufanya kazi kwa bidii, kusogea, na kufanya mambo yatokee — ndiyo maana AnyRide iliundwa kutumikia watu halisi wenye mahitaji halisi. Jukwaa letu linaunganisha abiria na madereva kwa sekunde, kusaidia pande zote mbili kuokoa muda, kupata zaidi, na kusogea kwa ujasiri katika siku yao."
+    },
+
+    "visionMission": {
+      "vision": {
+        "title": "Dira Yetu",
+        "subtitle": "Dira ni kwenda kimataifa",
+        "description": "Kujenga mtandao wa usogezaji wa karibu unaotegemewa zaidi Afrika — mmoja unaoweka watu, si teknolojia tu, katikati. Hatujatengeneza safari tu; tunajenga madaraja kati ya watu, fursa, na barabara salama zaidi."
+      },
+      "mission": {
+        "title": "Ujumbe Wetu",
+        "subtitle": "Tuko hapa kwa ajili yako tu",
+        "description": "Kufafanua upya usafiri wa karibu kwa kufanya kila safari kuwa rahisi, ya bei nafuu, na yenye nguvu — kwa abiria na madereva. Tunaamini kwamba usafiri haufai kuwa wenye mkazo, usio salama, au wa bei ghali. Kila mtu anastahili safari inayostahili, wazi, na rahisi kuamini."
+      }
+    },
+
+    "bothModes": {
+      "title": "Kwa nini zote mbili",
+      "subtitle": "Magari na pikipiki havishindani — vinajumuisha.",
+      "description": "Katika miji mingi, pikipiki si mbadala — ni muhimu. AnyRide inasaidia vyote viwili, ikiwapa abiria chaguo na madereva fursa.",
+      "options": [
+        {
+          "type": "Safari za gari",
+          "benefits": ["Bora kwa utulivu", "Mizigo zaidi / nafasi zaidi", "Bora kwa safari ndefu"]
+        },
+        {
+          "type": "Pikipiki",
+          "benefits": ["Bora kwa kasi", "Kusafiri msongamano haraka zaidi", "Bora kwa safari fupi"]
+        }
+      ]
+    },
+
+    "whereWeOperate": {
+      "title": "Tunafanya kazi wapi",
+      "subtitle": "Inafanya kazi leo. Kuenea kwa uangalifu.",
+      "description": "Tunaorodhesha mikoa tunayoweza kuisaidia tu — ili kuweka imani juu na matarajio wazi.",
+      "ridesNearby": "Safari zinapatikana katika eneo lako"
+    },
+
+    "forEveryone": {
+      "title": "Kwa kila mtu",
+      "subtitle": "Imeundwa kwa ajili ya abiria, madereva, na washirika",
+      "description": "Jukwaa moja — mahitaji tofauti. Umakini sawa.",
+      "categories": [
+        {
+          "type": "Abiria",
+          "icon": "/icons/individual.svg",
+          "description": "Haraka, haki, na ya kuaminika. Kuhifadhi rahisi, bei wazi, na uzoefu unaozingatia usalama kwa usafiri wa kila siku."
+        },
+        {
+          "type": "Madereva",
+          "icon": "/icons/drivers.svg",
+          "description": "Fursa yenye uwazi. Utendaji ulio wazi, mapato ya kubadilika, na msaada kwa madereva wa magari na pikipiki."
+        },
+        {
+          "type": "Washirika",
+           "icon": "/icons/partners.svg",
+          "description": "Kukua na madereva wengi. Usimamizi wa madereva wengi na uunganisho wa biashara uliobuniwa kwa makampuni yanayosimamia magari mengi."
+        }
+      ]
+    },
+
+    "trustSafety": {
+      "title": "Imani na usalama",
+      "subtitle": "Uwajibikaji umejengwa ndani",
+      "description": "Uthibitishaji, ukadiriaji, na ishara wazi za hali — imeundwa kujenga ujasiri."
+    },
+
+    "values": {
+      "title": "Maadili Yetu Ya Msingi",
+      "items": [
+        {
+          "number": "01",
+          "title": "Imani",
+          "description": "Kila dereva na safari imethibitishwa, ikihakikisha amani ya akili kwa wote."
+        },
+        {
+          "number": "02",
+          "title": "Kasi",
+          "description": "Kuunganisha haraka, safari laini, na malipo ya papo hapo — hakuna ucheleweshaji usio wa lazima."
+        },
+        {
+          "number": "03",
+          "title": "Haki",
+          "description": "Bei wazi kwa abiria, mapato ya haki kwa madereva."
+        },
+        {
+          "number": "04",
+          "title": "Usalama",
+          "description": "Bei wazi kwa abiria, mapato ya haki kwa madereva."
+        }
+      ]
+    },
+
+    "riders": {
+      "title": "Abiria",
+      "description": "Jiji lako liko hatua chache tu. AnyRide inakupa udhibiti wa jinsi unavyosogea — kutoka matembezi ya haraka hadi safari ndefu. Ona nauli yako mapema, mfuatilie dereva wako moja kwa moja, na furahia amani ya akili ukijua uko mikononi mwa usalama. Hakuna mshangao. Hakuna mkazo."
+    },
+
+    "drivers": {
+      "title": "Madereva",
+      "description": "Tunawaona madereva kama washirika, si watumiaji tu. Na AnyRide, unachagua lini kuendesha, jinsi unavyopata, na gari gani unatumia. Badilisha magari kwa urahisi, lipa papo hapo, na ongeza kipato chako bila shinikizo la kawaida. Mfumo wetu umeundwa kukusaidia — kila hatua, kila safari."
+    },
+
+    "ourPromise": {
+      "title": "Ahadi Yetu",
+      "description": "Tunaunda kitu tofauti — uzoefu wa safari unaohisi kuwa wa karibu, wa haki, na wa kibinadamu. Kutoka kwa madereva wetu wanaoweka miji kusogea, hadi abiria wanaotuwekea imani kila siku, AnyRide inasimama kwa usalama, uaminifu, na uwezeshaji. Kwa sababu usogezaji ni uhuru — na kila mtu anastahili kuufikia. Hiyo ndiyo AnyRide. Imeundwa kwa ajili ya watu. Imetengenezwa kwa ajili ya usogezaji."
+    }
+  },
+
+  "DriversPage": {
+    "hero": {
+      "title": "Endesha kwa uhuru. Pata kwa masharti yako.",
+      "description": "Jiunge na AnyRide na upate zaidi huku ukiwa na udhibiti wa muda wako na safari."
+    },
+    "FAQ": {
+      "title": "Maswali yanayoulizwa mara kwa mara",
+      "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali ya kawaida zaidi.",
+      "items": [
+        {
+          "question": "Jinsi ya kuwa dereva wa AnyRide?",
+          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
+        },
+        {
+          "question": "Nyaraka gani ninazohitaji kusajili?",
+          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
+        },
+        {
+          "question": "Mapato yanahesabiwaje?",
+          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
+        },
+        {
+          "question": "Je, naweza kusajili zaidi ya gari moja?",
+          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
+        }
+      ]
+    },
+    "appDownload": {
+      "title": "Pakua programu ya AnyRide",
+      "description": "AnyRide inakupeleka unakotaka kwenda kwa bei nafuu zaidi. Programu inahesabu gharama ya safari yako kiotomatiki na inaonyesha gari lako kwenye ramani kwa wakati halisi. Ni ya haraka, rahisi, na inafanya kazi na iOS na Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Inaaminiwa na watumiaji zaidi ya 1125"
+      }
+    }
+  },
+
+  "Footer": {
+    "description": "Tunajenga mtandao wa usafiri wa karibu unaotegemewa zaidi — uliobuniwa kwa ajili ya abiria na watu halisi. Wa bei nafuu, salama, na daima upo unapohitaji.",
+    "sections": {
+      "company": {
+        "title": "Kampuni",
+        "links": [
+          { "label": "Kuhusu", "href": "/about" },
+          { "label": "Blogu", "href": "/blog" },
+          { "label": "Miji", "href": "/cities" }
+        ]
+      },
+      "help": {
+        "title": "Msaada",
+        "links": [
+          { "label": "Msaada", "href": "/support" },
+          { "label": "Usalama", "href": "/safety" },
+          { "label": "Bei", "href": "/pricing" }
+        ]
+      },
+      "legal": {
+        "title": "Kisheria",
+        "links": [
+          { "label": "Masharti", "href": "/terms" },
+          { "label": "Faragha", "href": "/privacy" },
+          { "label": "Vidakuzi", "href": "/cookies" }
+        ]
+      }
+    },
+    "copyright": "© 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
+  }
+}

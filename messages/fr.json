@@ -1,0 +1,397 @@
+{
+  "HomePage": {
+    "hero": {
+      "tagline": "Local, Convivial, Rapide",
+      "title": "Obtenez un trajet. Gagnez votre vie. Tout sur AnyRide.",
+      "description": "Des trajets rapides, sûrs et abordables dans toute votre ville. Que vous vous rendiez quelque part ou que vous aidiez les autres à y arriver — AnyRide vous fait bouger.",
+      "placeholderPickup": "Entrez votre lieu de prise en charge",
+      "placeholderDestination": "Entrez votre destination",
+      "buttonCheckAvailability": "Vérifier la disponibilité",
+      "mobileInfo": "Pas encore disponible",
+      "desktopInfo": "Trajets disponibles dans votre région"
+    },
+    "sections": {
+      "ridesNearby": "Trajets disponibles dans votre région",
+      "guides": "Guides",
+      "howItWorks": "Comment fonctionne AnyRide"
+    },
+
+    "guides": {
+      "subtitle": "Guides",
+      "title": "Comment fonctionne Anyride",
+      "description": "AnyRide simplifie vos déplacements — des trajets quotidiens aux sorties du week-end. Ouvrez simplement l'application, demandez un trajet et vous êtes en route.",
+      "tabs": {
+        "rider": "Passager",
+        "driver": "Conducteur"
+      },
+      "rider": [
+        {
+          "title": "Recevez des demandes de course instantanément",
+          "text": "Passez en ligne et AnyRide vous connectera avec des passagers à proximité. Vérifiez le lieu de prise en charge, la distance estimée et le tarif avant d'accepter."
+        },
+        {
+          "title": "Naviguez en toute simplicité",
+          "text": "Suivez des directions claires, consultez les détails du passager et profitez d'informations de prise en charge vérifiées. Concentrez-vous sur le trajet — aucune approximation."
+        },
+        {
+          "title": "Suivez vos gains sans effort",
+          "text": "Terminez les courses et regardez vos gains se mettre à jour en temps réel. Surveillez les totaux quotidiens, les bonus et les méthodes de paiement de manière transparente."
+        }
+      ],
+      "driver": [
+        {
+          "title": "Recevez des demandes de livraison",
+          "text": "Passez en ligne et recevez des notifications pour les livraisons dans votre région. Examinez les détails du colis, le lieu de livraison et les gains prévus avant de commencer."
+        },
+        {
+          "title": "Livrez en toute confiance",
+          "text": "Suivez la navigation étape par étape, consultez les informations du destinataire et obtenez des mises à jour en temps réel pour des remises fluides. Évitez la confusion et les retards."
+        },
+        {
+          "title": "Gérez les gains et les performances",
+          "text": "Suivez toutes les livraisons terminées et vos gains instantanément. Surveillez les bonus, les résumés quotidiens et les paiements — le tout dans un seul tableau de bord."
+        }
+      ]
+    },
+
+    "howItWorks": {
+      "intro": "AnyRide simplifie vos déplacements — des trajets quotidiens aux sorties du week-end. Ouvrez simplement l'application, demandez un trajet et vous êtes en route.",
+      "steps": [
+        {
+          "title": "Recevez des demandes de course instantanément",
+          "description": "Passez en ligne et AnyRide vous connectera avec des passagers à proximité. Vérifiez le lieu de prise en charge, la distance estimée et le tarif avant d'accepter."
+        },
+        {
+          "title": "Naviguez en toute simplicité",
+          "description": "Suivez des directions claires, consultez les détails du passager et profitez d'informations de prise en charge vérifiées. Concentrez-vous sur le trajet — aucune approximation."
+        },
+        {
+          "title": "Suivez vos gains sans effort",
+          "description": "Terminez les courses et regardez vos gains se mettre à jour en temps réel. Surveillez les totaux quotidiens, les bonus et les méthodes de paiement de manière transparente."
+        }
+      ]
+    },
+
+    "appDownload": {
+      "title": "Téléchargez l'application AnyRide",
+      "description": "AnyRide vous emmène où vous devez aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Approuvé par plus de 1125 utilisateurs"
+      }
+    },
+
+    "values": {
+      "subtitle": "Nos Valeurs",
+      "title": "Pourquoi choisir AnyRide",
+      "description": "AnyRide est conçu pour les rues locales et les vraies personnes. Nous maintenons des trajets abordables, des conducteurs vérifiés et des paiements simples — pour que vous puissiez voyager ou conduire sans soucis.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Prise en charge rapide",
+          "description": "Pas d'attente prolongée. Connectez-vous à un conducteur à proximité en quelques secondes, où que vous soyez."
+        },
+        {
+          "number": "02",
+          "title": "Trajets sécurisés",
+          "description": "Chaque conducteur et véhicule est vérifié. De plus, vous pouvez partager votre trajet ou contacter l'assistance à tout moment."
+        },
+        {
+          "number": "03",
+          "title": "Tarification transparente",
+          "description": "Connaissez votre tarif avant de voyager. Pas de frais cachés, pas de surprises — juste des prix équitables."
+        },
+        {
+          "number": "04",
+          "title": "Assistance 24/7",
+          "description": "Vous avez une question ou un problème ? Notre équipe est là 24h/24 pour vous aider, jour et nuit."
+        }
+      ]
+    },
+
+    "pricing": {
+      "title": "Trajets équitables. Prix clairs.",
+      "subtitle": "Connaissez votre tarif avant de voyager.",
+      "description": "Rendez-vous où vous allez plus rapidement, en toute sécurité et équitablement.",
+      "form": {
+        "pickupLabel": "Entrez le lieu de prise en charge",
+        "pickupPlaceholder": "Abuja, Nigeria",
+        "destinationLabel": "Entrez la destination",
+        "destinationPlaceholder": "Abuja, Nigeria",
+        "rideTypeLabel": "Entrez le type de trajet",
+        "rideTypePlaceholder": "Sélectionnez la ville",
+        "locationBadge": "Abuja, Nigeria",
+        "checkPrices": "Vérifier les prix",
+        "loginInstead": "Se connecter plutôt",
+        "options": [
+          "Abuja, Nigeria",
+          "Lagos, Nigeria",
+          "Port Harcourt, Nigeria"
+        ]
+      }
+    },
+
+    "safety": {
+      "title": "Votre sécurité passe avant tout. Toujours.",
+      "description": "Vérification stricte des conducteurs et des véhicules, suivi GPS en direct, partage de trajet et bouton SOS dans l'application.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Conducteurs vérifiés",
+          "description": "Chaque conducteur et véhicule est soigneusement contrôlé avant d'être mis en service. Nous vérifions les documents d'identité, les permis de conduire et les antécédents pour que vous voyagiez toujours en toute confiance."
+        },
+        {
+          "number": "02",
+          "title": "Suivi en direct",
+          "description": "Suivez votre trajet en temps réel et partagez votre voyage avec vos amis ou votre famille pour votre tranquillité d'esprit."
+        },
+        {
+          "number": "03",
+          "title": "SOS et assistance 24/7",
+          "description": "Utilisez le bouton SOS de l'application pour contacter l'assistance d'urgence instantanément. Notre équipe est disponible jour et nuit."
+        }
+      ]
+    },
+  "blog": {
+    "label": "Blog",
+    "title": "Dernières nouvelles du blog",
+    "subtitle": "Astuces, histoires et mises à jour pour les passagers et les conducteurs.",
+    "posts": [
+      {
+        "id": 1,
+        "category": "Entreprise",
+        "date": "4 novembre",
+        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria",
+        "featured": true
+      },
+      {
+        "id": 2,
+        "category": "Entreprise",
+        "date": "4 novembre",
+        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
+      },
+      {
+        "id": 3,
+        "category": "Entreprise",
+        "date": "4 novembre",
+        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
+      },
+      {
+        "id": 4,
+        "category": "Entreprise",
+        "date": "4 novembre",
+        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
+      }
+    ]
+  }
+},
+  "AboutPage": {
+    "hero": {
+      "title": "À propos d'AnyRide",
+      "subtitle": "Déplacer les personnes et les moyens de subsistance en toute sécurité, localement, de manière fiable.",
+      "description": "AnyRide connecte les passagers avec des conducteurs vérifiés utilisant des voitures et des motos. Conçu pour les déplacements quotidiens, les courses, les courts trajets avec un accent sur la sécurité, l'équité et les réalités locales."
+    },
+
+    "services": [
+      {
+        "type": "Trajets en voiture",
+        "title": "Confort et capacité"
+      },
+      {
+        "type": "Motos",
+        "title": "Vitesse et flexibilité"
+      },
+      {
+        "type": "Sécurité d'abord",
+        "title": "Conducteurs vérifiés"
+      }
+    ],
+
+    "whatWeDo": {
+      "title": "Qu'est-ce qu'AnyRide ?",
+      "description": "AnyRide est plus qu'une simple application de covoiturage — c'est un mouvement construit autour de la liberté, de la confiance et de la commodité quotidienne. Nous avons lancé AnyRide avec un objectif simple : rendre les déplacements dans les villes plus faciles, plus sûrs et plus gratifiants pour tous — que vous preniez un trajet rapide ou que vous gagniez de l'argent au volant. Nous comprenons ce que signifie se démener, bouger et faire bouger les choses — c'est pourquoi AnyRide a été créé pour servir de vraies personnes avec de vrais besoins. Notre plateforme connecte les passagers et les conducteurs en quelques secondes, aidant les deux parties à gagner du temps, à gagner plus et à se déplacer en toute confiance tout au long de leur journée."
+    },
+
+    "visionMission": {
+      "vision": {
+        "title": "Notre Vision",
+        "subtitle": "La vision est de devenir mondiale",
+        "description": "Construire le réseau de mobilité locale le plus fiable d'Afrique — un réseau qui place les personnes, pas seulement la technologie, au centre. Nous ne créons pas seulement des trajets ; nous construisons des ponts entre les personnes, les opportunités et des rues plus sûres."
+      },
+      "mission": {
+        "title": "Notre Mission",
+        "subtitle": "Nous sommes là juste pour vous",
+        "description": "Redéfinir le transport local en rendant chaque trajet sans effort, abordable et responsabilisant — pour les passagers et les conducteurs. Nous croyons que les déplacements ne devraient jamais être stressants, dangereux ou trop chers. Tout le monde mérite un trajet équitable, transparent et facile à faire confiance."
+      }
+    },
+
+    "bothModes": {
+      "title": "Pourquoi les deux",
+      "subtitle": "Les voitures et les motos ne sont pas en concurrence — elles sont complémentaires.",
+      "description": "Dans de nombreuses villes, les motos ne sont pas une alternative — elles sont essentielles. AnyRide soutient les deux, offrant aux passagers le choix et aux conducteurs des opportunités.",
+      "options": [
+        {
+          "type": "Trajets en voiture",
+          "benefits": ["Meilleur pour le confort", "Plus de bagages / plus d'espace", "Idéal pour les longs trajets"]
+        },
+        {
+          "type": "Motos",
+          "benefits": ["Meilleur pour la vitesse", "Naviguer dans le trafic plus rapidement", "Idéal pour les courts trajets"]
+        }
+      ]
+    },
+
+    "whereWeOperate": {
+      "title": "Où nous opérons",
+      "subtitle": "Actif aujourd'hui. Expansion réfléchie.",
+      "description": "Nous ne répertorions que les régions que nous pouvons soutenir — pour maintenir la confiance élevée et les attentes claires.",
+      "ridesNearby": "Trajets disponibles dans votre région"
+    },
+
+    "forEveryone": {
+      "title": "Pour tout le monde",
+      "subtitle": "Conçu pour les passagers, les conducteurs et les partenaires",
+      "description": "Une plateforme — des besoins différents. Accent égal.",
+      "categories": [
+        {
+          "type": "Passagers",
+           "icon": "/icons/individual.svg",
+          "description": "Rapide, équitable et fiable. Réservation facile, tarification claire et une expérience axée sur la sécurité pour les déplacements quotidiens."
+        },
+        {
+          "type": "Conducteurs",
+            "icon": "/icons/drivers.svg",
+          "description": "Opportunité avec clarté. Performance transparente, gains flexibles et soutien pour les conducteurs de voitures et de motos."
+        },
+        {
+          "type": "Partenaires",
+           "icon": "/icons/partners.svg",
+          "description": "Évoluer avec des flottes. Gestion de flotte et intégrations commerciales conçues pour les entreprises qui gèrent plusieurs véhicules."
+        }
+      ]
+    },
+
+    "trustSafety": {
+      "title": "Confiance et sécurité",
+      "subtitle": "La responsabilité est intégrée",
+      "description": "Vérification, évaluations et signaux de statut clairs — conçus pour renforcer la confiance."
+    },
+
+    "values": {
+      "title": "Nos Valeurs Fondamentales",
+      "items": [
+        {
+          "number": "01",
+          "title": "Confiance",
+          "description": "Chaque conducteur et trajet est vérifié, garantissant la tranquillité d'esprit pour tous."
+        },
+        {
+          "number": "02",
+          "title": "Vitesse",
+          "description": "Correspondance rapide, trajets fluides et paiements instantanés — pas de retards inutiles."
+        },
+        {
+          "number": "03",
+          "title": "Équité",
+          "description": "Tarification transparente pour les passagers, gains équitables pour les conducteurs."
+        },
+        {
+          "number": "04",
+          "title": "Sécurité",
+          "description": "Tarification transparente pour les passagers, gains équitables pour les conducteurs."
+        }
+      ]
+    },
+
+    "riders": {
+      "title": "Passagers",
+      "description": "Votre ville n'est qu'à quelques clics. AnyRide vous donne le contrôle de vos déplacements — des courses rapides aux longs trajets. Voyez votre tarif à l'avance, suivez votre conducteur en direct et profitez de la tranquillité d'esprit en sachant que vous êtes entre de bonnes mains. Pas de surprises. Pas de stress."
+    },
+
+    "drivers": {
+      "title": "Conducteurs",
+      "description": "Nous considérons les conducteurs comme des partenaires, pas seulement des utilisateurs. Avec AnyRide, vous choisissez quand conduire, comment vous gagnez et quel véhicule vous utilisez. Changez de voiture facilement, encaissez instantanément et augmentez vos revenus sans la pression habituelle. Notre système est conçu pour vous soutenir — à chaque étape, à chaque trajet."
+    },
+
+    "ourPromise": {
+      "title": "Notre Promesse",
+      "description": "Nous créons quelque chose de différent — une expérience de covoiturage qui se sent locale, équitable et humaine. De nos conducteurs qui font bouger les villes, aux passagers qui nous font confiance quotidiennement, AnyRide représente la sécurité, l'honnêteté et l'autonomisation. Parce que le mouvement est la liberté — et tout le monde mérite d'y avoir accès. C'est AnyRide. Construit pour les gens. Fait pour le mouvement."
+    }
+  },
+
+  "DriversPage": {
+    "hero": {
+      "title": "Conduisez en liberté. Gagnez selon vos conditions.",
+      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos trajets."
+    },
+    "FAQ": {
+      "title": "Questions fréquemment posées",
+      "description": "Explorez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
+      "items": [
+        {
+          "question": "Comment devenir conducteur AnyRide ?",
+          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
+        },
+        {
+          "question": "Quels documents dois-je fournir pour m'inscrire ?",
+          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
+        },
+        {
+          "question": "Comment les gains sont-ils calculés ?",
+          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
+        },
+        {
+          "question": "Puis-je enregistrer plus d'un véhicule ?",
+          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
+        }
+      ]
+    },
+    "appDownload": {
+      "title": "Téléchargez l'application AnyRide",
+      "description": "AnyRide vous emmène où vous devez aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Approuvé par plus de 1125 utilisateurs"
+      }
+    }
+  },
+
+  "Footer": {
+    "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vraies personnes. Abordable, sûr et toujours là quand vous en avez besoin.",
+    "sections": {
+      "company": {
+        "title": "Entreprise",
+        "links": [
+          { "label": "À propos", "href": "/about" },
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Villes", "href": "/cities" }
+        ]
+      },
+      "help": {
+        "title": "Aide",
+        "links": [
+          { "label": "Assistance", "href": "/support" },
+          { "label": "Sécurité", "href": "/safety" },
+          { "label": "Tarification", "href": "/pricing" }
+        ]
+      },
+      "legal": {
+        "title": "Légal",
+        "links": [
+          { "label": "Conditions", "href": "/terms" },
+          { "label": "Confidentialité", "href": "/privacy" },
+          { "label": "Cookies", "href": "/cookies" }
+        ]
+      }
+    },
+    "copyright": "© 2025 AnyRide. Fait pour tous ceux qui bougent."
+  }
+}

@@ -1,8 +1,14 @@
 "use client";
 import Image from "next/image";
 import Button from "../../ui/Button";
+import { useTranslations } from "next-intl";
 
 const PricingForm = () => {
+  const t = useTranslations("HomePage.pricing.form");
+
+  // Get options array
+  const options = t.raw("options") as string[];
+
   return (
     <div className="pt-4 bg-white flex items-center justify-center">
       <div className="w-full">
@@ -11,7 +17,7 @@ const PricingForm = () => {
           <div className="relative inline-flex items-center gap-2 bg-[#FFE5E5] rounded-full px-4 pr-10 py-2">
             <span className="w-5 h-5">
               <Image
-                src="/icons/Wave.svg"
+                src="/en/Wave.svg"
                 className="w-full h-full object-contain"
                 alt="icon"
                 width={20}
@@ -20,7 +26,7 @@ const PricingForm = () => {
             </span>
 
             <span className="text-[#A20602] text-sm font-medium">
-              Abuja, Nigeria
+              {t("locationBadge")}
             </span>
 
             {/* Dropdown Arrow */}
@@ -49,13 +55,13 @@ const PricingForm = () => {
           {/* Pickup Location */}
           <div className="space-y-2">
             <label className="text-sm text-gray-700 font-medium">
-              Enter pickup location
+              {t("pickupLabel")}
             </label>
             <div className="relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2">
                 <span>
                   <Image
-                    src="/icons/Arrow.svg"
+                    src="/en/Arrow.svg"
                     className="w-full h-full object-cover"
                     alt="icon"
                     width={500}
@@ -67,7 +73,7 @@ const PricingForm = () => {
                 type="text"
                 // value={pickupLocation}
                 // onChange={(e) => setPickupLocation(e.target.value)}
-                placeholder="Abuja, Nigeria"
+                placeholder={t("pickupPlaceholder")}
                 className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A20602] transition-all"
               />
             </div>
@@ -76,13 +82,13 @@ const PricingForm = () => {
           {/* Destination */}
           <div className="space-y-2">
             <label className="text-sm text-gray-700 font-medium">
-              Enter destination
+              {t("destinationLabel")}
             </label>
             <div className="relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2">
                 <span>
                   <Image
-                    src="/icons/Arrow.svg"
+                    src="/en/Arrow.svg"
                     className="w-full h-full object-cover"
                     alt="icon"
                     width={500}
@@ -94,7 +100,7 @@ const PricingForm = () => {
                 type="text"
                 // value={destination}
                 // onChange={(e) => setDestination(e.target.value)}
-                placeholder="Abuja, Nigeria"
+                placeholder={t("destinationPlaceholder")}
                 className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A20602] transition-all"
               />
             </div>
@@ -103,13 +109,13 @@ const PricingForm = () => {
           {/* Ride Type */}
           <div className="space-y-2">
             <label className="text-sm text-gray-700 font-medium">
-              Enter ride type
+              {t("rideTypeLabel")}
             </label>
             <div className="relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2">
                 <span>
                   <Image
-                    src="/icons/Tram.svg"
+                    src="/en/Tram.svg"
                     className="w-full h-full object-cover"
                     alt="icon"
                     width={500}
@@ -119,13 +125,12 @@ const PricingForm = () => {
               </div>
               <select
                 // value={rideType}
-
                 // onChange={(e) => setRideType(e.target.value)}
                 className="w-full h-14 pl-12 pr-10 bg-[#F5F5F5] rounded-lg text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-[#A20602] transition-all cursor-pointer"
               >
-                <option>Abuja, Nigeria</option>
-                <option>Lagos, Nigeria</option>
-                <option>Port Harcourt, Nigeria</option>
+                {options.map((option, index) => (
+                  <option key={index}>{option}</option>
+                ))}
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                 <svg
@@ -155,7 +160,7 @@ const PricingForm = () => {
               //   fn={handleCheckPrices}
               css="w-[161px] sm:flx-1"
             >
-              Check prices
+              {t("checkPrices")}
             </Button>
             <Button
               type="button"
@@ -163,7 +168,7 @@ const PricingForm = () => {
               //   fn={handleLoginInstead}
               css="w-[180px] sm:flx-1"
             >
-              Login instead
+              {t("loginInstead")}
             </Button>
           </div>
         </div>

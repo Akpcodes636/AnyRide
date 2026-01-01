@@ -1,16 +1,19 @@
 "use client";
 
 import Button from "../../ui/Button";
+import { useTranslations } from "next-intl";
 
 const HeroSearchDesktop = () => {
+  // const t = useTranslations("HomePage.hero"); // load the hero namespace
+  const t = useTranslations("HomePage.hero");
+
   return (
     <div className="w-full max-w-174 mx-auto">
       <div className="flex items-center bg-white rounded-full p-2">
-        
         {/* Input */}
         <input
           type="search"
-          placeholder="Enter your pickup location"
+          placeholder={t("placeholderPickup")}
           className="
             flex-1 h-14
             px-6
@@ -26,17 +29,18 @@ const HeroSearchDesktop = () => {
           type="button"
           css="h-[56px] w-[216px] px-8 rounded-full whitespace-nowrap font-semibold"
         >
-          Check Availability
+          {t("buttonCheckAvailability")}
         </Button>
       </div>
 
       {/* Info text */}
-      <div className="max-w-86.75 bg-[#E9F9EE] rounded-[50px] w-full mx-auto mt-4 h-15.25 flex items-center justify-center">
-      <p className="text-center text-[18px] text-[#22C553]">
-        Rides available in your area
-      </p>
+      <div className="flex justify-center mt-4">
+        <div className="inline-block bg-[#E9F9EE] rounded-[50px] px-6 py-3">
+          <p className="text-center text-[18px] text-[#22C553]">
+            {t("desktopInfo")}
+          </p>
+        </div>
       </div>
-
     </div>
   );
 };

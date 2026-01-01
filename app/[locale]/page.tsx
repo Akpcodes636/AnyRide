@@ -12,7 +12,7 @@ import Values from "../components/home/Values";
 export default function Home() {
   return (
     <>
-      <Header /> 
+      <Header />
       <Hero />
       <About />
       <AnyRide />

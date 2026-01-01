@@ -17,6 +17,7 @@ interface InputProps {
   max?: number;
   autoComplete?: string; // Added autoComplete prop
   disabled?: boolean
+  required?: boolean; 
 }
 
 const InputField: React.FC<InputProps> = ({
@@ -33,6 +34,7 @@ const InputField: React.FC<InputProps> = ({
   min,
   max,
   autoComplete, // Destructuring autoComplete prop
+  required
 }) => {
   const [view, setView] = useState(false);
 
@@ -46,6 +48,7 @@ const InputField: React.FC<InputProps> = ({
     <div className="flex flex-col gap-2">
       <label className="label-class" htmlFor={name}>
         {label}
+         {required && <span className="ml-1 text-[14px] text-red-500">*</span>}
       </label>
       <div className="relative w-full">
         <input
@@ -61,7 +64,7 @@ const InputField: React.FC<InputProps> = ({
           onBlur={onBlur}
           autoComplete={autoComplete}
           disabled={disabled}
-          className={`input-class ${
+          className={`input-class h-[48px] bg-white w-full p-2 rounded-lg border-[#000000]  px-4 py-3 text-[#000000E5] hover:border focus:border-[3px] focus:bg-white focus:outline-none ${
             error &&
             "border-2 border-text-negative bg-[#CC18180F] text-text-negative"
           }`}

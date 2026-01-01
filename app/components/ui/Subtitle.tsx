@@ -18,7 +18,7 @@ const SubTitle: FC<SubTitleProps> = ({ text, css = "", img, bg = "bg-[#FFE6E6]"}
         px-3 py-1
         rounded-full
         ${bg}
-        border border-[#C15855]
+       
         ${css}
       `}
     >

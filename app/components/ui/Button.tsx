@@ -56,7 +56,7 @@ const Button: React.FC<ButtonProps> = ({
         "border-[0.81px] border-stroke-strong bg-fill-weakerInverse hover:bg-[#51515114] hover:shadow-raised transition-all"
       } ${
         style === "tertiary" && 
-        "bg-transparent text-text-strongInverse hover:bg-[#E6E6EB] active:bg-[#efeff5] transition-colors"
+        "bg-transparent border border-white text-white hover:bg-[#E6E6EB] active:bg-[#efeff5] transition-colors"
       }
       `}
     >
