@@ -34,7 +34,8 @@ const InputField: React.FC<InputProps> = ({
   min,
   max,
   autoComplete, // Destructuring autoComplete prop
-  required
+  required,
+  css
 }) => {
   const [view, setView] = useState(false);
 
@@ -64,10 +65,28 @@ const InputField: React.FC<InputProps> = ({
           onBlur={onBlur}
           autoComplete={autoComplete}
           disabled={disabled}
-          className={`input-class h-[48px] bg-white w-full p-2 rounded-lg border-[#000000]  px-4 py-3 text-[#000000E5] hover:border focus:border-[3px] focus:bg-white focus:outline-none ${
-            error &&
-            "border-2 border-text-negative bg-[#CC18180F] text-text-negative"
-          }`}
+         className={`
+    input-class
+    h-[48px]
+    bg-white
+    w-full
+    p-2
+    rounded-lg
+    border-[#000000]
+    px-4
+    py-3
+    text-[#000000E5]
+    hover:border
+    focus:border-[3px]
+    focus:bg-white
+    focus:outline-none
+    ${
+      error
+        ? "border-2 border-text-negative bg-[#CC18180F] text-text-negative"
+        : ""
+    }
+    ${css || ""}
+  `}
         />
         {type === "password" && (
           <div className="absolute right-4 top-3">
@@ -79,7 +98,7 @@ const InputField: React.FC<InputProps> = ({
           </div>
         )}
         {name !== "password" && error && (
-          <div className="mt-1 flex items-center gap-1 text-title-sm font-bold text-text-negative">
+          <div className="mt-1 flex items-center gap-1 text-title-sm font-bold text-red-600">
             <CircleAlert size={16} />
             <span>{error}</span>
           </div>

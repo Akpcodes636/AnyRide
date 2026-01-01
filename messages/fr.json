@@ -326,30 +326,31 @@
   "DriversPage": {
     "hero": {
       "title": "Conduisez en liberté. Gagnez selon vos conditions.",
-      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos trajets."
+      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos trajets.",
+      "cta": "Réserver une course"
     },
-    "FAQ": {
-      "title": "Questions fréquemment posées",
-      "description": "Explorez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
-      "items": [
-        {
-          "question": "Comment devenir conducteur AnyRide ?",
-          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
-        },
-        {
-          "question": "Quels documents dois-je fournir pour m'inscrire ?",
-          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
-        },
-        {
-          "question": "Comment les gains sont-ils calculés ?",
-          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
-        },
-        {
-          "question": "Puis-je enregistrer plus d'un véhicule ?",
-          "answer": "UI Wiki est une plateforme qui fournit une collection de modèles et de ressources d'interface utilisateur, permettant aux utilisateurs d'acheter, de personnaliser et d'intégrer des designs dans leurs propres projets en toute simplicité."
-        }
-      ]
+"FAQ": {
+  "title": "Questions fréquemment posées",
+  "description": "Consultez notre section FAQ pour des réponses rapides et simples aux questions les plus courantes.",
+  "items": [
+    {
+      "question": "Quand la plateforme sera-t-elle lancée ?",
+      "answer": "Nous préparons actuellement le lancement de notre MVP. Toutes les personnes inscrites sur la liste d’attente seront informées en priorité."
     },
+    {
+      "question": "Qui peut rejoindre la liste d’attente ?",
+      "answer": "Toute personne intéressée par l’utilisation d’AnyRide peut rejoindre la liste d’attente. Elle est ouverte aux passagers, aux conducteurs et aux partenaires."
+    },
+    {
+      "question": "L’inscription est-elle gratuite ?",
+      "answer": "Oui ! Rejoindre la liste d’attente est totalement gratuit."
+    },
+    {
+      "question": "Comment serai-je contacté ?",
+      "answer": "Nous vous contacterons par e-mail à l’adresse que vous avez fournie lors de votre inscription sur la liste d’attente."
+    }
+  ]
+   },
     "appDownload": {
       "title": "Téléchargez l'application AnyRide",
       "description": "AnyRide vous emmène où vous devez aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",

@@ -327,29 +327,30 @@
   "DriversPage": {
     "hero": {
       "title": "Drive with freedom. Earn on your terms.",
-      "description": "Join AnyRide and earn more while staying in control of your time and rides."
+      "description": "Join AnyRide and earn more while staying in control of your time and rides.",
+      "cta" : "Book a ride"
     },
-    "FAQ": {
-      "title": "Frequently asked questions",
-      "description": "Explore our FAQ section for quick and easy answers to the most common questions.",
-      "items": [
-        {
-          "question": "How do I become an AnyRide driver?",
-          "answer": "UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
-        },
-        {
-          "question": "What documents do I need to register?",
-          "answer": "UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
-        },
-        {
-          "question": "How are earnings calculated?",
-          "answer": "UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
-        },
-        {
-          "question": "Can I register more than one vehicle?",
-          "answer": "UI Wiki is a platform that provides a collection of UI templates and resources, allowing users to purchase, customize, and integrate designs into their own projects with ease."
-        }
-      ]
+   "FAQ": {
+    "title": "Frequently asked questions",
+    "description": "Explore our FAQ section for quick and easy answers to the most common questions.",
+    "items": [
+      {
+        "question": "When will the platform launch?",
+        "answer": "We’re preparing for our MVP launch very soon. Everyone on the waitlist will be notified first."
+      },
+      {
+        "question": "Who can join the waitlist?",
+        "answer": "Anyone interested in using AnyRide can join the waitlist. It’s open to riders, drivers, and partners."
+      },
+      {
+        "question": "Is joining free?",
+        "answer": "Yes! Joining the waitlist is completely free."
+      },
+      {
+        "question": "How will I be contacted?",
+        "answer": "We’ll contact you via the email address you provided when signing up for the waitlist."
+      }
+]
     },
     "appDownload": {
       "title": "Download AnyRide app",

@@ -1,16 +1,15 @@
 export const navLinks = [
   {
-    title: "rider",
-    router: "/services/rider",
-  },
-  {
     title: "About",
     router: "/about",
   },
-
   {
-    title: "driver",
-    router: "/services/drivers"
+    title: "Rider",
+    router: "/services/rider",
+  },
+  {
+    title: "Driver",
+    router: "/services/driver"
   },
   {
     title: "Partners",
@@ -204,3 +203,22 @@ export const FaqContents = [
     "answer": "There is no strict minimum fleet size for individual drivers, but for business partners managing fleets, having multiple vehicles may unlock additional features and incentives."
   }
 ]
+
+export const waitlistFAQ = [
+  {
+    question: "When will the platform launch?",
+    answer: "We’re preparing for our MVP launch very soon. Everyone on the waitlist will be notified first.",
+  },
+  {
+    question: "Who can join the waitlist?",
+    answer: "Anyone interested in using AnyRide can join the waitlist. It’s open to riders, drivers, and partners.",
+  },
+  {
+    question: "Is joining free?",
+    answer: "Yes! Joining the waitlist is completely free.",
+  },
+  {
+    question: "How will I be contacted?",
+    answer: "We’ll contact you via the email address you provided when signing up for the waitlist.",
+  },
+];

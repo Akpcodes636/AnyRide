@@ -1,8 +1,15 @@
-"use client";
+
 "use client";
 import Button from "../ui/Button";
+import { useRouter } from "next/navigation";
 
-const PartnerHero =()=>{
+const PartnerHero =()=> {
+
+   const router = useRouter();
+      const gotoWaitlist = () => {
+      router.push("/waitlist");
+    };
+
   return (
     <section className="bg-partner pt-[280px] pb-[80px] md:pt-[330px] md:pb-[120px]">
       <div className="container">
@@ -14,10 +21,10 @@ const PartnerHero =()=>{
             Starting with Fleet Owner&apos;s & Vehicle partners - then expanding across the DRC&apos;s transportation ecosystem.
           </p>
           <div className="flex items-center justify-center gap-[8px] flex-col md:flex-row lg:flex-row">
-            <Button type="button" css="w-[256px] h-[62px]" style="danger">
+            <Button type="button" css="w-[256px] h-[62px]" style="danger" fn={gotoWaitlist}>
               Join Our Fleet Network
             </Button>
-            <Button type="button" css="w-[226px] h-[62px]" style="tertiary">
+            <Button type="button" css="w-[226px] h-[62px]" style="tertiary" fn={gotoWaitlist}>
               View  Full Roadmap
             </Button>
           </div>

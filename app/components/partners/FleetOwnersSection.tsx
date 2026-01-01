@@ -2,8 +2,15 @@ import React from 'react';
 import { Car, DollarSign, TrendingUp, Wrench } from 'lucide-react';
 import SubTitle from '../ui/Subtitle';
 import Button from '../ui/Button';
+import { useRouter } from "next/navigation";
 
 export default function FleetOwnersSection() {
+  
+  const router = useRouter();
+        const gotoWaitlist = () => {
+        router.push("/waitlist");
+  };
+
   const features = [
     {
       icon: Car,
@@ -86,7 +93,7 @@ export default function FleetOwnersSection() {
 
         <div className='flex items-center justify-center mt-[20px]'>
             {/* CTA Button */}
-            <Button style='danger' type='button' >
+            <Button style='danger' type='button'  fn={gotoWaitlist}>
               Join Our Fleet Network
             </Button>
         </div>

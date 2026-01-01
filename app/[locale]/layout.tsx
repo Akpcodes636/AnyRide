@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import { routing } from "@/i18n/routing";
+import { Toaster } from "sonner"; // ✅ Import Sonner
 
 const sora = Sora({
   subsets: ["latin"],
@@ -21,15 +22,14 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>; // ✅ params is a Promise in Next.js 15
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params; // ✅ Await params before destructuring
+  const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // Dynamically load messages for the locale
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
@@ -43,6 +43,7 @@ export default async function RootLayout({
       <body className={`${sora.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <Toaster /> {/* ✅ Add it here for global notifications */}
         </NextIntlClientProvider>
       </body>
     </html>

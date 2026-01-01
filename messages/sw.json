@@ -326,29 +326,30 @@
   "DriversPage": {
     "hero": {
       "title": "Endesha kwa uhuru. Pata kwa masharti yako.",
-      "description": "Jiunge na AnyRide na upate zaidi huku ukiwa na udhibiti wa muda wako na safari."
+      "description": "Jiunge na AnyRide na upate zaidi huku ukiwa na udhibiti wa muda wako na safari.",
+      "cta": "Weka safari"
     },
-    "FAQ": {
-      "title": "Maswali yanayoulizwa mara kwa mara",
-      "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali ya kawaida zaidi.",
-      "items": [
-        {
-          "question": "Jinsi ya kuwa dereva wa AnyRide?",
-          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
-        },
-        {
-          "question": "Nyaraka gani ninazohitaji kusajili?",
-          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
-        },
-        {
-          "question": "Mapato yanahesabiwaje?",
-          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
-        },
-        {
-          "question": "Je, naweza kusajili zaidi ya gari moja?",
-          "answer": "UI Wiki ni jukwaa linalowasilisha mkusanyiko wa violezo na rasilimali za UI, likiwaruhusu watumiaji kununua, kubinafsisha, na kuunganisha miundo katika miradi yao wenyewe kwa urahisi."
-        }
-      ]
+   "FAQ": {
+  "title": "Maswali yanayoulizwa mara kwa mara",
+  "description": "Tembelea sehemu yetu ya maswali kwa majibu ya haraka na rahisi kwa maswali ya kawaida.",
+  "items": [
+    {
+      "question": "Jukwaa litaanza lini?",
+      "answer": "Tunaandaa uzinduzi wa MVP yetu hivi karibuni. Wote walio kwenye orodha ya kusubiri watajulishwa kwanza."
+    },
+    {
+      "question": "Ni nani anaweza kujiunga na orodha ya kusubiri?",
+      "answer": "Mtu yeyote anayevutiwa kutumia AnyRide anaweza kujiunga na orodha ya kusubiri. Iko wazi kwa abiria, madereva na washirika."
+    },
+    {
+      "question": "Je, kujiunga ni bure?",
+      "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa."
+    },
+    {
+      "question": "Nitawasilianwa vipi?",
+      "answer": "Tutawasiliana nawe kupitia barua pepe uliyotoa ulipojiunga na orodha ya kusubiri."
+    }
+  ]
     },
     "appDownload": {
       "title": "Pakua programu ya AnyRide",
