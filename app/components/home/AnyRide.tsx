@@ -32,7 +32,7 @@ const AnyRide = () => {
           <div className="flex items-start justify-start gap-4 mb-6">
             <div className="w-33.75 h-10 rounded-[5px]">
               <Image
-                src="/icons/apple.svg"
+                src="/en/apple.svg"
                 width={500}
                 height={500}
                 className="w-full h-full object-cover"
@@ -41,7 +41,7 @@ const AnyRide = () => {
             </div>
             <div className="w-33.75 h-10 rounded-[5px]">
               <Image
-                src="/icons/google.svg"
+                src="/en/google.svg"
                 width={500}
                 height={500}
                 className="w-full h-full object-cover"
