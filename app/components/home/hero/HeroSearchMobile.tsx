@@ -46,7 +46,7 @@ import Button from "../../ui/Button";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
-const rideTypes = ["Bike", "Motorcycle", "Car"];
+const rideTypes = ["Motorcycle", "Car"];
 
 const staticLocations: { [key: string]: { lat: number; lon: number; drivers: number } } = {
   "lagos": { lat: 6.5244, lon: 3.3792, drivers: 15 },
