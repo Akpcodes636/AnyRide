@@ -393,7 +393,82 @@
         ]
       }
     },
-    "copyright": "© 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
+    "copyright": " 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
+  },
+  "WaitlistPage": {
+    "hero": {
+      "subtitle": "Inaanza 2026",
+      "title": "Jiunge na orodha ya kusubiri ya AnyRide leo.",
+      "description": "Jiunge na orodha ya kusubiri ya AnyRide leo."
+    },
+    "form": {
+      "selectOption": "Chagua chaguo",
+      "userTypes": {
+        "rider": "Abiria",
+        "driver": "Dereva",
+        "partner": "Mshirika"
+      },
+      "firstNamePlaceholder": "Jina la kwanza",
+      "lastNamePlaceholder": "Jina la familia",
+      "emailPlaceholder": "Anwani ya barua pepe",
+      "submit": "Jiunge na orodha ya kusubiri"
+    },
+    "FAQ": {
+      "title": "Maswali Yanayoulizwa Mara kwa Mara",
+      "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali yanayoulizwa zaidi",
+      "items": [
+        {
+          "question": "Jumla ya jukwaa itazinduliwa lini?",
+          "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza."
+        },
+        {
+          "question": "Nani anaweza kujiunga na orodha ya kusubiri?",
+          "answer": "Kila mtu anayevutiwa kutumia AnyRide anaweza kujiunga na orodha ya kusubiri: abiria, madereva na washirika."
+        },
+        {
+          "question": "Je, kujiunga ni bure?",
+          "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa."
+        },
+        {
+          "question": "Nita wasiliana vipi?",
+          "answer": "Tutawasiliana nawe kupitia barua pepe uliyopewa wakati wa kujiandikisha."
+        }
+      ]
+    }
+  },
+  "ContactPage": {
+    "hero": {
+      "title": "Tuko hapa kusaidia",
+      "description": "Wasiliana na timu yetu kwa maswali yoyote, wasiwasi, au maoni.",
+      "cta": "Sema nasi"
+    },
+    "form": {
+      "title": "Una tatizo?",
+      "description": "Jaza fomu hapa chini, wasilisha tiketi na tutakujibu.",
+      "fields": {
+        "subject": "Mada",
+        "subjectPlaceholder": "Ingiza mada",
+        "fullName": "Jina Kamili",
+        "fullNamePlaceholder": "Ingiza jina lako kamili",
+        "email": "Barua pepe",
+        "emailPlaceholder": "Ingiza barua pepe yako",
+        "phone": "Namba ya Simu",
+        "phonePlaceholder": "Ingiza namba ya simu",
+        "category": "Kategoria",
+        "selectCategory": "Chagua kategoria",
+        "paymentIssue": "Tatizo la malipo",
+        "rideIssue": "Tatizo la safari",
+        "country": "Nchi",
+        "selectCountry": "Chagua Nchi",
+        "responseLanguage": "Lugha ya jibu",
+        "selectLanguage": "Chagua lugha ya jibu",
+        "message": "Ujumbe",
+        "messagePlaceholder": "Andika ujumbe/maoni/malalamiko yako",
+        "attachment": "Kiambatanisho",
+        "emailUpdates": "Nitumie sasisho kupitia barua pepe"
+      },
+      "submit": "Wasilisha"
+    }
   },
   "FleetPartnersPage": {
     "hero": {
@@ -457,6 +532,13 @@
         { "question": "Je, kujiunga ni bure?", "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa." },
         { "question": "Nita wasiliana vipi?", "answer": "Tutawasiliana nawe kupitia barua pepe uliyopewa wakati wa kujiandikisha." }
       ]
+    },
+    "footer": {
+      "description": "Tunajenga mtandao wa usafiri wa ndani unaotaka zaidi — ulioundwa kwa abiria na watu halisi. Nafuu, salama, na daima hapa unapohitaji.",
+      "company": ["Kuhusu", "Blogi", "Miji"],
+      "help": ["Msaada", "Usalama", "Usalama"],
+      "legal": ["Masharti", "Faragha", "Faragha"],
+      "copyright": " 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
     }
-}
+  }
 }

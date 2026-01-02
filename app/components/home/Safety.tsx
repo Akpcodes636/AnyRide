@@ -38,8 +38,8 @@ const Safety = () => {
         <div className="w-full max-w-[220px] md:max-w-[360px] mx-auto flex items-center justify-center">
           <Image
             src="/images/Phone-1.png"
-            width={500}
-            height={500}
+            width={360}
+            height={720}
             className="w-full h-auto object-contain"
             alt={t("title")}
           />

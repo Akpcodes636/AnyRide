@@ -2,13 +2,14 @@
 import React from 'react';
 import Button from '../ui/Button';
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Banner() {
-
-   const router = useRouter();
-      const gotoWaitlist = () => {
-      router.push("/waitlist");
-    };
+  const t = useTranslations("FleetPartnersPage");
+  const router = useRouter();
+  const gotoWaitlist = () => {
+    router.push("/waitlist");
+  };
 
   return (
     <div className="py-[78px] bg-black flex items-center justify-center p-4">
@@ -26,12 +27,12 @@ export default function Banner() {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <Button type="button" style="danger"  css="w-[256px] h-[62px]" fn={gotoWaitlist}>
-            Join Our Fleet Network
+          <Button type="button" style="danger"  css="min-w-[200px] sm:min-w-[256px] h-auto sm:h-[62px] px-6 py-3 sm:py-9" fn={gotoWaitlist}>
+            {t("hero.joinCTA")}
           </Button>
           
-          <Button type="button" style="tertiary"  css="w-[256px] h-[62px]" fn={gotoWaitlist}>
-            View Full Roadmap
+          <Button type="button" style="tertiary"  css="min-w-[200px] sm:min-w-[256px] h-auto sm:h-[62px] px-6 py-3 sm:py-9" fn={gotoWaitlist}>
+            {t("hero.roadmapCTA")}
           </Button>
         </div>
         

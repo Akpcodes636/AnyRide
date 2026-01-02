@@ -2,25 +2,18 @@
 import { useState } from "react";
 import InputField from "../ui/InputField";
 import SelectField from "../ui/SelectField";
+import { useTranslations } from "next-intl";
 
 const ContactForm = () => {
-  //   const [category, setCategory] = useState("");
-
-  //   const categories = [
-  //     { value: "billing", label: "Billing" },
-  //     { value: "technical", label: "Technical Support" },
-  //     { value: "general", label: "General Inquiry" },
-  //     { value: "other", label: "Other" },
-  //   ];
+  const t = useTranslations("ContactPage.form");
 
   return (
     <section className="bg-value">
       <div className="container py-[32px] md:py-[64px]">
         <div className="">
-          <h2 className="text-white text-center">Got an issue?</h2>
+          <h2 className="text-white text-center">{t("title")}</h2>
           <p className="text-[#E6E6EB] text-center text-[16px] md:text-[18px] mb-[48px]">
-            Fill out the form below, submit the ticket and we&apos;ll get back
-            to you.
+            {t("description")}
           </p>
 
           <form action="">
@@ -71,8 +64,8 @@ const ContactForm = () => {
               <form className="flex gap-y-[24px] flex-col">
                 <InputField
                   name="subject"
-                  label="Subject"
-                  placeholder="Enter subject"
+                  label={t("fields.subject")}
+                  placeholder={t("fields.subjectPlaceholder")}
                   value=""
                   onChange={() => {}}
                   required
@@ -80,8 +73,8 @@ const ContactForm = () => {
 
                 <InputField
                   name="fullname"
-                  label="Full Name"
-                  placeholder="Enter your full name"
+                  label={t("fields.fullName")}
+                  placeholder={t("fields.fullNamePlaceholder")}
                   value=""
                   onChange={() => {}}
                   required
@@ -89,8 +82,8 @@ const ContactForm = () => {
 
                 <InputField
                   name="email"
-                  label="Email"
-                  placeholder="Enter your email"
+                  label={t("fields.email")}
+                  placeholder={t("fields.emailPlaceholder")}
                   value=""
                   onChange={() => {}}
                   required
@@ -98,8 +91,8 @@ const ContactForm = () => {
 
                 <InputField
                   name="phone"
-                  label="Phone Number"
-                  placeholder="Enter phone number"
+                  label={t("fields.phone")}
+                  placeholder={t("fields.phonePlaceholder")}
                   value=""
                   onChange={() => {}}
                   required
@@ -107,22 +100,22 @@ const ContactForm = () => {
 
                 <SelectField
                   name="category"
-                  label="Category"
+                  label={t("fields.category")}
                   value=""
                   options={[
-                    { value: "", label: "Select category" },
-                    { value: "payment", label: "Payment issue" },
-                    { value: "ride", label: "Ride issue" },
+                    { value: "", label: t("fields.selectCategory") },
+                    { value: "payment", label: t("fields.paymentIssue") },
+                    { value: "ride", label: t("fields.rideIssue") },
                   ]}
                   
                 />
 
                 <SelectField
                   name="country"
-                  label="Country"
+                  label={t("fields.country")}
                   value=""
                   options={[
-                    { value: "", label: "Select Country" },
+                    { value: "", label: t("fields.selectCountry") },
                     { value: "ng", label: "Nigeria" },
                     { value: "gh", label: "Ghana" },
                   ]}
@@ -131,23 +124,24 @@ const ContactForm = () => {
 
                 <SelectField
                   name="language"
-                  label="Response language"
+                  label={t("fields.responseLanguage")}
                   value=""
                   options={[
-                    { value: "", label: "Select response language" },
+                    { value: "", label: t("fields.selectLanguage") },
                     { value: "en", label: "English" },
-                    { value: "fr", label: "French" },
+                    { value: "fr", label: "Français" },
+                    { value: "sw", label: "Kiswahili" },
                   ]}
                 />
 
                 {/* Message */}
                 <div className="flex flex-col gap-2">
                   <label className="label-class">
-                    Message <span className="text-text-negative">*</span>
+                    {t("fields.message")} <span className="text-text-negative">*</span>
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Type your message/comment/complaints"
+                    placeholder={t("fields.messagePlaceholder")}
                     className="input-class resize-none h-[189px] w-full rounded-[8px] bg-white p-2"
                   />
                   <p className="text-right text-xs text-gray-500">0/1000</p>
@@ -155,7 +149,7 @@ const ContactForm = () => {
 
                 {/* Attachment */}
                 <div className="flex flex-col gap-2">
-                  <label className="label-class">Attachment(s)</label>
+                  <label className="label-class">{t("fields.attachment")}</label>
                   <div className="flex h-12 w-12 items-center justify-center rounded-md border border-dashed border-gray-400 text-xl">
                     +
                   </div>
@@ -164,7 +158,7 @@ const ContactForm = () => {
                 {/* Checkbox */}
                 <label className="flex items-center gap-2 text-sm">
                   <input type="checkbox" className="accent-red-600" />
-                  Send me updates via email
+                  {t("fields.emailUpdates")}
                 </label>
 
                 {/* Submit */}
@@ -172,7 +166,7 @@ const ContactForm = () => {
                   type="submit"
                   className="mt-4 w-full rounded-full bg-[#A10000] py-3 text-white font-semibold hover:opacity-90"
                 >
-                  Submit
+                  {t("submit")}
                 </button>
               </form>
             </div>

@@ -2,8 +2,10 @@
 
 import SubTitle from "../ui/Subtitle";
 import WaitForm from "./WaitForm";
+import { useTranslations } from "next-intl";
 
 export default function HeroWaitList() {
+  const t = useTranslations("WaitlistPage.hero");
   return (
     <section
       className="min-h-screen w-full"
@@ -14,10 +16,10 @@ export default function HeroWaitList() {
     >
       <div className="container pt-[200px]">
         <div className="flex items-center justify-center mb-[24px]">
-          <SubTitle img="/icons/SVG.png" text="Launching in 2026" />
+          <SubTitle img="/icons/SVG.png" text={t("subtitle")} />
         </div>
-        <h2 className="text-white text-center mb-[16px]">Join AnyRide Waitlist <br /> Today.</h2>
-        <p className="text-[16px] md:text-[18px] text-white font-normal tracking-[-2%] leading-[160%] text-center">Join AnyRide Waitlist Today.</p>
+        <h2 className="text-white text-center mb-[16px]">{t("title")}</h2>
+        <p className="text-[16px] md:text-[18px] text-white font-normal tracking-[-2%] leading-[160%] text-center">{t("description")}</p>
 
         <WaitForm />
       </div>

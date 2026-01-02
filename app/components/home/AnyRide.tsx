@@ -14,8 +14,8 @@ const AnyRide = () => {
         <div className="h-full">
           <Image
             src="/images/Anyride.png"
-            width={500}
-            height={500}
+            width={600}
+            height={800}
             alt={t("HomePage.appDownload.title")}
             className="w-full h-full object-cover"
           />
@@ -33,8 +33,8 @@ const AnyRide = () => {
             <div className="w-33.75 h-10 rounded-[5px]">
               <Image
                 src="/icons/apple.svg"
-                width={500}
-                height={500}
+                width={135}
+                height={40}
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
               />
@@ -42,8 +42,8 @@ const AnyRide = () => {
             <div className="w-33.75 h-10 rounded-[5px]">
               <Image
                 src="/icons/google.svg"
-                width={500}
-                height={500}
+                width={135}
+                height={40}
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.google")}
               />
@@ -55,8 +55,8 @@ const AnyRide = () => {
             <div className="w-19 h-8">
               <Image
                 src="/images/pictures.png"
-                width={500}
-                height={500}
+                width={76}
+                height={32}
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.title")}
               />

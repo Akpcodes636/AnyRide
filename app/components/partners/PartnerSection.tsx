@@ -1,8 +1,10 @@
 "use client";
 import SubTitle from "../ui/Subtitle";
 import PartnerGrid from "./PartnerGrid";
+import { useTranslations } from "next-intl";
 
 const PartnerSection = () =>{
+    const t = useTranslations("FleetPartnersPage.whoCanPartner");
     return (
      <section className="py-[32px] md:py-[50px] lg:py-[72px]">
         <div className="container">
@@ -10,7 +12,7 @@ const PartnerSection = () =>{
             <div className="mb-[24px]">
                  <SubTitle text="Safety & Trust" css="rounded-[40px] font-normal" />
             </div>
-            <h2>Who Can Partner with AnyRide</h2>
+            <h2>{t("title")}</h2>
             </div>
             
             <div className="py-[132px]">

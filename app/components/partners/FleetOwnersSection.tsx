@@ -3,9 +3,10 @@ import { Car, DollarSign, TrendingUp, Wrench } from 'lucide-react';
 import SubTitle from '../ui/Subtitle';
 import Button from '../ui/Button';
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function FleetOwnersSection() {
-  
+  const t = useTranslations("FleetPartnersPage");
   const router = useRouter();
         const gotoWaitlist = () => {
         router.push("/waitlist");
@@ -14,29 +15,29 @@ export default function FleetOwnersSection() {
   const features = [
     {
       icon: Car,
-      title: "Vehicle Utilization",
-      description: "Maximize your fleet's earning potential with organized driver assignments.",
+      title: t("benefits.vehicleUtilization"),
+      description: t("benefits.vehicleUtilization"),
       color: "text-red-500",
       bgColor: "bg-red-50"
     },
     {
       icon: DollarSign,
-      title: "Revenue Sharing",
-      description: "We connect you with a nearby verified driver. See their name, rating, and photo.",
+      title: t("benefits.revenueSharing"),
+      description: t("benefits.revenueSharing"),
       color: "text-blue-500",
       bgColor: "bg-blue-50"
     },
     {
       icon: TrendingUp,
-      title: "Scalable Growth",
-      description: "Grow your vehicle pickup with a scale, and pay with cash or wallet.",
+      title: t("benefits.scalableGrowth"),
+      description: t("benefits.scalableGrowth"),
       color: "text-green-500",
       bgColor: "bg-green-50"
     },
     {
       icon: Wrench,
-      title: "Maintenance Support",
-      description: "Track your vehicles outlined pickup with a scale, and pay with cash or wallet.",
+      title: t("benefits.maintenanceSupport"),
+      description: t("benefits.maintenanceSupport"),
       color: "text-gray-700",
       bgColor: "bg-gray-50"
     }
@@ -47,10 +48,10 @@ export default function FleetOwnersSection() {
       <div className="container  py-8 lg:py-16">
         <div className='flex items-center justify-center flex-col'>
             <div className='mb-[8px]'>
-            <SubTitle text="STARTING NOW" />
+            <SubTitle text={t("startingNow.title")} />
             </div>
-            <h2 className='text-center'> Fleet Owners &<br />Vehicle Partners</h2>
-            <p className='text-[#545454] text-center text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] max-w-[676px] mx-auto mb-[80px]'>We&apos;re beginning with the foundation of our platform - partnering with fleet owners who provide vehicles and motorcycles for our driver network. This is where you can join us immediately and grow with AnyRide from day one.</p>
+            <h2 className='text-center'>{t("startingNow.subtitle")}</h2>
+            <p className='text-[#545454] text-center text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] max-w-[676px] mx-auto mb-[80px]'>{t("startingNow.description")}</p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Image */}
@@ -94,7 +95,7 @@ export default function FleetOwnersSection() {
         <div className='flex items-center justify-center mt-[20px]'>
             {/* CTA Button */}
             <Button style='danger' type='button'  fn={gotoWaitlist}>
-              Join Our Fleet Network
+              {t("hero.joinCTA")}
             </Button>
         </div>
       </div>

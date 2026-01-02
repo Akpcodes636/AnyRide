@@ -61,8 +61,8 @@ const Values = () => {
           <div className="w-full h-full items-center justify-center hidden md:hidden lg:flex">
             <Image
               src="/images/Phone.png"
-              width={500}
-              height={500}
+              width={360}
+              height={720}
               className="w-full h-auto object-contain"
               alt={t("title")}
             />

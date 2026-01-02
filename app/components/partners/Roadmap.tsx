@@ -1,72 +1,18 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function Roadmap() {
-  const roadmapSteps = [
-    {
-      number: 1,
-      title: "Fleet Owners",
-      subtitle: "(Now Live)",
-      description: "We are currently live with individual and corporate fleet owners who provide vehicle and motorcycles for our driver network. This is where you can join us immediately and work with Anytime from day one.",
-      highlights: [
-        "Join the live",
-        "Immediate onboarding for owners",
-        "Full vehicle fleet, motorcycle, scooter and ."
-      ],
-      align: "right"
-    },
-    {
-      number: 2,
-      title: "Service Providers",
-      subtitle: null,
-      description: "We are partnering with service providers to offer our fleet owners and drivers value-added services:",
-      highlights: [
-        "Discounted vehicle maintenance",
-        "Fuel partnerships & benefits",
-        "Insurance packages at lower rates",
-        "Tire and oil maintenance services"
-      ],
-      align: "left"
-    },
-    {
-      number: 3,
-      title: "Financial & Insurance Partners",
-      subtitle: null,
-      description: "We plan to collaborate with financial institutions to provide:",
-      highlights: [
-        "Vehicle financing & leasing",
-        "Vehicle financing",
-        "Micro-loans for drivers & partners",
-        "Insurance options tailored for gig economy",
-        "Flexible payment plans and payroll services"
-      ],
-      align: "right"
-    },
-    {
-      number: 4,
-      title: "Corporate & Institutional Partners",
-      subtitle: null,
-      description: "At this stage, we will work with businesses, organizations, and institutions to provide:",
-      highlights: [
-        "B2B logistics services",
-        "Employee transport solutions",
-        "Contract-based services"
-      ],
-      align: "left"
-    },
-    {
-      number: 5,
-      title: "Smart Mobility Ecosystem",
-      subtitle: null,
-      description: "Our final goal is to establish a fully integrated mobility ecosystem by partnering with:",
-      highlights: [
-        "EV Charging station provider",
-        "Tech innovation partners (IoT, telematics)",
-        "Government & urban planning entities",
-        "Sustainability and green energy providers"
-      ],
-      align: "right"
-    }
-  ];
+  const t = useTranslations("FleetPartnersPage.expansionRoadmap");
+  const stepsData = t.raw("steps") as Array<{title: string; description: string}>;
+
+  const roadmapSteps = stepsData.map((step, index) => ({
+    number: index + 1,
+    title: step.title,
+    subtitle: null,
+    description: step.description,
+    highlights: [],
+    align: index % 2 === 0 ? "right" : "left"
+  }));
 
   return (
     <div className="bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800 bg-value py-12 sm:py-16 lg:py-20">
@@ -74,11 +20,10 @@ export default function Roadmap() {
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Our Partnership<br />Expansion Roadmap
+            {t("title")}
           </h2>
           <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
-            Here's how we're building the complete transport/taxi
-            ecosystem step by step.
+            {t("description")}
           </p>
         </div>
 

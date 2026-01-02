@@ -323,86 +323,90 @@
     }
   },
 
-  "DriversPage": {
+  "WaitlistPage": {
     "hero": {
-      "title": "Conduisez en liberté. Gagnez selon vos conditions.",
-      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos trajets.",
-      "cta": "Réserver une course"
+      "subtitle": "Lancement en 2026",
+      "title": "Rejoignez la liste d'attente AnyRide aujourd'hui.",
+      "description": "Rejoignez la liste d'attente AnyRide aujourd'hui."
     },
-"FAQ": {
-  "title": "Questions fréquemment posées",
-  "description": "Consultez notre section FAQ pour des réponses rapides et simples aux questions les plus courantes.",
-  "items": [
-    {
-      "question": "Quand la plateforme sera-t-elle lancée ?",
-      "answer": "Nous préparons actuellement le lancement de notre MVP. Toutes les personnes inscrites sur la liste d’attente seront informées en priorité."
-    },
-    {
-      "question": "Qui peut rejoindre la liste d’attente ?",
-      "answer": "Toute personne intéressée par l’utilisation d’AnyRide peut rejoindre la liste d’attente. Elle est ouverte aux passagers, aux conducteurs et aux partenaires."
-    },
-    {
-      "question": "L’inscription est-elle gratuite ?",
-      "answer": "Oui ! Rejoindre la liste d’attente est totalement gratuit."
-    },
-    {
-      "question": "Comment serai-je contacté ?",
-      "answer": "Nous vous contacterons par e-mail à l’adresse que vous avez fournie lors de votre inscription sur la liste d’attente."
-    }
-  ]
-   },
-    "appDownload": {
-      "title": "Téléchargez l'application AnyRide",
-      "description": "AnyRide vous emmène où vous devez aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",
-      "platforms": {
-        "apple": "Apple App Store",
-        "google": "Google Play Store"
+    "form": {
+      "selectOption": "Sélectionnez une option",
+      "userTypes": {
+        "rider": "Passager",
+        "driver": "Conducteur",
+        "partner": "Partenaire"
       },
-      "reviews": {
-        "rating": "4.9",
-        "trustedBy": "Approuvé par plus de 1125 utilisateurs"
-      }
+      "firstNamePlaceholder": "Prénom",
+      "lastNamePlaceholder": "Nom de famille",
+      "emailPlaceholder": "Adresse e-mail",
+      "submit": "Rejoindre la liste d'attente"
+    },
+    "FAQ": {
+      "title": "Questions fréquemment posées",
+      "description": "Explorez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes",
+      "items": [
+        {
+          "question": "Quand la plateforme sera-t-elle lancée ?",
+          "answer": "Nous nous préparons pour le lancement de notre MVP très bientôt. Tous les inscrits à la liste d'attente seront informés en premier."
+        },
+        {
+          "question": "Qui peut rejoindre la liste d'attente ?",
+          "answer": "Toute personne intéressée par l'utilisation d'AnyRide peut rejoindre la liste d'attente. Elle est ouverte aux passagers, conducteurs et partenaires."
+        },
+        {
+          "question": "L'inscription est-elle gratuite ?",
+          "answer": "Oui ! Rejoindre la liste d'attente est totalement gratuit."
+        },
+        {
+          "question": "Comment serai-je contacté ?",
+          "answer": "Nous vous contacterons via l'adresse e-mail que vous avez fournie lors de votre inscription à la liste d'attente."
+        }
+      ]
     }
   },
-
-  "Footer": {
-    "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vraies personnes. Abordable, sûr et toujours là quand vous en avez besoin.",
-    "sections": {
-      "company": {
-        "title": "Entreprise",
-        "links": [
-          { "label": "À propos", "href": "/about" },
-          { "label": "Blog", "href": "/blog" },
-          { "label": "Villes", "href": "/cities" }
-        ]
-      },
-      "help": {
-        "title": "Aide",
-        "links": [
-          { "label": "Assistance", "href": "/support" },
-          { "label": "Sécurité", "href": "/safety" },
-          { "label": "Tarification", "href": "/pricing" }
-        ]
-      },
-      "legal": {
-        "title": "Légal",
-        "links": [
-          { "label": "Conditions", "href": "/terms" },
-          { "label": "Confidentialité", "href": "/privacy" },
-          { "label": "Cookies", "href": "/cookies" }
-        ]
-      }
+  "ContactPage": {
+    "hero": {
+      "title": "Nous sommes là pour vous aider",
+      "description": "Contactez notre équipe pour toute question, préoccupation ou commentaire.",
+      "cta": "Discutez avec nous"
     },
-    "copyright": "© 2025 AnyRide. Fait pour tous ceux qui bougent."
+    "form": {
+      "title": "Vous avez un problème ?",
+      "description": "Remplissez le formulaire ci-dessous, soumettez le ticket et nous vous recontacterons.",
+      "fields": {
+        "subject": "Sujet",
+        "subjectPlaceholder": "Entrez le sujet",
+        "fullName": "Nom complet",
+        "fullNamePlaceholder": "Entrez votre nom complet",
+        "email": "E-mail",
+        "emailPlaceholder": "Entrez votre e-mail",
+        "phone": "Numéro de téléphone",
+        "phonePlaceholder": "Entrez le numéro de téléphone",
+        "category": "Catégorie",
+        "selectCategory": "Sélectionnez une catégorie",
+        "paymentIssue": "Problème de paiement",
+        "rideIssue": "Problème de trajet",
+        "country": "Pays",
+        "selectCountry": "Sélectionnez un pays",
+        "responseLanguage": "Langue de réponse",
+        "selectLanguage": "Sélectionnez la langue de réponse",
+        "message": "Message",
+        "messagePlaceholder": "Tapez votre message/commentaire/plainte",
+        "attachment": "Pièce(s) jointe(s)",
+        "emailUpdates": "M'envoyer des mises à jour par e-mail"
+      },
+      "submit": "Soumettre"
+    }
   },
   "FleetPartnersPage": {
     "hero": {
       "title": "Développez votre activité de transport avec AnyRide",
       "subtitle": "En commençant par les propriétaires de flotte et partenaires de véhicules - puis en s'étendant à l'ensemble de l'écosystème de transport de la RDC.",
-       "joinCTA": "Rejoignez notre réseau de flotte",
+      "joinCTA": "Rejoignez notre réseau de flotte",
       "roadmapCTA": "Voir la feuille de route complète",
       "currentFocus": "Focus actuel",
       "focus": "Flotte",
+      "current": "Financement de pré-amorçage",
       "preSeedFunding": "1,5 M$",
       "futureCategories": "8+",
       "safetyTrust": "Sécurité et Confiance"

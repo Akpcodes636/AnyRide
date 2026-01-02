@@ -154,13 +154,16 @@ import Button from "../ui/Button";
 import Loader from "../ui/Loader";
 import { waitListSchema } from "@/lib/validations/userValidations";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 export default function WaitForm() {
+  const t = useTranslations("WaitlistPage.form");
+  
   const userTypeOptions = [
-    { value: "", label: "Select an option" },
-    { value: "rider", label: "Rider" },
-    { value: "driver", label: "Driver" },
-    { value: "partner", label: "Partner" },
+    { value: "", label: t("selectOption") },
+    { value: "rider", label: t("userTypes.rider") },
+    { value: "driver", label: t("userTypes.driver") },
+    { value: "partner", label: t("userTypes.partner") },
   ];
   
 
@@ -213,7 +216,7 @@ export default function WaitForm() {
               label=""
               type="text"
               name="firstName"
-              placeholder="First Name"
+              placeholder={t("firstNamePlaceholder")}
               css="!bg-white w-full !h-[60px] !rounded-[100px]"
               value={formik.values.firstName}
               onChange={formik.handleChange}
@@ -229,7 +232,7 @@ export default function WaitForm() {
               label=""
               type="text"
               name="lastName"
-              placeholder="Last Name"
+              placeholder={t("lastNamePlaceholder")}
               css="!bg-white w-full !h-[60px] !rounded-[100px]"
               value={formik.values.lastName}
               onChange={formik.handleChange}
@@ -245,7 +248,7 @@ export default function WaitForm() {
               label=""
               type="email"
               name="emailAddress"
-              placeholder="Email Address"
+              placeholder={t("emailPlaceholder")}
               css="!bg-white w-full !h-[60px] !rounded-[100px]"
               value={formik.values.emailAddress}
               onChange={formik.handleChange}
@@ -281,7 +284,7 @@ export default function WaitForm() {
                 fn={() => console.log("🔴 Button clicked!")}  
                 css="w-[200px] h-[60px] bg-red-500 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold rounded-[50px] transition-colors mt-2"
               >
-                {formik.isSubmitting ? <Loader /> : "Join the waitlist"}
+                {formik.isSubmitting ? <Loader /> : t("submit")}
               </Button>
 
              

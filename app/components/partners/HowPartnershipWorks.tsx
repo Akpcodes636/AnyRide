@@ -1,36 +1,17 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function HowPartnershipWorks() {
-  const steps = [
-    {
-      number: "Step 1:",
-      title: "Register as a Partner",
-      description: "Submit business or ownership details.",
-      color: "text-red-600"
-    },
-    {
-      number: "Step 2:",
-      title: "Add Vehicles",
-      description: null,
-      bullets: [
-        "Add your vehicle motorcycles",
-        "Upload documentation"
-      ],
-      color: "text-red-600"
-    },
-    {
-      number: "Step 3:",
-      title: "Assign Drivers",
-      description: "Manage your drivers or onboard new ones.",
-      color: "text-red-600"
-    },
-    {
-      number: "Step 4:",
-      title: "Go Live & Earn",
-      description: "Track trips, performance, and payout in one dashboard.",
-      color: "text-red-600"
-    }
-  ];
+  const t = useTranslations("FleetPartnersPage.howItWorks");
+  const stepsData = t.raw("steps") as Array<{step: number; title: string; description?: string | string[]}>;
+  
+  const steps = stepsData.map((step, index) => ({
+    number: `Step ${step.step}:`,
+    title: step.title,
+    description: typeof step.description === 'string' ? step.description : null,
+    bullets: Array.isArray(step.description) ? step.description : undefined,
+    color: "text-red-600"
+  }));
 
   return (
     <div className="bg-white py-12 sm:py-16 lg:py-20">
@@ -41,10 +22,10 @@ export default function HowPartnershipWorks() {
             HOW IT WORKS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            How Partnership with<br />AnyRide works
+            {t("title")}
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Here is a simple steps to partner with us
+            {t("description")}
           </p>
         </div>
 
