@@ -394,5 +394,103 @@
       }
     },
     "copyright": "© 2025 AnyRide. Fait pour tous ceux qui bougent."
+  },
+  "FleetPartnersPage": {
+    "hero": {
+      "title": "Développez votre activité de transport avec AnyRide",
+      "subtitle": "En commençant par les propriétaires de flotte et partenaires de véhicules - puis en s'étendant à l'ensemble de l'écosystème de transport de la RDC.",
+       "joinCTA": "Rejoignez notre réseau de flotte",
+      "roadmapCTA": "Voir la feuille de route complète",
+      "currentFocus": "Focus actuel",
+      "focus": "Flotte",
+      "preSeedFunding": "1,5 M$",
+      "futureCategories": "8+",
+      "safetyTrust": "Sécurité et Confiance"
+    },
+    "whoCanPartner": {
+      "title": "Qui peut s'associer avec AnyRide",
+      "categories": [
+        {
+          "type": "Propriétaires de flotte",
+          "description": [
+            "Gérez plusieurs voitures ou motos",
+            "Attribuez des véhicules aux conducteurs",
+            "Suivez les performances et les gains"
+          ]
+        },
+        {
+          "type": "Entreprises de transport",
+          "description": [
+            "Échelle des opérations numériques",
+            "Rapports centralisés et paiements",
+            "Intégration conforme"
+          ]
+        },
+        {
+          "type": "Opérateurs de motos",
+          "description": [
+            "Idéal pour les trajets rapides en ville",
+            "Optimisé pour la mobilité à moto",
+            "Coûts d'exploitation réduits"
+          ]
+        },
+        {
+          "type": "Investisseurs individuels",
+          "description": [
+            "Possédez des véhicules, attribuez des conducteurs",
+            "Gagnez sans conduire vous-même"
+          ]
+        }
+      ]
+    },
+    "startingNow": {
+      "title": "COMMENCEZ MAINTENANT",
+      "subtitle": "Propriétaires de flotte & partenaires de véhicules",
+      "description": "Nous commençons par les bases de notre plateforme - en partenariat avec des propriétaires de flotte qui fournissent des véhicules et motos pour notre réseau de conducteurs. Rejoignez-nous immédiatement et développez votre activité avec AnyRide dès le premier jour."
+    },
+    "benefits": {
+      "vehicleUtilization": "Maximisez le potentiel de gain de votre flotte avec une affectation organisée des conducteurs.",
+      "revenueSharing": "Nous vous connectons avec un conducteur vérifié à proximité. Voyez son nom, sa note et sa photo.",
+      "scalableGrowth": "Développez votre flotte avec une échelle et payez en espèces ou via le portefeuille.",
+      "maintenanceSupport": "Suivez vos véhicules avec prise en charge organisée et payez en espèces ou via le portefeuille."
+    },
+    "howItWorks": {
+      "title": "Comment fonctionne le partenariat avec AnyRide",
+      "description": "Voici les étapes simples pour vous associer à nous",
+      "steps": [
+        { "step": 1, "title": "Inscrivez-vous en tant que partenaire", "description": "Soumettez les détails de l'entreprise ou de la propriété." },
+        { "step": 2, "title": "Ajoutez des véhicules", "description": ["Ajoutez vos véhicules/motos", "Téléchargez les documents"] },
+        { "step": 3, "title": "Attribuez des conducteurs", "description": "Gérez vos conducteurs ou intégrez-en de nouveaux." },
+        { "step": 4, "title": "Activez et gagnez", "description": "Suivez les trajets, performances et paiements sur un seul tableau de bord." }
+      ]
+    },
+    "expansionRoadmap": {
+      "title": "Feuille de route de l'expansion du partenariat",
+      "description": "Voici comment nous construisons l'écosystème complet de transport/taxi étape par étape.",
+      "steps": [
+        { "title": "Propriétaires de flotte (Maintenant en direct)", "description": "Nous sommes actuellement en direct avec des propriétaires de flotte individuels et corporatifs qui fournissent véhicules et motos pour notre réseau. Rejoignez-nous dès aujourd'hui." },
+        { "title": "Fournisseurs de services", "description": "Nous collaborons avec des fournisseurs de services pour offrir aux propriétaires et conducteurs des services à valeur ajoutée : entretien à prix réduit, carburant, assurance et services de pneus/huile." },
+        { "title": "Partenaires financiers et assurances", "description": "Collaboration avec institutions financières pour financement, location, micro-prêts et assurance adaptée à l'économie des petits boulots." },
+        { "title": "Partenaires corporatifs et institutionnels", "description": "Services logistiques B2B, solutions de transport pour employés et services contractuels." },
+        { "title": "Écosystème de mobilité intelligente", "description": "Objectif final : un écosystème de mobilité intégré avec recharge EV, innovation technologique, planification urbaine et durabilité." }
+      ]
+    },
+    "FAQ": {
+      "title": "Questions fréquemment posées",
+      "description": "Découvrez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
+      "items": [
+        { "question": "Quand la plateforme sera-t-elle lancée ?", "answer": "Nous préparons le lancement de notre MVP très bientôt. Les inscrits seront informés en premier." },
+        { "question": "Qui peut rejoindre la liste d'attente ?", "answer": "Tout utilisateur intéressé peut rejoindre la liste d'attente : passagers, conducteurs et partenaires." },
+        { "question": "L'inscription est-elle gratuite ?", "answer": "Oui ! L'inscription à la liste d'attente est totalement gratuite." },
+        { "question": "Comment serai-je contacté ?", "answer": "Nous vous contacterons via l'e-mail fourni lors de l'inscription." }
+      ]
+    },
+    "footer": {
+      "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vrais utilisateurs. Abordable, sûr et toujours là quand vous en avez besoin.",
+      "company": ["À propos", "Blog", "Villes"],
+      "help": ["Support", "Sécurité", "Sécurité"],
+      "legal": ["Conditions", "Confidentialité", "Confidentialité"],
+      "copyright": "© 2025 AnyRide. Conçu pour tous ceux en mouvement."
+    }
   }
 }

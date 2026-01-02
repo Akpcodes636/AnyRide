@@ -394,5 +394,69 @@
       }
     },
     "copyright": "© 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
-  }
+  },
+  "FleetPartnersPage": {
+    "hero": {
+      "title": "Panua biashara yako ya usafirishaji na AnyRide",
+      "subtitle": "Kuanza na wamiliki wa magari & washirika wa magari - kisha kupanua kwenye mfumo wa usafirishaji wa DRC.",
+       "joinCTA": "Jiunge na Mtandao wetu wa Floti",
+      "roadmapCTA": "Angalia Ramani Kamili",
+      "currentFocus": "Kipaumbele cha sasa",
+      "focus": "Floti",
+      "preSeedFunding": "$1.5M",
+      "futureCategories": "8+",
+      "safetyTrust": "Usalama & Uaminifu"
+    },
+    "whoCanPartner": {
+      "title": "Nani Anaweza Kushirikiana na AnyRide",
+      "categories": [
+        { "type": "Wamiliki wa Floti", "description": ["Simamia magari au pikipiki kadhaa", "Gawa magari kwa madereva", "Fuata utendaji na mapato"] },
+        { "type": "Makampuni ya Usafirishaji", "description": ["Panua shughuli kwa kidijitali", "Ripoti na malipo yaliyowekwa kati", "Uendeshaji unaoendana na sheria"] },
+        { "type": "Wendeshaji Pikipiki", "description": ["Bora kwa safari za haraka mjini", "Imeboreshwa kwa usafirishaji wa pikipiki", "Gharama za chini za uendeshaji"] },
+        { "type": "Wajasiriamali Binafsi", "description": ["Miliki magari, gawa madereva", "Pata mapato bila kuendesha mwenyewe"] }
+      ]
+    },
+    "startingNow": {
+      "title": "ANZA SASA",
+      "subtitle": "Wamiliki wa Floti & Washirika wa Magari",
+      "description": "Tunaanza na msingi wa jukwaa letu - kushirikiana na wamiliki wa floti wanaotoa magari na pikipiki kwa mtandao wetu wa madereva. Jiunge mara moja na panua biashara yako na AnyRide kuanzia siku ya kwanza."
+    },
+    "benefits": {
+      "vehicleUtilization": "Maximiza mapato ya floti yako kwa mpangilio wa madereva.",
+      "revenueSharing": "Tunakunganisha na dereva aliyehakikiwa karibu nawe. Angalia jina, alama, na picha yao.",
+      "scalableGrowth": "Panua uthibitisho wa magari kwa kiwango, na lipa kwa pesa taslimu au pochi.",
+      "maintenanceSupport": "Fuata magari yako na malipo kwa mpangilio uliowekwa."
+    },
+    "howItWorks": {
+      "title": "Jinsi Ushirikiano na AnyRide Unavyofanya Kazi",
+      "description": "Hapa kuna hatua rahisi kushirikiana nasi",
+      "steps": [
+        { "step": 1, "title": "Jisajili kama Mshirika", "description": "Wasilisha maelezo ya biashara au umiliki." },
+        { "step": 2, "title": "Ongeza Magari", "description": ["Ongeza magari/pikipiki yako", "Pakia nyaraka"] },
+        { "step": 3, "title": "Gawa Madereva", "description": "Simamia madereva wako au onboarding ya madereva wapya." },
+        { "step": 4, "title": "Anza & Pata Mapato", "description": "Fuata safari, utendaji, na malipo kwenye dashibodi moja." }
+      ]
+    },
+    "expansionRoadmap": {
+      "title": "Ramani ya Upanuzi wa Ushirikiano",
+      "description": "Hapa ndipo tunavyounda mfumo kamili wa usafirishaji/taksi hatua kwa hatua.",
+      "steps": [
+        { "title": "Wamiliki wa Floti (Sasa Hai)", "description": "Kwa sasa tuna wamiliki binafsi na wa kampuni wanaotoa magari na pikipiki kwa mtandao wetu. Jiunge nasi mara moja." },
+        { "title": "Watoa Huduma", "description": "Kushirikiana na watoa huduma kutoa huduma za ziada kwa wamiliki na madereva: matengenezo kwa punguzo, mafuta, bima na huduma za tairi/mafuta." },
+        { "title": "Washirika wa Fedha & Bima", "description": "Kushirikiana na taasisi za kifedha kwa ufadhili, upangaji, mikopo midogo na bima inayofaa uchumi wa gig." },
+        { "title": "Washirika wa Kibiashara & Taasisi", "description": "Huduma za usafirishaji B2B, suluhisho za wafanyakazi, na huduma za mkataba." },
+        { "title": "Mfumo wa Usafirishaji Smart", "description": "Lengo letu la mwisho ni mfumo kamili wa usafirishaji kwa kushirikiana na watoa huduma za EV, teknolojia, serikali & mipango mijini, na uendelevu." }
+      ]
+    },
+    "FAQ": {
+      "title": "Maswali Yanayoulizwa Mara kwa Mara",
+      "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali yanayoulizwa zaidi.",
+      "items": [
+        { "question": "Jumla ya jukwaa itazinduliwa lini?", "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza." },
+        { "question": "Nani anaweza kujiunga na orodha ya kusubiri?", "answer": "Kila mtu anayevutiwa kutumia AnyRide anaweza kujiunga na orodha ya kusubiri: abiria, madereva na washirika." },
+        { "question": "Je, kujiunga ni bure?", "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa." },
+        { "question": "Nita wasiliana vipi?", "answer": "Tutawasiliana nawe kupitia barua pepe uliyopewa wakati wa kujiandikisha." }
+      ]
+    }
+}
 }
