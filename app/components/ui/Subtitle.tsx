@@ -28,7 +28,8 @@ const SubTitle: FC<SubTitleProps> = ({ text, css = "", img, bg = "bg-[#FFE6E6]"}
             width={16}
             height={16}
             className="w-full h-full object-contain"
-            alt="icons"
+            alt="subtitle icon"
+            loading="lazy"
           />
         </span>
       )}
