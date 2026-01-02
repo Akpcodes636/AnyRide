@@ -340,7 +340,7 @@ const Footer = () => {
             {t("copyright")}{" "}
             <Link
               href="https://techenex.com"
-              className="font-bold text-[#333333]"
+              className="font-bold text-[#333333] cursor-pointer"
             >
               Techenex
             </Link>

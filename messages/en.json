@@ -119,12 +119,12 @@
       "description": "Get where you're going faster, safer, and fair.",
         "form": {
         "pickupLabel": "Enter pickup location",
-        "pickupPlaceholder": "Abuja, Nigeria",
+        "pickupPlaceholder": "",
         "destinationLabel": "Enter destination",
-        "destinationPlaceholder": "Abuja, Nigeria",
+        "destinationPlaceholder": "",
         "rideTypeLabel": "Enter ride type",
         "rideTypePlaceholder": "Select city",
-        "locationBadge": "Abuja, Nigeria",
+        "locationBadge": "",
         "checkPrices": "Check prices",
         "loginInstead": "Login instead",
         "options": [
@@ -327,7 +327,7 @@
     "hero": {
       "title": "Drive with freedom. Earn on your terms.",
       "description": "Join AnyRide and earn more while staying in control of your time and rides.",
-      "cta" : "Book a ride"
+      "cta" : "become a driver"
     },
    "FAQ": {
     "title": "Frequently asked questions",
@@ -393,7 +393,7 @@
         ]
       }
     },
-    "copyright": "© 2025 AnyRide. powered by Techenex"
+    "copyright": "© 2025 AnyRide LLC. powered by"
   },
   "WaitlistPage": {
     "hero": {

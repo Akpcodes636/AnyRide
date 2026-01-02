@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "AnyRide",
   description: "Local ride-hailing app",
   icons: {
-    icon: "/images/fvicon.png",
+    icon: "/favicon.ico",
   },
 };
 

@@ -13,10 +13,5 @@ export const waitListSchema = Yup.object({
     .trim()
     .required("Email address is required")
     .email("Please enter a valid email address"),
-  phoneNumber: Yup.string()
-    .trim()
-    .required("Phone number is required")
-    .matches(/^\+?[\d\s-()]+$/, "Please enter a valid phone number"),
     userType: Yup.string().required("Please select an option"),
-
 });

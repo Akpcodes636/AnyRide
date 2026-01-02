@@ -31,21 +31,31 @@ const AnyRide = () => {
           {/* App Store Buttons */}
           <div className="flex items-start justify-start gap-4 mb-6">
             <div className="w-33.75 h-10 rounded-[5px]">
-              <Image
+              {/* <Image
                 src="/icons/apple.svg"
                 width={135}
                 height={40}
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
+              /> */}
+               <img
+                src="/icons/apple.svg"
+                className="w-full h-full object-cover"
+                alt={t("HomePage.appDownload.platforms.apple")}
               />
             </div>
             <div className="w-33.75 h-10 rounded-[5px]">
-              <Image
+              {/* <Image
                 src="/icons/google.svg"
                 width={135}
                 height={40}
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.google")}
+              /> */}
+               <img
+                src="/icons/google.svg"
+                className="w-full h-full object-cover"
+                alt={t("HomePage.appDownload.platforms.apple")}
               />
             </div>
           </div>

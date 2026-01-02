@@ -153,7 +153,6 @@
 // };
 
 // export default ContactForm;
-
 "use client";
 
 import { useState } from "react";
@@ -168,10 +167,7 @@ const WEB3FORMS_KEY = "86a1d540-923d-4744-b150-1476ff023238";
 const ContactForm = () => {
   const t = useTranslations("ContactPage.form");
 
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-  const [attachment, setAttachment] = useState<File | null>(null);
-
+  // Form state
   const [formData, setFormData] = useState({
     subject: "",
     fullname: "",
@@ -181,37 +177,55 @@ const ContactForm = () => {
     country: "",
     language: "",
   });
+  const [message, setMessage] = useState("");
+  const [attachment, setAttachment] = useState<File | null>(null);
 
+  // Checkbox state
+  const [emailUpdates, setEmailUpdates] = useState(false);
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [consentMessages, setConsentMessages] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  // Handle input/select changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    if (name === "message") {
-      setMessage(value);
-    } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
-    }
+    if (name === "message") setMessage(value);
+    else setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Handle file attachment
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setAttachment(e.target.files[0]);
-    } else {
-      setAttachment(null);
-    }
+    if (e.target.files && e.target.files.length > 0) setAttachment(e.target.files[0]);
+    else setAttachment(null);
   };
 
+  // Form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // 🔒 Validation (all required except attachment)
-    if (!formData.subject || !formData.fullname || !formData.email || !formData.phone || !message) {
+    // 🔒 Validation
+    if (
+      !formData.subject ||
+      !formData.fullname ||
+      !formData.email ||
+      !formData.phone ||
+      !message
+    ) {
       toast.error(t("form.errors.required"));
       return;
     }
 
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       toast.error(t("form.errors.invalidEmail"));
+      return;
+    }
+
+    if (!agreePrivacy || !agreeTerms || !consentMessages) {
+      toast.error("Please agree to Privacy Policy, Terms & Consent");
       return;
     }
 
@@ -229,10 +243,13 @@ const ContactForm = () => {
       formPayload.append("language", formData.language);
       formPayload.append("message", message);
 
-      // Only append attachment if user selected one
-      if (attachment) {
-        formPayload.append("attachment", attachment);
-      }
+      // Append checkboxes
+      formPayload.append("emailUpdates", emailUpdates ? "Yes" : "No");
+      formPayload.append("agreePrivacy", agreePrivacy ? "Yes" : "No");
+      formPayload.append("agreeTerms", agreeTerms ? "Yes" : "No");
+      formPayload.append("consentMessages", consentMessages ? "Yes" : "No");
+
+      if (attachment) formPayload.append("attachment", attachment);
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -243,17 +260,13 @@ const ContactForm = () => {
 
       if (data.success) {
         toast.success(t("form.success"));
-        setFormData({
-          subject: "",
-          fullname: "",
-          email: "",
-          phone: "",
-          category: "",
-          country: "",
-          language: "",
-        });
+        setFormData({ subject: "", fullname: "", email: "", phone: "", category: "", country: "", language: "" });
         setMessage("");
         setAttachment(null);
+        setEmailUpdates(false);
+        setAgreePrivacy(false);
+        setAgreeTerms(false);
+        setConsentMessages(false);
       } else {
         toast.error(t("form.errors.failed"));
       }
@@ -274,11 +287,9 @@ const ContactForm = () => {
 
         <div className="w-full max-w-[335px] md:max-w-full lg:max-w-[778px] mx-auto">
           <div className="bg-[#F5F5F7] rounded-[12px] p-6 md:p-10">
-            <form
-              onSubmit={handleSubmit}
-              className="flex gap-y-[24px] flex-col"
-            >
-              {/* All existing InputFields */}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-y-[24px]">
+
+              {/* Subject, Fullname, Email, Phone */}
               <InputField
                 name="subject"
                 label={t("fields.subject")}
@@ -287,7 +298,6 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
               />
-
               <InputField
                 name="fullname"
                 label={t("fields.fullName")}
@@ -296,7 +306,6 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
               />
-
               <InputField
                 name="email"
                 label={t("fields.email")}
@@ -305,7 +314,6 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
               />
-
               <InputField
                 name="phone"
                 label={t("fields.phone")}
@@ -315,6 +323,7 @@ const ContactForm = () => {
                 required
               />
 
+              {/* Category, Country, Language */}
               <SelectField
                 name="category"
                 label={t("fields.category")}
@@ -326,7 +335,6 @@ const ContactForm = () => {
                   { value: "ride", label: t("fields.rideIssue") },
                 ]}
               />
-
               <SelectField
                 name="country"
                 label={t("fields.country")}
@@ -334,11 +342,10 @@ const ContactForm = () => {
                 onChange={handleChange}
                 options={[
                   { value: "", label: t("fields.selectCountry") },
-                  { value: "ng", label: "Nigeria" },
-                  { value: "gh", label: "Ghana" },
+                  { value: "US", label: "United States" },
+                  { value: "CG", label: "Congo" },
                 ]}
               />
-
               <SelectField
                 name="language"
                 label={t("fields.responseLanguage")}
@@ -367,24 +374,68 @@ const ContactForm = () => {
                 />
               </div>
 
-              {/* Optional Attachment Box */}
+              {/* Attachment */}
               <div className="flex flex-col gap-2">
                 <label className="label-class">{t("fields.attachment")}</label>
                 <label className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-md border border-dashed border-gray-400 text-xl bg-white hover:bg-gray-50">
                   +
-                  <input
-                    type="file"
-                    className="hidden"
-                    onChange={handleFileChange}
-                  />
+                  <input type="file" className="hidden" onChange={handleFileChange} />
                 </label>
               </div>
 
-              {/* Checkbox */}
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" className="accent-red-600" />
-                {t("fields.emailUpdates")}
-              </label>
+              {/* Checkboxes */}
+              <div className="flex flex-col gap-2">
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={emailUpdates}
+                    onChange={(e) => setEmailUpdates(e.target.checked)}
+                    className="accent-red-600"
+                  />
+                  {t("fields.emailUpdates")}
+                </label>
+
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={agreePrivacy}
+                    onChange={(e) => setAgreePrivacy(e.target.checked)}
+                    className="accent-red-600"
+                  />
+                  I agree to the{" "}
+                  <span className="text-[#A10000] underline cursor-pointer">
+                    Privacy Policy
+                  </span>
+                </label>
+
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={agreeTerms}
+                    onChange={(e) => setAgreeTerms(e.target.checked)}
+                    className="accent-red-600"
+                  />
+                  I agree to the{" "}
+                  <span className="text-[#A10000] underline cursor-pointer">
+                    Terms & Conditions
+                  </span>
+                </label>
+
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={consentMessages}
+                    onChange={(e) => setConsentMessages(e.target.checked)}
+                    className="accent-red-600"
+                  />
+                  I consent to receive SMS messages, calls and emails for verification and communication purposes
+                </label>
+
+                {/* Disclaimer */}
+                <p className="text-gray-600 text-xs mt-2">
+                  Disclaimer: By submitting this form, you consent to receive SMS messages, calls and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services.
+                </p>
+              </div>
 
               {/* Submit */}
               <button
