@@ -560,12 +560,89 @@
         { "question": "Comment serai-je contacté ?", "answer": "Nous vous contacterons via l'e-mail fourni lors de l'inscription." }
       ]
     },
-    "footer": {
+    "Footer": {
       "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vrais utilisateurs. Abordable, sûr et toujours là quand vous en avez besoin.",
-      "company": ["À propos", "Blog", "Villes"],
-      "help": ["Support", "Sécurité", "Sécurité"],
-      "legal": ["Conditions", "Confidentialité", "Confidentialité"],
+      "sections": {
+        "company": {
+          "title": "Entreprise",
+          "links": [
+            { "label": "À propos", "href": "/about" },
+            { "label": "Blog", "href": "/" }
+          ]
+        },
+        "help": {
+          "title": "Aide",
+          "links": []
+        },
+        "legal": {
+          "title": "Légal",
+          "links": [
+            { "label": "Conditions", "href": "/terms" },
+            { "label": "Politique de confidentialité", "href": "/privacy" }
+          ]
+        }
+      },
       "copyright": " 2025 AnyRide. powered by Techenex"
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour : Janvier 2025",
+    "section1": {
+      "title": "Introduction",
+      "content": "AnyRide s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et sauvegardons vos informations lorsque vous utilisez notre plateforme."
+    },
+    "section2": {
+      "title": "Informations que nous collectons",
+      "content": "Nous collectons les informations que vous fournissez directement, telles que votre nom, adresse e-mail, numéro de téléphone, données de localisation et informations de paiement. Nous collectons également automatiquement certaines informations sur votre appareil et vos habitudes d'utilisation."
+    },
+    "section3": {
+      "title": "Comment nous utilisons vos informations",
+      "content": "Nous utilisons vos informations pour fournir, maintenir et améliorer nos services, traiter les transactions, vous envoyer des mises à jour et respecter les obligations légales."
+    },
+    "section4": {
+      "title": "Partage d'informations",
+      "content": "Nous ne vendons pas vos informations personnelles. Nous pouvons partager des informations avec des prestataires de services, des partenaires et lorsque la loi l'exige."
+    },
+    "section5": {
+      "title": "Sécurité des données",
+      "content": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos informations personnelles contre l'accès non autorisé, la modification, la divulgation ou la destruction."
+    },
+    "section6": {
+      "title": "Vos droits",
+      "content": "Vous avez le droit d'accéder, de corriger ou de supprimer vos informations personnelles. Vous pouvez également refuser certaines communications. Contactez-nous pour exercer ces droits."
+    }
+  },
+  "TermsAndConditions": {
+    "title": "Conditions Générales",
+    "lastUpdated": "Dernière mise à jour : Janvier 2025",
+    "section1": {
+      "title": "Acceptation des conditions",
+      "content": "En accédant et en utilisant AnyRide, vous acceptez et convenez d'être lié par les termes et dispositions de cet accord."
+    },
+    "section2": {
+      "title": "Licence d'utilisation",
+      "content": "La permission est accordée de télécharger temporairement une copie des matériaux (informations ou logiciels) sur AnyRide pour une visualisation personnelle, non commerciale et transitoire uniquement. Ceci est l'octroi d'une licence, non un transfert de titre."
+    },
+    "section3": {
+      "title": "Clause de non-responsabilité",
+      "content": "Les matériaux sur AnyRide sont fournis 'tels quels'. AnyRide ne donne aucune garantie, expresse ou implicite, et rejette par la présente et annule toutes les autres garanties, y compris, sans limitation, les garanties implicites ou conditions de commercialité, d'adéquation à un usage particulier ou de non-violation des droits de propriété intellectuelle."
+    },
+    "section4": {
+      "title": "Limitations",
+      "content": "En aucun cas, AnyRide ou ses fournisseurs ne seront responsables de tout dommage (y compris, sans limitation, les dommages pour perte de données ou de bénéfices, ou dus à une interruption d'activité) découlant de l'utilisation ou de l'incapacité à utiliser les matériaux sur AnyRide."
+    },
+    "section5": {
+      "title": "Exactitude des matériaux",
+      "content": "Les matériaux apparaissant sur AnyRide pourraient inclure des erreurs techniques, typographiques ou photographiques. AnyRide ne garantit pas que l'un des matériaux sur AnyRide est exact, complet ou actuel."
+    },
+    "section6": {
+      "title": "Liens",
+      "content": "AnyRide n'a pas examiné tous les sites liés à son site Web et n'est pas responsable du contenu d'aucun site lié. L'inclusion d'un lien n'implique pas l'approbation par AnyRide du site. L'utilisation de tout site Web lié est aux risques de l'utilisateur."
+    },
+    "section7": {
+      "title": "Modifications",
+      "content": "AnyRide peut réviser ces conditions de service pour son site Web à tout moment sans préavis. En utilisant ce site Web, vous acceptez d'être lié par la version actuelle de ces conditions de service."
     }
   }
 }

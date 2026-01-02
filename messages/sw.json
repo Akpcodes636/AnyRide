@@ -372,24 +372,18 @@
         "title": "Kampuni",
         "links": [
           { "label": "Kuhusu", "href": "/about" },
-          { "label": "Blogu", "href": "/blog" },
-          { "label": "Miji", "href": "/cities" }
+          { "label": "Blogu", "href": "/" }
         ]
       },
       "help": {
         "title": "Msaada",
-        "links": [
-          { "label": "Msaada", "href": "/support" },
-          { "label": "Usalama", "href": "/safety" },
-          { "label": "Bei", "href": "/pricing" }
-        ]
+        "links": []
       },
       "legal": {
         "title": "Kisheria",
         "links": [
           { "label": "Masharti", "href": "/terms" },
-          { "label": "Faragha", "href": "/privacy" },
-          { "label": "Vidakuzi", "href": "/cookies" }
+          { "label": "Sera ya Faragha", "href": "/privacy" }
         ]
       }
     },
@@ -528,10 +522,7 @@
       "title": "Maswali Yanayoulizwa Mara kwa Mara",
       "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali yanayoulizwa zaidi.",
       "items": [
-        { "question": "Jumla ya jukwaa itazinduliwa lini?", "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza." },
-        { "question": "Nani anaweza kujiunga na orodha ya kusubiri?", "answer": "Kila mtu anayevutiwa kutumia AnyRide anaweza kujiunga na orodha ya kusubiri: abiria, madereva na washirika." },
-        { "question": "Je, kujiunga ni bure?", "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa." },
-        { "question": "Nita wasiliana vipi?", "answer": "Tutawasiliana nawe kupitia barua pepe uliyopewa wakati wa kujiandikisha." }
+        { "question": "Jumla ya jukwaa itazinduliwa lini?", "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza." }
       ]
     },
     "footer": {
@@ -540,6 +531,66 @@
       "help": ["Msaada", "Usalama", "Usalama"],
       "legal": ["Masharti", "Faragha", "Faragha"],
       "copyright": " 2025 AnyRide. powered by Techenex"
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Sera ya Faragha",
+    "lastUpdated": "Iliyosasishwa mwisho: Januari 2025",
+    "section1": {
+      "title": "Utangulizi",
+      "content": "AnyRide ina jukumu la kulinda faragha yako. Sera hii ya faragha inaeleza jinsi tunavyokusanya, tunavyotumia, tunavyofichua, na tunavyohifadhi taarifa yako wakati unapotumia jukwaa letu."
+    },
+    "section2": {
+      "title": "Taarifa Tunayokusanya",
+      "content": "Tunakusanya taarifa unayotoa moja kwa moja, kama vile jina lako, anwani ya barua pepe, namba ya simu, data ya mahali, na taarifa za malipo. Pia tunakusanya kiotomatiki taarifa fulani kuhusu kifaa chako na mifumo ya matumizi."
+    },
+    "section3": {
+      "title": "Jinsi Tunavyotumia Taarifa Yako",
+      "content": "Tunatumia taarifa yako kutoa, kudumisha, na kuboresha huduma zetu, kusindika miamala, kukupadisha sasisho, na kutunga sheria."
+    },
+    "section4": {
+      "title": "Mgawanyiko wa Taarifa",
+      "content": "Hatuzui taarifa yako ya kibinafsi. Tunaweza kubagua taarifa na watoa huduma, washirika, na inapohitajika kwa sheria."
+    },
+    "section5": {
+      "title": "Usalama wa Data",
+      "content": "Tunatumia hatua zinazofaa za kiufundi na shirikishi kulinda taarifa yako ya kibinafsi dhidi ya upatikanaji usio halali, mabadiliko, kufichua, au uharibifu."
+    },
+    "section6": {
+      "title": "Haki Zako",
+      "content": "Una haki ya kufikia, kusahihisha, au kufuta taarifa yako ya kibinafsi. Unaweza pia kukataa mawasiliano fulani. Wasiliana nasi ili kutekeleza haki hizi."
+    }
+  },
+  "TermsAndConditions": {
+    "title": "Masharti na Hali",
+    "lastUpdated": "Iliyosasishwa mwisho: Januari 2025",
+    "section1": {
+      "title": "Kukubali Masharti",
+      "content": "Kwa kufikia na kutumia AnyRide, unakubali na kukubaliana kuwa umefungwa na masharti na masharti ya makubaliano haya."
+    },
+    "section2": {
+      "title": "Leseni ya Matumizi",
+      "content": "Ruhusa inatoa kupakua kwa muda nakala moja ya nyenzo (taarifa au programu) kwenye AnyRide kwa ajili ya kutazama kwa kibinafsi, kisimu na kwa muda tu. Hii ni kumpa leseni, si kuhamisha haki."
+    },
+    "section3": {
+      "title": "Kanusho",
+      "content": "Nyenzo kwenye AnyRide zinatolewa 'kama vile'. AnyRide haitoi dhamana yoyote, iliyoonyeshwa au iliyomaanishwa, na kwa heri inakanusha na inabatilisha dhamana zingine zote ikiwa ni pamoja na, bila kuzuia, dhamana iliyomaanishwa au hali ya biashara, kufaa kwa madhumuni fulani, au kutokuwa na ukiukaji wa haki."
+    },
+    "section4": {
+      "title": "Mipango",
+      "content": "Kwa hali yoyote, AnyRide au watoa huduma wake hawatakuwa na jukumu kwa uharibifu wowote (ikiwa ni pamoja na, bila kuzuia, uharibifu kwa sababu ya kupoteza data au faida, au kutokana na kukatizwa kwa biashara) inayotokana na matumizi au kutokuwa na uwezo wa kutumia nyenzo kwenye AnyRide."
+    },
+    "section5": {
+      "title": "Usahihi wa Nyenzo",
+      "content": "Nyenzo inayoonekana kwenye AnyRide inaweza kuwa na hitilafu za kiufundi, za maandishi, au za picha. AnyRide haithibitishi kwamba nyenzo yoyote kwenye AnyRide ni sahihi, kamili, au ya sasa."
+    },
+    "section6": {
+      "title": "Viungo",
+      "content": "AnyRide haijachunguza tovuti zote zilizounganishwa na tovuti yake na haisiwi na jukumu kwa maudhui ya tovuti yoyote iliyounganishwa. Kujumuisha kiungo hakumaanishi idhini ya AnyRide ya tovuti. Matumizi ya tovuti yoyote iliyounganishwa ni kwa hatari ya mtumiaji."
+    },
+    "section7": {
+      "title": "Mabadiliko",
+      "content": "AnyRide inaweza kuboreshesha masharti haya ya huduma kwa tovuti yake wakati wowote bila onyo. Kwa kutumia tovuti hii, unakubali kuwa umefungwa na toleo la sasa la masharti haya ya huduma."
     }
   }
 }

@@ -132,7 +132,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Logo from "./ui/Logo";
 
 interface FooterLink {
@@ -157,33 +157,29 @@ interface FooterData {
 
 const Footer = () => {
   const t = useTranslations("Footer");
+  const locale = useLocale();
 
-  // Build sections object in code, strings come from t()
-  const sections: FooterData["sections"] = {
+  // Get sections directly from translation data
+  let sections = t.raw("sections") as FooterData["sections"];
+
+  // Filter out unwanted links
+  const unwantedLabels = ["Support", "Safety", "Pricing", "Cities", "Cookies", "Sécurité", "Tarification", "Villes", "Usalama", "Bei", "Miji", "Vidakuzi"];
+  
+  sections = {
     company: {
-      title: t("sections.company.title"),
-      links: [
-        { label: t("sections.company.links.0.label"), href: "/about" },
-        { label: t("sections.company.links.1.label"), href: "/Blog" },
-        { label: t("sections.company.links.2.label"), href: "/Cities" },
-      ],
+      ...sections.company,
+      links: sections.company.links.map(link => 
+        link.label === "Blog" ? { ...link, href: `/${locale}` } : link
+      ).filter(link => !unwantedLabels.includes(link.label))
     },
     help: {
-      title: t("sections.help.title"),
-      links: [
-        { label: t("sections.help.links.0.label"), href: "/Support" },
-        { label: t("sections.help.links.1.label"), href: "/Safety" },
-        { label: t("sections.help.links.1.label"), href: "/Pricing" },
-      ],
+      ...sections.help,
+      links: sections.help.links.filter(link => !unwantedLabels.includes(link.label))
     },
     legal: {
-      title: t("sections.legal.title"),
-      links: [
-        { label: t("sections.legal.links.0.label"), href: "/Terms" },
-        { label: t("sections.legal.links.1.label"), href: "/Privacy" },
-        { label: t("sections.legal.links.1.label"), href: "/Cookies" },
-      ],
-    },
+      ...sections.legal,
+      links: sections.legal.links.filter(link => !unwantedLabels.includes(link.label))
+    }
   };
 
   return (
@@ -203,7 +199,9 @@ const Footer = () => {
 
           {/* Footer Links */}
           <div className="grid grid-cols-1 lg:grid-cols-3 xl:gap-x-12 gap-y-6">
-            {Object.values(sections).map((section) => (
+            {Object.values(sections)
+              .filter(section => section.title !== "Help")
+              .map((section) => (
               <div key={section.title}>
                 <h3 className="text-[#111111] font-semibold mb-4 text-[20px] sm:text-[24px]">
                   {section.title}
