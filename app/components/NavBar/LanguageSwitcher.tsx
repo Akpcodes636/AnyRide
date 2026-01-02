@@ -140,12 +140,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { Globe, ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 const languages = [
-  { code: "en", label: "English", flag: "/en/uk.svg" },
+  { code: "en", label: "English", flag: "/en/Uk.svg" },
   { code: "fr", label: "French", flag: "/en/fr.svg" },
   { code: "sw", label: "Swahili", flag: "/en/kenya.svg" },
 ];
@@ -208,9 +207,9 @@ const LanguageSwitcher = () => {
               <button
                 key={lang.code}
                 onClick={() => switchLanguage(lang.code)}
-                className="flex items-center gap-3 text-left"
+                className="flex items-center gap-3 text-left hover:opacity-80"
               >
-                <Image src={lang.flag} alt={lang.label} width={32} height={32} />
+                <img src={lang.flag} alt={lang.label} className="w-8 h-8" />
                 <span className="font-sora text-[18px]">
                   {lang.label}
                 </span>
