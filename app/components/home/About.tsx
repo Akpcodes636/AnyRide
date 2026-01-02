@@ -90,8 +90,8 @@ const About = () => {
         <div className="w-full h-full hidden md:hidden lg:hidden xl:block">
           <Image
             src="/images/About-img.png"
-            width={500}
-            height={500}
+            width={400}
+            height={600}
             alt={t("title")}
             className="w-full h-full object-cover"
           />
