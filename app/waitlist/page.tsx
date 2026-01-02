@@ -1,14 +1,7 @@
-"use client";
-import Header from "../components/Header";
-import HeroWaitlist from "../[locale]/waitlist/page";
-import WaitForm from "../components/waitlist/WaitForm";
-import Footer from "../components/Footer";
+import { redirect } from "next/navigation";
+import { getLocale } from "next-intl/server";
 
-export default function Page(){
-    return (
-        <>
-        <Header />
-    
-        </>
-    )
+export default async function Page() {
+  const locale = await getLocale();
+  redirect(`/${locale}/waitlist`);
 }
