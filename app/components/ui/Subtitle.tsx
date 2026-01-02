@@ -5,10 +5,11 @@ interface SubTitleProps {
   text: string;
   css?: string;
   img?:string;
+  svg?: React.ReactNode;
   bg?: string;
 }
 
-const SubTitle: FC<SubTitleProps> = ({ text, css = "", img, bg = "bg-[#FFE6E6]"}) => {
+const SubTitle: FC<SubTitleProps> = ({ text, css = "", img, svg, bg = "bg-[#FFE6E6]"}) => {
   return (
     <div
       className={`
@@ -21,6 +22,11 @@ const SubTitle: FC<SubTitleProps> = ({ text, css = "", img, bg = "bg-[#FFE6E6]"}
         ${css}
       `}
     >
+      {svg && (
+        <span className="w-4 h-4 shrink-0">
+          {svg}
+        </span>
+      )}
       {img && (
         <span className="w-4 h-4 shrink-0">
           <img
