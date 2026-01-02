@@ -1,10 +1,7 @@
 "use client";
 
-import MobileNav from "./navbar/MobileNav";
-import Navbar from "./navbar/Navbar";
-
-// import MobileNav from "./NavBar/MobileNav";
-// import Navbar from "./NavBar/Navbar";
+import MobileNav from "./NavBar/MobileNav";
+import Navbar from "./NavBar/Navbar";
 
 
 const Header = () => {
