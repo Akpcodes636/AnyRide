@@ -373,15 +373,15 @@
         "links": [
           { "label": "About", "href": "/about" },
           { "label": "Blog", "href": "/blog" },
-          { "label": "Cities", "href": "/cities" }
+          { "label": "partners", "href": "/partners" }
         ]
       },
       "help": {
         "title": "Help",
         "links": [
           { "label": "Support", "href": "/support" },
-          { "label": "Safety", "href": "/safety" },
-          { "label": "Pricing", "href": "/pricing" }
+          { "label": "Safety", "href": "/privacy" },
+          { "label": "Pricing", "href": "/rider" }
         ]
       },
       "legal": {
@@ -389,7 +389,7 @@
         "links": [
           { "label": "Terms", "href": "/terms" },
           { "label": "Privacy", "href": "/privacy" },
-          { "label": "Cookies", "href": "/cookies" }
+          { "label": "Cookies", "href": "/" }
         ]
       }
     },
@@ -467,7 +467,16 @@
         "attachment": "Attachment(s)",
         "emailUpdates": "Send me updates via email"
       },
-      "submit": "Submit"
+      "submit": "Submit",
+      "form": {
+      "errors": {
+        "required": "Please fill out all required fields",
+        "invalidEmail": "Please enter a valid email address",
+        "failed": "Something went wrong. Please try again",
+        "network": "Network error. Please try again later"
+      },
+      "success": "Message sent successfully!"
+    }
     }
   },
   "FleetPartnersPage": {
@@ -688,5 +697,14 @@
       "title": "Modifications",
       "content": "AnyRide may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
     }
-  }
+  },
+  "Navbar": {
+    "about": "About",
+    "rider": "Rider",
+    "driver": "Driver",
+    "partners": "Partners",
+    "contactUs": "Contact us",
+    "waitlistButton": "Join Our Waitlist"
+  
+}
 }

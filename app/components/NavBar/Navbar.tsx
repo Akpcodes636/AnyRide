@@ -7,11 +7,14 @@ import Button from "../ui/Button";
 import { navLinks } from "@/app/utils/Content";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 // import LanguageSwitcher from "../navbar/LanguageSwitcher";
 
 
 
+
 const Navbar = () => {
+   const t = useTranslations("Navbar");
   const router = useRouter();
     const gotoWaitlist = () => {
     router.push("/waitlist");
@@ -26,9 +29,9 @@ return (
             <li key={i} className="flex items-center gap-1 cursor-pointer">
               <Link
                 href={l.router}
-                className="text-[18px] text-text-black font-medium leading-[120%] tracking-[-2%] hover:text-[#A20602] transition-colors"
+                className="text-[18px] text-text-black font-medium leading-[120%] tracking-[-2%] hover:text-[#A20602] transition-colors truncate max-w-[100px]"
               >
-                {l.title}
+                {t(l.key)}
               </Link>
             </li>
           ))}
@@ -38,7 +41,7 @@ return (
 
         <div className="flex gap-2">
           <Button type="button" style="danger" css="w-[257px] h-[62px]" fn={gotoWaitlist}>
-            Join Our WaitList
+           {t("waitlistButton")}
           </Button>
           {/* <Button type="button" style="danger" css="w-[161px] h-[62px]">
             Sign up

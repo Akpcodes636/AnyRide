@@ -51,7 +51,7 @@ const About = () => {
           {/* TABS */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <Button
-              style={activeTab === "Rider" ? "tertiary" : "nobg"}
+              style={activeTab === "Rider" ? "danger" : "nobg"}
               css="min-w-[104px] h-[60px]"
               type="button"
               fn={() => setActiveTab("Rider")}

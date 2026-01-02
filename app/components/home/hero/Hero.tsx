@@ -14,7 +14,7 @@ const Hero = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="mb-6">
               <SubTitle
-                img="/icons/SVG.png"
+                img="/icons/svg.png"
                 text={t("tagline")} // notice: no "hero." here
                 css="rounded-[40px] font-normal"
               />

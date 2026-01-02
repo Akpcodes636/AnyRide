@@ -283,7 +283,7 @@ export default function PricingForm() {
 
   return (
     <div className="pt-4 bg-white flex items-center justify-center">
-      <div className="w-full">
+      <div className="w-full flex  flex-col gap-y-5">
         {/* Pickup Location */}
         <div className="space-y-2">
           <label className="text-sm text-gray-700 font-medium">

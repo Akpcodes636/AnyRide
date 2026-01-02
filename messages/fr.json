@@ -466,7 +466,16 @@
         "attachment": "Pièce(s) jointe(s)",
         "emailUpdates": "M'envoyer des mises à jour par e-mail"
       },
-      "submit": "Soumettre"
+      "submit": "Soumettre",
+      "form": {
+      "errors": {
+        "required": "Veuillez remplir tous les champs requis",
+        "invalidEmail": "Veuillez saisir une adresse e-mail valide",
+        "failed": "Une erreur est survenue. Veuillez réessayer",
+        "network": "Erreur réseau. Veuillez réessayer plus tard"
+      },
+      "success": "Message envoyé avec succès !"
+    }
     }
   },
   "FleetPartnersPage": {
@@ -562,26 +571,32 @@
     },
     "Footer": {
       "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vrais utilisateurs. Abordable, sûr et toujours là quand vous en avez besoin.",
-      "sections": {
-        "company": {
-          "title": "Entreprise",
-          "links": [
-            { "label": "À propos", "href": "/about" },
-            { "label": "Blog", "href": "/" }
-          ]
-        },
-        "help": {
-          "title": "Aide",
-          "links": []
-        },
-        "legal": {
-          "title": "Légal",
-          "links": [
-            { "label": "Conditions", "href": "/terms" },
-            { "label": "Politique de confidentialité", "href": "/privacy" }
-          ]
-        }
-      },
+     "sections": {
+  "company": {
+    "title": "Entreprise",
+    "links": [
+      { "label": "À propos", "href": "/about" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Partenaires", "href": "/partners" }
+    ]
+  },
+  "help": {
+    "title": "Aide",
+    "links": [
+      { "label": "Support", "href": "/support" },
+      { "label": "Sécurité", "href": "/privacy" },
+      { "label": "Tarification", "href": "/rider" }
+    ]
+  },
+  "legal": {
+    "title": "Légal",
+    "links": [
+      { "label": "Conditions", "href": "/terms" },
+      { "label": "Confidentialité", "href": "/privacy" },
+      { "label": "Cookies", "href": "/" }
+    ]
+  }
+},
       "copyright": " 2025 AnyRide. powered by Techenex"
     }
   },
@@ -644,5 +659,13 @@
       "title": "Modifications",
       "content": "AnyRide peut réviser ces conditions de service pour son site Web à tout moment sans préavis. En utilisant ce site Web, vous acceptez d'être lié par la version actuelle de ces conditions de service."
     }
+  },
+  "Navbar": {
+    "about": "À propos",
+    "rider": "Passager",
+    "driver": "Chauffeur",
+    "partners": "Partenaires",
+    "contactUs": "Contactez-nous",
+    "waitlistButton": "Rejoignez notre liste d'attente"
   }
 }

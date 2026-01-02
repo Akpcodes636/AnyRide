@@ -1,27 +1,34 @@
+// export const navLinks = [
+//   {
+//     title: "About",
+//     router: "/about",
+//   },
+//   {
+//     title: "Rider",
+//     router: "/services/rider",
+//   },
+//   {
+//     title: "Driver",
+//     router: "/services/driver"
+//   },
+//   {
+//     title: "Partners",
+//     router: "/partners",
+//   },
+//   {
+//     title: "Contact us",
+//     router: "/contact",
+//   },
+// ];
+
+
 export const navLinks = [
-  {
-    title: "About",
-    router: "/about",
-  },
-  {
-    title: "Rider",
-    router: "/services/rider",
-  },
-  {
-    title: "Driver",
-    router: "/services/driver"
-  },
-  {
-    title: "Partners",
-    router: "/partners",
-  },
-  {
-    title: "Contact us",
-    router: "/contact",
-  },
+  { key: "about", router: "/about" },
+  { key: "rider", router: "/services/rider" },
+  { key: "driver", router: "/services/driver" },
+  { key: "partners", router: "/partners" },
+  { key: "contactUs", router: "/contact" },
 ];
-
-
 
 
 export const AnyRideFeatures = [

@@ -367,26 +367,32 @@
 
   "Footer": {
     "description": "Tunajenga mtandao wa usafiri wa karibu unaotegemewa zaidi — uliobuniwa kwa ajili ya abiria na watu halisi. Wa bei nafuu, salama, na daima upo unapohitaji.",
-    "sections": {
-      "company": {
-        "title": "Kampuni",
-        "links": [
-          { "label": "Kuhusu", "href": "/about" },
-          { "label": "Blogu", "href": "/" }
-        ]
-      },
-      "help": {
-        "title": "Msaada",
-        "links": []
-      },
-      "legal": {
-        "title": "Kisheria",
-        "links": [
-          { "label": "Masharti", "href": "/terms" },
-          { "label": "Sera ya Faragha", "href": "/privacy" }
-        ]
-      }
-    },
+   "sections": {
+  "company": {
+    "title": "Kampuni",
+    "links": [
+      { "label": "Kuhusu", "href": "/about" },
+      { "label": "Blogu", "href": "/blog" },
+      { "label": "Washirika", "href": "/partners" }
+    ]
+  },
+  "help": {
+    "title": "Msaada",
+    "links": [
+      { "label": "Usaidizi", "href": "/support" },
+      { "label": "Usalama", "href": "/privacy" },
+      { "label": "Bei", "href": "/rider" }
+    ]
+  },
+  "legal": {
+    "title": "Kisheria",
+    "links": [
+      { "label": "Masharti", "href": "/terms" },
+      { "label": "Faragha", "href": "/privacy" },
+      { "label": "Vidakuzi", "href": "/" }
+    ]
+  }
+},
     "copyright": " 2025 AnyRide. powered by Techenex"
   },
   "WaitlistPage": {
@@ -461,7 +467,16 @@
         "attachment": "Kiambatanisho",
         "emailUpdates": "Nitumie sasisho kupitia barua pepe"
       },
-      "submit": "Wasilisha"
+      "submit": "Wasilisha",
+      "form": {
+      "errors": {
+        "required": "Tafadhali jaza mashamba yote muhimu",
+        "invalidEmail": "Tafadhali weka barua pepe sahihi",
+        "failed": "Kuna tatizo. Tafadhali jaribu tena",
+        "network": "Tatizo la mtandao. Tafadhali jaribu tena baadaye"
+      },
+      "success": "Ujumbe umetumwa kwa mafanikio!"
+    }
     }
   },
   "FleetPartnersPage": {
@@ -592,5 +607,13 @@
       "title": "Mabadiliko",
       "content": "AnyRide inaweza kuboreshesha masharti haya ya huduma kwa tovuti yake wakati wowote bila onyo. Kwa kutumia tovuti hii, unakubali kuwa umefungwa na toleo la sasa la masharti haya ya huduma."
     }
+  },
+  "Navbar": {
+    "about": "Kuhusu",
+    "rider": "Mshiriki",
+    "driver": "Dereva",
+    "partners": "Washirika",
+    "contactUs": "Wasiliana nasi",
+    "waitlistButton": "Jiunge na orodha ya kusubiri"
   }
 }
