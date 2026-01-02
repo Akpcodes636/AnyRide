@@ -250,72 +250,132 @@ export const getAnyRideConfirmationEmailHTML = (username: string) => {
 
 
 
-export async function POST(request: NextRequest) {
+// export async function POST(request: NextRequest) {
+//   try {
+//     await connectDB();
+
+//     const body = await request.json();
+
+//     // Validate body
+//     try {
+//       await waitListSchema.validate(body, { abortEarly: false });
+//     } catch (err) {
+//       if (err instanceof Yup.ValidationError) {
+//         return NextResponse.json(
+//           { message: err.errors[0] },
+//           { status: 400 }
+//         );
+//       }
+//     }
+
+//     const { firstName, lastName, emailAddress, userType } = body;
+
+//     const normalizedEmail = emailAddress.trim().toLowerCase();
+
+//     // Prevent duplicate email
+//     const existing = await Waitlist.findOne({ emailAddress: normalizedEmail });
+//     if (existing) {
+//       return NextResponse.json(
+//         { message: "This email is already on the waitlist" },
+//         { status: 400 }
+//       );
+//     }
+
+//     const entry = new Waitlist({
+//       firstName: firstName.trim(),
+//       lastName: lastName.trim(),
+//       emailAddress: normalizedEmail,
+//       userType,
+//     });
+
+//     await entry.save();
+
+//     // Send confirmation email
+//     try {
+//       const transporter = createTransporter();
+//       await transporter.sendMail({
+//         from: `"AnyRide" <${process.env.EMAIL_USER}>`,
+//         to: normalizedEmail,
+//         subject: "You're officially on the AnyRide waitlist 🚗",
+//         html: getAnyRideConfirmationEmailHTML(firstName),
+//       });
+//     } catch (err) {
+//       console.error("Email failed:", err);
+//     }
+
+//     return NextResponse.json(
+//       { message: "Successfully joined waitlist" },
+//       { status: 201 }
+//     );
+//   } catch (error) {
+//     console.error(error);
+//     return NextResponse.json(
+//       { message: "Internal server error" },
+//       { status: 500 }
+//     );
+//   }
+// }
+
+
+const schema = Yup.object({
+  firstName: Yup.string().required(),
+  lastName: Yup.string().required(),
+  emailAddress: Yup.string().email().required(),
+  userType: Yup.string().required(),
+
+  agreePrivacy: Yup.boolean().oneOf([true]),
+  agreeTerms: Yup.boolean().oneOf([true]),
+  consentSMS: Yup.boolean().oneOf([true]),
+});
+
+export async function POST(req: NextRequest) {
   try {
     await connectDB();
 
-    const body = await request.json();
+    const body = await req.json();
+    await schema.validate(body, { abortEarly: false });
 
-    // Validate body
-    try {
-      await waitListSchema.validate(body, { abortEarly: false });
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        return NextResponse.json(
-          { message: err.errors[0] },
-          { status: 400 }
-        );
-      }
-    }
+    const {
+      firstName,
+      lastName,
+      emailAddress,
+      userType,
+      agreePrivacy,
+      agreeTerms,
+      consentSMS,
+    } = body;
 
-    const { firstName, lastName, emailAddress, userType } = body;
+    const email = emailAddress.trim().toLowerCase();
 
-    const normalizedEmail = emailAddress.trim().toLowerCase();
-
-    // Prevent duplicate email
-    const existing = await Waitlist.findOne({ emailAddress: normalizedEmail });
-    if (existing) {
+    const exists = await Waitlist.findOne({ emailAddress: email });
+    if (exists) {
       return NextResponse.json(
-        { message: "This email is already on the waitlist" },
+        { message: "Email already on waitlist" },
         { status: 400 }
       );
     }
 
-    const entry = new Waitlist({
-      firstName: firstName.trim(),
-      lastName: lastName.trim(),
-      emailAddress: normalizedEmail,
+    await Waitlist.create({
+      firstName,
+      lastName,
+      emailAddress: email,
       userType,
+      agreePrivacy,
+      agreeTerms,
+      consentSMS,
     });
 
-    await entry.save();
-
-    // Send confirmation email
-    try {
-      const transporter = createTransporter();
-      await transporter.sendMail({
-        from: `"AnyRide" <${process.env.EMAIL_USER}>`,
-        to: normalizedEmail,
-        subject: "You're officially on the AnyRide waitlist 🚗",
-        html: getAnyRideConfirmationEmailHTML(firstName),
-      });
-    } catch (err) {
-      console.error("Email failed:", err);
-    }
-
     return NextResponse.json(
-      { message: "Successfully joined waitlist" },
+      { message: "Joined waitlist successfully" },
       { status: 201 }
     );
-  } catch (error) {
-    console.error(error);
+  } catch (err: any) {
     return NextResponse.json(
-      { message: "Internal server error" },
-      { status: 500 }
+      { message: err.message || "Invalid request" },
+      { status: 400 }
     );
   }
 }
-
 
 
 

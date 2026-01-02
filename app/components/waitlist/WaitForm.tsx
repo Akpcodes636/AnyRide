@@ -342,7 +342,7 @@
 //   );
 // }
 
-"use client";
+// "use client";
 
 import { useFormik } from "formik";
 import InputField from "../ui/InputField";
@@ -359,6 +359,8 @@ const waitListSchema = Yup.object({
   lastName: Yup.string().required("Required"),
   emailAddress: Yup.string().email("Invalid email").required("Required"),
   userType: Yup.string().required("Required"),
+
+
   agreePrivacy: Yup.boolean().oneOf([true], "Required"),
   agreeTerms: Yup.boolean().oneOf([true], "Required"),
   consentSMS: Yup.boolean().oneOf([true], "Required"),
@@ -395,6 +397,7 @@ export default function WaitForm() {
         });
 
         const data = await res.json();
+        console.log(data);
 
         if (res.ok) {
           toast.success("Successfully joined the waitlist!");
@@ -540,3 +543,5 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     </section>
   );
 }
+
+
