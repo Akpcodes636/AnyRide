@@ -189,6 +189,77 @@
     ]
   }
 },
+  "DriversPage": {
+    "hero": {
+      "title": "Conduisez en liberté. Gagnez à vos conditions.",
+      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos trajets.",
+      "cta": "Réserver un trajet"
+    },
+    "FAQ": {
+      "title": "Questions fréquemment posées",
+      "description": "Explorez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
+      "items": [
+        {
+          "question": "Quand la plateforme sera-t-elle lancée ?",
+          "answer": "Nous nous préparons pour le lancement de notre MVP très bientôt. Tous les inscrits à la liste d'attente seront informés en premier."
+        },
+        {
+          "question": "Qui peut rejoindre la liste d'attente ?",
+          "answer": "Toute personne intéressée par l'utilisation d'AnyRide peut rejoindre la liste d'attente. Elle est ouverte aux passagers, conducteurs et partenaires."
+        },
+        {
+          "question": "L'inscription est-elle gratuite ?",
+          "answer": "Oui ! Rejoindre la liste d'attente est totalement gratuit."
+        },
+        {
+          "question": "Comment serai-je contacté ?",
+          "answer": "Nous vous contacterons via l'adresse e-mail que vous avez fournie lors de votre inscription à la liste d'attente."
+        }
+      ]
+    },
+    "appDownload": {
+      "title": "Télécharger l'application AnyRide",
+      "description": "AnyRide vous permet d'aller où vous avez besoin d'aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Approuvé par plus de 1125 utilisateurs"
+      }
+    }
+  },
+  "Footer": {
+    "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vraies personnes. Abordable, sûr et toujours là quand vous en avez besoin.",
+    "sections": {
+      "company": {
+        "title": "Entreprise",
+        "links": [
+          { "label": "À propos", "href": "/about" },
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Villes", "href": "/cities" }
+        ]
+      },
+      "help": {
+        "title": "Aide",
+        "links": [
+          { "label": "Assistance", "href": "/support" },
+          { "label": "Sécurité", "href": "/safety" },
+          { "label": "Tarification", "href": "/pricing" }
+        ]
+      },
+      "legal": {
+        "title": "Légal",
+        "links": [
+          { "label": "Conditions", "href": "/terms" },
+          { "label": "Confidentialité", "href": "/privacy" },
+          { "label": "Cookies", "href": "/cookies" }
+        ]
+      }
+    },
+    "copyright": " 2025 AnyRide. powered by Techenex"
+  },
   "AboutPage": {
     "hero": {
       "title": "À propos d'AnyRide",
@@ -494,7 +565,7 @@
       "company": ["À propos", "Blog", "Villes"],
       "help": ["Support", "Sécurité", "Sécurité"],
       "legal": ["Conditions", "Confidentialité", "Confidentialité"],
-      "copyright": "© 2025 AnyRide. Conçu pour tous ceux en mouvement."
+      "copyright": " 2025 AnyRide. powered by Techenex"
     }
   }
 }

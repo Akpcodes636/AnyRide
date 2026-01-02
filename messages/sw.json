@@ -393,7 +393,7 @@
         ]
       }
     },
-    "copyright": " 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
+    "copyright": " 2025 AnyRide. powered by Techenex"
   },
   "WaitlistPage": {
     "hero": {
@@ -478,6 +478,7 @@
       "roadmapCTA": "Angalia Ramani Kamili",
       "currentFocus": "Kipaumbele cha sasa",
       "focus": "Floti",
+      "current": "Ufadhili wa Kabla ya Mbegu",
       "preSeedFunding": "$1.5M",
       "futureCategories": "8+",
       "safetyTrust": "Usalama & Uaminifu"
@@ -538,7 +539,7 @@
       "company": ["Kuhusu", "Blogi", "Miji"],
       "help": ["Msaada", "Usalama", "Usalama"],
       "legal": ["Masharti", "Faragha", "Faragha"],
-      "copyright": " 2025 AnyRide. Imetengenezwa kwa kila mtu anayesogea."
+      "copyright": " 2025 AnyRide. powered by Techenex"
     }
   }
 }

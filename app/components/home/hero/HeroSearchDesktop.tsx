@@ -65,35 +65,62 @@ const HeroSearchDesktop = () => {
   const [fareData, setFareData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
-  // Convert address → lat/lon using Google Maps
-  const geocodeAddress = async (address: string) => {
-  const res = await fetch(
-    `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-      address
-    )}&components=country:ng|country:cd|country:us&key=${
-      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-    }`
-  );
-
-  const data = await res.json();
-  console.log(data);
-
- if (data.status === "ZERO_RESULTS") {
-  throw new Error("Location must be in Nigeria, Congo, or the US");
-}
-
-if (data.status !== "OK") {
-  throw new Error("Unable to fetch location");
-}
-
-
-  const location = data.results[0].geometry.location;
-
-  return {
-    lat: location.lat,
-    lon: location.lng,
+  // Static location data for testing (OpenStreetMap coordinates)
+  const staticLocations: { [key: string]: { lat: number; lon: number; drivers: number } } = {
+    "lagos": { lat: 6.5244, lon: 3.3792, drivers: 15 },
+    "lagos nigeria": { lat: 6.5244, lon: 3.3792, drivers: 15 },
+    "abuja": { lat: 9.0765, lon: 7.3986, drivers: 12 },
+    "abuja nigeria": { lat: 9.0765, lon: 7.3986, drivers: 12 },
+    "kano": { lat: 11.9504, lon: 8.5116, drivers: 8 },
+    "kano nigeria": { lat: 11.9504, lon: 8.5116, drivers: 8 },
+    "ibadan": { lat: 7.3775, lon: 3.9470, drivers: 10 },
+    "ibadan nigeria": { lat: 7.3775, lon: 3.9470, drivers: 10 },
+    "port harcourt": { lat: 4.8156, lon: 7.0498, drivers: 7 },
+    "port harcourt nigeria": { lat: 4.8156, lon: 7.0498, drivers: 7 },
+    "kinshasa": { lat: -4.4419, lon: 15.2663, drivers: 5 },
+    "kinshasa congo": { lat: -4.4419, lon: 15.2663, drivers: 5 },
+    "new york": { lat: 40.7128, lon: -74.0060, drivers: 25 },
+    "new york us": { lat: 40.7128, lon: -74.0060, drivers: 25 },
+    "los angeles": { lat: 34.0522, lon: -118.2437, drivers: 20 },
+    "los angeles us": { lat: 34.0522, lon: -118.2437, drivers: 20 },
+    "chicago": { lat: 41.8781, lon: -87.6298, drivers: 18 },
+    "chicago us": { lat: 41.8781, lon: -87.6298, drivers: 18 },
   };
-};
+
+  // Convert address → lat/lon using static data (no API calls)
+  const geocodeAddress = async (address: string) => {
+    console.log("=== STATIC GEOCODING ===");
+    console.log("Search address:", address);
+    
+    const normalizedAddress = address.toLowerCase().trim();
+    
+    // Find matching location
+    const location = staticLocations[normalizedAddress];
+    
+    if (location) {
+      console.log("Found location:", location);
+      return {
+        lat: location.lat,
+        lon: location.lon,
+        drivers: location.drivers // Include driver count
+      };
+    }
+    
+    // Try partial matches
+    for (const [key, value] of Object.entries(staticLocations)) {
+      if (normalizedAddress.includes(key) || key.includes(normalizedAddress)) {
+        console.log("Found partial match:", key, value);
+        return {
+          lat: value.lat,
+          lon: value.lon,
+          drivers: value.drivers
+        };
+      }
+    }
+    
+    console.error("Location not found. Try: Lagos, Abuja, Kano, Port Harcourt, Kinshasa, New York, Los Angeles, Chicago");
+    throw new Error("Location not found. Try: Lagos, Abuja, Kano, Port Harcourt, Kinshasa, New York, Los Angeles, Chicago");
+  };
 
 
  const handleCheckAvailability = async () => {
@@ -105,29 +132,15 @@ if (data.status !== "OK") {
   setLoading(true);
 
   try {
-    const pickup = await geocodeAddress(pickupAddress);
+    const location = await geocodeAddress(pickupAddress);
 
-    const res = await fetch(
-      "https://anyride.techenex.online/api/v1/public/estimate-fare",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          pickup_lat: pickup.lat,
-          pickup_lon: pickup.lon,
-          dropoff_lat: pickup.lat,   // temp until dropoff exists
-          dropoff_lon: pickup.lon,
-        }),
-      }
-    );
+    // Use static driver count from location data
+    setFareData({
+      available_drivers: location.drivers,
+      location: pickupAddress
+    });
 
-    const data = await res.json();
-
-    if (data.status === "success") {
-      setFareData(data.data);
-    } else {
-      console.error("API Error:", data.message);
-    }
+    console.log(`Found ${location.drivers} drivers in ${pickupAddress}`);
   } catch (err) {
     console.error(err);
   } finally {

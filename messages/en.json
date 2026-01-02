@@ -393,7 +393,7 @@
         ]
       }
     },
-    "copyright": "© 2025 AnyRide. Made for everyone on the move."
+    "copyright": "© 2025 AnyRide. powered by Techenex"
   },
   "WaitlistPage": {
     "hero": {
@@ -609,7 +609,7 @@
       "company": ["About", "Blog", "Cities"],
       "help": ["Support", "Safety", "Safety"],
       "legal": ["Terms", "Privacy", "Privacy"],
-      "copyright": "© 2025 AnyRide. Made for everyone on the move."
+      "copyright": "© 2025 AnyRide. powered by Techenex"
     }
   }
 }

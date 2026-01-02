@@ -6,6 +6,23 @@ import { useTranslations } from "next-intl";
 
 const ContactForm = () => {
   const t = useTranslations("ContactPage.form");
+  const [formData, setFormData] = useState({
+    subject: "",
+    fullname: "",
+    email: "",
+    phone: "",
+    category: "",
+    country: "",
+    language: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   return (
     <section className="bg-value">
@@ -16,58 +33,15 @@ const ContactForm = () => {
             {t("description")}
           </p>
 
-          <form action="">
-            {/* <div className="w-full max-w-[335px] md:max-w-full lg:max-w-[778px] bg-[#F5F5F7] mx-auto rounded-[8px]">
-              <div className="p-[40px]">
-                <InputField
-                  name="subject"
-                  label="Subject"
-                  placeholder="Enter Subject"
-                  type="text"
-                  required
-                />
-
-                <InputField
-                  name="fullname"
-                  label="Full Name"
-                  placeholder="Enter your full name"
-                  type="text"
-                  required
-                />
-
-                <InputField
-                  name="email"
-                  label="Email"
-                  placeholder="Enter your email"
-                  type="text"
-                  required
-                />
-
-                <InputField
-                  name="phone"
-                  label="Phone Number"
-                  placeholder="Enter phone number"
-                  type="text"
-                  required
-                />
-
-                <SelectField
-                  name="category"
-                  label="Category"
-                  options={categories}
-                  value={category}
-                />
-              </div>
-            </div> */}
-            <div className="w-full max-w-[335px] md:max-w-full lg:max-w-[778px] mx-auto rounded-[8px]">
+          <div className="w-full max-w-[335px] md:max-w-full lg:max-w-[778px] mx-auto rounded-[8px]">
             <div className="bg-[#F5F5F7] rounded-[12px] p-6 md:p-10">
               <form className="flex gap-y-[24px] flex-col">
                 <InputField
                   name="subject"
                   label={t("fields.subject")}
                   placeholder={t("fields.subjectPlaceholder")}
-                  value=""
-                  onChange={() => {}}
+                  value={formData.subject}
+                  onChange={handleChange}
                   required
                 />
 
@@ -75,8 +49,8 @@ const ContactForm = () => {
                   name="fullname"
                   label={t("fields.fullName")}
                   placeholder={t("fields.fullNamePlaceholder")}
-                  value=""
-                  onChange={() => {}}
+                  value={formData.fullname}
+                  onChange={handleChange}
                   required
                 />
 
@@ -84,8 +58,8 @@ const ContactForm = () => {
                   name="email"
                   label={t("fields.email")}
                   placeholder={t("fields.emailPlaceholder")}
-                  value=""
-                  onChange={() => {}}
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
 
@@ -93,39 +67,40 @@ const ContactForm = () => {
                   name="phone"
                   label={t("fields.phone")}
                   placeholder={t("fields.phonePlaceholder")}
-                  value=""
-                  onChange={() => {}}
+                  value={formData.phone}
+                  onChange={handleChange}
                   required
                 />
 
                 <SelectField
                   name="category"
                   label={t("fields.category")}
-                  value=""
+                  value={formData.category}
+                  onChange={handleChange}
                   options={[
                     { value: "", label: t("fields.selectCategory") },
                     { value: "payment", label: t("fields.paymentIssue") },
                     { value: "ride", label: t("fields.rideIssue") },
                   ]}
-                  
                 />
 
                 <SelectField
                   name="country"
                   label={t("fields.country")}
-                  value=""
+                  value={formData.country}
+                  onChange={handleChange}
                   options={[
                     { value: "", label: t("fields.selectCountry") },
                     { value: "ng", label: "Nigeria" },
                     { value: "gh", label: "Ghana" },
                   ]}
-                 
                 />
 
                 <SelectField
                   name="language"
                   label={t("fields.responseLanguage")}
-                  value=""
+                  value={formData.language}
+                  onChange={handleChange}
                   options={[
                     { value: "", label: t("fields.selectLanguage") },
                     { value: "en", label: "English" },
@@ -170,8 +145,7 @@ const ContactForm = () => {
                 </button>
               </form>
             </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>

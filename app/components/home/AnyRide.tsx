@@ -51,7 +51,7 @@ const AnyRide = () => {
           </div>
 
           {/* Reviews */}
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <div className="w-19 h-8">
               <Image
                 src="/images/pictures.png"
@@ -80,7 +80,7 @@ const AnyRide = () => {
                {t("HomePage.appDownload.reviews.trustedBy")}
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
