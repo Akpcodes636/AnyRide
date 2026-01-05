@@ -217,11 +217,11 @@ export const waitlistFAQ = [
     answer: "We’re preparing for our MVP launch very soon. Everyone on the waitlist will be notified first.",
   },
   {
-    question: "Who can join the waitlist?",
+    question:"Who can join the waitlist?",
     answer: "Anyone interested in using AnyRide can join the waitlist. It’s open to riders, drivers, and partners.",
   },
   {
-    question: "Is joining free?",
+    question:"Is joining free?",
     answer: "Yes! Joining the waitlist is completely free.",
   },
   {
@@ -229,3 +229,127 @@ export const waitlistFAQ = [
     answer: "We’ll contact you via the email address you provided when signing up for the waitlist.",
   },
 ];
+
+
+export const rider =[
+  { 
+    img:"/images/rider.png",
+    title:"Step 1: Set your trip",
+    description:"Enter your pickup and destination, choose a car or motorcycle, and see your price upfront."
+  },
+  {
+    img:"/images/rider-1.png",
+    title:"Step 2: Get matched",
+    description:"We connect you with a nearby verified driver. See their name, vehicle, and arrival time instantly."
+  },
+  {
+    img:"/images/rider-2.png",
+    title:"Step 3: Ride & pay",
+    description:"Track your trip live, confirm pickup with a code, and pay with cash or wallet."
+  }
+]
+
+export const pricingClarity = [
+  {
+    img:"/icons/wallet.svg",
+    title:"Base fare",
+    text:"Starts the trip",
+    amount:"CDF 2,000"
+  },
+  {
+    img:"/icons/cars.svg",
+    title:"Per Km",
+    text:"Distance-based",
+    amount:"CDF 650"
+  },
+  {
+    img:"/icons/partner.svg",
+    title:"Per minutes",
+    text:"Time & traffic" ,
+    amount:"CDF 90"
+  }
+]
+
+export const benefits = [
+   {
+    number:"01",
+    title:"Upfront pricing",
+    description:"Know your fare before confirming.",
+    color:"#F8EAEA"
+  },
+  {
+    number:"02",
+    title:"Cars & motorcycles",
+    description:"Choose what fits your trip and budget.",
+    color:"#EFF5FE"
+  },
+  {
+    number:"03",
+    title:"Verified drivers",
+    description:"Every driver is screened and reviewed.",
+    color:"#EDFAF1"
+  },
+  {
+    number:"04",
+    title:"Local-first",
+    description:"Built for real cities, real roads, real people.",
+    color:"#E6E6EB"
+  }
+]
+
+export const benefitsDriver = [
+  {
+    number:"01",
+    title:"Flexible work",
+    description:"Go online anytime. No fixed shifts.",
+    color:"#F8EAEA"
+  },
+  {
+    number:"02",
+    title:"Fair earnings",
+    description:"Transparent fares and clear breakdowns.",
+    color:"#EFF5FE"
+  },
+  {
+    number:"03",
+    title:"Multiple vehicles",
+    description:"Register more than one car or bike and switch anytime.",
+    color:"#EDFAF1"
+  },
+  {
+    number:"04",
+    title:"Local support",
+    description:"Real people, real help when you need it.",
+    color:"#E6E6EB"
+  }
+]
+
+
+export const driverContent =[
+  { 
+    img:"/images/Driver-1.png",
+    title:"Step 1: Sign up",
+    description:"Create your driver account in minutes."
+  },
+  {
+    img:"/images/Driver-2.png",
+    title:"Step 2: Upload documents",
+    description:"Submit your ID, license, and vehicle details for review."
+  },
+  {
+    img:"/images/Driver-3.png",
+    title:"Step 3: Get verified",
+    description:"Our team reviews and approves your profile."
+  },
+  {
+    img:"/images/Driver-4.png",
+    title:"Step 4: Go online & earn",
+    description:"Select your vehicle, go online, and start receiving trips."
+  }
+]
+
+ export  const featureContent = [
+    "Daily and weekly earnings summary",
+    "Completed trips overview",
+    "Wallet balance and payout history"
+  ];

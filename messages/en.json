@@ -569,26 +569,49 @@
       "title": "Our Partnership Expansion Roadmap",
       "description": "Here's how we're building the complete transport/taxi ecosystem step by step.",
       "steps": [
-        {
-          "title": "Fleet Owners (Now Live)",
-          "description": "We are currently live with individual and corporate fleet owners who provide vehicle and motorcycles for our driver network. Join us immediately and work with AnyRide from day one."
-        },
-        {
-          "title": "Service Providers",
-          "description": "Partnering with service providers to offer our fleet owners and drivers value-added services like discounted vehicle maintenance, fuel partnerships, insurance packages, and tire/oil services."
-        },
-        {
-          "title": "Financial & Insurance Partners",
-          "description": "Collaboration with financial institutions for vehicle financing, leasing, micro-loans for drivers & partners, and insurance options tailored for the gig economy."
-        },
-        {
-          "title": "Corporate & Institutional Partners",
-          "description": "Providing B2B logistics services, employee transport solutions, and contract-based services."
-        },
-        {
-          "title": "Smart Mobility Ecosystem",
-          "description": "Our final goal is a fully integrated mobility ecosystem partnering with EV charging providers, tech innovation partners, government & urban planning entities, and sustainability providers."
-        }
+       {
+      "title": "Fleet Owners (Now Live)",
+      "description": "We start by partnering with individual and corporate fleet owners who provide cars and motorcycles on the AnyRide platform. Fleet owners earn consistently while we ensure riders always have access to reliable vehicles across the city.\n\nWho this is for:\nCar owners, motorcycle owners, fleet management companies."
+    },
+       {
+  "title": "Service Providers",
+  "description": "Next, we integrate essential service partners to support drivers and fleets. This ensures vehicles stay safe, efficient, and affordable to operate.",
+  "includes": [
+    "Mechanics & repair workshops",
+    "Fuel stations",
+    "Car wash & maintenance services"
+  ]
+},
+  {
+  "title":"Financial & Insurance Partners",
+  "description": "We introduce trusted financial and insurance partners to support drivers and fleet owners with flexible solutions.",
+  "focus": "Focus areas:",
+  "includes": [
+    "Vehicle insurance",
+    "Micro‑financing & leasing",
+    "Driver savings & credit support"
+  ],
+  "footer": "This makes it easier to join, operate, and grow on AnyRide."
+}, 
+{
+  "title": "Corporate & Institutional Partners",
+  "description": "At this stage, we partner with businesses, organizations, and institutions that require reliable transportation for staff, deliveries, or daily operations.",
+  "includes": [
+    "Companies & enterprises",
+    "NGOs & institutions",
+    "Event and logistics partners"
+  ]
+},
+      {
+  "title": "Smart Mobility Ecosystem",
+  "description": "Our final phase focuses on innovation and long‑term sustainability.",
+  "includes": [
+    "Smart mobility solutions",
+    "EV & clean energy partners",
+    "Data, mapping, and mobility tech providers"
+  ],
+  "footer": "This positions AnyRide as a full transportation ecosystem—not just a ride‑hailing app."
+}
       ]
     },
     "FAQ": {

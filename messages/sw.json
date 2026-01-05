@@ -527,10 +527,44 @@
       "description": "Hapa ndipo tunavyounda mfumo kamili wa usafirishaji/taksi hatua kwa hatua.",
       "steps": [
         { "title": "Wamiliki wa Floti (Sasa Hai)", "description": "Kwa sasa tuna wamiliki binafsi na wa kampuni wanaotoa magari na pikipiki kwa mtandao wetu. Jiunge nasi mara moja." },
-        { "title": "Watoa Huduma", "description": "Kushirikiana na watoa huduma kutoa huduma za ziada kwa wamiliki na madereva: matengenezo kwa punguzo, mafuta, bima na huduma za tairi/mafuta." },
-        { "title": "Washirika wa Fedha & Bima", "description": "Kushirikiana na taasisi za kifedha kwa ufadhili, upangaji, mikopo midogo na bima inayofaa uchumi wa gig." },
-        { "title": "Washirika wa Kibiashara & Taasisi", "description": "Huduma za usafirishaji B2B, suluhisho za wafanyakazi, na huduma za mkataba." },
-        { "title": "Mfumo wa Usafirishaji Smart", "description": "Lengo letu la mwisho ni mfumo kamili wa usafirishaji kwa kushirikiana na watoa huduma za EV, teknolojia, serikali & mipango mijini, na uendelevu." }
+        {
+        "title": "Watoa Huduma",
+        "description": "Kisha, tunaunganisha washirika muhimu wa huduma ili kusaidia madereva na wamiliki wa magari. Hii inahakikisha magari yanabaki salama, yenye ufanisi na gharama nafuu kuendesha.",
+        "includes": [
+          "Karakana na warsha za matengenezo",
+          "Vituo vya mafuta",
+          "Huduma za kuosha na kutunza magari"
+        ]
+        },
+      {
+        "description": "Tunaanzisha washirika wa kifedha na bima wanaoaminika ili kusaidia madereva na wamiliki wa magari kwa suluhisho rahisi na linalonyumbulika.",
+        "focus": "Maeneo muhimu:",
+        "includes": [
+          "Bima ya gari",
+          "Mikopo midogo na upangishaji",
+          "Akiba ya madereva na msaada wa mikopo"
+        ],
+        "footer": "Hii hurahisisha kujiunga, kuendesha, na kukuza shughuli zako kwenye AnyRide."
+      },
+{
+  "title": "Washirika wa Makampuni na Taasisi",
+  "description": "Katika hatua hii, tunashirikiana na biashara, mashirika, na taasisi zinazohitaji usafirishaji wa kuaminika kwa wafanyakazi, usambazaji, au shughuli za kila siku.",
+  "includes": [
+    "Makampuni & biashara",
+    "NGO & taasisi",
+    "Washirika wa hafla na usambazaji"
+  ]
+},
+{
+  "title": "Mfumo wa Usafirishaji wa Kisasa",
+  "description": "Awamu yetu ya mwisho inazingatia ubunifu na uendelevu wa muda mrefu.",
+  "includes": [
+    "Suluhisho za usafirishaji wa kisasa",
+    "Washirika wa EV & nishati safi",
+    "Watoa data, ramani, na teknolojia ya usafirishaji"
+  ],
+  "footer": "Hii inaweka AnyRide kama mfumo kamili wa usafirishaji — siyo tu programu ya ride-hailing."
+}
       ]
     },
     "FAQ": {

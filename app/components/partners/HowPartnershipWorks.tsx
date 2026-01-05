@@ -10,7 +10,7 @@ export default function HowPartnershipWorks() {
     title: step.title,
     description: typeof step.description === 'string' ? step.description : null,
     bullets: Array.isArray(step.description) ? step.description : undefined,
-    color: "text-red-600"
+    color: "text-[#A20602]"
   }));
 
   return (
@@ -30,7 +30,7 @@ export default function HowPartnershipWorks() {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+        {/* <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
           {steps.map((step, index) => (
             <div 
               key={index}
@@ -63,7 +63,57 @@ export default function HowPartnershipWorks() {
               )}
             </div>
           ))}
+        </div> */}
+        <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-20">
+
+            {/* Vertical Divider */}
+            <div className="hidden md:block absolute inset-y-0 left-1/2 w-px bg-[#E6E6E6] -translate-x-1/2" />
+
+            {/* Horizontal Divider */}
+            <div className="hidden md:block absolute inset-x-0 top-1/2 h-px bg-[#E6E6E6] -translate-y-1/2" />
+
+            {/* Steps */}
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="px-6"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span className={`${step.color} font-bold text-[18px] md:text-[22px] lg:text-[32px] whitespace-nowrap`}>
+                    {step.number}
+                  </span>
+
+                  <h3 className="text-[18px] md:text-[22px] lg:text-[32px] tracking-[-5%] leading-[120%] font-bold text-[#02093A]">
+                    {step.title}
+                  </h3>
+                </div>
+
+                {step.description && (
+                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed pl-0 sm:pl-16">
+                    {step.description}
+                  </p>
+                )}
+
+                {step.bullets && (
+                  <ul className="space-y-2 pl-0 sm:pl-16 mt-3">
+                    {step.bullets.map((bullet, idx) => (
+                      <li
+                        key={idx}
+                        className="text-gray-400 text-sm sm:text-base flex items-start"
+                      >
+                        <span className="text-red-500 mr-2">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
       </div>
     </div>
   );

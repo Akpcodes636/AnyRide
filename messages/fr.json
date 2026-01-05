@@ -552,11 +552,48 @@
       "title": "Feuille de route de l'expansion du partenariat",
       "description": "Voici comment nous construisons l'écosystème complet de transport/taxi étape par étape.",
       "steps": [
-        { "title": "Propriétaires de flotte (Maintenant en direct)", "description": "Nous sommes actuellement en direct avec des propriétaires de flotte individuels et corporatifs qui fournissent véhicules et motos pour notre réseau. Rejoignez-nous dès aujourd'hui." },
-        { "title": "Fournisseurs de services", "description": "Nous collaborons avec des fournisseurs de services pour offrir aux propriétaires et conducteurs des services à valeur ajoutée : entretien à prix réduit, carburant, assurance et services de pneus/huile." },
-        { "title": "Partenaires financiers et assurances", "description": "Collaboration avec institutions financières pour financement, location, micro-prêts et assurance adaptée à l'économie des petits boulots." },
-        { "title": "Partenaires corporatifs et institutionnels", "description": "Services logistiques B2B, solutions de transport pour employés et services contractuels." },
-        { "title": "Écosystème de mobilité intelligente", "description": "Objectif final : un écosystème de mobilité intégré avec recharge EV, innovation technologique, planification urbaine et durabilité." }
+        {
+          "title": "Propriétaires de flotte (Déjà en ligne)",
+          "description": "Nous commençons par collaborer avec des propriétaires de flottes individuelles et corporatives qui mettent à disposition des voitures et des motos sur la plateforme AnyRide. Les propriétaires de flotte gagnent de manière constante tandis que nous garantissons aux passagers l’accès à des véhicules fiables dans toute la ville.\n\nÀ qui cela s’adresse :\nPropriétaires de voitures, propriétaires de motos, sociétés de gestion de flotte."
+        },
+        {
+        "title": "Prestataires de services",
+        "description": "Ensuite, nous intégrons des partenaires de services essentiels pour soutenir les conducteurs et les flottes. Cela garantit que les véhicules restent sûrs, efficaces et abordables à exploiter.",
+        "includes": [
+          "Ateliers de mécanique et de réparation",
+          "Stations-service",
+          "Services de lavage et d’entretien automobile"
+        ]
+      },
+      {
+  "description": "Nous introduisons des partenaires financiers et d’assurance de confiance afin d’accompagner les conducteurs et les propriétaires de flotte avec des solutions flexibles.",
+  "focus": "Domaines clés :",
+  "includes": [
+    "Assurance véhicule",
+    "Micro-financement et leasing",
+    "Épargne des conducteurs et soutien au crédit"
+  ],
+  "footer": "Cela facilite l’adhésion, l’exploitation et la croissance sur AnyRide."
+},
+    {
+  "title": "Partenaires corporatifs et institutionnels",
+  "description": "À ce stade, nous collaborons avec des entreprises, organisations et institutions qui ont besoin d’un transport fiable pour le personnel, les livraisons ou les opérations quotidiennes.",
+  "includes": [
+    "Entreprises & sociétés",
+    "ONG & institutions",
+    "Partenaires événementiels et logistiques"
+  ]
+},
+   {
+  "title": "Écosystème de mobilité intelligente",
+  "description": "Notre phase finale se concentre sur l’innovation et la durabilité à long terme.",
+  "includes": [
+    "Solutions de mobilité intelligente",
+    "Partenaires véhicules électriques & énergie propre",
+    "Fournisseurs de données, cartographie et technologies de mobilité"
+  ],
+  "footer": "Cela positionne AnyRide comme un écosystème de transport complet, pas seulement une application de covoiturage."
+}
       ]
     },
     "FAQ": {

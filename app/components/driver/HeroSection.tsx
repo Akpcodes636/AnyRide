@@ -15,7 +15,7 @@ export default function HeroSection() {
 
   return (
     <section className="bg-driver h-screen">
-      <div className="container-sm">
+      <div className="container">
         <div className="pt-[148px] md:pt-[250px] lg:pt-[200px]">
           <h1 className="text-[40px] text-text-white font-bold tracking-[-5%] text-center w-full max-w-[337px] mx-auto md:max-w-[500px] lg:max-w-[450px] mb-[8px]">
             {t("title")}

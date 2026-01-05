@@ -54,10 +54,10 @@ const PartnerHero = () => {
     <section className="bg-partner pt-[280px] pb-[80px] md:pt-[330px] md:pb-[120px]">
       <div className="container">
         <div>
-          <h2 className="text-white text-center w-full max-w-[250px] md:max-w-full lg:max-w-full mx-auto mb-[16px]">
+          <h2 className="text-white text-center w-full max-w-[250px] md:max-w-full lg:max-w-full xl:max-w-[595px] mx-auto mb-[16px]">
             {t("title")}
           </h2>
-          <p className="text-[16px] md:text-[18px] text-[#E6E6EB] tracking-[-2%] font-normal w-full max-w-[337px] mx-auto text-center md:max-w-full lg:max-w-full mb-[40px]">
+          <p className="text-[16px] md:text-[18px] text-[#E6E6EB] tracking-[-2%] font-normal w-full max-w-[337px] md:max-w-full lg:max-w-full xl:max-w-[620px] mx-auto text-center md:max-w-full lg:max-w-full mb-[40px]">
             {t("subtitle")}
           </p>
           <div className="flex items-center justify-center gap-[8px] flex-col md:flex-row lg:flex-row">

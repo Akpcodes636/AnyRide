@@ -69,7 +69,7 @@ const Faq = () => {
           </p>
         </div>
 
-        <div className="w-full max-w-[335px] mx-auto md:max-w-[608px]">
+        <div className="w-full max-w-[335px]  sm:max-w-[500px] mx-auto md:max-w-[608px]">
           {items.map((item, i) => (
             <FaqListItem
               key={i}

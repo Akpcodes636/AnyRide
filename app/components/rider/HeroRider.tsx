@@ -3,41 +3,24 @@
 import Image from "next/image";
 import PricingForm from "../home/Pricing/PricingForm";
 import { useTranslations } from "next-intl";
+import Button from "../ui/Button";
 
 const HeroRider = () => {
   const t = useTranslations("HomePage.hero");
 
   return (
-    <section className="py-[120px] md:py-[130px] lg:py-[140px]">
+    <section className=" bg-cover bg-center bg-no-repeat bg-red-600"style={{ backgroundImage: "url('/en/riders.png')" }}>
+      <div className="py-[220px] md:py-[230px] lg:py-[280px]">
       <div className="container">
         <div>
-          <h1 className="text-[40px] md:text-[50px] font-bold leading-[120%] tracking-[-5%] mb-[24px] text-text-accent lg:hidden">
-            {t("title")}
-          </h1>
+        <h1 className="text-[32px] md:text-[50px] lg:text-[64px] text-white font-bold text-center leading-[120%] tracking-[-5%] max-w-[673px] mx-auto mb-[16px]">Ride your way. <br /> Anytime, anywhere.</h1>
+        <p className="text-[#E6E6EB] text-[18px] leading-[160%] tracking-[-2%] text-center max-w-[673px] mx-auto mb-[32px]">Book safe, affordable rides with verified drivers using cars or motorcycles — all from one simple app.</p>
+        <div className="flex items-center justify-center">
+        <Button style="danger" type="button" css="">Book a ride</Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-[30px]">
-          {/* Text + Form */}
-          <div className="h-full w-full order-2 md:order-1 mb-[10px]">
-            <div>
-              <h2 className="mt-7.5 hidden md:hidden lg:block xl:block">
-                {t("title")}
-              </h2>
-              <PricingForm />
-            </div>
-          </div>
-
-          {/* Image */}
-          <div className="h-full w-full max-w-full md:max-w-full h-[272px] mx-auto order-1 md:order-2">
-            <Image
-              src="/en/Rectangle.svg"
-              alt={t("title")}
-              width={500}
-              height={500}
-              className="h-full w-full object-cover"
-            />
-          </div>
         </div>
+      </div>
       </div>
     </section>
   );
