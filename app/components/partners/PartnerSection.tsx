@@ -15,7 +15,7 @@ const PartnerSection = () =>{
             <h2>{t("title")}</h2>
             </div>
             
-            <div className="py-[132px]">
+            <div className="py-[80px] md:py-[100px] lg:py-[132px]">
                 <PartnerGrid />
             </div>
         </div>

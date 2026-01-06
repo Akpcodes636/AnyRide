@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import SubTitle from "../ui/Subtitle";
 import Button from "../ui/Button";

@@ -438,9 +438,9 @@
       "help": {
         "title": "Help",
         "links": [
-          { "label": "Support", "href": "/support" },
+          { "label": "Support", "href": "/contact" },
           { "label": "Safety", "href": "/privacy" },
-          { "label": "Pricing", "href": "/rider" }
+          { "label": "Pricing", "href": "/privacy" }
         ]
       },
       "legal": {
