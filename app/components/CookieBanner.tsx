@@ -13,7 +13,7 @@ export default function CookieBanner() {
   }, []);
 
   const acceptCookies = () => {
-    Cookies.set("cookiesAccepted", "true", { expires: 365 });
+    Cookies.set("cookiesAccepted", "true", { expires: 30 });
     setShowBanner(false);
   };
 

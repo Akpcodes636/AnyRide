@@ -1,7 +1,10 @@
 "use client";
 
-import MobileNav from "./navbar/MobileNav";
-import Navbar from "./navbar/Navbar";
+import MobileNav from "./nav/MobileNav";
+import Navbar from "./nav/Navbar";
+
+// import MobileNav from "./navBar/MobileNav";
+// import Navbar from "./navBar/Navbar";
 
 // import MobileNav from "./navBar/MobileNav";
 // import Navbar from "./navBar/Navbar";
