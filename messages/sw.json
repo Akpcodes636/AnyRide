@@ -117,7 +117,7 @@
       "title": "Safari Nzuri. Bei Wazi.",
       "subtitle": "Jua nauli yako kabla ya kusafiri.",
       "description": "Fika unakokwenda haraka zaidi, salama zaidi, na kwa haki.",
-           "form": {
+        "form": {
         "pickupLabel": "Weka mahali pa kukuchukua",
         "pickupPlaceholder": "Abuja, Nigeria",
         "destinationLabel": "Weka mahali unakokwenda",
@@ -322,60 +322,120 @@
       "description": "Tunaunda kitu tofauti — uzoefu wa safari unaohisi kuwa wa karibu, wa haki, na wa kibinadamu. Kutoka kwa madereva wetu wanaoweka miji kusogea, hadi abiria wanaotuwekea imani kila siku, AnyRide inasimama kwa usalama, uaminifu, na uwezeshaji. Kwa sababu usogezaji ni uhuru — na kila mtu anastahili kuufikia. Hiyo ndiyo AnyRide. Imeundwa kwa ajili ya watu. Imetengenezwa kwa ajili ya usogezaji."
     }
   },
-
   "DriversPage": {
     "hero": {
-      "title": "Endesha kwa uhuru. Pata kwa masharti yako.",
-      "description": "Jiunge na AnyRide na upate zaidi huku ukiwa na udhibiti wa muda wako na safari.",
-       "cta": "kuwa dereva"
+      "title": "Endesha kwa uhuru. Pata mapato kwa hali yako.",
+      "description": "Jiunge na AnyRide na upate zaidi huku ukidhibiti wakati na safari zako.",
+      "cta": "kuwa dereva"
     },
-   "FAQ": {
-  "title": "Maswali yanayoulizwa mara kwa mara",
-  "description": "Tembelea sehemu yetu ya maswali kwa majibu ya haraka na rahisi kwa maswali ya kawaida.",
-  "items": [
-    {
-      "question": "Jukwaa litaanza lini?",
-      "answer": "Tunaandaa uzinduzi wa MVP yetu hivi karibuni. Wote walio kwenye orodha ya kusubiri watajulishwa kwanza."
-    },
-    {
-      "question": "Ni nani anaweza kujiunga na orodha ya kusubiri?",
-      "answer": "Mtu yeyote anayevutiwa kutumia AnyRide anaweza kujiunga na orodha ya kusubiri. Iko wazi kwa abiria, madereva na washirika."
-    },
-    {
-      "question": "Je, kujiunga ni bure?",
-      "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa."
-    },
-    {
-      "question": "Nitawasilianwa vipi?",
-      "answer": "Tutawasiliana nawe kupitia barua pepe uliyotoa ulipojiunga na orodha ya kusubiri."
-    }
-  ]
+    "FAQ": {
+       "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
+      "title": "Maswali Yanayoulizwa Mara kwa Mara",
+      "description": "Angalia sehemu yetu ya FAQ kupata majibu kwa haraka na kwa urahisi kwa maswali yanayoulizwa mara kwa mara.",
+      "items": [
+        {
+          "question": "Jukwaa litaanzishwa lini?",
+          "answer": "Tunaandaa uzinduzi wa MVP yetu hivi karibuni. Kila mtu aliye kwenye orodha ya kusubiri ataarifiwa kwanza."
+        },
+        {
+          "question": "Nani anaweza kujiunga na orodha ya kusubiri?",
+          "answer": "Kila mtu anayevutiwa kutumia AnyRide anaweza kujiunga na orodha ya kusubiri. Inafunguliwa kwa abiria, madereva, na washirika."
+        },
+        {
+          "question": "Je, kujiunga ni bure?",
+          "answer": "Ndiyo! Kujiunga na orodha ya kusubiri ni bure kabisa."
+        },
+        {
+          "question": "Nitapata taarifaje?",
+          "answer": "Tutakuwasiliana kupitia barua pepe uliyotoa wakati wa kujiandikisha kwenye orodha ya kusubiri."
+        }
+      ]
     },
     "appDownload": {
       "title": "Pakua programu ya AnyRide",
-      "description": "AnyRide inakupeleka unakotaka kwenda kwa bei nafuu zaidi. Programu inahesabu gharama ya safari yako kiotomatiki na inaonyesha gari lako kwenye ramani kwa wakati halisi. Ni ya haraka, rahisi, na inafanya kazi na iOS na Android.",
+      "description": "AnyRide inakupeleka unaposafiri kwa gharama ndogo. Programu inahesabu gharama ya safari yako kiotomatiki na inaonyesha gari lako kwenye ramani kwa wakati halisi. Ni haraka, rahisi, na inafanya kazi na iOS na Android.",
       "platforms": {
         "apple": "Apple App Store",
         "google": "Google Play Store"
       },
       "reviews": {
         "rating": "4.9",
-        "trustedBy": "Inaaminiwa na watumiaji zaidi ya 1125"
+        "trustedBy": "Imethibitishwa na watumiaji zaidi ya 1125"
       }
+    },
+    "benefits": {
+      "subtitle": "Faida",
+      "title": "Kwa Nini Uendeshe na AnyRide",
+      "description": "Imeundwa kwa madereva kama wewe",
+      "items": [
+        {
+          "number": "01",
+          "title": "Kazi yenye uhuru",
+          "description": "Jiongeze mtandaoni wakati wowote. Hakuna ratiba zilizowekwa."
+        },
+        {
+          "number": "02",
+          "title": "Mapato sawa",
+          "description": "Gharama wazi na maelezo ya wazi."
+        },
+        {
+          "number": "03",
+          "title": "Magari mengi",
+          "description": "Jisajili na gari au pikipiki zaidi ya moja na ubadilishe wakati wowote."
+        },
+        {
+          "number": "04",
+          "title": "Msaada wa eneo",
+          "description": "Watu halisi, msaada halisi unapohitaji."
+        }
+      ]
+    },
+    "guides": {
+      "subtitle": "Vivyo Vya Kufanya",
+      "title": "Muhtasari wa Uandikishaji wa Madereva",
+        "description": "Panga safari salama na rahisi na madereva waliohakikiwa kwa kutumia magari au pikipiki — yote kutoka kwenye programu rahisi.",
+      "steps": {
+    "step1": {
+      "title": "Jisajili",
+      "description": "Tengeneza akaunti yako ya dereva kwa dakika chache."
+    },
+    "step2": {
+      "title": "Pakia nyaraka",
+      "description": "Wasilisha kitambulisho chako, leseni, na maelezo ya gari lako kwa ukaguzi."
+    },
+    "step3": {
+      "title": "Thibitisha",
+      "description": "Timu yetu inapitia na kuidhinisha wasifu wako."
+    },
+    "step4": {
+      "title": "Nenda mtandaoni na upate mapato",
+      "description": "Chagua gari lako, nenda mtandaoni, na anza kupokea safari."
     }
-  },
+  }
 
-  "Footer": {
-    "description": "Tunajenga mtandao wa usafiri wa karibu unaotegemewa zaidi — uliobuniwa kwa ajili ya abiria na watu halisi. Wa bei nafuu, salama, na daima upo unapohitaji.",
-   "sections": {
-  "company": {
-    "title": "Kampuni",
-    "links": [
-      { "label": "Kuhusu", "href": "/about" },
-      { "label": "Blogu", "href": "/blog" },
-      { "label": "Washirika", "href": "/partners" }
-    ]
-  },
+      },
+      "tracking": {
+      "subtitle": "Ufuatiliaji",
+      "title": "Muhtasari wa mapato na utendaji",
+      "description": "Fuatilia mapato yako, safari, na utendaji moja kwa moja kwenye dashibodi ya dereva.",
+      "item1": "Muhtasari wa mapato ya kila siku na kila wiki",
+      "item2": "Muhtasari wa safari zilizokamilika",
+      "item3": "Salio la pochi na historia ya malipo",
+      "image": "/images/Driver-Phone.png"
+    }
+
+    },
+    "Footer": {
+      "description": "Tunajenga mtandao wa usafiri wa karibu unaotegemewa zaidi — uliobuniwa kwa ajili ya abiria na watu halisi. Wa bei nafuu, salama, na daima upo unapohitaji.",
+    "sections": {
+    "company": {
+      "title": "Kampuni",
+      "links": [
+        { "label": "Kuhusu", "href": "/about" },
+        { "label": "Blogu", "href": "/blog" },
+        { "label": "Washirika", "href": "/partners" }
+      ]
+    },
   "help": {
     "title": "Msaada",
     "links": [
@@ -411,9 +471,17 @@
       "firstNamePlaceholder": "Jina la kwanza",
       "lastNamePlaceholder": "Jina la familia",
       "emailPlaceholder": "Anwani ya barua pepe",
-      "submit": "Jiunge na orodha ya kusubiri"
+      "submit": "Jiunge na orodha ya kusubiri",
+      "agreements": {
+        "privacyPolicy": "Nakubali Sera ya Faragha",
+        "termsConditions": "Nakubali Masharti na Vigezo",
+        "consentMessages": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa ajili ya uthibitisho na mawasiliano",
+        "disclaimer": "Kumbuka: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa ajili ya uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kuacha kupokea ujumbe wakati wowote kwa kujibu STOP kwa ujumbe wowote. Uidhinishaji huu hauhitajiki kununua bidhaa au huduma."
+      }
+
     },
     "FAQ": {
+      "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
       "title": "Maswali Yanayoulizwa Mara kwa Mara",
       "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali yanayoulizwa zaidi",
       "items": [
@@ -442,42 +510,44 @@
       "description": "Wasiliana na timu yetu kwa maswali yoyote, wasiwasi, au maoni.",
       "cta": "Sema nasi"
     },
-    "form": {
-      "title": "Una tatizo?",
-      "description": "Jaza fomu hapa chini, wasilisha tiketi na tutakujibu.",
-      "fields": {
-        "subject": "Mada",
-        "subjectPlaceholder": "Ingiza mada",
-        "fullName": "Jina Kamili",
-        "fullNamePlaceholder": "Ingiza jina lako kamili",
-        "email": "Barua pepe",
-        "emailPlaceholder": "Ingiza barua pepe yako",
-        "phone": "Namba ya Simu",
-        "phonePlaceholder": "Ingiza namba ya simu",
-        "category": "Kategoria",
-        "selectCategory": "Chagua kategoria",
-        "paymentIssue": "Tatizo la malipo",
-        "rideIssue": "Tatizo la safari",
-        "country": "Nchi",
-        "selectCountry": "Chagua Nchi",
-        "responseLanguage": "Lugha ya jibu",
-        "selectLanguage": "Chagua lugha ya jibu",
-        "message": "Ujumbe",
-        "messagePlaceholder": "Andika ujumbe/maoni/malalamiko yako",
-        "attachment": "Kiambatanisho",
-        "emailUpdates": "Nitumie sasisho kupitia barua pepe"
-      },
-      "submit": "Wasilisha",
-      "form": {
-      "errors": {
-        "required": "Tafadhali jaza mashamba yote muhimu",
-        "invalidEmail": "Tafadhali weka barua pepe sahihi",
-        "failed": "Kuna tatizo. Tafadhali jaribu tena",
-        "network": "Tatizo la mtandao. Tafadhali jaribu tena baadaye"
-      },
-      "success": "Ujumbe umetumwa kwa mafanikio!"
-    }
-    }
+  "form": {
+    "title": "Una tatizo?",
+    "description": "Jaza fomu hapo chini, tuma tiketi na tutakurudia.",
+    "fields": {
+      "subject": "Kichwa",
+      "subjectPlaceholder": "Weka kichwa",
+      "fullName": "Jina Kamili",
+      "fullNamePlaceholder": "Weka jina lako kamili",
+      "email": "Barua pepe",
+      "emailPlaceholder": "Weka barua pepe yako",
+      "phone": "Nambari ya simu",
+      "phonePlaceholder": "Weka nambari ya simu",
+      "category": "Kategoria",
+      "selectCategory": "Chagua kategoria",
+      "paymentIssue": "Tatizo la malipo",
+      "rideIssue": "Tatizo la safari",
+      "country": "Nchi",
+      "selectCountry": "Chagua nchi",
+      "responseLanguage": "Lugha ya majibu",
+      "selectLanguage": "Chagua lugha ya majibu",
+      "message": "Ujumbe",
+      "messagePlaceholder": "Andika ujumbe/woni/shida zako",
+      "attachment": "Kiambatanisho(ya)",
+      "emailUpdates": "Nitumie sasisho kupitia barua pepe",
+      "emailConsent": "Nakubali Sera ya Faragha",
+      "termsConsent": "Nakubali Sheria na Masharti",
+      "smsConsent": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa uthibitisho na mawasiliano",
+      "disclaimer": "Onyo: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kujiondoa wakati wowote kwa kujibu STOP kwenye ujumbe wowote. Uidhinisho huu hauhitajiki kununua bidhaa au huduma."
+    },
+    "submit": "Tuma",
+    "errors": {
+      "required": "Tafadhali jaza sehemu zote zinazohitajika",
+      "invalidEmail": "Tafadhali ingiza barua pepe halali",
+      "failed": "Kitu kilikwenda vibaya. Tafadhali jaribu tena",
+      "network": "Tatizo la mtandao. Tafadhali jaribu tena baadaye"
+    },
+    "success": "Ujumbe umetumwa kwa mafanikio!"
+  }
   },
   "FleetPartnersPage": {
     "hero": {
@@ -568,6 +638,7 @@
       ]
     },
     "FAQ": {
+      "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
       "title": "Maswali Yanayoulizwa Mara kwa Mara",
       "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali yanayoulizwa zaidi.",
       "items": [
@@ -649,5 +720,115 @@
     "partners": "Washirika",
     "contactUs": "Wasiliana nasi",
     "waitlistButton": "Jiunge na orodha ya kusubiri"
-  }
+  },
+  "RiderPage": {
+  "hero": {
+    "title": "Safiri kwa njia yako.",
+    "subtitle": "Wakati wowote, mahali popote.",
+    "description": "Pata safari salama na nafuu na madereva waliothibitishwa kwa magari au pikipiki — yote kupitia programu moja rahisi.",
+    "cta": "Agiza safari",
+    "image": "/images/rider.png"
+  },
+
+  "guides": {
+    "subtitle": "Mwongozo",
+    "title": "Jinsi ya kusafiri na AnyRide",
+    "description": "Kusafiri ni rahisi. Omba safari, linganishwa na dereva, na safiri kwa uhakika — ndani ya dakika chache.",
+    "steps": [
+      {
+        "step": "Hatua ya 1",
+        "title": "Weka safari yako",
+        "description": "Weka mahali pa kuanzia na unakoenda, chagua gari au pikipiki, na uone bei mapema.",
+        "image": "/images/rider-1.png"
+      },
+      {
+        "step": "Hatua ya 2",
+        "title": "Linganishwa na dereva",
+        "description": "Tunakunganisha na dereva aliye karibu na aliyethibitishwa. Ona jina, aina ya gari, na muda wa kufika mara moja.",
+        "image": "/images/rider-2.png"
+      },
+      {
+        "step": "Hatua ya 3",
+        "title": "Safiri na ulipe",
+        "description": "Fuata safari yako moja kwa moja, thibitisha kuchukuliwa kwa nambari ya siri, na ulipe kwa pesa taslimu au pochi.",
+        "image": "/images/rider-3.png"
+      }
+    ]
+  },
+
+  "pricing": {
+    "title": "Bei wazi. Hakuna mshangao.",
+    "subtitle": "Bei na uwazi",
+    "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna ada zilizofichwa.",
+     "plans": {
+        "baseFare": {
+          "title": "Kiwango cha msingi",
+          "text": "Anza safari",
+          "amount": "CDF 2,000"
+        },
+        "perKm": {
+          "title": "Kwa Km",
+          "text": "Kulingana na umbali",
+          "amount": "CDF 650"
+        },
+        "perMinutes": {
+          "title": "Kwa dakika",
+          "text": "Muda & trafiki",
+          "amount": "CDF 90"
+        }
+      },
+    "form": {
+      "location": "Congo",
+      "pickupPlaceholder": "Weka mahali pa kuanzia",
+      "destinationPlaceholder": "Weka unakoenda",
+      "rideTypePlaceholder": "Chagua aina ya safari",
+       "loginInstead": "Ingia badala yake?",
+      "cta": "Angalia bei"
+    },
+
+    "exampleBreakdown": {
+      "currency": "CDF",
+      "items": [
+        {
+          "label": "Ada ya kuanzia",
+          "description": "Huanzisha safari",
+          "amount": "2,000"
+        },
+        {
+          "label": "Kwa km",
+          "description": "Kulingana na umbali",
+          "amount": "650"
+        },
+        {
+          "label": "Kwa dakika",
+          "description": "Muda na msongamano",
+          "amount": "90"
+        }
+      ]
+    }
+  },
+
+ "benefits": {
+      "subtitle": "Manufaa",
+      "title": "Kwa nini Abaleti Wanachagua AnyRide",
+      "items": {
+        "upfrontPricing": {
+          "title": "Bei Zaidi",
+          "description": "Jua gharama yako kabla ya kuthibitisha."
+        },
+        "carsMotorcycles": {
+          "title": "Magari na Pikipiki",
+          "description": "Chagua kinachofaa kwa safari yako, muda, na bajeti."
+        },
+        "verifiedDrivers": {
+          "title": "Madereva Waliothibitishwa",
+          "description": "Kila dereva amethibitishwa na kukaguliwa."
+        },
+        "localFirst": {
+          "title": "Kwanza Ndani ya Mitaa",
+          "description": "Imeundwa kwa miji halisi, barabara halisi, na watu halisi."
+        }
+      }
+    }
+}
 }

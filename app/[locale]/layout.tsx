@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "sonner"; // ✅ Import Sonner
+import CookieBanner from "../components/CookieBanner";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${sora.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <CookieBanner />
           {children}
           <Toaster /> {/* ✅ Add it here for global notifications */}
         </NextIntlClientProvider>

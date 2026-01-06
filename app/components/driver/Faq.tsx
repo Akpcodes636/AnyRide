@@ -57,7 +57,7 @@ const Faq = () => {
       <div className="container-sm">
         <div className="flex items-center justify-center flex-col">
           <div className="mb-[24px]">
-            <SubTitle text="FAQ" />
+            <SubTitle text={t("subtitle")} css="font-bold text-[#C15855]  tracking-[-2%] leading-[160%]" />
           </div>
 
           <h1 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[120%] text-[#02093A] tracking-[-5%] text-center w-full max-w-[335px] md:max-w-[500px] lg:max-w-full mb-[16px]">

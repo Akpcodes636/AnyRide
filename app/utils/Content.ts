@@ -249,53 +249,69 @@ export const rider =[
   }
 ]
 
-export const pricingClarity = [
-  {
-    img:"/icons/wallet.svg",
-    title:"Base fare",
-    text:"Starts the trip",
-    amount:"CDF 2,000"
-  },
-  {
-    img:"/icons/cars.svg",
-    title:"Per Km",
-    text:"Distance-based",
-    amount:"CDF 650"
-  },
-  {
-    img:"/icons/partner.svg",
-    title:"Per minutes",
-    text:"Time & traffic" ,
-    amount:"CDF 90"
-  }
-]
+// export const pricingClarity = [
+//   {
+//     img:"/icons/wallet.svg",
+//     title:"Base fare",
+//     text:"Starts the trip",
+//     amount:"CDF 2,000"
+//   },
+//   {
+//     img:"/icons/cars.svg",
+//     title:"Per Km",
+//     text:"Distance-based",
+//     amount:"CDF 650"
+//   },
+//   {
+//     img:"/icons/partner.svg",
+//     title:"Per minutes",
+//     text:"Time & traffic" ,
+//     amount:"CDF 90"
+//   }
+// ]
 
+export const pricingClarity = [
+  { key: "baseFare", img: "/icons/wallet.svg" },
+  { key: "perKm", img: "/icons/cars.svg" },
+  { key: "perMinutes", img: "/icons/partner.svg" }
+];
+
+
+// export const benefits = [
+//    {
+//     number:"01",
+//     title:"Upfront pricing",
+//     description:"Know your fare before confirming.",
+//     color:"#F8EAEA"
+//   },
+//   {
+//     number:"02",
+//     title:"Cars & motorcycles",
+//     description:"Choose what fits your trip and budget.",
+//     color:"#EFF5FE"
+//   },
+//   {
+//     number:"03",
+//     title:"Verified drivers",
+//     description:"Every driver is screened and reviewed.",
+//     color:"#EDFAF1"
+//   },
+//   {
+//     number:"04",
+//     title:"Local-first",
+//     description:"Built for real cities, real roads, real people.",
+//     color:"#E6E6EB"
+//   }
+// ]
+
+// app/utils/Content.ts
 export const benefits = [
-   {
-    number:"01",
-    title:"Upfront pricing",
-    description:"Know your fare before confirming.",
-    color:"#F8EAEA"
-  },
-  {
-    number:"02",
-    title:"Cars & motorcycles",
-    description:"Choose what fits your trip and budget.",
-    color:"#EFF5FE"
-  },
-  {
-    number:"03",
-    title:"Verified drivers",
-    description:"Every driver is screened and reviewed.",
-    color:"#EDFAF1"
-  },
-  {
-    number:"04",
-    title:"Local-first",
-    description:"Built for real cities, real roads, real people.",
-    color:"#E6E6EB"
-  }
-]
+  { number: "01", key: "upfrontPricing", color: "#F8EAEA" },
+  { number: "02", key: "carsMotorcycles", color: "#EFF5FE" },
+  { number: "03", key: "verifiedDrivers", color: "#EDFAF1" },
+  { number: "04", key: "localFirst", color: "#E6E6EB" }
+];
+
 
 export const benefitsDriver = [
   {
@@ -352,4 +368,6 @@ export const driverContent =[
     "Daily and weekly earnings summary",
     "Completed trips overview",
     "Wallet balance and payout history"
-  ];
+ ];
+
+ // app/utils/driverSteps.ts

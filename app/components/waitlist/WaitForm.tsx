@@ -475,55 +475,62 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             />
 
             {/* Checkboxes */}
-            <div className="flex flex-col gap-2 text-sm text-white">
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  name="agreePrivacy"
-                  className="accent-red-600"
-                  checked={formik.values.agreePrivacy}
-                  onChange={formik.handleChange}
-                />
-                I agree to the{" "}
-                <span className="text-[#A10000] underline cursor-pointer">Privacy Policy</span>
-              </label>
-              {formik.touched.agreePrivacy && formik.errors.agreePrivacy && (
-                <p className="text-red-600 text-xs">{formik.errors.agreePrivacy}</p>
-              )}
+     <div className="flex flex-col gap-2 text-sm text-white">
+  {/* Privacy Policy */}
+  <label className="flex items-center gap-2">
+    <input
+      type="checkbox"
+      name="agreePrivacy"
+      className="accent-red-600"
+      checked={formik.values.agreePrivacy}
+      onChange={formik.handleChange}
+    />
+    {t("agreements.privacyPolicy")}{" "}
+    {/* <span className="text-[#A10000] underline cursor-pointer">
+      {t("agreements.privacyPolicyLink") /* Optional link text */}
+    {/* </span> */} 
+  </label>
+  {formik.touched.agreePrivacy && formik.errors.agreePrivacy && (
+    <p className="text-red-600 text-xs">{formik.errors.agreePrivacy}</p>
+  )}
 
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  name="agreeTerms"
-                  className="accent-red-600"
-                  checked={formik.values.agreeTerms}
-                  onChange={handleCheckboxChange}
-                />
-                I agree to the{" "}
-                <span className="text-[#A10000] underline cursor-pointer">Terms & Conditions</span>
-              </label>
-              {formik.touched.agreeTerms && formik.errors.agreeTerms && (
-                <p className="text-red-600 text-xs">{formik.errors.agreeTerms}</p>
-              )}
+  {/* Terms & Conditions */}
+  <label className="flex items-center gap-2">
+    <input
+      type="checkbox"
+      name="agreeTerms"
+      className="accent-red-600"
+      checked={formik.values.agreeTerms}
+      onChange={handleCheckboxChange}
+    />
+    {t("agreements.termsConditions")}{" "}
+    {/* <span className="text-[#A10000] underline cursor-pointer">
+      {t("agreements.termsConditionsLink") /* Optional link text */}
+    {/* </span> */} 
+  </label>
+  {formik.touched.agreeTerms && formik.errors.agreeTerms && (
+    <p className="text-red-600 text-xs">{formik.errors.agreeTerms}</p>
+  )}
 
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  name="consentSMS"
-                  className="accent-red-600"
-                  checked={formik.values.consentSMS}
-                  onChange={handleCheckboxChange}
-                />
-                I consent to receive SMS messages, calls, and emails for verification and communication purposes
-              </label>
-              {formik.touched.consentSMS && formik.errors.consentSMS && (
-                <p className="text-red-600 text-xs">{formik.errors.consentSMS}</p>
-              )}
+  {/* Consent SMS/Email */}
+  <label className="flex items-center gap-2">
+    <input
+      type="checkbox"
+      name="consentSMS"
+      className="accent-red-600"
+      checked={formik.values.consentSMS}
+      onChange={handleCheckboxChange}
+    />
+    {t("agreements.consentMessages")}
+  </label>
+  {formik.touched.consentSMS && formik.errors.consentSMS && (
+    <p className="text-red-600 text-xs">{formik.errors.consentSMS}</p>
+  )}
 
-              <p className="text-white text-xs mt-2">
-                Disclaimer: By submitting this form, you consent to receive SMS messages, calls, and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services.
-              </p>
-            </div>
+  {/* Disclaimer */}
+  <p className="text-white text-xs mt-2">{t("agreements.disclaimer")}</p>
+</div>
+
 
             {/* Submit */}
             <div className="flex items-center justify-center mt-4">

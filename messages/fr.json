@@ -191,25 +191,26 @@
 },
   "DriversPage": {
     "hero": {
-      "title": "Conduisez en liberté. Gagnez à vos conditions.",
-      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos trajets.",
-     "cta": "devenez chauffeur"
+      "title": "Conduisez en toute liberté. Gagnez à votre rythme.",
+      "description": "Rejoignez AnyRide et gagnez plus tout en gardant le contrôle de votre temps et de vos courses.",
+      "cta": "devenez conducteur"
     },
     "FAQ": {
-      "title": "Questions fréquemment posées",
-      "description": "Explorez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
+       "subtitle": "FAQ",
+      "title": "Questions fréquentes",
+      "description": "Consultez notre section FAQ pour obtenir des réponses rapides et faciles aux questions les plus courantes.",
       "items": [
         {
           "question": "Quand la plateforme sera-t-elle lancée ?",
-          "answer": "Nous nous préparons pour le lancement de notre MVP très bientôt. Tous les inscrits à la liste d'attente seront informés en premier."
+          "answer": "Nous préparons le lancement de notre MVP très bientôt. Tous ceux qui sont sur la liste d'attente seront notifiés en premier."
         },
         {
           "question": "Qui peut rejoindre la liste d'attente ?",
-          "answer": "Toute personne intéressée par l'utilisation d'AnyRide peut rejoindre la liste d'attente. Elle est ouverte aux passagers, conducteurs et partenaires."
+          "answer": "Toute personne souhaitant utiliser AnyRide peut rejoindre la liste d'attente. Elle est ouverte aux passagers, conducteurs et partenaires."
         },
         {
-          "question": "L'inscription est-elle gratuite ?",
-          "answer": "Oui ! Rejoindre la liste d'attente est totalement gratuit."
+          "question": "Est-ce gratuit de s'inscrire ?",
+          "answer": "Oui ! L'inscription à la liste d'attente est entièrement gratuite."
         },
         {
           "question": "Comment serai-je contacté ?",
@@ -218,17 +219,78 @@
       ]
     },
     "appDownload": {
-      "title": "Télécharger l'application AnyRide",
-      "description": "AnyRide vous permet d'aller où vous avez besoin d'aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",
+      "title": "Téléchargez l'application AnyRide",
+      "description": "AnyRide vous emmène là où vous devez aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre véhicule sur la carte en temps réel. C'est rapide, simple et compatible iOS et Android.",
       "platforms": {
         "apple": "Apple App Store",
         "google": "Google Play Store"
       },
       "reviews": {
-        "rating": "4.9",
+        "rating": "4,9",
         "trustedBy": "Approuvé par plus de 1125 utilisateurs"
       }
-    }
+    },
+    "benefits": {
+      "subtitle": "Avantages",
+      "title": "Pourquoi conduire avec AnyRide",
+      "description": "Conçu pour les conducteurs comme vous",
+      "items": [
+        {
+          "number": "01",
+          "title": "Travail flexible",
+          "description": "Connectez-vous à tout moment. Pas de horaires fixes."
+        },
+        {
+          "number": "02",
+          "title": "Revenus équitables",
+          "description": "Tarifs transparents et détails clairs."
+        },
+        {
+          "number": "03",
+          "title": "Véhicules multiples",
+          "description": "Enregistrez plus d'une voiture ou moto et changez à tout moment."
+        },
+        {
+          "number": "04",
+          "title": "Support local",
+          "description": "De vraies personnes, une vraie aide quand vous en avez besoin."
+        }
+      ]
+    },
+    "guides": {
+      "subtitle": "Guides",
+      "title": "Aperçu de l'intégration des conducteurs",
+      "description": "Réservez des trajets sûrs et abordables avec des conducteurs vérifiés utilisant des voitures ou motos — le tout depuis une application simple.",
+      "steps": {
+      "step1": {
+        "title": "Inscrivez-vous",
+        "description": "Créez votre compte conducteur en quelques minutes."
+      },
+      "step2": {
+        "title": "Téléchargez vos documents",
+        "description": "Soumettez votre pièce d'identité, votre permis et les détails de votre véhicule pour vérification."
+      },
+      "step3": {
+        "title": "Vérification",
+        "description": "Notre équipe examine et approuve votre profil."
+      },
+      "step4": {
+        "title": "Connectez-vous et gagnez",
+        "description": "Sélectionnez votre véhicule, allez en ligne et commencez à recevoir des trajets."
+      }
+}
+
+    },
+    "tracking": {
+  "subtitle": "Suivi",
+  "title": "Vue d'ensemble des gains et performances",
+  "description": "Suivez vos revenus, vos courses et vos performances directement depuis votre tableau de bord chauffeur.",
+  "item1": "Résumé des gains quotidiens et hebdomadaires",
+  "item2": "Vue d'ensemble des courses terminées",
+  "item3": "Solde du portefeuille et historique des paiements",
+  "image": "/images/Driver-Phone.png"
+}
+
   },
   "Footer": {
     "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vraies personnes. Abordable, sûr et toujours là quand vous en avez besoin.",
@@ -299,7 +361,6 @@
         "description": "Redéfinir le transport local en rendant chaque trajet sans effort, abordable et responsabilisant — pour les passagers et les conducteurs. Nous croyons que les déplacements ne devraient jamais être stressants, dangereux ou trop chers. Tout le monde mérite un trajet équitable, transparent et facile à faire confiance."
       }
     },
-
     "bothModes": {
       "title": "Pourquoi les deux",
       "subtitle": "Les voitures et les motos ne sont pas en concurrence — elles sont complémentaires.",
@@ -410,9 +471,17 @@
       "firstNamePlaceholder": "Prénom",
       "lastNamePlaceholder": "Nom de famille",
       "emailPlaceholder": "Adresse e-mail",
-      "submit": "Rejoindre la liste d'attente"
+      "submit": "Rejoindre la liste d'attente",
+      "agreements": {
+  "privacyPolicy": "J'accepte la Politique de confidentialité",
+  "termsConditions": "J'accepte les Termes et Conditions",
+  "consentMessages": "J'accepte de recevoir des SMS, des appels et des e-mails à des fins de vérification et de communication",
+  "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, des appels et des e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à n'importe quel message. Ce consentement n'est pas obligatoire pour acheter des biens ou des services."
+}
+
     },
     "FAQ": {
+      "subtitle": "FAQ",
       "title": "Questions fréquemment posées",
       "description": "Explorez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes",
       "items": [
@@ -441,42 +510,44 @@
       "description": "Contactez notre équipe pour toute question, préoccupation ou commentaire.",
       "cta": "Discutez avec nous"
     },
-    "form": {
-      "title": "Vous avez un problème ?",
-      "description": "Remplissez le formulaire ci-dessous, soumettez le ticket et nous vous recontacterons.",
-      "fields": {
-        "subject": "Sujet",
-        "subjectPlaceholder": "Entrez le sujet",
-        "fullName": "Nom complet",
-        "fullNamePlaceholder": "Entrez votre nom complet",
-        "email": "E-mail",
-        "emailPlaceholder": "Entrez votre e-mail",
-        "phone": "Numéro de téléphone",
-        "phonePlaceholder": "Entrez le numéro de téléphone",
-        "category": "Catégorie",
-        "selectCategory": "Sélectionnez une catégorie",
-        "paymentIssue": "Problème de paiement",
-        "rideIssue": "Problème de trajet",
-        "country": "Pays",
-        "selectCountry": "Sélectionnez un pays",
-        "responseLanguage": "Langue de réponse",
-        "selectLanguage": "Sélectionnez la langue de réponse",
-        "message": "Message",
-        "messagePlaceholder": "Tapez votre message/commentaire/plainte",
-        "attachment": "Pièce(s) jointe(s)",
-        "emailUpdates": "M'envoyer des mises à jour par e-mail"
-      },
-      "submit": "Soumettre",
-      "form": {
-      "errors": {
-        "required": "Veuillez remplir tous les champs requis",
-        "invalidEmail": "Veuillez saisir une adresse e-mail valide",
-        "failed": "Une erreur est survenue. Veuillez réessayer",
-        "network": "Erreur réseau. Veuillez réessayer plus tard"
-      },
-      "success": "Message envoyé avec succès !"
-    }
-    }
+  "form": {
+    "title": "Un problème ?",
+    "description": "Remplissez le formulaire ci-dessous, soumettez le ticket et nous vous répondrons.",
+    "fields": {
+      "subject": "Sujet",
+      "subjectPlaceholder": "Entrez le sujet",
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Entrez votre nom complet",
+      "email": "E-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "phone": "Numéro de téléphone",
+      "phonePlaceholder": "Entrez le numéro de téléphone",
+      "category": "Catégorie",
+      "selectCategory": "Sélectionnez la catégorie",
+      "paymentIssue": "Problème de paiement",
+      "rideIssue": "Problème de course",
+      "country": "Pays",
+      "selectCountry": "Sélectionnez le pays",
+      "responseLanguage": "Langue de réponse",
+      "selectLanguage": "Sélectionnez la langue de réponse",
+      "message": "Message",
+      "messagePlaceholder": "Tapez votre message/commentaire/plaintes",
+      "attachment": "Pièce(s) jointe(s)",
+      "emailUpdates": "Envoyez-moi les mises à jour par e-mail",
+      "emailConsent": "J'accepte la Politique de confidentialité",
+      "termsConsent": "J'accepte les Conditions générales",
+      "smsConsent": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
+      "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à tout message. Ce consentement n'est pas nécessaire pour acheter des biens ou des services."
+    },
+    "submit": "Soumettre",
+    "errors": {
+      "required": "Veuillez remplir tous les champs obligatoires",
+      "invalidEmail": "Veuillez entrer une adresse e-mail valide",
+      "failed": "Une erreur est survenue. Veuillez réessayer",
+      "network": "Erreur réseau. Veuillez réessayer plus tard"
+    },
+    "success": "Message envoyé avec succès !"
+  }
   },
   "FleetPartnersPage": {
     "hero": {
@@ -597,6 +668,7 @@
       ]
     },
     "FAQ": {
+      "subtitle": "FAQ",
       "title": "Questions fréquemment posées",
       "description": "Découvrez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
       "items": [
@@ -704,5 +776,122 @@
     "partners": "Partenaires",
     "contactUs": "Contactez-nous",
     "waitlistButton": "Rejoignez notre liste d'attente"
+  },
+  "RiderPage": {
+  "hero": {
+    "title": "Roulez à votre façon.",
+    "subtitle": "À tout moment, partout.",
+    "description": "Réservez des trajets sûrs et abordables avec des chauffeurs vérifiés en voiture ou à moto — le tout depuis une seule application.",
+    "cta": "Réserver un trajet",
+    "image": "/images/rider.png"
+  },
+  "form": {
+      "location": "Congo",
+      "pickupPlaceholder": "Entrez le lieu de départ",
+      "destinationPlaceholder": "Entrez la destination",
+      "rideTypePlaceholder": "Choisissez le type de trajet",
+       "loginInstead": "Se connecter à la place ?",
+      "cta": "Vérifier le prix"
+  },
+  "guides": {
+    "subtitle": "Guides",
+    "title": "Comment rouler avec AnyRide",
+    "description": "Se déplacer n’a jamais été aussi simple. Demandez un trajet, soyez mis en relation et voyagez en toute confiance — en quelques minutes.",
+    "steps": [
+      {
+        "step": "Étape 1",
+        "title": "Définissez votre trajet",
+        "description": "Entrez votre point de départ et votre destination, choisissez une voiture ou une moto, et voyez le prix à l’avance.",
+        "image": "/images/rider-1.png"
+      },
+      {
+        "step": "Étape 2",
+        "title": "Soyez mis en relation",
+        "description": "Nous vous connectons à un chauffeur vérifié à proximité. Consultez son nom, son véhicule et son heure d’arrivée instantanément.",
+        "image": "/images/rider-2.png"
+      },
+      {
+        "step": "Étape 3",
+        "title": "Roulez et payez",
+        "description": "Suivez votre trajet en temps réel, confirmez la prise en charge avec un code et payez en espèces ou via votre portefeuille.",
+        "image": "/images/rider-3.png"
+      }
+    ]
+  },
+
+  "pricing": {
+    "title": "Tarifs clairs. Aucune surprise.",
+    "subtitle": "Tarification et transparence",
+    "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
+     "plans": {
+        "baseFare": {
+          "title": "Tarif de base",
+          "text": "Début du trajet",
+          "amount": "CDF 2 000"
+        },
+        "perKm": {
+          "title": "Par Km",
+          "text": "Basé sur la distance",
+          "amount": "CDF 650"
+        },
+        "perMinutes": {
+          "title": "Par minute",
+          "text": "Temps & trafic",
+          "amount": "CDF 90"
+        }
+      },
+    "form": {
+      "location": "Congo",
+      "pickupPlaceholder": "Entrez le lieu de départ",
+      "destinationPlaceholder": "Entrez la destination",
+      "rideTypePlaceholder": "Choisissez le type de trajet",
+      "loginInstead": "Se connecter à la place",
+      "cta": "Vérifier le prix"
+    },
+
+    "exampleBreakdown": {
+      "currency": "CDF",
+      "items": [
+        {
+          "label": "Tarif de base",
+          "description": "Démarre le trajet",
+          "amount": "2,000"
+        },
+        {
+          "label": "Par km",
+          "description": "Basé sur la distance",
+          "amount": "650"
+        },
+        {
+          "label": "Par minute",
+          "description": "Temps et trafic",
+          "amount": "90"
+        }
+      ]
+    }
+  },
+
+ "benefits": {
+      "subtitle": "Avantages",
+      "title": "Pourquoi les passagers choisissent AnyRide",
+      "items": {
+        "upfrontPricing": {
+          "title": "Tarification transparente",
+          "description": "Connaissez votre tarif avant de confirmer."
+        },
+        "carsMotorcycles": {
+          "title": "Voitures et motos",
+          "description": "Choisissez ce qui convient à votre trajet, temps et budget."
+        },
+        "verifiedDrivers": {
+          "title": "Conducteurs vérifiés",
+          "description": "Chaque conducteur est contrôlé et évalué."
+        },
+        "localFirst": {
+          "title": "Priorité locale",
+          "description": "Conçu pour de vraies villes, de vraies routes et de vraies personnes."
+        }
+      }
+    }
   }
 }

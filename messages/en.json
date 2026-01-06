@@ -327,29 +327,30 @@
     "hero": {
       "title": "Drive with freedom. Earn on your terms.",
       "description": "Join AnyRide and earn more while staying in control of your time and rides.",
-      "cta" : "become a driver"
+      "cta": "become a driver"
     },
-   "FAQ": {
-    "title": "Frequently asked questions",
-    "description": "Explore our FAQ section for quick and easy answers to the most common questions.",
-    "items": [
-      {
-        "question": "When will the platform launch?",
-        "answer": "We’re preparing for our MVP launch very soon. Everyone on the waitlist will be notified first."
-      },
-      {
-        "question": "Who can join the waitlist?",
-        "answer": "Anyone interested in using AnyRide can join the waitlist. It’s open to riders, drivers, and partners."
-      },
-      {
-        "question": "Is joining free?",
-        "answer": "Yes! Joining the waitlist is completely free."
-      },
-      {
-        "question": "How will I be contacted?",
-        "answer": "We’ll contact you via the email address you provided when signing up for the waitlist."
-      }
-]
+    "FAQ": {
+      "subtitle":"FAQ",
+      "title": "Frequently asked questions",
+      "description": "Explore our FAQ section for quick and easy answers to the most common questions.",
+      "items": [
+        {
+          "question": "When will the platform launch?",
+          "answer": "We’re preparing for our MVP launch very soon. Everyone on the waitlist will be notified first."
+        },
+        {
+          "question": "Who can join the waitlist?",
+          "answer": "Anyone interested in using AnyRide can join the waitlist. It’s open to riders, drivers, and partners."
+        },
+        {
+          "question": "Is joining free?",
+          "answer": "Yes! Joining the waitlist is completely free."
+        },
+        {
+          "question": "How will I be contacted?",
+          "answer": "We’ll contact you via the email address you provided when signing up for the waitlist."
+        }
+      ]
     },
     "appDownload": {
       "title": "Download AnyRide app",
@@ -362,9 +363,67 @@
         "rating": "4.9",
         "trustedBy": "Trusted by 1125+ users"
       }
+    },
+    "benefits": {
+      "subtitle": "Benefits",
+      "title": "Why Drive with AnyRide",
+      "description": "Built for drivers like you",
+      "items": [
+        {
+          "number": "01",
+          "title": "Flexible work",
+          "description": "Go online anytime. No fixed shifts."
+        },
+        {
+          "number": "02",
+          "title": "Fair earnings",
+          "description": "Transparent fares and clear breakdowns."
+        },
+        {
+          "number": "03",
+          "title": "Multiple vehicles",
+          "description": "Register more than one car or bike and switch anytime."
+        },
+        {
+          "number": "04",
+          "title": "Local support",
+          "description": "Real people, real help when you need it."
+        }
+      ]
+    },
+    "guides": {
+      "subtitle": "Guides",
+      "title": "Driver Onboarding Overview",
+      "description": "Book safe, affordable rides with verified drivers using cars or motorcycles — all from one simple app.",
+     "steps": {
+      "step1": {
+        "title": "Sign up",
+        "description": "Create your driver account in minutes."
+      },
+      "step2": {
+        "title": "Upload documents",
+        "description": "Submit your ID, license, and vehicle details for review."
+      },
+      "step3": {
+        "title": "Get verified",
+        "description": "Our team reviews and approves your profile."
+      },
+      "step4": {
+        "title": "Go online & earn",
+        "description": "Select your vehicle, go online, and start receiving trips."
+      }
     }
+    },
+  "tracking": {
+  "subtitle": "Tracking",
+  "title": "Earnings & performance overview",
+  "description": "Track your income, trips, and performance directly from your driver dashboard.",
+  "item1": "Daily and weekly earnings summary",
+  "item2": "Completed trips overview",
+  "item3": "Wallet balance and payout history",
+  "image": "/images/Driver-Phone.png"
+}
   },
-
   "Footer": {
     "description": "We're building the most trusted local ride network — designed for passengers and real people. Affordable, safe, and always there when you need it.",
     "sections": {
@@ -411,9 +470,16 @@
       "firstNamePlaceholder": "First Name",
       "lastNamePlaceholder": "Last Name",
       "emailPlaceholder": "Email Address",
-      "submit": "Join the waitlist"
+      "submit": "Join the waitlist",
+       "agreements": {
+        "privacyPolicy": "I agree to the Privacy Policy",
+        "termsConditions": "I agree to the Terms & Conditions",
+        "consentMessages": "I consent to receive SMS messages, calls, and emails for verification and communication purposes",
+        "disclaimer": "Disclaimer: By submitting this form, you consent to receive SMS messages, calls, and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services."
+      }
     },
     "FAQ": {
+      "subtitle":"FAQ",
       "title": "Frequently asked questions",
       "description": "Explore our FAQ section for quick and easy answers to the most common questions",
       "items": [
@@ -441,43 +507,45 @@
       "title": "We're here to help",
       "description": "Reach out to our team for any questions, concerns, or feedback.",
       "cta": "Chat with us"
+    }, 
+  "form": {
+    "title": "Got an issue?",
+    "description": "Fill out the form below, submit the ticket and we'll get back to you.",
+    "fields": {
+      "subject": "Subject",
+      "subjectPlaceholder": "Enter subject",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter phone number",
+      "category": "Category",
+      "selectCategory": "Select category",
+      "paymentIssue": "Payment issue",
+      "rideIssue": "Ride issue",
+      "country": "Country",
+      "selectCountry": "Select Country",
+      "responseLanguage": "Response language",
+      "selectLanguage": "Select response language",
+      "message": "Message",
+      "messagePlaceholder": "Type your message/comment/complaints",
+      "attachment": "Attachment(s)",
+      "emailUpdates": "Send me updates via email",
+      "emailConsent": "I agree to the Privacy Policy",
+      "termsConsent": "I agree to the Terms & Conditions",
+      "smsConsent": "I consent to receive SMS messages, calls and emails for verification and communication purposes",
+      "disclaimer": "Disclaimer: By submitting this form, you consent to receive SMS messages, calls and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services."
     },
-    "form": {
-      "title": "Got an issue?",
-      "description": "Fill out the form below, submit the ticket and we'll get back to you.",
-      "fields": {
-        "subject": "Subject",
-        "subjectPlaceholder": "Enter subject",
-        "fullName": "Full Name",
-        "fullNamePlaceholder": "Enter your full name",
-        "email": "Email",
-        "emailPlaceholder": "Enter your email",
-        "phone": "Phone Number",
-        "phonePlaceholder": "Enter phone number",
-        "category": "Category",
-        "selectCategory": "Select category",
-        "paymentIssue": "Payment issue",
-        "rideIssue": "Ride issue",
-        "country": "Country",
-        "selectCountry": "Select Country",
-        "responseLanguage": "Response language",
-        "selectLanguage": "Select response language",
-        "message": "Message",
-        "messagePlaceholder": "Type your message/comment/complaints",
-        "attachment": "Attachment(s)",
-        "emailUpdates": "Send me updates via email"
-      },
-      "submit": "Submit",
-      "form": {
-      "errors": {
-        "required": "Please fill out all required fields",
-        "invalidEmail": "Please enter a valid email address",
-        "failed": "Something went wrong. Please try again",
-        "network": "Network error. Please try again later"
-      },
-      "success": "Message sent successfully!"
-    }
-    }
+    "submit": "Submit",
+    "errors": {
+      "required": "Please fill out all required fields",
+      "invalidEmail": "Please enter a valid email address",
+      "failed": "Something went wrong. Please try again",
+      "network": "Network error. Please try again later"
+    },
+    "success": "Message sent successfully!"
+  }
   },
   "FleetPartnersPage": {
     "hero": {
@@ -615,6 +683,7 @@
       ]
     },
     "FAQ": {
+      "subtitle":"FAQ",
       "title": "Frequently Asked Questions",
       "description": "Explore our FAQ section for quick and easy answers to the most common questions.",
       "items": [
@@ -729,5 +798,118 @@
     "contactUs": "Contact us",
     "waitlistButton": "Join Our Waitlist"
   
+},
+"RiderPage":{
+   "hero": {
+    "title": "Ride your way.",
+    "subtitle": "Anytime, anywhere.",
+    "description": "Book safe, affordable rides with verified drivers using cars or motorcycles — all from one simple app.",
+    "cta": "Book a ride",
+    "image": "/images/rider.png"
+  },
+  "guides": {
+    "subtitle": "Guides",
+    "title": "How riding with AnyRide works",
+    "description": "Getting around is simple. Request a ride, get matched, and move confidently — all in minutes.",
+    "steps": [
+      {
+        "step": "Step 1",
+        "title": "Set your trip",
+        "description": "Enter your pickup and destination, choose a car or motorcycle, and see your price upfront.",
+        "image": "/images/rider-1.png"
+      },
+      {
+        "step": "Step 2",
+        "title": "Get matched",
+        "description": "We connect you with a nearby verified driver. See their name, vehicle, and arrival time instantly.",
+        "image": "/images/rider-2.png"
+      },
+      {
+        "step": "Step 3",
+        "title": "Ride & pay",
+        "description": "Track your trip live, confirm pickup with a code, and pay with cash or wallet.",
+        "image": "/images/rider-3.png"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Clear pricing. No surprises.",
+    "subtitle": "Pricing & Transparency",
+    "description": "What you see before you ride is what you pay. No sudden changes, no hidden fees.",
+    "plans": {
+        "baseFare": {
+          "title": "Base fare",
+          "text": "Starts the trip",
+          "amount": "CDF 2,000"
+        },
+        "perKm": {
+          "title": "Per Km",
+          "text": "Distance-based",
+          "amount": "CDF 650"
+        },
+        "perMinutes": {
+          "title": "Per minutes",
+          "text": "Time & traffic",
+          "amount": "CDF 90"
+        }
+      },
+    "form": {
+      "location": "Congo",
+      "pickupPlaceholder": "Enter pickup location",
+      "destinationPlaceholder": "Enter destination",
+      "rideTypePlaceholder": "Enter ride type",
+      "cta": "Check price"
+    },
+    "form": {
+      "location": "Congo",
+      "pickupPlaceholder": "Enter pickup location",
+      "destinationPlaceholder": "Enter destination",
+      "rideTypePlaceholder": "Enter ride type",
+      "loginInstead":"Login instead",
+      "cta": "Check price"
+    },
+    "exampleBreakdown": {
+      "currency": "CDF",
+      "items": [
+        {
+          "label": "Base fare",
+          "description": "Starts the trip",
+          "amount": "2,000"
+        },
+        {
+          "label": "Per Km",
+          "description": "Distance-based",
+          "amount": "650"
+        },
+        {
+          "label": "Per minute",
+          "description": "Time & traffic",
+          "amount": "90"
+        }
+      ]
+    }
+  },
+ "benefits": {
+      "subtitle": "Benefits",
+      "title": "Why Riders Choose AnyRide",
+      "items": {
+        "upfrontPricing": {
+          "title": "Upfront pricing",
+          "description": "Know your fare before confirming."
+        },
+        "carsMotorcycles": {
+          "title": "Cars & motorcycles",
+          "description": "Choose what fits your trip, time, and budget."
+        },
+        "verifiedDrivers": {
+          "title": "Verified drivers",
+          "description": "Every driver is screened, reviewed."
+        },
+        "localFirst": {
+          "title": "Local-first",
+          "description": "Built for real cities, real roads, and real people."
+        }
+      }
+    }
 }
 }
