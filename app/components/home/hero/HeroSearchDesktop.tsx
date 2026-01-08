@@ -164,7 +164,7 @@ const HeroSearchDesktop = () => {
         <Button
           style="danger"
           type="button"
-          css="h-[56px] w-[216px] px-8 rounded-full whitespace-nowrap font-semibold"
+          css="h-[px] w-[216px] px-8 rounded-full whitespace-nowrap font-semibold"
           fn={handleCheckAvailability}
         >
           {loading ? "Checking..." : t("buttonCheckAvailability")}

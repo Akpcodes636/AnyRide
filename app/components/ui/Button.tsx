@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={fn}
       disabled={loading || disabled}
       type={type}
-      className={`flex h-16 items-center justify-center cursor-pointer rounded-[50px] px-4.5 py-9 text-[16px] font-semibold duration-150 ${css} ${
+      className={`flex h-16 items-center justify-center cursor-pointer rounded-[50px] px-4.5  text-[16px] font-semibold duration-150 ${css} ${
         style === "danger" && 
         "bg-[#A20602] text-white hover:bg-[#8A0502] active:bg-[#720401] transition-colors"
       } ${

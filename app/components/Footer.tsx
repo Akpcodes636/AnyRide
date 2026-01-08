@@ -316,7 +316,7 @@ const Footer = () => {
 
                 <ul className="space-y-3">
                   {section.links.map(link => (
-                    <li key={link.href}>
+                   <li key={`${section.title}-${link.href}`}>
                       <Link
                         href={link.href}
                         className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"

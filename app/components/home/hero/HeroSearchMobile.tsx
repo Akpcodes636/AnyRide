@@ -102,7 +102,7 @@ const HeroSearchMobile = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto flex flex-col items-center gap-3 px-4">
+    <div className="w-full max-w-[335px] mx-auto flex flex-col itms-center gap-3">
       {/* Pickup Input */}
       <div className="w-full h-14 bg-white rounded-full px-4 flex items-center">
         <input
@@ -118,7 +118,7 @@ const HeroSearchMobile = () => {
       <select
         value={rideType}
         onChange={(e) => setRideType(e.target.value)}
-        className="w-full h-12 rounded-full px-4 bg-[#F5F5F5] text-gray-900 text-sm focus:outline-none"
+        className="w-full h-14 rounded-full px-4 bg-[#F5F5F5] text-gray-900 text-sm focus:outline-none"
       >
         {rideTypes.map((r) => (
           <option key={r} value={r}>
@@ -131,14 +131,14 @@ const HeroSearchMobile = () => {
       <Button
         style="danger"
         type="button"
-        css="w-full h-12 rounded-full font-semibold text-[16px]"
+        css="w-full  rounded-full font-semibold text-[16px]"
         fn={handleCheckAvailability} // use onClick
       >
         {loading ? "Checking..." : t("buttonCheckAvailability")}
       </Button>
 
       {/* Info Pill */}
-      <div className="px-6 py-3 rounded-full bg-[#FFECEC] flex items-center justify-center" style={{ width: 260 }}>
+      <div className="px-6 py-3 rounded-full bg-[#FFECEC] flex items-center justify-center">
         <span className="text-xs font-medium text-[#FF4D4F]">
           {fareData
             ? `${fareData.available_drivers} rides available in ${fareData.location}`

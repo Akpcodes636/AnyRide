@@ -439,7 +439,7 @@
         "title": "Help",
         "links": [
           { "label": "Support", "href": "/contact" },
-          { "label": "Safety", "href": "/privacy" },
+          { "label": "Safety", "href": "/terms" },
           { "label": "Pricing", "href": "/privacy" }
         ]
       },

@@ -22,7 +22,7 @@ const AnyRide = () => {
         </div>
 
         {/* Right Side Content */}
-        <div className="h-full pt-8.25 md:pt-49.25 px-5.75 pb-10">
+        <div className="h-full pt-8.25 md:pt-49.25  container pb-10">
           <h2 className="mb-6">{t("HomePage.appDownload.title")}</h2>
           <p className="text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] text-gray-400 mb-8">
             {t("HomePage.appDownload.description")}
