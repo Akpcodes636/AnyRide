@@ -11,8 +11,6 @@ import { useTranslations } from "next-intl";
 // import LanguageSwitcher from "../navbar/LanguageSwitcher";
 
 
-
-
 const Navbar = () => {
    const t = useTranslations("Navbar");
   const router = useRouter();

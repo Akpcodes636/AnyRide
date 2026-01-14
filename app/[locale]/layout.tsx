@@ -6,6 +6,8 @@ import "../styles/globals.css";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "sonner"; // ✅ Import Sonner
 import CookieBanner from "../components/CookieBanner";
+import Script from "next/script";
+
 
 const sora = Sora({
   subsets: ["latin"],
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   title: "AnyRide",
   description: "Local ride-hailing app",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ic",
   },
 };
 

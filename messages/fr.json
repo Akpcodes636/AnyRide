@@ -614,8 +614,8 @@
       "description": "Voici les étapes simples pour vous associer à nous",
       "steps": [
         { "step": 1, "title": "Inscrivez-vous en tant que partenaire", "description": "Soumettez les détails de l'entreprise ou de la propriété." },
-        { "step": 2, "title": "Ajoutez des véhicules", "description": ["Ajoutez vos véhicules/motos", "Téléchargez les documents"] },
-        { "step": 3, "title": "Attribuez des conducteurs", "description": "Gérez vos conducteurs ou intégrez-en de nouveaux." },
+        { "step": 2, "title": "Ajoutez des véhicules", "description": ["Ajoutez votre voiture ou votre moto", "Téléversez vos documents une seule fois"] },
+        { "step": 3, "title": "Attribuez des conducteurs", "description": "Utilisez vos propres chauffeurs ou recrutez-en de nouveaux." },
         { "step": 4, "title": "Activez et gagnez", "description": "Suivez les trajets, performances et paiements sur un seul tableau de bord." }
       ]
     },
@@ -685,7 +685,6 @@
     "title": "Entreprise",
     "links": [
       { "label": "À propos", "href": "/about" },
-      { "label": "Blog", "href": "/blog" },
       { "label": "Partenaires", "href": "/partners" }
     ]
   },

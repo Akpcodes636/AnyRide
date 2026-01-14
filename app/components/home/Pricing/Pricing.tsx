@@ -2,6 +2,7 @@
 import Image from "next/image";
 import SubTitle from "../../ui/Subtitle";
 import PricingForm from "./PricingForm";
+// import PricingForm  from "./PricingForm"
 import { useTranslations } from "next-intl";
 
 const Pricing = () => {

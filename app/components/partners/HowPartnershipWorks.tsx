@@ -103,7 +103,7 @@ export default function HowPartnershipWorks() {
                         key={idx}
                         className="text-gray-400 text-sm sm:text-base flex items-start"
                       >
-                        <span className="text-red-500 mr-2">•</span>
+                        <span className="text-black mr-2">•</span>
                         <span>{bullet}</span>
                       </li>
                     ))}

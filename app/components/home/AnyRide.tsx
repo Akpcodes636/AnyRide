@@ -13,7 +13,7 @@ const AnyRide = () => {
         {/* Left Side Image */}
         <div className="h-full">
           <Image
-            src="/images/Anyride.png"
+            src="/icons/Anyride.svg"
             width={600}
             height={800}
             alt={t("HomePage.appDownload.title")}

@@ -327,7 +327,7 @@
     "hero": {
       "title": "Drive with freedom. Earn on your terms.",
       "description": "Join AnyRide and earn more while staying in control of your time and rides.",
-      "cta": "become a driver"
+      "cta": "Become a driver"
     },
     "FAQ": {
       "subtitle":"FAQ",
@@ -431,8 +431,7 @@
         "title": "Company",
         "links": [
           { "label": "About", "href": "/about" },
-          { "label": "Blog", "href": "/blog" },
-          { "label": "partners", "href": "/partners" }
+          { "label": "Partners", "href": "/partners" }
         ]
       },
       "help": {
@@ -452,7 +451,7 @@
         ]
       }
     },
-    "copyright": "© 2025 AnyRide LLC. powered by"
+    "copyright": "AnyRide LLC. powered by"
   },
   "WaitlistPage": {
     "hero": {
@@ -619,12 +618,12 @@
         {
           "step": 2,
           "title": "Add Vehicles",
-          "description": ["Add your vehicle motorcycles", "Upload documentation"]
+          "description": ["Add your cars or motorcycle", "Upload documents once"]
         },
         {
           "step": 3,
           "title": "Assign Drivers",
-          "description": "Manage your drivers or onboard new ones."
+          "description": "Use your own drivers or onboard new ones."
         },
         {
           "step": 4,

@@ -432,7 +432,6 @@
       "title": "Kampuni",
       "links": [
         { "label": "Kuhusu", "href": "/about" },
-        { "label": "Blogu", "href": "/blog" },
         { "label": "Washirika", "href": "/partners" }
       ]
     },
@@ -587,8 +586,9 @@
       "description": "Hapa kuna hatua rahisi kushirikiana nasi",
       "steps": [
         { "step": 1, "title": "Jisajili kama Mshirika", "description": "Wasilisha maelezo ya biashara au umiliki." },
-        { "step": 2, "title": "Ongeza Magari", "description": ["Ongeza magari/pikipiki yako", "Pakia nyaraka"] },
-        { "step": 3, "title": "Gawa Madereva", "description": "Simamia madereva wako au onboarding ya madereva wapya." },
+        { "step": 2, "title": "Ongeza Magari", "description": ["Ongeza gari au pikipiki yako", "Pakia nyaraka zako mara moja"] },
+        { "step": 3, "title": "Gawa Madereva", "description": "Tumia madereva wako au sajili wapya."
+},
         { "step": 4, "title": "Anza & Pata Mapato", "description": "Fuata safari, utendaji, na malipo kwenye dashibodi moja." }
       ]
     },

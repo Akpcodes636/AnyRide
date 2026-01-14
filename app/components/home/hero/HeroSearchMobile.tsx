@@ -131,7 +131,7 @@ const HeroSearchMobile = () => {
       <Button
         style="danger"
         type="button"
-        css="w-full  rounded-full font-semibold text-[16px]"
+        css="w-full rounded-full font-semibold text-[16px]"
         fn={handleCheckAvailability} // use onClick
       >
         {loading ? "Checking..." : t("buttonCheckAvailability")}

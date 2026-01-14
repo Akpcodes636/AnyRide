@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={fn}
       disabled={loading || disabled}
       type={type}
-      className={`flex h-16 items-center justify-center cursor-pointer rounded-[50px] px-4.5  text-[16px] font-semibold duration-150 ${css} ${
+      className={`flex h-[62px] items-center justify-center cursor-pointer rounded-[50px] px-4.5  text-[16px] font-semibold duration-150 ${css} ${
         style === "danger" && 
         "bg-[#A20602] text-white hover:bg-[#8A0502] active:bg-[#720401] transition-colors"
       } ${
@@ -50,13 +50,13 @@ const Button: React.FC<ButtonProps> = ({
         "bg-[#0000001A] text-text-strongInverse cursor-not-allowed"
       } ${
         style === "reverse" && 
-        "border-[0.81px] border-stroke-strong bg-fill-weakerInverse hover:bg-[#00000066] hover:shadow-raised transition-all"
+        "border-[0.81px] border-stroke-strong bg-fill-weakerInverse hover:brightness-105 hover:shadow-raised transition-all duration-200 ease-in-out"
       } ${
         style === "reverseLight" && 
         "border-[0.81px] border-stroke-strong bg-fill-weakerInverse hover:bg-[#51515114] hover:shadow-raised transition-all"
       } ${
         style === "tertiary" && 
-        "bg-transparent border border-white text-white hover:bg-[#E6E6EB] active:bg-[#efeff5] transition-colors"
+       "bg-[#010C4A] border border-white text-white hover:bg-[#06135F] active:bg-[#0A1A6E] transition-colors duration-200 ease-in-out"
       }
       `}
     >

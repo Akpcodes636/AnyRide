@@ -19,7 +19,7 @@ export default function Home() {
       <Values />
       <Pricing />
       <Safety />
-      <Blog />
+      {/* <Blog /> */}
       <Footer />
     </>
   );

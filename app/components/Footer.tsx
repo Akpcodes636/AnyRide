@@ -245,8 +245,6 @@
 // export default Footer;
 
 "use client";
-
-import React from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import Logo from "./ui/Logo";
@@ -337,7 +335,7 @@ const Footer = () => {
       <div className="border-t border-gray-300">
         <div className="px-4 sm:px-6 lg:px-8 py-6 flex justify-center">
           <p className="text-[16px] text-gray-600 text-center">
-            {t("copyright")}{" "}
+            © {new Date().getFullYear()} {t("copyright")}{" "}
             <Link
               href="https://techenex.com"
               className="font-bold text-[#333333] cursor-pointer"

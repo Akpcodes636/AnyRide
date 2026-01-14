@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import SubTitle from "../ui/Subtitle";
 import { useTranslations } from "next-intl";
@@ -16,7 +15,7 @@ const Safety = () => {
   const items = t.raw("items") as SafetyItem[];
 
   return (
-    <section className="container">
+    <section className="container mb-[80px]">
       {/* Header */}
       <div className="flex items-center justify-center flex-col mt-6 md:mt-10 lg:mt-14 xl:mt-18">
         <div className="mb-6">
@@ -71,7 +70,7 @@ const Safety = () => {
                       {item.title}
                     </h3>
 
-                    <p className="text-[14px] xl:text-base text-[#333] xl:text-gray-600 leading-relaxed">
+                    <p className="text-[14px] xl:text-base text-[#333333] xl:text-gray-600 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
