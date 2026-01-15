@@ -75,22 +75,22 @@ const getDriverSteps = (t: ReturnType<typeof useTranslations>): DriverStep[] => 
   {
     title: t("guides.steps.step1.title"),
     description: t("guides.steps.step1.description"),
-    image: "/images/Driver-1.png",
+    image: "/icons/Driver-1.svg",
   },
   {
     title: t("guides.steps.step2.title"),
     description: t("guides.steps.step2.description"),
-    image: "/images/Driver-2.png",
+    image: "/icons/Driver-2.svg",
   },
   {
     title: t("guides.steps.step3.title"),
     description: t("guides.steps.step3.description"),
-    image: "/images/Driver-3.png",
+    image: "/icons/Driver-3.svg",
   },
   {
     title: t("guides.steps.step4.title"),
     description: t("guides.steps.step4.description"),
-    image: "/images/Driver-4.png",
+    image: "/icons/Driver-4.svg",
   },
 ];
 
@@ -124,6 +124,7 @@ export default function DriverGrid() {
                 }`}
               >
                 <Image
+                  priority
                   src={step.image}
                   alt={step.title}
                   fill

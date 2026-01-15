@@ -12,6 +12,7 @@
     "@react-google-maps/api": "^2.20.8",
     "@sendgrid/mail": "^8.1.6",
     "classnames": "^2.5.1",
+    "dayjs": "^1.11.19",
     "formik": "^2.4.9",
     "framer-motion": "^12.24.7",
     "gsap": "^3.14.2",

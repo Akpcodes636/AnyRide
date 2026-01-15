@@ -1,5 +1,4 @@
 "use client";
-
 import Register from "@/app/components/forms/register/Register";
 
 export default function Page(){

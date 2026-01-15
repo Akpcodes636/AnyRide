@@ -105,11 +105,11 @@ export default function RiderGrid() {
                   index % 2 === 0 ? "md:order-1 lg:order-2" : ""
                 } md:h-[280px]`}
               >
-                <Image
-                  src={`/images/rider-${index + 1}.png`}
+                <img
+                  src={`/icons/rider-${index + 1}.svg`}
                   alt={category.title}
-                  fill
-                  className="object-cover h-full w-full"
+                  // fill
+                  className="object-cover h-full w-full aspect-square"
                 />
               </div>
 

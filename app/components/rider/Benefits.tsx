@@ -85,12 +85,12 @@ export default function Benefits() {
           <div className="w-full h-full">
             <div className="w-full max-w-full lg:max-w-[512px] h-[830px] bg-[#F5F5F7] flex items-center justify-center">
               <div className="w-[358px] h-[712px]">
-                <Image
-                  src="/images/Ridegh.png"
+                <img
+                  src="/icons/Ridegh.svg"
                   width={500}
                   height={500}
                   alt={t("title")}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover aspect-square"
                 />
               </div>
             </div>

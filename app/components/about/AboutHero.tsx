@@ -31,12 +31,13 @@ export default function AboutHero() {
           </div>
 
           <div className="h-[377px] md:h-[377px] lg:h-[778px] xl:h-[578px]">
-            <Image
-              src="/images/AboutHero.png"
+           <Image
+              src="/images/AboutHero.svg"
+              alt={t("title")}
               width={500}
               height={500}
-              alt={t("title")} // localized alt
-              className="w-full h-full object-cover rounded-[8px]"
+              priority
+              className="w-full h-full object-cover aspect-square rounded-[8px]"
             />
           </div>
         </div>

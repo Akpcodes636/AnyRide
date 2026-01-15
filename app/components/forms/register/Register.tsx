@@ -1,5 +1,5 @@
 "use client";
-import { registerValidationSchema } from "@/validation/userValidation";
+// import { registerValidationSchema } from "@/validation/userValidation";
 import InputField from "../../ui/InputField";
 import { useFormik } from "formik";
 import { ILogin } from "@/types";
@@ -8,6 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { FaApple } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import { registerValidationSchema } from "@/lib/validations/userValidations";
 
 const Register = () => {
   const router = useRouter();

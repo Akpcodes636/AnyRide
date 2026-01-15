@@ -15,16 +15,16 @@ const Values = () => {
 
   return (
     <section className="bg-[#010418] bg-values">
-      <div className="py-8 container">
+      <div className="py-[100px] container">
         {/* Header */}
         <div className="flex flex-col items-center justify-center mb-8 md:mb-12.5 lg:mb-18">
           <div className="mb-2">
             <SubTitle text={t("subtitle")} bg="bg-[#A2060233]" />
           </div>
-          <h2 className="text-white w-full max-w-[66.75rem] mx-auto text-center md:max-w-full">
+          <h2 className="text-white w-full max-w-[572px] mx-auto text-center md:max-w-full">
             {t("title")}
           </h2>
-          <p className="text-gray-300 text-center text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] w-full max-w-[66.75rem] md:max-w-[143rem] mx-auto">
+          <p className="text-gray-300 text-center text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] w-full max-w-[66.75rem] md:max-w-[572px] mx-auto">
             {t("description")}
           </p>
         </div>
@@ -59,13 +59,22 @@ const Values = () => {
 
           {/* Right: Image */}
           <div className="w-full h-full items-center justify-center hidden md:hidden lg:flex">
-            <Image
-              src="/images/Phone.png"
+            {/* <Image
+              src="/icons/Phone.png"
               width={360}
               height={720}
               className="w-full h-auto object-contain"
               alt={t("title")}
-            />
+            /> */}
+             <Image
+            src="/icons/Phone.svg"
+             width={360}
+              height={720}
+           className="w-full h-auto object-contain"
+            alt={t("title")}
+            loading="lazy"
+            priority
+              />
           </div>
         </div>
       </div>

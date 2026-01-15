@@ -124,11 +124,12 @@ export default function BenefitDriver() {
           <div className="flex items-center justify-center">
             <div className="h-[567px] w-[276px]">
               <Image
-                src="/images/Ride-1.png"
+                src="/icons/Ride-1.svg"
                 width={500}
                 height={500}
+                priority
                 alt="picture of phone with the location"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover aspect-square"
               />
             </div>
           </div>

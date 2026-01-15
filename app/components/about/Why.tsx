@@ -128,11 +128,12 @@ export default function Why() {
 
           <div className="h-[401px] md:h-[401px] lg:h-[645px]">
             <Image
-              src="/images/About-girl.png"
+              src="/icons/About-girl.svg"
               width={500}
               height={500}
+              priority
               alt={bothModes.title}
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full aspect-square object-cover object-top"
             />
           </div>
         </div>

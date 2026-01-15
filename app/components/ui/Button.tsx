@@ -53,7 +53,7 @@ const Button: React.FC<ButtonProps> = ({
         "border-[0.81px] border-stroke-strong bg-fill-weakerInverse hover:brightness-105 hover:shadow-raised transition-all duration-200 ease-in-out"
       } ${
         style === "reverseLight" && 
-        "border-[0.81px] border-stroke-strong bg-fill-weakerInverse hover:bg-[#51515114] hover:shadow-raised transition-all"
+        "border-[1px] border-[#FFFFFF] text-[#FFFFFF] bg-transparent hover:bg-[#51515114] hover:shadow-raised transition-all"
       } ${
         style === "tertiary" && 
        "bg-[#010C4A] border border-white text-white hover:bg-[#06135F] active:bg-[#0A1A6E] transition-colors duration-200 ease-in-out"

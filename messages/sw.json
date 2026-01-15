@@ -114,9 +114,9 @@
     },
 
     "pricing": {
-      "title": "Safari Nzuri. Bei Wazi.",
-      "subtitle": "Jua nauli yako kabla ya kusafiri.",
-      "description": "Fika unakokwenda haraka zaidi, salama zaidi, na kwa haki.",
+      "title": "bei / upatikanaji wa bei",
+      "subtitle": "bei / upatikanaji wa bei",
+      "description": "Fahamu gharama yako kabla ya kuanza safari.",
         "form": {
         "pickupLabel": "Weka mahali pa kukuchukua",
         "pickupPlaceholder": "Abuja, Nigeria",
@@ -318,7 +318,7 @@
     },
 
     "ourPromise": {
-      "title": "Ahadi Yetu",
+      "title": "Tuelewe kwa maneno yetu",
       "description": "Tunaunda kitu tofauti — uzoefu wa safari unaohisi kuwa wa karibu, wa haki, na wa kibinadamu. Kutoka kwa madereva wetu wanaoweka miji kusogea, hadi abiria wanaotuwekea imani kila siku, AnyRide inasimama kwa usalama, uaminifu, na uwezeshaji. Kwa sababu usogezaji ni uhuru — na kila mtu anastahili kuufikia. Hiyo ndiyo AnyRide. Imeundwa kwa ajili ya watu. Imetengenezwa kwa ajili ya usogezaji."
     }
   },

@@ -1,23 +1,21 @@
 "use client";
 import Image from "next/image";
 import { Star } from "lucide-react";
-// import { useTranslation } from "react-i18next";
 import { useTranslations } from "next-intl";
 
 const AnyRide = () => {
-   const t = useTranslations(); 
+  const t = useTranslations();
 
   return (
     <section className="">
       <div className="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         {/* Left Side Image */}
         <div className="h-full">
-          <Image
+          <img
             src="/icons/Anyride.svg"
-            width={600}
-            height={800}
             alt={t("HomePage.appDownload.title")}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
+            loading="eager"
           />
         </div>
 
@@ -38,7 +36,7 @@ const AnyRide = () => {
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
               /> */}
-               <img
+              <img
                 src="/icons/apple.svg"
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
@@ -52,45 +50,16 @@ const AnyRide = () => {
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.google")}
               /> */}
-               <img
+              <Image
+                width={135}
+                height={40}
+                priority
                 src="/icons/google.svg"
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
               />
             </div>
           </div>
-
-          {/* Reviews */}
-          {/* <div className="flex items-center gap-3">
-            <div className="w-19 h-8">
-              <Image
-                src="/images/pictures.png"
-                width={76}
-                height={32}
-                className="w-full h-full object-cover"
-                alt={t("HomePage.appDownload.title")}
-              />
-            </div>
-
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]"
-                    />
-                  ))}
-                </div>
-                <p className="font-sora font-medium text-[14px] leading-5 tracking-[0.14px] text-black">
-                  {t("HomePage.appDownload.reviews.rating")} reviews
-                </p>
-              </div>
-              <p className="font-sora font-normal text-[13px] leading-[20.8px] tracking-[0.13px] text-black">
-               {t("HomePage.appDownload.reviews.trustedBy")}
-              </p>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

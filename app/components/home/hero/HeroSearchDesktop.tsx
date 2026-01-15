@@ -1,297 +1,134 @@
-// "use client";
-
-// import Button from "../../ui/Button";
-// import { useTranslations } from "next-intl";
-
-// const HeroSearchDesktop = () => {
-//   // const t = useTranslations("HomePage.hero"); // load the hero namespace
-//   const t = useTranslations("HomePage.hero");
-
-//   return (
-//     <div className="w-full max-w-174 mx-auto">
-//       <div className="flex items-center bg-white rounded-full p-2">
-//         {/* Input */}
-//         <input
-//           type="search"
-//           placeholder={t("placeholderPickup")}
-//           className="
-//             flex-1 h-14
-//             px-6
-//             outline-none
-//             text-sm
-//             bg-transparent
-//           "
-//         />
-
-//         {/* CTA */}
-//         <Button
-//           style="danger"
-//           type="button"
-//           css="h-[56px] w-[216px] px-8 rounded-full whitespace-nowrap font-semibold"
-//         >
-//           {t("buttonCheckAvailability")}
-//         </Button>
-//       </div>
-
-//       {/* Info text */}
-//       <div className="flex justify-center mt-4">
-//         <div className="inline-block bg-[#E9F9EE] rounded-[50px] px-6 py-3">
-//           <p className="text-center text-[18px] text-[#22C553]">
-//             {t("desktopInfo")}
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HeroSearchDesktop;
-
 "use client";
 
 import { useState } from "react";
+import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 import Button from "../../ui/Button";
 import { useTranslations } from "next-intl";
+
+const BASE_URL = "https://anyride.techenex.online";
 
 const HeroSearchDesktop = () => {
   const t = useTranslations("HomePage.hero");
 
-  // Address input
+  // Google Maps loader
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+    libraries: ["places"],
+  });
+
   const [pickup, setPickup] = useState("");
-  const [pickupAddress, setPickupAddress] = useState("");
+  const [pickupCoords, setPickupCoords] = useState<{ lat: number; lon: number } | null>(null);
+  const [pickupAuto, setPickupAuto] = useState<any>(null);
 
-
-  // API state
+  const [rideType, setRideType] = useState("Bike");
   const [fareData, setFareData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
-  // Static location data for testing (OpenStreetMap coordinates)
-  const staticLocations: { [key: string]: { lat: number; lon: number; drivers: number } } = {
-    "lagos": { lat: 6.5244, lon: 3.3792, drivers: 15 },
-    "lagos nigeria": { lat: 6.5244, lon: 3.3792, drivers: 15 },
-    "abuja": { lat: 9.0765, lon: 7.3986, drivers: 12 },
-    "abuja nigeria": { lat: 9.0765, lon: 7.3986, drivers: 12 },
-    "kano": { lat: 11.9504, lon: 8.5116, drivers: 8 },
-    "kano nigeria": { lat: 11.9504, lon: 8.5116, drivers: 8 },
-    "ibadan": { lat: 7.3775, lon: 3.9470, drivers: 10 },
-    "ibadan nigeria": { lat: 7.3775, lon: 3.9470, drivers: 10 },
-    "port harcourt": { lat: 4.8156, lon: 7.0498, drivers: 7 },
-    "port harcourt nigeria": { lat: 4.8156, lon: 7.0498, drivers: 7 },
-    "kinshasa": { lat: -4.4419, lon: 15.2663, drivers: 5 },
-    "kinshasa congo": { lat: -4.4419, lon: 15.2663, drivers: 5 },
-    "new york": { lat: 40.7128, lon: -74.0060, drivers: 25 },
-    "new york us": { lat: 40.7128, lon: -74.0060, drivers: 25 },
-    "los angeles": { lat: 34.0522, lon: -118.2437, drivers: 20 },
-    "los angeles us": { lat: 34.0522, lon: -118.2437, drivers: 20 },
-    "chicago": { lat: 41.8781, lon: -87.6298, drivers: 18 },
-    "chicago us": { lat: 41.8781, lon: -87.6298, drivers: 18 },
-  };
+  // Toast states
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastError, setToastError] = useState(false);
 
-  // Convert address → lat/lon using static data (no API calls)
-  const geocodeAddress = async (address: string) => {
-    console.log("=== STATIC GEOCODING ===");
-    console.log("Search address:", address);
-    
-    const normalizedAddress = address.toLowerCase().trim();
-    
-    // Find matching location
-    const location = staticLocations[normalizedAddress];
-    
-    if (location) {
-      console.log("Found location:", location);
-      return {
-        lat: location.lat,
-        lon: location.lon,
-        drivers: location.drivers // Include driver count
-      };
+  if (!isLoaded) return null;
+
+  const handleCheckAvailability = async () => {
+    if (!pickupCoords) {
+      setToastMessage("Please select a pickup location from suggestions");
+      setToastError(true);
+      setFareData(null);
+      setTimeout(() => setToastMessage(null), 4000);
+      return;
     }
-    
-    // Try partial matches
-    for (const [key, value] of Object.entries(staticLocations)) {
-      if (normalizedAddress.includes(key) || key.includes(normalizedAddress)) {
-        console.log("Found partial match:", key, value);
-        return {
-          lat: value.lat,
-          lon: value.lon,
-          drivers: value.drivers
-        };
+
+    setLoading(true);
+    setToastMessage(null);
+
+    try {
+      const res = await fetch(`${BASE_URL}/api/v1/public/estimate-fare`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pickup_lat: pickupCoords.lat,
+          pickup_lon: pickupCoords.lon,
+          dropoff_lat: pickupCoords.lat, // dummy
+          dropoff_lon: pickupCoords.lon,
+          vehicle_type: rideType,
+        }),
+      });
+
+      const json = await res.json();
+      if (json.status !== "success") throw new Error(json.message || "API error");
+
+      setFareData(json.data);
+
+      if (json.data.available_drivers === 0) {
+        setToastMessage("No rides available in your area");
+        setToastError(true);
+      } else {
+        setToastMessage(`${json.data.available_drivers} rides available in your area`);
+        setToastError(false);
       }
+
+      setTimeout(() => setToastMessage(null), 4000);
+    } catch (err: any) {
+      setToastMessage(err.message || "Something went wrong");
+      setToastError(true);
+      setFareData(null);
+      setTimeout(() => setToastMessage(null), 4000);
+    } finally {
+      setLoading(false);
     }
-    
-    console.error("Location not found. Try: Lagos, Abuja, Kano, Port Harcourt, Kinshasa, New York, Los Angeles, Chicago");
-    throw new Error("Location not found. Try: Lagos, Abuja, Kano, Port Harcourt, Kinshasa, New York, Los Angeles, Chicago");
   };
-
-
- const handleCheckAvailability = async () => {
-  if (!pickupAddress.trim()) {
-    console.error("Pickup location is required");
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    const location = await geocodeAddress(pickupAddress);
-
-    // Use static driver count from location data
-    setFareData({
-      available_drivers: location.drivers,
-      location: pickupAddress
-    });
-
-    console.log(`Found ${location.drivers} drivers in ${pickupAddress}`);
-  } catch (err) {
-    console.error(err);
-  } finally {
-    setLoading(false);
-  }
-};
-
 
   return (
     <div className="w-full max-w-174 mx-auto">
       <div className="flex items-center bg-white rounded-full p-2">
-        <input
-  type="search"
-  value={pickupAddress}
-  onChange={(e) => setPickupAddress(e.target.value)}
-  placeholder={t("placeholderPickup")}
-  className="flex-1 h-14 px-6 outline-none text-sm bg-transparent"
-/>
+        <Autocomplete
+          onLoad={(auto) => setPickupAuto(auto)}
+          onPlaceChanged={() => {
+            if (!pickupAuto) return;
+            const place = pickupAuto.getPlace();
+            if (!place.geometry) return;
 
+            setPickup(place.formatted_address || "");
+            setPickupCoords({
+              lat: place.geometry.location.lat(),
+              lon: place.geometry.location.lng(),
+            });
+          }}
+        >
+          <input
+            type="text"
+            value={pickup}
+            onChange={(e) => setPickup(e.target.value)}
+            placeholder={t("placeholderPickup")}
+            className="flex-1 h-14 px-6 outline-none text-sm bg-transparent"
+          />
+        </Autocomplete>
 
         <Button
           style="danger"
           type="button"
-          css="h-[px] w-[216px] px-8 rounded-full whitespace-nowrap font-semibold"
+          css="h-[52px] w-[216px] px-8 rounded-full whitespace-nowrap font-semibold relative left-48"
           fn={handleCheckAvailability}
         >
           {loading ? "Checking..." : t("buttonCheckAvailability")}
         </Button>
       </div>
 
-      {/* Info text */}
-      <div className="flex justify-center mt-4">
-        <div className="inline-block bg-[#E9F9EE] rounded-[50px] px-6 py-3">
-          <p className="text-center text-[18px] text-[#22C553]">
-            {fareData
-              ? `${fareData.available_drivers} Rides available in your area`
-              : t("desktopInfo")}
-          </p>
+      {/* Toast */}
+      {toastMessage && (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+          <div
+            className={`inline-block rounded-[50px] px-6 py-3 shadow-lg animate-slide-up ${
+              toastError ? "bg-[#FDECEC] text-[#FF4D4F]" : "bg-[#E9F9EE] text-[#22C553]"
+            }`}
+          >
+            <p className="text-center text-[18px]">{toastMessage}</p>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
 export default HeroSearchDesktop;
-
-// "use client";
-
-// import { useState } from "react";
-// import Button from "../../ui/Button";
-// import { useTranslations } from "next-intl";
-
-// const rideTypes = ["Bike", "Motorcycle", "Car"];
-
-// const staticLocations: { [key: string]: { lat: number; lon: number; drivers: number } } = {
-//   "lagos": { lat: 6.5244, lon: 3.3792, drivers: 15 },
-//   "abuja": { lat: 9.0765, lon: 7.3986, drivers: 12 },
-//   "kano": { lat: 11.9504, lon: 8.5116, drivers: 8 },
-//   "ibadan": { lat: 7.3775, lon: 3.9470, drivers: 10 },
-//   "port harcourt": { lat: 4.8156, lon: 7.0498, drivers: 7 },
-//   "kinshasa": { lat: -4.4419, lon: 15.2663, drivers: 5 },
-//   "lubumbashi": { lat: -11.6870, lon: 27.4770, drivers: 3 },
-//   "new york": { lat: 40.7128, lon: -74.0060, drivers: 25 },
-//   "los angeles": { lat: 34.0522, lon: -118.2437, drivers: 20 },
-//   "chicago": { lat: 41.8781, lon: -87.6298, drivers: 18 },
-//   "houston": { lat: 29.7604, lon: -95.3698, drivers: 12 },
-// };
-
-// const geocodeAddress = async (address: string) => {
-//   const normalized = address.toLowerCase().trim();
-//   const location = staticLocations[normalized];
-//   if (location) return location;
-
-//   for (const [key, value] of Object.entries(staticLocations)) {
-//     if (normalized.includes(key) || key.includes(normalized)) return value;
-//   }
-
-//   throw new Error(
-//     "Location not supported. Try Lagos, Abuja, Kano, Port Harcourt, Kinshasa, Lubumbashi, New York, Los Angeles, Chicago, Houston."
-//   );
-// };
-
-// const HeroSearchMobile = () => {
-//   const t = useTranslations("HomePage.hero");
-//   const [pickupAddress, setPickupAddress] = useState("");
-//   const [rideType, setRideType] = useState(rideTypes[0]);
-//   const [loading, setLoading] = useState(false);
-//   const [fareData, setFareData] = useState<any>(null);
-
-//   const handleCheckAvailability = async () => {
-//     if (!pickupAddress.trim()) return;
-     
-//     setLoading(true);
-//     try {
-//       const location = await geocodeAddress(pickupAddress);
-//       console.log(location)
-//       setFareData({ available_drivers: location.drivers, location: pickupAddress });
-//     } catch (err: any) {
-//       alert(err.message);
-//       setFareData(null);
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   return (
-//     <div className="w-full max-w-83.75 mx-auto flex flex-col items-center gap-3 px-4">
-//       {/* Pickup Input */}
-//       <div className="w-full h-15.5 bg-white rounded-full px-4 flex items-center">
-//         <input
-//           type="search"
-//           placeholder={t("placeholderPickup")}
-//           value={pickupAddress}
-//           onChange={(e) => setPickupAddress(e.target.value)}
-//           className="w-full h-full outline-none text-[16px] bg-transparent text-gray-900"
-//         />
-//       </div>
-
-//       {/* Ride Type Selector */}
-//       <select
-//         value={rideType}
-//         onChange={(e) => setRideType(e.target.value)}
-//         className="w-full h-12 rounded-full px-4 bg-[#F5F5F5] text-gray-900 text-sm focus:outline-none"
-//       >
-//         {rideTypes.map((r) => (
-//           <option key={r} value={r}>
-//             {r}
-//           </option>
-//         ))}
-//       </select>
-
-//       {/* Check Availability Button */}
-//       <Button
-//         style="danger"
-//         type="button"
-//         css="w-full h-[52px] rounded-full font-semibold text-[16px]"
-//         fn={handleCheckAvailability}
-//       >
-//         {loading ? "Checking..." : t("buttonCheckAvailability")}
-//       </Button>
-
-//       {/* Info Pill */}
-//       <div className="w-64.5 px-6 h-15.25 rounded-full bg-[#FFECEC] flex items-center justify-center">
-//         <span className="text-xs font-medium text-[#FF4D4F]">
-//           {fareData
-//             ? `${fareData.available_drivers} rides available in ${fareData.location}`
-//             : t("mobileInfo")}
-//         </span>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HeroSearchMobile;

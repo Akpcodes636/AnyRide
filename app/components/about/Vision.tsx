@@ -15,10 +15,11 @@ export default function Vision() {
           {/* Image Section */}
           <div className="w-full max-w-full md:max-w-full lg:max-w-full h-[335px] md:h-[335px] lg:h-[645px] rounded-[8px] mx-auto">
             <Image
-              src="/images/About-Image.png"
+              src="/icons/About.svg"
               width={500}
               height={500}
-              className="w-full h-full object-cover object-top"
+              priority
+              className="w-full h-full object-cover aspect-square object-top"
               alt="about ride image"
             />
           </div>

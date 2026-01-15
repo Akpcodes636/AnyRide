@@ -52,6 +52,7 @@
 
 "use client";
 
+import Image from "next/image";
 import SubTitle from "../ui/Subtitle";
 import { useTranslations } from "next-intl";
 
@@ -80,15 +81,21 @@ export default function Trust() {
 
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-[20px]">
           <div>
-            <img
+            <Image
               src="/icons/Rating.svg"
               alt="rating"
               className="w-full h-full object-cover"
+              width={500}
+              height={500}
+              priority
             />
           </div>
 
           <div>
-            <img
+            <Image
+              width={500}
+              height={500}
+              priority
               src="/icons/Verfication.svg"
               alt="verification"
               className="w-full h-full object-cover"

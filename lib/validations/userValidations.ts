@@ -15,3 +15,11 @@ export const waitListSchema = Yup.object({
     .email("Please enter a valid email address"),
     userType: Yup.string().required("Please select an option"),
 });
+
+
+
+export const registerValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+})

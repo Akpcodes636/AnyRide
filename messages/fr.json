@@ -115,8 +115,8 @@
 
     "pricing": {
       "title": "Trajets équitables. Prix clairs.",
-      "subtitle": "Connaissez votre tarif avant de voyager.",
-      "description": "Rendez-vous où vous allez plus rapidement, en toute sécurité et équitablement.",
+      "subtitle": "tarification",
+      "description": "Connaissez votre tarif avant de voyager.",
       "form": {
         "pickupLabel": "Entrez le lieu de prise en charge",
         "pickupPlaceholder": "Abuja, Nigeria",
@@ -450,7 +450,7 @@
     },
 
     "ourPromise": {
-      "title": "Notre Promesse",
+      "title": "Croyez-nous sur parole",
       "description": "Nous créons quelque chose de différent — une expérience de covoiturage qui se sent locale, équitable et humaine. De nos conducteurs qui font bouger les villes, aux passagers qui nous font confiance quotidiennement, AnyRide représente la sécurité, l'honnêteté et l'autonomisation. Parce que le mouvement est la liberté — et tout le monde mérite d'y avoir accès. C'est AnyRide. Construit pour les gens. Fait pour le mouvement."
     }
   },

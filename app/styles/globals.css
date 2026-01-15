@@ -59,7 +59,7 @@
 @layer utilities {
   .bg-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/en/hero.png");
+      url("/en/hero.svg");
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;

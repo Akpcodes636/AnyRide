@@ -17,8 +17,9 @@ export default function PartnerGrid() {
               {/* Image */}
               <div className={`relative order-1 h-[240px] w-full overflow-hidden rounded-lg ${index % 2 === 0 ? "md:order-2" : ""} md:h-[280px]`}>
                 <Image
-                  src={`/en/partners-${index + 1}.png`}
+                  src={`/en/partners-${index + 1}.svg`}
                   alt={category.type}
+                  priority
                   fill
                   className="object-cover"
                 />

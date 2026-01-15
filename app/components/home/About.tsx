@@ -89,7 +89,8 @@ const About = () => {
         {/* RIGHT SIDE IMAGE */}
         <div className="w-full h-full hidden md:hidden lg:hidden xl:block">
           <Image
-            src="/images/About-img.png"
+            src="/icons/About-img.svg"
+            priority
             width={400}
             height={600}
             alt={t("title")}

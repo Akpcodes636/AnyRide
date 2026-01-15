@@ -36,7 +36,8 @@ const Safety = () => {
         {/* Phone Image */}
         <div className="w-full max-w-[220px] md:max-w-[360px] mx-auto flex items-center justify-center">
           <Image
-            src="/images/Phone-1.png"
+            src="/icons/Phone-1.svg"
+            priority
             width={360}
             height={720}
             className="w-full h-auto object-contain"

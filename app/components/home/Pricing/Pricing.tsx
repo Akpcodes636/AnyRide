@@ -15,11 +15,11 @@ const Pricing = () => {
           <div className="mb-6">
             <SubTitle text={t("subtitle")} css="rounded-[40px] font-normal" />
           </div>
-          <h2 className="text-center">
+          <h2 className="text-center w-full max-w-[345px]">
             {t("title")}
           </h2>
           <p className="text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] text-center text-[#333333] font-normal">
-            {t("subtitle")}
+            {t("description")}
           </p>
         </div>
 
@@ -28,14 +28,14 @@ const Pricing = () => {
           <div className="h-full w-full order-2 md:order-1 mb-[10px]">
             <div>
               <h2 className="mt-7.5 hidden md:hidden lg:block xl:block">
-                {t("description")}
+                {t("descriptions")}
               </h2>
               <PricingForm />
             </div>
           </div>
 
           {/* Image */}
-          <div className="h-full w-full max-w-[450px] md:max-w-[618px] h-[272px] mx-auto order-1 md:order-2">
+          <div className="h-full w-full max-w-full md:max-w-full lg:max-w-[618px] h-[272px] mx-auto order-1 md:order-2">
             <Image
               src="/en/Rectangle.svg"
               alt={t("title")}

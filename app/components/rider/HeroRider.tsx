@@ -36,7 +36,7 @@ const HeroRider = () => {
   const locale = useLocale();
 
   return (
-   <section className=" bg-cover bg-center bg-no-repeat bg-red-600"style={{ backgroundImage: "url('/en/riders.png')" }}>
+   <section className=" bg-cover bg-center bg-no-repeat bg-red-600"style={{ backgroundImage: "url('/en/riders.svg')" }}>
       <div className="py-[220px] md:py-[230px] lg:py-[280px]">
         <div className="container">
           <div>

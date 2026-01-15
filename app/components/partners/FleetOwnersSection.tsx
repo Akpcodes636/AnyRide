@@ -4,6 +4,7 @@ import SubTitle from "../ui/Subtitle";
 import Button from "../ui/Button";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const ICON_MAP: Record<string, string> = {
   vehicleUtilization: "/icons/car.svg",
@@ -85,10 +86,13 @@ export default function FleetOwnersSection() {
           {/* Image */}
           <div className="order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="/en/fleet-1.png"
+              <Image
+                width={500}
+                height={500}
+                priority
+                src="/en/fleet-1.svg"
                 alt="Busy street with vehicles and motorcycles"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] aspect-square object-cover"
               />
             </div>
           </div>

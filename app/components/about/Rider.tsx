@@ -73,10 +73,11 @@ export default function Rider() {
           {/* Image */}
           <div className="h-[335px] md:h-[335px] lg:h-[645px] rounded-[8px]">
             <Image
-              src="/images/About.png"
+              src="/icons/About-1.svg"
               width={500}
               height={500}
-              className="w-full h-full object-cover object-top rounded-[8px]"
+              priority
+              className="w-full h-full object-cover object-top rounded-[8px] aspect-square"
               alt="about ride image"
             />
           </div>
