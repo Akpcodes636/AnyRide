@@ -128,7 +128,7 @@ export default function Why() {
 
           <div className="h-[401px] md:h-[401px] lg:h-[645px]">
             <Image
-              src="/icons/About-girl.svg"
+              src="/icons/About-girl.jpg"
               width={500}
               height={500}
               priority

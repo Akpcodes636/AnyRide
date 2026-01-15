@@ -32,7 +32,7 @@ export default function AboutHero() {
 
           <div className="h-[377px] md:h-[377px] lg:h-[778px] xl:h-[578px]">
            <Image
-              src="/images/AboutHero.svg"
+              src="/images/AboutHero.jpg"
               alt={t("title")}
               width={500}
               height={500}

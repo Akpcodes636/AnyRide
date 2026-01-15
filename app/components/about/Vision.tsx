@@ -15,7 +15,7 @@ export default function Vision() {
           {/* Image Section */}
           <div className="w-full max-w-full md:max-w-full lg:max-w-full h-[335px] md:h-[335px] lg:h-[645px] rounded-[8px] mx-auto">
             <Image
-              src="/icons/About.svg"
+              src="/icons/About.jpg"
               width={500}
               height={500}
               priority

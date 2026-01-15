@@ -73,7 +73,7 @@ export default function Rider() {
           {/* Image */}
           <div className="h-[335px] md:h-[335px] lg:h-[645px] rounded-[8px]">
             <Image
-              src="/icons/About-1.svg"
+              src="/icons/About-1.jpg"
               width={500}
               height={500}
               priority
