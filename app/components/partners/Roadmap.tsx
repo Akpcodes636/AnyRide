@@ -73,7 +73,7 @@ export default function Roadmap() {
                     w-full
                   `}
                 >
-                  <div className="bg-white rounded-xl p-6 lg:p-8 shadow-xl w-full max-w-[300px] sm:max-w-[550px]  md:max-w-full lg:max-w-full mx-auto ">
+                  <div className="bg-white rounded-xl p-6 lg:p-8 shadow-xl w-full max-w-[400px] sm:max-w-[750px]  md:max-w-full lg:max-w-full mx-auto">
                     <h3 className="text-2xl lg:text-[40px] font-bold text-gray-900 mb-4 leading-tight">
                       {step.title}
                     </h3>

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 export default function PartnerGrid() {
   const t = useTranslations("FleetPartnersPage.whoCanPartner");
   const categories = t.raw("categories") as Array<{type: string; description: string[]}>;
-  console.log(categories);
+  // console.log(categories);
   
   return (
     <section className="w-full bg-white">

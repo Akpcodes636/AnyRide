@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
 
@@ -15,9 +16,11 @@ const ContactHero =()=>{
             {t("description")}
           </p>
           <div className="flex items-center justify-center">
+            <Link href="/waitlist">
             <Button type="button" css="min-w-[150px] h-auto px-4 py-3 md:h-[62px] md:px-6 md:py-9" style="danger">
               {t("cta")}
             </Button>
+            </Link>
           </div>
         </div>
       </div>
