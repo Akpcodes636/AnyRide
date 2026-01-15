@@ -11,11 +11,14 @@ const AnyRide = () => {
       <div className="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         {/* Left Side Image */}
         <div className="h-full">
-          <img
+          <Image
             src="/icons/Anyride.svg"
             alt={t("HomePage.appDownload.title")}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             loading="eager"
+            width={500}
+            height={500}
+            priority
           />
         </div>
 

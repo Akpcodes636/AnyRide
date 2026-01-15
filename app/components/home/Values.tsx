@@ -73,7 +73,7 @@ const Values = () => {
            className="w-full h-auto object-contain"
             alt={t("title")}
             loading="lazy"
-            priority
+            // priority
               />
           </div>
         </div>
