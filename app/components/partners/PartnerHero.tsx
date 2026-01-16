@@ -14,9 +14,9 @@ const PartnerHero = () => {
   };
 
   return (
-    <section className="bg-partner pt-[280px] pb-[80px] md:pt-[330px] md:pb-[120px]">
-      <div className="container">
-        <div>
+    <section className="bg-partner h-screen">
+      <div className="container flex items-center justify-center h-full mx-auto">
+        <div className="pt-[280px] pb-[80px] md:pt-[330px] md:pb-[120px]">
           <h2 className="text-white text-center w-full max-w-[250px] md:max-w-full lg:max-w-full xl:max-w-[595px] mx-auto mb-[16px]">
             {t("title")}
           </h2>

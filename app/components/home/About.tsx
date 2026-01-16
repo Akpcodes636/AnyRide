@@ -88,14 +88,14 @@ const About = () => {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="w-full h-full hidden md:hidden lg:hidden xl:block">
+        <div className="hidden md:hidden lg:hidden xl:block">
           <Image
             src="/icons/About-img.svg"
             priority
             width={400}
             height={600}
             alt={t("title")}
-            className="w-full h-full object-cover"
+            className="w-full h-auto object-cover"
           />
         </div>
       </div>
