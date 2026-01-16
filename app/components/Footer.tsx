@@ -164,7 +164,7 @@
 
 //   // Filter out unwanted links
 //   // const unwantedLabels = ["Support", "Safety", "Pricing", "Cities", "Cookies", "Sécurité", "Tarification", "Villes", "Usalama", "Bei", "Miji", "Vidakuzi"];
-  
+
 //   sections = {
 //     company: {
 //       ...sections.company,
@@ -293,7 +293,7 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="container py-7.25 lg:py-18">
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12">
-          
+
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="mb-7">
@@ -302,6 +302,14 @@ const Footer = () => {
             <p className="text-[16px] text-[#333333] leading-[160%] tracking-[-2%] max-w-[520px]">
               {t("description")}
             </p>
+            <div className="pt-2">
+              Email:  <a
+                href={`mailto:${t("contactEmail")}`}
+                className="text-[16px] text-[#A20602] font-semibold hover:underline"
+              >
+                {t("contactEmail")}
+              </a>
+            </div>
           </div>
 
           {/* Footer Links */}
@@ -314,7 +322,7 @@ const Footer = () => {
 
                 <ul className="space-y-3">
                   {section.links.map(link => (
-                   <li key={`${section.title}-${link.href}`}>
+                    <li key={`${section.title}-${link.href}`}>
                       <Link
                         href={link.href}
                         className="text-[#333333] hover:text-[#A20602] transition-colors text-[16px]"

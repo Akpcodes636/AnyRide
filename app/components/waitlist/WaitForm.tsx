@@ -23,12 +23,15 @@ const waitListSchema = Yup.object({
 
 export default function WaitForm() {
   const t = useTranslations("WaitlistPage.form");
+  const th = useTranslations("WaitlistPage.hero");
 
   const userTypeOptions = [
     { value: "", label: t("selectOption") },
     { value: "rider", label: t("userTypes.rider") },
     { value: "driver", label: t("userTypes.driver") },
+    { value: "fleet_owner", label: t("userTypes.fleet_owner") },
     { value: "partner", label: t("userTypes.partner") },
+    { value: "team_member", label: t("userTypes.team_member") },
   ];
 
   const formik = useFormik({
@@ -76,9 +79,13 @@ export default function WaitForm() {
   };
 
   return (
-    <section className="py-12 px-4 ">
+    <section className="pb-12 pt-0 px-4 ">
       <div className="container mx-auto">
         <div className="w-full max-w-full md:max-w-full  lg:max-w-[562px] mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">{th("title")}</h2>
+            <p className="text-[16px] md:text-[18px] text-white opacity-80">{th("description")}</p>
+          </div>
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
             <InputField
               label=""

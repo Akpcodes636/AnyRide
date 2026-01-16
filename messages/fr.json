@@ -15,7 +15,6 @@
       "guides": "Guides",
       "howItWorks": "Comment fonctionne AnyRide"
     },
-
     "guides": {
       "subtitle": "Guides",
       "title": "Comment fonctionne Anyride",
@@ -53,7 +52,6 @@
         }
       ]
     },
-
     "howItWorks": {
       "intro": "AnyRide simplifie vos déplacements — des trajets quotidiens aux sorties du week-end. Ouvrez simplement l'application, demandez un trajet et vous êtes en route.",
       "steps": [
@@ -71,7 +69,6 @@
         }
       ]
     },
-
     "appDownload": {
       "title": "Téléchargez l'application AnyRide",
       "description": "AnyRide vous emmène où vous devez aller pour moins cher. L'application calcule automatiquement le coût de votre trajet et affiche votre voiture sur la carte en temps réel. C'est rapide, facile et fonctionne avec iOS et Android.",
@@ -84,7 +81,6 @@
         "trustedBy": "Approuvé par plus de 1125 utilisateurs"
       }
     },
-
     "values": {
       "subtitle": "Nos Valeurs",
       "title": "Pourquoi choisir AnyRide",
@@ -112,12 +108,11 @@
         }
       ]
     },
-
     "pricing": {
       "title": "Trajets équitables. Prix clairs.",
       "subtitle": "tarification",
       "description": "Connaissez votre tarif avant de voyager.",
-      "descriptions":"Allez là où vous devez être plus rapidement, en toute sécurité et à un prix équitable.",
+      "descriptions": "Allez là où vous devez être plus rapidement, en toute sécurité et à un prix équitable.",
       "form": {
         "pickupLabel": "Entrez le lieu de prise en charge",
         "pickupPlaceholder": "Abuja, Nigeria",
@@ -135,7 +130,6 @@
         ]
       }
     },
-
     "safety": {
       "title": "Votre sécurité passe avant tout. Toujours.",
       "description": "Vérification stricte des conducteurs et des véhicules, suivi GPS en direct, partage de trajet et bouton SOS dans l'application.",
@@ -157,39 +151,39 @@
         }
       ]
     },
-  "blog": {
-    "label": "Blog",
-    "title": "Dernières nouvelles du blog",
-    "subtitle": "Astuces, histoires et mises à jour pour les passagers et les conducteurs.",
-    "posts": [
-      {
-        "id": 1,
-        "category": "Entreprise",
-        "date": "4 novembre",
-        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria",
-        "featured": true
-      },
-      {
-        "id": 2,
-        "category": "Entreprise",
-        "date": "4 novembre",
-        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
-      },
-      {
-        "id": 3,
-        "category": "Entreprise",
-        "date": "4 novembre",
-        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
-      },
-      {
-        "id": 4,
-        "category": "Entreprise",
-        "date": "4 novembre",
-        "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
-      }
-    ]
-  }
-},
+    "blog": {
+      "label": "Blog",
+      "title": "Dernières nouvelles du blog",
+      "subtitle": "Astuces, histoires et mises à jour pour les passagers et les conducteurs.",
+      "posts": [
+        {
+          "id": 1,
+          "category": "Entreprise",
+          "date": "4 novembre",
+          "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria",
+          "featured": true
+        },
+        {
+          "id": 2,
+          "category": "Entreprise",
+          "date": "4 novembre",
+          "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
+        },
+        {
+          "id": 3,
+          "category": "Entreprise",
+          "date": "4 novembre",
+          "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
+        },
+        {
+          "id": 4,
+          "category": "Entreprise",
+          "date": "4 novembre",
+          "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
+        }
+      ]
+    }
+  },
   "DriversPage": {
     "hero": {
       "title": "Conduisez en toute liberté. Gagnez à votre rythme.",
@@ -197,7 +191,7 @@
       "cta": "devenez conducteur"
     },
     "FAQ": {
-       "subtitle": "FAQ",
+      "subtitle": "FAQ",
       "title": "Questions fréquentes",
       "description": "Consultez notre section FAQ pour obtenir des réponses rapides et faciles aux questions les plus courantes.",
       "items": [
@@ -263,60 +257,83 @@
       "title": "Aperçu de l'intégration des conducteurs",
       "description": "Réservez des trajets sûrs et abordables avec des conducteurs vérifiés utilisant des voitures ou motos — le tout depuis une application simple.",
       "steps": {
-      "step1": {
-        "title": "Inscrivez-vous",
-        "description": "Créez votre compte conducteur en quelques minutes."
-      },
-      "step2": {
-        "title": "Téléchargez vos documents",
-        "description": "Soumettez votre pièce d'identité, votre permis et les détails de votre véhicule pour vérification."
-      },
-      "step3": {
-        "title": "Vérification",
-        "description": "Notre équipe examine et approuve votre profil."
-      },
-      "step4": {
-        "title": "Connectez-vous et gagnez",
-        "description": "Sélectionnez votre véhicule, allez en ligne et commencez à recevoir des trajets."
+        "step1": {
+          "title": "Inscrivez-vous",
+          "description": "Créez votre compte conducteur en quelques minutes."
+        },
+        "step2": {
+          "title": "Téléchargez vos documents",
+          "description": "Soumettez votre pièce d'identité, votre permis et les détails de votre véhicule pour vérification."
+        },
+        "step3": {
+          "title": "Vérification",
+          "description": "Notre équipe examine et approuve votre profil."
+        },
+        "step4": {
+          "title": "Connectez-vous et gagnez",
+          "description": "Sélectionnez votre véhicule, allez en ligne et commencez à recevoir des trajets."
+        }
       }
-}
-
     },
     "tracking": {
-  "subtitle": "Suivi",
-  "title": "Vue d'ensemble des gains et performances",
-  "description": "Suivez vos revenus, vos courses et vos performances directement depuis votre tableau de bord chauffeur.",
-  "item1": "Résumé des gains quotidiens et hebdomadaires",
-  "item2": "Vue d'ensemble des courses terminées",
-  "item3": "Solde du portefeuille et historique des paiements",
-  "image": "/images/Driver-Phone.png"
-}
-
+      "subtitle": "Suivi",
+      "title": "Vue d'ensemble des gains et performances",
+      "description": "Suivez vos revenus, vos courses et vos performances directement depuis votre tableau de bord chauffeur.",
+      "item1": "Résumé des gains quotidiens et hebdomadaires",
+      "item2": "Vue d'ensemble des courses terminées",
+      "item3": "Solde du portefeuille et historique des paiements",
+      "image": "/images/Driver-Phone.png"
+    }
   },
   "Footer": {
+    "contactEmail": "info@anyride.com",
     "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vraies personnes. Abordable, sûr et toujours là quand vous en avez besoin.",
     "sections": {
       "company": {
         "title": "Entreprise",
         "links": [
-          { "label": "À propos", "href": "/about" },
-          { "label": "Villes", "href": "/cities" }
+          {
+            "label": "À propos",
+            "href": "/about"
+          },
+          {
+            "label": "Villes",
+            "href": "/cities"
+          },
+          {
+            "label": "Rejoindre l'équipe",
+            "href": "/careers"
+          }
         ]
       },
       "help": {
         "title": "Aide",
         "links": [
-          { "label": "Assistance", "href": "/support" },
-          { "label": "Sécurité", "href": "/safety" },
-          { "label": "Tarification", "href": "/pricing" }
+          {
+            "label": "Assistance",
+            "href": "/support"
+          },
+          {
+            "label": "Tarification",
+            "href": "/pricing"
+          }
         ]
       },
       "legal": {
         "title": "Légal",
         "links": [
-          { "label": "Conditions", "href": "/terms" },
-          { "label": "Confidentialité", "href": "/privacy" },
-          { "label": "Cookies", "href": "/cookies" }
+          {
+            "label": "Conditions",
+            "href": "/terms"
+          },
+          {
+            "label": "Confidentialité",
+            "href": "/privacy"
+          },
+          {
+            "label": "Cookies",
+            "href": "/cookies"
+          }
         ]
       }
     },
@@ -328,7 +345,6 @@
       "subtitle": "Déplacer les personnes et les moyens de subsistance en toute sécurité, localement, de manière fiable.",
       "description": "AnyRide connecte les passagers avec des conducteurs vérifiés utilisant des voitures et des motos. Conçu pour les déplacements quotidiens, les courses, les courts trajets avec un accent sur la sécurité, l'équité et les réalités locales."
     },
-
     "services": [
       {
         "type": "Trajets en voiture",
@@ -343,12 +359,10 @@
         "title": "Conducteurs vérifiés"
       }
     ],
-
     "whatWeDo": {
       "title": "Qu'est-ce qu'AnyRide ?",
       "description": "AnyRide est plus qu'une simple application de covoiturage — c'est un mouvement construit autour de la liberté, de la confiance et de la commodité quotidienne. Nous avons lancé AnyRide avec un objectif simple : rendre les déplacements dans les villes plus faciles, plus sûrs et plus gratifiants pour tous — que vous preniez un trajet rapide ou que vous gagniez de l'argent au volant. Nous comprenons ce que signifie se démener, bouger et faire bouger les choses — c'est pourquoi AnyRide a été créé pour servir de vraies personnes avec de vrais besoins. Notre plateforme connecte les passagers et les conducteurs en quelques secondes, aidant les deux parties à gagner du temps, à gagner plus et à se déplacer en toute confiance tout au long de leur journée."
     },
-
     "visionMission": {
       "vision": {
         "title": "Notre Vision",
@@ -368,22 +382,28 @@
       "options": [
         {
           "type": "Trajets en voiture",
-          "benefits": ["Meilleur pour le confort", "Plus de bagages / plus d'espace", "Idéal pour les longs trajets"]
+          "benefits": [
+            "Meilleur pour le confort",
+            "Plus de bagages / plus d'espace",
+            "Idéal pour les longs trajets"
+          ]
         },
         {
           "type": "Motos",
-          "benefits": ["Meilleur pour la vitesse", "Naviguer dans le trafic plus rapidement", "Idéal pour les courts trajets"]
+          "benefits": [
+            "Meilleur pour la vitesse",
+            "Naviguer dans le trafic plus rapidement",
+            "Idéal pour les courts trajets"
+          ]
         }
       ]
     },
-
     "whereWeOperate": {
       "title": "Où nous opérons",
       "subtitle": "Actif aujourd'hui. Expansion réfléchie.",
       "description": "Nous ne répertorions que les régions que nous pouvons soutenir — pour maintenir la confiance élevée et les attentes claires.",
       "ridesNearby": "Trajets disponibles dans votre région"
     },
-
     "forEveryone": {
       "title": "Pour tout le monde",
       "subtitle": "Conçu pour les passagers, les conducteurs et les partenaires",
@@ -391,28 +411,26 @@
       "categories": [
         {
           "type": "Passagers",
-           "icon": "/icons/individual.svg",
+          "icon": "/icons/individual.svg",
           "description": "Rapide, équitable et fiable. Réservation facile, tarification claire et une expérience axée sur la sécurité pour les déplacements quotidiens."
         },
         {
           "type": "Conducteurs",
-            "icon": "/icons/drivers.svg",
+          "icon": "/icons/drivers.svg",
           "description": "Opportunité avec clarté. Performance transparente, gains flexibles et soutien pour les conducteurs de voitures et de motos."
         },
         {
           "type": "Partenaires",
-           "icon": "/icons/partners.svg",
+          "icon": "/icons/partners.svg",
           "description": "Évoluer avec des flottes. Gestion de flotte et intégrations commerciales conçues pour les entreprises qui gèrent plusieurs véhicules."
         }
       ]
     },
-
     "trustSafety": {
       "title": "Confiance et sécurité",
       "subtitle": "La responsabilité est intégrée",
       "description": "Vérification, évaluations et signaux de statut clairs — conçus pour renforcer la confiance."
     },
-
     "values": {
       "title": "Nos Valeurs Fondamentales",
       "items": [
@@ -438,47 +456,53 @@
         }
       ]
     },
-
     "riders": {
       "title": "Passagers",
       "description": "Votre ville n'est qu'à quelques clics. AnyRide vous donne le contrôle de vos déplacements — des courses rapides aux longs trajets. Voyez votre tarif à l'avance, suivez votre conducteur en direct et profitez de la tranquillité d'esprit en sachant que vous êtes entre de bonnes mains. Pas de surprises. Pas de stress."
     },
-
     "drivers": {
       "title": "Conducteurs",
       "description": "Nous considérons les conducteurs comme des partenaires, pas seulement des utilisateurs. Avec AnyRide, vous choisissez quand conduire, comment vous gagnez et quel véhicule vous utilisez. Changez de voiture facilement, encaissez instantanément et augmentez vos revenus sans la pression habituelle. Notre système est conçu pour vous soutenir — à chaque étape, à chaque trajet."
     },
-
     "ourPromise": {
       "title": "Croyez-nous sur parole",
       "description": "Nous créons quelque chose de différent — une expérience de covoiturage qui se sent locale, équitable et humaine. De nos conducteurs qui font bouger les villes, aux passagers qui nous font confiance quotidiennement, AnyRide représente la sécurité, l'honnêteté et l'autonomisation. Parce que le mouvement est la liberté — et tout le monde mérite d'y avoir accès. C'est AnyRide. Construit pour les gens. Fait pour le mouvement."
     }
   },
-
   "WaitlistPage": {
     "hero": {
       "subtitle": "Lancement en 2026",
       "title": "Rejoignez la liste d'attente AnyRide aujourd'hui.",
       "description": "Rejoignez la liste d'attente AnyRide aujourd'hui."
     },
+    "stats": {
+      "rider": "Passagers",
+      "driver": "Conducteurs",
+      "fleet_owner": "Gestionnaires de Flotte",
+      "partner": "Partenaires",
+      "team_member": "Membres de l'Équipe",
+      "total": "Total Membres",
+      "title": "Rejoignez notre communauté grandissante"
+    },
     "form": {
       "selectOption": "Sélectionnez une option",
       "userTypes": {
         "rider": "Passager",
         "driver": "Conducteur",
-        "partner": "Partenaire"
+        "fleet_owner": "Propriétaire de flotte",
+        "partner": "Partenaire",
+        "team_member": "Membre de l'équipe"
       },
       "firstNamePlaceholder": "Prénom",
       "lastNamePlaceholder": "Nom de famille",
       "emailPlaceholder": "Adresse e-mail",
       "submit": "Rejoindre la liste d'attente",
       "agreements": {
-  "privacyPolicy": "J'accepte la Politique de confidentialité",
-  "termsConditions": "J'accepte les Termes et Conditions",
-  "consentMessages": "J'accepte de recevoir des SMS, des appels et des e-mails à des fins de vérification et de communication",
-  "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, des appels et des e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à n'importe quel message. Ce consentement n'est pas obligatoire pour acheter des biens ou des services."
-}
-
+        "privacyPolicy": "J'accepte la Politique de confidentialité",
+        "termsConditions": "J'accepte les Termes et Conditions",
+        "consentMessages": "J'accepte de recevoir des SMS, des appels et des e-mails à des fins de vérification et de communication",
+        "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, des appels et des e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à n'importe quel message. Ce consentement n'est pas obligatoire pour acheter des biens ou des services."
+      }
     },
     "FAQ": {
       "subtitle": "FAQ",
@@ -510,44 +534,46 @@
       "description": "Contactez notre équipe pour toute question, préoccupation ou commentaire.",
       "cta": "Discutez avec nous"
     },
-  "form": {
-    "title": "Un problème ?",
-    "description": "Remplissez le formulaire ci-dessous, soumettez le ticket et nous vous répondrons.",
-    "fields": {
-      "subject": "Sujet",
-      "subjectPlaceholder": "Entrez le sujet",
-      "fullName": "Nom complet",
-      "fullNamePlaceholder": "Entrez votre nom complet",
-      "email": "E-mail",
-      "emailPlaceholder": "Entrez votre e-mail",
-      "phone": "Numéro de téléphone",
-      "phonePlaceholder": "Entrez le numéro de téléphone",
-      "category": "Catégorie",
-      "selectCategory": "Sélectionnez la catégorie",
-      "paymentIssue": "Problème de paiement",
-      "rideIssue": "Problème de course",
-      "country": "Pays",
-      "selectCountry": "Sélectionnez le pays",
-      "responseLanguage": "Langue de réponse",
-      "selectLanguage": "Sélectionnez la langue de réponse",
-      "message": "Message",
-      "messagePlaceholder": "Tapez votre message/commentaire/plaintes",
-      "attachment": "Pièce(s) jointe(s)",
-      "emailUpdates": "Envoyez-moi les mises à jour par e-mail",
-      "emailConsent": "J'accepte la Politique de confidentialité",
-      "termsConsent": "J'accepte les Conditions générales",
-      "smsConsent": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
-      "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à tout message. Ce consentement n'est pas nécessaire pour acheter des biens ou des services."
-    },
-    "submit": "Soumettre",
-    "errors": {
-      "required": "Veuillez remplir tous les champs obligatoires",
-      "invalidEmail": "Veuillez entrer une adresse e-mail valide",
-      "failed": "Une erreur est survenue. Veuillez réessayer",
-      "network": "Erreur réseau. Veuillez réessayer plus tard"
-    },
-    "success": "Message envoyé avec succès !"
-  }
+    "form": {
+      "directEmail": "info@anyride.com",
+      "directEmailLabel": "Alternativement, vous pouvez nous contacter directement à :",
+      "title": "Un problème ?",
+      "description": "Remplissez le formulaire ci-dessous, soumettez le ticket et nous vous répondrons.",
+      "fields": {
+        "subject": "Sujet",
+        "subjectPlaceholder": "Entrez le sujet",
+        "fullName": "Nom complet",
+        "fullNamePlaceholder": "Entrez votre nom complet",
+        "email": "E-mail",
+        "emailPlaceholder": "Entrez votre e-mail",
+        "phone": "Numéro de téléphone",
+        "phonePlaceholder": "Entrez le numéro de téléphone",
+        "category": "Catégorie",
+        "selectCategory": "Sélectionnez la catégorie",
+        "paymentIssue": "Problème de paiement",
+        "rideIssue": "Problème de course",
+        "country": "Pays",
+        "selectCountry": "Sélectionnez le pays",
+        "responseLanguage": "Langue de réponse",
+        "selectLanguage": "Sélectionnez la langue de réponse",
+        "message": "Message",
+        "messagePlaceholder": "Tapez votre message/commentaire/plaintes",
+        "attachment": "Pièce(s) jointe(s)",
+        "emailUpdates": "Envoyez-moi les mises à jour par e-mail",
+        "emailConsent": "J'accepte la Politique de confidentialité",
+        "termsConsent": "J'accepte les Conditions générales",
+        "smsConsent": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
+        "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à tout message. Ce consentement n'est pas nécessaire pour acheter des biens ou des services."
+      },
+      "submit": "Soumettre",
+      "errors": {
+        "required": "Veuillez remplir tous les champs obligatoires",
+        "invalidEmail": "Veuillez entrer une adresse e-mail valide",
+        "failed": "Une erreur est survenue. Veuillez réessayer",
+        "network": "Erreur réseau. Veuillez réessayer plus tard"
+      },
+      "success": "Message envoyé avec succès !"
+    }
   },
   "FleetPartnersPage": {
     "hero": {
@@ -613,10 +639,29 @@
       "title": "Comment fonctionne le partenariat avec AnyRide",
       "description": "Voici les étapes simples pour vous associer à nous",
       "steps": [
-        { "step": 1, "title": "Inscrivez-vous en tant que partenaire", "description": "Soumettez les détails de l'entreprise ou de la propriété." },
-        { "step": 2, "title": "Ajoutez des véhicules", "description": ["Ajoutez votre voiture ou votre moto", "Téléversez vos documents une seule fois"] },
-        { "step": 3, "title": "Attribuez des conducteurs", "description": "Utilisez vos propres chauffeurs ou recrutez-en de nouveaux." },
-        { "step": 4, "title": "Activez et gagnez", "description": "Suivez les trajets, performances et paiements sur un seul tableau de bord." }
+        {
+          "step": 1,
+          "title": "Inscrivez-vous en tant que partenaire",
+          "description": "Soumettez les détails de l'entreprise ou de la propriété."
+        },
+        {
+          "step": 2,
+          "title": "Ajoutez des véhicules",
+          "description": [
+            "Ajoutez votre voiture ou votre moto",
+            "Téléversez vos documents une seule fois"
+          ]
+        },
+        {
+          "step": 3,
+          "title": "Attribuez des conducteurs",
+          "description": "Utilisez vos propres chauffeurs ou recrutez-en de nouveaux."
+        },
+        {
+          "step": 4,
+          "title": "Activez et gagnez",
+          "description": "Suivez les trajets, performances et paiements sur un seul tableau de bord."
+        }
       ]
     },
     "expansionRoadmap": {
@@ -628,43 +673,43 @@
           "description": "Nous commençons par collaborer avec des propriétaires de flottes individuelles et corporatives qui mettent à disposition des voitures et des motos sur la plateforme AnyRide. Les propriétaires de flotte gagnent de manière constante tandis que nous garantissons aux passagers l’accès à des véhicules fiables dans toute la ville.\n\nÀ qui cela s’adresse :\nPropriétaires de voitures, propriétaires de motos, sociétés de gestion de flotte."
         },
         {
-        "title": "Prestataires de services",
-        "description": "Ensuite, nous intégrons des partenaires de services essentiels pour soutenir les conducteurs et les flottes. Cela garantit que les véhicules restent sûrs, efficaces et abordables à exploiter.",
-        "includes": [
-          "Ateliers de mécanique et de réparation",
-          "Stations-service",
-          "Services de lavage et d’entretien automobile"
-        ]
-      },
-      {
-  "description": "Nous introduisons des partenaires financiers et d’assurance de confiance afin d’accompagner les conducteurs et les propriétaires de flotte avec des solutions flexibles.",
-  "focus": "Domaines clés :",
-  "includes": [
-    "Assurance véhicule",
-    "Micro-financement et leasing",
-    "Épargne des conducteurs et soutien au crédit"
-  ],
-  "footer": "Cela facilite l’adhésion, l’exploitation et la croissance sur AnyRide."
-},
-    {
-  "title": "Partenaires corporatifs et institutionnels",
-  "description": "À ce stade, nous collaborons avec des entreprises, organisations et institutions qui ont besoin d’un transport fiable pour le personnel, les livraisons ou les opérations quotidiennes.",
-  "includes": [
-    "Entreprises & sociétés",
-    "ONG & institutions",
-    "Partenaires événementiels et logistiques"
-  ]
-},
-   {
-  "title": "Écosystème de mobilité intelligente",
-  "description": "Notre phase finale se concentre sur l’innovation et la durabilité à long terme.",
-  "includes": [
-    "Solutions de mobilité intelligente",
-    "Partenaires véhicules électriques & énergie propre",
-    "Fournisseurs de données, cartographie et technologies de mobilité"
-  ],
-  "footer": "Cela positionne AnyRide comme un écosystème de transport complet, pas seulement une application de covoiturage."
-}
+          "title": "Prestataires de services",
+          "description": "Ensuite, nous intégrons des partenaires de services essentiels pour soutenir les conducteurs et les flottes. Cela garantit que les véhicules restent sûrs, efficaces et abordables à exploiter.",
+          "includes": [
+            "Ateliers de mécanique et de réparation",
+            "Stations-service",
+            "Services de lavage et d’entretien automobile"
+          ]
+        },
+        {
+          "description": "Nous introduisons des partenaires financiers et d’assurance de confiance afin d’accompagner les conducteurs et les propriétaires de flotte avec des solutions flexibles.",
+          "focus": "Domaines clés :",
+          "includes": [
+            "Assurance véhicule",
+            "Micro-financement et leasing",
+            "Épargne des conducteurs et soutien au crédit"
+          ],
+          "footer": "Cela facilite l’adhésion, l’exploitation et la croissance sur AnyRide."
+        },
+        {
+          "title": "Partenaires corporatifs et institutionnels",
+          "description": "À ce stade, nous collaborons avec des entreprises, organisations et institutions qui ont besoin d’un transport fiable pour le personnel, les livraisons ou les opérations quotidiennes.",
+          "includes": [
+            "Entreprises & sociétés",
+            "ONG & institutions",
+            "Partenaires événementiels et logistiques"
+          ]
+        },
+        {
+          "title": "Écosystème de mobilité intelligente",
+          "description": "Notre phase finale se concentre sur l’innovation et la durabilité à long terme.",
+          "includes": [
+            "Solutions de mobilité intelligente",
+            "Partenaires véhicules électriques & énergie propre",
+            "Fournisseurs de données, cartographie et technologies de mobilité"
+          ],
+          "footer": "Cela positionne AnyRide comme un écosystème de transport complet, pas seulement une application de covoiturage."
+        }
       ]
     },
     "FAQ": {
@@ -672,39 +717,75 @@
       "title": "Questions fréquemment posées",
       "description": "Découvrez notre section FAQ pour des réponses rapides et faciles aux questions les plus courantes.",
       "items": [
-        { "question": "Quand la plateforme sera-t-elle lancée ?", "answer": "Nous préparons le lancement de notre MVP très bientôt. Les inscrits seront informés en premier." },
-        { "question": "Qui peut rejoindre la liste d'attente ?", "answer": "Tout utilisateur intéressé peut rejoindre la liste d'attente : passagers, conducteurs et partenaires." },
-        { "question": "L'inscription est-elle gratuite ?", "answer": "Oui ! L'inscription à la liste d'attente est totalement gratuite." },
-        { "question": "Comment serai-je contacté ?", "answer": "Nous vous contacterons via l'e-mail fourni lors de l'inscription." }
+        {
+          "question": "Quand la plateforme sera-t-elle lancée ?",
+          "answer": "Nous préparons le lancement de notre MVP très bientôt. Les inscrits seront informés en premier."
+        },
+        {
+          "question": "Qui peut rejoindre la liste d'attente ?",
+          "answer": "Tout utilisateur intéressé peut rejoindre la liste d'attente : passagers, conducteurs et partenaires."
+        },
+        {
+          "question": "L'inscription est-elle gratuite ?",
+          "answer": "Oui ! L'inscription à la liste d'attente est totalement gratuite."
+        },
+        {
+          "question": "Comment serai-je contacté ?",
+          "answer": "Nous vous contacterons via l'e-mail fourni lors de l'inscription."
+        }
       ]
     },
     "Footer": {
       "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vrais utilisateurs. Abordable, sûr et toujours là quand vous en avez besoin.",
-     "sections": {
-  "company": {
-    "title": "Entreprise",
-    "links": [
-      { "label": "À propos", "href": "/about" },
-      { "label": "Partenaires", "href": "/partners" }
-    ]
-  },
-  "help": {
-    "title": "Aide",
-    "links": [
-      { "label": "Support", "href": "/support" },
-      { "label": "Sécurité", "href": "/privacy" },
-      { "label": "Tarification", "href": "/rider" }
-    ]
-  },
-  "legal": {
-    "title": "Légal",
-    "links": [
-      { "label": "Conditions", "href": "/terms" },
-      { "label": "Confidentialité", "href": "/privacy" },
-      { "label": "Cookies", "href": "/" }
-    ]
-  }
-},
+      "sections": {
+        "company": {
+          "title": "Entreprise",
+          "links": [
+            {
+              "label": "À propos",
+              "href": "/about"
+            },
+            {
+              "label": "Partenaires",
+              "href": "/partners"
+            }
+          ]
+        },
+        "help": {
+          "title": "Aide",
+          "links": [
+            {
+              "label": "Support",
+              "href": "/support"
+            },
+            {
+              "label": "Sécurité",
+              "href": "/privacy"
+            },
+            {
+              "label": "Tarification",
+              "href": "/rider"
+            }
+          ]
+        },
+        "legal": {
+          "title": "Légal",
+          "links": [
+            {
+              "label": "Conditions",
+              "href": "/terms"
+            },
+            {
+              "label": "Confidentialité",
+              "href": "/privacy"
+            },
+            {
+              "label": "Cookies",
+              "href": "/"
+            }
+          ]
+        }
+      },
       "copyright": " 2025 AnyRide. powered by Techenex"
     }
   },
@@ -777,52 +858,51 @@
     "waitlistButton": "Rejoignez notre liste d'attente"
   },
   "RiderPage": {
-  "hero": {
-    "title": "Roulez à votre façon.",
-    "subtitle": "À tout moment, partout.",
-    "description": "Réservez des trajets sûrs et abordables avec des chauffeurs vérifiés en voiture ou à moto — le tout depuis une seule application.",
-    "cta": "Réserver un trajet",
-    "image": "/images/rider.png"
-  },
-  "form": {
+    "hero": {
+      "title": "Roulez à votre façon.",
+      "subtitle": "À tout moment, partout.",
+      "description": "Réservez des trajets sûrs et abordables avec des chauffeurs vérifiés en voiture ou à moto — le tout depuis une seule application.",
+      "cta": "Réserver un trajet",
+      "image": "/images/rider.png"
+    },
+    "form": {
       "location": "Congo",
       "pickupPlaceholder": "Entrez le lieu de départ",
       "destinationPlaceholder": "Entrez la destination",
       "rideTypePlaceholder": "Choisissez le type de trajet",
-       "loginInstead": "Se connecter à la place ?",
+      "loginInstead": "Se connecter à la place ?",
       "cta": "Vérifier le prix"
-  },
-  "guides": {
-    "subtitle": "Guides",
-    "title": "Comment rouler avec AnyRide",
-    "description": "Se déplacer n’a jamais été aussi simple. Demandez un trajet, soyez mis en relation et voyagez en toute confiance — en quelques minutes.",
-    "steps": [
-      {
-        "step": "Étape 1",
-        "title": "Définissez votre trajet",
-        "description": "Entrez votre point de départ et votre destination, choisissez une voiture ou une moto, et voyez le prix à l’avance.",
-        "image": "/images/rider-1.png"
-      },
-      {
-        "step": "Étape 2",
-        "title": "Soyez mis en relation",
-        "description": "Nous vous connectons à un chauffeur vérifié à proximité. Consultez son nom, son véhicule et son heure d’arrivée instantanément.",
-        "image": "/images/rider-2.png"
-      },
-      {
-        "step": "Étape 3",
-        "title": "Roulez et payez",
-        "description": "Suivez votre trajet en temps réel, confirmez la prise en charge avec un code et payez en espèces ou via votre portefeuille.",
-        "image": "/images/rider-3.png"
-      }
-    ]
-  },
-
-  "pricing": {
-    "title": "Tarifs clairs. Aucune surprise.",
-    "subtitle": "Tarification et transparence",
-    "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
-     "plans": {
+    },
+    "guides": {
+      "subtitle": "Guides",
+      "title": "Comment rouler avec AnyRide",
+      "description": "Se déplacer n’a jamais été aussi simple. Demandez un trajet, soyez mis en relation et voyagez en toute confiance — en quelques minutes.",
+      "steps": [
+        {
+          "step": "Étape 1",
+          "title": "Définissez votre trajet",
+          "description": "Entrez votre point de départ et votre destination, choisissez une voiture ou une moto, et voyez le prix à l’avance.",
+          "image": "/images/rider-1.png"
+        },
+        {
+          "step": "Étape 2",
+          "title": "Soyez mis en relation",
+          "description": "Nous vous connectons à un chauffeur vérifié à proximité. Consultez son nom, son véhicule et son heure d’arrivée instantanément.",
+          "image": "/images/rider-2.png"
+        },
+        {
+          "step": "Étape 3",
+          "title": "Roulez et payez",
+          "description": "Suivez votre trajet en temps réel, confirmez la prise en charge avec un code et payez en espèces ou via votre portefeuille.",
+          "image": "/images/rider-3.png"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Tarifs clairs. Aucune surprise.",
+      "subtitle": "Tarification et transparence",
+      "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
+      "plans": {
         "baseFare": {
           "title": "Tarif de base",
           "text": "Début du trajet",
@@ -839,38 +919,36 @@
           "amount": "CDF 90"
         }
       },
-    "form": {
-      "location": "Congo",
-      "pickupPlaceholder": "Entrez le lieu de départ",
-      "destinationPlaceholder": "Entrez la destination",
-      "rideTypePlaceholder": "Choisissez le type de trajet",
-      "loginInstead": "Se connecter à la place",
-      "cta": "Vérifier le prix"
+      "form": {
+        "location": "Congo",
+        "pickupPlaceholder": "Entrez le lieu de départ",
+        "destinationPlaceholder": "Entrez la destination",
+        "rideTypePlaceholder": "Choisissez le type de trajet",
+        "loginInstead": "Se connecter à la place",
+        "cta": "Vérifier le prix"
+      },
+      "exampleBreakdown": {
+        "currency": "CDF",
+        "items": [
+          {
+            "label": "Tarif de base",
+            "description": "Démarre le trajet",
+            "amount": "2,000"
+          },
+          {
+            "label": "Par km",
+            "description": "Basé sur la distance",
+            "amount": "650"
+          },
+          {
+            "label": "Par minute",
+            "description": "Temps et trafic",
+            "amount": "90"
+          }
+        ]
+      }
     },
-
-    "exampleBreakdown": {
-      "currency": "CDF",
-      "items": [
-        {
-          "label": "Tarif de base",
-          "description": "Démarre le trajet",
-          "amount": "2,000"
-        },
-        {
-          "label": "Par km",
-          "description": "Basé sur la distance",
-          "amount": "650"
-        },
-        {
-          "label": "Par minute",
-          "description": "Temps et trafic",
-          "amount": "90"
-        }
-      ]
-    }
-  },
-
- "benefits": {
+    "benefits": {
       "subtitle": "Avantages",
       "title": "Pourquoi les passagers choisissent AnyRide",
       "items": {
@@ -891,6 +969,66 @@
           "description": "Conçu pour de vraies villes, de vraies routes et de vraies personnes."
         }
       }
+    }
+  },
+  "CareersPage": {
+    "hero": {
+      "title": "Rejoindre notre équipe",
+      "subtitle": "Aidez-nous à construire l'avenir de la mobilité urbaine.",
+      "description": "Nous sommes toujours à la recherche de personnes talentueuses pour rejoindre notre mission consistant à construire le réseau de transport local le plus fiable."
+    },
+    "roles": {
+      "title": "Postes ouverts",
+      "subtitle": "Travailler avec nous",
+      "items": [
+        {
+          "title": "Techniciens",
+          "description": "Maintenir et optimiser notre infrastructure numérique et nos systèmes matériels."
+        },
+        {
+          "title": "Représentants du service client",
+          "description": "Fournir un support de classe mondiale à nos passagers et conducteurs."
+        },
+        {
+          "title": "Mécaniciens",
+          "description": "S'assurer que chaque véhicule de notre réseau est sûr et prêt pour la route."
+        },
+        {
+          "title": "Opérations et Logistique",
+          "description": "Aider à gérer les déplacements quotidiens et l'expansion de notre service."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Intéressé à nous rejoindre ?",
+      "description": "Envoyez votre CV et une brève lettre de motivation à notre équipe.",
+      "button": "Postuler maintenant"
+    }
+  },
+  "CookiesPage": {
+    "hero": {
+      "title": "Politique relative aux cookies",
+      "subtitle": "Comment nous utilisons les cookies pour améliorer votre expérience."
+    },
+    "content": {
+      "sections": [
+        {
+          "title": "Que sont les cookies ?",
+          "description": "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez notre site Web. Ils nous aident à mémoriser vos préférences, à offrir une expérience plus fluide et à analyser la manière dont notre service est utilisé."
+        },
+        {
+          "title": "Pourquoi les utilisons-nous ?",
+          "description": "Nous utilisons des cookies pour maintenir votre session, vous garder connecté, mémoriser vos paramètres de langue et comprendre quelles parties de notre site Web sont les plus populaires afin de continuer à améliorer AnyRide."
+        },
+        {
+          "title": "Types de cookies que nous utilisons",
+          "description": "Nous utilisons des cookies essentiels (nécessaires au fonctionnement du site), des cookies de préférence (pour mémoriser vos paramètres) et des cookies analytiques (pour nous aider à améliorer les performances)."
+        },
+        {
+          "title": "Gérer vos cookies",
+          "description": "Vous pouvez choisir de désactiver les cookies via les paramètres de votre navigateur, bien que cela puisse affecter le fonctionnement de certaines fonctionnalités de notre site Web. En continuant à utiliser notre site, vous consentez à notre utilisation des cookies telle que décrite dans cette politique."
+        }
+      ]
     }
   }
 }

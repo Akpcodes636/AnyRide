@@ -283,6 +283,19 @@ const ContactForm = () => {
               </button>
             </form>
           </div>
+
+          {/* Direct Email Contact */}
+          <div className="mt-12 text-center">
+            <p className="text-[#E6E6EB] text-[16px] md:text-[18px] opacity-80 mb-2">
+              {t("directEmailLabel")}
+            </p>
+            <a
+              href={`mailto:${t("directEmail")}`}
+              className="text-white text-[20px] md:text-[24px] font-bold hover:text-[#A10000] transition-colors"
+            >
+              {t("directEmail")}
+            </a>
+          </div>
         </div>
       </div>
     </section>

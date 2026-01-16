@@ -2,6 +2,7 @@
 
 import SubTitle from "../ui/Subtitle";
 import WaitForm from "./WaitForm";
+import WaitlistStats from "./WaitlistStats";
 import { useTranslations } from "next-intl";
 
 export default function HeroWaitList() {
@@ -56,9 +57,8 @@ export default function HeroWaitList() {
         <div className="flex items-center justify-center mb-[24px]">
           <SubTitle svg={iconSvg} text={t("subtitle")} />
         </div>
-        <h2 className="text-white text-center mb-[16px]">{t("title")}</h2>
-        <p className="text-[16px] md:text-[18px] text-white font-normal tracking-[-2%] leading-[160%] text-center">{t("description")}</p>
 
+        <WaitlistStats />
         <WaitForm />
       </div>
     </section>

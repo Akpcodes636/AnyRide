@@ -15,7 +15,6 @@
       "guides": "Miongozo",
       "howItWorks": "Jinsi AnyRide inavyofanya kazi"
     },
-
     "guides": {
       "subtitle": "Miongozo",
       "title": "Jinsi Anyride inavyofanya kazi",
@@ -53,7 +52,6 @@
         }
       ]
     },
-
     "howItWorks": {
       "intro": "AnyRide inafanya usafiri wako kuwa rahisi — kutoka safari za kila siku hadi matembezi ya wikendi. Fungua tu programu, omba safari, na uko njiani.",
       "steps": [
@@ -71,7 +69,6 @@
         }
       ]
     },
-
     "appDownload": {
       "title": "Pakua programu ya AnyRide",
       "description": "AnyRide inakupeleka unakotaka kwenda kwa bei nafuu zaidi. Programu inahesabu gharama ya safari yako kiotomatiki na inaonyesha gari lako kwenye ramani kwa wakati halisi. Ni ya haraka, rahisi, na inafanya kazi na iOS na Android.",
@@ -84,7 +81,6 @@
         "trustedBy": "Inaaminiwa na watumiaji zaidi ya 1125"
       }
     },
-
     "values": {
       "subtitle": "Maadili Yetu",
       "title": "Kwa Nini Uchague AnyRide",
@@ -112,13 +108,12 @@
         }
       ]
     },
-
     "pricing": {
       "title": "bei / upatikanaji wa bei",
       "subtitle": "bei / upatikanaji wa bei",
       "description": "Fahamu gharama yako kabla ya kuanza safari.",
-      "descriptions":"Fika unakoenda haraka zaidi, kwa usalama na kwa bei ya haki.",
-        "form": {
+      "descriptions": "Fika unakoenda haraka zaidi, kwa usalama na kwa bei ya haki.",
+      "form": {
         "pickupLabel": "Weka mahali pa kukuchukua",
         "pickupPlaceholder": "Abuja, Nigeria",
         "destinationLabel": "Weka mahali unakokwenda",
@@ -135,7 +130,6 @@
         ]
       }
     },
-
     "safety": {
       "title": "Usalama wako ni wa kwanza. Daima.",
       "description": "Uthibitishaji mkali wa madereva na magari, ufuatiliaji wa GPS wa moja kwa moja, kushiriki safari, na kitufe cha SOS kwenye programu.",
@@ -157,46 +151,45 @@
         }
       ]
     },
-  "blog": {
-    "label": "Blogi",
-    "title": "Karibuni kwenye blogi yetu",
-    "subtitle": "Vidokezo, hadithi, na taarifa kwa abiria na madereva.",
-    "posts": [
-      {
-        "id": 1,
-        "category": "Kikorporate",
-        "date": "Novemba 4",
-        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria",
-        "featured": true
-      },
-      {
-        "id": 2,
-        "category": "Kikorporate",
-        "date": "Novemba 4",
-        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
-      },
-      {
-        "id": 3,
-        "category": "Kikorporate",
-        "date": "Novemba 4",
-        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
-      },
-      {
-        "id": 4,
-        "category": "Kikorporate",
-        "date": "Novemba 4",
-        "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
-      }
-    ]
-  }
-},
+    "blog": {
+      "label": "Blogi",
+      "title": "Karibuni kwenye blogi yetu",
+      "subtitle": "Vidokezo, hadithi, na taarifa kwa abiria na madereva.",
+      "posts": [
+        {
+          "id": 1,
+          "category": "Kikorporate",
+          "date": "Novemba 4",
+          "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria",
+          "featured": true
+        },
+        {
+          "id": 2,
+          "category": "Kikorporate",
+          "date": "Novemba 4",
+          "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
+        },
+        {
+          "id": 3,
+          "category": "Kikorporate",
+          "date": "Novemba 4",
+          "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
+        },
+        {
+          "id": 4,
+          "category": "Kikorporate",
+          "date": "Novemba 4",
+          "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
+        }
+      ]
+    }
+  },
   "AboutPage": {
     "hero": {
       "title": "Kuhusu AnyRide",
       "subtitle": "Kusogeza watu na maisha kwa usalama, karibu, kwa kuaminika.",
       "description": "AnyRide inaunganisha abiria na madereva waliothibitishwa wakitumia magari na pikipiki. Imeundwa kwa ajili ya usafiri wa kila siku, matembezi, safari fupi kwa kuzingatia usalama, haki, na uhalisia wa karibu."
     },
-
     "services": [
       {
         "type": "Safari za gari",
@@ -211,12 +204,10 @@
         "title": "Madereva waliothibitishwa"
       }
     ],
-
     "whatWeDo": {
       "title": "AnyRide ni nini?",
       "description": "AnyRide ni zaidi ya programu tu ya safari — ni harakati iliyojengwa kuzunguka uhuru, uaminifu, na urahisi wa kila siku. Tulianza AnyRide na lengo moja rahisi: kufanya usafiri katika miji kuwa rahisi zaidi, salama zaidi, na wenye thawabu zaidi kwa kila mtu — iwe unachukua safari ya haraka au unapata kipato nyuma ya usukani. Tunaelewa maana ya kufanya kazi kwa bidii, kusogea, na kufanya mambo yatokee — ndiyo maana AnyRide iliundwa kutumikia watu halisi wenye mahitaji halisi. Jukwaa letu linaunganisha abiria na madereva kwa sekunde, kusaidia pande zote mbili kuokoa muda, kupata zaidi, na kusogea kwa ujasiri katika siku yao."
     },
-
     "visionMission": {
       "vision": {
         "title": "Dira Yetu",
@@ -229,7 +220,6 @@
         "description": "Kufafanua upya usafiri wa karibu kwa kufanya kila safari kuwa rahisi, ya bei nafuu, na yenye nguvu — kwa abiria na madereva. Tunaamini kwamba usafiri haufai kuwa wenye mkazo, usio salama, au wa bei ghali. Kila mtu anastahili safari inayostahili, wazi, na rahisi kuamini."
       }
     },
-
     "bothModes": {
       "title": "Kwa nini zote mbili",
       "subtitle": "Magari na pikipiki havishindani — vinajumuisha.",
@@ -237,22 +227,28 @@
       "options": [
         {
           "type": "Safari za gari",
-          "benefits": ["Bora kwa utulivu", "Mizigo zaidi / nafasi zaidi", "Bora kwa safari ndefu"]
+          "benefits": [
+            "Bora kwa utulivu",
+            "Mizigo zaidi / nafasi zaidi",
+            "Bora kwa safari ndefu"
+          ]
         },
         {
           "type": "Pikipiki",
-          "benefits": ["Bora kwa kasi", "Kusafiri msongamano haraka zaidi", "Bora kwa safari fupi"]
+          "benefits": [
+            "Bora kwa kasi",
+            "Kusafiri msongamano haraka zaidi",
+            "Bora kwa safari fupi"
+          ]
         }
       ]
     },
-
     "whereWeOperate": {
       "title": "Tunafanya kazi wapi",
       "subtitle": "Inafanya kazi leo. Kuenea kwa uangalifu.",
       "description": "Tunaorodhesha mikoa tunayoweza kuisaidia tu — ili kuweka imani juu na matarajio wazi.",
       "ridesNearby": "Safari zinapatikana katika eneo lako"
     },
-
     "forEveryone": {
       "title": "Kwa kila mtu",
       "subtitle": "Imeundwa kwa ajili ya abiria, madereva, na washirika",
@@ -270,18 +266,16 @@
         },
         {
           "type": "Washirika",
-           "icon": "/icons/partners.svg",
+          "icon": "/icons/partners.svg",
           "description": "Kukua na madereva wengi. Usimamizi wa madereva wengi na uunganisho wa biashara uliobuniwa kwa makampuni yanayosimamia magari mengi."
         }
       ]
     },
-
     "trustSafety": {
       "title": "Imani na usalama",
       "subtitle": "Uwajibikaji umejengwa ndani",
       "description": "Uthibitishaji, ukadiriaji, na ishara wazi za hali — imeundwa kujenga ujasiri."
     },
-
     "values": {
       "title": "Maadili Yetu Ya Msingi",
       "items": [
@@ -307,17 +301,14 @@
         }
       ]
     },
-
     "riders": {
       "title": "Abiria",
       "description": "Jiji lako liko hatua chache tu. AnyRide inakupa udhibiti wa jinsi unavyosogea — kutoka matembezi ya haraka hadi safari ndefu. Ona nauli yako mapema, mfuatilie dereva wako moja kwa moja, na furahia amani ya akili ukijua uko mikononi mwa usalama. Hakuna mshangao. Hakuna mkazo."
     },
-
     "drivers": {
       "title": "Madereva",
       "description": "Tunawaona madereva kama washirika, si watumiaji tu. Na AnyRide, unachagua lini kuendesha, jinsi unavyopata, na gari gani unatumia. Badilisha magari kwa urahisi, lipa papo hapo, na ongeza kipato chako bila shinikizo la kawaida. Mfumo wetu umeundwa kukusaidia — kila hatua, kila safari."
     },
-
     "ourPromise": {
       "title": "Tuelewe kwa maneno yetu",
       "description": "Tunaunda kitu tofauti — uzoefu wa safari unaohisi kuwa wa karibu, wa haki, na wa kibinadamu. Kutoka kwa madereva wetu wanaoweka miji kusogea, hadi abiria wanaotuwekea imani kila siku, AnyRide inasimama kwa usalama, uaminifu, na uwezeshaji. Kwa sababu usogezaji ni uhuru — na kila mtu anastahili kuufikia. Hiyo ndiyo AnyRide. Imeundwa kwa ajili ya watu. Imetengenezwa kwa ajili ya usogezaji."
@@ -330,7 +321,7 @@
       "cta": "kuwa dereva"
     },
     "FAQ": {
-       "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
+      "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
       "title": "Maswali Yanayoulizwa Mara kwa Mara",
       "description": "Angalia sehemu yetu ya FAQ kupata majibu kwa haraka na kwa urahisi kwa maswali yanayoulizwa mara kwa mara.",
       "items": [
@@ -394,28 +385,27 @@
     "guides": {
       "subtitle": "Vivyo Vya Kufanya",
       "title": "Muhtasari wa Uandikishaji wa Madereva",
-        "description": "Panga safari salama na rahisi na madereva waliohakikiwa kwa kutumia magari au pikipiki — yote kutoka kwenye programu rahisi.",
+      "description": "Panga safari salama na rahisi na madereva waliohakikiwa kwa kutumia magari au pikipiki — yote kutoka kwenye programu rahisi.",
       "steps": {
-    "step1": {
-      "title": "Jisajili",
-      "description": "Tengeneza akaunti yako ya dereva kwa dakika chache."
+        "step1": {
+          "title": "Jisajili",
+          "description": "Tengeneza akaunti yako ya dereva kwa dakika chache."
+        },
+        "step2": {
+          "title": "Pakia nyaraka",
+          "description": "Wasilisha kitambulisho chako, leseni, na maelezo ya gari lako kwa ukaguzi."
+        },
+        "step3": {
+          "title": "Thibitisha",
+          "description": "Timu yetu inapitia na kuidhinisha wasifu wako."
+        },
+        "step4": {
+          "title": "Nenda mtandaoni na upate mapato",
+          "description": "Chagua gari lako, nenda mtandaoni, na anza kupokea safari."
+        }
+      }
     },
-    "step2": {
-      "title": "Pakia nyaraka",
-      "description": "Wasilisha kitambulisho chako, leseni, na maelezo ya gari lako kwa ukaguzi."
-    },
-    "step3": {
-      "title": "Thibitisha",
-      "description": "Timu yetu inapitia na kuidhinisha wasifu wako."
-    },
-    "step4": {
-      "title": "Nenda mtandaoni na upate mapato",
-      "description": "Chagua gari lako, nenda mtandaoni, na anza kupokea safari."
-    }
-  }
-
-      },
-      "tracking": {
+    "tracking": {
       "subtitle": "Ufuatiliaji",
       "title": "Muhtasari wa mapato na utendaji",
       "description": "Fuatilia mapato yako, safari, na utendaji moja kwa moja kwenye dashibodi ya dereva.",
@@ -424,35 +414,59 @@
       "item3": "Salio la pochi na historia ya malipo",
       "image": "/images/Driver-Phone.png"
     }
-
-    },
-    "Footer": {
-      "description": "Tunajenga mtandao wa usafiri wa karibu unaotegemewa zaidi — uliobuniwa kwa ajili ya abiria na watu halisi. Wa bei nafuu, salama, na daima upo unapohitaji.",
-    "sections": {
-    "company": {
-      "title": "Kampuni",
-      "links": [
-        { "label": "Kuhusu", "href": "/about" },
-        { "label": "Washirika", "href": "/partners" }
-      ]
-    },
-  "help": {
-    "title": "Msaada",
-    "links": [
-      { "label": "Usaidizi", "href": "/support" },
-      { "label": "Usalama", "href": "/privacy" },
-      { "label": "Bei", "href": "/rider" }
-    ]
   },
-  "legal": {
-    "title": "Kisheria",
-    "links": [
-      { "label": "Masharti", "href": "/terms" },
-      { "label": "Faragha", "href": "/privacy" },
-      { "label": "Vidakuzi", "href": "/" }
-    ]
-  }
-},
+  "Footer": {
+    "contactEmail": "info@anyride.com",
+    "description": "Tunajenga mtandao wa usafiri wa karibu unaotegemewa zaidi — uliobuniwa kwa ajili ya abiria na watu halisi. Wa bei nafuu, salama, na daima upo unapohitaji.",
+    "sections": {
+      "company": {
+        "title": "Kampuni",
+        "links": [
+          {
+            "label": "Kuhusu",
+            "href": "/about"
+          },
+          {
+            "label": "Washirika",
+            "href": "/partners"
+          },
+          {
+            "label": "Jiunge na Timu",
+            "href": "/careers"
+          }
+        ]
+      },
+      "help": {
+        "title": "Msaada",
+        "links": [
+          {
+            "label": "Usaidizi",
+            "href": "/support"
+          },
+          {
+            "label": "Bei",
+            "href": "/rider"
+          }
+        ]
+      },
+      "legal": {
+        "title": "Kisheria",
+        "links": [
+          {
+            "label": "Masharti",
+            "href": "/terms"
+          },
+          {
+            "label": "Faragha",
+            "href": "/privacy"
+          },
+          {
+            "label": "Vidakuzi",
+            "href": "/cookies"
+          }
+        ]
+      }
+    },
     "copyright": " 2025 AnyRide. powered by Techenex"
   },
   "WaitlistPage": {
@@ -461,12 +475,23 @@
       "title": "Jiunge na orodha ya kusubiri ya AnyRide leo.",
       "description": "Jiunge na orodha ya kusubiri ya AnyRide leo."
     },
+    "stats": {
+      "rider": "Abiria",
+      "driver": "Madereva",
+      "fleet_owner": "Wamiliki wa Floti",
+      "partner": "Washirika",
+      "team_member": "Wanachama wa Timu",
+      "total": "Jumla ya Wanachama",
+      "title": "Jiunge na jamii yetu inayokua"
+    },
     "form": {
       "selectOption": "Chagua chaguo",
       "userTypes": {
         "rider": "Abiria",
         "driver": "Dereva",
-        "partner": "Mshirika"
+        "fleet_owner": "Mmiliki wa Floti",
+        "partner": "Mshirika",
+        "team_member": "Mwanachama wa Timu"
       },
       "firstNamePlaceholder": "Jina la kwanza",
       "lastNamePlaceholder": "Jina la familia",
@@ -478,7 +503,6 @@
         "consentMessages": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa ajili ya uthibitisho na mawasiliano",
         "disclaimer": "Kumbuka: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa ajili ya uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kuacha kupokea ujumbe wakati wowote kwa kujibu STOP kwa ujumbe wowote. Uidhinishaji huu hauhitajiki kununua bidhaa au huduma."
       }
-
     },
     "FAQ": {
       "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
@@ -510,50 +534,52 @@
       "description": "Wasiliana na timu yetu kwa maswali yoyote, wasiwasi, au maoni.",
       "cta": "Sema nasi"
     },
-  "form": {
-    "title": "Una tatizo?",
-    "description": "Jaza fomu hapo chini, tuma tiketi na tutakurudia.",
-    "fields": {
-      "subject": "Kichwa",
-      "subjectPlaceholder": "Weka kichwa",
-      "fullName": "Jina Kamili",
-      "fullNamePlaceholder": "Weka jina lako kamili",
-      "email": "Barua pepe",
-      "emailPlaceholder": "Weka barua pepe yako",
-      "phone": "Nambari ya simu",
-      "phonePlaceholder": "Weka nambari ya simu",
-      "category": "Kategoria",
-      "selectCategory": "Chagua kategoria",
-      "paymentIssue": "Tatizo la malipo",
-      "rideIssue": "Tatizo la safari",
-      "country": "Nchi",
-      "selectCountry": "Chagua nchi",
-      "responseLanguage": "Lugha ya majibu",
-      "selectLanguage": "Chagua lugha ya majibu",
-      "message": "Ujumbe",
-      "messagePlaceholder": "Andika ujumbe/woni/shida zako",
-      "attachment": "Kiambatanisho(ya)",
-      "emailUpdates": "Nitumie sasisho kupitia barua pepe",
-      "emailConsent": "Nakubali Sera ya Faragha",
-      "termsConsent": "Nakubali Sheria na Masharti",
-      "smsConsent": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa uthibitisho na mawasiliano",
-      "disclaimer": "Onyo: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kujiondoa wakati wowote kwa kujibu STOP kwenye ujumbe wowote. Uidhinisho huu hauhitajiki kununua bidhaa au huduma."
-    },
-    "submit": "Tuma",
-    "errors": {
-      "required": "Tafadhali jaza sehemu zote zinazohitajika",
-      "invalidEmail": "Tafadhali ingiza barua pepe halali",
-      "failed": "Kitu kilikwenda vibaya. Tafadhali jaribu tena",
-      "network": "Tatizo la mtandao. Tafadhali jaribu tena baadaye"
-    },
-    "success": "Ujumbe umetumwa kwa mafanikio!"
-  }
+    "form": {
+      "directEmail": "info@anyride.com",
+      "directEmailLabel": "Vinginevyo, unaweza kuwasiliana nasi moja kwa moja kupitia:",
+      "title": "Una tatizo?",
+      "description": "Jaza fomu hapo chini, tuma tiketi na tutakurudia.",
+      "fields": {
+        "subject": "Kichwa",
+        "subjectPlaceholder": "Weka kichwa",
+        "fullName": "Jina Kamili",
+        "fullNamePlaceholder": "Weka jina lako kamili",
+        "email": "Barua pepe",
+        "emailPlaceholder": "Weka barua pepe yako",
+        "phone": "Nambari ya simu",
+        "phonePlaceholder": "Weka nambari ya simu",
+        "category": "Kategoria",
+        "selectCategory": "Chagua kategoria",
+        "paymentIssue": "Tatizo la malipo",
+        "rideIssue": "Tatizo la safari",
+        "country": "Nchi",
+        "selectCountry": "Chagua nchi",
+        "responseLanguage": "Lugha ya majibu",
+        "selectLanguage": "Chagua lugha ya majibu",
+        "message": "Ujumbe",
+        "messagePlaceholder": "Andika ujumbe/woni/shida zako",
+        "attachment": "Kiambatanisho(ya)",
+        "emailUpdates": "Nitumie sasisho kupitia barua pepe",
+        "emailConsent": "Nakubali Sera ya Faragha",
+        "termsConsent": "Nakubali Sheria na Masharti",
+        "smsConsent": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa uthibitisho na mawasiliano",
+        "disclaimer": "Onyo: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kujiondoa wakati wowote kwa kujibu STOP kwenye ujumbe wowote. Uidhinisho huu hauhitajiki kununua bidhaa au huduma."
+      },
+      "submit": "Tuma",
+      "errors": {
+        "required": "Tafadhali jaza sehemu zote zinazohitajika",
+        "invalidEmail": "Tafadhali ingiza barua pepe halali",
+        "failed": "Kitu kilikwenda vibaya. Tafadhali jaribu tena",
+        "network": "Tatizo la mtandao. Tafadhali jaribu tena baadaye"
+      },
+      "success": "Ujumbe umetumwa kwa mafanikio!"
+    }
   },
   "FleetPartnersPage": {
     "hero": {
       "title": "Panua biashara yako ya usafirishaji na AnyRide",
       "subtitle": "Kuanza na wamiliki wa magari & washirika wa magari - kisha kupanua kwenye mfumo wa usafirishaji wa DRC.",
-       "joinCTA": "Jiunge na Mtandao wetu wa Floti",
+      "joinCTA": "Jiunge na Mtandao wetu wa Floti",
       "roadmapCTA": "Angalia Ramani Kamili",
       "currentFocus": "Kipaumbele cha sasa",
       "focus": "Floti",
@@ -565,10 +591,37 @@
     "whoCanPartner": {
       "title": "Nani Anaweza Kushirikiana na AnyRide",
       "categories": [
-        { "type": "Wamiliki wa Floti", "description": ["Simamia magari au pikipiki kadhaa", "Gawa magari kwa madereva", "Fuata utendaji na mapato"] },
-        { "type": "Makampuni ya Usafirishaji", "description": ["Panua shughuli kwa kidijitali", "Ripoti na malipo yaliyowekwa kati", "Uendeshaji unaoendana na sheria"] },
-        { "type": "Wendeshaji Pikipiki", "description": ["Bora kwa safari za haraka mjini", "Imeboreshwa kwa usafirishaji wa pikipiki", "Gharama za chini za uendeshaji"] },
-        { "type": "Wajasiriamali Binafsi", "description": ["Miliki magari, gawa madereva", "Pata mapato bila kuendesha mwenyewe"] }
+        {
+          "type": "Wamiliki wa Floti",
+          "description": [
+            "Simamia magari au pikipiki kadhaa",
+            "Gawa magari kwa madereva",
+            "Fuata utendaji na mapato"
+          ]
+        },
+        {
+          "type": "Makampuni ya Usafirishaji",
+          "description": [
+            "Panua shughuli kwa kidijitali",
+            "Ripoti na malipo yaliyowekwa kati",
+            "Uendeshaji unaoendana na sheria"
+          ]
+        },
+        {
+          "type": "Wendeshaji Pikipiki",
+          "description": [
+            "Bora kwa safari za haraka mjini",
+            "Imeboreshwa kwa usafirishaji wa pikipiki",
+            "Gharama za chini za uendeshaji"
+          ]
+        },
+        {
+          "type": "Wajasiriamali Binafsi",
+          "description": [
+            "Miliki magari, gawa madereva",
+            "Pata mapato bila kuendesha mwenyewe"
+          ]
+        }
       ]
     },
     "startingNow": {
@@ -586,56 +639,77 @@
       "title": "Jinsi Ushirikiano na AnyRide Unavyofanya Kazi",
       "description": "Hapa kuna hatua rahisi kushirikiana nasi",
       "steps": [
-        { "step": 1, "title": "Jisajili kama Mshirika", "description": "Wasilisha maelezo ya biashara au umiliki." },
-        { "step": 2, "title": "Ongeza Magari", "description": ["Ongeza gari au pikipiki yako", "Pakia nyaraka zako mara moja"] },
-        { "step": 3, "title": "Gawa Madereva", "description": "Tumia madereva wako au sajili wapya."
-},
-        { "step": 4, "title": "Anza & Pata Mapato", "description": "Fuata safari, utendaji, na malipo kwenye dashibodi moja." }
+        {
+          "step": 1,
+          "title": "Jisajili kama Mshirika",
+          "description": "Wasilisha maelezo ya biashara au umiliki."
+        },
+        {
+          "step": 2,
+          "title": "Ongeza Magari",
+          "description": [
+            "Ongeza gari au pikipiki yako",
+            "Pakia nyaraka zako mara moja"
+          ]
+        },
+        {
+          "step": 3,
+          "title": "Gawa Madereva",
+          "description": "Tumia madereva wako au sajili wapya."
+        },
+        {
+          "step": 4,
+          "title": "Anza & Pata Mapato",
+          "description": "Fuata safari, utendaji, na malipo kwenye dashibodi moja."
+        }
       ]
     },
     "expansionRoadmap": {
       "title": "Ramani ya Upanuzi wa Ushirikiano",
       "description": "Hapa ndipo tunavyounda mfumo kamili wa usafirishaji/taksi hatua kwa hatua.",
       "steps": [
-        { "title": "Wamiliki wa Floti (Sasa Hai)", "description": "Kwa sasa tuna wamiliki binafsi na wa kampuni wanaotoa magari na pikipiki kwa mtandao wetu. Jiunge nasi mara moja." },
         {
-        "title": "Watoa Huduma",
-        "description": "Kisha, tunaunganisha washirika muhimu wa huduma ili kusaidia madereva na wamiliki wa magari. Hii inahakikisha magari yanabaki salama, yenye ufanisi na gharama nafuu kuendesha.",
-        "includes": [
-          "Karakana na warsha za matengenezo",
-          "Vituo vya mafuta",
-          "Huduma za kuosha na kutunza magari"
-        ]
+          "title": "Wamiliki wa Floti (Sasa Hai)",
+          "description": "Kwa sasa tuna wamiliki binafsi na wa kampuni wanaotoa magari na pikipiki kwa mtandao wetu. Jiunge nasi mara moja."
         },
-      {
-        "description": "Tunaanzisha washirika wa kifedha na bima wanaoaminika ili kusaidia madereva na wamiliki wa magari kwa suluhisho rahisi na linalonyumbulika.",
-        "focus": "Maeneo muhimu:",
-        "includes": [
-          "Bima ya gari",
-          "Mikopo midogo na upangishaji",
-          "Akiba ya madereva na msaada wa mikopo"
-        ],
-        "footer": "Hii hurahisisha kujiunga, kuendesha, na kukuza shughuli zako kwenye AnyRide."
-      },
-{
-  "title": "Washirika wa Makampuni na Taasisi",
-  "description": "Katika hatua hii, tunashirikiana na biashara, mashirika, na taasisi zinazohitaji usafirishaji wa kuaminika kwa wafanyakazi, usambazaji, au shughuli za kila siku.",
-  "includes": [
-    "Makampuni & biashara",
-    "NGO & taasisi",
-    "Washirika wa hafla na usambazaji"
-  ]
-},
-{
-  "title": "Mfumo wa Usafirishaji wa Kisasa",
-  "description": "Awamu yetu ya mwisho inazingatia ubunifu na uendelevu wa muda mrefu.",
-  "includes": [
-    "Suluhisho za usafirishaji wa kisasa",
-    "Washirika wa EV & nishati safi",
-    "Watoa data, ramani, na teknolojia ya usafirishaji"
-  ],
-  "footer": "Hii inaweka AnyRide kama mfumo kamili wa usafirishaji — siyo tu programu ya ride-hailing."
-}
+        {
+          "title": "Watoa Huduma",
+          "description": "Kisha, tunaunganisha washirika muhimu wa huduma ili kusaidia madereva na wamiliki wa magari. Hii inahakikisha magari yanabaki salama, yenye ufanisi na gharama nafuu kuendesha.",
+          "includes": [
+            "Karakana na warsha za matengenezo",
+            "Vituo vya mafuta",
+            "Huduma za kuosha na kutunza magari"
+          ]
+        },
+        {
+          "description": "Tunaanzisha washirika wa kifedha na bima wanaoaminika ili kusaidia madereva na wamiliki wa magari kwa suluhisho rahisi na linalonyumbulika.",
+          "focus": "Maeneo muhimu:",
+          "includes": [
+            "Bima ya gari",
+            "Mikopo midogo na upangishaji",
+            "Akiba ya madereva na msaada wa mikopo"
+          ],
+          "footer": "Hii hurahisisha kujiunga, kuendesha, na kukuza shughuli zako kwenye AnyRide."
+        },
+        {
+          "title": "Washirika wa Makampuni na Taasisi",
+          "description": "Katika hatua hii, tunashirikiana na biashara, mashirika, na taasisi zinazohitaji usafirishaji wa kuaminika kwa wafanyakazi, usambazaji, au shughuli za kila siku.",
+          "includes": [
+            "Makampuni & biashara",
+            "NGO & taasisi",
+            "Washirika wa hafla na usambazaji"
+          ]
+        },
+        {
+          "title": "Mfumo wa Usafirishaji wa Kisasa",
+          "description": "Awamu yetu ya mwisho inazingatia ubunifu na uendelevu wa muda mrefu.",
+          "includes": [
+            "Suluhisho za usafirishaji wa kisasa",
+            "Washirika wa EV & nishati safi",
+            "Watoa data, ramani, na teknolojia ya usafirishaji"
+          ],
+          "footer": "Hii inaweka AnyRide kama mfumo kamili wa usafirishaji — siyo tu programu ya ride-hailing."
+        }
       ]
     },
     "FAQ": {
@@ -643,14 +717,28 @@
       "title": "Maswali Yanayoulizwa Mara kwa Mara",
       "description": "Chunguza sehemu yetu ya FAQ kwa majibu ya haraka na rahisi kwa maswali yanayoulizwa zaidi.",
       "items": [
-        { "question": "Jumla ya jukwaa itazinduliwa lini?", "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza." }
+        {
+          "question": "Jumla ya jukwaa itazinduliwa lini?",
+          "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza."
+        }
       ]
     },
     "footer": {
       "description": "Tunajenga mtandao wa usafiri wa ndani unaotaka zaidi — ulioundwa kwa abiria na watu halisi. Nafuu, salama, na daima hapa unapohitaji.",
-      "company": ["Kuhusu", "Miji"],
-      "help": ["Msaada", "Usalama", "Usalama"],
-      "legal": ["Masharti", "Faragha", "Faragha"],
+      "company": [
+        "Kuhusu",
+        "Miji"
+      ],
+      "help": [
+        "Msaada",
+        "Usalama",
+        "Usalama"
+      ],
+      "legal": [
+        "Masharti",
+        "Faragha",
+        "Faragha"
+      ],
       "copyright": " 2025 AnyRide. powered by Techenex"
     }
   },
@@ -723,45 +811,43 @@
     "waitlistButton": "Jiunge na orodha ya kusubiri"
   },
   "RiderPage": {
-  "hero": {
-    "title": "Safiri kwa njia yako.",
-    "subtitle": "Wakati wowote, mahali popote.",
-    "description": "Pata safari salama na nafuu na madereva waliothibitishwa kwa magari au pikipiki — yote kupitia programu moja rahisi.",
-    "cta": "Agiza safari",
-    "image": "/images/rider.png"
-  },
-
-  "guides": {
-    "subtitle": "Mwongozo",
-    "title": "Jinsi ya kusafiri na AnyRide",
-    "description": "Kusafiri ni rahisi. Omba safari, linganishwa na dereva, na safiri kwa uhakika — ndani ya dakika chache.",
-    "steps": [
-      {
-        "step": "Hatua ya 1",
-        "title": "Weka safari yako",
-        "description": "Weka mahali pa kuanzia na unakoenda, chagua gari au pikipiki, na uone bei mapema.",
-        "image": "/images/rider-1.png"
-      },
-      {
-        "step": "Hatua ya 2",
-        "title": "Linganishwa na dereva",
-        "description": "Tunakunganisha na dereva aliye karibu na aliyethibitishwa. Ona jina, aina ya gari, na muda wa kufika mara moja.",
-        "image": "/images/rider-2.png"
-      },
-      {
-        "step": "Hatua ya 3",
-        "title": "Safiri na ulipe",
-        "description": "Fuata safari yako moja kwa moja, thibitisha kuchukuliwa kwa nambari ya siri, na ulipe kwa pesa taslimu au pochi.",
-        "image": "/images/rider-3.png"
-      }
-    ]
-  },
-
-  "pricing": {
-    "title": "Bei wazi. Hakuna mshangao.",
-    "subtitle": "Bei na uwazi",
-    "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna ada zilizofichwa.",
-     "plans": {
+    "hero": {
+      "title": "Safiri kwa njia yako.",
+      "subtitle": "Wakati wowote, mahali popote.",
+      "description": "Pata safari salama na nafuu na madereva waliothibitishwa kwa magari au pikipiki — yote kupitia programu moja rahisi.",
+      "cta": "Agiza safari",
+      "image": "/images/rider.png"
+    },
+    "guides": {
+      "subtitle": "Mwongozo",
+      "title": "Jinsi ya kusafiri na AnyRide",
+      "description": "Kusafiri ni rahisi. Omba safari, linganishwa na dereva, na safiri kwa uhakika — ndani ya dakika chache.",
+      "steps": [
+        {
+          "step": "Hatua ya 1",
+          "title": "Weka safari yako",
+          "description": "Weka mahali pa kuanzia na unakoenda, chagua gari au pikipiki, na uone bei mapema.",
+          "image": "/images/rider-1.png"
+        },
+        {
+          "step": "Hatua ya 2",
+          "title": "Linganishwa na dereva",
+          "description": "Tunakunganisha na dereva aliye karibu na aliyethibitishwa. Ona jina, aina ya gari, na muda wa kufika mara moja.",
+          "image": "/images/rider-2.png"
+        },
+        {
+          "step": "Hatua ya 3",
+          "title": "Safiri na ulipe",
+          "description": "Fuata safari yako moja kwa moja, thibitisha kuchukuliwa kwa nambari ya siri, na ulipe kwa pesa taslimu au pochi.",
+          "image": "/images/rider-3.png"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Bei wazi. Hakuna mshangao.",
+      "subtitle": "Bei na uwazi",
+      "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna ada zilizofichwa.",
+      "plans": {
         "baseFare": {
           "title": "Kiwango cha msingi",
           "text": "Anza safari",
@@ -778,38 +864,36 @@
           "amount": "CDF 90"
         }
       },
-    "form": {
-      "location": "Congo",
-      "pickupPlaceholder": "Weka mahali pa kuanzia",
-      "destinationPlaceholder": "Weka unakoenda",
-      "rideTypePlaceholder": "Chagua aina ya safari",
-       "loginInstead": "Ingia badala yake?",
-      "cta": "Angalia bei"
+      "form": {
+        "location": "Congo",
+        "pickupPlaceholder": "Weka mahali pa kuanzia",
+        "destinationPlaceholder": "Weka unakoenda",
+        "rideTypePlaceholder": "Chagua aina ya safari",
+        "loginInstead": "Ingia badala yake?",
+        "cta": "Angalia bei"
+      },
+      "exampleBreakdown": {
+        "currency": "CDF",
+        "items": [
+          {
+            "label": "Ada ya kuanzia",
+            "description": "Huanzisha safari",
+            "amount": "2,000"
+          },
+          {
+            "label": "Kwa km",
+            "description": "Kulingana na umbali",
+            "amount": "650"
+          },
+          {
+            "label": "Kwa dakika",
+            "description": "Muda na msongamano",
+            "amount": "90"
+          }
+        ]
+      }
     },
-
-    "exampleBreakdown": {
-      "currency": "CDF",
-      "items": [
-        {
-          "label": "Ada ya kuanzia",
-          "description": "Huanzisha safari",
-          "amount": "2,000"
-        },
-        {
-          "label": "Kwa km",
-          "description": "Kulingana na umbali",
-          "amount": "650"
-        },
-        {
-          "label": "Kwa dakika",
-          "description": "Muda na msongamano",
-          "amount": "90"
-        }
-      ]
-    }
-  },
-
- "benefits": {
+    "benefits": {
       "subtitle": "Manufaa",
       "title": "Kwa nini Abaleti Wanachagua AnyRide",
       "items": {
@@ -831,5 +915,65 @@
         }
       }
     }
-}
+  },
+  "CareersPage": {
+    "hero": {
+      "title": "Jiunge na Timu Yetu",
+      "subtitle": "Tusaidie kujenga mustakabali wa usafiri wa mjini.",
+      "description": "Daima tunatafuta watu wenye vipaji kujiunga na utume wetu wa kujenga mtandao wa usafiri wa ndani unaoaminika zaidi."
+    },
+    "roles": {
+      "title": "Nafasi za Kazi",
+      "subtitle": "Fanya kazi nasi",
+      "items": [
+        {
+          "title": "Mafundi (Technicians)",
+          "description": "Dhibiti na boresha miundombinu yetu ya kidijitali na mifumo ya vifaa."
+        },
+        {
+          "title": "Wawakilishi wa Huduma kwa Wateja",
+          "description": "Toa msaada wa kiwango cha juu kwa abiria na madereva wetu."
+        },
+        {
+          "title": "Makanika (Mechanics)",
+          "description": "Hakikisha kila gari katika mtandao wetu ni salama na liko tayari kwa safari."
+        },
+        {
+          "title": "Operesheni na Usafirishaji",
+          "description": "Saidia kudhibiti mienendo ya kila siku na upanuzi wa huduma yetu."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Unavutiwa kujiunga nasi?",
+      "description": "Tuma wasifu wako (CV) na barua fupi ya utangulizi kwa timu yetu.",
+      "button": "Omba Sasa"
+    }
+  },
+  "CookiesPage": {
+    "hero": {
+      "title": "Sera ya Vidakuzi",
+      "subtitle": "Jinsi tunavyotumia vidakuzi kuboresha uzoefu wako."
+    },
+    "content": {
+      "sections": [
+        {
+          "title": "Vidakuzi ni nini?",
+          "description": "Vidakuzi ni faili ndogo za maandishi ambazo huhifadhiwa kwenye kifaa chako unapotembelea tovuti yetu. Zinatusaidia kukumbuka mapendeleo yako, kutoa uzoefu laini, na kuchambua jinsi huduma yetu inatumiwa."
+        },
+        {
+          "title": "Kwa nini tunazitumia?",
+          "description": "Tunatumia vidakuzi kudumisha kipindi chako, kukuweka umeingia, kukumbuka mipangilio yako ya lugha, na kuelewa ni sehemu gani za tovuti yetu ni maarufu zaidi ili tuweze kuendelea kuboresha AnyRide."
+        },
+        {
+          "title": "Aina za vidakuzi tunazotumia",
+          "description": "Tunatumia vidakuzi muhimu (vinavyohitajika ili tovuti ifanye kazi), vidakuzi vya mapendeleo (kukumbuka mipangilio yako), na vidakuzi vya uchambuzi (kutusaidia kuboresha utendaji)."
+        },
+        {
+          "title": "Kudhibiti vidakuzi vyako",
+          "description": "Unaweza kuchagua kuzima vidakuzi kupitia mipangilio ya kivinjari chako, ingawa hii inaweza kuathiri jinsi baadhi ya vipengele vya tovuti yetu vinavyofanya kazi. Kwa kuendelea kutumia tovuti yetu, unakubali utumiaji wetu wa vidakuzi kama ilivyoelezwa katika sera hii."
+        }
+      ]
+    }
+  }
 }
