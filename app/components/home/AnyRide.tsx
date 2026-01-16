@@ -14,7 +14,7 @@ const AnyRide = () => {
           <Image
             src="/icons/Anyride.svg"
             alt={t("HomePage.appDownload.title")}
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-contain"
             loading="eager"
             width={500}
             height={500}
@@ -23,7 +23,7 @@ const AnyRide = () => {
         </div>
 
         {/* Right Side Content */}
-        <div className="h-full pt-8.25 md:pt-49.25  container pb-10">
+        <div className="flex items-start justify-center flex-col container pb-10">
           <h2 className="mb-6">{t("HomePage.appDownload.title")}</h2>
           <p className="text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] text-gray-400 mb-8">
             {t("HomePage.appDownload.description")}
