@@ -8,13 +8,13 @@ const AnyRide = () => {
 
   return (
     <section className="">
-      <div className="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         {/* Left Side Image */}
-        <div className="h-full">
+        <div className="">
           <Image
             src="/icons/Anyride.svg"
             alt={t("HomePage.appDownload.title")}
-            className="w-full h-full object-cover"
+            className="w-full h-auto object-cover"
             loading="eager"
             width={500}
             height={500}
@@ -39,7 +39,10 @@ const AnyRide = () => {
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
               /> */}
-              <img
+              <Image
+                width={135}
+                height={40}
+                priority
                 src="/icons/apple.svg"
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
