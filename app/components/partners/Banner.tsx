@@ -31,7 +31,7 @@ export default function Banner() {
             {t("hero.joinCTA")}
           </Button>
           
-          <Button type="button" style="tertiary"  css="min-w-[200px] sm:min-w-[256px] h-auto sm:h-[62px] px-6 py-3 sm:py-9" fn={gotoWaitlist}>
+          <Button type="button" style="reverseLight"  css="min-w-[200px] sm:min-w-[256px] h-auto sm:h-[62px] px-6 py-3 sm:py-9" fn={gotoWaitlist}>
             {t("hero.roadmapCTA")}
           </Button>
         </div>

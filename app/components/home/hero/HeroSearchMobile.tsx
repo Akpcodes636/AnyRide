@@ -82,7 +82,7 @@ const HeroSearchMobile = () => {
 
   return (
     <div className="w-full max-w-full mx-auto flex flex-col items-center gap-3 px-4">
-      <style jsx global>{`
+      /* <style jsx global>{`
         /* Professional Mobile Autocomplete Dropdown Styling */
         .pac-container {
           background-color: #ffffff;
@@ -92,8 +92,10 @@ const HeroSearchMobile = () => {
           margin-top: 8px;
           padding: 8px 0;
           font-family: inherit;
-          max-width: calc(100vw - 32px) !important;
+          width:5000px
+          // max-width: calc(100vw - 82px) !important;
           left: 16px !important;
+          margin: 0 auto;
         }
 
         .pac-container:after {

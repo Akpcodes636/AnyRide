@@ -27,7 +27,7 @@ return (
             <li key={i} className="flex items-center gap-1 cursor-pointer">
               <Link
                 href={l.router}
-                className="text-[18px] text-text-black font-medium leading-[120%] tracking-[-2%] hover:text-[#A20602] transition-colors  mx-w-[100px]"
+                className="text-[18px] text-text-black font-medium leading-[120%] tracking-[-2%] hover:text-[#A20602] transition-colors mx-w-[100px]"
               >
                 {t(l.key)}
               </Link>
