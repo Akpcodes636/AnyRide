@@ -174,43 +174,49 @@ const LanguageSwitcher = () => {
     setOpen(false);
   };
 
+  const currentLang = languages.find((l) => l.code === currentLocale) || languages[0];
+
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((p) => !p)}
-        className="flex items-center gap-2 bg-[#F5F5F7] h-[56px] px-4 rounded-full"
+        className="flex items-center gap-1.5 md:gap-2 bg-[#F5F5F7] h-[42px] md:h-[56px] px-3 md:px-4 rounded-full transition-all active:scale-95 shadow-sm"
       >
-        <Globe size={16} />
-        <span className="font-sora text-[16px]">
-          {currentLocale?.toUpperCase()}
+        <img
+          src={currentLang.flag}
+          alt={currentLang.label}
+          className="w-5 h-5 md:w-6 md:h-6 rounded-full object-cover border border-gray-200"
+        />
+        <span className="font-sora text-[14px] md:text-[16px] font-semibold text-gray-800">
+          {currentLocale?.toUpperCase() || "EN"}
         </span>
         <ChevronDown
           size={14}
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
+          className={`transition-transform text-gray-400 ${open ? "rotate-180" : ""}`}
         />
       </button>
 
       {open && (
         <div
           className="
-            absolute top-full right-0 mt-3
-            w-[190px]
-            rounded-[16px]
+            absolute top-full right-0 mt-2 md:mt-3
+            w-[160px] md:w-[190px]
+            rounded-[12px] md:rounded-[16px]
             bg-white
-            p-[24px]
+            p-4 md:p-6
             z-50
           "
           style={{ boxShadow: "0px 4px 33.9px 0px #0000003D" }}
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 md:gap-4">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => switchLanguage(lang.code)}
-                className="flex items-center gap-3 text-left hover:opacity-80"
+                className="flex items-center gap-2.5 md:gap-3 text-left hover:bg-gray-50 p-1 md:p-0 rounded-lg transition-colors"
               >
-                <img src={lang.flag} alt={lang.label} className="w-8 h-8" />
-                <span className="font-sora text-[18px]">
+                <img src={lang.flag} alt={lang.label} className="w-6 h-6 md:w-8 md:h-8 rounded-full object-cover" />
+                <span className="font-sora text-[15px] md:text-[18px] text-gray-700">
                   {lang.label}
                 </span>
               </button>

@@ -416,21 +416,16 @@ const MobileNav = () => {
           </ul>
 
           {/* CTA BUTTONS */}
-          <div className="mt-10 flex flex-col g items-center">
+          <div className="mt-10 flex flex-col items-center w-full">
             {/* Sign up */}
-            <Button type="button" style="nobg" css="min-w-[227px] h-[62px]" fn={gotoWaitlist}>
-               {t("waitlistButton") || "Login"}
-            </Button>
-
-            {/* Login
             <Button
               type="button"
-              style="nobg"
-              css="w-full h-[52px] rounded-full border border-[#010418]"
-              fn={gotoLogin}
+              style="danger"
+              css="w-full max-w-[280px] h-[56px] !text-[14px] px-8"
+              fn={gotoWaitlist}
             >
-              {t("login") || "Login"}
-            </Button> */}
+              {t("waitlistButton")}
+            </Button>
           </div>
         </div>
       </div>

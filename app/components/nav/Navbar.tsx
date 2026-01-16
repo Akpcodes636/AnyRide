@@ -12,12 +12,12 @@ import { useTranslations } from "next-intl";
 
 
 const Navbar = () => {
-   const t = useTranslations("Navbar");
+  const t = useTranslations("Navbar");
   const router = useRouter();
-    const gotoWaitlist = () => {
+  const gotoWaitlist = () => {
     router.push("/waitlist");
   };
-return (
+  return (
     <nav className="hidden xl:block px-4">
       <div className="flex items-center justify-between">
         <Logo />
@@ -33,17 +33,13 @@ return (
               </Link>
             </li>
           ))}
-
-          <LanguageSwitcher />
         </ul>
 
-        <div className="flex gap-2">
-          <Button type="button" style="danger" css="!text-[16px] w-[157px] h-[62px]" fn={gotoWaitlist}>
-           {t("waitlistButton")}
+        <div className="flex items-center gap-x-4">
+          <LanguageSwitcher />
+          <Button type="button" style="danger" css="!text-[16px] px-8 h-[60px]" fn={gotoWaitlist}>
+            {t("waitlistButton")}
           </Button>
-          {/* <Button type="button" style="danger" css="w-[161px] h-[62px]">
-            Sign up
-          </Button> */}
         </div>
       </div>
     </nav>
@@ -152,10 +148,10 @@ export default Navbar;
 //   // Determine which nav links to show based on current page
 //   const isRidersPage = pathname === "/services/rider";
 //   const isDriversPage = pathname === "/services/driver";
-//   // const currentNavLinks = isRidersPage 
-//   //   ? riderNavLinks 
-//   //   : isDriversPage 
-//   //   ? driverNavLinks 
+//   // const currentNavLinks = isRidersPage
+//   //   ? riderNavLinks
+//   //   : isDriversPage
+//   //   ? driverNavLinks
 //   //   : navLinks;
 
 //   const currentNavLinks = navLinks;

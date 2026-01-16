@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
-import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import ComingSoonModal from "../ui/ComingSoonModal";
 
 const AnyRide = () => {
   const t = useTranslations();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="">
@@ -31,14 +33,10 @@ const AnyRide = () => {
 
           {/* App Store Buttons */}
           <div className="flex items-start justify-start gap-4 mb-6">
-            <div className="w-33.75 h-10 rounded-[5px]">
-              {/* <Image
-                src="/icons/apple.svg"
-                width={135}
-                height={40}
-                className="w-full h-full object-cover"
-                alt={t("HomePage.appDownload.platforms.apple")}
-              /> */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="w-33.75 h-10 rounded-[5px] transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+            >
               <Image
                 width={135}
                 height={40}
@@ -47,27 +45,28 @@ const AnyRide = () => {
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
               />
-            </div>
-            <div className="w-33.75 h-10 rounded-[5px]">
-              {/* <Image
-                src="/icons/google.svg"
+            </button>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="w-33.75 h-10 rounded-[5px] transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+            >
+              <Image
                 width={135}
                 height={40}
+                priority
+                src="/icons/google.svg"
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.google")}
-              /> */}
-              <Image
-                width={135}
-                height={40}
-                priority
-                src="/icons/google.svg"
-                className="w-full h-full object-cover"
-                alt={t("HomePage.appDownload.platforms.apple")}
               />
-            </div>
+            </button>
           </div>
         </div>
       </div>
+
+      <ComingSoonModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };

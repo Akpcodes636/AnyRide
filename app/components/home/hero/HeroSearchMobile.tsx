@@ -81,7 +81,7 @@ const HeroSearchMobile = () => {
   };
 
   return (
-    <div className="w-full max-w-full mx-auto flex flex-col items-center gap-3 px-4">
+    <div className="w-full max-w-full mx-auto flex flex-col items-center gap-3 px-4 pb-6">
       /* <style jsx global>{`
         /* Professional Mobile Autocomplete Dropdown Styling */
         .pac-container {
@@ -216,7 +216,7 @@ const HeroSearchMobile = () => {
       <Button
         style="danger"
         type="button"
-        css="w-full max-w-[335px] h-[52px] rounded-full font-semibold text-[15px] shadow-md hover:shadow-lg transition-shadow duration-200"
+        css="w-full max-w-[240px] !h-[44px] rounded-full font-semibold !text-[13px] shadow-md hover:shadow-lg transition-shadow duration-200 mb-8"
         fn={handleCheckAvailability}
         disabled={loading}
       >
@@ -253,11 +253,10 @@ const HeroSearchMobile = () => {
       {toastMessage && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-slide-up  w-full max-w-[350px]">
           <div
-            className={`inline-flex items-center gap-3 rounded-full py-4 py-3 shadow-xl backdrop-blur-sm ${
-              toastError
-                ? "bg-red-50 text-red-600 border border-red-200"
-                : "bg-green-50 text-green-600 border border-green-200"
-            }`}
+            className={`inline-flex items-center gap-3 rounded-full py-4 py-3 shadow-xl backdrop-blur-sm ${toastError
+              ? "bg-red-50 text-red-600 border border-red-200"
+              : "bg-green-50 text-green-600 border border-green-200"
+              }`}
           >
             {/* Icon */}
             {toastError ? (
