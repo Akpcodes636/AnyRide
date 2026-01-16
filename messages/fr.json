@@ -630,10 +630,22 @@
       "description": "Nous commençons par les bases de notre plateforme - en partenariat avec des propriétaires de flotte qui fournissent des véhicules et motos pour notre réseau de conducteurs. Rejoignez-nous immédiatement et développez votre activité avec AnyRide dès le premier jour."
     },
     "benefits": {
-      "vehicleUtilization": "Maximisez le potentiel de gain de votre flotte avec une affectation organisée des conducteurs.",
-      "revenueSharing": "Nous vous connectons avec un conducteur vérifié à proximité. Voyez son nom, sa note et sa photo.",
-      "scalableGrowth": "Développez votre flotte avec une échelle et payez en espèces ou via le portefeuille.",
-      "maintenanceSupport": "Suivez vos véhicules avec prise en charge organisée et payez en espèces ou via le portefeuille."
+      "vehicleUtilization": {
+        "title": "Utilisation des véhicules",
+        "description": "Maximisez le potentiel de gain de votre flotte avec une affectation organisée des conducteurs."
+      },
+      "revenueSharing": {
+        "title": "Partage des revenus",
+        "description": "Nous vous connectons avec un conducteur vérifié à proximité. Voyez son nom, sa note et sa photo."
+      },
+      "scalableGrowth": {
+        "title": "Croissance évolutive",
+        "description": "Développez votre flotte avec une échelle et payez en espèces ou via le portefeuille."
+      },
+      "maintenanceSupport": {
+        "title": "Support de maintenance",
+        "description": "Suivez vos véhicules avec prise en charge organisée et payez en espèces ou via le portefeuille."
+      }
     },
     "howItWorks": {
       "title": "Comment fonctionne le partenariat avec AnyRide",

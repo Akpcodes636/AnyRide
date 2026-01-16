@@ -44,22 +44,16 @@ export default function FleetOwnersSection() {
     router.push("/waitlist");
   };
 
-  // Helper function to convert camelCase to Title Case
-  const camelToTitle = (str: string) => {
-    return str
-      .replace(/([A-Z])/g, ' $1')
-      .replace(/^./, (s) => s.toUpperCase())
-      .trim();
-  };
-
   // Build features purely from KEYS
   const features = benefitKeys.map((key) => {
     const iconSrc = ICON_MAP[key];
+    const benefitData = benefits[key] as unknown as { title: string; description: string };
+
     return {
       key,
       icon: iconSrc,
-      title: camelToTitle(key),
-      description: benefits[key],
+      title: benefitData.title,
+      description: benefitData.description,
       ...STYLE_MAP[key]
     };
   });

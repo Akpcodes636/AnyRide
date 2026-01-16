@@ -630,10 +630,22 @@
       "description": "We're beginning with the foundation of our platform - partnering with fleet owners who provide vehicles and motorcycles for our driver network. This is where you can join us immediately and grow with AnyRide from day one."
     },
     "benefits": {
-      "vehicleUtilization": "Maximize your fleet's earning potential with organized driver assignments.",
-      "revenueSharing": "We connect you with a nearby verified driver. See their name, rating, and photo.",
-      "scalableGrowth": "Grow your vehicle pickup with a scale, and pay with cash or wallet.",
-      "maintenanceSupport": "Track your vehicles outlined pickup with a scale, and pay with cash or wallet."
+      "vehicleUtilization": {
+        "title": "Vehicle Utilization",
+        "description": "Maximize your fleet's earning potential with organized driver assignments."
+      },
+      "revenueSharing": {
+        "title": "Revenue Sharing",
+        "description": "We connect you with a nearby verified driver. See their name, rating, and photo."
+      },
+      "scalableGrowth": {
+        "title": "Scalable Growth",
+        "description": "Grow your vehicle pickup with a scale, and pay with cash or wallet."
+      },
+      "maintenanceSupport": {
+        "title": "Maintenance Support",
+        "description": "Track your vehicles outlined pickup with a scale, and pay with cash or wallet."
+      }
     },
     "howItWorks": {
       "title": "How Partnership with AnyRide Works",

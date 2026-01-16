@@ -630,10 +630,22 @@
       "description": "Tunaanza na msingi wa jukwaa letu - kushirikiana na wamiliki wa floti wanaotoa magari na pikipiki kwa mtandao wetu wa madereva. Jiunge mara moja na panua biashara yako na AnyRide kuanzia siku ya kwanza."
     },
     "benefits": {
-      "vehicleUtilization": "Maximiza mapato ya floti yako kwa mpangilio wa madereva.",
-      "revenueSharing": "Tunakunganisha na dereva aliyehakikiwa karibu nawe. Angalia jina, alama, na picha yao.",
-      "scalableGrowth": "Panua uthibitisho wa magari kwa kiwango, na lipa kwa pesa taslimu au pochi.",
-      "maintenanceSupport": "Fuata magari yako na malipo kwa mpangilio uliowekwa."
+      "vehicleUtilization": {
+        "title": "Matumizi ya Magari",
+        "description": "Maximiza mapato ya floti yako kwa mpangilio wa madereva."
+      },
+      "revenueSharing": {
+        "title": "Ugawaji wa Mapato",
+        "description": "Tunakunganisha na dereva aliyehakikiwa karibu nawe. Angalia jina, alama, na picha yao."
+      },
+      "scalableGrowth": {
+        "title": "Ukuaji Unaoongezeka",
+        "description": "Panua uthibitisho wa magari kwa kiwango, na lipa kwa pesa taslimu au pochi."
+      },
+      "maintenanceSupport": {
+        "title": "Usaidizi wa Matengenezo",
+        "description": "Fuata magari yako na malipo kwa mpangilio uliowekwa."
+      }
     },
     "howItWorks": {
       "title": "Jinsi Ushirikiano na AnyRide Unavyofanya Kazi",
