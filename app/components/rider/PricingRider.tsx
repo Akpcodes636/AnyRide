@@ -400,7 +400,7 @@ export default function PricingForm() {
             {/* Buttons */}
             <div className="flex items-center justify-center gap-3 pt-2">
               <Button type="button" style="danger" css="w-[161px]" fn={handleCheckPrices}>
-                  {loading ? t("form.loading") : t("form.cta")}
+                  {loading ? loading : t("form.cta")}
               </Button>
               <Button type="button" style="nobg" css="min-w-[180px]" fn={gotoWaitlist}>
                 {t("form.loginInstead")}

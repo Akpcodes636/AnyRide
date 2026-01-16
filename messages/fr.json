@@ -117,6 +117,7 @@
       "title": "Trajets équitables. Prix clairs.",
       "subtitle": "tarification",
       "description": "Connaissez votre tarif avant de voyager.",
+      "descriptions":"Allez là où vous devez être plus rapidement, en toute sécurité et à un prix équitable.",
       "form": {
         "pickupLabel": "Entrez le lieu de prise en charge",
         "pickupPlaceholder": "Abuja, Nigeria",
@@ -299,7 +300,6 @@
         "title": "Entreprise",
         "links": [
           { "label": "À propos", "href": "/about" },
-          { "label": "Blog", "href": "/blog" },
           { "label": "Villes", "href": "/cities" }
         ]
       },

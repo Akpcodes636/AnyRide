@@ -117,6 +117,7 @@
       "title": "bei / upatikanaji wa bei",
       "subtitle": "bei / upatikanaji wa bei",
       "description": "Fahamu gharama yako kabla ya kuanza safari.",
+      "descriptions":"Fika unakoenda haraka zaidi, kwa usalama na kwa bei ya haki.",
         "form": {
         "pickupLabel": "Weka mahali pa kukuchukua",
         "pickupPlaceholder": "Abuja, Nigeria",
@@ -647,7 +648,7 @@
     },
     "footer": {
       "description": "Tunajenga mtandao wa usafiri wa ndani unaotaka zaidi — ulioundwa kwa abiria na watu halisi. Nafuu, salama, na daima hapa unapohitaji.",
-      "company": ["Kuhusu", "Blogi", "Miji"],
+      "company": ["Kuhusu", "Miji"],
       "help": ["Msaada", "Usalama", "Usalama"],
       "legal": ["Masharti", "Faragha", "Faragha"],
       "copyright": " 2025 AnyRide. powered by Techenex"

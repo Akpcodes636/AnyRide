@@ -16,7 +16,6 @@ const waitListSchema = Yup.object({
   emailAddress: Yup.string().email("Invalid email").required("Required"),
   userType: Yup.string().required("Required"),
 
-
   agreePrivacy: Yup.boolean().oneOf([true], "Required"),
   agreeTerms: Yup.boolean().oneOf([true], "Required"),
   consentSMS: Yup.boolean().oneOf([true], "Required"),
@@ -70,18 +69,16 @@ export default function WaitForm() {
     },
   });
 
- // Use this handler for all checkboxes
-const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const { name, checked } = e.target; // <-- checked is boolean
-  formik.setFieldValue(name, checked);
-};
-
-
+  // Use this handler for all checkboxes
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target; // <-- checked is boolean
+    formik.setFieldValue(name, checked);
+  };
 
   return (
     <section className="py-12 px-4 ">
       <div className="container mx-auto">
-        <div className="w-full max-w-[562px] mx-auto">
+        <div className="w-full max-w-full md:max-w-full  lg:max-w-[562px] mx-auto">
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
             <InputField
               label=""
@@ -91,7 +88,11 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               value={formik.values.firstName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.firstName && formik.errors.firstName ? formik.errors.firstName : null}
+              error={
+                formik.touched.firstName && formik.errors.firstName
+                  ? formik.errors.firstName
+                  : null
+              }
               css="!bg-white w-full !h-[60px] !rounded-[100px]"
             />
 
@@ -103,7 +104,11 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               value={formik.values.lastName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.lastName && formik.errors.lastName ? formik.errors.lastName : null}
+              error={
+                formik.touched.lastName && formik.errors.lastName
+                  ? formik.errors.lastName
+                  : null
+              }
               css="!bg-white w-full !h-[60px] !rounded-[100px]"
             />
 
@@ -115,7 +120,11 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               value={formik.values.emailAddress}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.emailAddress && formik.errors.emailAddress ? formik.errors.emailAddress : null}
+              error={
+                formik.touched.emailAddress && formik.errors.emailAddress
+                  ? formik.errors.emailAddress
+                  : null
+              }
               css="!bg-white w-full !h-[60px] !rounded-[100px]"
             />
 
@@ -126,67 +135,78 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               value={formik.values.userType}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.userType && formik.errors.userType ? formik.errors.userType : null}
+              error={
+                formik.touched.userType && formik.errors.userType
+                  ? formik.errors.userType
+                  : null
+              }
               className="!h-[60px] !rounded-[100px]"
             />
 
             {/* Checkboxes */}
-     <div className="flex flex-col gap-2 text-sm text-white">
-  {/* Privacy Policy */}
-  <label className="flex items-center gap-2">
-    <input
-      type="checkbox"
-      name="agreePrivacy"
-      className="accent-red-600"
-      checked={formik.values.agreePrivacy}
-      onChange={formik.handleChange}
-    />
-    {t("agreements.privacyPolicy")}{" "}
-    {/* <span className="text-[#A10000] underline cursor-pointer">
+            <div className="flex flex-col gap-2 text-sm text-white">
+              {/* Privacy Policy */}
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="agreePrivacy"
+                  className="accent-red-600"
+                  checked={formik.values.agreePrivacy}
+                  onChange={formik.handleChange}
+                />
+                {t("agreements.privacyPolicy")}{" "}
+                {/* <span className="text-[#A10000] underline cursor-pointer">
       {t("agreements.privacyPolicyLink") /* Optional link text */}
-    {/* </span> */} 
-  </label>
-  {formik.touched.agreePrivacy && formik.errors.agreePrivacy && (
-    <p className="text-red-600 text-xs">{formik.errors.agreePrivacy}</p>
-  )}
+                {/* </span> */}
+              </label>
+              {formik.touched.agreePrivacy && formik.errors.agreePrivacy && (
+                <p className="text-red-600 text-xs">
+                  {formik.errors.agreePrivacy}
+                </p>
+              )}
 
-  {/* Terms & Conditions */}
-  <label className="flex items-center gap-2">
-    <input
-      type="checkbox"
-      name="agreeTerms"
-      className="accent-red-600"
-      checked={formik.values.agreeTerms}
-      onChange={handleCheckboxChange}
-    />
-    {t("agreements.termsConditions")}{" "}
-    {/* <span className="text-[#A10000] underline cursor-pointer">
+              {/* Terms & Conditions */}
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="agreeTerms"
+                  className="accent-red-600"
+                  checked={formik.values.agreeTerms}
+                  onChange={handleCheckboxChange}
+                />
+                {t("agreements.termsConditions")}{" "}
+                {/* <span className="text-[#A10000] underline cursor-pointer">
       {t("agreements.termsConditionsLink") /* Optional link text */}
-    {/* </span> */} 
-  </label>
-  {formik.touched.agreeTerms && formik.errors.agreeTerms && (
-    <p className="text-red-600 text-xs">{formik.errors.agreeTerms}</p>
-  )}
+                {/* </span> */}
+              </label>
+              {formik.touched.agreeTerms && formik.errors.agreeTerms && (
+                <p className="text-red-600 text-xs">
+                  {formik.errors.agreeTerms}
+                </p>
+              )}
 
-  {/* Consent SMS/Email */}
-  <label className="flex items-center gap-2">
-    <input
-      type="checkbox"
-      name="consentSMS"
-      className="accent-red-600"
-      checked={formik.values.consentSMS}
-      onChange={handleCheckboxChange}
-    />
-    {t("agreements.consentMessages")}
-  </label>
-  {formik.touched.consentSMS && formik.errors.consentSMS && (
-    <p className="text-red-600 text-xs">{formik.errors.consentSMS}</p>
-  )}
+              {/* Consent SMS/Email */}
+              <label className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="consentSMS"
+                  className="accent-red-600"
+                  checked={formik.values.consentSMS}
+                  onChange={handleCheckboxChange}
+                />
+                {t("agreements.consentMessages")}
+              </label>
+              {formik.touched.consentSMS && formik.errors.consentSMS && (
+                <p className="text-red-600 text-xs">
+                  {formik.errors.consentSMS}
+                </p>
+              )}
 
-  {/* Disclaimer */}
-  <p className="text-white text-xs mt-2">{t("agreements.disclaimer")}</p>
-</div>
-
+              {/* Disclaimer */}
+              <p className="text-white text-xs mt-2">
+                {t("agreements.disclaimer")}
+              </p>
+            </div>
 
             {/* Submit */}
             <div className="flex items-center justify-center mt-4">
@@ -206,5 +226,3 @@ const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     </section>
   );
 }
-
-

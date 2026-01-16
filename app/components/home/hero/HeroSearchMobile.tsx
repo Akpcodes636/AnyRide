@@ -253,7 +253,7 @@ const HeroSearchMobile = () => {
       {toastMessage && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-slide-up  w-full max-w-[350px]">
           <div
-            className={`inline-flex items-center gap-3 rounded-full w-full py-3 shadow-xl backdrop-blur-sm ${
+            className={`inline-flex items-center gap-3 rounded-full py-4 py-3 shadow-xl backdrop-blur-sm ${
               toastError
                 ? "bg-red-50 text-red-600 border border-red-200"
                 : "bg-green-50 text-green-600 border border-green-200"

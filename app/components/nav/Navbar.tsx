@@ -38,7 +38,7 @@ return (
         </ul>
 
         <div className="flex gap-2">
-          <Button type="button" style="danger" css="w-[157px] h-[62px]" fn={gotoWaitlist}>
+          <Button type="button" style="danger" css="!text-[16px] w-[157px] h-[62px]" fn={gotoWaitlist}>
            {t("waitlistButton")}
           </Button>
           {/* <Button type="button" style="danger" css="w-[161px] h-[62px]">
