@@ -676,6 +676,20 @@
         }
       ]
     },
+    "form": {
+  "sectionTitle": "Formulaire de partenariat",
+  "name": "Votre nom complet",
+  "company": "Nom de l'entreprise",
+  "email": "Adresse e-mail",
+  "phone": "Numéro de téléphone (facultatif)",
+  "message": "Parlez-nous de votre intérêt pour le partenariat...",
+  "submit": "Envoyer la demande",
+   "success": "Formulaire envoyé avec succès !",
+      "errors": {
+        "failed": "Échec de l'envoi du formulaire. Veuillez réessayer.",
+        "network": "Problème réseau. Veuillez vérifier votre connexion."
+      }
+  },
     "expansionRoadmap": {
       "title": "Feuille de route de l'expansion du partenariat",
       "description": "Voici comment nous construisons l'écosystème complet de transport/taxi étape par étape.",
@@ -754,8 +768,8 @@
           "title": "Entreprise",
           "links": [
             {
-              "label": "À propos",
-              "href": "/about"
+              "label": "Flotte",
+              "href": "/fleet"
             },
             {
               "label": "Partenaires",
@@ -1041,6 +1055,44 @@
           "description": "Vous pouvez choisir de désactiver les cookies via les paramètres de votre navigateur, bien que cela puisse affecter le fonctionnement de certaines fonctionnalités de notre site Web. En continuant à utiliser notre site, vous consentez à notre utilisation des cookies telle que décrite dans cette politique."
         }
       ]
+    }
+  },
+  "FleetOwnersPage": {
+    "hero": {
+      "title": "Développez votre entreprise de flotte avec AnyRide",
+      "subtitle": "Gérez plusieurs véhicules et conducteurs, augmentez vos revenus et développez vos opérations facilement.",
+      "cta": "Rejoignez maintenant"
+    },
+    "who": {
+      "title": "Qui sont les propriétaires de flotte",
+      "description": "Les propriétaires de flotte sont des particuliers ou des entreprises qui gèrent plusieurs véhicules et conducteurs pour fournir des trajets à grande échelle."
+    },
+    "why": {
+      "title": "Pourquoi utiliser AnyRide",
+      "manage": {
+        "title": "Gestion organisée",
+        "description": "Attribuez des véhicules aux conducteurs, suivez les performances et rationalisez les opérations efficacement."
+      },
+      "earnings": {
+        "title": "Meilleurs revenus",
+        "description": "Gagnez plus en gérant plusieurs conducteurs au lieu d’un seul véhicule."
+      },
+      "growth": {
+        "title": "Développez plus vite",
+        "description": "Augmentez votre flotte et vos revenus avec un minimum de frais grâce aux outils d’AnyRide."
+      }
+    },
+    "how": {
+      "title": "Comment ça marche",
+      "step1": { "title": "Inscrivez-vous en tant que propriétaire de flotte", "description": "Fournissez les informations de votre entreprise et de propriété pour rejoindre la plateforme." },
+      "step2": { "title": "Ajoutez des véhicules", "description": "Ajoutez toutes vos voitures ou motos et téléchargez les documents requis." },
+      "step3": { "title": "Attribuez des conducteurs", "description": "Utilisez vos conducteurs existants ou intégrez-en de nouveaux dans votre flotte." },
+      "step4": { "title": "Activez & gagnez", "description": "Suivez les trajets, les revenus et les performances via votre tableau de bord." }
+    },
+    "cta": {
+      "title": "Prêt à développer votre flotte ?",
+      "subtitle": "Rejoignez AnyRide dès aujourd’hui et commencez à gérer vos véhicules efficacement.",
+      "button": "Rejoindre la liste d’attente"
     }
   }
 }

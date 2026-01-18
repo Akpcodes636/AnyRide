@@ -423,9 +423,9 @@
         "title": "Company",
         "links": [
           {
-            "label": "About",
-            "href": "/about"
-          },
+              "label": "Fleet",
+              "href": "/fleet"
+            },
           {
             "label": "Partners",
             "href": "/partners"
@@ -676,6 +676,20 @@
         }
       ]
     },
+    "form": {
+    "sectionTitle": "Partner Inquiry Form",
+    "name": "Your Full Name",
+    "company": "Company Name",
+    "email": "Email Address",
+    "phone": "Phone Number (optional)",
+    "message": "Tell us about your partnership interest...",
+    "submit": "Submit Inquiry",
+     "success": "Form submitted successfully!",
+      "errors": {
+        "failed": "Failed to submit form. Please try again.",
+        "network": "Network issue. Please check your connection."
+      }
+    },
     "expansionRoadmap": {
       "title": "Our Partnership Expansion Roadmap",
       "description": "Here's how we're building the complete transport/taxi ecosystem step by step.",
@@ -755,8 +769,8 @@
           "title": "Company",
           "links": [
             {
-              "label": "About",
-              "href": "/about"
+              "label": "Fleet",
+              "href": "/fleet"
             },
             {
               "label": "Blog",
@@ -1017,6 +1031,44 @@
           "description": "You can choose to disable cookies through your browser settings, although this may affect how some features of our website work. By continuing to use our site, you consent to our use of cookies as described in this policy."
         }
       ]
+    }
+  },
+   "FleetOwnersPage": {
+    "hero": {
+      "title": "Grow Your Fleet Business with AnyRide",
+      "subtitle": "Manage multiple vehicles and drivers, increase earnings, and scale operations effortlessly.",
+      "cta": "Join Now"
+    },
+    "who": {
+      "title": "Who Fleet Owners Are",
+      "description": "Fleet owners are individuals or companies that manage multiple vehicles and drivers to provide rides at scale."
+    },
+    "why": {
+      "title": "Why Use AnyRide",
+      "manage": {
+        "title": "Organized Management",
+        "description": "Assign vehicles to drivers, track performance, and streamline operations efficiently."
+      },
+      "earnings": {
+        "title": "Better Earnings",
+        "description": "Earn more by managing multiple drivers instead of a single vehicle."
+      },
+      "growth": {
+        "title": "Scale Faster",
+        "description": "Expand your fleet and revenue with minimal overhead, using AnyRide’s tools."
+      }
+    },
+    "how": {
+      "title": "How It Works",
+      "step1": { "title": "Register as a Fleet Owner", "description": "Provide your business and ownership details to join the platform." },
+      "step2": { "title": "Add Vehicles", "description": "Add all your cars or motorcycles and upload required documents." },
+      "step3": { "title": "Assign Drivers", "description": "Use your existing drivers or onboard new ones to your fleet." },
+      "step4": { "title": "Go Live & Earn", "description": "Track trips, earnings, and performance through your dashboard." }
+    },
+    "cta": {
+      "title": "Ready to grow your fleet?",
+      "subtitle": "Join AnyRide today and start managing your vehicles efficiently.",
+      "button": "Join Waitlist"
     }
   }
 }

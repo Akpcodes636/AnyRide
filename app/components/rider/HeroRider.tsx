@@ -38,10 +38,10 @@ const HeroRider = () => {
   return (
    <section className=" h-screen bg-cover bg-center bg-no-repeat bg-red-600"style={{ backgroundImage: "url('/en/riders.svg')" }}>
       <div className="flex items-center justify-center h-full container">
-        <div className="pt-[148px] md:pt-[230px] lg:pt-[200px]">
+        <div className="pt-[148px] md:pt-[230px] lg:pt-[120px]">
           <div>
             <h1 className="text-[32px] md:text-[50px] lg:text-[64px] text-white font-bold text-center leading-[120%] tracking-[-5%] max-w-[673px] mx-auto mb-[16px]">
-              {t("title")} <br />
+              {t("title")}
               {t("subtitle")}
             </h1>
 

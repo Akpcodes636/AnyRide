@@ -5,6 +5,7 @@ import Header from "@/app/components/Header";
 import Banner from "@/app/components/partners/Banner";
 import FleetOwnersSection from "@/app/components/partners/FleetOwnersSection";
 import HowPartnershipWorks from "@/app/components/partners/HowPartnershipWorks";
+import PartnerForm from "@/app/components/partners/PartnerForm";
 import PartnerHero from "@/app/components/partners/PartnerHero";
 import PartnerSection from "@/app/components/partners/PartnerSection";
 import Roadmap from "@/app/components/partners/Roadmap";
@@ -19,6 +20,7 @@ const Partners = () => {
      <PartnerSection />
      <FleetOwnersSection />
      <HowPartnershipWorks />
+     <PartnerForm />
      <Roadmap />
      <Faq />
      <Banner />

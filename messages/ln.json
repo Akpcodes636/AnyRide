@@ -1,0 +1,1074 @@
+{
+  "HomePage": {
+    "hero": {
+      "tagline": "Ya mboka, ya bondeko, ya mbangu",
+      "title": "Zwa transport. Sala mosala. Nionso na AnyRide.",
+      "description": "Transport ya mbangu, ya libateli, mpe ya ntalo pɛtɛɛ na engumba na yo mobimba. Ezala ozali kokende esika to kosunga basusu kokende — AnyRide ekomelisa yo.",
+      "placeholderPickup": "Kota esika okokóta",
+      "placeholderDestination": "Kota esika okokende",
+      "buttonCheckAvailability": "Tala Soki Ezali",
+      "mobileInfo": "Ezali naino te",
+      "desktopInfo": "Mituka ezali na esika na yo"
+    },
+    "sections": {
+      "ridesNearby": "Mituka ezali penepene na yo",
+      "guides": "Malako",
+      "howItWorks": "Ndenge AnyRide esalaka"
+    },
+    "guides": {
+      "subtitle": "Malako",
+      "title": "Ndenge AnyRide esalaka",
+      "description": "AnyRide ebombaka te — kobanda na mikili ya mokolo na mokolo tii na mikolo ya mposa. Fungola kaka application, senga transport, mpe okende.",
+      "tabs": {
+        "rider": "Moto oyo azali kokende",
+        "driver": "Motambwisi"
+      },
+      "rider": [
+        {
+          "title": "Zwa Masengi ya Transport Nokinoki",
+          "text": "Fungola internet mpe AnyRide ekokangisa yo na bato oyo bazali penepene. Tala esika ya kokóta, ntaka, mpe mbongo liboso ya koyamba."
+        },
+        {
+          "title": "Tambola Malamu",
+          "text": "Landa nzela ya malamu, mona makambo ya moto oyo azali kokende, mpe sepela na makambo ya solo. Talela kaka transport — ezali na mitungisi te."
+        },
+        {
+          "title": "Tala Mbongo na Yo Pete",
+          "text": "Silisa mitambola mpe mona mbongo na yo ezali kobakisama nokinoki. Tala ntalo ya mokolo na mokolo, bakado, mpe ndenge ya kofuta."
+        }
+      ],
+      "driver": [
+        {
+          "title": "Zwa Masengi ya Kokabola",
+          "text": "Fungola internet mpe zwa mayebisi ya bikolo na esika na yo. Tala makambo ya biloko, esika ya kokabola, mpe mbongo liboso ya kobanda."
+        },
+        {
+          "title": "Kabola na Motema Kitoko",
+          "text": "Landa nzela ya malamu, mona makambo ya moto oyo akozwa, mpe zwa sika ya sika mpo na kopesa malamu. Kima na kotyola te."
+        },
+        {
+          "title": "Boyangeli Mbongo mpe Mosala",
+          "text": "Tala bikabola nyonso oyo osilisaki mpe mbongo na yo nokinoki. Tala bakado, ntalo ya mokolo, mpe mbongo — nionso na esika moko."
+        }
+      ]
+    },
+    "howItWorks": {
+      "intro": "AnyRide esalaka te likambo ya mpasi — kobanda na mikili ya mokolo na mokolo tii na mikolo ya mposa. Fungola kaka application, senga transport, mpe okende.",
+      "steps": [
+        {
+          "title": "Zwa Masengi ya Transport Nokinoki",
+          "description": "Fungola internet mpe AnyRide ekokangisa yo na bato oyo bazali penepene. Tala esika ya kokóta, ntaka, mpe mbongo liboso ya koyamba."
+        },
+        {
+          "title": "Tambola Malamu",
+          "description": "Landa nzela ya malamu, mona makambo ya moto oyo azali kokende, mpe sepela na makambo ya solo. Talela kaka transport — ezali na mitungisi te."
+        },
+        {
+          "title": "Tala Mbongo na Yo Pete",
+          "description": "Silisa mitambola mpe mona mbongo na yo ezali kobakisama nokinoki. Tala ntalo ya mokolo na mokolo, bakado, mpe ndenge ya kofuta."
+        }
+      ]
+    },
+    "appDownload": {
+      "title": "Télécharger application AnyRide",
+      "description": "AnyRide ekokisa yo na esika olingi kokende na ntalo moke. Application etangaka mbongo na yo mpe emonisaka motuka na yo na carte na ntango ya solo. Ezali mbangu, pete, mpe esalaka na iOS mpe Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Bato 1125+ bandimi biso"
+      }
+    },
+    "values": {
+      "subtitle": "Makambo na biso",
+      "title": "Mpo na nini opona AnyRide",
+      "description": "AnyRide esalamaki mpo na babalabala ya mboka mpe bato ya solo. Tozali kotya mbongo moke, batambwisi ya solo, mpe kofuta pete — mpo okoka kotambola to kotambwisa na mitungisi te.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Kokóta Mbangu",
+          "description": "Kozela mingi te. Kangama na motambwisi oyo azali penepene na basegɔnde, esika ozali."
+        },
+        {
+          "number": "02",
+          "title": "Mitambola ya Libateli",
+          "description": "Motambwisi nyonso mpe motuka nyonso batalami. Plus, okoki kokabola transport na yo to kobengisa lisalisi ntango nyonso."
+        },
+        {
+          "number": "03",
+          "title": "Ntalo ya Polele",
+          "description": "Yeba mbongo na yo liboso ya kotambola. Mbongo ya kobombama te, likambo ya kokamwa te — kaka ntalo ya sembo."
+        },
+        {
+          "number": "04",
+          "title": "Lisalisi 24/7",
+          "description": "Ozali na motuna to likambo? Ekipi na biso ezali awa ntango nyonso mpo na kosunga yo, butu to moyi."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Mitambola ya sembo. Mbongo ya polele.",
+      "subtitle": "Ntalo.",
+      "description": "Yeba mbongo na yo liboso ya kotambola.",
+      "descriptions": "Kende na esika olingi mbangu, na libateli, mpe na sembo.",
+      "form": {
+        "pickupLabel": "Kota esika ya kokóta",
+        "pickupPlaceholder": "",
+        "destinationLabel": "Kota esika okokende",
+        "destinationPlaceholder": "",
+        "rideTypeLabel": "Kota lolenge ya transport",
+        "rideTypePlaceholder": "Pona engumba",
+        "locationBadge": "",
+        "checkPrices": "Tala mbongo",
+        "loginInstead": "Kokota na esika",
+        "options": [
+          "Abuja, Nigeria",
+          "Lagos, Nigeria",
+          "Port Harcourt, Nigeria"
+        ]
+      }
+    },
+    "safety": {
+      "title": "Libateli na yo ezali liboso. Ntango nyonso.",
+      "description": "Botalami makasi ya batambwisi mpe mituka, kolandela na GPS ya ntango ya solo, kokabola transport, mpe bouton ya SOS na kati ya application.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Batambwisi ya Solo",
+          "description": "Motambwisi nyonso mpe motuka nyonso batalami malamu liboso ya kokende na mosala. Tozobi kotalisa mikanda ya identité, permis ya kotambwisa, mpe makambo ya sima mpo okoka kotambola na motema kitoko."
+        },
+        {
+          "number": "02",
+          "title": "Kolandela na Ntango ya Solo",
+          "description": "Landela transport na yo na ntango ya solo mpe kabola na baninga to libota na yo mpo motema ezala kimia."
+        },
+        {
+          "number": "03",
+          "title": "SOS mpe Lisalisi 24/7",
+          "description": "Salelá bouton SOS na kati ya application mpo na kokutana na lisalisi ya mbangu nokinoki. Ekipi na biso ezali ntango nyonso, butu mpe moyi."
+        }
+      ]
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Makambo ya sika kobanda na blog",
+      "subtitle": "Mateya, masolo, mpe sika mpo na bato oyo bazali kotambola mpe batambwisi.",
+      "posts": [
+        {
+          "id": 1,
+          "category": "Korporasi",
+          "date": "4 ya Novembre",
+          "title": "AnyRide azali kosangana na Gitex Africa na makanisi ya sika mpo na mikolo ezali koya ya RH na Nigeria",
+          "featured": true
+        },
+        {
+          "id": 2,
+          "category": "Korporasi",
+          "date": "4 ya Novembre",
+          "title": "AnyRide azali kosangana na Gitex Africa na makanisi ya sika mpo na mikolo ezali koya ya RH na Nigeria"
+        },
+        {
+          "id": 3,
+          "category": "Korporasi",
+          "date": "4 ya Novembre",
+          "title": "AnyRide azali kosangana na Gitex Africa na makanisi ya sika mpo na mikolo ezali koya ya RH na Nigeria"
+        },
+        {
+          "id": 4,
+          "category": "Korporasi",
+          "date": "4 ya Novembre",
+          "title": "AnyRide azali kosangana na Gitex Africa na makanisi ya sika mpo na mikolo ezali koya ya RH na Nigeria"
+        }
+      ]
+    }
+  },
+  "AboutPage": {
+    "hero": {
+      "title": "Na ntina ya AnyRide",
+      "subtitle": "Kotambwisa bato mpe bomoi ya bango na libateli, na mboka, na motema kitoko.",
+      "description": "AnyRide ekangisaka bato oyo bazali kotambola na batambwisi ya solo oyo bazali kosalela mituka mpe moto. Etongami mpo na kotambola ya mokolo na mokolo — kotambola, makambo, mitambola ya mokuse — na likebi ya libateli, sembo, mpe makambo ya solo ya mboka."
+    },
+    "services": [
+      {
+        "type": "Mituka",
+        "title": "Bofandi malamu & esika"
+      },
+      {
+        "type": "Moto",
+        "title": "Mbangu & kobongola"
+      },
+      {
+        "type": "Libateli-liboso",
+        "title": "Batambwisi ya solo"
+      }
+    ],
+    "whatWeDo": {
+      "title": "AnyRide ezali nini?",
+      "description": "AnyRide ezali kaka application ya kotambola te — ezali mokano oyo etongami likoló ya bonsomi, bondimi, mpe pete ya mokolo na mokolo. Tobandaki AnyRide na mokano moko ya pete: kosala kotambola na engumba ezala pete, ya libateli, mpe ya litomba mpo na bato nyonso — ezala ozali kokende mbangu to kozwa mbongo na nsima ya volant. Tososoli makambo elimboli kosala, kotambola, mpe kosala makambo — yango wana AnyRide esalamaki mpo na kosalela bato ya solo na bamposa ya solo. Plateforme na biso ekangisaka bato oyo bazali kotambola mpe batambwisi na basegɔnde, kosalisa bango mibale kobomba ntango, kozwa mbongo mingi, mpe kotambola na motema kitoko na mokolo na bango mobimba."
+    },
+    "visionMission": {
+      "vision": {
+        "title": "Emoniseli na biso",
+        "subtitle": "Emoniseli ezali kokende na mokili mobimba",
+        "description": "Kotonga réseau ya kotambola ya mboka oyo bandimi mingi koleka na Afrique — oyo ezali kotya bato, kaka technologie te, na katikati. Tozali kosala kaka mitambola te; tozali kotonga maponami kati na bato, mabaku, mpe babalabala ya libateli."
+      },
+      "mission": {
+        "title": "Mokano na biso",
+        "subtitle": "Tozali awa kaka mpo na yo",
+        "description": "Kobongisa transport ya mboka na kosala transport nyonso ezala pete, ya ntalo moke, mpe ya nguya — mpo na bato oyo bazali kotambola mpe batambwisi. Tondimi ete kotambola esengeli kozala na mitungisi te, ya libateli te, to ya ntalo makasi te. Moto nyonso asengeli kozala na transport ya sembo, ya polele, mpe ya pete ya kondima."
+      }
+    },
+    "bothModes": {
+      "title": "Mpo na nini mibale",
+      "subtitle": "Mituka mpe moto ezali kobunda te — ezali kosalisana.",
+      "description": "Na engumba mingi, moto ezali likambo ya kosolola te — ezali na ntina mpenza. AnyRide esungaka mibale, kopesa bato oyo bazali kotambola kopona mpe batambwisi mabaku.",
+      "options": [
+        {
+          "type": "Mituka",
+          "benefits": [
+            "Malamu koleka mpo na bofandi",
+            "Biloko mingi / esika mingi",
+            "Malamu mpo na mitambola ya molai"
+          ]
+        },
+        {
+          "type": "Moto",
+          "benefits": [
+            "Malamu koleka mpo na mbangu",
+            "Kotambola na traffic mbangu",
+            "Malamu mpo na mitambola ya mokuse"
+          ]
+        }
+      ]
+    },
+    "whereWeOperate": {
+      "title": "Esika tozali kosala",
+      "subtitle": "Ya kosala lelo. Ya kokola na makanisi.",
+      "description": "Tozali kotya kaka bisika oyo tokoki kosunga — mpo bondimi ezala likolo mpe bato bayeba makambo.",
+      "ridesNearby": "Mituka ezali na esika na yo"
+    },
+    "forEveryone": {
+      "title": "Mpo na bato nyonso",
+      "subtitle": "Etongami mpo na bato oyo bazali kotambola, batambwisi, mpe bapartenaire",
+      "description": "Plateforme moko — bamposa ndenge na ndenge. Likebi ndenge moko.",
+      "categories": [
+        {
+          "type": "Bato oyo bazali kotambola",
+          "icon": "/icons/individual.svg",
+          "description": "Mbangu, sembo, mpe ya kondima. Kotya na pete, mbongo ya polele, mpe mayele ya libateli mpo na kotambola ya mokolo na mokolo."
+        },
+        {
+          "type": "Batambwisi",
+          "icon": "/icons/drivers.svg",
+          "description": "Mabaku na polele. Mosala ya polele, mbongo ya pete, mpe lisalisi mpo na batambwisi ya mituka mpe moto."
+        },
+        {
+          "type": "Bapartenaire",
+          "icon": "/icons/partners.svg",
+          "description": "Kokola na baflotte. Boyangeli ya flotte mpe ba-intégrations ya commerce etongami mpo na bakompanyi oyo bazali kobatela mituka mingi."
+        }
+      ]
+    },
+    "trustSafety": {
+      "title": "Bondimi & libateli",
+      "subtitle": "Responsabilité etongami",
+      "description": "Botalami, banotation, mpe bilembo ya polele — etongami mpo na kotonga motema kitoko."
+    },
+    "values": {
+      "title": "Makambo na biso ya ntina",
+      "items": [
+        {
+          "number": "01",
+          "title": "Bondimi",
+          "description": "Motambwisi nyonso mpe transport nyonso batalami, kopesa motema kimia mpo na bato nyonso."
+        },
+        {
+          "number": "02",
+          "title": "Mbangu",
+          "description": "Kokangama mbangu, mitambola ya malamu, mpe mbongo ya mbangu — kozela te."
+        },
+        {
+          "number": "03",
+          "title": "Sembo",
+          "description": "Mbongo ya polele mpo na bato oyo bazali kotambola, mbongo ya sembo mpo na batambwisi."
+        },
+        {
+          "number": "04",
+          "title": "Libateli",
+          "description": "Mbongo ya polele mpo na bato oyo bazali kotambola, mbongo ya sembo mpo na batambwisi."
+        }
+      ]
+    },
+    "riders": {
+      "title": "Bato oyo bazali kotambola",
+      "description": "Engumba na yo ezali kaka na ba-clics moke. AnyRide epesaka yo bokonzi likoló na ndenge otambolaka — kobanda na makambo ya mbangu tii na mitambola ya molai. Mona mbongo na yo liboso, landela motambwisi na yo na ntango ya solo, mpe sepela na kimia ya motema koyeba ozali na mabɔkɔ ya libateli. Likambo ya kokamwa te. Mitungisi te."
+    },
+    "drivers": {
+      "title": "Batambwisi",
+      "description": "Tomonaka batambwisi lokola bapartenaire, kaka basaleli te. Na AnyRide, oponi ntango ya kotambwisa, ndenge ya kozwa mbongo, mpe motuka nini osaleli. Bongola mituka pete, kobimisa mbongo nokinoki, mpe kokola mbongo na yo na mpasi ya mingi te. Système na biso etongami mpo na kosunga yo — litamboli nyonso, transport nyonso."
+    },
+    "ourPromise": {
+      "title": "Kamata maloba na biso",
+      "description": "Tozali kosala likambo ya kokesana — mayele ya kotambola oyo emonanaka lokola ya mboka, ya sembo, mpe ya bato. Kobanda na batambwisi na biso oyo bazali kobatela engumba etambolaka, tii na bato oyo bazali kotambola oyo bandimi biso mokolo na mokolo, AnyRide etelemaka mpo na libateli, sembo, mpe nguya. Mpo kotambola ezali bonsomi — mpe moto nyonso asengeli kozala na nzela ya kokende. Yango nde AnyRide. Etongami mpo na bato. Esalamaki mpo na kotambola."
+    }
+  },
+  "DriversPage": {
+    "hero": {
+      "title": "Tambwisa na bonsomi. Zwa mbongo na ndenge olingi.",
+      "description": "Sangana na AnyRide mpe zwa mbongo mingi ntango ozali kobatela bokonzi ya ntango mpe mitambola na yo.",
+      "cta": "Koma motambwisi"
+    },
+    "FAQ": {
+      "subtitle": "Mituna",
+      "title": "Mituna oyo bato batunaka mingi",
+      "description": "Tala eteni na biso ya mituna mpo na biyano ya mbangu mpe ya pete na mituna oyo bato batunaka mingi.",
+      "items": [
+        {
+          "question": "Plateforme ekobanda ntango nini?",
+          "answer": "Tozali komibongisa mpo na kobanda MVP na biso noki mpenza. Bato nyonso oyo bazali na liste ya kozela bakoyebisama liboso."
+        },
+        {
+          "question": "Nani akoki kosangana na liste ya kozela?",
+          "answer": "Moto nyonso oyo azali na mposa ya kosalela AnyRide akoki kosangana na liste ya kozela. Ezali polele mpo na bato oyo bazali kotambola, batambwisi, mpe bapartenaire."
+        },
+        {
+          "question": "Kosangana ezali ya ofele?",
+          "answer": "Ee! Kosangana na liste ya kozela ezali ya ofele mpenza."
+        },
+        {
+          "question": "Bakobengisa ngai ndenge nini?",
+          "answer": "Tokobengisa yo na email oyo opesaki ntango omikotisaki na liste ya kozela."
+        }
+      ]
+    },
+    "appDownload": {
+      "title": "Télécharger application AnyRide",
+      "description": "AnyRide ekokisa yo na esika olingi kokende na ntalo moke. Application etangaka mbongo na yo mpe emonisaka motuka na yo na carte na ntango ya solo. Ezali mbangu, pete, mpe esalaka na iOS mpe Android.",
+      "platforms": {
+        "apple": "Apple App Store",
+        "google": "Google Play Store"
+      },
+      "reviews": {
+        "rating": "4.9",
+        "trustedBy": "Bato 1125+ bandimi biso"
+      }
+    },
+    "benefits": {
+      "subtitle": "Matomba",
+      "title": "Mpo na nini Tambwisa na AnyRide",
+      "description": "Etongami mpo na batambwisi lokola yo",
+      "items": [
+        {
+          "number": "01",
+          "title": "Mosala ya kobongola",
+          "description": "Fungola internet ntango nyonso. Bongenge ya ntango ya sembo te."
+        },
+        {
+          "number": "02",
+          "title": "Mbongo ya sembo",
+          "description": "Mbongo ya polele mpe ba-décompositions ya polele."
+        },
+        {
+          "number": "03",
+          "title": "Mituka mingi",
+          "description": "Komisa mituka to moto mingi mpe kobongola ntango nyonso."
+        },
+        {
+          "number": "04",
+          "title": "Lisalisi ya mboka",
+          "description": "Bato ya solo, lisalisi ya solo ntango osengeli na yango."
+        }
+      ]
+    },
+    "guides": {
+      "subtitle": "Malako",
+      "title": "Boyebi ya Kobanda mpo na Batambwisi",
+      "description": "Kotya mitambola ya libateli, ya ntalo moke na batambwisi ya solo oyo bazali kosalela mituka to moto — nyonso kobanda na application moko ya pete.",
+      "steps": {
+        "step1": {
+          "title": "Mikanda",
+          "description": "Sala compte na yo ya motambwisi na baminiti."
+        },
+        "step2": {
+          "title": "Tyá mikanda",
+          "description": "Tindá identité, permis, mpe makambo ya motuka na yo mpo batalisa."
+        },
+        "step3": {
+          "title": "Zwa ndingisa",
+          "description": "Ekipi na biso ekotalisa mpe ekondima profil na yo."
+        },
+        "step4": {
+          "title": "Fungola internet & zwa mbongo",
+          "description": "Pona motuka na yo, fungola internet, mpe bandá kozwa mitambola."
+        }
+      }
+    },
+    "tracking": {
+      "subtitle": "Kolandela",
+      "title": "Mbongo & mosala",
+      "description": "Landela mbongo na yo, mitambola, mpe mosala wapi na tableau de bord ya motambwisi.",
+      "item1": "Résumé ya mbongo ya mokolo mpe pɔsɔ",
+      "item2": "Mitambola oyo osilisaki",
+      "item3": "Mbongo na portefeuille mpe lisolo ya kofuta",
+      "image": "/images/Driver-Phone.png"
+    }
+  },
+  "Footer": {
+    "contactEmail": "info@anyride.com",
+    "description": "Tozali kotonga réseau ya kotambola ya mboka oyo bandimi mingi — etongami mpo na bapasažɛ mpe bato ya solo. Ya ntalo moke, ya libateli, mpe ezali ntango nyonso ntango osengeli na yango.",
+    "sections": {
+      "company": {
+        "title": "Kompanyi",
+        "links": [
+          {
+            "label": "Mobembo",
+            "href": "/fleet"
+          },
+          {
+            "label": "Bapartenaire",
+            "href": "/partners"
+          },
+          {
+            "label": "Sangana na Ekipi",
+            "href": "/careers"
+          }
+        ]
+      },
+      "help": {
+        "title": "Lisalisi",
+        "links": [
+          {
+            "label": "Lisalisi",
+            "href": "/contact"
+          },
+          {
+            "label": "Mbongo",
+            "href": "/privacy"
+          }
+        ]
+      },
+      "legal": {
+        "title": "Mibeko",
+        "links": [
+          {
+            "label": "Mibeko",
+            "href": "/terms"
+          },
+          {
+            "label": "Vie privée",
+            "href": "/privacy"
+          },
+          {
+            "label": "Cookies",
+            "href": "/cookies"
+          }
+        ]
+      }
+    },
+    "copyright": "AnyRide LLC. esalamaki na"
+  },
+  "WaitlistPage": {
+    "hero": {
+      "subtitle": "Kobanda na 2026",
+      "title": "Sangana na Liste ya Kozela ya AnyRide Lelo.",
+      "description": "Sangana na Liste ya Kozela ya AnyRide Lelo."
+    },
+    "stats": {
+      "rider": "Bato oyo bazali kotambola",
+      "driver": "Batambwisi",
+      "fleet_owner": "Bankolo ya Flotte",
+      "partner": "Bapartenaire",
+      "team_member": "Ba-Membres ya Ekipi",
+      "total": "Ba-Membres Nyonso",
+      "title": "Sangana na communauté na biso oyo ezali kokola"
+    },
+    "form": {
+      "selectOption": "Pona likambo",
+      "userTypes": {
+        "rider": "Moto oyo azali kotambola",
+        "driver": "Motambwisi",
+        "fleet_owner": "Nkolo ya Flotte",
+        "partner": "Partenaire",
+        "team_member": "Membre ya Ekipi"
+      },
+      "firstNamePlaceholder": "Nkombo ya liboso",
+      "lastNamePlaceholder": "Nkombo ya suka",
+      "emailPlaceholder": "Adresse Email",
+      "submit": "Sangana na liste ya kozela",
+      "agreements": {
+        "privacyPolicy": "Nandimi Politique ya Vie Privée",
+        "termsConditions": "Nandimi Mibeko mpe Mipango",
+        "consentMessages": "Nandimi kozwa ba-messages SMS, babengi, mpe ba-emails mpo na ndingisa mpe communication",
+        "disclaimer": "Avertissement: Na kotinda formulaire oyo, ondimi kozwa ba-messages SMS, babengi, mpe ba-emails uta na AnyRide mpo na ndingisa mpe communication. Ba-messages mpe ba-données ekoki kozwa mbongo. Okoki kotika ntango nyonso na koyanola STOP na message nyonso. Ndingisa oyo esengeli te mpo na kosomba biloko to misala."
+      }
+    },
+    "FAQ": {
+      "subtitle": "Mituna",
+      "title": "Mituna oyo bato batunaka mingi",
+      "description": "Tala eteni na biso ya mituna mpo na biyano ya mbangu mpe ya pete na mituna oyo bato batunaka mingi",
+      "items": [
+        {
+          "question": "Plateforme ekobanda ntango nini?",
+          "answer": "Tozali komibongisa mpo na kobanda MVP na biso noki mpenza. Bato nyonso oyo bazali na liste ya kozela bakoyebisama liboso."
+        },
+        {
+          "question": "Nani akoki kosangana na liste ya kozela?",
+          "answer": "Moto nyonso oyo azali na mposa ya kosalela AnyRide akoki kosangana na liste ya kozela. Ezali polele mpo na bato oyo bazali kotambola, batambwisi, mpe bapartenaire."
+        },
+        {
+          "question": "Kosangana ezali ya ofele?",
+          "answer": "Ee! Kosangana na liste ya kozela ezali ya ofele mpenza."
+        },
+        {
+          "question": "Bakobengisa ngai ndenge nini?",
+          "answer": "Tokobengisa yo na email oyo opesaki ntango omikotisaki na liste ya kozela."
+        }
+      ]
+    }
+  },
+  "ContactPage": {
+    "hero": {
+      "title": "Tozali awa mpo na kosunga",
+      "description": "Bengelá ekipi na biso mpo na mituna, mitungisi, to makanisi nyonso.",
+      "cta": "Solola na biso"
+    },
+    "form": {
+      "directEmail": "info@anyride.com",
+      "directEmailLabel": "To, okoki kokutana na biso polele na:",
+      "title": "Ozali na likambo?",
+      "description": "Tondisa formulaire oyo, tindá ticket mpe tokozongisa yo eyano.",
+      "fields": {
+        "subject": "Sujet",
+        "subjectPlaceholder": "Kota sujet",
+        "fullName": "Nkombo mobimba",
+        "fullNamePlaceholder": "Kota nkombo na yo mobimba",
+        "email": "Email",
+        "emailPlaceholder": "Kota email na yo",
+        "phone": "Numéro ya Téléphone",
+        "phonePlaceholder": "Kota numéro ya téléphone",
+        "category": "Catégorie",
+        "selectCategory": "Pona catégorie",
+        "paymentIssue": "Likambo ya kofuta",
+        "rideIssue": "Likambo ya transport",
+        "country": "Mboka",
+        "selectCountry": "Pona Mboka",
+        "responseLanguage": "Monoko ya eyano",
+        "selectLanguage": "Pona monoko ya eyano",
+        "message": "Message",
+        "messagePlaceholder": "Koma message/commentaire/plainte na yo",
+        "attachment": "Ba-Attachements",
+        "emailUpdates": "Tindela ngai ba-mises à jour na email",
+        "emailConsent": "Nandimi Politique ya Vie Privée",
+        "termsConsent": "Nandimi Mibeko mpe Mipango",
+        "smsConsent": "Nandimi kozwa ba-messages SMS, babengi mpe ba-emails mpo na ndingisa mpe communication",
+        "disclaimer": "Avertissement: Na kotinda formulaire oyo, ondimi kozwa ba-messages SMS, babengi mpe ba-emails uta na AnyRide mpo na ndingisa mpe communication. Ba-messages mpe ba-données ekoki kozwa mbongo. Okoki kotika ntango nyonso na koyanola STOP na message nyonso. Ndingisa oyo esengeli te mpo na kosomba biloko to misala."
+      },
+      "submit": "Tindá",
+      "errors": {
+        "required": "Tondisa ba-champs nyonso oyo esengeli",
+        "invalidEmail": "Kota adresse email ya malamu",
+        "failed": "Likambo moko esalemi te malamu. Meka lisusu",
+        "network": "Erreur ya réseau. Meka lisusu ntango mosusu"
+      },
+      "success": "Message etindami malamu!"
+    }
+  },
+  "FleetPartnersPage": {
+    "hero": {
+      "title": "Kola commerce na yo ya transport na AnyRide",
+      "subtitle": "Kobanda na Bankolo ya Flotte & Bapartenaire ya Mituka - sima kokola na système mobimba ya transport ya RDC.",
+      "joinCTA": "Sangana na Réseau na biso ya Flotte",
+      "roadmapCTA": "Tala Feuille de Route Mobimba",
+      "currentFocus": "Esika tozali lelo",
+      "current": "Financement ya Liboso",
+      "focus": "Flotte",
+      "preSeedFunding": "$1.5M",
+      "futureCategories": "8+",
+      "safetyTrust": "Ba-Catégories ya Mikolo ezali koya"
+    },
+    "whoCanPartner": {
+      "title": "Nani Akoki Kozala Partenaire na AnyRide",
+      "categories": [
+        {
+          "type": "Bankolo ya Flotte",
+          "description": [
+            "Batela mituka to moto mingi",
+            "Kabola mituka na batambwisi",
+            "Landela mosala mpe mbongo"
+          ]
+        },
+        {
+          "type": "Bakompanyi ya Transport",
+          "description": [
+            "Kola ba-opérations na ndenge ya digitale",
+            "Ba-rapports mpe ba-paiements na esika moko",
+            "Boyambi ya malamu na mibeko"
+          ]
+        },
+        {
+          "type": "Ba-opérateurs ya Moto",
+          "description": [
+            "Malamu mpo na mitambola ya mbangu na engumba",
+            "Optimisé mpo na mobility na moto",
+            "Ba-coûts ya kosala moke"
+          ]
+        },
+        {
+          "type": "Ba-Investisseurs Individuels",
+          "description": [
+            "Zwa mituka, kabola batambwisi",
+            "Zwa mbongo na kotambwisa yo moko te"
+          ]
+        }
+      ]
+    },
+    "startingNow": {
+      "title": "KOBANDA LELO",
+      "subtitle": "Bankolo ya Flotte & Bapartenaire ya Mituka",
+      "description": "Tozali kobanda na moboko ya plateforme na biso - kosala partenariat na bankolo ya flotte oyo bazali kopesa mituka mpe moto mpo na réseau ya batambwisi na biso. Oyo nde esika okoki kosangana na biso nokinoki mpe kokola na AnyRide kobanda mokolo ya liboso."
+    },
+    "benefits": {
+      "vehicleUtilization": {
+        "title": "Kosalela Mituka",
+        "description": "Kola potentiel ya flotte na yo ya kozwa mbongo na organisation malamu ya ba-assignations ya batambwisi."
+      },
+      "revenueSharing": {
+        "title": "Kokabola Mbongo",
+        "description": "Tokangisi yo na motambwisi ya solo oyo azali penepene. Mona nkombo, notation, mpe photo na ye."
+      },
+      "scalableGrowth": {
+        "title": "Kokola ya Makasi",
+        "description": "Kola mituka na yo na ndenge ya malamu, mpe futa na mbongo to portefeuille."
+      },
+      "maintenanceSupport": {
+        "title": "Lisalisi ya Kobongisa",
+        "description": "Landela mituka na yo na ndenge ya polele, mpe futa na mbongo to portefeuille."
+      }
+    },
+    "howItWorks": {
+      "title": "Ndenge Partenariat na AnyRide Esalaka",
+      "description": "Tala matamboli ya pete mpo na kosala partenariat na biso",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Mikanda lokola Partenaire",
+          "description": "Tindá makambo ya commerce to ya bozwi."
+        },
+        {
+          "step": 2,
+          "title": "Bakisa Mituka",
+          "description": [
+            "Bakisa mituka to moto na yo",
+            "Tyá mikanda mbala moko"
+          ]
+        },
+        {
+          "step": 3,
+          "title": "Kabola Batambwisi",
+          "description": "Salelá batambwisi na yo moko to yambelá ba-sika."
+        },
+        {
+          "step": 4,
+          "title": "Bandá & Zwa Mbongo",
+          "description": "Landela mitambola, mosala, mpe mbongo na tableau de bord moko."
+        }
+      ]
+    },
+    "form": {
+    "sectionTitle": "Fomu ya Ushirikiano",
+    "name": "Jina Lako Kamili",
+    "company": "Jina la Kampuni",
+    "email": "Barua Pepe",
+    "phone": "Nambari ya Simu (hiari)",
+    "message": "Tuelezee kuhusu shauku yako ya kushirikiana...",
+    "submit": "Tuma Ombi",
+    "success": "Formulaire etindami malamu!",
+      "errors": {
+        "failed": "Kopesa formulaire esimbi te. Boninga leka lisusu.",
+        "network": "Likambo ya réseau. Boninga talela connection na yo."
+      }
+    },
+    "expansionRoadmap": {
+      "title": "Feuille de Route na biso ya Kokola Partenariat",
+      "description": "Tala ndenge tozali kotonga système mobimba ya transport/taxi matamboli na matamboli.",
+      "steps": [
+        {
+          "title": "Bankolo ya Flotte (Ezali Kosala Lelo)",
+          "description": "Tobandaka na kosala partenariat na bankolo ya flotte individuels mpe corporatifs oyo bazali kopesa mituka mpe moto na plateforme AnyRide. Bankolo ya flotte bazwaka mbongo ntango nyonso ntango tozali kosala ete bato oyo bazali kotambola bazala na mituka ya kondima na engumba mobimba.\n\nMpo na nani:\nBankolo ya mituka, bankolo ya moto, bakompanyi ya gestion ya flotte."
+        },
+        {
+          "title": "Bapesi Misala",
+          "description": "Na nsima, tokangisa bapartenaire ya misala ya ntina mpo na kosunga batambwisi mpe ba-flottes. Yango ezali kosala ete mituka ezala ya libateli, efficace, mpe ya ntalo moke ya kosalela.",
+          "includes": [
+            "Ba-mécaniciens & ba-ateliers ya kobongisa",
+            "Ba-stations ya essence",
+            "Misala ya kosukola mituka & kobatela"
+          ]
+        },
+        {
+          "title": "Bapartenaire ya Finance & Assurance",
+          "description": "Tokotisi bapartenaire ya kondima ya finance mpe assurance mpo na kosunga batambwisi mpe bankolo ya flotte na ba-solutions ya kobongola.",
+          "focus": "Bisika ya ntina:",
+          "includes": [
+            "Assurance ya mituka",
+            "Micro-financement & location",
+            "Ba-économies ya batambwisi & lisalisi ya crédit"
+          ],
+          "footer": "Yango ezali kosala ete ezala pete kosangana, kosala, mpe kokola na AnyRide."
+        },
+        {
+          "title": "Bapartenaire Corporatifs & Institutionnels",
+          "description": "Na eteni oyo, tozali kosala partenariat na ba-entreprises, ba-organisations, mpe ba-institutions oyo bazali na mposa ya transport ya kondima mpo na basali, ba-livraisons, to ba-opérations ya mokolo na mokolo.",
+          "includes": [
+            "Bakompanyi & ba-entreprises",
+            "Ba-ONG & ba-institutions",
+            "Bapartenaire ya ba-événements mpe logistique"
+          ]
+        },
+        {
+          "title": "Système ya Mobility Intelligent",
+          "description": "Phase na biso ya suka ezali kotalisa innovation mpe soutenabilité ya ntango molai.",
+          "includes": [
+            "Ba-solutions ya mobility intelligente",
+            "Bapartenaire ya EV & énergie propre",
+            "Bapesi ba-données, cartographie, mpe technologie ya mobility"
+          ],
+          "footer": "Yango ezali kotya AnyRide lokola système mobimba ya transport—kaka application ya kotambola te."
+        }
+      ]
+    },
+    "FAQ": {
+      "subtitle": "Mituna",
+      "title": "Mituna oyo Bato Batunaka Mingi",
+      "description": "Tala eteni na biso ya mituna mpo na biyano ya mbangu mpe ya pete na mituna oyo bato batunaka mingi.",
+      "items": [
+        {
+          "question": "Plateforme ekobanda ntango nini?",
+          "answer": "Tozali komibongisa mpo na kobanda MVP na biso noki mpenza. Bato nyonso oyo bazali na liste ya kozela bakoyebisama liboso."
+        },
+        {
+          "question": "Nani akoki kosangana na liste ya kozela?",
+          "answer": "Moto nyonso oyo azali na mposa ya kosalela AnyRide akoki kosangana na liste ya kozela. Ezali polele mpo na bato oyo bazali kotambola, batambwisi, mpe bapartenaire."
+        },
+        {
+          "question": "Kosangana ezali ya ofele?",
+          "answer": "Ee! Kosangana na liste ya kozela ezali ya ofele mpenza."
+        },
+        {
+          "question": "Bakobengisa ngai ndenge nini?",
+          "answer": "Tokobengisa yo na email oyo opesaki ntango omikotisaki na liste ya kozela."
+        }
+      ]
+    },
+    "Footer": {
+      "description": "Tozali kotonga réseau ya kotambola ya mboka oyo bandimi mingi — etongami mpo na bapasažɛ mpe bato ya solo. Ya ntalo moke, ya libateli, mpe ezali ntango nyonso ntango osengeli na yango.",
+      "sections": {
+        "company": {
+          "title": "Kompanyi",
+          "links": [
+            {
+              "label": "Na ntina",
+              "href": "/about"
+            },
+            {
+              "label": "Blog",
+              "href": "/"
+            }
+          ]
+        },
+        "help": {
+          "title": "Lisalisi",
+          "links": []
+        },
+        "legal": {
+          "title": "Mibeko",
+          "links": [
+            {
+              "label": "Mibeko",
+              "href": "/terms"
+            },
+            {
+              "label": "Politique ya Vie Privée",
+              "href": "/privacy"
+            }
+          ]
+        }
+      },
+      "copyright": "© 2025 AnyRide. esalamaki na Techenex"
+    }
+  },
+  "PrivacyPolicy": {
+    "title": "Politique ya Vie Privée",
+    "lastUpdated": "Mise à jour ya suka: Janvier 2025",
+    "section1": {
+      "title": "Introduction",
+      "content": "AnyRide ezali na engagement ya kobatela vie privée na yo. Politique ya Vie Privée oyo ezali kolimbola ndenge tozali kokongola, kosalela, kokabola, mpe kobatela makambo na yo ntango ozali kosalela plateforme na biso."
+    },
+    "section2": {
+      "title": "Makambo Tokongolaka",
+      "content": "Tokongolaka makambo opesi polele, lokola nkombo na yo, adresse email, numéro ya téléphone, ba-données ya esika, mpe makambo ya kofuta. Tokongolaka pe makambo mosusu na ndenge automatique na ntina ya appareil na yo mpe ndenge osaleli yango."
+    },
+    "section3": {
+      "title": "Ndenge Tosaleli Makambo na yo",
+      "content": "Tosaleli makambo na yo mpo na kopesa, kobatela, mpe kobongisa misala na biso, kosala ba-transactions, kotindela yo ba-mises à jour, mpe kotosa mibeko."
+    },
+    "section4": {
+      "title": "Kokabola Makambo",
+      "content": "Totɛki te makambo na yo ya personnel. Tokoki kokabola makambo na bapesi misala, bapartenaire, mpe ntango mibeko esengi."
+    },
+    "section5": {
+      "title": "Sécurité ya Ba-données",
+      "content": "Tosaleli ba-mesures techniques mpe organisationnelles ya malamu mpo na kobatela makambo na yo ya personnel liboso ya ba-accès oyo endimami te, kobongola, komonisa, to kobebisa."
+    },
+    "section6": {
+      "title": "Makoki na yo",
+      "content": "Ozali na makoki ya kokɔta, kobongisa, to kolongola makambo na yo ya personnel. Okoki pe kotika ba-communications mosusu. Bengelá biso mpo na kosalela makoki oyo."
+    }
+  },
+  "TermsAndConditions": {
+    "title": "Mibeko mpe Mipango",
+    "lastUpdated": "Mise à jour ya suka: Janvier 2025",
+    "section1": {
+      "title": "Kondima Mibeko",
+      "content": "Na kokɔta mpe kosalela AnyRide, ondimi mpe ondimi kozala na kanga na mibeko mpe ba-provisions ya boyokani oyo."
+    },
+    "section2": {
+      "title": "Licence ya Kosalela",
+      "content": "Ndingisa epesami ya ko-télécharger kopi moko ya matériels (makambo to logiciel) na AnyRide mpo na botali ya ntango moke ya personnel, oyo ezali ya commerce te. Oyo ezali ndingisa, kaka kopesa titre te."
+    },
+    "section3": {
+      "title": "Disclaimer",
+      "content": "Matériels na AnyRide epesami na base 'tel quel'. AnyRide ezali na ba-garanties te, oyo elimbolami to te, mpe awa ezali kotikala mpe koboya ba-garanties nyonso mosusu incluant, sans limitation, ba-garanties implicites to ba-conditions ya marchandabilité, adéquation à un objectif particulier, to non-violation ya propriété intellectuelle to violation mosusu ya makoki."
+    },
+    "section4": {
+      "title": "Mipekiseli",
+      "content": "Na likambo nyonso AnyRide to bapesi na yango bakoki kozala na responsabilité mpo na ba-dommages nyonso (incluant, sans limitation, ba-dommages mpo na kobungisa ba-données to litomba, to mpo na kotelema ya commerce) oyo ebimi na kosalela to likoki te ya kosalela matériels na AnyRide."
+    },
+    "section5": {
+      "title": "Bosikisiki ya Matériels",
+      "content": "Matériels oyo emonanaka na AnyRide ekoki kozala na ba-erreurs techniques, typographiques, to photographiques. AnyRide ezali kopesa garantie te ete matériels nyonso na AnyRide ezali ya sikisiki, complète, to ya lelo."
+    },
+    "section6": {
+      "title": "Ba-Liens",
+      "content": "AnyRide etalisi te ba-sites nyonso oyo ekangami na site internet na yango mpe ezali na responsabilité te mpo na contenus ya site nyonso oyo ekangami boye. Inclusion ya lien nyonso ezali kolimbola endorsement na AnyRide ya site yango te. Kosalela site internet nyonso oyo ekangami boye ezali na risque ya mosaleli."
+    },
+    "section7": {
+      "title": "Ba-Modifications",
+      "content": "AnyRide ekoki kobongisa mibeko oyo ya service mpo na site internet na yango ntango nyonso na avertissement te. Na kosalela site internet oyo, ozali kondima kozala na kanga na version ya lelo ya mibeko oyo ya service."
+    }
+  },
+  "Navbar": {
+    "about": "Na ntina",
+    "rider": "Moto oyo azali kokende",
+    "driver": "Motambwisi",
+    "partners": "Bapartenaire",
+    "contactUs": "Bengelá biso",
+    "waitlistButton": "Sangana na Liste"
+  },
+  "RiderPage": {
+    "hero": {
+      "title": "Tambola na ndenge na yo.",
+      "subtitle": "Ntango nyonso, esika nyonso.",
+      "description": "Tyá mitambola ya libateli, ya ntalo moke na batambwisi ya solo oyo bazali kosalela mituka to moto — nyonso kobanda na application moko ya pete.",
+      "cta": "Tyá transport",
+      "image": "/images/rider.png"
+    },
+    "guides": {
+      "subtitle": "Malako",
+      "title": "Ndenge kotambola na AnyRide esalaka",
+      "description": "Kotambola ezali pete. Senga transport, kangama, mpe tambola na motema kitoko — nyonso na baminiti.",
+      "steps": [
+        {
+          "step": "Litamboli 1",
+          "title": "Tyá transport na yo",
+          "description": "Kota esika ya kokóta mpe esika okokende, pona motuka to moto, mpe mona mbongo na yo liboso.",
+          "image": "/images/rider-1.png"
+        },
+        {
+          "step": "Litamboli 2",
+          "title": "Kangama",
+          "description": "Tokangisi yo na motambwisi ya solo oyo azali penepene. Mona nkombo, motuka, mpe ntango akoya nokinoki.",
+          "image": "/images/rider-2.png"
+        },
+        {
+          "step": "Litamboli 3",
+          "title": "Tambola & futa",
+          "description": "Landela transport na yo na ntango ya solo, ndimá kokóta na code, mpe futa na mbongo to portefeuille.",
+          "image": "/images/rider-3.png"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Mbongo ya polele. Likambo ya kokamwa te.",
+      "subtitle": "Mbongo & Polele",
+      "description": "Oyo omoni liboso ya kotambola nde ofutaka. Ba-changements ya mbala moko te, ba-frais ya kobombama te.",
+      "plans": {
+        "baseFare": {
+          "title": "Mbongo ya moboko",
+          "text": "Ebandisi transport",
+          "amount": "CDF 2,000"
+        },
+        "perKm": {
+          "title": "Na Km",
+          "text": "Na ntaka",
+          "amount": "CDF 650"
+        },
+        "perMinutes": {
+          "title": "Na miniti",
+          "text": "Ntango & traffic",
+          "amount": "CDF 90"
+        }
+      },
+      "form": {
+        "location": "Congo",
+        "pickupPlaceholder": "Kota esika ya kokóta",
+        "destinationPlaceholder": "Kota esika okokende",
+        "rideTypePlaceholder": "Kota lolenge ya transport",
+        "loginInstead": "Kokota na esika",
+        "cta": "Tala mbongo"
+      },
+      "exampleBreakdown": {
+        "currency": "CDF",
+        "items": [
+          {
+            "label": "Mbongo ya moboko",
+            "description": "Ebandisi transport",
+            "amount": "2,000"
+          },
+          {
+            "label": "Na Km",
+            "description": "Na ntaka",
+            "amount": "650"
+          },
+          {
+            "label": "Na miniti",
+            "description": "Ntango & traffic",
+            "amount": "90"
+          }
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "Matomba",
+      "title": "Mpo na nini Bato oyo bazali Kotambola Baponaka AnyRide",
+      "items": {
+        "upfrontPricing": {
+          "title": "Mbongo ya liboso",
+          "description": "Yeba mbongo na yo liboso ya kondima."
+        },
+        "carsMotorcycles": {
+          "title": "Mituka & moto",
+          "description": "Pona oyo ekokani na transport, ntango, mpe mbongo na yo."
+        },
+        "verifiedDrivers": {
+          "title": "Batambwisi ya solo",
+          "description": "Motambwisi nyonso batalami, batalami."
+        },
+        "localFirst": {
+          "title": "Ya mboka liboso",
+          "description": "Etongami mpo na bingumba ya solo, babalabala ya solo, mpe bato ya solo."
+        }
+      }
+    }
+  },
+  "CareersPage": {
+    "hero": {
+      "title": "Sangana na Ekipi na biso",
+      "subtitle": "Salisá biso kotonga mikolo ezali koya ya mobility ya bingumba.",
+      "description": "Tozali ntango nyonso koluka bato ya mayele mpo na kosangana na mission na biso ya kotonga réseau ya kotambola ya mboka oyo bandimi mingi."
+    },
+    "roles": {
+      "title": "Ba-Rôles ya Polele",
+      "subtitle": "Salá na biso",
+      "items": [
+        {
+          "title": "Ba-Techniciens",
+          "description": "Batela mpe optimiser infrastructure digitale mpe ba-systèmes ya matériel."
+        },
+        {
+          "title": "Ba-Représentants ya Service Clientèle",
+          "description": "Pesa lisalisi ya classe mondiale na bato oyo bazali kotambola mpe batambwisi."
+        },
+        {
+          "title": "Ba-Mécaniciens",
+          "description": "Sala ete motuka nyonso na réseau na biso ezala ya libateli mpe ebongi mpo na nzela."
+        },
+        {
+          "title": "Ba-Opérations & Logistique",
+          "description": "Salisá na boyangeli ya kotambola ya mokolo na mokolo mpe kokola ya service na biso."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ozali na mposa ya kosangana na biso?",
+      "description": "Tindá CV na yo mpe lettre de motivation ya mokuse na ekipi na biso.",
+      "button": "Tyá candidature lelo"
+    }
+  },
+  "CookiesPage": {
+    "hero": {
+      "title": "Politique ya Cookies",
+      "subtitle": "Ndenge tozali kosalela cookies mpo na kobongisa mayele na yo."
+    },
+    "content": {
+      "sections": [
+        {
+          "title": "Cookies ezali nini?",
+          "description": "Cookies ezali ba-fichiers ya texte ya mike oyo ebombami na appareil na yo ntango ozali kotala site internet na biso. Esalisaka biso kokundola ba-préférences na yo, kopesa mayele ya malamu, mpe ko-analyser ndenge service na biso ezali kosalelama."
+        },
+        {
+          "title": "Mpo na nini tozali kosalela yango?",
+          "description": "Tozali kosalela cookies mpo na kobatela session na yo, kotya yo na connexion, kokundola paramètres ya monoko na yo, mpe kososola oyo eteni ya site internet na biso oyo bato balingaka mingi mpo tokoka kokoba kobongisa AnyRide."
+        },
+        {
+          "title": "Lolenge ya cookies tozali kosalela",
+          "description": "Tozali kosalela cookies essentiels (oyo esengeli mpo site esala), cookies ya préférences (mpo na kokundola paramètres na yo), mpe cookies analytiques (mpo na kosunga biso kobongisa performance)."
+        },
+        {
+          "title": "Kobatela cookies na yo",
+          "description": "Okoki kopona kotika cookies na ba-paramètres ya navigateur na yo, atako yango ekoki kosunga ndenge ba-fonctionnalités mosusu ya site internet na biso esalaka. Na kokoba kosalela site na biso, ondimi kosalela cookies na biso ndenge elimbolami na politique oyo."
+        }
+      ]
+    }
+  },
+  "FleetOwnersPage": {
+    "hero": {
+      "title": "Kola Bizinesi Ya Fleet na AnyRide",
+      "subtitle": "Simba bisika mingi mpe batindu, kokola mbongo, mpe kosala opération na posa te.",
+      "cta": "Banda sik’oyo"
+    },
+    "who": {
+      "title": "Nani Ba Propriétaires ya Fleet",
+      "description": "Ba propriétaires ya fleet ezali bato to ba compagnie oyo basimbaka bisika mingi mpe batindu mpo na kopesa ba rides na ntina monene."
+    },
+    "why": {
+      "title": "Mpo Nini Kosalela AnyRide",
+      "manage": {
+        "title": "Kosala na ordre",
+        "description": "Tika bisika na batindu, suivez performance, mpe simplifier opération na ndenge efika."
+      },
+      "earnings": {
+        "title": "Mbongo Mpe Malamu",
+        "description": "Kokola mbongo mingi na kosala batindu mingi esika ya bisika moko."
+      },
+      "growth": {
+        "title": "Kokola Malamu",
+        "description": "Kokola fleet na mbongo na mokuse ya frais na kosalela ba outils ya AnyRide."
+      }
+    },
+    "how": {
+      "title": "Ndenge Ekozala",
+      "step1": { "title": "Jisangisa lokola Propriétaire ya Fleet", "description": "Tika ba détails ya business na propriété mpo na ko rejoindre plateforme." },
+      "step2": { "title": "Kokóma Bisika", "description": "Kokóma bisika nyonso mpe télécharge ba documents oyo esengeli." },
+      "step3": { "title": "Tika Batindu", "description": "Salisa batindu oyo bazali pe to ko onboard ba nouveaux na fleet." },
+      "step4": { "title": "Banda & Zwa Mbongo", "description": "Suivez ba trips, mbongo, mpe performance na dashboard na yo." }
+    },
+    "cta": {
+      "title": "Ready kokola fleet na yo?",
+      "subtitle": "Join AnyRide lelo mpe banda kosimbisa bisika na yo na ndenge malamu.",
+      "button": "Join Waitlist"
+    }
+  }
+}

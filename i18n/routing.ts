@@ -16,7 +16,7 @@ import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ["en", "fr", "sw"],
+  locales: ["en", "fr", "sw","ln"],
 
   // Used when no locale matches
   defaultLocale: "en",
@@ -25,6 +25,7 @@ export const routing = defineRouting({
       en: "/contact-me",
       fr: "/contactez-moi",
       sw: "/nipigie-sauti",
+      ln: "/benga-biso", // Lingala
     },
   },
 });
@@ -33,4 +34,4 @@ export const routing = defineRouting({
 // that will consider the routing configuration
 export type Locale = (typeof routing.locales)[number];
 export const { Link, redirect, usePathname, useRouter } =
-  createNavigation(routing);
+createNavigation(routing);

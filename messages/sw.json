@@ -423,8 +423,8 @@
         "title": "Kampuni",
         "links": [
           {
-            "label": "Kuhusu",
-            "href": "/about"
+            "label": "Safu",
+            "href": "/fleet"
           },
           {
             "label": "Washirika",
@@ -675,6 +675,20 @@
           "description": "Fuata safari, utendaji, na malipo kwenye dashibodi moja."
         }
       ]
+    },
+    "form": {
+    "sectionTitle": "Fomu ya Lisungi ya Bato",
+    "name": "Kombo na yo mobimba",
+    "company": "Kombo ya Compagnie",
+    "email": "Email Adresi",
+    "phone": "Numero ya Telefone (soki olingi)",
+    "message": "Teya biso likambo ya lisungi oyo olingi...",
+    "submit": "Tuma Fomu",
+    "success": "Fomu imetumwa kwa mafanikio!",
+      "errors": {
+        "failed": "Imeshindikana kutuma fomu. Tafadhali jaribu tena.",
+        "network": "Tatizo la mtandao. Tafadhali angalia muunganisho wako."
+      }
     },
     "expansionRoadmap": {
       "title": "Ramani ya Upanuzi wa Ushirikiano",
@@ -986,6 +1000,44 @@
           "description": "Unaweza kuchagua kuzima vidakuzi kupitia mipangilio ya kivinjari chako, ingawa hii inaweza kuathiri jinsi baadhi ya vipengele vya tovuti yetu vinavyofanya kazi. Kwa kuendelea kutumia tovuti yetu, unakubali utumiaji wetu wa vidakuzi kama ilivyoelezwa katika sera hii."
         }
       ]
+    }
+  }
+  ,"FleetOwnersPage": {
+    "hero": {
+      "title": "Kua Biashara Yako ya Fleet na AnyRide",
+      "subtitle": "Simamia magari na madereva wengi, ongeza mapato, na panua operesheni kwa urahisi.",
+      "cta": "Jiunge Sasa"
+    },
+    "who": {
+      "title": "Nani Wamiliki wa Fleet",
+      "description": "Wamiliki wa fleet ni watu binafsi au makampuni yanayosimamia magari na madereva wengi kutoa usafirishaji kwa kiwango kikubwa."
+    },
+    "why": {
+      "title": "Kwa Nini Utumie AnyRide",
+      "manage": {
+        "title": "Usimamizi wa Kufaa",
+        "description": "Gawa magari kwa madereva, fuatilia utendaji, na rahisisha operesheni kwa ufanisi."
+      },
+      "earnings": {
+        "title": "Mapato Bora",
+        "description": "Pata zaidi kwa kusimamia madereva wengi badala ya gari moja tu."
+      },
+      "growth": {
+        "title": "Panua Haraka",
+        "description": "Panua fleet yako na mapato kwa gharama ndogo ukitumia zana za AnyRide."
+      }
+    },
+    "how": {
+      "title": "Jinsi Inavyofanya Kazi",
+      "step1": { "title": "Jisajili kama Mmilikaji wa Fleet", "description": "Toa maelezo ya biashara na umiliki wako kujiunga na jukwaa." },
+      "step2": { "title": "Ongeza Magari", "description": "Ongeza magari yote au pikipiki zako na upakishe nyaraka zinazohitajika." },
+      "step3": { "title": "Gawa Madereva", "description": "Tumia madereva wako waliopo au ulete wapya kwenye fleet yako." },
+      "step4": { "title": "Anza & Pata Mapato", "description": "Fuatilia safari, mapato, na utendaji kupitia dashibodi yako." }
+    },
+    "cta": {
+      "title": "Tayari kukuza fleet yako?",
+      "subtitle": "Jiunge na AnyRide leo na anza kusimamia magari yako kwa ufanisi.",
+      "button": "Jiunge na Orodha ya Kusubiri"
     }
   }
 }

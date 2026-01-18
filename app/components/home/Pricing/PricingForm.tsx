@@ -714,7 +714,7 @@ export default function PricingForm() {
                   <img
                     src={`${BASE_URL}${v.icon_url}`}
                     alt={v.vehicle_type}
-                    className="w-[100px] h-[100px] object-contain"
+                    className="w-[50px] h-[50px] md:w-[100px] md:h-[100px] object-contain"
                   />
                   <div>
                     <div className="flex items-center gap-2">
@@ -732,7 +732,7 @@ export default function PricingForm() {
                         >
                           <path
                             strokeLinecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                             d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                           />
                         </svg>
@@ -758,7 +758,7 @@ export default function PricingForm() {
                 </div>
 
                 {/* Right */}
-                <p className="font-bold text-[20px]">{v.formatted_fare}</p>
+                <p className="font-bold text-[16px] md:text-[20px]">{v.formatted_fare}</p>
               </div>
             ))}
           </div>

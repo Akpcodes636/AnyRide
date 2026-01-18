@@ -14,7 +14,7 @@ export default function HowPartnershipWorks() {
   }));
 
   return (
-    <div className="bg-white py-12 sm:py-16 lg:py-20">
+    <div className="py-12 sm:py-16 lg:py-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -64,7 +64,7 @@ export default function HowPartnershipWorks() {
             </div>
           ))}
         </div> */}
-        <section className="py-20">
+        <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-20">
 
