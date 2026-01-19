@@ -120,7 +120,7 @@ const PricingClient = () => {
   const t = useTranslations("RiderPage.pricing"); // scoped to RiderPage.pricing
 
   return (
-    <section className="py-8 md:py-12 lg:py-20">
+    <section className="py-24 md:py-12 lg:py-20">
       <div className="container mx-auto">
         <h2 className="text-center text-3xl font-bold">{t("title")}</h2>
         <p className="text-center text-[#545454] text-base md:text-lg leading-relaxed mt-2">

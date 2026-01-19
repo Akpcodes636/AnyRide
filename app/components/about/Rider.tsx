@@ -77,7 +77,7 @@ export default function Rider() {
               width={500}
               height={500}
               priority
-              className="w-full h-full object-cover object-top rounded-[8px] aspect-square"
+              className="w-full h-full object-cover object-[center_30%] rounded-[8px] aspect-square"
               alt="about ride image"
             />
           </div>

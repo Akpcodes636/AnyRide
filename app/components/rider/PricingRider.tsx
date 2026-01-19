@@ -302,7 +302,7 @@ export default function PricingForm() {
         </div>
 
         {/* Form */}
-        <div className="pt-4 bg-white flex items-center justify-center max-w-[745px] mx-auto">
+        <div className="pt-8 bg-white flex items-center justify-center max-w-[745px] mx-auto">
           <div className="w-full flex flex-col gap-y-5">
             {/* Pickup */}
             <div className="space-y-2">

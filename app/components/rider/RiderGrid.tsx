@@ -75,7 +75,7 @@ export default function RiderGrid() {
 
   return (
     <section className="w-full bg-white">
-      <div className="container py-[32px] md:py-[50px] lg:py-[72px]">
+      <div className="container py-[62px] md:py-[50px] lg:py-[72px]">
         <div className="flex items-center justify-center flex-col mb-[58px]">
           <div className="mb-[24px]">
             <SubTitle
