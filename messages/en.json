@@ -123,17 +123,17 @@
         "locationBadge": "",
         "checkPrices": "Check prices",
         "loginInstead": "Login instead",
-          "options": [
-              "Car",
-           "Motorcycle"
+        "options": [
+          "Car",
+          "Motorcycle"
         ],
-      "errors": {
-        "missingLocations": "Please select pickup and destination from suggestions",
-        "generic": "Something went wrong. Please try again."
-      },
-      "loading": {
-        "checkingPrices": "Checking prices..."
-      }
+        "errors": {
+          "missingLocations": "Please select pickup and destination from suggestions",
+          "generic": "Something went wrong. Please try again."
+        },
+        "loading": {
+          "checkingPrices": "Checking prices..."
+        }
       }
     },
     "safety": {
@@ -430,9 +430,9 @@
         "title": "Company",
         "links": [
           {
-              "label": "Fleet",
-              "href": "/fleet"
-            },
+            "label": "Fleet",
+            "href": "/fleet"
+          },
           {
             "label": "Partners",
             "href": "/partners"
@@ -684,14 +684,14 @@
       ]
     },
     "form": {
-    "sectionTitle": "Partner Inquiry Form",
-    "name": "Your Full Name",
-    "company": "Company Name",
-    "email": "Email Address",
-    "phone": "Phone Number (optional)",
-    "message": "Tell us about your partnership interest...",
-    "submit": "Submit Inquiry",
-     "success": "Form submitted successfully!",
+      "sectionTitle": "Partner Inquiry Form",
+      "name": "Your Full Name",
+      "company": "Company Name",
+      "email": "Email Address",
+      "phone": "Phone Number (optional)",
+      "message": "Tell us about your partnership interest...",
+      "submit": "Submit Inquiry",
+      "success": "Form submitted successfully!",
       "errors": {
         "failed": "Failed to submit form. Please try again.",
         "network": "Network issue. Please check your connection."
@@ -928,28 +928,24 @@
           "amount": "CDF 90"
         }
       },
-            "form": {
+      "form": {
         "location": "Congo",
         "pickupPlaceholder": "Enter pickup location",
         "destinationPlaceholder": "Enter destination",
         "rideTypePlaceholder": "Enter ride type",
         "loginInstead": "Login instead",
         "cta": "Check price",
-
         "rideTypes": {
           "Car": "Car",
           "Motorcycle": "Motorcycle"
         },
-
         "loading": {
           "checkingPrices": "Checking prices..."
         },
-
         "errors": {
           "missingLocations": "Please select pickup and destination from suggestions",
           "generic": "Something went wrong. Please try again."
         },
-
         "availability": {
           "none": "No rides available in your area",
           "available": "{count} rides available in your area"
@@ -1059,7 +1055,7 @@
       ]
     }
   },
-   "FleetOwnersPage": {
+  "FleetOwnersPage": {
     "hero": {
       "title": "Grow Your Fleet Business with AnyRide",
       "subtitle": "Manage multiple vehicles and drivers, increase earnings, and scale operations effortlessly.",
@@ -1086,10 +1082,22 @@
     },
     "how": {
       "title": "How It Works",
-      "step1": { "title": "Register as a Fleet Owner", "description": "Provide your business and ownership details to join the platform." },
-      "step2": { "title": "Add Vehicles", "description": "Add all your cars or motorcycles and upload required documents." },
-      "step3": { "title": "Assign Drivers", "description": "Use your existing drivers or onboard new ones to your fleet." },
-      "step4": { "title": "Go Live & Earn", "description": "Track trips, earnings, and performance through your dashboard." }
+      "step1": {
+        "title": "Register as a Fleet Owner",
+        "description": "Provide your business and ownership details to join the platform."
+      },
+      "step2": {
+        "title": "Add Vehicles",
+        "description": "Add all your cars or motorcycles and upload required documents."
+      },
+      "step3": {
+        "title": "Assign Drivers",
+        "description": "Use your existing drivers or onboard new ones to your fleet."
+      },
+      "step4": {
+        "title": "Go Live & Earn",
+        "description": "Track trips, earnings, and performance through your dashboard."
+      }
     },
     "cta": {
       "title": "Ready to grow your fleet?",

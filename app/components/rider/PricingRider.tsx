@@ -238,71 +238,71 @@ export default function PricingForm() {
   const [fareData, setFareData] = useState<any>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [toastError, setToastError] = useState(false);
-    const RIDE_TYPES = ["Car", "Motorcycle"] as const;
-    type RideType = (typeof RIDE_TYPES)[number];
+  const RIDE_TYPES = ["Car", "Motorcycle"] as const;
+  type RideType = (typeof RIDE_TYPES)[number];
 
-    const [rideType, setRideType] = useState<RideType>("Car");
+  const [rideType, setRideType] = useState<RideType>("Car");
 
   if (!isLoaded) return null;
 
   const handleCheckPrices = async () => {
-  setFareData(null);
-  setToastMessage(null);
-
-  if (!pickupCoords || !destinationCoords) {
-    setToastMessage(t("form.errors.missingLocations"));
-    setToastError(true);
-    setTimeout(() => setToastMessage(null), 4000);
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    const res = await fetch(`${BASE_URL}/api/v1/public/estimate-fare`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        pickup_lat: pickupCoords.lat,
-        pickup_lon: pickupCoords.lon,
-        dropoff_lat: destinationCoords.lat,
-        dropoff_lon: destinationCoords.lon,
-        vehicle_type: rideType,
-      }),
-    });
-
-    const json = await res.json();
-    if (json.status !== "success") {
-      throw new Error(t("form.errors.generic"));
-    }
-
-    setFareData(json.data);
-
-    if (json.data.available_drivers === 0) {
-      setToastMessage(t("form.availability.none"));
-      setToastError(true);
-    } else {
-      setToastMessage(
-        t("form.availability.available", {
-          count: json.data.available_drivers,
-        })
-      );
-      setToastError(false);
-    }
-
-    setTimeout(() => setToastMessage(null), 4000);
-  } catch {
-    setToastMessage(t("form.errors.generic"));
-    setToastError(true);
     setFareData(null);
-    setTimeout(() => setToastMessage(null), 4000);
-  } finally {
-    setLoading(false);
-  }
-};
+    setToastMessage(null);
+
+    if (!pickupCoords || !destinationCoords) {
+      setToastMessage(t("form.errors.missingLocations"));
+      setToastError(true);
+      setTimeout(() => setToastMessage(null), 4000);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${BASE_URL}/api/v1/public/estimate-fare`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pickup_lat: pickupCoords.lat,
+          pickup_lon: pickupCoords.lon,
+          dropoff_lat: destinationCoords.lat,
+          dropoff_lon: destinationCoords.lon,
+          vehicle_type: rideType,
+        }),
+      });
+
+      const json = await res.json();
+      if (json.status !== "success") {
+        throw new Error(t("form.errors.generic"));
+      }
+
+      setFareData(json.data);
+
+      if (json.data.available_drivers === 0) {
+        setToastMessage(t("form.availability.none"));
+        setToastError(true);
+      } else {
+        setToastMessage(
+          t("form.availability.available", {
+            count: json.data.available_drivers,
+          })
+        );
+        setToastError(false);
+      }
+
+      setTimeout(() => setToastMessage(null), 4000);
+    } catch {
+      setToastMessage(t("form.errors.generic"));
+      setToastError(true);
+      setFareData(null);
+      setTimeout(() => setToastMessage(null), 4000);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <section>
+    <section className="pt-[30px] lg:pt-0">
       <div className="container">
         {/* Header */}
         <div className="flex flex-col items-center justify-center mb-[58px]">
@@ -320,101 +320,101 @@ export default function PricingForm() {
           <div className="w-full flex flex-col gap-y-5">
             {/* Pickup */}
             <div className="space-y-2">
-               <label className="text-[16px] text-[#02093A] font-normal">
-                 {t("form.pickupPlaceholder")}
-               </label>
-               <Autocomplete
-              onLoad={(auto) => setPickupAuto(auto)}
-              onPlaceChanged={() => {
-                if (!pickupAuto) return;
-                const place = pickupAuto.getPlace();
-                if (!place.geometry) return;
-                setPickup(place.formatted_address || "");
-                setPickupCoords({ lat: place.geometry.location.lat(), lon: place.geometry.location.lng() });
-              }}
-            >
+              <label className="text-[16px] text-[#02093A] font-normal">
+                {t("form.pickupPlaceholder")}
+              </label>
+              <Autocomplete
+                onLoad={(auto) => setPickupAuto(auto)}
+                onPlaceChanged={() => {
+                  if (!pickupAuto) return;
+                  const place = pickupAuto.getPlace();
+                  if (!place.geometry) return;
+                  setPickup(place.formatted_address || "");
+                  setPickupCoords({ lat: place.geometry.location.lat(), lon: place.geometry.location.lng() });
+                }}
+              >
 
-               <div className="relative">
-                 <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                   <img
-                     src="/en/Arrow.svg"
-                     alt="icon"
-                     width={20}
-                     height={20}
-                   />
-                 </div>
+                <div className="relative">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                    <img
+                      src="/en/Arrow.svg"
+                      alt="icon"
+                      width={20}
+                      height={20}
+                    />
+                  </div>
 
-                 <input
-                  value={pickup}
-                  onChange={(e) => setPickup(e.target.value)}
-                  type="text"
-                  className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-                 />
-               </div>
-            </Autocomplete>
+                  <input
+                    value={pickup}
+                    onChange={(e) => setPickup(e.target.value)}
+                    type="text"
+                    className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A20602]"
+                  />
+                </div>
+              </Autocomplete>
 
-             </div>
+            </div>
 
-             {/* Destination */}
-             <div className="space-y-2">
-               <label className="text-[16px] text-[#02093A] font-normal">
-                 {t("form.destinationPlaceholder")}
-               </label>
-               <Autocomplete
-              onLoad={(auto) => setDestinationAuto(auto)}
-              onPlaceChanged={() => {
-                if (!destinationAuto) return;
-                const place = destinationAuto.getPlace();
-                if (!place.geometry) return;
-                setDestination(place.formatted_address || "");
-                setDestinationCoords({ lat: place.geometry.location.lat(), lon: place.geometry.location.lng() });
-              }}
-            >
-               <div className="relative">
-                 <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                   <img
-                     src="/en/Arrow.svg"
-                     alt="icon"
-                     width={20}
-                     height={20}
-                   />
-                 </div>
+            {/* Destination */}
+            <div className="space-y-2">
+              <label className="text-[16px] text-[#02093A] font-normal">
+                {t("form.destinationPlaceholder")}
+              </label>
+              <Autocomplete
+                onLoad={(auto) => setDestinationAuto(auto)}
+                onPlaceChanged={() => {
+                  if (!destinationAuto) return;
+                  const place = destinationAuto.getPlace();
+                  if (!place.geometry) return;
+                  setDestination(place.formatted_address || "");
+                  setDestinationCoords({ lat: place.geometry.location.lat(), lon: place.geometry.location.lng() });
+                }}
+              >
+                <div className="relative">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                    <img
+                      src="/en/Arrow.svg"
+                      alt="icon"
+                      width={20}
+                      height={20}
+                    />
+                  </div>
 
-                 <input
-                 value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-                   type="text"
-                   className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-                 />
-               </div>
+                  <input
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    type="text"
+                    className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A20602]"
+                  />
+                </div>
 
-            </Autocomplete>
+              </Autocomplete>
 
-             </div>
+            </div>
 
             {/* Ride Type */}
             <div className="space-y-2">
               <label className="text-sm font-medium text-[#02093A]"> {t("form.rideTypePlaceholder")}</label>
               <div className="relative flex items-center">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2">{RIDE_ICONS[rideType]}</div>
-              <select
-            value={rideType}
-            onChange={(e) => setRideType(e.target.value as RideType)}
-            className="w-full h-14 pl-12 pr-10 bg-[#F5F5F5] rounded-lg"
-          >
-            {RIDE_TYPES.map((r) => (
-              <option key={r} value={r}>
-                {t(`form.rideTypes.${r}`)}
-              </option>
-            ))}
-          </select>
+                <select
+                  value={rideType}
+                  onChange={(e) => setRideType(e.target.value as RideType)}
+                  className="w-full h-14 pl-12 pr-10 bg-[#F5F5F5] rounded-lg"
+                >
+                  {RIDE_TYPES.map((r) => (
+                    <option key={r} value={r}>
+                      {t(`form.rideTypes.${r}`)}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
 
             {/* Buttons */}
             <div className="flex items-center justify-center gap-3 pt-2">
               <Button type="button" style="danger" css="w-[161px]" fn={handleCheckPrices}>
-                  {loading ? loading : t("form.cta")}
+                {loading ? loading : t("form.cta")}
               </Button>
               <Button type="button" style="nobg" css="min-w-[180px]" fn={gotoWaitlist}>
                 {t("form.loginInstead")}
@@ -425,9 +425,8 @@ export default function PricingForm() {
             {toastMessage && (
               <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
                 <div
-                  className={`inline-block rounded-[50px] px-6 py-3 shadow-lg animate-slide-up ${
-                    toastError ? "bg-[#FDECEC] text-[#FF4D4F]" : "bg-[#E9F9EE] text-[#22C553]"
-                  }`}
+                  className={`inline-block rounded-[50px] px-6 py-3 shadow-lg animate-slide-up ${toastError ? "bg-[#FDECEC] text-[#FF4D4F]" : "bg-[#E9F9EE] text-[#22C553]"
+                    }`}
                 >
                   <p className="text-center text-[18px]">{toastMessage}</p>
                 </div>

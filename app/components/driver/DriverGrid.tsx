@@ -99,7 +99,7 @@ export default function DriverGrid() {
   const driverSteps: DriverStep[] = getDriverSteps(t);
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white hidden lg:block">
       <div className="container py-[32px] md:py-[50px] lg:py-[72px]">
         <div className="flex items-center justify-center flex-col mb-[58px]">
           <div className="mb-[24px]">
@@ -119,9 +119,8 @@ export default function DriverGrid() {
             >
               {/* Image */}
               <div
-                className={`relative order-1 min-h-[240px] w-full max-w-full overflow-hidden rounded-lg md:h-[280px] ${
-                  index % 2 === 0 ? "md:order-1 lg:order-2" : ""
-                }`}
+                className={`relative order-1 min-h-[240px] w-full max-w-full overflow-hidden rounded-lg md:h-[280px] ${index % 2 === 0 ? "md:order-1 lg:order-2" : ""
+                  }`}
               >
                 <Image
                   priority

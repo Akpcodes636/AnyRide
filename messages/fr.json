@@ -124,17 +124,17 @@
         "checkPrices": "Vérifier les prix",
         "loginInstead": "Se connecter plutôt",
         "options": [
-        "Voiture",
-        "Moto"
-      ],
+          "Voiture",
+          "Moto"
+        ],
         "errors": {
-        "missingLocations": "Veuillez sélectionner le point de départ et la destination dans les suggestions",
-        "generic": "Une erreur s’est produite. Veuillez réessayer."
-      },
-      "loading": {
-      "checkingPrices": "Vérification des prix..."
-       }
-     }
+          "missingLocations": "Veuillez sélectionner le point de départ et la destination dans les suggestions",
+          "generic": "Une erreur s’est produite. Veuillez réessayer."
+        },
+        "loading": {
+          "checkingPrices": "Vérification des prix..."
+        }
+      }
     },
     "safety": {
       "subtitle": "Sécurité & Confiance",
@@ -684,19 +684,19 @@
       ]
     },
     "form": {
-  "sectionTitle": "Formulaire de partenariat",
-  "name": "Votre nom complet",
-  "company": "Nom de l'entreprise",
-  "email": "Adresse e-mail",
-  "phone": "Numéro de téléphone (facultatif)",
-  "message": "Parlez-nous de votre intérêt pour le partenariat...",
-  "submit": "Envoyer la demande",
-   "success": "Formulaire envoyé avec succès !",
+      "sectionTitle": "Formulaire de partenariat",
+      "name": "Votre nom complet",
+      "company": "Nom de l'entreprise",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone (facultatif)",
+      "message": "Parlez-nous de votre intérêt pour le partenariat...",
+      "submit": "Envoyer la demande",
+      "success": "Formulaire envoyé avec succès !",
       "errors": {
         "failed": "Échec de l'envoi du formulaire. Veuillez réessayer.",
         "network": "Problème réseau. Veuillez vérifier votre connexion."
       }
-  },
+    },
     "expansionRoadmap": {
       "title": "Feuille de route de l'expansion du partenariat",
       "description": "Voici comment nous construisons l'écosystème complet de transport/taxi étape par étape.",
@@ -897,8 +897,8 @@
       "description": "Réservez des trajets sûrs et abordables avec des chauffeurs vérifiés en voiture ou à moto — le tout depuis une seule application.",
       "cta": "Réserver un trajet",
       "image": "/images/rider.png"
-    }, 
-   "guides": {
+    },
+    "guides": {
       "subtitle": "Guides",
       "title": "Comment rouler avec AnyRide",
       "description": "Se déplacer n’a jamais été aussi simple. Demandez un trajet, soyez mis en relation et voyagez en toute confiance — en quelques minutes.",
@@ -924,78 +924,70 @@
       ]
     },
     "pricing": {
-  "title": "Tarifs clairs. Aucune surprise.",
-  "subtitle": "Tarification et transparence",
-  "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
-
-  "plans": {
-    "baseFare": {
-      "title": "Tarif de base",
-      "text": "Début du trajet",
-      "amount": "CDF 2 000"
-    },
-    "perKm": {
-      "title": "Par Km",
-      "text": "Basé sur la distance",
-      "amount": "CDF 650"
-    },
-    "perMinutes": {
-      "title": "Par minute",
-      "text": "Temps & trafic",
-      "amount": "CDF 90"
-    }
-  },
-
-  "form": {
-    "location": "Congo",
-    "pickupPlaceholder": "Entrez le lieu de prise en charge",
-    "destinationPlaceholder": "Entrez la destination",
-    "rideTypePlaceholder": "Sélectionnez le type de trajet",
-    "loginInstead": "Se connecter à la place",
-    "cta": "Vérifier le prix",
-
-    "rideTypes": {
-      "Car": "Voiture",
-      "Motorcycle": "Moto"
-    },
-
-    "loading": {
-      "checkingPrices": "Vérification des prix..."
-    },
-
-    "errors": {
-      "missingLocations": "Veuillez sélectionner le lieu de départ et la destination dans les suggestions",
-      "generic": "Une erreur s’est produite. Veuillez réessayer."
-    },
-
-    "availability": {
-      "none": "Aucune course disponible dans votre zone",
-      "available": "{count} courses disponibles dans votre zone"
-    }
-  },
-
-  "exampleBreakdown": {
-    "currency": "CDF",
-    "items": [
-      {
-        "label": "Tarif de base",
-        "description": "Début du trajet",
-        "amount": "2,000"
+      "title": "Tarifs clairs. Aucune surprise.",
+      "subtitle": "Tarification et transparence",
+      "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
+      "plans": {
+        "baseFare": {
+          "title": "Tarif de base",
+          "text": "Début du trajet",
+          "amount": "CDF 2 000"
+        },
+        "perKm": {
+          "title": "Par Km",
+          "text": "Basé sur la distance",
+          "amount": "CDF 650"
+        },
+        "perMinutes": {
+          "title": "Par minute",
+          "text": "Temps & trafic",
+          "amount": "CDF 90"
+        }
       },
-      {
-        "label": "Par Km",
-        "description": "Basé sur la distance",
-        "amount": "650"
+      "form": {
+        "location": "Congo",
+        "pickupPlaceholder": "Entrez le lieu de prise en charge",
+        "destinationPlaceholder": "Entrez la destination",
+        "rideTypePlaceholder": "Sélectionnez le type de trajet",
+        "loginInstead": "Se connecter à la place",
+        "cta": "Vérifier le prix",
+        "rideTypes": {
+          "Car": "Voiture",
+          "Motorcycle": "Moto"
+        },
+        "loading": {
+          "checkingPrices": "Vérification des prix..."
+        },
+        "errors": {
+          "missingLocations": "Veuillez sélectionner le lieu de départ et la destination dans les suggestions",
+          "generic": "Une erreur s’est produite. Veuillez réessayer."
+        },
+        "availability": {
+          "none": "Aucune course disponible dans votre zone",
+          "available": "{count} courses disponibles dans votre zone"
+        }
       },
-      {
-        "label": "Par minute",
-        "description": "Temps & trafic",
-        "amount": "90"
+      "exampleBreakdown": {
+        "currency": "CDF",
+        "items": [
+          {
+            "label": "Tarif de base",
+            "description": "Début du trajet",
+            "amount": "2,000"
+          },
+          {
+            "label": "Par Km",
+            "description": "Basé sur la distance",
+            "amount": "650"
+          },
+          {
+            "label": "Par minute",
+            "description": "Temps & trafic",
+            "amount": "90"
+          }
+        ]
       }
-    ]
-  }
-}
-,
+    },
     "benefits": {
       "subtitle": "Avantages",
       "title": "Pourquoi les passagers choisissent AnyRide",
@@ -1106,10 +1098,22 @@
     },
     "how": {
       "title": "Comment ça marche",
-      "step1": { "title": "Inscrivez-vous en tant que propriétaire de flotte", "description": "Fournissez les informations de votre entreprise et de propriété pour rejoindre la plateforme." },
-      "step2": { "title": "Ajoutez des véhicules", "description": "Ajoutez toutes vos voitures ou motos et téléchargez les documents requis." },
-      "step3": { "title": "Attribuez des conducteurs", "description": "Utilisez vos conducteurs existants ou intégrez-en de nouveaux dans votre flotte." },
-      "step4": { "title": "Activez & gagnez", "description": "Suivez les trajets, les revenus et les performances via votre tableau de bord." }
+      "step1": {
+        "title": "Inscrivez-vous en tant que propriétaire de flotte",
+        "description": "Fournissez les informations de votre entreprise et de propriété pour rejoindre la plateforme."
+      },
+      "step2": {
+        "title": "Ajoutez des véhicules",
+        "description": "Ajoutez toutes vos voitures ou motos et téléchargez les documents requis."
+      },
+      "step3": {
+        "title": "Attribuez des conducteurs",
+        "description": "Utilisez vos conducteurs existants ou intégrez-en de nouveaux dans votre flotte."
+      },
+      "step4": {
+        "title": "Activez & gagnez",
+        "description": "Suivez les trajets, les revenus et les performances via votre tableau de bord."
+      }
     },
     "cta": {
       "title": "Prêt à développer votre flotte ?",

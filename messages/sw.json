@@ -124,16 +124,16 @@
         "checkPrices": "Angalia bei",
         "loginInstead": "Ingia badala yake",
         "options": [
-        "Gari",
-        "Pikipiki"
+          "Gari",
+          "Pikipiki"
         ],
         "errors": {
-        "missingLocations": "Tafadhali chagua mahali pa kuanzia na pa kufika kutoka kwenye mapendekezo",
-        "generic": "Kuna hitilafu. Tafadhali jaribu tena."
+          "missingLocations": "Tafadhali chagua mahali pa kuanzia na pa kufika kutoka kwenye mapendekezo",
+          "generic": "Kuna hitilafu. Tafadhali jaribu tena."
         },
-      "loading": {
-      "checkingPrices": "Inaangalia bei..."
-}
+        "loading": {
+          "checkingPrices": "Inaangalia bei..."
+        }
       }
     },
     "safety": {
@@ -684,14 +684,14 @@
       ]
     },
     "form": {
-    "sectionTitle": "Fomu ya Lisungi ya Bato",
-    "name": "Kombo na yo mobimba",
-    "company": "Kombo ya Compagnie",
-    "email": "Email Adresi",
-    "phone": "Numero ya Telefone (soki olingi)",
-    "message": "Teya biso likambo ya lisungi oyo olingi...",
-    "submit": "Tuma Fomu",
-    "success": "Fomu imetumwa kwa mafanikio!",
+      "sectionTitle": "Fomu ya Lisungi ya Bato",
+      "name": "Kombo na yo mobimba",
+      "company": "Kombo ya Compagnie",
+      "email": "Email Adresi",
+      "phone": "Numero ya Telefone (soki olingi)",
+      "message": "Teya biso likambo ya lisungi oyo olingi...",
+      "submit": "Tuma Fomu",
+      "success": "Fomu imetumwa kwa mafanikio!",
       "errors": {
         "failed": "Imeshindikana kutuma fomu. Tafadhali jaribu tena.",
         "network": "Tatizo la mtandao. Tafadhali angalia muunganisho wako."
@@ -876,78 +876,71 @@
         }
       ]
     },
-   "pricing": {
-  "title": "Bei wazi. Hakuna mshangao.",
-  "subtitle": "Bei na uwazi",
-  "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna mabadiliko ya ghafla wala ada zilizofichwa.",
-
-  "plans": {
-    "baseFare": {
-      "title": "Ada ya kuanzia",
-      "text": "Huanzisha safari",
-      "amount": "CDF 2,000"
-    },
-    "perKm": {
-      "title": "Kwa Km",
-      "text": "Kulingana na umbali",
-      "amount": "CDF 650"
-    },
-    "perMinutes": {
-      "title": "Kwa dakika",
-      "text": "Muda & trafiki",
-      "amount": "CDF 90"
-    }
-  },
-
-  "form": {
-    "location": "Kongo",
-    "pickupPlaceholder": "Weka eneo la kuchukuliwa",
-    "destinationPlaceholder": "Weka unakoenda",
-    "rideTypePlaceholder": "Chagua aina ya usafiri",
-    "loginInstead": "Ingia badala yake",
-    "cta": "Angalia bei",
-
-    "rideTypes": {
-      "Car": "Gari",
-      "Motorcycle": "Pikipiki"
-    },
-
-    "loading": {
-      "checkingPrices": "Inakagua bei..."
-    },
-
-    "errors": {
-      "missingLocations": "Tafadhali chagua mahali pa kuchukuliwa na unakoenda kutoka kwenye mapendekezo",
-      "generic": "Kuna tatizo. Tafadhali jaribu tena."
-    },
-
-    "availability": {
-      "none": "Hakuna usafiri unaopatikana katika eneo lako",
-      "available": "Usafiri {count} unapatikana katika eneo lako"
-    }
-  },
-
-  "exampleBreakdown": {
-    "currency": "CDF",
-    "items": [
-      {
-        "label": "Ada ya kuanzia",
-        "description": "Huanzisha safari",
-        "amount": "2,000"
+    "pricing": {
+      "title": "Bei wazi. Hakuna mshangao.",
+      "subtitle": "Bei na uwazi",
+      "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna mabadiliko ya ghafla wala ada zilizofichwa.",
+      "plans": {
+        "baseFare": {
+          "title": "Ada ya kuanzia",
+          "text": "Huanzisha safari",
+          "amount": "CDF 2,000"
+        },
+        "perKm": {
+          "title": "Kwa Km",
+          "text": "Kulingana na umbali",
+          "amount": "CDF 650"
+        },
+        "perMinutes": {
+          "title": "Kwa dakika",
+          "text": "Muda & trafiki",
+          "amount": "CDF 90"
+        }
       },
-      {
-        "label": "Kwa Km",
-        "description": "Kulingana na umbali",
-        "amount": "650"
+      "form": {
+        "location": "Kongo",
+        "pickupPlaceholder": "Weka eneo la kuchukuliwa",
+        "destinationPlaceholder": "Weka unakoenda",
+        "rideTypePlaceholder": "Chagua aina ya usafiri",
+        "loginInstead": "Ingia badala yake",
+        "cta": "Angalia bei",
+        "rideTypes": {
+          "Car": "Gari",
+          "Motorcycle": "Pikipiki"
+        },
+        "loading": {
+          "checkingPrices": "Inakagua bei..."
+        },
+        "errors": {
+          "missingLocations": "Tafadhali chagua mahali pa kuchukuliwa na unakoenda kutoka kwenye mapendekezo",
+          "generic": "Kuna tatizo. Tafadhali jaribu tena."
+        },
+        "availability": {
+          "none": "Hakuna usafiri unaopatikana katika eneo lako",
+          "available": "Usafiri {count} unapatikana katika eneo lako"
+        }
       },
-      {
-        "label": "Kwa dakika",
-        "description": "Muda & trafiki",
-        "amount": "90"
+      "exampleBreakdown": {
+        "currency": "CDF",
+        "items": [
+          {
+            "label": "Ada ya kuanzia",
+            "description": "Huanzisha safari",
+            "amount": "2,000"
+          },
+          {
+            "label": "Kwa Km",
+            "description": "Kulingana na umbali",
+            "amount": "650"
+          },
+          {
+            "label": "Kwa dakika",
+            "description": "Muda & trafiki",
+            "amount": "90"
+          }
+        ]
       }
-    ]
-  }
-},
+    },
     "benefits": {
       "subtitle": "Manufaa",
       "title": "Kwa nini Abaleti Wanachagua AnyRide",
@@ -1030,8 +1023,8 @@
         }
       ]
     }
-  }
-  ,"FleetOwnersPage": {
+  },
+  "FleetOwnersPage": {
     "hero": {
       "title": "Kua Biashara Yako ya Fleet na AnyRide",
       "subtitle": "Simamia magari na madereva wengi, ongeza mapato, na panua operesheni kwa urahisi.",
@@ -1058,10 +1051,22 @@
     },
     "how": {
       "title": "Jinsi Inavyofanya Kazi",
-      "step1": { "title": "Jisajili kama Mmilikaji wa Fleet", "description": "Toa maelezo ya biashara na umiliki wako kujiunga na jukwaa." },
-      "step2": { "title": "Ongeza Magari", "description": "Ongeza magari yote au pikipiki zako na upakishe nyaraka zinazohitajika." },
-      "step3": { "title": "Gawa Madereva", "description": "Tumia madereva wako waliopo au ulete wapya kwenye fleet yako." },
-      "step4": { "title": "Anza & Pata Mapato", "description": "Fuatilia safari, mapato, na utendaji kupitia dashibodi yako." }
+      "step1": {
+        "title": "Jisajili kama Mmilikaji wa Fleet",
+        "description": "Toa maelezo ya biashara na umiliki wako kujiunga na jukwaa."
+      },
+      "step2": {
+        "title": "Ongeza Magari",
+        "description": "Ongeza magari yote au pikipiki zako na upakishe nyaraka zinazohitajika."
+      },
+      "step3": {
+        "title": "Gawa Madereva",
+        "description": "Tumia madereva wako waliopo au ulete wapya kwenye fleet yako."
+      },
+      "step4": {
+        "title": "Anza & Pata Mapato",
+        "description": "Fuatilia safari, mapato, na utendaji kupitia dashibodi yako."
+      }
     },
     "cta": {
       "title": "Tayari kukuza fleet yako?",
