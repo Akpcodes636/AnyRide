@@ -35,7 +35,7 @@ const AnyRide = () => {
           <div className="flex items-start justify-start gap-4 mb-6">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="w-33.75 h-10 rounded-[5px] transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+              className="w-33.75 h-10 rounded-[5px] transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg cursor-pointer"
             >
               <Image
                 width={135}
@@ -48,7 +48,7 @@ const AnyRide = () => {
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="w-33.75 h-10 rounded-[5px] transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+              className="w-33.75 h-10 rounded-[5px] transition-transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg cursor-pointer"
             >
               <Image
                 width={135}

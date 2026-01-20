@@ -123,11 +123,17 @@
         "locationBadge": "",
         "checkPrices": "Check prices",
         "loginInstead": "Login instead",
-        "options": [
-          "Abuja, Nigeria",
-          "Lagos, Nigeria",
-          "Port Harcourt, Nigeria"
-        ]
+          "options": [
+              "Car",
+           "Motorcycle"
+        ],
+      "errors": {
+        "missingLocations": "Please select pickup and destination from suggestions",
+        "generic": "Something went wrong. Please try again."
+      },
+      "loading": {
+        "checkingPrices": "Checking prices..."
+      }
       }
     },
     "safety": {
@@ -921,13 +927,32 @@
           "amount": "CDF 90"
         }
       },
-      "form": {
+            "form": {
         "location": "Congo",
         "pickupPlaceholder": "Enter pickup location",
         "destinationPlaceholder": "Enter destination",
         "rideTypePlaceholder": "Enter ride type",
         "loginInstead": "Login instead",
-        "cta": "Check price"
+        "cta": "Check price",
+
+        "rideTypes": {
+          "Car": "Car",
+          "Motorcycle": "Motorcycle"
+        },
+
+        "loading": {
+          "checkingPrices": "Checking prices..."
+        },
+
+        "errors": {
+          "missingLocations": "Please select pickup and destination from suggestions",
+          "generic": "Something went wrong. Please try again."
+        },
+
+        "availability": {
+          "none": "No rides available in your area",
+          "available": "{count} rides available in your area"
+        }
       },
       "exampleBreakdown": {
         "currency": "CDF",

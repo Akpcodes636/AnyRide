@@ -115,19 +115,25 @@
       "descriptions": "Fika unakoenda haraka zaidi, kwa usalama na kwa bei ya haki.",
       "form": {
         "pickupLabel": "Weka mahali pa kukuchukua",
-        "pickupPlaceholder": "Abuja, Nigeria",
+        "pickupPlaceholder": "",
         "destinationLabel": "Weka mahali unakokwenda",
-        "destinationPlaceholder": "Abuja, Nigeria",
+        "destinationPlaceholder": "",
         "rideTypeLabel": "Weka aina ya safari",
         "rideTypePlaceholder": "Chagua jiji",
         "locationBadge": "Abuja, Nigeria",
         "checkPrices": "Angalia bei",
         "loginInstead": "Ingia badala yake",
         "options": [
-          "Abuja, Nigeria",
-          "Lagos, Nigeria",
-          "Port Harcourt, Nigeria"
-        ]
+        "Gari",
+        "Pikipiki"
+        ],
+        "errors": {
+        "missingLocations": "Tafadhali chagua mahali pa kuanzia na pa kufika kutoka kwenye mapendekezo",
+        "generic": "Kuna hitilafu. Tafadhali jaribu tena."
+        },
+      "loading": {
+      "checkingPrices": "Inaangalia bei..."
+}
       }
     },
     "safety": {
@@ -869,56 +875,78 @@
         }
       ]
     },
-    "pricing": {
-      "title": "Bei wazi. Hakuna mshangao.",
-      "subtitle": "Bei na uwazi",
-      "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna ada zilizofichwa.",
-      "plans": {
-        "baseFare": {
-          "title": "Kiwango cha msingi",
-          "text": "Anza safari",
-          "amount": "CDF 2,000"
-        },
-        "perKm": {
-          "title": "Kwa Km",
-          "text": "Kulingana na umbali",
-          "amount": "CDF 650"
-        },
-        "perMinutes": {
-          "title": "Kwa dakika",
-          "text": "Muda & trafiki",
-          "amount": "CDF 90"
-        }
-      },
-      "form": {
-        "location": "Congo",
-        "pickupPlaceholder": "Weka mahali pa kuanzia",
-        "destinationPlaceholder": "Weka unakoenda",
-        "rideTypePlaceholder": "Chagua aina ya safari",
-        "loginInstead": "Ingia badala yake?",
-        "cta": "Angalia bei"
-      },
-      "exampleBreakdown": {
-        "currency": "CDF",
-        "items": [
-          {
-            "label": "Ada ya kuanzia",
-            "description": "Huanzisha safari",
-            "amount": "2,000"
-          },
-          {
-            "label": "Kwa km",
-            "description": "Kulingana na umbali",
-            "amount": "650"
-          },
-          {
-            "label": "Kwa dakika",
-            "description": "Muda na msongamano",
-            "amount": "90"
-          }
-        ]
-      }
+   "pricing": {
+  "title": "Bei wazi. Hakuna mshangao.",
+  "subtitle": "Bei na uwazi",
+  "description": "Bei unayoona kabla ya safari ndiyo unayolipa. Hakuna mabadiliko ya ghafla wala ada zilizofichwa.",
+
+  "plans": {
+    "baseFare": {
+      "title": "Ada ya kuanzia",
+      "text": "Huanzisha safari",
+      "amount": "CDF 2,000"
     },
+    "perKm": {
+      "title": "Kwa Km",
+      "text": "Kulingana na umbali",
+      "amount": "CDF 650"
+    },
+    "perMinutes": {
+      "title": "Kwa dakika",
+      "text": "Muda & trafiki",
+      "amount": "CDF 90"
+    }
+  },
+
+  "form": {
+    "location": "Kongo",
+    "pickupPlaceholder": "Weka eneo la kuchukuliwa",
+    "destinationPlaceholder": "Weka unakoenda",
+    "rideTypePlaceholder": "Chagua aina ya usafiri",
+    "loginInstead": "Ingia badala yake",
+    "cta": "Angalia bei",
+
+    "rideTypes": {
+      "Car": "Gari",
+      "Motorcycle": "Pikipiki"
+    },
+
+    "loading": {
+      "checkingPrices": "Inakagua bei..."
+    },
+
+    "errors": {
+      "missingLocations": "Tafadhali chagua mahali pa kuchukuliwa na unakoenda kutoka kwenye mapendekezo",
+      "generic": "Kuna tatizo. Tafadhali jaribu tena."
+    },
+
+    "availability": {
+      "none": "Hakuna usafiri unaopatikana katika eneo lako",
+      "available": "Usafiri {count} unapatikana katika eneo lako"
+    }
+  },
+
+  "exampleBreakdown": {
+    "currency": "CDF",
+    "items": [
+      {
+        "label": "Ada ya kuanzia",
+        "description": "Huanzisha safari",
+        "amount": "2,000"
+      },
+      {
+        "label": "Kwa Km",
+        "description": "Kulingana na umbali",
+        "amount": "650"
+      },
+      {
+        "label": "Kwa dakika",
+        "description": "Muda & trafiki",
+        "amount": "90"
+      }
+    ]
+  }
+},
     "benefits": {
       "subtitle": "Manufaa",
       "title": "Kwa nini Abaleti Wanachagua AnyRide",

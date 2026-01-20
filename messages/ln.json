@@ -124,10 +124,16 @@
         "checkPrices": "Tala mbongo",
         "loginInstead": "Kokota na esika",
         "options": [
-          "Abuja, Nigeria",
-          "Lagos, Nigeria",
-          "Port Harcourt, Nigeria"
-        ]
+        "Motuka",
+        "Moto"
+        ],
+        "errors": {
+        "missingLocations": "Svp pona esika ya ebandeli mpe ya suka na ba suggestion",
+        "generic": "Likambo moko esalemi. Svp meka lisusu."
+        },
+        "loading": {
+        "checkingPrices": "Kotalela ntalo..."
+    }
       }
     },
     "safety": {
@@ -901,55 +907,78 @@
       ]
     },
     "pricing": {
-      "title": "Mbongo ya polele. Likambo ya kokamwa te.",
-      "subtitle": "Mbongo & Polele",
-      "description": "Oyo omoni liboso ya kotambola nde ofutaka. Ba-changements ya mbala moko te, ba-frais ya kobombama te.",
-      "plans": {
-        "baseFare": {
-          "title": "Mbongo ya moboko",
-          "text": "Ebandisi transport",
-          "amount": "CDF 2,000"
-        },
-        "perKm": {
-          "title": "Na Km",
-          "text": "Na ntaka",
-          "amount": "CDF 650"
-        },
-        "perMinutes": {
-          "title": "Na miniti",
-          "text": "Ntango & traffic",
-          "amount": "CDF 90"
-        }
-      },
-      "form": {
-        "location": "Congo",
-        "pickupPlaceholder": "Kota esika ya kokóta",
-        "destinationPlaceholder": "Kota esika okokende",
-        "rideTypePlaceholder": "Kota lolenge ya transport",
-        "loginInstead": "Kokota na esika",
-        "cta": "Tala mbongo"
-      },
-      "exampleBreakdown": {
-        "currency": "CDF",
-        "items": [
-          {
-            "label": "Mbongo ya moboko",
-            "description": "Ebandisi transport",
-            "amount": "2,000"
-          },
-          {
-            "label": "Na Km",
-            "description": "Na ntaka",
-            "amount": "650"
-          },
-          {
-            "label": "Na miniti",
-            "description": "Ntango & traffic",
-            "amount": "90"
-          }
-        ]
-      }
+  "title": "Mbongo ya polele. Likambo ya kokamwa te.",
+  "subtitle": "Mbongo & Polele",
+  "description": "Oyo omoni liboso ya kotambola nde ofutaka. Mbongwana ya mbalakaka te, mbongo ya kobombama te.",
+
+  "plans": {
+    "baseFare": {
+      "title": "Mbongo ya moboko",
+      "text": "Ebandisi mobembo",
+      "amount": "CDF 2,000"
     },
+    "perKm": {
+      "title": "Na Km",
+      "text": "Na ntaka",
+      "amount": "CDF 650"
+    },
+    "perMinutes": {
+      "title": "Na miniti",
+      "text": "Ntango & trafic",
+      "amount": "CDF 90"
+    }
+  },
+
+  "form": {
+    "location": "Congo",
+    "pickupPlaceholder": "Tyá esika ya ebandeli",
+    "destinationPlaceholder": "Tyá esika ya suka",
+    "rideTypePlaceholder": "Pona lolenge ya transport",
+    "loginInstead": "Kóta na esika na yango",
+    "cta": "Talá mbongo",
+
+    "rideTypes": {
+      "Car": "Motuka",
+      "Motorcycle": "Moto"
+    },
+
+    "loading": {
+      "checkingPrices": "Kotalela mbongo..."
+    },
+
+    "errors": {
+      "missingLocations": "Pona esika ya ebandeli mpe ya suka uta na ba-suggestions",
+      "generic": "Likambo moko esalemi. Meka lisusu."
+    },
+
+    "availability": {
+      "none": "Transport moko te ezali na esika na yo",
+      "available": "Transport {count} ezali na esika na yo"
+    }
+  },
+
+  "exampleBreakdown": {
+    "currency": "CDF",
+    "items": [
+      {
+        "label": "Mbongo ya moboko",
+        "description": "Ebandisi mobembo",
+        "amount": "2,000"
+      },
+      {
+        "label": "Na Km",
+        "description": "Na ntaka",
+        "amount": "650"
+      },
+      {
+        "label": "Na miniti",
+        "description": "Ntango & trafic",
+        "amount": "90"
+      }
+    ]
+  }
+}
+,
     "benefits": {
       "subtitle": "Matomba",
       "title": "Mpo na nini Bato oyo bazali Kotambola Baponaka AnyRide",

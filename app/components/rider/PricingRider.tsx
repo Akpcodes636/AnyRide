@@ -197,6 +197,7 @@
 //   );
 // }
 
+
 "use client";
 
 import { useState } from "react";
@@ -232,60 +233,73 @@ export default function PricingForm() {
   const [destinationCoords, setDestinationCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [pickupAuto, setPickupAuto] = useState<any>(null);
   const [destinationAuto, setDestinationAuto] = useState<any>(null);
-  const [rideType, setRideType] = useState(RIDE_TYPES[0]);
+  // const [rideType, setRideType] = useState(RIDE_TYPES[0]);
   const [loading, setLoading] = useState(false);
   const [fareData, setFareData] = useState<any>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [toastError, setToastError] = useState(false);
+    const RIDE_TYPES = ["Car", "Motorcycle"] as const;
+    type RideType = (typeof RIDE_TYPES)[number];
+
+    const [rideType, setRideType] = useState<RideType>("Car");
 
   if (!isLoaded) return null;
 
   const handleCheckPrices = async () => {
+  setFareData(null);
+  setToastMessage(null);
+
+  if (!pickupCoords || !destinationCoords) {
+    setToastMessage(t("form.errors.missingLocations"));
+    setToastError(true);
+    setTimeout(() => setToastMessage(null), 4000);
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    const res = await fetch(`${BASE_URL}/api/v1/public/estimate-fare`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        pickup_lat: pickupCoords.lat,
+        pickup_lon: pickupCoords.lon,
+        dropoff_lat: destinationCoords.lat,
+        dropoff_lon: destinationCoords.lon,
+        vehicle_type: rideType,
+      }),
+    });
+
+    const json = await res.json();
+    if (json.status !== "success") {
+      throw new Error(t("form.errors.generic"));
+    }
+
+    setFareData(json.data);
+
+    if (json.data.available_drivers === 0) {
+      setToastMessage(t("form.availability.none"));
+      setToastError(true);
+    } else {
+      setToastMessage(
+        t("form.availability.available", {
+          count: json.data.available_drivers,
+        })
+      );
+      setToastError(false);
+    }
+
+    setTimeout(() => setToastMessage(null), 4000);
+  } catch {
+    setToastMessage(t("form.errors.generic"));
+    setToastError(true);
     setFareData(null);
-    setToastMessage(null);
-
-    if (!pickupCoords || !destinationCoords) {
-      setToastMessage("Please select pickup and destination from suggestions");
-      setToastError(true);
-      return setTimeout(() => setToastMessage(null), 4000);
-    }
-
-    setLoading(true);
-    try {
-      const res = await fetch(`${BASE_URL}/api/v1/public/estimate-fare`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          pickup_lat: pickupCoords.lat,
-          pickup_lon: pickupCoords.lon,
-          dropoff_lat: destinationCoords.lat,
-          dropoff_lon: destinationCoords.lon,
-          vehicle_type: rideType,
-        }),
-      });
-      const json = await res.json();
-      if (json.status !== "success") throw new Error(json.message || "API error");
-
-      setFareData(json.data);
-
-      if (json.data.available_drivers === 0) {
-        setToastMessage("No rides available in your area");
-        setToastError(true);
-      } else {
-        setToastMessage(`${json.data.available_drivers} rides available in your area`);
-        setToastError(false);
-      }
-
-      setTimeout(() => setToastMessage(null), 4000);
-    } catch (err: any) {
-      setToastMessage(err.message || "Something went wrong");
-      setToastError(true);
-      setFareData(null);
-      setTimeout(() => setToastMessage(null), 4000);
-    } finally {
-      setLoading(false);
-    }
-  };
+    setTimeout(() => setToastMessage(null), 4000);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section>
@@ -332,9 +346,9 @@ export default function PricingForm() {
 
                  <input
                   value={pickup}
-                onChange={(e) => setPickup(e.target.value)}
-                   type="text"
-                   className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A20602]"
+                  onChange={(e) => setPickup(e.target.value)}
+                  type="text"
+                  className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A20602]"
                  />
                </div>
             </Autocomplete>
@@ -383,17 +397,17 @@ export default function PricingForm() {
               <label className="text-sm font-medium text-[#02093A]"> {t("form.rideTypePlaceholder")}</label>
               <div className="relative flex items-center">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2">{RIDE_ICONS[rideType]}</div>
-                <select
-                  value={rideType}
-                  onChange={(e) => setRideType(e.target.value)}
-                  className="w-full h-14 pl-12 pr-10 bg-[#F5F5F5] rounded-lg text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-                >
-                  {RIDE_TYPES.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
-                    </option>
-                  ))}
-                </select>
+              <select
+            value={rideType}
+            onChange={(e) => setRideType(e.target.value as RideType)}
+            className="w-full h-14 pl-12 pr-10 bg-[#F5F5F5] rounded-lg"
+          >
+            {RIDE_TYPES.map((r) => (
+              <option key={r} value={r}>
+                {t(`form.rideTypes.${r}`)}
+              </option>
+            ))}
+          </select>
               </div>
             </div>
 

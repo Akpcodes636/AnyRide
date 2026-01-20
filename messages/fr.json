@@ -115,20 +115,26 @@
       "descriptions": "Allez là où vous devez être plus rapidement, en toute sécurité et à un prix équitable.",
       "form": {
         "pickupLabel": "Entrez le lieu de prise en charge",
-        "pickupPlaceholder": "Abuja, Nigeria",
+        "pickupPlaceholder": "",
         "destinationLabel": "Entrez la destination",
-        "destinationPlaceholder": "Abuja, Nigeria",
+        "destinationPlaceholder": "",
         "rideTypeLabel": "Entrez le type de trajet",
         "rideTypePlaceholder": "Sélectionnez la ville",
         "locationBadge": "Abuja, Nigeria",
         "checkPrices": "Vérifier les prix",
         "loginInstead": "Se connecter plutôt",
         "options": [
-          "Abuja, Nigeria",
-          "Lagos, Nigeria",
-          "Port Harcourt, Nigeria"
-        ]
-      }
+        "Voiture",
+        "Moto"
+      ],
+        "errors": {
+        "missingLocations": "Veuillez sélectionner le point de départ et la destination dans les suggestions",
+        "generic": "Une erreur s’est produite. Veuillez réessayer."
+      },
+      "loading": {
+      "checkingPrices": "Vérification des prix..."
+       }
+     }
     },
     "safety": {
       "title": "Votre sécurité passe avant tout. Toujours.",
@@ -890,16 +896,8 @@
       "description": "Réservez des trajets sûrs et abordables avec des chauffeurs vérifiés en voiture ou à moto — le tout depuis une seule application.",
       "cta": "Réserver un trajet",
       "image": "/images/rider.png"
-    },
-    "form": {
-      "location": "Congo",
-      "pickupPlaceholder": "Entrez le lieu de départ",
-      "destinationPlaceholder": "Entrez la destination",
-      "rideTypePlaceholder": "Choisissez le type de trajet",
-      "loginInstead": "Se connecter à la place ?",
-      "cta": "Vérifier le prix"
-    },
-    "guides": {
+    }, 
+   "guides": {
       "subtitle": "Guides",
       "title": "Comment rouler avec AnyRide",
       "description": "Se déplacer n’a jamais été aussi simple. Demandez un trajet, soyez mis en relation et voyagez en toute confiance — en quelques minutes.",
@@ -925,55 +923,78 @@
       ]
     },
     "pricing": {
-      "title": "Tarifs clairs. Aucune surprise.",
-      "subtitle": "Tarification et transparence",
-      "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
-      "plans": {
-        "baseFare": {
-          "title": "Tarif de base",
-          "text": "Début du trajet",
-          "amount": "CDF 2 000"
-        },
-        "perKm": {
-          "title": "Par Km",
-          "text": "Basé sur la distance",
-          "amount": "CDF 650"
-        },
-        "perMinutes": {
-          "title": "Par minute",
-          "text": "Temps & trafic",
-          "amount": "CDF 90"
-        }
-      },
-      "form": {
-        "location": "Congo",
-        "pickupPlaceholder": "Entrez le lieu de départ",
-        "destinationPlaceholder": "Entrez la destination",
-        "rideTypePlaceholder": "Choisissez le type de trajet",
-        "loginInstead": "Se connecter à la place",
-        "cta": "Vérifier le prix"
-      },
-      "exampleBreakdown": {
-        "currency": "CDF",
-        "items": [
-          {
-            "label": "Tarif de base",
-            "description": "Démarre le trajet",
-            "amount": "2,000"
-          },
-          {
-            "label": "Par km",
-            "description": "Basé sur la distance",
-            "amount": "650"
-          },
-          {
-            "label": "Par minute",
-            "description": "Temps et trafic",
-            "amount": "90"
-          }
-        ]
-      }
+  "title": "Tarifs clairs. Aucune surprise.",
+  "subtitle": "Tarification et transparence",
+  "description": "Le prix affiché avant le trajet est le prix que vous payez. Aucun changement soudain, aucun frais caché.",
+
+  "plans": {
+    "baseFare": {
+      "title": "Tarif de base",
+      "text": "Début du trajet",
+      "amount": "CDF 2 000"
     },
+    "perKm": {
+      "title": "Par Km",
+      "text": "Basé sur la distance",
+      "amount": "CDF 650"
+    },
+    "perMinutes": {
+      "title": "Par minute",
+      "text": "Temps & trafic",
+      "amount": "CDF 90"
+    }
+  },
+
+  "form": {
+    "location": "Congo",
+    "pickupPlaceholder": "Entrez le lieu de prise en charge",
+    "destinationPlaceholder": "Entrez la destination",
+    "rideTypePlaceholder": "Sélectionnez le type de trajet",
+    "loginInstead": "Se connecter à la place",
+    "cta": "Vérifier le prix",
+
+    "rideTypes": {
+      "Car": "Voiture",
+      "Motorcycle": "Moto"
+    },
+
+    "loading": {
+      "checkingPrices": "Vérification des prix..."
+    },
+
+    "errors": {
+      "missingLocations": "Veuillez sélectionner le lieu de départ et la destination dans les suggestions",
+      "generic": "Une erreur s’est produite. Veuillez réessayer."
+    },
+
+    "availability": {
+      "none": "Aucune course disponible dans votre zone",
+      "available": "{count} courses disponibles dans votre zone"
+    }
+  },
+
+  "exampleBreakdown": {
+    "currency": "CDF",
+    "items": [
+      {
+        "label": "Tarif de base",
+        "description": "Début du trajet",
+        "amount": "2,000"
+      },
+      {
+        "label": "Par Km",
+        "description": "Basé sur la distance",
+        "amount": "650"
+      },
+      {
+        "label": "Par minute",
+        "description": "Temps & trafic",
+        "amount": "90"
+      }
+    ]
+  }
+}
+,
     "benefits": {
       "subtitle": "Avantages",
       "title": "Pourquoi les passagers choisissent AnyRide",
