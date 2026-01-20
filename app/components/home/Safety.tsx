@@ -19,7 +19,7 @@ const Safety = () => {
       {/* Header */}
       <div className="flex items-center justify-center flex-col mt-6 md:mt-10 lg:mt-14 xl:mt-18">
         <div className="mb-6">
-          <SubTitle text="Safety & Trust" css="rounded-[40px] font-normal" />
+          <SubTitle text={t("subtitle")} css="rounded-[40px] font-normal" />
         </div>
 
         <h2 className="text-center">
