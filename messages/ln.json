@@ -1100,5 +1100,111 @@
       "subtitle": "Join AnyRide lelo mpe banda kosimbisa bisika na yo na ndenge malamu.",
       "button": "Join Waitlist"
     }
+  },
+  "fleetOwner": {
+    "hero": {
+      "title": "Yangela flotte na yo. Bakisa mbongo na yo.",
+      "subtitle": "Yangela mituka mpe bakondisi mingi na bosolo na plateforme ya flotte ya AnyRide.",
+      "cta": "Tinda bosenga lokola nkolo ya flotte"
+    },
+    "definition": {
+      "title": "Nkolo ya flotte azali nani?",
+      "label": "Mokonzi ya balabala",
+      "description": "Nkolo ya flotte na AnyRide azali moto to ebongiseli oyo ezali kosalela mituka mingi na nzela ya plateforme. Na esika ya kotambwisa bango moko, bankolo ya flotte bazali koyangela bakondisi oyo basalelaka mituka mpo na kosala mosala ya transport. Flotte epesaka nzela ya kosala lokola entreprise na ba outils ya bokambi, bolandeli ya performance mpe ba rapports financiers ya kosangisa."
+    },
+    "whoCanJoin": {
+    "title": "Nani akoki kozala Mokonzi ya Balabala?",
+    "item1Title": "Bamonoki ya mabasi mingi",
+    "item1Description": "Kosala mpe kokomisa mabasi mingi na esika moko ya mobembo.",
+    "item2Title": "Batalani ya misala ya kosalela",
+    "item2Description": "Kosala misala ya kosalela na bitulisi mpe bateli ya bato.",
+    "item3Title": "Bakozi ya misala ya kosalela bato",
+    "item3Description": "Kokola misala ya kosalela bato na bokomi ya malamu, kotala mpe kopesa mbongo.",
+    "item4Title": "Bakozi ya bisika ya bato na likolo ya kompani",
+    "item4Description": "Kosala bisika ya bato ya mosala na mobembo ya etuka mpe oyo ekoki kozala na ntina.",
+    "item5Title": "Batalani ya kobakisa mabasi",
+    "item5Description": "Kosalela mabasi ya kobakisa na kotalaka ndenge bazali kosalela mpe ndenge bazali kosala malamu.",
+    "item6Title": "Bamonoki ya bato bazali kosala na bateli ya bato",
+    "item6Description": "Kosala mabasi na bateli lokola entreprise oyo ezali na strukture mpe ezali kopesa mbongo."
+  },
+    "benefits": {
+    "title": "Ndenge ya kosala flotte na AnyRide",
+    "item1Title": "Tableau de bord centralisé ya floti",
+    "item1Description": "Kotalisa bisimbi nyonso, batambwisi, mpe misala na interface moko.",
+    "item2Title": "Kotalisa performance ya batambwisi",
+    "item2Description": "Kotalisa metric, note mpe misala ya batambwisi na flotte na yo.",
+    "item3Title": "Malipo mpe rapports automatique",
+    "item3Description": "Kobeta rapports consolidé ya mbongo mpe malipo automatique.",
+    "item4Title": "Kozwa mbongo mingi na bisimbi",
+    "item4Description": "Kozwa mbongo mpe kosalela bisimbi malamu na assignation ya batambwisi.",
+    "item5Title": "Kosala makasi mpo na kokola",
+    "item5Description": "Kokola flotte na yo na mayele mpo na kosalela bisimbi mingi.",
+    "item6Title": "Kokima coordination ya mikolo",
+    "item6Description": "Pesa mpenza minimum ya travail administratif na scheduling automatique."
+  },
+"tools": {
+      "title": "Bato ya Zana mpe Bokoki ya Mpo na Flotte",
+      "feature1Title": "Tableau ya Flotte",
+      "feature1Description": "Kotalisa biloko nyonso, bakonzi ya biloko mpe misala ya flotte na ntango moko.",
+      "feature2Title": "Gestion ya Biloko",
+      "feature2Description": "Kobakisa, koboma mpe kotalisa profil ya biloko na suivi ya inscription mpe conformité.",
+      "feature3Title": "Kopesa bakonzi ya biloko",
+      "feature3Description": "Kopesa mpe kopesaka bakonzi na biloko na programme oyo esengelaki.",
+      "feature4Title": "Rapport ya mbongo mpe kopesa mbongo",
+      "feature4Description": "Rapport financier oyo esangisi nyonso, ebonisa mbongo na biloko, bakonzi mpe temps.",
+      "feature5Title": "Analyse ya performansi",
+      "feature5Description": "Kotalisa metriki ya makasi lokola taux d'utilisation, balor ya bakonzi mpe efficacité ya flotte.",
+      "feature6Title": "Accès au support",
+      "feature6Description": "Accès direct na équipe ya support mpo na aide opérationnelle."
+    },
+    "howItWorks": {
+      "title": "Ndenge Misala ya Flotte Eko Sali",
+      "step1Title": "Kobeta elenge na ndenge ya Mpo na Flotte",
+      "step1Description": "Tinda formulaire ya mokonzi ya flotte na makambo ya biznesi mpe biloko.",
+      "step2Title": "Kobakisa Biloko mpe Bakonzi",
+      "step2Description": "Kotalisa biloko na kopesa bakonzi oyo balingaka biloko nyonso.",
+      "step3Title": "Kotalisa Performance",
+      "step3Description": "Kotalisa misala, mbongo, performance ya bakonzi mpe ntina ya biloko na ntango moko.",
+      "step4Title": "Kobeta Malipo",
+      "step4Description": "Pona rapports ya mbongo oyo esangisami mpe malipo automatique mpo na misala nyonso ya flotte."
+    },
+    "earnings": {
+      "title": "Mbongo mpe bokambi ya entreprise",
+      "description": "Lokola nkolo ya flotte, ozali na bokonzi mobimba ya entreprise na yo mpe boyokani na bakondisi. AnyRide epesaka plateforme ya technologie. Mbongo etaleli marché, mikano ya mosala mpe performance ya bakondisi."
+    },
+  "fullNameLabel": "Kombo mobimba",
+  "fullNamePlaceholder": "Tinda kombo mobimba na yo",
+  "fleetNameLabel": "Kombo ya Entreprise / Fleet",
+  "fleetNamePlaceholder": "Tinda kombo ya entreprise to fleet na yo",
+  "emailLabel": "Adresse email",
+  "emailPlaceholder": "Tinda email na yo",
+  "phoneLabel": "Nɔmbɛ ya telefone",
+  "phonePlaceholder": "Tinda nɔmbɛ ya telefone na yo",
+  "vehicleCountLabel": "Ngambo ya ba véhicule",
+  "vehicleCountPlaceholder": "mfano: 5, 20, 100",
+  "operatingAreaLabel": "Engumba / Espace ya mosala",
+  "operatingAreaPlaceholder": "Fleet na yo ezali wapi?",
+  "messageLabel": "Message / Makambo mosusu",
+  "messagePlaceholder": "Tinda makambo mosusu na fleet na yo",
+  "emailUpdates": "Nalingi kozwa misala na email",
+  "emailConsent": "Nayebisi kozwa email ya marketing",
+  "termsConsent": "Nayebisi mitindo mpe condition",
+  "smsConsent": "Nayebisi kozwa SMS",
+  "disclaimer": "Tokosangisa ba informations na yo te.",
+  "submit": "Tinda Lobiko ya Fleet",
+  "errorsRequired": "Kobakisa ba champs nyonso ya motuya",
+  "errorsInvalidEmail": "Salisá email oyo ezali malamu",
+  "errorsConsentRequired": "Esengeli kopesa consent mpo kokoba",
+  "errorsFailed": "Ezalaki mpenza kosila formulaire",
+  "errorsNetwork": "Likambo ya réseau, kobongisa lisusu",
+  "success": "Lobiko na yo ya fleet esili kosalama malamu",
+    "cta": {
+      "title": "Tayari kuendesha gari lako kwenye AnyRide?",
+      "button": "Omba kuwa mmiliki wa gari"
+    },
+    "forms": {
+    "title": "Formulaire ya Maombi ya Proprietaire ya Fleet",
+    "header": "Olingi kosala fleet na AnyRide? Zala formulaire oyo."
+  }
   }
 }

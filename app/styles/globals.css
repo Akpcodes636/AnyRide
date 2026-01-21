@@ -90,7 +90,8 @@
       ),
       url("/en/contact.png");
     background-size: cover;
-    background-position: 60% 90%;
+    /* background-position: 60% 90%; */
+    background-position: top;
     background-repeat: no-repeat;
   }
    .bg-value {
@@ -125,5 +126,19 @@
     /* background-repeat: no-repeat; */
     background-color:green;
   }
-  
+  .bg-fleet {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/images/fleetHero.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    /* height:100vh; */
+  }
+  .bg-banners {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/images/Banner.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
 }

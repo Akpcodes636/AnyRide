@@ -1,26 +1,3 @@
-// export const navLinks = [
-//   {
-//     title: "About",
-//     router: "/about",
-//   },
-//   {
-//     title: "Rider",
-//     router: "/services/rider",
-//   },
-//   {
-//     title: "Driver",
-//     router: "/services/driver"
-//   },
-//   {
-//     title: "Partners",
-//     router: "/partners",
-//   },
-//   {
-//     title: "Contact us",
-//     router: "/contact",
-//   },
-// ];
-
 
 export const navLinks = [
   { key: "about", router: "/about" },
@@ -29,7 +6,6 @@ export const navLinks = [
   { key: "partners", router: "/partners" },
   { key: "contactUs", router: "/contact" },
 ];
-
 
 export const AnyRideFeatures = [
     {
@@ -249,62 +225,12 @@ export const rider =[
   }
 ]
 
-// export const pricingClarity = [
-//   {
-//     img:"/icons/wallet.svg",
-//     title:"Base fare",
-//     text:"Starts the trip",
-//     amount:"CDF 2,000"
-//   },
-//   {
-//     img:"/icons/cars.svg",
-//     title:"Per Km",
-//     text:"Distance-based",
-//     amount:"CDF 650"
-//   },
-//   {
-//     img:"/icons/partner.svg",
-//     title:"Per minutes",
-//     text:"Time & traffic" ,
-//     amount:"CDF 90"
-//   }
-// ]
-
 export const pricingClarity = [
   { key: "baseFare", img: "/icons/wallet.svg" },
   { key: "perKm", img: "/icons/cars.svg" },
   { key: "perMinutes", img: "/icons/partner.svg" }
 ];
 
-
-// export const benefits = [
-//    {
-//     number:"01",
-//     title:"Upfront pricing",
-//     description:"Know your fare before confirming.",
-//     color:"#F8EAEA"
-//   },
-//   {
-//     number:"02",
-//     title:"Cars & motorcycles",
-//     description:"Choose what fits your trip and budget.",
-//     color:"#EFF5FE"
-//   },
-//   {
-//     number:"03",
-//     title:"Verified drivers",
-//     description:"Every driver is screened and reviewed.",
-//     color:"#EDFAF1"
-//   },
-//   {
-//     number:"04",
-//     title:"Local-first",
-//     description:"Built for real cities, real roads, real people.",
-//     color:"#E6E6EB"
-//   }
-// ]
-
-// app/utils/Content.ts
 export const benefits = [
   { number: "01", key: "upfrontPricing", color: "#F8EAEA" },
   { number: "02", key: "carsMotorcycles", color: "#EFF5FE" },
@@ -364,10 +290,150 @@ export const driverContent =[
   }
 ]
 
- export  const featureContent = [
+ export const featureContent = [
     "Daily and weekly earnings summary",
     "Completed trips overview",
     "Wallet balance and payout history"
  ];
 
- // app/utils/driverSteps.ts
+
+
+ export const eligibleFleetOwners = [
+  {
+    title: "Owners of multiple taxis",
+    description:
+      "Operate and manage several taxis under a single, centralized platform.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Transport companies",
+    description:
+      "Run structured transport operations with coordinated vehicles and drivers.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Ride service operators",
+    description:
+      "Scale ride services with better dispatch, monitoring, and payouts.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Corporate shuttle providers",
+    description:
+      "Manage employee or organizational transport with scheduled, reliable operations.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Vehicle leasing businesses",
+    description:
+      "Deploy leased vehicles efficiently with tracked usage and performance.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Entrepreneurs managing hired drivers",
+    description:
+      "Operate driver-led vehicles as a structured, income-generating business.",
+    icon: "/images/icons.png",
+  },
+];
+
+
+export const values = [
+  {
+    number: "01",
+    title: "Centralized Fleet Dashboard",
+    description:
+      "Monitor all vehicles, drivers, and operations from a single management interface.",
+  },
+  {
+    number: "02",
+    title: "Driver Performance Tracking",
+    description:
+      "Track individual driver metrics, ratings, and activity across your fleet.",
+  },
+  {
+    number: "03",
+    title: "Automated Payouts & Reporting",
+    description:
+      "Receive consolidated financial reports and automated payout processing.",
+  },
+  {
+    number: "04",
+    title: "Higher Vehicle Utilization",
+    description:
+      "Maximize vehicle usage and earning potential through efficient driver assignment.",
+  },
+  {
+    number: "05",
+    title: "Scalable Operations",
+    description:
+      "Grow your fleet efficiently with tools designed for multi-vehicle management.",
+  },
+  {
+    number: "06",
+    title: "Reduced Manual Coordination",
+    description:
+      "Minimize administrative overhead with platform-managed scheduling and dispatch.",
+  },
+];
+
+export const steps = [
+  {
+    number: "01",
+    title: "Register as Fleet Owner",
+    description:
+      "Submit your owner application with business and vehicle information.",
+  },
+  {
+    number: "02",
+    title: "Add Vehicles & Drivers",
+    description:
+      "Register your vehicles and assign qualified drivers to each vehicle.",
+  },
+  {
+    number: "03",
+    title: "Track Performance",
+    description:
+      "Monitor rides, earnings, driver performance, and vehicle utilization in real time.",
+  },
+  {
+    number: "04",
+    title: "Receive Payouts",
+    description:
+      "Get consolidated earnings reports and automated payouts for all fleet activity.",
+  },
+];
+
+
+export const fleetFeatures = [
+  {
+    title: "Fleet Overview Dashboard",
+    description: "Real-time view of all vehicles, active drivers, and current operations across your fleet.",
+    img: "/images/icons.png",
+  },
+  {
+    title: "Vehicle Management",
+    description: "Add, remove, and manage vehicle profiles with registration and compliance tracking.",
+    img: "/images/icons.png",
+  },
+  {
+    title: "Driver Assignment",
+    description: "Assign and reassign drivers to vehicles with flexible scheduling capabilities.",
+    img: "/images/icons.png",
+  },
+  {
+    title: "Earnings & Payout Reports",
+    description: "Consolidated financial reporting showing earnings by vehicle, driver, and time period.",
+    img: "/images/icons.png",
+  },
+  {
+    title: "Performance Analytics",
+    description: "Track key metrics including utilization rates, driver ratings, and fleet efficiency.",
+    img: "/images/icons.png",
+  },
+  {
+    title: "Support Access",
+    description: "Direct access to fleet owner support team for operational assistance.",
+    img: "/images/icons.png",
+  },
+];

@@ -1096,5 +1096,111 @@
       "subtitle": "Join AnyRide today and start managing your vehicles efficiently.",
       "button": "Join Waitlist"
     }
+  },
+  "fleetOwner": {
+    "hero": {
+      "title": "Manage Your Fleet. Scale Your Earnings.",
+      "subtitle": "Operate multiple vehicles and drivers efficiently on AnyRide's fleet platform.",
+      "cta": "Apply as Fleet Owner"
+    },
+    "definition": {
+      "title": "What Is a Fleet Owner?",
+      "label":"Fleet Owner",
+      "description": "A fleet owner on AnyRide is an individual or organization that operates multiple vehicles through the platform. Rather than driving themselves, fleet owners manage hired drivers who operate their vehicles to provide transportation services. Fleet ownership enables business-level operation of transportation services with centralized management tools, performance tracking, and consolidated financial reporting."
+    },
+  "whoCanJoin": {
+  "title": "Who Can Join as a Fleet Owner?",
+  "item1Title": "Owners of multiple taxis",
+  "item1Description": "Operate and manage several taxis under a single, centralized platform.",
+  "item2Title": "Transport companies",
+  "item2Description": "Run structured transport operations with coordinated vehicles and drivers.",
+  "item3Title": "Ride service operators",
+  "item3Description": "Scale ride services with better dispatch, monitoring, and payouts.",
+  "item4Title": "Corporate shuttle providers",
+  "item4Description": "Manage employee or organizational transport with scheduled, reliable operations.",
+  "item5Title": "Vehicle leasing businesses",
+  "item5Description": "Deploy leased vehicles efficiently with tracked usage and performance.",
+  "item6Title": "Entrepreneurs managing hired drivers",
+  "item6Description": "Operate driver-led vehicles as a structured, income-generating business."
+},
+  "benefits": {
+    "title": "Why Operate Your Fleet on AnyRide",
+    "item1Title": "Centralized Fleet Dashboard",
+    "item1Description": "Monitor all vehicles, drivers, and operations from a single management interface.",
+    "item2Title": "Driver Performance Tracking",
+    "item2Description": "Track individual driver metrics, ratings, and activity across your fleet.",
+    "item3Title": "Automated Payouts & Reporting",
+    "item3Description": "Receive consolidated financial reports and automated payout processing.",
+    "item4Title": "Higher Vehicle Utilization",
+    "item4Description": "Maximize vehicle usage and earning potential through efficient driver assignment.",
+    "item5Title": "Scalable Operations",
+    "item5Description": "Grow your fleet efficiently with tools designed for multi-vehicle management.",
+    "item6Title": "Reduced Manual Coordination",
+    "item6Description": "Minimize administrative overhead with platform-managed scheduling and dispatch."
+  },
+  "tools": {
+      "title": "Fleet Owner Tools & Capabilities",
+      "feature1Title": "Fleet Overview Dashboard",
+      "feature1Description": "Real-time view of all vehicles, active drivers, and current operations across your fleet.",
+      "feature2Title": "Vehicle Management",
+      "feature2Description": "Add, remove, and manage vehicle profiles with registration and compliance tracking.",
+      "feature3Title": "Driver Assignment",
+      "feature3Description": "Assign and reassign drivers to vehicles with flexible scheduling capabilities.",
+      "feature4Title": "Earnings & Payout Reports",
+      "feature4Description": "Consolidated financial reporting showing earnings by vehicle, driver, and time period.",
+      "feature5Title": "Performance Analytics",
+      "feature5Description": "Track key metrics including utilization rates, driver ratings, and fleet efficiency.",
+      "feature6Title": "Support Access",
+      "feature6Description": "Direct access to fleet owner support team for operational assistance."
+    },
+    "howItWorks": {
+      "title": "How Fleet Operations Work",
+      "step1Title": "Register as Fleet Owner",
+      "step1Description": "Submit your fleet owner application with business and vehicle information.",
+      "step2Title": "Add Vehicles & Drivers",
+      "step2Description": "Register your vehicles and assign qualified drivers to each vehicle.",
+      "step3Title": "Track Performance",
+      "step3Description": "Monitor rides, earnings, driver performance, and vehicle utilization in real time.",
+      "step4Title": "Receive Payouts",
+      "step4Description": "Get consolidated earnings reports and automated payouts for all fleet activity."
+    },
+    "earnings": {
+      "title": "Earnings & Business Control",
+      "description": "As a fleet owner, you maintain full control over your business structure, driver agreements, and revenue sharing arrangements. AnyRide provides the platform infrastructure and tools to manage operations, while you determine how to structure your fleet business. Earnings and utilization depend on market conditions, operational decisions, and driver performance. Fleet owners are responsible for vehicle maintenance, insurance, and regulatory compliance."
+    },
+  "fullNameLabel": "Full Name",
+  "fullNamePlaceholder": "Enter your full name",
+  "fleetNameLabel": "Business / Fleet Name",
+  "fleetNamePlaceholder": "Enter your fleet or business name",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "Enter your email",
+  "phoneLabel": "Phone Number",
+  "phonePlaceholder": "Enter your phone number",
+  "vehicleCountLabel": "Number of Vehicles",
+  "vehicleCountPlaceholder": "e.g. 5, 20, 100",
+  "operatingAreaLabel": "City / Operating Area",
+  "operatingAreaPlaceholder": "Where does your fleet operate?",
+  "messageLabel": "Message / Additional Details",
+  "messagePlaceholder": "Tell us more about your fleet",
+  "emailUpdates": "I want to receive updates by email",
+  "emailConsent": "I consent to receive marketing emails",
+  "termsConsent": "I agree to the terms and conditions",
+  "smsConsent": "I consent to receive SMS messages",
+  "disclaimer": "We will never share your information.",
+  "submit": "Submit Fleet Request",
+  "errorsRequired": "Please fill in all required fields",
+  "errorsInvalidEmail": "Please enter a valid email",
+  "errorsConsentRequired": "You must provide consent to continue",
+  "errorsFailed": "Failed to submit form",
+  "errorsNetwork": "Network error, please try again",
+  "success": "Your fleet request has been submitted successfully",
+     "cta": {
+      "title": "Ready to operate your fleet on AnyRide?",
+      "button": "Apply as fleet owner"
+    },
+  "forms": {
+    "title": "Fleet Owner Application Form",
+    "header": "Ready to operate your fleet on AnyRide? Complete the application below."
   }
+}
 }
