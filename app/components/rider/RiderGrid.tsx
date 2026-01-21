@@ -74,7 +74,7 @@ export default function RiderGrid() {
   }[];
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white hidden lg:block">
       <div className="container py-[62px] md:py-[50px] lg:py-[72px]">
         <div className="flex items-center justify-center flex-col mb-[58px]">
           <div className="mb-[24px]">
@@ -95,29 +95,25 @@ export default function RiderGrid() {
           {rider.map((category, index) => (
             <div
               key={index}
-              className={`grid items-center gap-10 md:grid-cols-1 lg:grid-cols-2 ${
-                index % 2 === 0 ? "" : ""
-              }`}
+              className={`grid items-center gap-10 md:grid-cols-1 lg:grid-cols-2 ${index % 2 === 0 ? "" : ""
+                }`}
             >
               {/* Image */}
               <div
-                className={`relative order-1 min-h-[240px] w-full max-w-full overflow-hidden rounded-lg ${
-                  index % 2 === 0 ? "md:order-1 lg:order-2" : ""
-                } md:h-[280px]`}
+                className={`relative order-1 min-h-[240px] w-full max-w-full rounded-lg flex items-center justify-center p-4 ${index % 2 === 0 ? "md:order-1 lg:order-2" : ""
+                  } md:h-[280px] md:p-6`}
               >
                 <img
                   src={`/icons/rider-${index + 1}.svg`}
                   alt={category.title}
-                  // fill
-                  className="object-cover h-full w-full aspect-square"
+                  className="object-contain h-full w-full max-h-[240px] md:max-h-[280px]"
                 />
               </div>
 
               {/* Text */}
               <div
-                className={`${
-                  index % 2 === 0 ? "order-2 md:order-1" : "order-2"
-                }`}
+                className={`${index % 2 === 0 ? "order-2 md:order-1" : "order-2"
+                  }`}
               >
                 <h3 className="mb-4 text-[32px] font-semibold text-[#0A0A23]">
                   {category.title}
