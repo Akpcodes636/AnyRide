@@ -111,7 +111,7 @@
       ),
       url("/en/partners.png");
     background-size: cover;
-    background-position: 60% 90%;
+    background-position: top;
     background-repeat: no-repeat;
   }
   .bg-rider {
@@ -137,6 +137,13 @@
   .bg-banners {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("/images/Banner.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  .bg-partners {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/images/partnerBanner.png");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;

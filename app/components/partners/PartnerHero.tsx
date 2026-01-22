@@ -19,9 +19,11 @@ const PartnerHero = () => {
         <div className="pt-[280px] pb-[80px] md:pt-[330px] md:pb-[120px]">
           <h2 className="text-white text-center w-full max-w-[250px] md:max-w-full lg:max-w-full xl:max-w-[595px] mx-auto mb-[16px]">
             {t("title")}
+            {/* Partner With AnyRide */}
           </h2>
           <p className="text-[16px] md:text-[18px] text-[#E6E6EB] tracking-[-2%] font-normal w-full max-w-[337px] md:max-w-full lg:max-w-full xl:max-w-[620px] mx-auto text-center md:max-w-full lg:max-w-full mb-[40px]">
             {t("subtitle")}
+            {/* Working with institutions and infrastructure partners to modernize transportation across the Democratic Republic of Congo. */}
           </p>
           <div className="flex items-center justify-center gap-[8px] flex-col md:flex-row lg:flex-row">
             <Button
@@ -30,16 +32,17 @@ const PartnerHero = () => {
               style="danger"
               fn={gotoWaitlist}
             >
-              {t("joinCTA")}
+              {/* {t("joinCTA")} */}
+              Become a Partner
             </Button>
-            <Button
+            {/* <Button
               type="button"
               css="w-[226px] h-[62px]"
               style="reverseLight"
               fn={gotoWaitlist}
             >
               {t("roadmapCTA")}
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

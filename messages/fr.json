@@ -584,9 +584,9 @@
   },
   "FleetPartnersPage": {
     "hero": {
-      "title": "Développez votre activité de transport avec AnyRide",
-      "subtitle": "En commençant par les propriétaires de flotte et partenaires de véhicules - puis en s'étendant à l'ensemble de l'écosystème de transport de la RDC.",
-      "joinCTA": "Rejoignez notre réseau de flotte",
+      "title": "Partenariat avec AnyRide",
+      "subtitle": "Collaborer avec des institutions et des partenaires d’infrastructure pour moderniser les transports à travers la République démocratique du Congo.",
+      "joinCTA": "Devenir partenaire",
       "roadmapCTA": "Voir la feuille de route complète",
       "currentFocus": "Focus actuel",
       "focus": "Flotte",

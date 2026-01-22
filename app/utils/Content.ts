@@ -437,3 +437,27 @@ export const fleetFeatures = [
     img: "/images/icons.png",
   },
 ];
+
+ 
+export const partnerFeatures = [
+  {
+    img: "/images/Icon.png",
+    title: "Expand into structured, high growth transportation ecosystems",
+    description: "Expand into structured, high growth transportation ecosystems",
+  },
+  {
+    img: "/images/Bulb.png",
+    title: "Technology Driven Transport Operations",
+    description: "Operate with modern, data-enabled mobility infrastructure",
+  },
+  {
+    img: "/images/Aim.png",
+    title: "Compliance First Platform Design",
+    description: "Built to align with regulation, safety, and risk requirements",
+  },
+  {
+    img: "/images/partner.png",
+    title: "Scalable Partnership Models",
+    description: "Flexible structures that grow with operational needs",
+  },
+];
