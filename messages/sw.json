@@ -123,10 +123,7 @@
         "locationBadge": "Abuja, Nigeria",
         "checkPrices": "Angalia bei",
         "loginInstead": "Ingia badala yake",
-        "options": [
-          "Gari",
-          "Pikipiki"
-        ],
+        "options": ["Gari", "Pikipiki"],
         "errors": {
           "missingLocations": "Tafadhali chagua mahali pa kuanzia na pa kufika kutoka kwenye mapendekezo",
           "generic": "Kuna hitilafu. Tafadhali jaribu tena."
@@ -595,6 +592,34 @@
       "futureCategories": "8+",
       "safetyTrust": "Usalama & Uaminifu"
     },
+    "whyUs": {
+      "eyebrow": "Kwa nini sisi?",
+      "title": "Kwa nini Ushirikiane na AnyRide",
+      "subtitle": "Jumuisha kwenye masoko yaliyo pangiliwa na yenye ukuaji mkubwa",
+      "items": [
+        {
+          "img": "/images/Icon.png",
+          "title": "Jumuisha kwenye masoko yaliyo pangiliwa na yenye ukuaji mkubwa",
+          "description": "Tumia masoko yaliyo pangiliwa na yanayoweza kukua yenye fursa halisi za ukuaji"
+        },
+        {
+          "img": "/images/Bulb.png",
+          "title": "Uendeshaji wa usafirishaji unaoendeshwa na teknolojia",
+          "description": "Endesha na miundombinu ya kisasa ya usafirishaji inayotegemea data"
+        },
+        {
+          "img": "/images/Aim.png",
+          "title": "Muundo wa jukwaa unaoendana na kanuni",
+          "description": "Imeundwa ili kuendana na kanuni, usalama na mahitaji ya hatari"
+        },
+        {
+          "img": "/images/partner.png",
+          "title": "Mifumo ya Ushirikiano Inayokua",
+          "description": "Miundo inayobadilika inayokua kulingana na mahitaji ya uendeshaji"
+        }
+      ]
+    },
+   
     "whoCanPartner": {
       "title": "Nani Anaweza Kushirikiana na AnyRide",
       "categories": [
@@ -758,22 +783,41 @@
     },
     "footer": {
       "description": "Tunajenga mtandao wa usafiri wa ndani unaotaka zaidi — ulioundwa kwa abiria na watu halisi. Nafuu, salama, na daima hapa unapohitaji.",
-      "company": [
-        "Kuhusu",
-        "Miji"
-      ],
-      "help": [
-        "Msaada",
-        "Usalama",
-        "Usalama"
-      ],
-      "legal": [
-        "Masharti",
-        "Faragha",
-        "Faragha"
-      ],
+      "company": ["Kuhusu", "Miji"],
+      "help": ["Msaada", "Usalama", "Usalama"],
+      "legal": ["Masharti", "Faragha", "Faragha"],
       "copyright": " 2025 AnyRide. powered by Techenex"
     }
+  },
+   "partnerBanner": {
+      "title": "Tunaoshirikiana Nani",
+      "subtitle": "AnyRide inashirikiana na mashirika yanayounga mkono miundombinu ya usafirishaji, usalama, ulinganifu, uendeshaji, na ukuaji."
+    },
+     "partnerBanner1": {
+    "title": "Unataka kushirikiana na AnyRide?",
+    "cta": "Kuwa Mshirikishi"
+  },
+  "partnerTrust": {
+    "subtitle": "IMANI NA UHAKIKI",
+    "headline": "Imejengwa kwa Usafirishaji unaohusika na Kusimamiwa",
+    "subtext": "AnyRide imeundwa kufanya kazi ndani ya sheria halisi, usalama, na hali za soko—ikiunga mkono ushirikiano wa kudumu na wa kuaminika.",
+    "cards": [
+      {
+        "title": "Uendeshaji Kwanza kwa Uzingatia Sheria",
+        "description": "Jukwaa letu linaweka kipaumbele kwenye uzingatiaji wa sheria, nyaraka, na uendeshaji uliopangwa kusaidia serikali, kifedha, na washirika wa taasisi.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Ushirikiano unaolenga Usalama",
+        "description": "Tunashirikiana na washirika wanaoongeza viwango vya usalama, usimamizi wa hatari, na majibu ya dharura katika mfumo wa usafirishaji.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Imeundwa kwa Masoko Yanayokua",
+        "description": "AnyRide imeundwa mahsusi kwa mazingira ya usafirishaji barani Afrika, ikibalance ubunifu na miundombinu, sera, na vizuizi vya uendeshaji.",
+        "icon": "/images/icons.png"
+      }
+    ]
   },
   "PrivacyPolicy": {
     "title": "Sera ya Faragha",
@@ -1086,36 +1130,36 @@
       "description": "Mmiliki wa meli kwenye AnyRide ni mtu au shirika linaloendesha magari mengi kupitia jukwaa. Badala ya kuendesha wenyewe, wamiliki wa meli husimamia madereva waliokodiwa. Umiliki wa meli huwezesha uendeshaji wa kibiashara kwa zana za usimamizi wa kati, ufuatiliaji wa utendaji na ripoti za kifedha zilizounganishwa."
     },
     "whoCanJoin": {
-    "title": "Nani Anaweza Kujiunga Kama Mmiliki wa Magari?",
-    "item1Title": "Wamiliki wa teksi nyingi",
-    "item1Description": "Endesha na kusimamia teksi nyingi kwenye jukwaa moja lililowekwa.",
-    "item2Title": "Kampuni za usafirishaji",
-    "item2Description": "Endesha shughuli za usafirishaji zilizo pangiliwa vizuri na magari na madereva.",
-    "item3Title": "Watoa huduma za usafirishaji",
-    "item3Description": "Panua huduma za usafirishaji kwa usambazaji bora, ufuatiliaji, na malipo.",
-    "item4Title": "Watoa huduma za usafirishaji wa kampuni",
-    "item4Description": "Simamia usafirishaji wa wafanyakazi au shirika kwa ratiba na operesheni za kuaminika.",
-    "item5Title": "Biashara za kukodisha magari",
-    "item5Description": "Tumia magari ya kukodisha kwa ufanisi huku ukiangalia matumizi na utendaji.",
-    "item6Title": "Wajasiriamali wanaosimamia madereva waliokodishwa",
-    "item6Description": "Endesha magari yaliyoendeshwa na madereva kama biashara iliyopangwa na inayotoa mapato."
-  },
-   "benefits": {
-    "title": "Kwa Nini Uendeshe Floti Yako kwenye AnyRide",
-    "item1Title": "Dashibodi ya Floti Iliyokuzunguka Kila Kitu",
-    "item1Description": "Fuatilia magari yote, madereva, na shughuli kutoka kiolesura kimoja.",
-    "item2Title": "Ufuatiliaji wa Utendaji wa Dereva",
-    "item2Description": "Fuatilia takwimu, alama na shughuli za dereva kila mmoja kwenye floti yako.",
-    "item3Title": "Malipo na Ripoti Zinazotumika Kiotomatiki",
-    "item3Description": "Pata ripoti za kifedha zilizounganishwa na malipo yanayofanywa kiotomatiki.",
-    "item4Title": "Matumizi Bora ya Magari",
-    "item4Description": "Maximize matumizi ya gari na mapato kupitia ugawaji wa dereva kwa ufanisi.",
-    "item5Title": "Uendeshaji Unaokua",
-    "item5Description": "Kua floti yako kwa ufanisi kwa kutumia zana zilizoundwa kwa usimamizi wa magari mengi.",
-    "item6Title": "Kupunguza Kuratibu Kwa Mikono",
-    "item6Description": "Punguza mzigo wa kiutawala kwa kupanga na kusimamia kiotomatiki."
-  },
-  "tools": {
+      "title": "Nani Anaweza Kujiunga Kama Mmiliki wa Magari?",
+      "item1Title": "Wamiliki wa teksi nyingi",
+      "item1Description": "Endesha na kusimamia teksi nyingi kwenye jukwaa moja lililowekwa.",
+      "item2Title": "Kampuni za usafirishaji",
+      "item2Description": "Endesha shughuli za usafirishaji zilizo pangiliwa vizuri na magari na madereva.",
+      "item3Title": "Watoa huduma za usafirishaji",
+      "item3Description": "Panua huduma za usafirishaji kwa usambazaji bora, ufuatiliaji, na malipo.",
+      "item4Title": "Watoa huduma za usafirishaji wa kampuni",
+      "item4Description": "Simamia usafirishaji wa wafanyakazi au shirika kwa ratiba na operesheni za kuaminika.",
+      "item5Title": "Biashara za kukodisha magari",
+      "item5Description": "Tumia magari ya kukodisha kwa ufanisi huku ukiangalia matumizi na utendaji.",
+      "item6Title": "Wajasiriamali wanaosimamia madereva waliokodishwa",
+      "item6Description": "Endesha magari yaliyoendeshwa na madereva kama biashara iliyopangwa na inayotoa mapato."
+    },
+    "benefits": {
+      "title": "Kwa Nini Uendeshe Floti Yako kwenye AnyRide",
+      "item1Title": "Dashibodi ya Floti Iliyokuzunguka Kila Kitu",
+      "item1Description": "Fuatilia magari yote, madereva, na shughuli kutoka kiolesura kimoja.",
+      "item2Title": "Ufuatiliaji wa Utendaji wa Dereva",
+      "item2Description": "Fuatilia takwimu, alama na shughuli za dereva kila mmoja kwenye floti yako.",
+      "item3Title": "Malipo na Ripoti Zinazotumika Kiotomatiki",
+      "item3Description": "Pata ripoti za kifedha zilizounganishwa na malipo yanayofanywa kiotomatiki.",
+      "item4Title": "Matumizi Bora ya Magari",
+      "item4Description": "Maximize matumizi ya gari na mapato kupitia ugawaji wa dereva kwa ufanisi.",
+      "item5Title": "Uendeshaji Unaokua",
+      "item5Description": "Kua floti yako kwa ufanisi kwa kutumia zana zilizoundwa kwa usimamizi wa magari mengi.",
+      "item6Title": "Kupunguza Kuratibu Kwa Mikono",
+      "item6Description": "Punguza mzigo wa kiutawala kwa kupanga na kusimamia kiotomatiki."
+    },
+    "tools": {
       "title": "Zana na Uwezo wa Mmiliki wa Gari",
       "feature1Title": "Dashibodi ya Muhtasari wa Gari",
       "feature1Description": "Muonekano wa wakati halisi wa magari yote, madereva walioko na shughuli zote za gari lako.",
@@ -1145,39 +1189,39 @@
       "title": "Mapato na Udhibiti wa Biashara",
       "description": "Kama mmiliki wa meli, una udhibiti kamili wa biashara yako na mikataba ya madereva. AnyRide hutoa jukwaa la kiteknolojia. Mapato hutegemea soko, maamuzi ya uendeshaji na utendaji wa madereva."
     },
-  "fullNameLabel": "Jina kamili",
-  "fullNamePlaceholder": "Weka jina lako kamili",
-  "fleetNameLabel": "Jina la Biashara / Fleet",
-  "fleetNamePlaceholder": "Weka jina la biashara au fleet yako",
-  "emailLabel": "Anwani ya Barua Pepe",
-  "emailPlaceholder": "Weka barua pepe yako",
-  "phoneLabel": "Nambari ya Simu",
-  "phonePlaceholder": "Weka nambari yako ya simu",
-  "vehicleCountLabel": "Idadi ya Magari",
-  "vehicleCountPlaceholder": "mfano: 5, 20, 100",
-  "operatingAreaLabel": "Jiji / Eneo la Uendeshaji",
-  "operatingAreaPlaceholder": "Fleet yako inaendeshaje?",
-  "messageLabel": "Ujumbe / Maelezo Zaidi",
-  "messagePlaceholder": "Tuambie zaidi kuhusu fleet yako",
-  "emailUpdates": "Nataka kupokea masasisho kwa barua pepe",
-  "emailConsent": "Nakubali kupokea barua pepe za masoko",
-  "termsConsent": "Nakubali masharti na hali",
-  "smsConsent": "Nakubali kupokea ujumbe wa SMS",
-  "disclaimer": "Hatutashiriki taarifa zako kamwe.",
-  "submit": "Tuma Ombi la Fleet",
-  "errorsRequired": "Tafadhali jaza mashamba yote yanayohitajika",
-  "errorsInvalidEmail": "Tafadhali ingiza barua pepe sahihi",
-  "errorsConsentRequired": "Lazima utoe idhini ili kuendelea",
-  "errorsFailed": "Imeshindikana kutuma fomu",
-  "errorsNetwork": "Hitilafu ya mtandao, tafadhali jaribu tena",
-  "success": "Ombi lako la fleet limewasilishwa kwa mafanikio",
+    "fullNameLabel": "Jina kamili",
+    "fullNamePlaceholder": "Weka jina lako kamili",
+    "fleetNameLabel": "Jina la Biashara / Fleet",
+    "fleetNamePlaceholder": "Weka jina la biashara au fleet yako",
+    "emailLabel": "Anwani ya Barua Pepe",
+    "emailPlaceholder": "Weka barua pepe yako",
+    "phoneLabel": "Nambari ya Simu",
+    "phonePlaceholder": "Weka nambari yako ya simu",
+    "vehicleCountLabel": "Idadi ya Magari",
+    "vehicleCountPlaceholder": "mfano: 5, 20, 100",
+    "operatingAreaLabel": "Jiji / Eneo la Uendeshaji",
+    "operatingAreaPlaceholder": "Fleet yako inaendeshaje?",
+    "messageLabel": "Ujumbe / Maelezo Zaidi",
+    "messagePlaceholder": "Tuambie zaidi kuhusu fleet yako",
+    "emailUpdates": "Nataka kupokea masasisho kwa barua pepe",
+    "emailConsent": "Nakubali kupokea barua pepe za masoko",
+    "termsConsent": "Nakubali masharti na hali",
+    "smsConsent": "Nakubali kupokea ujumbe wa SMS",
+    "disclaimer": "Hatutashiriki taarifa zako kamwe.",
+    "submit": "Tuma Ombi la Fleet",
+    "errorsRequired": "Tafadhali jaza mashamba yote yanayohitajika",
+    "errorsInvalidEmail": "Tafadhali ingiza barua pepe sahihi",
+    "errorsConsentRequired": "Lazima utoe idhini ili kuendelea",
+    "errorsFailed": "Imeshindikana kutuma fomu",
+    "errorsNetwork": "Hitilafu ya mtandao, tafadhali jaribu tena",
+    "success": "Ombi lako la fleet limewasilishwa kwa mafanikio",
     "cta": {
       "title": "Ozali kozwa kosalela fleet na AnyRide?",
       "button": "Kokanga lokola mongi ya fleet"
     },
     "forms": {
-    "title": "Fomu ya Maombi ya Mmiliki wa Fleet",
-    "header": "Uko tayari kuendesha mabasi yako kwenye AnyRide? Jaza fomu hapa chini."
-  }
+      "title": "Fomu ya Maombi ya Mmiliki wa Fleet",
+      "header": "Uko tayari kuendesha mabasi yako kwenye AnyRide? Jaza fomu hapa chini."
+    }
   }
 }

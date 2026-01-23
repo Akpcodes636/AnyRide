@@ -461,3 +461,48 @@ export const partnerFeatures = [
     description: "Flexible structures that grow with operational needs",
   },
 ];
+
+
+
+export const partnershipSteps = [
+  {
+    step: 1,
+    title: "Submit partnership interest",
+    description:
+      "Provide basic information about their organization, partnership category, and proposed area of collaboration through the inquiry form.",
+  },
+  {
+    step: 2,
+    title: "AnyRide reviews and engages",
+    description:
+      "The AnyRide team reviews the submission, assesses strategic and operational alignment, and engages relevant partners for further discussions where applicable.",
+  },
+  {
+    step: 3,
+    title: "Partnership structure and rollout",
+    description:
+      "Approved partnerships are structured with clear roles, responsibilities, and timelines, followed by coordinated rollout and operational integration.",
+  },
+];
+
+
+export const partnerTrustCards = [
+  {
+    title: "Compliance First Operations",
+    description:
+      "Our platform prioritizes legal compliance, documentation, and structured operations to support government, financial, and institutional partners.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Safety Focused Partnerships",
+    description:
+      "We work with partners who strengthen safety standards, risk management, and emergency response across the transportation ecosystem.",
+    icon: "/images/icons.png",
+  },
+  {
+    title: "Built for Emerging Markets",
+    description:
+      "AnyRide is purpose-built for African transport environments, balancing innovation with infrastructure, policy, and operational constraints.",
+    icon: "/images/icons.png",
+  },
+];

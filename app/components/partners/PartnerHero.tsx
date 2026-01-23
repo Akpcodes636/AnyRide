@@ -32,17 +32,9 @@ const PartnerHero = () => {
               style="danger"
               fn={gotoWaitlist}
             >
-              {/* {t("joinCTA")} */}
-              Become a Partner
+              {t("joinCTA")}
+              {/* Become a Partner */}
             </Button>
-            {/* <Button
-              type="button"
-              css="w-[226px] h-[62px]"
-              style="reverseLight"
-              fn={gotoWaitlist}
-            >
-              {t("roadmapCTA")}
-            </Button> */}
           </div>
         </div>
       </div>

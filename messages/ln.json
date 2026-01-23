@@ -595,6 +595,33 @@
       "futureCategories": "8+",
       "safetyTrust": "Ba-Catégories ya Mikolo ezali koya"
     },
+"whyUs": {
+      "eyebrow": "Mpo na nini biso?",
+      "title": "Mpo na nini kozala Mpenzi na AnyRide",
+      "subtitle": "Kokota na masoko oyo ezali na ndakisa mpe oyo ezali na croissance",
+      "items": [
+        {
+          "img": "/images/Icon.png",
+          "title": "Kokota na masoko oyo ezali na ndakisa mpe oyo ezali na croissance",
+          "description": "Tala masoko oyo ezali na ndakisa mpe ekoki kokola na potentiel ya croissance"
+        },
+        {
+          "img": "/images/Bulb.png",
+          "title": "Misala ya Transports esalemi na Teknoloji",
+          "description": "Salela na infrastructure ya mobilité ya moderne mpe oyo ezali na data"
+        },
+        {
+          "img": "/images/Aim.png",
+          "title": "Design ya Platforme oyo ezangi kozanga mibeko",
+          "description": "Esalemi mpo na kobakisa réglementation, sécurité mpe exigences ya risque"
+        },
+        {
+          "img": "/images/partner.png",
+          "title": "Modèles ya Partenariat oyo ekola",
+          "description": "Structures flexibles oyo ekola na ndenge ya besoins ya opération"
+        }
+      ]
+    },
     "whoCanPartner": {
       "title": "Nani Akoki Kozala Partenaire na AnyRide",
       "categories": [
@@ -805,6 +832,36 @@
       },
       "copyright": "© 2025 AnyRide. esalamaki na Techenex"
     }
+  },
+  "partnerBanner": {
+      "title": "Tosangana nani?",
+      "subtitle": "AnyRide esangana na bamibeko oyo eyebani mpo na infrastructures ya transport, sécurité, conformité, misala mpe croissance."
+    },
+  "partnerBanner1": {
+    "title": "Olingi kosangana na AnyRide?",
+    "cta": "Kóma Partenaire"
+  },
+  "partnerTrust": {
+    "subtitle": "BISOPELI NA KUTIKALA",
+    "headline": "Ewutami mpo na Mobembo ya Malamu mpe Eyelemaki",
+    "subtext": "AnyRide ebongisami mpo na kosala na misala ya mayele, boyokani, mpe makambo ya marché ya solo—kosalisa partenariat ya nse ya ntango mpe ya solo.",
+    "cards": [
+      {
+        "title": "Misala na Compliance liboso",
+        "description": "Platform na biso esalaka premier na compliance ya mibeko, documentation, mpe misala mpo na kosalisa gouvernement, finance, mpe partenaires ya institutions.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Partenariat ya Kosunga Usalama",
+        "description": "Tosali na partenaires oyo bakokisaka standard ya usalama, gestion ya risque, mpe réponse na urgence na système ya transport.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Ewutami mpo na Masoko ya Kosala",
+        "description": "AnyRide ebongisami mpo na environnement ya transport ya Afrique, kosangisa innovation na infrastructure, politique, mpe contraintes ya opération.",
+        "icon": "/images/icons.png"
+      }
+    ]
   },
   "PrivacyPolicy": {
     "title": "Politique ya Vie Privée",

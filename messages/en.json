@@ -595,6 +595,63 @@
       "futureCategories": "8+",
       "safetyTrust": "Future Categories"
     },
+"whyUs": {
+      "eyebrow": "Why Us?",
+      "title": "Why Partner With AnyRide",
+      "subtitle": "Expand into structured, high growth transportation ecosystems",
+      "items": [
+        {
+          "img": "/images/Icon.png",
+          "title": "Expand into structured, high growth transportation ecosystems",
+          "description": "Tap into organized, scalable markets with real growth potential"
+        },
+        {
+          "img": "/images/Bulb.png",
+          "title": "Technology Driven Transport Operations",
+          "description": "Operate with modern, data-enabled mobility infrastructure"
+        },
+        {
+          "img": "/images/Aim.png",
+          "title": "Compliance First Platform Design",
+          "description": "Built to align with regulation, safety, and risk requirements"
+        },
+        {
+          "img": "/images/partner.png",
+          "title": "Scalable Partnership Models",
+          "description": "Flexible structures that grow with operational needs"
+        }
+      ]
+    },
+    "partnerBanner": {
+      "title": "Who We Partner With",
+      "subtitle": "AnyRide collaborates with organizations that support transportation infrastructure, safety, compliance, operations, and growth."
+    },
+    "partnerBanner1": {
+    "title": "Interested in partnering with AnyRide?",
+    "cta": "Become a Partner"
+  },
+  "partnerTrust": {
+    "subtitle":"TRUST AND CREDIBILITY",
+    "headline": "Built for Responsible, Regulated Transportation",
+    "subtext": "AnyRide is designed to operate within real-world regulatory, safety, and market conditions—supporting long‑term, credible partnerships.",
+    "cards": [
+      {
+        "title": "Compliance First Operations",
+        "description": "Our platform prioritizes legal compliance, documentation, and structured operations to support government, financial, and institutional partners.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Safety Focused Partnerships",
+        "description": "We work with partners who strengthen safety standards, risk management, and emergency response across the transportation ecosystem.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Built for Emerging Markets",
+        "description": "AnyRide is purpose-built for African transport environments, balancing innovation with infrastructure, policy, and operational constraints.",
+        "icon": "/images/icons.png"
+      }
+    ]
+  },
     "whoCanPartner": {
       "title": "Who Can Partner with AnyRide",
       "categories": [

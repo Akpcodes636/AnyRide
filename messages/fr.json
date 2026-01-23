@@ -595,6 +595,34 @@
       "futureCategories": "8+",
       "safetyTrust": "Sécurité et Confiance"
     },
+ "whyUs": {
+      "eyebrow": "Pourquoi nous ?",
+      "title": "Pourquoi devenir partenaire d'AnyRide",
+      "subtitle": "Accédez à des marchés structurés et à forte croissance",
+      "items": [
+        {
+          "img": "/images/Icon.png",
+          "title": "Accédez à des marchés structurés et à forte croissance",
+          "description": "Exploitez des marchés organisés et évolutifs avec un vrai potentiel de croissance"
+        },
+        {
+          "img": "/images/Bulb.png",
+          "title": "Opérations de transport pilotées par la technologie",
+          "description": "Opérez avec une infrastructure de mobilité moderne et basée sur les données"
+        },
+        {
+          "img": "/images/Aim.png",
+          "title": "Conception de plateforme conforme",
+          "description": "Conçu pour respecter la réglementation, la sécurité et les exigences de risque"
+        },
+        {
+          "img": "/images/partner.png",
+          "title": "Modèles de partenariat évolutifs",
+          "description": "Structures flexibles qui évoluent avec les besoins opérationnels"
+        }
+      ]
+    },
+   
     "whoCanPartner": {
       "title": "Qui peut s'associer avec AnyRide",
       "categories": [
@@ -821,6 +849,36 @@
       },
       "copyright": " 2025 AnyRide. powered by Techenex"
     }
+  },
+   "partnerBanner": {
+      "title": "Avec qui nous collaborons",
+      "subtitle": "AnyRide collabore avec des organisations qui soutiennent l'infrastructure de transport, la sécurité, la conformité, les opérations et la croissance."
+    },
+    "partnerBanner1": {
+    "title": "Intéressé à collaborer avec AnyRide ?",
+    "cta": "Devenir Partenaire"
+  },
+  "partnerTrust": {
+     "subtitle": "CONFIANCE ET CRÉDIBILITÉ",
+    "headline": "Conçu pour un transport responsable et réglementé",
+    "subtext": "AnyRide est conçu pour fonctionner dans des conditions réglementaires, de sécurité et de marché réelles, en soutenant des partenariats crédibles et à long terme.",
+    "cards": [
+      {
+        "title": "Opérations axées sur la conformité",
+        "description": "Notre plateforme priorise la conformité légale, la documentation et les opérations structurées pour soutenir les partenaires gouvernementaux, financiers et institutionnels.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Partenariats axés sur la sécurité",
+        "description": "Nous travaillons avec des partenaires qui renforcent les normes de sécurité, la gestion des risques et la réponse aux urgences dans l'écosystème des transports.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Conçu pour les marchés émergents",
+        "description": "AnyRide est conçu pour les environnements de transport africains, en équilibrant l'innovation avec les infrastructures, les politiques et les contraintes opérationnelles.",
+        "icon": "/images/icons.png"
+      }
+    ]
   },
   "PrivacyPolicy": {
     "title": "Politique de Confidentialité",
