@@ -191,6 +191,7 @@
       ]
     }
   },
+
   "AboutPage": {
     "hero": {
       "title": "About AnyRide",
@@ -321,6 +322,7 @@
       "description": "We're creating something different — a ride-hailing experience that feels local, fair, and human. From our drivers who keep cities moving, to riders who trust us daily, AnyRide stands for safety, honesty, and empowerment. Because movement is freedom — and everyone deserves access to it. That's AnyRide. Built for people. Made for the move."
     }
   },
+
   "DriversPage": {
     "hero": {
       "title": "Drive with freedom. Earn on your terms.",
@@ -422,6 +424,7 @@
       "image": "/images/Driver-Phone.png"
     }
   },
+
   "Footer": {
     "contactEmail": "info@anyride.com",
     "description": "We're building the most trusted local ride network — designed for passengers and real people. Affordable, safe, and always there when you need it.",
@@ -476,6 +479,7 @@
     },
     "copyright": "AnyRide LLC. powered by"
   },
+
   "WaitlistPage": {
     "hero": {
       "subtitle": "Launching in 2026",
@@ -535,6 +539,7 @@
       ]
     }
   },
+
   "ContactPage": {
     "hero": {
       "title": "We're here to help",
@@ -582,6 +587,7 @@
       "success": "Message sent successfully!"
     }
   },
+
   "FleetPartnersPage": {
     "hero": {
       "title": "Partner With AnyRide",
@@ -622,36 +628,6 @@
         }
       ]
     },
-    "partnerBanner": {
-      "title": "Who We Partner With",
-      "subtitle": "AnyRide collaborates with organizations that support transportation infrastructure, safety, compliance, operations, and growth."
-    },
-    "partnerBanner1": {
-    "title": "Interested in partnering with AnyRide?",
-    "cta": "Become a Partner"
-  },
-  "partnerTrust": {
-    "subtitle":"TRUST AND CREDIBILITY",
-    "headline": "Built for Responsible, Regulated Transportation",
-    "subtext": "AnyRide is designed to operate within real-world regulatory, safety, and market conditions—supporting long‑term, credible partnerships.",
-    "cards": [
-      {
-        "title": "Compliance First Operations",
-        "description": "Our platform prioritizes legal compliance, documentation, and structured operations to support government, financial, and institutional partners.",
-        "icon": "/images/icons.png"
-      },
-      {
-        "title": "Safety Focused Partnerships",
-        "description": "We work with partners who strengthen safety standards, risk management, and emergency response across the transportation ecosystem.",
-        "icon": "/images/icons.png"
-      },
-      {
-        "title": "Built for Emerging Markets",
-        "description": "AnyRide is purpose-built for African transport environments, balancing innovation with infrastructure, policy, and operational constraints.",
-        "icon": "/images/icons.png"
-      }
-    ]
-  },
     "whoCanPartner": {
       "title": "Who Can Partner with AnyRide",
       "categories": [
@@ -825,44 +801,109 @@
           "answer": "We’ll contact you via the email address you provided when signing up for the waitlist."
         }
       ]
-    },
-    "Footer": {
-      "description": "We're building the most trusted local ride network — designed for passengers and real people. Affordable, safe, and always there when you need it.",
-      "sections": {
-        "company": {
-          "title": "Company",
-          "links": [
-            {
-              "label": "Fleet",
-              "href": "/fleet"
-            },
-            {
-              "label": "Blog",
-              "href": "/"
-            }
-          ]
-        },
-        "help": {
-          "title": "Help",
-          "links": []
-        },
-        "legal": {
-          "title": "Legal",
-          "links": [
-            {
-              "label": "Terms",
-              "href": "/terms"
-            },
-            {
-              "label": "Privacy Policy",
-              "href": "/privacy"
-            }
-          ]
-        }
-      },
-      "copyright": "© 2025 AnyRide. powered by Techenex"
     }
   },
+
+   "partnerTrust": {
+    "subtitle":"TRUST AND CREDIBILITY",
+    "headline": "Built for Responsible, Regulated Transportation",
+    "subtext": "AnyRide is designed to operate within real-world regulatory, safety, and market conditions—supporting long‑term, credible partnerships.",
+    "cards": [
+      {
+        "title": "Compliance First Operations",
+        "description": "Our platform prioritizes legal compliance, documentation, and structured operations to support government, financial, and institutional partners.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Safety Focused Partnerships",
+        "description": "We work with partners who strengthen safety standards, risk management, and emergency response across the transportation ecosystem.",
+        "icon": "/images/icons.png"
+      },
+      {
+        "title": "Built for Emerging Markets",
+        "description": "AnyRide is purpose-built for African transport environments, balancing innovation with infrastructure, policy, and operational constraints.",
+        "icon": "/images/icons.png"
+      }
+    ]
+  },
+
+   "partnerBanner": {
+      "title": "Who We Partner With",
+      "subtitle": "AnyRide collaborates with organizations that support transportation infrastructure, safety, compliance, operations, and growth."
+    },
+
+    "partnerBanner1": {
+    "title": "Interested in partnering with AnyRide?",
+    "cta": "Become a Partner"
+  },
+
+   "partnerFormIntro": {
+    "title": "Want to partner with us?",
+    "subtitle": "Fill out the form below with the necessary info to join",
+    "fields": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "organizationName": {
+        "label": "Organization Name",
+        "placeholder": "Enter your organization name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "phone": {
+        "label": "Phone Number (Optional)",
+        "placeholder": "Enter your phone number"
+      },
+      "partnershipCategory": {
+        "label": "Partnership Category",
+        "placeholder": "Specify partnership category"
+      },
+      "message": {
+        "label": "Message / Proposal Details*",
+        "placeholder": "Provide your message or proposal details"
+      }
+    },
+    "buttons": {
+      "submit": "Submit",
+      "loading": "Submitting..."
+    },
+    "errors": {
+      "required": "Please fill in all required fields.",
+      "invalidEmail": "Please enter a valid email address.",
+      "submissionFailed": "Submission failed.",
+      "network": "Network error. Please try again."
+    },
+    "success": {
+      "submitted": "Form submitted successfully!"
+    }
+  },
+
+   "partnershipwork": {
+    "label":"HOW PARTNERSHIPS WORK",
+    "title": "How Partnership with AnyRide works",
+    "subtitle": "Here is simple steps to partner with us",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Submit partnership interest",
+        "description": "Provide basic information about their organization, partnership category, and proposed area of collaboration through the inquiry form."
+      },
+      {
+        "step": 2,
+        "title": "AnyRide reviews and engages",
+        "description": "The AnyRide team reviews the submission, assesses strategic and operational alignment, and engages relevant partners for further discussions where applicable."
+      },
+      {
+        "step": 3,
+        "title": "Partnership structure and rollout",
+        "description": "Approved partnerships are structured with clear roles, responsibilities, and timelines, followed by coordinated rollout and operational integration."
+      }
+    ]
+  },
+
   "PrivacyPolicy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: January 2025",
@@ -891,6 +932,7 @@
       "content": "You have the right to access, correct, or delete your personal information. You may also opt out of certain communications. Contact us to exercise these rights."
     }
   },
+
   "TermsAndConditions": {
     "title": "Terms and Conditions",
     "lastUpdated": "Last updated: January 2025",
@@ -923,6 +965,7 @@
       "content": "AnyRide may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
     }
   },
+  
   "Navbar": {
     "about": "About",
     "rider": "Rider",
@@ -1266,6 +1309,162 @@
   "forms": {
     "title": "Fleet Owner Application Form",
     "header": "Ready to operate your fleet on AnyRide? Complete the application below."
+  }
+},
+"PartnerCategories": {
+  "title": "Our Partner Categories",
+  "description": "Organizations we collaborate with to strengthen transportation infrastructure and operations",
+  "labels": {
+    "whoIncludes": "Who this includes:",
+    "whyMatters": "Why they matter:"
+  },
+  "accordion": {
+    "fuel": {
+      "title": "Fuel & Energy Partners",
+      "subtitle": "Fuel & Energy",
+      "description": "Maximize your fleet's earning potential with guaranteed driver placements.",
+      "includes": [
+        "Fuel station networks",
+        "Petroleum and energy companies",
+        "Fuel card providers",
+        "Energy distribution companies"
+      ],
+      "matters": [
+        "Fuel affordability for drivers",
+        "Operational cost stability",
+        "Driver retention and satisfaction"
+      ]
+    },
+    "compliance": {
+      "title": "Compliance, Insurance & Risk Partners",
+      "subtitle": "Compliance / Insurance / Risk",
+      "description": "Ensure compliance and protect your business with comprehensive risk coverage.",
+      "includes": [
+        "Vehicle insurance providers",
+        "Passenger and liability insurers",
+        "Risk management firms",
+        "Accident and claims administrators",
+        "Safety audit firms"
+      ],
+      "matters": [
+        "Passenger and driver safety",
+        "Regulatory compliance",
+        "Platform risk mitigation"
+      ]
+    },
+    "driver": {
+      "title": "Driver Associations & Transport Organizations",
+      "subtitle": "Driver Associations & Transport",
+      "description": "Support driver welfare and strengthen industry representation.",
+      "includes": [
+        "Taxi driver unions",
+        "Motorcycle taxi associations",
+        "Transport cooperatives",
+        "Professional driver organizations"
+      ],
+      "matters": [
+        "Driver onboarding at scale",
+        "Trust within local transport communities",
+        "Operational legitimacy"
+      ]
+    },
+    "vehicle": {
+      "title": "Vehicle Suppliers & Dealerships",
+      "subtitle": "Vehicle Suppliers & Dealerships",
+      "description": "Access quality vehicles and flexible financing for fleet expansion.",
+      "includes": [
+        "New and used vehicle dealerships",
+        "Motorcycle and three-wheel suppliers",
+        "Vehicle importers",
+        "Fleet leasing and rental companies"
+      ],
+      "matters": [
+        "Fleet expansion",
+        "Vehicle availability",
+        "Standardization and quality control"
+      ]
+    },
+    "government": {
+      "title": "Government & Regulatory Bodies",
+      "subtitle": "Government & Regulatory",
+      "description": "Navigate regulations and secure necessary operating permissions.",
+      "includes": [
+        "Ministries of Transport",
+        "Municipal transport authorities",
+        "Road safety agencies",
+        "Licensing and regulatory institutions"
+      ],
+      "matters": [
+        "Legal authorization to operate",
+        "Policy alignment",
+        "Long-term sustainability"
+      ]
+    },
+    "finance": {
+      "title": "Banks & Financial Institutions",
+      "subtitle": "Banks & Financial Institutions",
+      "description": "Enable secure transactions and financial inclusion for drivers.",
+      "includes": [
+        "Commercial banks",
+        "Microfinance institutions",
+        "Fleet financing providers",
+        "Corporate banking partners"
+      ],
+      "matters": [
+        "Fleet owner financing",
+        "Settlement and escrow accounts",
+        "Financial credibility"
+      ]
+    },
+    "hardware": {
+      "title": "Smartphone & Hardware Partners",
+      "subtitle": "Smartphone & Hardware",
+      "description": "Provide drivers with reliable devices and connectivity.",
+      "includes": [
+        "Smartphone manufacturers",
+        "Mobile device distributors",
+        "Hardware financing providers",
+        "Telematics and vehicle hardware suppliers"
+      ],
+      "matters": [
+        "Driver device access",
+        "Platform reliability",
+        "Operational data collection"
+      ]
+    },
+    "mapping": {
+      "title": "Mapping, Navigation & Local Data Partners",
+      "subtitle": "Mapping & Data",
+      "description": "Optimize routes and enhance customer experience with accurate navigation.",
+      "includes": [
+        "Mapping and GIS companies",
+        "Local navigation data providers",
+        "Urban planning and infrastructure data organizations",
+        "Universities and research institutions"
+      ],
+      "matters": [
+        "Accurate pickups and drop-offs",
+        "Reduced trip friction",
+        "Improved customer experience",
+        "Local market knowledge"
+      ]
+    },
+    "emergency": {
+      "title": "Emergency & Safety Partners",
+      "subtitle": "Emergency & Safety",
+      "description": "Ensure rapid response and safety for drivers and passengers.",
+      "includes": [
+        "Ambulance services",
+        "Hospitals and clinics",
+        "Private security firms",
+        "Roadside assistance providers"
+      ],
+      "matters": [
+        "Emergency response readiness",
+        "Passenger confidence",
+        "Incident management"
+      ]
+    }
   }
 }
 }

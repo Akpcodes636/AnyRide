@@ -19,7 +19,7 @@ export default function PartnerTrust() {
         <div>
           {/* Subtitle */}
           <div className="flex items-center justify-center mb-[24px]">
-            <SubTitle text={t("subtitle")} />
+            <SubTitle text={t("subtitle")} css="text-[#C15855] font-bold leading-[160%] tracking-[-2%]" />
           </div>
 
           {/* Headline & Description */}
@@ -33,7 +33,7 @@ export default function PartnerTrust() {
           </div>
 
           {/* Trust Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center">
             {cards.map((card, idx) => (
               <PartnerTrustCard
                 key={idx}

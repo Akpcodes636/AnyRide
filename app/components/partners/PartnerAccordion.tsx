@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   ChevronUp,
   Fuel,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 export default function PartnerAccordion() {
+  const t = useTranslations("PartnerCategories");
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     fuel: false,
     compliance: false,
@@ -33,181 +35,55 @@ export default function PartnerAccordion() {
     }));
   };
 
-  const partners = [
-    {
-      id: "fuel",
-      title: "Fuel & Energy Partners",
-      subtitle: "Fuel & Energy",
-      description: "Maximize your fleet's earning potential with guaranteed driver placements.",
-      icon: Fuel,
-      bgColor: "bg-red-700",
-      includes: [
-        "Fuel station networks",
-        "Petroleum and energy companies",
-        "Fuel card providers",
-        "Energy distribution companies",
-      ],
-      matters: [
-        "Fuel affordability for drivers",
-        "Operational cost stability",
-        "Driver retention and satisfaction",
-      ],
-    },
-    {
-      id: "compliance",
-      title: "Compliance, Insurance & Risk Partners",
-      subtitle: "Compliance / Insurance / Risk",
-      description: "Ensure compliance and protect your business with comprehensive risk coverage.",
-      icon: Shield,
-      bgColor: "bg-blue-700",
-      includes: [
-        "Vehicle insurance providers",
-        "Passenger and liability insurers",
-        "Risk management firms",
-        "Accident and claims administrators",
-        "Safety audit firms",
-      ],
-      matters: [
-        "Passenger and driver safety",
-        "Regulatory compliance",
-        "Platform risk mitigation",
-      ],
-    },
-    {
-      id: "driver",
-      title: "Driver Associations & Transport Organizations",
-      subtitle: "Driver Associations & Transport",
-      description: "Support driver welfare and strengthen industry representation.",
-      icon: Users,
-      bgColor: "bg-green-700",
-      includes: [
-        "Taxi driver unions",
-        "Motorcycle taxi associations",
-        "Transport cooperatives",
-        "Professional driver organizations",
-      ],
-      matters: [
-        "Driver onboarding at scale",
-        "Trust within local transport communities",
-        "Operational legitimacy",
-      ],
-    },
-    {
-      id: "vehicle",
-      title: "Vehicle Suppliers & Dealerships",
-      subtitle: "Vehicle Suppliers & Dealerships",
-      description: "Access quality vehicles and flexible financing for fleet expansion.",
-      icon: Truck,
-      bgColor: "bg-purple-700",
-      includes: [
-        "New and used vehicle dealerships",
-        "Motorcycle and three-wheel suppliers",
-        "Vehicle importers",
-        "Fleet leasing and rental companies"
-      ],
-      matters: [
-        "Fleet expansion",
-        "Vehicle availability",
-        "Standardization and quality control"
-      ],
-    },
-    {
-      id: "government",
-      title: "Government & Regulatory Bodies",
-      subtitle: "Government & Regulatory",
-      description: "Navigate regulations and secure necessary operating permissions.",
-      icon: Building2,
-      bgColor: "bg-indigo-700",
-      includes: [
-        "Ministries of Transport",
-        "Municipal transport authorities",
-        "Road safety agencies",
-        "Licensing and regulatory institutions"
-      ],
-      matters: [
-        "Legal authorization to operate",
-        "Policy alignment",
-        "Long-term sustainability"
-      ],
-    },
-    {
-      id: "finance",
-      title: "Banks & Financial Institutions",
-      subtitle: "Banks & Financial Institutions",
-      description: "Enable secure transactions and financial inclusion for drivers.",
-      icon: Banknote,
-      bgColor: "bg-teal-700",
-      includes: [
-        "Commercial banks",
-        "Microfinance institutions",
-        "Fleet financing providers",
-        "Corporate banking partners"
-      ],
-      matters: [
-        "Fleet owner financing",
-        "Settlement and escrow accounts",
-        "Financial credibility"
-      ],
-    },
-    {
-      id: "hardware",
-      title: "Smartphone & Hardware Partners",
-      subtitle: "Smartphone & Hardware",
-      description: "Provide drivers with reliable devices and connectivity.",
-      icon: Smartphone,
-      bgColor: "bg-orange-700",
-      includes: [
-        "Smartphone manufacturers",
-        "Mobile device distributors",
-        "Hardware financing providers",
-        "Telematics and vehicle hardware suppliers"
-      ],
-      matters: [
-        "Driver device access",
-        "Platform reliability",
-        "Operational data collection",
-      ],
-    },
-    {
-      id: "mapping",
-      title: "Mapping, Navigation & Local Data Partners",
-      subtitle: "Mapping & Data",
-      description: "Optimize routes and enhance customer experience with accurate navigation.",
-      icon: Map,
-      bgColor: "bg-cyan-700",
-      includes: [
-        "Mapping and GIS companies",
-        "Local navigation data providers",
-        "Urban planning and infrastructure data organizations",
-        "Universities and research institutions"
-      ],
-      matters: [
-        "Accurate pickups and drop-offs",
-        "Reduced trip friction",
-        "Improved customer experience",
-        "Local market knowledge",
-      ],
-    },
-    {
-      id: "emergency",
-      title: "Emergency & Safety Partners",
-      subtitle: "Emergency & Safety",
-      description: "Ensure rapid response and safety for drivers and passengers.",
-      icon: AlertCircle,
-      bgColor: "bg-rose-700",
-      includes: [
-        "Ambulance services",
-        "Hospitals and clinics",
-        "Private security firms",
-        "Roadside assistance providers"
-      ],
-      matters: [
-        "Emergency response readiness",
-        "Passenger confidence",
-        "Incident management"
-      ],
-    },
+  const partnerKeys = [
+    "fuel",
+    "compliance",
+    "driver",
+    "vehicle",
+    "government",
+    "finance",
+    "hardware",
+    "mapping",
+    "emergency",
   ];
+
+  const iconMap: Record<string, any> = {
+    fuel: Fuel,
+    compliance: Shield,
+    driver: Users,
+    vehicle: Truck,
+    government: Building2,
+    finance: Banknote,
+    hardware: Smartphone,
+    mapping: Map,
+    emergency: AlertCircle,
+  };
+
+  const colorMap: Record<string, string> = {
+    fuel: "bg-red-700",
+    compliance: "bg-blue-700",
+    driver: "bg-green-700",
+    vehicle: "bg-purple-700",
+    government: "bg-indigo-700",
+    finance: "bg-teal-700",
+    hardware: "bg-orange-700",
+    mapping: "bg-cyan-700",
+    emergency: "bg-rose-700",
+  };
+
+  const partners = partnerKeys.map((key) => {
+    const section = `accordion.${key}`;
+    return {
+      id: key,
+      title: t(`${section}.title`),
+      subtitle: t(`${section}.subtitle`),
+      description: t(`${section}.description`),
+      icon: iconMap[key],
+      bgColor: colorMap[key],
+      includes: t.raw(`${section}.includes`) as string[],
+      matters: t.raw(`${section}.matters`) as string[],
+    };
+  });
 
   return (
     <div className="max-w-full mx-auto p-6 min-h-screen">
@@ -259,7 +135,7 @@ export default function PartnerAccordion() {
                   {/* Who this includes */}
                   <div className="bg-white p-5 rounded-lg">
                     <h4 className="font-semibold text-[#353A61] mb-4 text-[20px] md:text-[28px]">
-                      Who this includes:
+                      {t('labels.whoIncludes')}
                     </h4>
                     <ul className="space-y-3">
                       {partner.includes.map((item, idx) => (
@@ -291,7 +167,7 @@ export default function PartnerAccordion() {
                   {/* Why they matter */}
                   <div className="bg-white p-5 rounded-lg">
                     <h4 className="font-semibold text-[#353A61] text-[20px] md:text-[28px] mb-4">
-                      Why they matter:
+                      {t('labels.whyMatters')}
                     </h4>
                     <ul className="space-y-3">
                       {partner.matters.map((item, idx) => (

@@ -795,59 +795,6 @@
           "answer": "Nous vous contacterons via l'e-mail fourni lors de l'inscription."
         }
       ]
-    },
-    "Footer": {
-      "description": "Nous construisons le réseau de transport local le plus fiable — conçu pour les passagers et les vrais utilisateurs. Abordable, sûr et toujours là quand vous en avez besoin.",
-      "sections": {
-        "company": {
-          "title": "Entreprise",
-          "links": [
-            {
-              "label": "Flotte",
-              "href": "/fleet"
-            },
-            {
-              "label": "Partenaires",
-              "href": "/partners"
-            }
-          ]
-        },
-        "help": {
-          "title": "Aide",
-          "links": [
-            {
-              "label": "Support",
-              "href": "/support"
-            },
-            {
-              "label": "Sécurité",
-              "href": "/privacy"
-            },
-            {
-              "label": "Tarification",
-              "href": "/rider"
-            }
-          ]
-        },
-        "legal": {
-          "title": "Légal",
-          "links": [
-            {
-              "label": "Conditions",
-              "href": "/terms"
-            },
-            {
-              "label": "Confidentialité",
-              "href": "/privacy"
-            },
-            {
-              "label": "Cookies",
-              "href": "/"
-            }
-          ]
-        }
-      },
-      "copyright": " 2025 AnyRide. powered by Techenex"
     }
   },
    "partnerBanner": {
@@ -877,6 +824,74 @@
         "title": "Conçu pour les marchés émergents",
         "description": "AnyRide est conçu pour les environnements de transport africains, en équilibrant l'innovation avec les infrastructures, les politiques et les contraintes opérationnelles.",
         "icon": "/images/icons.png"
+      }
+    ]
+  },
+  "partnerFormIntro": {
+    "title": "Vous souhaitez devenir partenaire avec nous ?",
+    "subtitle": "Remplissez le formulaire ci-dessous avec les informations nécessaires pour nous rejoindre",
+     "fields": {
+      "fullName": {
+        "label": "Nom complet",
+        "placeholder": "Entrez votre nom complet"
+      },
+      "organizationName": {
+        "label": "Nom de l’organisation",
+        "placeholder": "Entrez le nom de votre organisation"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Entrez votre adresse email"
+      },
+      "phone": {
+        "label": "Numéro de téléphone (optionnel)",
+        "placeholder": "Entrez votre numéro de téléphone"
+      },
+      "partnershipCategory": {
+        "label": "Catégorie de partenariat",
+        "placeholder": "Précisez la catégorie de partenariat"
+      },
+      "message": {
+        "label": "Message / Détails de la proposition*",
+        "placeholder": "Fournissez votre message ou les détails de votre proposition"
+      }
+    },
+
+    "buttons": {
+      "submit": "Envoyer",
+      "loading": "Envoi en cours..."
+    },
+
+    "errors": {
+      "required": "Veuillez remplir tous les champs obligatoires.",
+      "invalidEmail": "Veuillez entrer une adresse email valide.",
+      "submissionFailed": "L’envoi a échoué.",
+      "network": "Erreur réseau. Veuillez réessayer."
+    },
+
+    "success": {
+      "submitted": "Formulaire envoyé avec succès !"
+    }
+  },
+  "partnershipwork": {
+    "label":"COMMENT FONCTIONNENT LES PARTENARIATS",
+    "title": "Comment fonctionne le partenariat avec AnyRide",
+    "subtitle": "Voici des étapes simples pour collaborer avec nous",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Soumettre un intérêt de partenariat",
+        "description": "Fournir des informations de base sur leur organisation, la catégorie de partenariat et le domaine de collaboration proposé via le formulaire de demande."
+      },
+      {
+        "step": 2,
+        "title": "AnyRide examine et s'engage",
+        "description": "L'équipe d'AnyRide examine la soumission, évalue l'alignement stratégique et opérationnel, et engage les partenaires pertinents pour des discussions supplémentaires si nécessaire."
+      },
+      {
+        "step": 3,
+        "title": "Structure du partenariat et déploiement",
+        "description": "Les partenariats approuvés sont structurés avec des rôles, responsabilités et délais clairs, suivis d'un déploiement coordonné et d'une intégration opérationnelle."
       }
     ]
   },
@@ -1271,11 +1286,7 @@
   "disclaimer": "Nous ne partagerons jamais vos informations.",
   "submit": "Envoyer la demande de flotte",
   "errorsRequired": "Veuillez remplir tous les champs obligatoires",
-  "errorsInvalidEmail": "Veuillez entrer un e-mail valide",
-  "errorsConsentRequired": "Vous devez donner votre consentement pour continuer",
-  "errorsFailed": "Échec de l'envoi du formulaire",
-  "errorsNetwork": "Erreur réseau, veuillez réessayer",
-  "success": "Votre demande de flotte a été envoyée avec succès",
+      "success": "Votre demande de flotte a été envoyée avec succès",
      "cta": {
       "title": "Prêt à exploiter votre flotte sur AnyRide ?",
       "button": "Postuler en tant que propriétaire de flotte"
@@ -1283,6 +1294,162 @@
     "forms": {
       "title": "Formulaire de demande pour propriétaire de flotte",
       "header": "Prêt à exploiter votre flotte sur AnyRide ? Remplissez le formulaire ci-dessous."
+    }
+  },
+  "PartnerCategories": {
+    "title": "Nos Catégories de Partenaires",
+    "description": "Organisations avec lesquelles nous collaborons pour renforcer les infrastructures de transport et les opérations",
+    "labels": {
+      "whoIncludes": "Qui cela inclut :",
+      "whyMatters": "Pourquoi cela compte :"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Partenaires Carburant & Énergie",
+        "subtitle": "Carburant & Énergie",
+        "description": "Maximisez le potentiel de gain de votre flotte avec des placements de conducteurs garantis.",
+        "includes": [
+          "Réseaux de stations-service",
+          "Compagnies pétrolières et énergétiques",
+          "Fournisseurs de cartes carburant",
+          "Compagnies de distribution d'énergie"
+        ],
+        "matters": [
+          "Abordabilité du carburant pour les conducteurs",
+          "Stabilité des coûts opérationnels",
+          "Rétention et satisfaction des conducteurs"
+        ]
+      },
+      "compliance": {
+        "title": "Conformité, Assurance & Risques",
+        "subtitle": "Conformité / Assurance / Risques",
+        "description": "Assurez la conformité et protégez votre entreprise avec une couverture complète des risques.",
+        "includes": [
+          "Fournisseurs d'assurance véhicule",
+          "Assureurs passagers et responsabilité civile",
+          "Sociétés de gestion des risques",
+          "Administrateurs d'accidents et de réclamations",
+          "Sociétés d'audit de sécurité"
+        ],
+        "matters": [
+          "Sécurité des passagers et des conducteurs",
+          "Conformité réglementaire",
+          "Atténuation des risques de la plateforme"
+        ]
+      },
+      "driver": {
+        "title": "Associations de Conducteurs & Organisations de Transport",
+        "subtitle": "Associations & Transport",
+        "description": "Soutenir le bien-être des conducteurs et renforcer la représentation de l'industrie.",
+        "includes": [
+          "Syndicats de chauffeurs de taxi",
+          "Associations de taxi-motos",
+          "Coopératives de transport",
+          "Organisations de conducteurs professionnels"
+        ],
+        "matters": [
+          "Intégration des conducteurs à grande échelle",
+          "Confiance au sein des communautés de transport locales",
+          "Légitimité opérationnelle"
+        ]
+      },
+      "vehicle": {
+        "title": "Fournisseurs de Véhicules & Concessionnaires",
+        "subtitle": "Fournisseurs & Concessionnaires",
+        "description": "Accédez à des véhicules de qualité et à un financement flexible pour l'expansion de la flotte.",
+        "includes": [
+          "Concessionnaires de véhicules neufs et d'occasion",
+          "Fournisseurs de motos et tricycles",
+          "Importateurs de véhicules",
+          "Sociétés de leasing et de location de flotte"
+        ],
+        "matters": [
+          "Expansion de la flotte",
+          "Disponibilité des véhicules",
+          "Standardisation et contrôle qualité"
+        ]
+      },
+      "government": {
+        "title": "Gouvernement & Organismes de Réglementation",
+        "subtitle": "Gouvernement & Réglementation",
+        "description": "Naviguez dans les réglementations et obtenez les autorisations d'exploitation nécessaires.",
+        "includes": [
+          "Ministères des Transports",
+          "Autorités municipales de transport",
+          "Agences de sécurité routière",
+          "Institutions de délivrance de permis et de réglementation"
+        ],
+        "matters": [
+          "Autorisation légale d'opérer",
+          "Alignement politique",
+          "Durabilité à long terme"
+        ]
+      },
+      "finance": {
+        "title": "Banques & Institutions Financières",
+        "subtitle": "Banques & Finance",
+        "description": "Permettre des transactions sécurisées et l'inclusion financière pour les conducteurs.",
+        "includes": [
+          "Banques commerciales",
+          "Institutions de microfinance",
+          "Fournisseurs de financement de flotte",
+          "Partenaires bancaires d'entreprise"
+        ],
+        "matters": [
+          "Financement des propriétaires de flotte",
+          "Comptes de règlement et séquestre",
+          "Crédibilité financière"
+        ]
+      },
+      "hardware": {
+        "title": "Smartphone & Partenaires Matériel",
+        "subtitle": "Smartphone & Matériel",
+        "description": "Fournir aux conducteurs des appareils fiables et une connectivité.",
+        "includes": [
+          "Fabricants de smartphones",
+          "Distributeurs d'appareils mobiles",
+          "Fournisseurs de financement de matériel",
+          "Fournisseurs de télématique et de matériel véhicule"
+        ],
+        "matters": [
+          "Accès des conducteurs aux appareils",
+          "Fiabilité de la plateforme",
+          "Collecte de données opérationnelles"
+        ]
+      },
+      "mapping": {
+        "title": "Cartographie, Navigation & Données Locales",
+        "subtitle": "Cartographie & Données",
+        "description": "Optimisez les itinéraires et améliorez l'expérience client avec une navigation précise.",
+        "includes": [
+          "Sociétés de cartographie et SIG",
+          "Fournisseurs de données de navigation locales",
+          "Organisations de planification urbaine et de données d'infrastructure",
+          "Universités et institutions de recherche"
+        ],
+        "matters": [
+          "Prises en charge et déposes précises",
+          "Réduction des frictions de trajet",
+          "Expérience client améliorée",
+          "Connaissance du marché local"
+        ]
+      },
+      "emergency": {
+        "title": "Urgence & Sécurité",
+        "subtitle": "Urgence & Sécurité",
+        "description": "Assurer une réponse rapide et la sécurité des conducteurs et des passagers.",
+        "includes": [
+          "Services d'ambulance",
+          "Hôpitaux et cliniques",
+          "Sociétés de sécurité privée",
+          "Fournisseurs d'assistance routière"
+        ],
+        "matters": [
+          "Préparation à la réponse d'urgence",
+          "Confiance des passagers",
+          "Gestion des incidents"
+        ]
+      }
     }
   }
 }

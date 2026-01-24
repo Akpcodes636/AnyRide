@@ -471,7 +471,7 @@
         ]
       }
     },
-    "copyright": " 2025 AnyRide. powered by Techenex"
+    "copyright": " AnyRide. inaendeshwa na "
   },
   "WaitlistPage": {
     "hero": {
@@ -780,13 +780,6 @@
           "answer": "Tunajiandaa kwa uzinduzi wa MVP yetu hivi karibuni. Wote waliopo kwenye orodha ya kusubiri wataarifiwa kwanza."
         }
       ]
-    },
-    "footer": {
-      "description": "Tunajenga mtandao wa usafiri wa ndani unaotaka zaidi — ulioundwa kwa abiria na watu halisi. Nafuu, salama, na daima hapa unapohitaji.",
-      "company": ["Kuhusu", "Miji"],
-      "help": ["Msaada", "Usalama", "Usalama"],
-      "legal": ["Masharti", "Faragha", "Faragha"],
-      "copyright": " 2025 AnyRide. powered by Techenex"
     }
   },
    "partnerBanner": {
@@ -819,6 +812,76 @@
       }
     ]
   },
+  "partnerFormIntro": {
+    "title": "Unataka kushirikiana nasi?",
+    "subtitle": "Jaza fomu hapa chini kwa taarifa zinazohitajika ili kujiunga",
+        "fields": {
+      "fullName": {
+        "label": "Jina Kamili",
+        "placeholder": "Ingiza jina lako kamili"
+      },
+      "organizationName": {
+        "label": "Jina la Shirika",
+        "placeholder": "Ingiza jina la shirika lako"
+      },
+      "email": {
+        "label": "Barua Pepe",
+        "placeholder": "Ingiza barua pepe yako"
+      },
+      "phone": {
+        "label": "Nambari ya Simu (Si lazima)",
+        "placeholder": "Ingiza nambari yako ya simu"
+      },
+      "partnershipCategory": {
+        "label": "Aina ya Ushirikiano",
+        "placeholder": "Eleza aina ya ushirikiano"
+      },
+      "message": {
+        "label": "Ujumbe / Maelezo ya Pendekezo*",
+        "placeholder": "Toa ujumbe wako au maelezo ya pendekezo"
+      }
+    },
+
+    "buttons": {
+      "submit": "Tuma",
+      "loading": "Inatuma..."
+    },
+
+    "errors": {
+      "required": "Tafadhali jaza sehemu zote muhimu.",
+      "invalidEmail": "Tafadhali ingiza barua pepe halali.",
+      "submissionFailed": "Kutuma kumeshindikana.",
+      "network": "Hitilafu ya mtandao. Tafadhali jaribu tena."
+    },
+
+    "success": {
+      "submitted": "Fomu imetumwa kwa mafanikio!"
+    }
+  },
+  "partnershipwork": {
+    "label":"JINSI USHIRIKIANO UNAVYOFANYA KAZI",
+    "title": "Jinsi Ushirikiano na AnyRide unavyofanya kazi",
+    "subtitle": "Hapa kuna hatua rahisi za kushirikiana nasi",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Tuma nia ya ushirikiano",
+        "description": "Toa taarifa za msingi kuhusu shirika lako, aina ya ushirikiano, na eneo lililopendekezwa la ushirikiano kupitia fomu ya uchunguzi."
+      },
+      {
+        "step": 2,
+        "title": "AnyRide inakagua na kushirikiana",
+        "description": "Timu ya AnyRide inakagua maombi, kutathmini ulinganifu wa kimkakati na kiutendaji, na kushirikiana na washirika husika kwa majadiliano zaidi pale inapohitajika."
+      },
+      {
+        "step": 3,
+        "title": "Muundo wa ushirikiano na utekelezaji",
+        "description": "Ushirikiano uliothibitishwa umeundwa na majukumu, wajibu, na ratiba zilizo wazi, ikifuatiwa na utekelezaji wa pamoja na ujumuishaji wa kiutendaji."
+      }
+    ]
+  },
+
+
   "PrivacyPolicy": {
     "title": "Sera ya Faragha",
     "lastUpdated": "Iliyosasishwa mwisho: Januari 2025",
@@ -1216,12 +1279,168 @@
     "errorsNetwork": "Hitilafu ya mtandao, tafadhali jaribu tena",
     "success": "Ombi lako la fleet limewasilishwa kwa mafanikio",
     "cta": {
-      "title": "Ozali kozwa kosalela fleet na AnyRide?",
-      "button": "Kokanga lokola mongi ya fleet"
+      "title": "Je, uko tayari kuendesha flota yako kwenye AnyRide?",
+      "button": "Tuma maombi kama mmiliki wa flota"
     },
     "forms": {
-      "title": "Fomu ya Maombi ya Mmiliki wa Fleet",
-      "header": "Uko tayari kuendesha mabasi yako kwenye AnyRide? Jaza fomu hapa chini."
+      "title": "Fomu ya Maombi ya Mmiliki wa Flota",
+      "header": "Je, uko tayari kuendesha flota yako kwenye AnyRide? Kamilisha maombi hapa chini."
+    }
+  },
+  "PartnerCategories": {
+    "title": "Aina Zetu za Washirika",
+    "description": "Mashirika tunayoshirikiana nayo kuimarisha miundombinu ya usafiri na oparesheni",
+    "labels": {
+      "whoIncludes": "Hii inajumuisha nani:",
+      "whyMatters": "Kwa nini wana umuhimu:"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Washirika wa Mafuta na Nishati",
+        "subtitle": "Mafuta na Nishati",
+        "description": "Ongeza uwezo wa mapato ya flota yako kwa uhakika wa madereva.",
+        "includes": [
+          "Mitandao ya vituo vya mafuta",
+          "Makampuni ya petroli na nishati",
+          "Watoa kadi za mafuta",
+          "Makampuni ya usambazaji nishati"
+        ],
+        "matters": [
+          "Uwezo wa kumudu mafuta kwa madereva",
+          "Utulivu wa gharama za uendeshaji",
+          "Kuhifadhi na kuridhika kwa madereva"
+        ]
+      },
+      "compliance": {
+        "title": "Uzingatiaji, Bima na Hatari",
+        "subtitle": "Uzingatiaji / Bima / Hatari",
+        "description": "Hakikisha uzingatiaji na linda biashara yako kwa bima kamili ya hatari.",
+        "includes": [
+          "Watoa bima za magari",
+          "Watoa bima za abiria na dhima",
+          "Mashirika ya usimamizi wa hatari",
+          "Wasimamizi wa ajali na madai",
+          "Makampuni ya ukaguzi wa usalama"
+        ],
+        "matters": [
+          "Usalama wa abiria na madereva",
+          "Uzingatiaji wa kanuni",
+          "Kupunguza hatari za jukwaa"
+        ]
+      },
+      "driver": {
+        "title": "Vyama vya Madereva & Mashirika ya Usafiri",
+        "subtitle": "Vyama vya Madereva & Usafiri",
+        "description": "Kusaidia ustawi wa madereva na kuimarisha uwakilishi wa tasnia.",
+        "includes": [
+          "Vyama vya madereva teksi",
+          "Vyama vya madereva bodaboda",
+          "Vyama vya ushirika vya usafiri",
+          "Mashirika ya madereva wa kitaalamu"
+        ],
+        "matters": [
+          "Uajiri wa madereva kwa wingi",
+          "Imani ndani ya jamii za usafiri wa ndani",
+          "Uhalali wa kiutendaji"
+        ]
+      },
+      "vehicle": {
+        "title": "Wauzaji wa Magari & Mawakala",
+        "subtitle": "Wauzaji wa Magari & Mawakala",
+        "description": "Pata magari yenye ubora na ufadhili rahisi kwa upanuzi wa flota.",
+        "includes": [
+          "Mawakala wa magari mapya na yaliyotumika",
+          "Wauzaji wa pikipiki na bajaji",
+          "Waagizaji wa magari",
+          "Makampuni ya kukodisha flota"
+        ],
+        "matters": [
+          "Upanuzi wa flota",
+          "Upatikanaji wa magari",
+          "Viwango na udhibiti wa ubora"
+        ]
+      },
+      "government": {
+        "title": "Serikali & Mashirika ya Udhibiti",
+        "subtitle": "Serikali & Udhibiti",
+        "description": "Kufuata kanuni na kupata vibali muhimu vya uendeshaji.",
+        "includes": [
+          "Wizara za Usafiri",
+          "Mamlaka za usafiri wa manispaa",
+          "Mashirika ya usalama barabarani",
+          "Taasisi za leseni na udhibiti"
+        ],
+        "matters": [
+          "Uidhinishaji wa kisheria kufanya kazi",
+          "Uoanishaji wa sera",
+          "Uendelevu wa muda mrefu"
+        ]
+      },
+      "finance": {
+        "title": "Benki & Taasisi za Kifedha",
+        "subtitle": "Benki & Fedha",
+        "description": "Kuwezesha miamala salama na ujumuishaji wa kifedha kwa madereva.",
+        "includes": [
+          "Benki za biashara",
+          "Taasisi za mikopo midogo",
+          "Watoa ufadhili wa flota",
+          "Washirika wa benki za makampuni"
+        ],
+        "matters": [
+          "Ufadhili wa wamiliki wa flota",
+          "Akaunti za malipo na dhamana",
+          "Uaminifu wa kifedha"
+        ]
+      },
+      "hardware": {
+        "title": "Washirika wa Simu & Vifaa",
+        "subtitle": "Simu & Vifaa",
+        "description": "Kupatia madereva vifaa vya kuaminika na muunganisho.",
+        "includes": [
+          "Watengenezaji wa simu janja",
+          "Wasambazaji wa vifaa vya mkononi",
+          "Watoa ufadhili wa vifaa",
+          "Mapokoaji ya telematics na vifaa vya gari"
+        ],
+        "matters": [
+          "Upatikanaji wa vifaa kwa madereva",
+          "Utegemezi wa jukwaa",
+          "Ukusanyaji wa data za kiutendaji"
+        ]
+      },
+      "mapping": {
+        "title": "Ramani, Urambazaji & Washirika wa Data za Ndani",
+        "subtitle": "Ramani & Data",
+        "description": "Boresha njia na uzoefu wa mteja kwa urambazaji sahihi.",
+        "includes": [
+          "Makampuni ya ramani na GIS",
+          "Watoa data za urambazaji wa ndani",
+          "Mashirika ya mipango miji na data za miundombinu",
+          "Vyuo vikuu na taasisi za utafiti"
+        ],
+        "matters": [
+          "Kuchukua na kushusha kwa usahihi",
+          "Kupunguza msuguano wa safari",
+          "Uzoefu ulioboreshwa wa mteja",
+          "Uelewa wa soko la ndani"
+        ]
+      },
+      "emergency": {
+        "title": "Dharura & Usalama",
+        "subtitle": "Dharura & Usalama",
+        "description": "Hakikisha mwitikio wa haraka na usalama kwa madereva na abiria.",
+        "includes": [
+          "Huduma za ambulensi",
+          "Hospitali na kliniki",
+          "Makampuni ya ulinzi binafsi",
+          "Watoa huduma za msaada barabarani"
+        ],
+        "matters": [
+          "Utayari wa mwitikio wa dharura",
+          "Imani ya abiria",
+          "Usimamizi wa matukio"
+        ]
+      }
     }
   }
 }

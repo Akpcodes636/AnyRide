@@ -795,42 +795,6 @@
           "answer": "Tokobengisa yo na email oyo opesaki ntango omikotisaki na liste ya kozela."
         }
       ]
-    },
-    "Footer": {
-      "description": "Tozali kotonga réseau ya kotambola ya mboka oyo bandimi mingi — etongami mpo na bapasažɛ mpe bato ya solo. Ya ntalo moke, ya libateli, mpe ezali ntango nyonso ntango osengeli na yango.",
-      "sections": {
-        "company": {
-          "title": "Kompanyi",
-          "links": [
-            {
-              "label": "Na ntina",
-              "href": "/about"
-            },
-            {
-              "label": "Blog",
-              "href": "/"
-            }
-          ]
-        },
-        "help": {
-          "title": "Lisalisi",
-          "links": []
-        },
-        "legal": {
-          "title": "Mibeko",
-          "links": [
-            {
-              "label": "Mibeko",
-              "href": "/terms"
-            },
-            {
-              "label": "Politique ya Vie Privée",
-              "href": "/privacy"
-            }
-          ]
-        }
-      },
-      "copyright": "© 2025 AnyRide. esalamaki na Techenex"
     }
   },
   "partnerBanner": {
@@ -860,6 +824,74 @@
         "title": "Ewutami mpo na Masoko ya Kosala",
         "description": "AnyRide ebongisami mpo na environnement ya transport ya Afrique, kosangisa innovation na infrastructure, politique, mpe contraintes ya opération.",
         "icon": "/images/icons.png"
+      }
+    ]
+  },
+  "partnerFormIntro": {
+    "title": "Olingi kosala partenariat na biso?",
+    "subtitle": "Tondisa formulaire oyo na ba sango oyo esengeli mpo na kosangana na biso",
+     "fields": {
+      "fullName": {
+        "label": "Kombo Mobimba",
+        "placeholder": "Tyá kombo na yo mobimba"
+      },
+      "organizationName": {
+        "label": "Kombo ya Lisanga",
+        "placeholder": "Tyá kombo ya lisanga na yo"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Tyá email na yo"
+      },
+      "phone": {
+        "label": "Nimero ya telefone (Esengeli te)",
+        "placeholder": "Tyá nimero ya telefone"
+      },
+      "partnershipCategory": {
+        "label": "Lolenge ya Boyokani",
+        "placeholder": "Lakisa lolenge ya boyokani"
+      },
+      "message": {
+        "label": "Message / Makambo ya proposisyo*",
+        "placeholder": "Tyá message na yo to makambo ya proposisyo"
+      }
+    },
+
+    "buttons": {
+      "submit": "Tinda",
+      "loading": "Ezali kotinda..."
+    },
+
+    "errors": {
+      "required": "Tondisa bisika nyonso ya ntina.",
+      "invalidEmail": "Tyá email ya solo.",
+      "submissionFailed": "Kotinda elongi te.",
+      "network": "Libunga ya réseau. Meká lisusu."
+    },
+
+    "success": {
+      "submitted": "Fɔrɔmɛ etindami malamu!"
+    }
+  },
+  "partnershipwork": {
+    "label":"NDENGE BOYOKANI ESALAKA",
+    "title": "Ndenge ya kosala partenariat na AnyRide",
+    "subtitle": "Oyo ezali ndenge ya kosala partenariat na biso na ndenge ya ndenge moko",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Tinda esengo ya partenariat",
+        "description": "Tika mayele ya ntina mpo na lisanga na bango, nse ya partenariat, mpe esika oyo balingaka kosala collaboration na formulaire ya inquiry."
+      },
+      {
+        "step": 2,
+        "title": "AnyRide elobi mpe esalaka",
+        "description": "Ekolo ya AnyRide eyebisa mayele, kotala soki ezali na plan ya stratégie mpe opération, mpe kosolola na bakonzi ya partenariat soki ezali na ntina."
+      },
+      {
+        "step": 3,
+        "title": "Structuration ya partenariat mpe rollout",
+        "description": "Partenariat oyo ebongwanaki ezalaka na ndenge ya clair ya rôle, responsabilité mpe mikolo, esukaka na rollout ya coordination mpe intégration opérationnelle."
       }
     ]
   },
@@ -1256,12 +1288,168 @@
   "errorsNetwork": "Likambo ya réseau, kobongisa lisusu",
   "success": "Lobiko na yo ya fleet esili kosalama malamu",
     "cta": {
-      "title": "Tayari kuendesha gari lako kwenye AnyRide?",
-      "button": "Omba kuwa mmiliki wa gari"
+      "title": "Osilisi mpo na kodondisa flotte na yo na AnyRide?",
+      "button": "Koma nkolo wa flotte"
     },
     "forms": {
-    "title": "Formulaire ya Maombi ya Proprietaire ya Fleet",
-    "header": "Olingi kosala fleet na AnyRide? Zala formulaire oyo."
-  }
+      "title": "Formulaire ya Lisungi ya Nkolo wa Flotte",
+      "header": "Osilisi mpo na kodondisa flotte na yo na AnyRide? Tondisa formulaire oyo awa na se."
+    }
+  },
+  "PartnerCategories": {
+    "title": "Ba-Categories na Biso ya Bapartenaire",
+    "description": "Ba-organisations oyo tozali kosala na bango elongo mpo na kokolisa infrastructure ya transport mpe misala",
+    "labels": {
+      "whoIncludes": "Oyo ezali na kati :",
+      "whyMatters": "Mpo na nini ezali na ntina :"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Bapartenaire ya Essence & Énergie",
+        "subtitle": "Essence & Énergie",
+        "description": "Bakisa maponi ya flotte na yo na batambwisi oyo bandimami.",
+        "includes": [
+          "Ba-réseaux ya ba-stations essence",
+          "Ba-compagnies ya pétrole na énergie",
+          "Bapesi ba-cartes ya essence",
+          "Ba-compagnies ya kokabola énergie"
+        ],
+        "matters": [
+          "Ntalo ya essence ya malamu mpo na batambwisi",
+          "Kofuta mbongo ya mosala na kimia",
+          "Kobomba batambwisi mpe esengo na bango"
+        ]
+      },
+      "compliance": {
+        "title": "Botosi Mibeko, Assurance & Bopetoli",
+        "subtitle": "Botosi / Assurance / Bopetoli",
+        "description": "Tosa mibeko mpe batela entreprise na yo na bopetoli mobimba.",
+        "includes": [
+          "Bapesi assurance ya mituka",
+          "Ba-assureurs ya bapasažɛ mpe responsabilité civile",
+          "Ba-compagnies ya gestion ya ba-risques",
+          "Ba-administrateurs ya ba-accidents mpe ba-réclamations",
+          "Ba-compagnies ya audit ya sécurité"
+        ],
+        "matters": [
+          "Libateli ya bapasažɛ mpe batambwisi",
+          "Botosi mibeko ya Leta",
+          "Kokitisa ba-risques ya plateforme"
+        ]
+      },
+      "driver": {
+        "title": "Ba-Associations ya Batambwisi & Ba-Organisations ya Transport",
+        "subtitle": "Ba-Associations & Transport",
+        "description": "Kosunga bolamu ya batambwisi mpe kokolisa representasion ya industrie.",
+        "includes": [
+          "Syndicats ya ba-chauffeurs taxi",
+          "Ba-associations ya taxi-moto",
+          "Ba-coopératives ya transport",
+          "Ba-organisations ya batambwisi professionnels"
+        ],
+        "matters": [
+          "Kokotisa batambwisi mingi",
+          "Bondimi na kati ya ba-communautés ya transport ya mboka",
+          "Ndingisa ya mosala"
+        ]
+      },
+      "vehicle": {
+        "title": "Bapesi Mituka & Bakompanyi ya Koteka",
+        "subtitle": "Bapesi & Bakompanyi ya Koteka",
+        "description": "Zwá mituka ya malamu mpe ba-crédits ya pete mpo na kokolisa flotte.",
+        "includes": [
+          "Bakompanyi ya koteka mituka ya sika na ya kala",
+          "Bapesi ya moto mpe ba-tricycles",
+          "Ba-importateurs ya mituka",
+          "Ba-compagnies ya leasing mpe location ya flotte"
+        ],
+        "matters": [
+          "Kokolisa flotte",
+          "Kozwa mituka",
+          "Ndenge moko mpe quality control"
+        ]
+      },
+      "government": {
+        "title": "Leta & Bato ya Mibeko",
+        "subtitle": "Leta & Mibeko",
+        "description": "Tambola na mibeko mpe zwa ba-autorisations ya mosala oyo esengeli.",
+        "includes": [
+          "Ministères ya Transport",
+          "Ba-autorités ya transport ya engumba",
+          "Agences ya sécurité routière",
+          "Ba-institutions ya kopesa permis mpe mibeko"
+        ],
+        "matters": [
+          "Ndingisa ya Leta mpo na kosala",
+          "Kolanda politique",
+          "Koumela ntango molai"
+        ]
+      },
+      "finance": {
+        "title": "Banques & Ba-institutions ya Mbongo",
+        "subtitle": "Banques & Finance",
+        "description": "Sala ete batambwisi bakoka kosala ba-transactions ya libateli mpe kozwa mbongo.",
+        "includes": [
+          "Banques commerciales",
+          "Institutions ya microfinance",
+          "Bapesi crédit ya flotte",
+          "Bapartenaire banques d'entreprise"
+        ],
+        "matters": [
+          "Financement ya bankolo flotte",
+          "Ba-comptes ya règlement mpe séquestre",
+          "Bondimi ya mbongo"
+        ]
+      },
+      "hardware": {
+        "title": "Smartphone & Bapartenaire ya Materiel",
+        "subtitle": "Smartphone & Materiel",
+        "description": "Pesa batambwisi ba-appareils ya malamu mpe connexion.",
+        "includes": [
+          "Ba-fabricants ya smartphones",
+          "Ba-distributeurs ya ba-appareils mobiles",
+          "Bapesi crédit ya materiel",
+          "Bapesi ya télématique mpe materiel ya motuka"
+        ],
+        "matters": [
+          "Batambwisi kozwa ba-appareils",
+          "Plateforme kosala malamu",
+          "Kozwa ba-données ya mosala"
+        ]
+      },
+      "mapping": {
+        "title": "Cartographie, Navigation & Ba-données ya Mboka",
+        "subtitle": "Cartographie & Ba-données",
+        "description": "Bongisa nzela mpe experience ya client na navigation ya solo.",
+        "includes": [
+          "Ba-compagnies ya cartographie na GIS",
+          "Bapesi ba-données ya navigation ya mboka",
+          "Ba-organisations ya urbanisme na ba-données ya infrastructure",
+          "Universités na ba-institutions ya recherche"
+        ],
+        "matters": [
+          "Kozwa mpe kokitisa bato na sikisiki",
+          "Kokitisa mpasi ya mobembo",
+          "Kobongisa experience ya client",
+          "Boyebi ya zando ya mboka"
+        ]
+      },
+      "emergency": {
+        "title": "Emergency & Libateli",
+        "subtitle": "Emergency & Libateli",
+        "description": "Sala ete lisalisi eya noki mpe libateli mpo na batambwisi na bapasažɛ.",
+        "includes": [
+          "Services ya ambulance",
+          "Hopitaux na cliniques",
+          "Ba-firmes ya sécurité privée",
+          "Bapesi lisalisi na nzela"
+        ],
+        "matters": [
+          "Kozala prèt mpo na lisalisi ya noki",
+          "Bondimi ya bapasažɛ",
+          "Boyangeli ya makambo"
+        ]
+      }
+    }
   }
 }
