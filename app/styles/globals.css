@@ -148,4 +148,11 @@
     background-position: top;
     background-repeat: no-repeat;
   }
+  .bg-career {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/images/join.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
 }

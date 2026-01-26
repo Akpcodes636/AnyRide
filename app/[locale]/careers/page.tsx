@@ -1,17 +1,18 @@
+"use client";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import CareersHero from "@/app/components/careers/CareersHero";
-import OpenRoles from "@/app/components/careers/OpenRoles";
-import CareersCTA from "@/app/components/careers/CareersCTA";
+import OurMission from "@/app/components/careers/OurMission";
+import WhoCanApply from "@/app/components/careers/WhoCanApply";
 
 export default function CareersPage() {
     return (
-        <main>
+        <>
             <Header />
             <CareersHero />
-            <OpenRoles />
-            <CareersCTA />
+            <OurMission />
+            <WhoCanApply />
             <Footer />
-        </main>
+        </>
     );
 }

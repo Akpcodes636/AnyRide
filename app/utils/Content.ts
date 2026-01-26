@@ -506,3 +506,27 @@ export const partnerTrustCards = [
     icon: "/images/icons.png",
   },
 ];
+
+
+export const ourMission = [
+  {
+    img:"/images/icons-2.png",
+    title:"Modernizing transportation",
+    text:"We are building modern transportation systems that replace fragmented and informal operations with structured, technology‑enabled mobility solutions."
+  },
+  {
+    img:"/images/lock-icons.png",
+    title:"Creating structured, compliant systems",
+    text:"AnyRide is designed around compliance, accountability, and operational discipline—supporting transportation models that align with regulation and long‑term sustainability."
+  },
+  {
+    img:"/images/partners-icons.png",
+    title:"Supporting drivers, operators,and cities",
+    text:"Our platform serves the entire ecosystem, enabling drivers and operators to work more efficiently while helping cities improve access to reliable mobility."
+  },
+  {
+   img:"/images/cars.png",
+   title:"Building reliable mobility infrastructure",
+   text:"We focus on creating dependable transportation infrastructure that institutions, businesses, and communities can trust and scale over time."
+  }
+]
