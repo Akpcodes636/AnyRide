@@ -1073,36 +1073,128 @@
   },
   "CareersPage": {
     "hero": {
-      "title": "Jiunge na Timu Yetu",
-      "subtitle": "Tusaidie kujenga mustakabali wa usafiri wa mjini.",
-      "description": "Daima tunatafuta watu wenye vipaji kujiunga na utume wetu wa kujenga mtandao wa usafiri wa ndani unaoaminika zaidi."
+      "title": "Jenga Mustakabali wa Usafirishaji Pamoja Nasi",
+      "description": "Tunatafuta watu wenye vipaji wenye ujuzi, uzoefu, na uelewa unaohitajika kusaidia kuendesha na kukuza jukwaa la kisasa la usafirishaji.",
+      "button": "Jiunge na Timu Yetu"
     },
-    "roles": {
-      "title": "Nafasi za Kazi",
-      "subtitle": "Fanya kazi nasi",
+    "values": {
+      "subtitle": "Maadili Yetu",
+      "title": "Tunachokithamini katika Timu Yetu",
+      "description": "AnyRide imeundwa kufanya kazi ndani ya hali halisi za udhibiti, usalama, na hali tata — ikiunga mkono ushirikiano wa muda mrefu na wa kuaminika.",
       "items": [
         {
-          "title": "Mafundi (Technicians)",
-          "description": "Dhibiti na boresha miundombinu yetu ya kidijitali na mifumo ya vifaa."
+          "title": "Uwajibikaji na umiliki",
+          "description": "Kuchukua jukumu la matokeo na kuona kazi yako kutoka kwa wazo hadi athari."
         },
         {
-          "title": "Wawakilishi wa Huduma kwa Wateja",
-          "description": "Toa msaada wa kiwango cha juu kwa abiria na madereva wetu."
+          "title": "Uelewa wa shughuli za ulimwengu halisi",
+          "description": "Uzoefu wa vitendo wa jinsi mifumo, watu, na michakato inavyofanya kazi zaidi ya nadharia."
         },
         {
-          "title": "Makanika (Mechanics)",
-          "description": "Hakikisha kila gari katika mtandao wetu ni salama na liko tayari kwa safari."
+          "title": "Heshima kwa kanuni na uzingatiaji",
+          "description": "Kufanya kazi kwa uadilifu ndani ya mifumo ya kisheria, ya udhibiti na ya kitaasisi."
         },
         {
-          "title": "Operesheni na Usafirishaji",
-          "description": "Saidia kudhibiti mienendo ya kila siku na upanuzi wa huduma yetu."
+          "title": "Mawazo ya muda mrefu",
+          "description": "Kujenga mifumo endelevu iliyoundwa kwa ukuaji, utulivu, na athari halisi."
+        },
+        {
+          "title": "Ushirikiano kati ya taaluma",
+          "description": "Kufanya kazi kwa ufanisi kati ya shughuli, teknolojia, fedha, na sera."
+        },
+        {
+          "title": "Ufahamu wa kitamaduni na wa soko",
+          "description": "Kuelewa muktadha wa ndani, ukweli wa watumiaji, na mienendo ya masoko yanayochipuka."
         }
       ]
     },
+    "banner": {
+      "title": "Unavutiwa kuchangia katika mustakabali wa usafirishaji?",
+      "button": "Jiunge na Timu Yetu"
+    },
+    "partner": {
+      "section1": {
+        "subtitle": "Kwa nini kushirikiana nasi?",
+        "title": "Ni jinsi gani kufanya kazi AnyRide?",
+        "items": [
+          "Kujenga mifumo inayofaa",
+          "Kufanya kazi kati ya teknolojia na shughuli",
+          "Kutatua changamoto halisi za usafirishaji",
+          "Kukua na kampuni inavyopanuka"
+        ]
+      },
+      "section2": {
+        "subtitle": "Fursa za Ushirikiano",
+        "title": "Fursa za Kukua na Kampuni",
+        "items": [
+          "Wanachama wa awali wa timu hupanga mifumo",
+          "Fursa ya kukua katika nafasi za uongozi",
+          "Athari ya muda mrefu badala ya mvuto wa muda mfupi",
+          "Uwajibikaji halisi, umiliki halisi"
+        ]
+      }
+    },
+    "contact": {
+      "title": "Jiunge na Timu Yetu",
+      "description": "Jaza fomu hapa chini kwa taarifa zinazohitajika kujiunga na timu yetu"
+    },
+    "form": {
+      "labels": {
+        "fullName": "Jina Kamili",
+        "email": "Barua Pepe",
+        "phone": "Nambari ya Simu",
+        "expertise": "Eneo la Utaalamu / Asili",
+        "experience": "Miaka ya Uzoefu",
+        "message": "Ujumbe"
+      },
+      "placeholders": {
+        "fullName": "Jina Kamili*",
+        "email": "Barua Pepe*",
+        "phone": "Nambari ya Simu (Si lazima)",
+        "expertise": "Eneo la Utaalamu / Asili*",
+        "experience": "Miaka ya Uzoefu (Si lazima)",
+        "message": "Ujumbe*"
+      },
+      "required": "*",
+      "submit": "Tuma",
+      "errors": {
+        "required": "Tafadhali jaza sehemu zote zinazohitajika.",
+        "invalidEmail": "Tafadhali ingiza anwani halali ya barua pepe.",
+        "failed": "Kutuma kumeshindikana.",
+        "network": "Hitilafu ya mtandao. Tafadhali jaribu tena."
+      },
+      "success": "Fomu imetumwa kwa mafanikio!"
+    },
     "cta": {
       "title": "Unavutiwa kujiunga nasi?",
-      "description": "Tuma wasifu wako (CV) na barua fupi ya utangulizi kwa timu yetu.",
+      "description": "Tuma wasifu wako na barua fupi ya utangulizi kwa timu yetu.",
       "button": "Omba Sasa"
+    },
+    "ourMission": {
+      "subtitle": "Dhamira Yetu",
+      "title": "Kwa nini tunajenga AnyRide",
+      "items": [
+        {
+          "img": "/images/icons-2.png",
+          "title": "Kuboresha usafirishaji",
+          "text": "Tunajenga mifumo ya kisasa ya usafirishaji inayobadilisha shughuli zilizogawanyika na zisizo rasmi kwa suluhisho za usafirishaji zilizopangwa na zenye teknolojia."
+        },
+        {
+          "img": "/images/lock-icons.png",
+          "title": "Kuunda mifumo iliyopangwa na inayofuata sheria",
+          "text": "AnyRide imeundwa kuzingatia uzingatiaji, uwajibikaji, na nidhamu ya kiutendaji — ikiunga mkono mifumo ya usafirishaji inayolingana na kanuni na uendelevu wa muda mrefu."
+        },
+        {
+          "img": "/images/partners-icons.png",
+          "title": "Kusaidia madereva, waendeshaji, na miji",
+          "text": "Jukwaa letu linasaidia mfumo wote, ikiwezesha madereva na waendeshaji kufanya kazi kwa ufanisi zaidi huku ikisaidia miji kuboresha upatikanaji wa usafirishaji wa kuaminika."
+        },
+        {
+          "img": "/images/cars.png",
+          "title": "Kujenga miundombinu ya usafirishaji ya kuaminika",
+          "text": "Tunazingatia kuunda miundombinu ya usafirishaji inayotegemewa ambayo taasisi, biashara, na jamii zinaweza kuamini na kukua kwa wakati."
+        }
+      ]
     }
   },
   "CookiesPage": {
@@ -1442,5 +1534,64 @@
         ]
       }
     }
-  }
+  },
+  "CareerFaq": {
+    "title": "Miundombinu na Uendeshaji",
+    "labels": {
+      "whoIncludes": "Inahusisha nani:",
+      "whyMatters": "Kwa nini ni muhimu:"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Washirika wa Mafuta na Nishati",
+        "subtitle": "Mafuta na Nishati",
+        "description": "Ongeza mapato ya magari kwa uwekaji wa madereva uliothibitishwa."
+      },
+      "compliance": {
+        "title": "Usimamizi wa magari au lojistiki",
+        "subtitle": "Uzoefu na Ujuzi",
+        "description": "Ujuzi na uzoefu tunaoutafuta kwa viongozi wa uendeshaji."
+      },
+      "driver": {
+        "title": "Uzingatiaji wa sheria, hatari au udhibiti",
+        "subtitle": "Vyama vya Madereva na Usafiri",
+        "description": "Kusaidia ustawi wa madereva na kuimarisha uwakilishi wa sekta."
+      },
+      "vehicle": {
+        "title": "Ubunifu wa michakato na uendeshaji",
+        "subtitle": "Wasambazaji wa Magari",
+        "description": "Pata magari bora na ufadhili rahisi wa kukuza meli."
+      },
+      "government": {
+        "title": "Usimamizi wa teknolojia, bidhaa au mifumo",
+        "subtitle": "Serikali na Udhibiti",
+        "description": "Kuelewa sheria na kupata vibali muhimu."
+      },
+      "finance": {
+        "title": "Takwimu, uchambuzi au ripoti",
+        "subtitle": "Benki na Taasisi za Fedha",
+        "description": "Kuwezesha miamala salama na ujumuishaji wa kifedha kwa madereva."
+      },
+      "hardware": {
+        "title": "Uongozi wa huduma kwa wateja",
+        "subtitle": "Simu na Vifaa",
+        "description": "Kuwapa madereva vifaa vinavyotegemewa na muunganisho mzuri."
+      },
+      "mapping": {
+        "title": "Mkakati wa biashara na uongozi",
+        "subtitle": "Ramani na Takwimu",
+        "description": "Kuboresha njia na uzoefu wa abiria kwa urambazaji sahihi."
+      },
+      "emergency": {
+        "title": "Washirika wa Dharura na Usalama",
+        "subtitle": "Dharura na Usalama",
+        "description": "Kuhakikisha majibu ya haraka na ulinzi kwa madereva na abiria."
+      }
+    }
+  },
+  "WhoCanApply": {
+  "subtitle": "Tunatafuta Nani",
+  "title": "Nani Anapaswa Kuomba?",
+  "description": "AnyRide inatafuta watu wenye ujuzi, busara, na ufahamu wa hali halisi — hasa katika sekta zinazohusiana na usafiri na uendeshaji."
+}
 }

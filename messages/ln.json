@@ -1094,36 +1094,128 @@
   },
   "CareersPage": {
     "hero": {
-      "title": "Sangana na Ekipi na biso",
-      "subtitle": "Salisá biso kotonga mikolo ezali koya ya mobility ya bingumba.",
-      "description": "Tozali ntango nyonso koluka bato ya mayele mpo na kosangana na mission na biso ya kotonga réseau ya kotambola ya mboka oyo bandimi mingi."
+      "title": "Tónga Mikolo Ezali Koya ya Transport Elongo na Biso",
+      "description": "Tozali koluka bato ya mayele na mayele, expérience, mpe bososoli oyo esengeli mpo na kosalisa kotambwisa mpe kokolisa plateforme ya transport ya moderne.",
+      "button": "Sangana na Ekipi na Biso"
     },
-    "roles": {
-      "title": "Ba-Rôles ya Polele",
-      "subtitle": "Salá na biso",
+    "values": {
+      "subtitle": "Mitindo na Biso",
+      "title": "Oyo Totyaka Ntina na Ekipi na Biso",
+      "description": "AnyRide ebongisami mpo na kosala na makambo ya solo ya mibeko, libateli, mpe makambo ya nuance — kosalisa partenariat ya ntango molai mpe ya kondima.",
       "items": [
         {
-          "title": "Ba-Techniciens",
-          "description": "Batela mpe optimiser infrastructure digitale mpe ba-systèmes ya matériel."
+          "title": "Responsabilité mpe propriété",
+          "description": "Kozwa responsabilité ya ba-résultats mpe komona mosala na yo kobanda na likanisi kino na impact."
         },
         {
-          "title": "Ba-Représentants ya Service Clientèle",
-          "description": "Pesa lisalisi ya classe mondiale na bato oyo bazali kotambola mpe batambwisi."
+          "title": "Bososoli ya misala ya mokili ya solo",
+          "description": "Expérience pratique ya ndenge ba-systèmes, bato, mpe ba-processus esalaka koleka théorie."
         },
         {
-          "title": "Ba-Mécaniciens",
-          "description": "Sala ete motuka nyonso na réseau na biso ezala ya libateli mpe ebongi mpo na nzela."
+          "title": "Botosi mpo na mibeko mpe conformité",
+          "description": "Kosala na intégrité na kati ya ba-cadres juridiques, réglementaires mpe institutionnels."
         },
         {
-          "title": "Ba-Opérations & Logistique",
-          "description": "Salisá na boyangeli ya kotambola ya mokolo na mokolo mpe kokola ya service na biso."
+          "title": "Makanisi ya ntango molai",
+          "description": "Kotonga ba-systèmes ya soutenable oyo ebongisami mpo na croissance, stabilité, mpe impact ya solo."
+        },
+        {
+          "title": "Collaboration na kati ya ba-disciplines",
+          "description": "Kosala malamu na kati ya misala, technologie, finance, mpe politique."
+        },
+        {
+          "title": "Boyebi ya culture mpe marché",
+          "description": "Kososola ba-contextes ya mboka, ba-réalités ya basaleli, mpe dynamique ya ba-marchés oyo ezali kobima."
         }
       ]
+    },
+    "banner": {
+      "title": "Ozali na mposa ya kosalisa na mikolo ezali koya ya transport?",
+      "button": "Sangana na Ekipi na Biso"
+    },
+    "partner": {
+      "section1": {
+        "subtitle": "Mpo na nini kosala partenariat na biso?",
+        "title": "Ndenge nini kosala na AnyRide?",
+        "items": [
+          "Kotonga ba-systèmes oyo ezali na ntina",
+          "Kosala na kati ya technologie mpe misala",
+          "Kosilisa ba-défis ya solo ya transport",
+          "Kokola elongo na compagnie ntango ezali kokola"
+        ]
+      },
+      "section2": {
+        "subtitle": "Ba-opportunités ya Partenariat",
+        "title": "Ba-opportunités ya Kokola na Compagnie",
+        "items": [
+          "Ba-membres ya liboso ya ekipi bazali kobongisa ba-systèmes",
+          "Opportunité ya kokola na ba-rôles ya leadership",
+          "Impact ya ntango molai koleka hype ya ntango mokuse",
+          "Responsabilité ya solo, propriété ya solo"
+        ]
+      }
+    },
+    "contact": {
+      "title": "Sangana na Ekipi na Biso",
+      "description": "Tondisa formulaire oyo na ba-informations oyo esengeli mpo na kosangana na ekipi na biso"
+    },
+    "form": {
+      "labels": {
+        "fullName": "Kombo Mobimba",
+        "email": "Email",
+        "phone": "Nimero ya Telefone",
+        "expertise": "Esika ya Expertise / Background",
+        "experience": "Bambula ya Expérience",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Kombo Mobimba*",
+        "email": "Email*",
+        "phone": "Nimero ya Telefone (Esengeli te)",
+        "expertise": "Esika ya Expertise / Background*",
+        "experience": "Bambula ya Expérience (Esengeli te)",
+        "message": "Message*"
+      },
+      "required": "*",
+      "submit": "Tinda",
+      "errors": {
+        "required": "Tondisa bisika nyonso oyo esengeli.",
+        "invalidEmail": "Tyá adresse email ya malamu.",
+        "failed": "Kotinda elongi te.",
+        "network": "Libunga ya réseau. Meká lisusu."
+      },
+      "success": "Formulaire etindami malamu!"
     },
     "cta": {
       "title": "Ozali na mposa ya kosangana na biso?",
       "description": "Tindá CV na yo mpe lettre de motivation ya mokuse na ekipi na biso.",
       "button": "Tyá candidature lelo"
+    },
+    "ourMission": {
+      "subtitle": "Mission na Biso",
+      "title": "Mpo na nini tozali kotonga AnyRide",
+      "items": [
+        {
+          "img": "/images/icons-2.png",
+          "title": "Kobongisa transport ya lelo",
+          "text": "Tozali kotonga ba-systèmes ya transport ya moderne oyo ezali kobongola ba-opérations ya fragmenté mpe informel na ba-solutions ya mobilité structuré mpe ya technologie."
+        },
+        {
+          "img": "/images/lock-icons.png",
+          "title": "Kokela ba-systèmes ya structuré mpe conformes",
+          "text": "AnyRide ebongisami na kati ya conformité, responsabilité, mpe discipline opérationnelle — kosalisa ba-modèles ya transport oyo ekokani na ba-règlements mpe soutenabilité ya ntango molai."
+        },
+        {
+          "img": "/images/partners-icons.png",
+          "title": "Kosunga batambwisi, ba-opérateurs, mpe bingumba",
+          "text": "Plateforme na biso esaleli écosystème mobimba, kopesa nzela na batambwisi mpe ba-opérateurs ya kosala na ndenge ya malamu koleka ntango ezali kosalisa bingumba kobongisa accès na mobilité ya kondima."
+        },
+        {
+          "img": "/images/cars.png",
+          "title": "Kotonga infrastructure ya mobilité ya kondima",
+          "text": "Tozali kotalisa na kokela infrastructure ya transport ya kondima oyo ba-institutions, ba-entreprises, mpe ba-communautés bakoki kotyela motema mpe kokola na ntango."
+        }
+      ]
     }
   },
   "CookiesPage": {
@@ -1451,5 +1543,64 @@
         ]
       }
     }
-  }
+  },
+  "CareerFaq": {
+    "title": "Infrastructure mpe misala ya kosala",
+    "labels": {
+      "whoIncludes": "Ezali kosangisa nani:",
+      "whyMatters": "Mpo na nini ezali na ntina:"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Bapartenaire ya mafuta mpe nguya",
+        "subtitle": "Mafuta mpe nguya",
+        "description": "Kobakisa mbongo ya flotte na kopesa bapilote ya solo."
+      },
+      "compliance": {
+        "title": "Bokonzi ya flotte to lojistiki",
+        "subtitle": "Mayele mpe boyebi",
+        "description": "Mayele mpe boyebi oyo tozali koluka epai ya bakambi ya misala."
+      },
+      "driver": {
+        "title": "Kobatela mibeko, makama to boyangeli",
+        "subtitle": "Lisanga ya bapilote mpe transport",
+        "description": "Kosunga bomoi ya bapilote mpe kolendisa industrie."
+      },
+      "vehicle": {
+        "title": "Kobongisa misala mpe ndenge ya kosala",
+        "subtitle": "Batɛkisi ya mituka",
+        "description": "Kozwa mituka ya malamu mpe kofandisa mbongo mpo na kokolisa flotte."
+      },
+      "government": {
+        "title": "Bokonzi ya technologie, produit to système",
+        "subtitle": "Gouvernement mpe mibeko",
+        "description": "Koyeba mibeko mpe kozwa ndingisa ya kosala."
+      },
+      "finance": {
+        "title": "Données, analyse to rapport",
+        "subtitle": "Babanki mpe ba-institution ya mbongo",
+        "description": "Kosala ete bamobali ya motuka bazwa mbongo na kimya mpe na bosembo."
+      },
+      "hardware": {
+        "title": "Bokonzi ya service client",
+        "subtitle": "Téléphone mpe biloko",
+        "description": "Kopesa bapilote biloko ya kotyela motema mpe connexion ya malamu."
+      },
+      "mapping": {
+        "title": "Stratégie ya mombongo mpe leadership",
+        "subtitle": "Cartographie mpe données",
+        "description": "Kobongisa nzela mpe expérience ya client na navigation ya sikisiki."
+      },
+      "emergency": {
+        "title": "Bapartenaire ya urgence mpe sécurité",
+        "subtitle": "Urgence mpe sécurité",
+        "description": "Kondima eyano ya mbangu mpe kobatela bapilote mpe bapaya."
+      }
+    }
+  },
+  "WhoCanApply": {
+  "subtitle": "Bato oyo tozali koluka",
+  "title": "Nani akoki kosenga?",
+  "description": "AnyRide ezali koluka bato oyo bazali na mayele, bososoli, mpe boyebi ya makambo ya solosolo — mingi mpenza na misala oyo etali transport mpe opérations."
+}
 }

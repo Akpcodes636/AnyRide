@@ -1097,36 +1097,128 @@
   },
   "CareersPage": {
     "hero": {
-      "title": "Join Our Team",
-      "subtitle": "Help us build the future of urban mobility.",
-      "description": "We're always looking for talented individuals to join our mission of building the most trusted local ride network."
+      "title": "Build the Future of Transportation With Us",
+      "description": "We're looking for talented individuals with the skills, experience, and understanding needed to help operate and scale a modern transportation platform.",
+      "button": "Join Our Team"
     },
-    "roles": {
-      "title": "Open Roles",
-      "subtitle": "Work with us",
+    "values": {
+      "subtitle": "Our Values",
+      "title": "What We Value in Our Team",
+      "description": "AnyRide is designed to operate within real-world regulatory, safety, and nuanced conditions—supporting long-term, credible partnerships.",
       "items": [
         {
-          "title": "Technicians",
-          "description": "Maintain and optimize our digital infrastructure and hardware systems."
+          "title": "Accountability and ownership",
+          "description": "Taking responsibility for outcomes and seeing your work through from idea to impact."
         },
         {
-          "title": "Customer Service Representatives",
-          "description": "Provide world-class support to our riders and drivers."
+          "title": "Understanding of real-world operations",
+          "description": "Practical experience with how systems, people, and processes work beyond theory."
         },
         {
-          "title": "Mechanics",
-          "description": "Ensure every vehicle in our network is safe and ready for the road."
+          "title": "Respect for regulation and compliance",
+          "description": "Operating with integrity within legal, regulatory, and institutional frameworks."
         },
         {
-          "title": "Operations & Logistics",
-          "description": "Help manage the day-to-day movement and scaling of our service."
+          "title": "Long-term thinking",
+          "description": "Building sustainable systems designed for growth, stability, and real impact."
+        },
+        {
+          "title": "Collaboration across disciplines",
+          "description": "Working effectively across operations, technology, finance, and policy."
+        },
+        {
+          "title": "Cultural and market awareness",
+          "description": "Understanding local contexts, user realities, and emerging market dynamics."
         }
       ]
+    },
+    "banner": {
+      "title": "Interested in contributing to the future of transportation?",
+      "button": "Join Our Team"
+    },
+    "partner": {
+      "section1": {
+        "subtitle": "Why partner with us?",
+        "title": "What it's like Working at AnyRide?",
+        "items": [
+          "Building systems that matter",
+          "Working across technology and operations",
+          "Solving real transportation challenges",
+          "Growing with the company as it scales"
+        ]
+      },
+      "section2": {
+        "subtitle": "Partnership Opportunities",
+        "title": "Opportunities to Grow With the Company",
+        "items": [
+          "Early team members shape systems",
+          "Opportunity to grow into leadership roles",
+          "Long-term impact over short-term hype",
+          "Real responsibility, real ownership"
+        ]
+      }
+    },
+    "contact": {
+      "title": "Join Our Team",
+      "description": "Fill out the form below with the necessary info to join our team"
+    },
+    "form": {
+      "labels": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "expertise": "Area of Expertise / Background",
+        "experience": "Years of Experience",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Full Name*",
+        "email": "Email*",
+        "phone": "Phone Number (Optional)",
+        "expertise": "Area of Expertise / Background*",
+        "experience": "Years of Experience (Optional)",
+        "message": "Message*"
+      },
+      "required": "*",
+      "submit": "Submit",
+      "errors": {
+        "required": "Please fill in all required fields.",
+        "invalidEmail": "Please enter a valid email address.",
+        "failed": "Submission failed.",
+        "network": "Network error. Please try again."
+      },
+      "success": "Form submitted successfully!"
     },
     "cta": {
       "title": "Interested in joining us?",
       "description": "Send your resume and a brief cover letter to our team.",
       "button": "Apply Now"
+    },
+    "ourMission": {
+      "subtitle": "Our Mission",
+      "title": "Why we're Building AnyRide",
+      "items": [
+        {
+          "img": "/images/icons-2.png",
+          "title": "Modernizing transportation",
+          "text": "We are building modern transportation systems that replace fragmented and informal operations with structured, technology‑enabled mobility solutions."
+        },
+        {
+          "img": "/images/lock-icons.png",
+          "title": "Creating structured, compliant systems",
+          "text": "AnyRide is designed around compliance, accountability, and operational discipline—supporting transportation models that align with regulation and long‑term sustainability."
+        },
+        {
+          "img": "/images/partners-icons.png",
+          "title": "Supporting drivers, operators, and cities",
+          "text": "Our platform serves the entire ecosystem, enabling drivers and operators to work more efficiently while helping cities improve access to reliable mobility."
+        },
+        {
+          "img": "/images/cars.png",
+          "title": "Building reliable mobility infrastructure",
+          "text": "We focus on creating dependable transportation infrastructure that institutions, businesses, and communities can trust and scale over time."
+        }
+      ]
     }
   },
   "CookiesPage": {
@@ -1466,5 +1558,64 @@
       ]
     }
   }
-}
+},
+"CareerFaq": {
+    "title": "Infrastructure and Operations",
+    "labels": {
+      "whoIncludes": "Who this includes:",
+      "whyMatters": "Why they matter:"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Fuel & Energy Partners",
+        "subtitle": "Fuel & Energy",
+        "description": "Maximize fleet earning potential with guaranteed driver placements."
+      },
+      "compliance": {
+        "title": "Fleet management or logistics",
+        "subtitle": "Experience & Skill Areas",
+        "description": "The skills and experience we are looking for in operations leaders."
+      },
+      "driver": {
+        "title": "Compliance, risk, or regulatory experience",
+        "subtitle": "Driver Associations & Transport",
+        "description": "Support driver welfare and strengthen industry representation."
+      },
+      "vehicle": {
+        "title": "Operations and process design",
+        "subtitle": "Vehicle Suppliers & Dealerships",
+        "description": "Access quality vehicles and flexible financing for fleet expansion."
+      },
+      "government": {
+        "title": "Technology, product, or systems management",
+        "subtitle": "Government & Regulatory",
+        "description": "Navigate regulations and secure necessary operating permissions."
+      },
+      "finance": {
+        "title": "Data, analytics, or reporting",
+        "subtitle": "Banks & Financial Institutions",
+        "description": "Enable secure transactions and financial inclusion for drivers."
+      },
+      "hardware": {
+        "title": "Customer operations and support leadership",
+        "subtitle": "Smartphone & Hardware",
+        "description": "Provide drivers with reliable devices and connectivity."
+      },
+      "mapping": {
+        "title": "Business strategy and organizational leadership",
+        "subtitle": "Mapping & Data",
+        "description": "Optimize routes and improve rider experience with accurate navigation."
+      },
+      "emergency": {
+        "title": "Emergency & Safety Partners",
+        "subtitle": "Emergency & Safety",
+        "description": "Ensure rapid response and protection for drivers and passengers."
+      }
+    }
+  },
+  "WhoCanApply":{
+    "subtitle":"Who We’re Looking For",
+    "title":"Who Should Apply?",
+    "description":"AnyRide is seeking individuals who bring skills, judgment, and real-world understanding—especially in industries that intersect with transportation and operations."
+  }
 }

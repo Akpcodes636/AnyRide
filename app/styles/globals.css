@@ -155,4 +155,19 @@
     background-position: top;
     background-repeat: no-repeat;
   }
+  /* .bg-career {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/images/partnerbg.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  } */
+
+  .bg-careers {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("/images/partnerbg.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
 }

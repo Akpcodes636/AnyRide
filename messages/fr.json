@@ -1086,36 +1086,128 @@
   },
   "CareersPage": {
     "hero": {
-      "title": "Rejoindre notre équipe",
-      "subtitle": "Aidez-nous à construire l'avenir de la mobilité urbaine.",
-      "description": "Nous sommes toujours à la recherche de personnes talentueuses pour rejoindre notre mission consistant à construire le réseau de transport local le plus fiable."
+      "title": "Construisez l'avenir du transport avec nous",
+      "description": "Nous recherchons des personnes talentueuses avec les compétences, l'expérience et la compréhension nécessaires pour aider à exploiter et à développer une plateforme de transport moderne.",
+      "button": "Rejoindre notre équipe"
     },
-    "roles": {
-      "title": "Postes ouverts",
-      "subtitle": "Travailler avec nous",
+    "values": {
+      "subtitle": "Nos Valeurs",
+      "title": "Ce que nous valorisons dans notre équipe",
+      "description": "AnyRide est conçu pour fonctionner dans des conditions réglementaires, de sécurité et nuancées du monde réel — soutenant des partenariats crédibles à long terme.",
       "items": [
         {
-          "title": "Techniciens",
-          "description": "Maintenir et optimiser notre infrastructure numérique et nos systèmes matériels."
+          "title": "Responsabilité et appropriation",
+          "description": "Prendre la responsabilité des résultats et mener votre travail de l'idée à l'impact."
         },
         {
-          "title": "Représentants du service client",
-          "description": "Fournir un support de classe mondiale à nos passagers et conducteurs."
+          "title": "Compréhension des opérations du monde réel",
+          "description": "Expérience pratique du fonctionnement des systèmes, des personnes et des processus au-delà de la théorie."
         },
         {
-          "title": "Mécaniciens",
-          "description": "S'assurer que chaque véhicule de notre réseau est sûr et prêt pour la route."
+          "title": "Respect de la réglementation et de la conformité",
+          "description": "Opérer avec intégrité dans les cadres juridiques, réglementaires et institutionnels."
         },
         {
-          "title": "Opérations et Logistique",
-          "description": "Aider à gérer les déplacements quotidiens et l'expansion de notre service."
+          "title": "Pensée à long terme",
+          "description": "Construire des systèmes durables conçus pour la croissance, la stabilité et un impact réel."
+        },
+        {
+          "title": "Collaboration interdisciplinaire",
+          "description": "Travailler efficacement entre les opérations, la technologie, la finance et la politique."
+        },
+        {
+          "title": "Conscience culturelle et du marché",
+          "description": "Comprendre les contextes locaux, les réalités des utilisateurs et la dynamique des marchés émergents."
         }
       ]
+    },
+    "banner": {
+      "title": "Intéressé à contribuer à l'avenir du transport ?",
+      "button": "Rejoindre notre équipe"
+    },
+    "partner": {
+      "section1": {
+        "subtitle": "Pourquoi s'associer avec nous ?",
+        "title": "Comment c'est de travailler chez AnyRide ?",
+        "items": [
+          "Construire des systèmes qui comptent",
+          "Travailler entre technologie et opérations",
+          "Résoudre de vrais défis de transport",
+          "Grandir avec l'entreprise au fur et à mesure de son expansion"
+        ]
+      },
+      "section2": {
+        "subtitle": "Opportunités de partenariat",
+        "title": "Opportunités de grandir avec l'entreprise",
+        "items": [
+          "Les premiers membres de l'équipe façonnent les systèmes",
+          "Opportunité de progresser vers des rôles de leadership",
+          "Impact à long terme plutôt que battage médiatique à court terme",
+          "Vraie responsabilité, vraie appropriation"
+        ]
+      }
+    },
+    "contact": {
+      "title": "Rejoindre notre équipe",
+      "description": "Remplissez le formulaire ci-dessous avec les informations nécessaires pour rejoindre notre équipe"
+    },
+    "form": {
+      "labels": {
+        "fullName": "Nom complet",
+        "email": "E-mail",
+        "phone": "Numéro de téléphone",
+        "expertise": "Domaine d'expertise / Formation",
+        "experience": "Années d'expérience",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Nom complet*",
+        "email": "E-mail*",
+        "phone": "Numéro de téléphone (Facultatif)",
+        "expertise": "Domaine d'expertise / Formation*",
+        "experience": "Années d'expérience (Facultatif)",
+        "message": "Message*"
+      },
+      "required": "*",
+      "submit": "Soumettre",
+      "errors": {
+        "required": "Veuillez remplir tous les champs obligatoires.",
+        "invalidEmail": "Veuillez entrer une adresse e-mail valide.",
+        "failed": "Échec de la soumission.",
+        "network": "Erreur réseau. Veuillez réessayer."
+      },
+      "success": "Formulaire soumis avec succès !"
     },
     "cta": {
       "title": "Intéressé à nous rejoindre ?",
       "description": "Envoyez votre CV et une brève lettre de motivation à notre équipe.",
       "button": "Postuler maintenant"
+    },
+    "ourMission": {
+      "subtitle": "Notre Mission",
+      "title": "Pourquoi nous construisons AnyRide",
+      "items": [
+        {
+          "img": "/images/icons-2.png",
+          "title": "Moderniser le transport",
+          "text": "Nous construisons des systèmes de transport modernes qui remplacent les opérations fragmentées et informelles par des solutions de mobilité structurées et technologiques."
+        },
+        {
+          "img": "/images/lock-icons.png",
+          "title": "Créer des systèmes structurés et conformes",
+          "text": "AnyRide est conçu autour de la conformité, de la responsabilité et de la discipline opérationnelle — soutenant des modèles de transport alignés sur la réglementation et la durabilité à long terme."
+        },
+        {
+          "img": "/images/partners-icons.png",
+          "title": "Soutenir les conducteurs, les opérateurs et les villes",
+          "text": "Notre plateforme sert l'ensemble de l'écosystème, permettant aux conducteurs et aux opérateurs de travailler plus efficacement tout en aidant les villes à améliorer l'accès à une mobilité fiable."
+        },
+        {
+          "img": "/images/cars.png",
+          "title": "Construire une infrastructure de mobilité fiable",
+          "text": "Nous nous concentrons sur la création d'une infrastructure de transport fiable sur laquelle les institutions, les entreprises et les communautés peuvent compter et évoluer au fil du temps."
+        }
+      ]
     }
   },
   "CookiesPage": {
@@ -1451,5 +1543,64 @@
         ]
       }
     }
-  }
+  },
+  "CareerFaq": {
+    "title": "Infrastructure et opérations",
+    "labels": {
+      "whoIncludes": "Qui cela inclut :",
+      "whyMatters": "Pourquoi ils sont importants :"
+    },
+    "accordion": {
+      "fuel": {
+        "title": "Partenaires carburant et énergie",
+        "subtitle": "Carburant et énergie",
+        "description": "Maximisez les revenus des flottes grâce à un placement garanti des chauffeurs."
+      },
+      "compliance": {
+        "title": "Gestion de flotte ou logistique",
+        "subtitle": "Compétences et expérience",
+        "description": "Les compétences et l’expérience recherchées chez les responsables des opérations."
+      },
+      "driver": {
+        "title": "Conformité, gestion des risques ou réglementation",
+        "subtitle": "Associations de chauffeurs et transport",
+        "description": "Soutenir le bien-être des chauffeurs et renforcer la représentation du secteur."
+      },
+      "vehicle": {
+        "title": "Conception des opérations et des processus",
+        "subtitle": "Fournisseurs et concessionnaires de véhicules",
+        "description": "Accédez à des véhicules de qualité et à des financements flexibles pour développer vos flottes."
+      },
+      "government": {
+        "title": "Gestion technologique, produit ou systèmes",
+        "subtitle": "Gouvernement et régulation",
+        "description": "Naviguer dans la réglementation et obtenir les autorisations nécessaires."
+      },
+      "finance": {
+        "title": "Données, analyses ou reporting",
+        "subtitle": "Banques et institutions financières",
+        "description": "Permettre des transactions sécurisées et l’inclusion financière des chauffeurs."
+      },
+      "hardware": {
+        "title": "Direction des opérations clients et du support",
+        "subtitle": "Smartphones et matériel",
+        "description": "Fournir aux chauffeurs des appareils fiables et une bonne connectivité."
+      },
+      "mapping": {
+        "title": "Stratégie d’entreprise et leadership organisationnel",
+        "subtitle": "Cartographie et données",
+        "description": "Optimiser les itinéraires et améliorer l’expérience client grâce à une navigation précise."
+      },
+      "emergency": {
+        "title": "Partenaires d’urgence et de sécurité",
+        "subtitle": "Urgence et sécurité",
+        "description": "Assurer une réponse rapide et la protection des chauffeurs et passagers."
+      }
+    }
+  },
+  "WhoCanApply": {
+  "subtitle": "Qui nous recherchons",
+  "title": "Qui devrait postuler ?",
+  "description": "AnyRide recherche des personnes qui apportent des compétences, du discernement et une compréhension du monde réel — en particulier dans les secteurs liés au transport et aux opérations."
+}
 }

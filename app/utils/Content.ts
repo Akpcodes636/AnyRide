@@ -530,3 +530,17 @@ export const ourMission = [
    text:"We focus on creating dependable transportation infrastructure that institutions, businesses, and communities can trust and scale over time."
   }
 ]
+
+export const items = [
+  "Building systems that matter",
+  "Working across technology and operations",
+  "Solving real transportation challenges",
+  "Growing with the company as it scales",
+];
+
+export const items2 = [
+  "Early team members shape systems",
+  "Opportunity to grow into leadership roles",
+  "Long-term impact over short-term hype",
+  "Real responsibility, real ownership"
+]

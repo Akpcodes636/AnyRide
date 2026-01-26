@@ -1,4 +1,7 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import { useTranslations } from "next-intl";
 import {
   ChevronUp,
@@ -16,6 +19,7 @@ import {
 
 export default function PartnerAccordion() {
   const t = useTranslations("PartnerCategories");
+
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     fuel: false,
     compliance: false,
@@ -28,11 +32,21 @@ export default function PartnerAccordion() {
     emergency: false,
   });
 
+  // animated panel refs
+  const contentRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const chevronRefs = useRef<Record<string, SVGSVGElement | null>>({});
+  const listRefs = useRef<Record<string, HTMLLIElement[]>>({});
+  const gridRefs = useRef<Record<string, HTMLDivElement[]>>({});
+
+  // auto-close others
   const toggleSection = (section: string) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
+    setOpenSections((prev) => {
+      const updated: Record<string, boolean> = {};
+      Object.keys(prev).forEach((k) => {
+        updated[k] = k === section ? !prev[k] : false;
+      });
+      return updated;
+    });
   };
 
   const partnerKeys = [
@@ -85,6 +99,80 @@ export default function PartnerAccordion() {
     };
   });
 
+  // 🔥 GSAP orchestration
+  useEffect(() => {
+    partners.forEach((partner) => {
+      const panel = contentRefs.current[partner.id];
+      const chevron = chevronRefs.current[partner.id];
+      const lists = listRefs.current[partner.id];
+      const grids = gridRefs.current[partner.id];
+
+      if (!panel) return;
+
+      if (openSections[partner.id]) {
+        gsap.fromTo(
+          panel,
+          { height: 0, opacity: 0 },
+          {
+            height: panel.scrollHeight,
+            opacity: 1,
+            duration: 0.45,
+            ease: "power2.out",
+            overflow: "hidden",
+          }
+        );
+
+        if (chevron) {
+          gsap.to(chevron, {
+            rotate: 180,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        }
+
+        if (lists?.length) {
+          gsap.fromTo(
+            lists,
+            { opacity: 0, y: 10 },
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.05,
+              delay: 0.15,
+            }
+          );
+        }
+
+        if (grids?.length) {
+          gsap.fromTo(
+            grids,
+            { opacity: 0, y: 12 },
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.12,
+              delay: 0.2,
+            }
+          );
+        }
+      } else {
+        gsap.to(panel, {
+          height: 0,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+
+        if (chevron) {
+          gsap.to(chevron, {
+            rotate: 0,
+            duration: 0.25,
+          });
+        }
+      }
+    });
+  }, [openSections, partners]);
+
   return (
     <div className="max-w-full mx-auto p-6 min-h-screen">
       <div className="space-y-3">
@@ -93,8 +181,8 @@ export default function PartnerAccordion() {
             key={partner.id}
             className="bg-[#F5F5F7] border border-gray-200 rounded-lg overflow-hidden"
           >
-            {/* Collapsed Header - Only text, no icon */}
-            {!openSections[partner.id as keyof typeof openSections] && (
+            {/* Collapsed Header */}
+            {!openSections[partner.id] && (
               <button
                 onClick={() => toggleSection(partner.id)}
                 className="w-full px-6 py-6 text-left flex items-center justify-between"
@@ -102,105 +190,138 @@ export default function PartnerAccordion() {
                 <p className="text-[16px] md:text-[20px] font-semibold text-black leading-[120%] tracking-[-2%]">
                   {partner.subtitle}
                 </p>
-                <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />
+
+                <ChevronDown
+                  ref={(el) => {
+                    chevronRefs.current[partner.id] = el;
+                  }}
+                  className="w-5 h-5 text-gray-400 shrink-0"
+                />
               </button>
             )}
 
-            {/* Expanded Content */}
-            {openSections[partner.id as keyof typeof openSections] && (
-              <div className="bg-[#F6E6E680]">
-                {/* Expanded Header with Icon, Title, Description and Chevron */}
-                <div
-                  onClick={() => toggleSection(partner.id)}
-                  className="px-6 py-4 flex items-start gap-4 cursor-pointer"
-                >
-                  <div className={`${partner.bgColor} p-3 rounded-lg shrink-0`}>
-                    <partner.icon className="w-6 h-6 text-white" />
+            {/* Animated Panel */}
+            <div
+              ref={(el) => {
+                contentRefs.current[partner.id] = el;
+              }}
+              style={{ height: 0, overflow: "hidden" }}
+            >
+              {openSections[partner.id] && (
+                <div className="bg-[#F6E6E680]">
+                  {/* Expanded Header */}
+                  <div
+                    onClick={() => toggleSection(partner.id)}
+                    className="px-6 py-4 flex items-start gap-4 cursor-pointer"
+                  >
+                    <div
+                      className={`${partner.bgColor} p-3 rounded-lg shrink-0`}
+                    >
+                      <partner.icon className="w-6 h-6 text-white" />
+                    </div>
+
+                    <div className="flex-1">
+                      <h3 className="text-[18px] md:text-[20px] font-bold text-[#02093A] leading-tight">
+                        {partner.title}
+                      </h3>
+                      <p className="text-[16px] text-[#02093A] mt-1">
+                        {partner.description}
+                      </p>
+                    </div>
+
+                    <ChevronUp className="w-5 h-5 text-gray-400 shrink-0 mt-1" />
                   </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-[18px] md:text-[20px] font-bold text-[#02093A] leading-tight">
-                      {partner.title}
-                    </h3>
-                    <p className="text-[16px] text-[#02093A] mt-1">
-                      {partner.description}
-                    </p>
-                  </div>
+                  {/* Content Grid */}
+                  <div className="px-6 pb-6 grid md:grid-cols-2 gap-6">
+                    <div
+                      ref={(el) => {
+                        if (el) {
+                          if (!gridRefs.current[partner.id]) {
+                            gridRefs.current[partner.id] = [];
+                          }
+                          if (!gridRefs.current[partner.id].includes(el)) {
+                            gridRefs.current[partner.id].push(el);
+                          }
+                        }
+                      }}
+                      className="bg-white p-5 rounded-lg"
+                    >
+                      <h4 className="font-semibold text-[#353A61] mb-4 text-[20px] md:text-[28px]">
+                        {t("labels.whoIncludes")}
+                      </h4>
 
-                  <ChevronUp className="w-5 h-5 text-gray-400 shrink-0 mt-1" />
+                      <ul className="space-y-3">
+                        {partner.includes.map((item, idx) => (
+                          <li
+                            key={idx}
+                            ref={(el) => {
+                              if (el) {
+                                if (!listRefs.current[partner.id]) {
+                                  listRefs.current[partner.id] = [];
+                                }
+                                if (!listRefs.current[partner.id].includes(el)) {
+                                  listRefs.current[partner.id].push(el);
+                                }
+                              }
+                            }}
+                            className="flex items-start gap-2"
+                          >
+                            <span className="text-[16px] text-[#555A7B]">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div
+                      ref={(el) => {
+                        if (el) {
+                          if (!gridRefs.current[partner.id]) {
+                            gridRefs.current[partner.id] = [];
+                          }
+                          if (!gridRefs.current[partner.id].includes(el)) {
+                            gridRefs.current[partner.id].push(el);
+                          }
+                        }
+                      }}
+                      className="bg-white p-5 rounded-lg"
+                    >
+                      <h4 className="font-semibold text-[#353A61] text-[20px] md:text-[28px] mb-4">
+                        {t("labels.whyMatters")}
+                      </h4>
+
+                      <ul className="space-y-3">
+                        {partner.matters.map((item, idx) => (
+                          <li
+                            key={idx}
+                            ref={(el) => {
+                              if (el) {
+                                if (!listRefs.current[partner.id]) {
+                                  listRefs.current[partner.id] = [];
+                                }
+                                if (!listRefs.current[partner.id].includes(el)) {
+                                  listRefs.current[partner.id].push(el);
+                                }
+                              }
+                            }}
+                            className="flex items-start gap-2"
+                          >
+                            <span className="text-[16px] text-[#555A7B]">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Content Grid */}
-                <div className="px-6 pb-6 grid md:grid-cols-2 gap-6">
-                  {/* Who this includes */}
-                  <div className="bg-white p-5 rounded-lg">
-                    <h4 className="font-semibold text-[#353A61] mb-4 text-[20px] md:text-[28px]">
-                      {t('labels.whoIncludes')}
-                    </h4>
-                    <ul className="space-y-3">
-                      {partner.includes.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <div className="w-6 h-6 shrink-0 mt-0.5">
-                            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-                              <circle
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="#ef4444"
-                                strokeWidth="2"
-                              />
-                              <path
-                                d="M8 12l3 3 5-5"
-                                stroke="#ef4444"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                          <span className="text-[16px] text-[#555A7B]">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Why they matter */}
-                  <div className="bg-white p-5 rounded-lg">
-                    <h4 className="font-semibold text-[#353A61] text-[20px] md:text-[28px] mb-4">
-                      {t('labels.whyMatters')}
-                    </h4>
-                    <ul className="space-y-3">
-                      {partner.matters.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <div className="w-5 h-5 shrink-0 mt-0.5">
-                            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-                              <circle
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="#ef4444"
-                                strokeWidth="2"
-                              />
-                              <path
-                                d="M8 12l3 3 5-5"
-                                stroke="#ef4444"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                          <span className="text-[16px] text-[#555A7B]">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
-} 
+}

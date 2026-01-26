@@ -1,15 +1,3 @@
-// import { createNavigation } from "next-intl/navigation";
-// import { defineRouting } from "next-intl/routing";
-
-// export const routing : {locales:readonly ["en", "fr","sw" ];default_ = defineRouting({
-// //    A list of all locales that are supported
-//  locales:["en", "fr", "sw"],
-
-// //  Used when no locale matches 
-// defaultLocale:"en",
-// })
-
-// // 
 
 import { createNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
@@ -20,6 +8,7 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: "en",
+  localeDetection: false,
   pathnames: {
     "/contact": {
       en: "/contact-me",
