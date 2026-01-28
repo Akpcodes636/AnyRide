@@ -1,12 +1,12 @@
 "use client";
 import Button from "@/app/components/ui/Button";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 const Page = () => {
-    const router = useRouter();
-     const goToPhoneVerification = () => {
-       router.push("/verify-phone");
-     }
+  const router = useRouter();
+  const goToPhoneVerification = () => {
+    router.push("/verify-phone");
+  }
 
   return (
     <section className="h-screen flex items-center justify-center bg-white">
@@ -22,7 +22,7 @@ const Page = () => {
           type="button"
           fn={goToPhoneVerification}
         >
-         Open email app
+          Open email app
         </Button>
       </div>
     </section>
