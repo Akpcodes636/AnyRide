@@ -56,7 +56,7 @@ const Hero = () => {
                 css="rounded-[40px] font-normal"
               />
             </div>
-            <h1 className="text-text-white text-[40px] md:text-[50px] lg:text-[64px] font-bold leading-[120%] tracking-[-5%] text-center w-full max-w-74 md:max-w-74 lg:max-w-[596px] xl:max-w-[696px] mx-auto mb-[17.14px] md:mb-6">
+            <h1 className="text-text-white text-[40px] md:text-[45px] lg:text-[64px] font-bold leading-[120%] tracking-[-5%] text-center w-full max-w-74 md:max-w-74 lg:max-w-[596px] xl:max-w-[696px] mx-auto mb-[17.14px] md:mb-6">
               {t("title")}
             </h1>
             <p className="text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] text-text w-full max-w-75 md:max-w-101.25 lg:max-w-126.25 xl:max-w-157 mx-auto text-center text-gray-300 mb-7 md:mb-10 lg:mb-10">

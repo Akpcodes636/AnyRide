@@ -69,7 +69,7 @@ const InputField: React.FC<InputProps> = ({
     input-class
     h-[48px]
     bg-white
-    w-full
+    min-w-full
     p-2
     rounded-lg
     border-[#000000]

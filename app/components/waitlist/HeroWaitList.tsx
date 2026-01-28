@@ -58,7 +58,7 @@ export default function HeroWaitList() {
           <SubTitle svg={iconSvg} text={t("subtitle")} />
         </div>
 
-        <WaitlistStats />
+        {/* <WaitlistStats /> */}
         <WaitForm />
       </div>
     </section>

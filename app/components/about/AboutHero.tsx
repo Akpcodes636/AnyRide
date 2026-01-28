@@ -11,7 +11,7 @@ export default function AboutHero() {
   return (
     <section>
       <div className="container">
-        <div className="py-[131px] md:pt-[150px] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-x-[39px]">
+        <div className="pt-[131px] pb-[30px] md:pt-[150px] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-x-[39px]">
           <div className="flex items-start justify-center flex-col">
             <div className="mb-[8px]">
               <SubTitle

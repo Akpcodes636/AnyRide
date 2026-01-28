@@ -41,7 +41,7 @@ const About = () => {
             <SubTitle text={t("subtitle")} css="rounded-[40px] font-bold" />
           </div>
 
-          <h2>{t("title")}</h2>
+          <h2 className="text-center">{t("title")}</h2>
           <p className="text-center md:text-start text-[16px] font-normal text-gray-400 mb-10">
             {t("description")}
           </p>

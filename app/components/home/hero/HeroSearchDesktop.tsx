@@ -29,7 +29,8 @@ const HeroSearchDesktop = () => {
 
   const handleCheckAvailability = async () => {
     if (!pickupCoords) {
-      setToastMessage("Please select a pickup location from suggestions");
+      // setToastMessage("Please select a pickup location from suggestions");
+      setToastMessage(t("selectPickupError"));
       setToastError(true);
       setFareData(null);
       setTimeout(() => setToastMessage(null), 4000);
@@ -58,7 +59,11 @@ const HeroSearchDesktop = () => {
       setFareData(json.data);
 
       if (json.data.available_drivers === 0) {
-        setToastMessage("No rides available in your area");
+        // setToastMessage("No rides available in your area");
+        setToastMessage(t("noRides"));
+
+        
+
         setToastError(true);
       } else {
         setToastMessage(`${json.data.available_drivers} rides available in your area`);

@@ -9,14 +9,14 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: "en",
   localeDetection: false,
-  pathnames: {
-    "/contact": {
-      en: "/contact-me",
-      fr: "/contactez-moi",
-      sw: "/nipigie-sauti",
-      ln: "/benga-biso", // Lingala
-    },
-  },
+  // pathnames: {
+  //   "/contact": {
+  //     en: "/contact-me",
+  //     fr: "/contactez-moi",
+  //     sw: "/nipigie-sauti",
+  //     ln: "/benga-biso", // Lingala
+  //   },
+  // },
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

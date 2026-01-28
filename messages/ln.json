@@ -8,7 +8,11 @@
       "placeholderDestination": "Kota esika okokende",
       "buttonCheckAvailability": "Tala Soki Ezali",
       "mobileInfo": "Ezali naino te",
-      "desktopInfo": "Mituka ezali na esika na yo"
+      "desktopInfo": "Mituka ezali na esika na yo",
+      "checking": "Ezali kotálama...",
+      "selectPickupError": "Svp pona kopona esika ya kozwa yo kati na mapendekezo",
+      "noRides": "Hakuna safari zinazopatikana katika eneo lako"
+
     },
     "sections": {
       "ridesNearby": "Mituka ezali penepene na yo",
@@ -189,7 +193,13 @@
           "title": "AnyRide azali kosangana na Gitex Africa na makanisi ya sika mpo na mikolo ezali koya ya RH na Nigeria"
         }
       ]
-    }
+    },
+    "comingSoon": {
+  "title": "Ezali koya noki!",
+  "description": "Application na biso ya telefone ezali naino na mosala ya kotongama mpe ekobanda kosala noki. Kota na liste ya kozela mpo ozala moto ya liboso koyeba!",
+  "joinWaitlist": "Kota na Liste ya Kozela",
+  "maybeLater": "Mbala mosusu sima"
+}
   },
   "AboutPage": {
     "hero": {
@@ -491,27 +501,36 @@
       "total": "Ba-Membres Nyonso",
       "title": "Sangana na communauté na biso oyo ezali kokola"
     },
-    "form": {
-      "selectOption": "Pona likambo",
-      "userTypes": {
-        "rider": "Moto oyo azali kotambola",
-        "driver": "Motambwisi",
-        "fleet_owner": "Nkolo ya Flotte",
-        "partner": "Partenaire",
-        "team_member": "Membre ya Ekipi"
-      },
-      "firstNamePlaceholder": "Nkombo ya liboso",
-      "lastNamePlaceholder": "Nkombo ya suka",
-      "emailPlaceholder": "Adresse Email",
-      "submit": "Sangana na liste ya kozela",
-      "agreements": {
-        "privacyPolicy": "Nandimi Politique ya Vie Privée",
-        "termsConditions": "Nandimi Mibeko mpe Mipango",
-        "consentMessages": "Nandimi kozwa ba-messages SMS, babengi, mpe ba-emails mpo na ndingisa mpe communication",
-        "disclaimer": "Avertissement: Na kotinda formulaire oyo, ondimi kozwa ba-messages SMS, babengi, mpe ba-emails uta na AnyRide mpo na ndingisa mpe communication. Ba-messages mpe ba-données ekoki kozwa mbongo. Okoki kotika ntango nyonso na koyanola STOP na message nyonso. Ndingisa oyo esengeli te mpo na kosomba biloko to misala."
-      }
-    },
-    "FAQ": {
+   "form": {
+  "selectOption": "Kobá chwa",
+  "userTypes": {
+    "rider": "Mokonzi ya motuka",
+    "driver": "Motuki",
+    "fleet_owner": "Mokonzi ya fleet",
+    "partner": "Moninga",
+    "team_member": "Mwanachama ya équipe"
+  },
+  "firstNamePlaceholder": "Kombo ya liboso",
+  "lastNamePlaceholder": "Kombo ya suka",
+  "emailPlaceholder": "Adresse e-mail",
+  "submit": "Kota na liste ya kozela",
+  "agreements": {
+    "privacyPolicy": "Naboyi na Politique ya confidentialité",
+    "termsConditions": "Naboyi na Termes & Conditions",
+    "consentMessages": "Nakozwa masenga ya SMS, téléphones, mpe emails mpo na vérification mpe communication",
+    "disclaimer": "Avis : Na kozwa formulaire oyo, ozali kopesa elaka mpo na kozwa masenga ya SMS, téléphones, mpe emails uta AnyRide mpo na vérification mpe communication. Mayele ya message mpe data ekoki kosala. Okoki kosuka tango nyonso na kopesa STOP. Consentement oyo ezali te obligatoire mpo na kozwa biens to services."
+  },
+  "toast": {
+    "success": "Omeikí na liste ya kozela na succès !",
+    "genericError": "Eloko moko ekómí mabe.",
+    "retryError": "Eloko moko ekómí mabe. Kobali lisusu."
+  },
+  "validation": {
+    "required": "Esengeli",
+    "invalidEmail": "E-mail esili malamu te"
+  }
+},
+   "FAQ": {
       "subtitle": "Mituna",
       "title": "Mituna oyo bato batunaka mingi",
       "description": "Tala eteni na biso ya mituna mpo na biyano ya mbangu mpe ya pete na mituna oyo bato batunaka mingi",

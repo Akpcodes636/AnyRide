@@ -8,7 +8,12 @@
       "placeholderDestination": "Enter your destination",
       "buttonCheckAvailability": "Check Availability",
       "mobileInfo": "Not available yet",
-      "desktopInfo": "Rides available in your area"
+      "desktopInfo": "Rides available in your area",
+      "checking":"checking",
+      "selectPickupError": "Please select a pickup location from suggestions",
+      "noRides": "No rides available in your area"
+
+
     },
     "sections": {
       "ridesNearby": "Rides available in your area",
@@ -189,7 +194,13 @@
           "title": "AnyRide participates in Gitex Africa with new visions for the future of RH in Nigeria"
         }
       ]
-    }
+    },
+    "comingSoon": {
+  "title": "Coming Soon!",
+  "description": "Our mobile app is currently in development and will be launching soon. Join our waitlist to be the first to know!",
+  "joinWaitlist": "Join the Waitlist",
+  "maybeLater": "Maybe later"
+}
   },
 
   "AboutPage": {
@@ -496,25 +507,34 @@
       "title": "Join our growing community"
     },
     "form": {
-      "selectOption": "Select an option",
-      "userTypes": {
-        "rider": "Rider",
-        "driver": "Driver",
-        "fleet_owner": "Fleet Owner",
-        "partner": "Partner",
-        "team_member": "Team Member"
-      },
-      "firstNamePlaceholder": "First Name",
-      "lastNamePlaceholder": "Last Name",
-      "emailPlaceholder": "Email Address",
-      "submit": "Join the waitlist",
-      "agreements": {
-        "privacyPolicy": "I agree to the Privacy Policy",
-        "termsConditions": "I agree to the Terms & Conditions",
-        "consentMessages": "I consent to receive SMS messages, calls, and emails for verification and communication purposes",
-        "disclaimer": "Disclaimer: By submitting this form, you consent to receive SMS messages, calls, and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services."
-      }
-    },
+  "selectOption": "Select an option",
+  "userTypes": {
+    "rider": "Rider",
+    "driver": "Driver",
+    "fleet_owner": "Fleet Owner",
+    "partner": "Partner",
+    "team_member": "Team Member"
+  },
+  "firstNamePlaceholder": "First Name",
+  "lastNamePlaceholder": "Last Name",
+  "emailPlaceholder": "Email Address",
+  "submit": "Join the waitlist",
+  "agreements": {
+    "privacyPolicy": "I agree to the Privacy Policy",
+    "termsConditions": "I agree to the Terms & Conditions",
+    "consentMessages": "I consent to receive SMS messages, calls, and emails for verification and communication purposes",
+    "disclaimer": "Disclaimer: By submitting this form, you consent to receive SMS messages, calls, and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services."
+  },
+  "toast": {
+    "success": "Successfully joined the waitlist!",
+    "genericError": "Something went wrong.",
+    "retryError": "Something went wrong. Please try again."
+  },
+  "validation": {
+    "required": "Required",
+    "invalidEmail": "Invalid email"
+  }
+},
     "FAQ": {
       "subtitle": "FAQ",
       "title": "Frequently asked questions",

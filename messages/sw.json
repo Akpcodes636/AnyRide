@@ -8,7 +8,11 @@
       "placeholderDestination": "Weka mahali unakokwenda",
       "buttonCheckAvailability": "Angalia Upatikanaji",
       "mobileInfo": "Bado haipatikani",
-      "desktopInfo": "Safari zinapatikana katika eneo lako"
+      "desktopInfo": "Safari zinapatikana katika eneo lako",
+       "checking": "Inaangaliwa...",
+       "selectPickupError": "Tafadhali chagua eneo la kuchukuliwa kutoka kwenye mapendekezo",
+      "noRides": "Hakuna safari zinazopatikana katika eneo lako"
+
     },
     "sections": {
       "ridesNearby": "Safari zinapatikana katika eneo lako",
@@ -186,7 +190,14 @@
           "title": "AnyRide inashiriki kwenye Gitex Africa na maono mapya ya siku zijazo za RH nchini Nigeria"
         }
       ]
-    }
+    },
+    "comingSoon": {
+  "title": "Inakuja Hivi Karibuni!",
+  "description": "Programu yetu ya simu bado inaendelezwa na itazinduliwa hivi karibuni. Jiunge na orodha yetu ya kusubiri ili uwe wa kwanza kujua!",
+  "joinWaitlist": "Jiunge na Orodha ya Kusubiri",
+  "maybeLater": "Labda baadaye"
+}
+
   },
   "AboutPage": {
     "hero": {
@@ -488,26 +499,35 @@
       "total": "Jumla ya Wanachama",
       "title": "Jiunge na jamii yetu inayokua"
     },
-    "form": {
-      "selectOption": "Chagua chaguo",
-      "userTypes": {
-        "rider": "Abiria",
-        "driver": "Dereva",
-        "fleet_owner": "Mmiliki wa Floti",
-        "partner": "Mshirika",
-        "team_member": "Mwanachama wa Timu"
-      },
-      "firstNamePlaceholder": "Jina la kwanza",
-      "lastNamePlaceholder": "Jina la familia",
-      "emailPlaceholder": "Anwani ya barua pepe",
-      "submit": "Jiunge na orodha ya kusubiri",
-      "agreements": {
-        "privacyPolicy": "Nakubali Sera ya Faragha",
-        "termsConditions": "Nakubali Masharti na Vigezo",
-        "consentMessages": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa ajili ya uthibitisho na mawasiliano",
-        "disclaimer": "Kumbuka: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa ajili ya uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kuacha kupokea ujumbe wakati wowote kwa kujibu STOP kwa ujumbe wowote. Uidhinishaji huu hauhitajiki kununua bidhaa au huduma."
-      }
-    },
+   "form": {
+  "selectOption": "Chagua chaguo",
+  "userTypes": {
+    "rider": "Dereva",
+    "driver": "Dereva",
+    "fleet_owner": "Mmiliki wa meli",
+    "partner": "Mshirika",
+    "team_member": "Mwanachama wa timu"
+  },
+  "firstNamePlaceholder": "Jina la kwanza",
+  "lastNamePlaceholder": "Jina la mwisho",
+  "emailPlaceholder": "Anwani ya barua pepe",
+  "submit": "Jiunge na orodha ya kusubiri",
+  "agreements": {
+    "privacyPolicy": "Nakubali Sera ya Faragha",
+    "termsConditions": "Nakubali Masharti na Masharti",
+    "consentMessages": "Nakubali kupokea SMS, simu, na barua pepe kwa ajili ya uthibitisho na mawasiliano",
+    "disclaimer": "Onyo: Kwa kuwasilisha fomu hii, unakubali kupokea SMS, simu, na barua pepe kutoka AnyRide kwa ajili ya uthibitisho na mawasiliano. Ada za ujumbe na data zinaweza kutumika. Unaweza kujiondoa wakati wowote kwa kujibu STOP kwa ujumbe wowote. Uidhinishaji huu hauhitajiki kununua bidhaa au huduma."
+  },
+  "toast": {
+    "success": "Umejiunga na orodha ya kusubiri kwa mafanikio!",
+    "genericError": "Kitu kimeenda vibaya.",
+    "retryError": "Kitu kimeenda vibaya. Tafadhali jaribu tena."
+  },
+  "validation": {
+    "required": "Inahitajika",
+    "invalidEmail": "Barua pepe si sahihi"
+  }
+},
     "FAQ": {
       "subtitle": "Maswali Yanayoulizwa Mara kwa Mara",
       "title": "Maswali Yanayoulizwa Mara kwa Mara",

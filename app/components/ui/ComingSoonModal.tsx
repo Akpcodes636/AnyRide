@@ -12,7 +12,8 @@ interface ComingSoonModalProps {
 }
 
 const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
-    const t = useTranslations("HomePage.hero"); // Reusing translations if possible or adding new ones
+   const t = useTranslations("HomePage.comingSoon");
+// Reusing translations if possible or adding new ones
     const locale = useLocale();
 
     return (
@@ -63,10 +64,10 @@ const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
                             </div>
 
                             <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                                Coming Soon!
+                                {t("title")}
                             </h3>
                             <p className="text-gray-600 mb-8 max-w-[280px]">
-                                Our mobile app is currently in development and will be launching soon. Join our waitlist to be the first to know!
+                                {t("description")}
                             </p>
 
                             <Link href={`/${locale}/waitlist`} passHref className="w-full">
@@ -76,7 +77,7 @@ const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
                                     css="w-full h-14 rounded-full font-bold text-lg"
                                     fn={onClose}
                                 >
-                                    Join the Waitlist
+                                   {t("joinWaitlist")}
                                 </Button>
                             </Link>
 
@@ -84,7 +85,7 @@ const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
                                 onClick={onClose}
                                 className="mt-4 text-gray-500 hover:text-gray-700 font-medium transition-colors"
                             >
-                                Maybe later
+                              {t("maybeLater")}
                             </button>
                         </div>
                     </motion.div>

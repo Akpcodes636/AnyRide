@@ -8,7 +8,10 @@
       "placeholderDestination": "Entrez votre destination",
       "buttonCheckAvailability": "Vérifier la disponibilité",
       "mobileInfo": "Pas encore disponible",
-      "desktopInfo": "Trajets disponibles dans votre région"
+      "desktopInfo": "Trajets disponibles dans votre région",
+      "checking": "Vérification...",
+      "selectPickupError": "Veuillez sélectionner un lieu de prise en charge dans les suggestions",
+      "noRides": "Aucune course disponible dans votre zone"
     },
     "sections": {
       "ridesNearby": "Trajets disponibles dans votre région",
@@ -189,7 +192,13 @@
           "title": "AnyRide participe à Gitex Africa avec de nouvelles visions pour l'avenir des RH au Nigeria"
         }
       ]
-    }
+    },
+    "comingSoon": {
+  "title": "Bientôt disponible !",
+  "description": "Notre application mobile est actuellement en développement et sera bientôt lancée. Rejoignez notre liste d’attente pour être parmi les premiers informés !",
+  "joinWaitlist": "Rejoindre la liste d’attente",
+  "maybeLater": "Peut-être plus tard"
+}
   },
   "DriversPage": {
     "hero": {
@@ -344,7 +353,7 @@
         ]
       }
     },
-    "copyright": " 2025 AnyRide. powered by Techenex"
+    "copyright": "  AnyRide. propulsé par"
   },
   "AboutPage": {
     "hero": {
@@ -492,25 +501,34 @@
       "title": "Rejoignez notre communauté grandissante"
     },
     "form": {
-      "selectOption": "Sélectionnez une option",
-      "userTypes": {
-        "rider": "Passager",
-        "driver": "Conducteur",
-        "fleet_owner": "Propriétaire de flotte",
-        "partner": "Partenaire",
-        "team_member": "Membre de l'équipe"
-      },
-      "firstNamePlaceholder": "Prénom",
-      "lastNamePlaceholder": "Nom de famille",
-      "emailPlaceholder": "Adresse e-mail",
-      "submit": "Rejoindre la liste d'attente",
-      "agreements": {
-        "privacyPolicy": "J'accepte la Politique de confidentialité",
-        "termsConditions": "J'accepte les Termes et Conditions",
-        "consentMessages": "J'accepte de recevoir des SMS, des appels et des e-mails à des fins de vérification et de communication",
-        "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, des appels et des e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à n'importe quel message. Ce consentement n'est pas obligatoire pour acheter des biens ou des services."
-      }
-    },
+  "selectOption": "Sélectionnez une option",
+  "userTypes": {
+    "rider": "Coureur",
+    "driver": "Conducteur",
+    "fleet_owner": "Propriétaire de flotte",
+    "partner": "Partenaire",
+    "team_member": "Membre de l'équipe"
+  },
+  "firstNamePlaceholder": "Prénom",
+  "lastNamePlaceholder": "Nom de famille",
+  "emailPlaceholder": "Adresse e-mail",
+  "submit": "Rejoindre la liste d’attente",
+  "agreements": {
+    "privacyPolicy": "J'accepte la politique de confidentialité",
+    "termsConditions": "J'accepte les termes et conditions",
+    "consentMessages": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
+    "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de AnyRide à des fins de vérification et de communication. Des frais de messages et données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à un message. Ce consentement n'est pas requis pour acheter des biens ou services."
+  },
+  "toast": {
+    "success": "Vous avez rejoint la liste d’attente avec succès !",
+    "genericError": "Une erreur est survenue.",
+    "retryError": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "validation": {
+    "required": "Requis",
+    "invalidEmail": "E-mail invalide"
+  }
+},
     "FAQ": {
       "subtitle": "FAQ",
       "title": "Questions fréquemment posées",
