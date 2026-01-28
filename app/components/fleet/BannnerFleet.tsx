@@ -6,6 +6,13 @@ import { useTranslations } from "next-intl";
 export default function BannerFleet() {
   const t = useTranslations("fleetOwner.cta");
 
+  const scrollToFleet = () => {
+    const fleetSection = document.getElementById("fleet");
+    if (fleetSection) {
+      fleetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="bg-banners">
       <div className="container mx-auto h-screen">
@@ -14,7 +21,11 @@ export default function BannerFleet() {
             {t("title")}
           </h2>
           <div className="flex items-center justify-center mt-6">
-            <Button style="danger" type="button">
+            <Button
+              style="danger"
+              type="button"
+              fn={scrollToFleet}
+            >
               {t("button")}
             </Button>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
 
@@ -18,9 +19,11 @@ export default function FleetHero() {
               {t("subtitle")}
             </p>
           <div className="flex items-center justify-center mt-[20px]">
+            <Link href="#fleet">
             <Button css="" style="danger" type="button">
               {t("cta")}
             </Button>
+            </Link>
           </div>
           </div>
 

@@ -6,7 +6,7 @@ export default function FleetApplication() {
  const t = useTranslations("fleetOwner.forms")
 
   return (
-    <section className="py-[40px] md:py-[50px] lg:py-[72px] bg-[#010418]">
+    <section className="py-[40px] md:py-[50px] lg:py-[72px] bg-[#010418]" id="fleet">
       <div className="container mx-auto">
         {/* Localized title */}
         <h2 className="text-center text-white">{t("title")}</h2>
