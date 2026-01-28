@@ -5,8 +5,9 @@ import { FaMotorcycle, FaCar } from "react-icons/fa";
 import Button from "../../ui/Button";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { Autocomplete, useJsApiLoader } from "@react-google-maps/api";
+import { useJsApiLoader } from "@react-google-maps/api";
 import RideETA from "../../RideETA";
+import LocationSearchInput from "../../ui/LocationSearchInput";
 
 /* ------------------ CONSTANTS ------------------ */
 const RIDE_TYPES = [
@@ -38,9 +39,6 @@ export default function PricingForm() {
 
   const [pickupCoords, setPickupCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [destinationCoords, setDestinationCoords] = useState<{ lat: number; lon: number } | null>(null);
-
-  const [pickupAuto, setPickupAuto] = useState<any>(null);
-  const [destinationAuto, setDestinationAuto] = useState<any>(null);
 
   const [rideType, setRideType] = useState<string>("Motorcycle");
   const [loading, setLoading] = useState(false);
@@ -103,27 +101,16 @@ export default function PricingForm() {
             {t("pickupLabel")}
           </label>
 
-          <Autocomplete
-            onLoad={setPickupAuto}
-            onPlaceChanged={() => {
-              if (!pickupAuto) return;
-              const place = pickupAuto.getPlace();
-              if (!place.geometry) return;
-
-              setPickup(place.formatted_address || "");
-              setPickupCoords({
-                lat: place.geometry.location.lat(),
-                lon: place.geometry.location.lng(),
-              });
+          <LocationSearchInput
+            value={pickup}
+            onChange={setPickup}
+            onSelect={(address, lat, lng) => {
+              setPickup(address);
+              setPickupCoords({ lat, lon: lng });
             }}
-          >
-            <input
-              value={pickup}
-              onChange={(e) => setPickup(e.target.value)}
-              placeholder={t("pickupPlaceholder")}
-              className="w-full h-14 px-4 bg-[#F5F5F5] rounded-lg focus:ring-2 focus:ring-[#A20602]"
-            />
-          </Autocomplete>
+            placeholder={t("pickupPlaceholder")}
+            className="w-full h-14 bg-[#F5F5F5] rounded-lg focus-within:ring-2 focus-within:ring-[#A20602]"
+          />
         </div>
 
         {/* Destination */}
@@ -132,27 +119,16 @@ export default function PricingForm() {
             {t("destinationLabel")}
           </label>
 
-          <Autocomplete
-            onLoad={setDestinationAuto}
-            onPlaceChanged={() => {
-              if (!destinationAuto) return;
-              const place = destinationAuto.getPlace();
-              if (!place.geometry) return;
-
-              setDestination(place.formatted_address || "");
-              setDestinationCoords({
-                lat: place.geometry.location.lat(),
-                lon: place.geometry.location.lng(),
-              });
+          <LocationSearchInput
+            value={destination}
+            onChange={setDestination}
+            onSelect={(address, lat, lng) => {
+              setDestination(address);
+              setDestinationCoords({ lat, lon: lng });
             }}
-          >
-            <input
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              placeholder={t("destinationPlaceholder")}
-              className="w-full h-14 px-4 bg-[#F5F5F5] rounded-lg focus:ring-2 focus:ring-[#A20602]"
-            />
-          </Autocomplete>
+            placeholder={t("destinationPlaceholder")}
+            className="w-full h-14 bg-[#F5F5F5] rounded-lg focus-within:ring-2 focus-within:ring-[#A20602]"
+          />
         </div>
 
         {/* Ride Type */}
@@ -162,14 +138,14 @@ export default function PricingForm() {
           </label>
 
           <div className="relative">
-            <div className="absolute left-4 top-1/2 -translate-y-1/2">
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
               {RIDE_TYPES.find((r) => r.value === rideType)?.icon}
             </div>
 
             <select
               value={rideType}
               onChange={(e) => setRideType(e.target.value)}
-              className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg focus:ring-2 focus:ring-[#A20602]"
+              className="w-full h-14 pl-12 pr-4 bg-[#F5F5F5] rounded-lg focus:ring-2 focus:ring-[#A20602] outline-none appearance-none"
             >
               {RIDE_TYPES.map((r, i) => (
                 <option key={r.value} value={r.value}>
@@ -177,6 +153,7 @@ export default function PricingForm() {
                 </option>
               ))}
             </select>
+            {/* Custom arrow if needed, but standard select is okay for now, maybe add logic later */}
           </div>
         </div>
 

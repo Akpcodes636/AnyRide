@@ -7,23 +7,23 @@ export default function FleetHero() {
   const t = useTranslations("fleetOwner.hero");
 
   return (
-    <section className="h-screen bg-fleet">
-      <div className="container py-[250px]">
-        <div>
-          <div className="flex items-center justify-center flex-col mb-[20px] md:mb-[38px] lg:mb-[58px]">
+    <section className="bg-fleet">
+      <div className="container">
+        <div className="">
+          <div className="h-screen flex items-center justify-center flex-col">
             <h2 className="text-[#FFFFFF] text-center w-full max-w-[500px]">
               {t("title")}
             </h2>
             <p className="text-center leading-[160%] tracking-[-2%] text-[#E6E6EB] text-[16px] md:text-[18px] w-full max-w-[500px]">
               {t("subtitle")}
             </p>
-          </div>
-
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mt-[20px]">
             <Button css="" style="danger" type="button">
               {t("cta")}
             </Button>
           </div>
+          </div>
+
         </div>
       </div>
     </section>

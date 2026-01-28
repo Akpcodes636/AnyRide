@@ -2,9 +2,10 @@
 export const navLinks = [
   { key: "about", router: "/about" },
   { key: "rider", router: "/services/rider" },
+  { key: "fleet", router: "/fleet" },
   { key: "driver", router: "/services/driver" },
   { key: "partners", router: "/partners" },
-  { key: "contactUs", router: "/contact" },
+  { key: "contactUs", router: "/contact" }
 ];
 
 export const AnyRideFeatures = [

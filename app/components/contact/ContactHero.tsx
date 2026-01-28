@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 const ContactHero =()=>{
   const t = useTranslations("ContactPage.hero");
   return (
-    <section className="bg-contact pt-[280px] pb-[80px] md:pt-[330px] md:pb-[120px] h-screen">
-      <div className="container h-full">
-        <div>
+    <section className="bg-contact">
+      <div className="container h-screen">
+        <div className="flex items-center justify-center flex-col h-full">
           <h2 className="text-white text-center w-full max-w-[250px] md:max-w-full lg:max-w-full mx-auto mb-[16px]">
             {t("title")}
           </h2>

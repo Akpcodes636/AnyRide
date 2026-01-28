@@ -958,6 +958,7 @@
   "Navbar": {
     "about": "À propos",
     "rider": "Passager",
+    "fleet":"Flotte",
     "driver": "Chauffeur",
     "partners": "Partenaires",
     "contactUs": "Contactez-nous",
@@ -977,19 +978,19 @@
       "description": "Se déplacer n’a jamais été aussi simple. Demandez un trajet, soyez mis en relation et voyagez en toute confiance — en quelques minutes.",
       "steps": [
         {
-          "step": "Étape 1",
+          "steps": "Étape 1:",
           "title": "Définissez votre trajet",
           "description": "Entrez votre point de départ et votre destination, choisissez une voiture ou une moto, et voyez le prix à l’avance.",
           "image": "/images/rider-1.png"
         },
         {
-          "step": "Étape 2",
+          "steps": "Étape 2:",
           "title": "Soyez mis en relation",
           "description": "Nous vous connectons à un chauffeur vérifié à proximité. Consultez son nom, son véhicule et son heure d’arrivée instantanément.",
           "image": "/images/rider-2.png"
         },
         {
-          "step": "Étape 3",
+          "steps": "Étape 3:",
           "title": "Roulez et payez",
           "description": "Suivez votre trajet en temps réel, confirmez la prise en charge avec un code et payez en espèces ou via votre portefeuille.",
           "image": "/images/rider-3.png"

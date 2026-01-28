@@ -14,10 +14,8 @@ export interface GuideItem {
 // Keep colors separate since they're styling, not content
 const colors = {
   Rider: ["bg-[#F6E6E6]", "bg-[#EBF3FE]", "bg-[#E9F9EE]"],
-  Driver: ["bg-[#FFF4E6]", "bg-[#E6F7FF]", "bg-[#E9F9F3]"]
+  Driver: ["bg-[#FFF4E6]", "bg-[#E6F7FF]", "bg-[#E9F9F3]"],
 };
-
-
 
 const About = () => {
   const t = useTranslations("HomePage.guides");
@@ -27,19 +25,18 @@ const About = () => {
   const getGuideContent = (tab: "Rider" | "Driver"): GuideItem[] => {
     const tabKey = tab.toLowerCase() as "rider" | "driver";
     const items = t.raw(tabKey) as Array<{ title: string; text: string }>;
-    
+
     return items.map((item, index) => ({
       ...item,
-      color: colors[tab][index]
+      color: colors[tab][index],
     }));
   };
 
   return (
     <section className="">
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-[2fr_1fr] h-full gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-[2fr_1fr] gap-16">
         {/* LEFT SIDE */}
-  <div className="container  w-full flex flex-col items-center md:items-start justify-center xl:justify-center py-6 md:py-16.5">
-
+        <div className="container  w-full flex flex-col items-center md:items-start justify-center xl:justify-center py-6 md:py-16.5">
           <div className="mb-6">
             <SubTitle text={t("subtitle")} css="rounded-[40px] font-bold" />
           </div>
@@ -92,10 +89,10 @@ const About = () => {
           <Image
             src="/icons/About-img.svg"
             priority
-            width={400}
-            height={600}
+            width={500}
+            height={500}
             alt={t("title")}
-            className="w-full h-auto object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

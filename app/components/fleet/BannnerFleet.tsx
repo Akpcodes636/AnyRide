@@ -7,9 +7,9 @@ export default function BannerFleet() {
   const t = useTranslations("fleetOwner.cta");
 
   return (
-    <section className="h-[100vh] bg-banners">
-      <div className="container mx-auto py-[200px]">
-        <div className="flex items-center justify-center flex-col">
+    <section className="bg-banners">
+      <div className="container mx-auto h-screen">
+        <div className="flex items-center justify-center flex-col h-full">
           <h2 className="text-center text-white">
             {t("title")}
           </h2>

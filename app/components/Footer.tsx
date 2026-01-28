@@ -295,7 +295,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.5fr_1fr] gap-8 lg:gap-12">
 
           {/* Brand Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex items-start justify-start flex-col">
             <div className="mb-7">
               <Logo />
             </div>

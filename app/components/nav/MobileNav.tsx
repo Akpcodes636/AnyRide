@@ -354,7 +354,7 @@ const MobileNav = () => {
   return (
     <div className="xl:hidden relative">
       {/* TOP BAR */}
-      <div className="px-4">
+      <div className="px-4 py-6 md:py-4">
         <div className="flex items-center justify-between">
           <Logo />
 

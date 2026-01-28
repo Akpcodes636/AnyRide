@@ -2,58 +2,94 @@
 
 import Logo from "../ui/Logo";
 import Link from "next/link";
-// import LanguageSwitcher from "./LanguageSwitcher";
 import Button from "../ui/Button";
 import { navLinks } from "@/app/utils/Content";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
-// import LanguageSwitcher from "../navbar/LanguageSwitcher";
-
+import { useRouter, usePathname } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
   const router = useRouter();
+  const locale = useLocale();
+
+  const pathname = usePathname();
+
+  // Remove locale prefix from path: /en/riders -> /riders
+  const cleanPath = pathname.replace(
+    new RegExp(`^/${locale}`),
+    ""
+  );
+
   const gotoWaitlist = () => {
     router.push("/waitlist");
   };
+
+  // Determine gap based on locale
+  const navGap =
+    locale === "fr" || locale === "sw" || locale === "ln"
+      ? "gap-2"
+      : "gap-8";
+
   return (
-      <nav className="hidden xl:block px-4 py-4"> {/* Added py-4 */}
-  <div className="flex items-center justify-between gap-6  mx-auto"> {/* Added max-width */}
-    <div className="flex-shrink-0">
-      <Logo />
-    </div>
-    
-    <ul className="flex items-center gap-6 lg:gap-8 xl:gap-6"> {/* Responsive gaps */}
-      {navLinks.map((l, i) => (
-        <li key={i} className="flex items-center">
-          <Link
-            href={l.router}
-            className="text-[16px] lg:text-[18px] text-text-black font-medium leading-[120%] hover:text-[#A20602] transition-colors whitespace-nowrap"
+    <nav className="hidden xl:block px-4 py-4">
+      <div className="flex items-center justify-between gap-6 mx-auto">
+        {/* Logo */}
+        <Logo />
+
+        {/* Nav links */}
+        <ul className={`flex items-center ${navGap} 2xl:gap-10`}>
+          {navLinks.map((l, i) => {
+            const isActive =
+              cleanPath === l.router ||
+              cleanPath.startsWith(`${l.router}/`);
+
+            return (
+              <li key={i} className="relative flex items-center">
+                <Link
+                  href={l.router}
+                  className={`text-[18px] font-medium leading-[120%] whitespace-nowrap transition-colors
+                    ${
+                      isActive
+                        ? "text-[#A20602]"
+                        : "text-text-black hover:text-[#A20602]"
+                    }
+                  `}
+                >
+                  {t(l.key)}
+                </Link>
+
+                {/* underline */}
+                <span
+                  className={`absolute -bottom-2 left-0 h-[2px] w-full bg-[#A20602] transition-all duration-300
+                    ${
+                      isActive
+                        ? "opacity-100 scale-x-100"
+                        : "opacity-0 scale-x-0"
+                    }
+                  `}
+                />
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Right section */}
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <LanguageSwitcher />
+
+          <Button
+            type="button"
+            style="danger"
+            css="!text-[14px] lg:!text-[16px] px-3 lg:px-4 whitespace-nowrap"
+            fn={gotoWaitlist}
           >
-            {t(l.key)}
-          </Link>
-        </li>
-      ))}
-    </ul>
-    
-    <div className="flex items-center gap-x-3 lg:gap-x-4 flex-shrink-0">
-      <LanguageSwitcher />
-      <Button 
-        type="button" 
-        style="danger" 
-        css="!text-[14px] lg:!text-[16px] px-3 lg:px-4 h-[56px] lg:h-[60px] whitespace-nowrap min-w-fit"
-        fn={gotoWaitlist}
-      >
-        {t("waitlistButton")}
-      </Button>
-    </div>
-  </div>
-</nav>
+            {t("waitlistButton")}
+          </Button>
+        </div>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
-
-

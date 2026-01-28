@@ -969,6 +969,7 @@
   "Navbar": {
     "about": "About",
     "rider": "Rider",
+    "fleet":"Fleet",
     "driver": "Driver",
     "partners": "Partners",
     "contactUs": "Contact us",
@@ -988,19 +989,19 @@
       "description": "Getting around is simple. Request a ride, get matched, and move confidently — all in minutes.",
       "steps": [
         {
-          "step": "Step 1",
+          "steps": "Steps 1:",
           "title": "Set your trip",
           "description": "Enter your pickup and destination, choose a car or motorcycle, and see your price upfront.",
           "image": "/images/rider-1.png"
         },
         {
-          "step": "Step 2",
+          "steps": "Step 2",
           "title": "Get matched",
           "description": "We connect you with a nearby verified driver. See their name, vehicle, and arrival time instantly.",
           "image": "/images/rider-2.png"
         },
         {
-          "step": "Step 3",
+          "steps": "Step 3",
           "title": "Ride & pay",
           "description": "Track your trip live, confirm pickup with a code, and pay with cash or wallet.",
           "image": "/images/rider-3.png"

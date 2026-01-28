@@ -958,6 +958,7 @@
   "Navbar": {
     "about": "Na ntina",
     "rider": "Moto oyo azali kokende",
+    "fleet":"Floti",
     "driver": "Motambwisi",
     "partners": "Bapartenaire",
     "contactUs": "Bengelá biso",
@@ -977,19 +978,19 @@
       "description": "Kotambola ezali pete. Senga transport, kangama, mpe tambola na motema kitoko — nyonso na baminiti.",
       "steps": [
         {
-          "step": "Litamboli 1",
+          "steps": "Hatua 1",
           "title": "Tyá transport na yo",
           "description": "Kota esika ya kokóta mpe esika okokende, pona motuka to moto, mpe mona mbongo na yo liboso.",
           "image": "/images/rider-1.png"
         },
         {
-          "step": "Litamboli 2",
+          "steps": "Hatua 2",
           "title": "Kangama",
           "description": "Tokangisi yo na motambwisi ya solo oyo azali penepene. Mona nkombo, motuka, mpe ntango akoya nokinoki.",
           "image": "/images/rider-2.png"
         },
         {
-          "step": "Litamboli 3",
+          "step": "Hatua 3",
           "title": "Tambola & futa",
           "description": "Landela transport na yo na ntango ya solo, ndimá kokóta na code, mpe futa na mbongo to portefeuille.",
           "image": "/images/rider-3.png"

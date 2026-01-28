@@ -69,12 +69,13 @@ import SubTitle from "../ui/Subtitle";
 export default function RiderGrid() {
   const t = useTranslations("RiderPage.guides");
   const rider = t.raw("steps") as {
+    steps: string;
     title: string;
     description: string;
   }[];
 
   return (
-    <section className="w-full bg-white hidden lg:block">
+    <section className="w-full bg-white">
       <div className="container py-[62px] md:py-[50px] lg:py-[72px]">
         <div className="flex items-center justify-center flex-col mb-[58px]">
           <div className="mb-[24px]">
@@ -84,14 +85,14 @@ export default function RiderGrid() {
             />
           </div>
 
-          <h2>{t("title")}</h2>
+          <h2 className="text-center">{t("title")}</h2>
 
           <p className="max-w-[569px] w-full text-center mx-auto text-[18px] leading-[160%] tracking-[-2%] text-[#333333]">
             {t("description")}
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="">
           {rider.map((category, index) => (
             <div
               key={index}
@@ -116,7 +117,7 @@ export default function RiderGrid() {
                   }`}
               >
                 <h3 className="mb-4 text-[32px] font-semibold text-[#0A0A23]">
-                  {category.title}
+                 {category.steps} {category.title}
                 </h3>
 
                 <p className="text-[16px] font-normal tracking-[-2%] leading-[160%] text-[#333333]">

@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const Logo = () => {
   return (
-    <Link href="/" className="h-12">
-      <div className="h-full w-24.5 md:w-30 lg:w-42">
+    <Link href="/" className="h-full max-h-[40px]">
+      <div className="h-[42px] min-w-[100px]  md:min-w-[150px] lg:min-w-[200px]">
         <Image
           src="/images/Logo-1.png"
           height={200}

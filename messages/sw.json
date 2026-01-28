@@ -945,6 +945,7 @@
   "Navbar": {
     "about": "Kuhusu",
     "rider": "Mshiriki",
+    "fleet":"Ebongiseli",
     "driver": "Dereva",
     "partners": "Washirika",
     "contactUs": "Wasiliana nasi",
@@ -964,19 +965,19 @@
       "description": "Kusafiri ni rahisi. Omba safari, linganishwa na dereva, na safiri kwa uhakika — ndani ya dakika chache.",
       "steps": [
         {
-          "step": "Hatua ya 1",
+          "steps": "01. ",
           "title": "Weka safari yako",
           "description": "Weka mahali pa kuanzia na unakoenda, chagua gari au pikipiki, na uone bei mapema.",
           "image": "/images/rider-1.png"
         },
         {
-          "step": "Hatua ya 2",
+          "steps": "02. ",
           "title": "Linganishwa na dereva",
           "description": "Tunakunganisha na dereva aliye karibu na aliyethibitishwa. Ona jina, aina ya gari, na muda wa kufika mara moja.",
           "image": "/images/rider-2.png"
         },
         {
-          "step": "Hatua ya 3",
+          "steps": "03. ",
           "title": "Safiri na ulipe",
           "description": "Fuata safari yako moja kwa moja, thibitisha kuchukuliwa kwa nambari ya siri, na ulipe kwa pesa taslimu au pochi.",
           "image": "/images/rider-3.png"

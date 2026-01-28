@@ -7,9 +7,9 @@ export default function CareersHero() {
   const t = useTranslations("CareersPage.hero");
 
   return (
-    <section className="h-screen bg-career pt-[250px]  md:pt-[280px] lg:pt-[200px]">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-center flex-col">
+    <section className="bg-career">
+      <div className="container mx-auto h-screen">
+        <div className="flex items-center justify-center flex-col h-full">
           <div className="">
             <h1 className="text-[40px] md:text-[50px] lg:text-[64px] text-white font-bold leading-[120%] tracking-[-5%] text-center w-full max-w-[735px]">
               {t("title")}

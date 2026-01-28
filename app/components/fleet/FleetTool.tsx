@@ -15,7 +15,7 @@ export default function FleetTool() {
           {fleetFeatures.map((item, index) => (
             <div
               key={index}
-              className="w-full max-w-full md:max-w-full  lg:max-w-[405px] h-full min-h-[156px] bg-[#F9EEEE] rounded-[6px]"
+              className="w-full max-w-full md:max-w-full  lg:max-w-[405px] xl:max-w-full h-full min-h-[156px] bg-[#F9EEEE] rounded-[6px]"
             >
               <div className="py-[20px] md:py-[34px] px-[16px]">
                 <div>

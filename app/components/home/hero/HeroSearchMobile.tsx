@@ -1,11 +1,10 @@
-
-
 "use client";
 
 import { useState } from "react";
-import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
+import { useJsApiLoader } from "@react-google-maps/api";
 import Button from "../../ui/Button";
 import { useTranslations } from "next-intl";
+import LocationSearchInput from "../../ui/LocationSearchInput";
 
 const BASE_URL = "https://anyride.techenex.online";
 
@@ -22,7 +21,6 @@ const HeroSearchMobile = () => {
 
   const [pickup, setPickup] = useState("");
   const [pickupCoords, setPickupCoords] = useState<{ lat: number; lon: number } | null>(null);
-  const [pickupAuto, setPickupAuto] = useState<any>(null);
 
   const [rideType, setRideType] = useState(rideTypes[0]);
   const [fareData, setFareData] = useState<any>(null);
@@ -82,107 +80,12 @@ const HeroSearchMobile = () => {
 
   return (
     <div className="w-full max-w-full mx-auto flex flex-col items-center gap-3 px-4 pb-6">
-      /* <style jsx global>{`
-        /* Professional Mobile Autocomplete Dropdown Styling */
-        .pac-container {
-          background-color: #ffffff;
-          border-radius: 16px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-          border: 1px solid #e5e7eb;
-          margin-top: 8px;
-          padding: 8px 0;
-          font-family: inherit;
-          width:5000px
-          // max-width: calc(100vw - 82px) !important;
-          left: 16px !important;
-          margin: 0 auto;
-        }
-
-        .pac-container:after {
-          display: none; /* Hide default Google branding */
-        }
-
-        .pac-item {
-          padding: 14px 16px;
-          cursor: pointer;
-          border: none;
-          line-height: 1.5;
-          transition: background-color 0.15s ease;
-        }
-
-        .pac-item:hover {
-          background-color: #f9fafb;
-        }
-
-        .pac-item-selected {
-          background-color: #f3f4f6;
-        }
-
-        .pac-icon {
-          margin-top: 2px;
-          margin-right: 12px;
-          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>');
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 18px 18px;
-          width: 20px;
-          height: 20px;
-        }
-
-        .pac-icon-marker {
-          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>');
-        }
-
-        .pac-item-query {
-          font-size: 15px;
-          font-weight: 500;
-          color: #1f2937;
-          padding-right: 8px;
-        }
-
-        .pac-matched {
-          font-weight: 600;
-          color: #111827;
-        }
-
-        .pac-item-query .pac-matched {
-          font-weight: 600;
-        }
-
-        .pac-item span:not(.pac-item-query) {
-          font-size: 13px;
-          color: #6b7280;
-        }
-
-        /* Custom Google logo styling */
-        .pac-logo:after {
-          display: none;
-        }
-      `}</style>
-
-      {/* Pickup Input */}
-      <Autocomplete
-        onLoad={(auto) => setPickupAuto(auto)}
-        onPlaceChanged={() => {
-          if (!pickupAuto) return;
-          const place = pickupAuto.getPlace();
-          if (!place.geometry) return;
-
-          setPickup(place.formatted_address || "");
-          setPickupCoords({
-            lat: place.geometry.location.lat(),
-            lon: place.geometry.location.lng(),
-          });
-        }}
-        options={{
-          componentRestrictions: { country: [] },
-          fields: ["formatted_address", "geometry"],
-        }}
-      >
-        <div className="w-full max-w-[500px] h-14 bg-white rounded-full px-5 flex items-center shadow-md border border-gray-100 relative">
+      
+       {/* Pickup Input Container */}
+       <div className="w-full max-w-[500px] h-14 bg-white rounded-full px-5 flex items-center shadow-md border border-gray-100 relative">
           {/* Location Icon */}
           <svg
-            className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0"
+            className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0 z-10"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -202,15 +105,24 @@ const HeroSearchMobile = () => {
             />
           </svg>
 
-          <input
-            type="search"
-            placeholder={t("placeholderPickup")}
-            value={pickup}
-            onChange={(e) => setPickup(e.target.value)}
-            className="w-full h-full outline-none text-[15px] bg-transparent text-gray-900 placeholder:text-gray-400 font-medium"
+          <LocationSearchInput
+             value={pickup}
+             onChange={setPickup}
+             onSelect={(address, lat, lng) => {
+               setPickup(address);
+               setPickupCoords({ lat, lon: lng });
+             }}
+             placeholder={t("placeholderPickup")}
+             className="flex-1"
           />
-        </div>
-      </Autocomplete>
+           <style jsx global>{`
+              .w-full.max-w-\[500px\] input {
+                  height: 100% !important;
+                  padding-left: 2rem !important; /* Adjust for icon */
+                  background: transparent !important;
+              }
+           `}</style>
+       </div>
 
       {/* Check Availability Button */}
       <Button
