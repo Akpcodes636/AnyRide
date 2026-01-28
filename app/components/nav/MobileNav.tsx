@@ -329,12 +329,11 @@ import { useState } from "react";
 import Logo from "../ui/Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Link from "next/link";
 import { navLinks } from "@/app/utils/Content";
 import { X } from "lucide-react";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter, Link } from "@/i18n/navigation";
 
 const MobileNav = () => {
   const t = useTranslations("Navbar");

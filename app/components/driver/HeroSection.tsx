@@ -1,7 +1,8 @@
 "use client";
 
 import Button from "../ui/Button";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
@@ -10,7 +11,7 @@ export default function HeroSection() {
   const { locale } = useParams();
 
   const gotoWaitlist = () => {
-    router.push(`/${locale}/waitlist`);
+    router.push("/waitlist");
   };
 
   return (

@@ -2,7 +2,7 @@
 "use client";
 
 import Button from "../ui/Button";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl"; // assuming you're using next-intl
 
 const PartnerHero = () => {

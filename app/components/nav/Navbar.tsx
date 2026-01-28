@@ -1,11 +1,10 @@
 "use client";
 
 import Logo from "../ui/Logo";
-import Link from "next/link";
 import Button from "../ui/Button";
 import { navLinks } from "@/app/utils/Content";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 
 const Navbar = () => {
@@ -14,12 +13,6 @@ const Navbar = () => {
   const locale = useLocale();
 
   const pathname = usePathname();
-
-  // Remove locale prefix from path: /en/riders -> /riders
-  const cleanPath = pathname.replace(
-    new RegExp(`^/${locale}`),
-    ""
-  );
 
   const gotoWaitlist = () => {
     router.push("/waitlist");
@@ -41,18 +34,17 @@ const Navbar = () => {
         <ul className={`flex items-center ${navGap} 2xl:gap-10`}>
           {navLinks.map((l, i) => {
             const isActive =
-              cleanPath === l.router ||
-              cleanPath.startsWith(`${l.router}/`);
+              pathname === l.router ||
+              pathname.startsWith(`${l.router}/`);
 
             return (
               <li key={i} className="relative flex items-center">
                 <Link
                   href={l.router}
                   className={`text-[18px] font-medium leading-[120%] whitespace-nowrap transition-colors
-                    ${
-                      isActive
-                        ? "text-[#A20602]"
-                        : "text-text-black hover:text-[#A20602]"
+                    ${isActive
+                      ? "text-[#A20602]"
+                      : "text-text-black hover:text-[#A20602]"
                     }
                   `}
                 >
@@ -62,10 +54,9 @@ const Navbar = () => {
                 {/* underline */}
                 <span
                   className={`absolute -bottom-2 left-0 h-[2px] w-full bg-[#A20602] transition-all duration-300
-                    ${
-                      isActive
-                        ? "opacity-100 scale-x-100"
-                        : "opacity-0 scale-x-0"
+                    ${isActive
+                      ? "opacity-100 scale-x-100"
+                      : "opacity-0 scale-x-0"
                     }
                   `}
                 />

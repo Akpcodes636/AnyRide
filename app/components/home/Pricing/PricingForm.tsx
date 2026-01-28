@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaMotorcycle, FaCar } from "react-icons/fa";
 import Button from "../../ui/Button";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useJsApiLoader } from "@react-google-maps/api";
 import RideETA from "../../RideETA";
 import LocationSearchInput from "../../ui/LocationSearchInput";
