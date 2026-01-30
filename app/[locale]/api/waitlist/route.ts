@@ -182,7 +182,7 @@ export async function POST(req: NextRequest) {
     // Step 1: Connect to DB
     console.log("🔵 [STEP 1] Connecting to MongoDB...");
     await connectDB();
-    console.log("✅ [STEP 1] MongoDB connected");
+    // console.log("✅ [STEP 1] MongoDB connected");
     
     // Step 2: Parse request body
     console.log("🔵 [STEP 2] Parsing request body...");
@@ -198,10 +198,10 @@ export async function POST(req: NextRequest) {
     });
     
     // Step 3: Validate
-    console.log("🔵 [STEP 3] Validating request...");
+    // console.log("🔵 [STEP 3] Validating request...");
     try {
       await schema.validate(body, { abortEarly: false });
-      console.log("✅ [STEP 3] Validation passed");
+      // console.log("✅ [STEP 3] Validation passed");
     } catch (validationError: any) {
       console.error("❌ [STEP 3] Validation failed:", validationError.errors);
       return NextResponse.json(
@@ -224,10 +224,10 @@ export async function POST(req: NextRequest) {
     } = body;
     
     const email = emailAddress.trim().toLowerCase();
-    console.log("🔵 Normalized email:", email);
+    // console.log("🔵 Normalized email:", email);
     
     // Step 4: Check for duplicate
-    console.log("🔵 [STEP 4] Checking for duplicate email...");
+    // console.log("🔵 [STEP 4] Checking for duplicate email...");
     const exists = await Waitlist.findOne({ emailAddress: email });
     if (exists) {
       console.log("❌ [STEP 4] Email already exists in waitlist");
@@ -236,10 +236,10 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    console.log("✅ [STEP 4] Email is unique");
+    // console.log("✅ [STEP 4] Email is unique");
     
     // Step 5: Create waitlist entry
-    console.log("🔵 [STEP 5] Creating waitlist entry...");
+    // console.log("🔵 [STEP 5] Creating waitlist entry...");
     const waitlistEntry = await Waitlist.create({
       firstName,
       lastName,
@@ -249,14 +249,14 @@ export async function POST(req: NextRequest) {
       agreeTerms,
       consentSMS,
     });
-    console.log("✅ [STEP 5] Waitlist entry created:", waitlistEntry._id);
+    // console.log("✅ [STEP 5] Waitlist entry created:", waitlistEntry._id);
     
     // Step 6: Send email
-    console.log("🔵 [STEP 6] Preparing to send email...");
-    console.log("🔵 SendGrid API Key present:", !!process.env.SENDGRID_API_KEY);
-    console.log("🔵 SendGrid API Key length:", process.env.SENDGRID_API_KEY?.length);
-    console.log("🔵 SendGrid From Email:", process.env.SENDGRID_FROM_EMAIL);
-    console.log("🔵 Recipient Email:", email);
+    // console.log("🔵 [STEP 6] Preparing to send email...");
+    // console.log("🔵 SendGrid API Key present:", !!process.env.SENDGRID_API_KEY);
+    // console.log("🔵 SendGrid API Key length:", process.env.SENDGRID_API_KEY?.length);
+    // console.log("🔵 SendGrid From Email:", process.env.SENDGRID_FROM_EMAIL);
+    // console.log("🔵 Recipient Email:", email);
     
     if (!process.env.SENDGRID_API_KEY) {
       console.error("❌ [STEP 6] SENDGRID_API_KEY not found in environment");
@@ -275,7 +275,7 @@ export async function POST(req: NextRequest) {
     }
     
     try {
-      console.log("🔵 [STEP 6] Sending email via SendGrid...");
+      // console.log("🔵 [STEP 6] Sending email via SendGrid...");
       const msg = {
         to: email,
         from: process.env.SENDGRID_FROM_EMAIL!,
@@ -291,10 +291,10 @@ export async function POST(req: NextRequest) {
       });
       
       const response = await sgMail.send(msg);
-      console.log("✅ [STEP 6] Email sent successfully");
-      console.log("🔵 SendGrid response:", response[0].statusCode);
+      // console.log("✅ [STEP 6] Email sent successfully");
+      // console.log("🔵 SendGrid response:", response[0].statusCode);
       
-      console.log("✅ [SUCCESS] Waitlist signup complete");
+      // console.log("✅ [SUCCESS] Waitlist signup complete");
       return NextResponse.json(
         { message: "Joined waitlist successfully" },
         { status: 201 }

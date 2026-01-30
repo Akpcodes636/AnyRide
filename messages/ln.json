@@ -528,6 +528,11 @@
   "validation": {
     "required": "Esengeli",
     "invalidEmail": "E-mail esili malamu te"
+  },
+   "modal": {
+    "title": "Ozali na liste!",
+    "message": "Tosɛpɛli mpo okɔti na liste na biso ya kozela. Tokosolola yo nokinoki!",
+    "close": "Kanga"
   }
 },
    "FAQ": {

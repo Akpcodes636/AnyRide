@@ -86,14 +86,22 @@ const About = () => {
 
         {/* RIGHT SIDE IMAGE */}
         <div className="hidden md:hidden lg:hidden xl:block">
-          <Image
+          <div className="">
+            <div className="bg-About">
+              {/* <h1 className="text-6xl font-bold">Hello World</h1> */}
+              <div className="car-container">
+                <img src="/images/dd.png" className="car" />
+              </div>
+            </div>
+          </div>
+          {/* <Image
             src="/icons/About-img.svg"
             priority
             width={500}
             height={500}
             alt={t("title")}
             className="w-full h-full object-cover"
-          />
+          /> */}
         </div>
       </div>
     </section>

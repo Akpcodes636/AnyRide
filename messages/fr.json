@@ -527,6 +527,11 @@
   "validation": {
     "required": "Requis",
     "invalidEmail": "E-mail invalide"
+  },
+   "modal": {
+    "title": "Vous êtes sur la liste !",
+    "message": "Merci de vous être inscrit sur notre liste d'attente. Nous vous contacterons bientôt !",
+    "close": "Fermer"
   }
 },
     "FAQ": {

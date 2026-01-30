@@ -533,6 +533,11 @@
   "validation": {
     "required": "Required",
     "invalidEmail": "Invalid email"
+  },
+  "modal": {
+    "title": "You're on the list!",
+    "message": "Thank you for joining our waitlist. We'll be in touch soon!",
+    "close": "Close"
   }
 },
     "FAQ": {

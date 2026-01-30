@@ -526,6 +526,11 @@
   "validation": {
     "required": "Inahitajika",
     "invalidEmail": "Barua pepe si sahihi"
+  },
+    "modal": {
+    "title": "Umesajiliwa!",
+    "message": "Asante kwa kujiunga na orodha yetu ya kusubiri. Tutawasiliana nawe hivi karibuni!",
+    "close": "Funga"
   }
 },
     "FAQ": {
