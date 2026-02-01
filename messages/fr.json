@@ -593,7 +593,12 @@
         "emailConsent": "J'accepte la Politique de confidentialité",
         "termsConsent": "J'accepte les Conditions générales",
         "smsConsent": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
-        "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à tout message. Ce consentement n'est pas nécessaire pour acheter des biens ou des services."
+        "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à tout message. Ce consentement n'est pas nécessaire pour acheter des biens ou des services.",
+        "countries": {
+        "US": "États-Unis",
+        "CG": "Congo"
+      }
+
       },
       "submit": "Soumettre",
       "errors": {

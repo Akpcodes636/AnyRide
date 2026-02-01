@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import SelectRole from "@/app/components/forms/register/SelectRole";
 
 type UserType = "passenger" | "driver" | null;
 
@@ -52,7 +53,7 @@ export default function Page() {
       </div>
 
       {/* Selection Cards */}
-      <div className="space-y-4 mb-6 w-full max-w-[518.5px]">
+      {/* <div className="space-y-4 mb-6 w-full max-w-[518.5px]">
         {options.map((option) => (
           <button
             key={option.type}
@@ -88,13 +89,13 @@ export default function Page() {
             </div>
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Error */}
-      {error && <p className="text-red-500 mb-2">{error}</p>}
+      {/* {error && <p className="text-red-500 mb-2">{error}</p>} */}
 
       {/* Continue Button */}
-      <button
+      {/* <button
         onClick={handleContinue}
         disabled={!selectedType || isLoading}
         className={`w-full max-w-[518.5px] py-4 rounded-lg font-medium text-lg transition-all ${
@@ -104,7 +105,14 @@ export default function Page() {
         }`}
       >
         Continue
-      </button>
+      </button> */}
+
+      <SelectRole options={options}
+  selectedType={selectedType}
+  error={error}
+  isLoading={isLoading}
+  onSelect={setSelectedType}
+  onContinue={handleContinue} />
     </div>
   );
 }

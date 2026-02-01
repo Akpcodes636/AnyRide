@@ -594,7 +594,12 @@
         "emailConsent": "Nandimi Politique ya Vie Privée",
         "termsConsent": "Nandimi Mibeko mpe Mipango",
         "smsConsent": "Nandimi kozwa ba-messages SMS, babengi mpe ba-emails mpo na ndingisa mpe communication",
-        "disclaimer": "Avertissement: Na kotinda formulaire oyo, ondimi kozwa ba-messages SMS, babengi mpe ba-emails uta na AnyRide mpo na ndingisa mpe communication. Ba-messages mpe ba-données ekoki kozwa mbongo. Okoki kotika ntango nyonso na koyanola STOP na message nyonso. Ndingisa oyo esengeli te mpo na kosomba biloko to misala."
+        "disclaimer": "Avertissement: Na kotinda formulaire oyo, ondimi kozwa ba-messages SMS, babengi mpe ba-emails uta na AnyRide mpo na ndingisa mpe communication. Ba-messages mpe ba-données ekoki kozwa mbongo. Okoki kotika ntango nyonso na koyanola STOP na message nyonso. Ndingisa oyo esengeli te mpo na kosomba biloko to misala.",
+        "countries": {
+        "US": "États-Unis",
+        "CG": "Kongo"
+        }
+
       },
       "submit": "Tindá",
       "errors": {

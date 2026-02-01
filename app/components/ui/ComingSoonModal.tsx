@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Button from "./Button";
 
 interface ComingSoonModalProps {
@@ -12,8 +12,8 @@ interface ComingSoonModalProps {
 }
 
 const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
-   const t = useTranslations("HomePage.comingSoon");
-// Reusing translations if possible or adding new ones
+    const t = useTranslations("HomePage.comingSoon");
+    // Reusing translations if possible or adding new ones
     const locale = useLocale();
 
     return (
@@ -70,14 +70,14 @@ const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
                                 {t("description")}
                             </p>
 
-                            <Link href={`/${locale}/waitlist`} passHref className="w-full">
+                            <Link href="/waitlist" passHref className="w-full">
                                 <Button
                                     type="button"
                                     style="danger"
                                     css="w-full h-14 rounded-full font-bold text-lg"
                                     fn={onClose}
                                 >
-                                   {t("joinWaitlist")}
+                                    {t("joinWaitlist")}
                                 </Button>
                             </Link>
 
@@ -85,7 +85,7 @@ const ComingSoonModal = ({ isOpen, onClose }: ComingSoonModalProps) => {
                                 onClick={onClose}
                                 className="mt-4 text-gray-500 hover:text-gray-700 font-medium transition-colors"
                             >
-                              {t("maybeLater")}
+                                {t("maybeLater")}
                             </button>
                         </div>
                     </motion.div>

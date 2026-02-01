@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
 
@@ -18,13 +18,13 @@ export default function FleetHero() {
             <p className="text-center leading-[160%] tracking-[-2%] text-[#E6E6EB] text-[16px] md:text-[18px] w-full max-w-[500px]">
               {t("subtitle")}
             </p>
-          <div className="flex items-center justify-center mt-[20px]">
-            <Link href="#fleet">
-            <Button css="" style="danger" type="button">
-              {t("cta")}
-            </Button>
-            </Link>
-          </div>
+            <div className="flex items-center justify-center mt-[20px]">
+              <Link href="#fleet">
+                <Button css="" style="danger" type="button">
+                  {t("cta")}
+                </Button>
+              </Link>
+            </div>
           </div>
 
         </div>

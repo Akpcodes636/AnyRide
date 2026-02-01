@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Button from "../ui/Button";
 import { useTranslations } from "next-intl";
 
@@ -20,9 +20,9 @@ export default function CareersHero() {
           </div>
           <div className="pt-[20px] md:pt-[40px]">
             <Link href="#contact">
-            <Button style="danger" type="button" css="w-[187px] h-[62px]">
-              {t("button")}
-            </Button>
+              <Button style="danger" type="button" css="w-[187px] h-[62px]">
+                {t("button")}
+              </Button>
             </Link>
           </div>
         </div>

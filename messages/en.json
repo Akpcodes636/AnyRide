@@ -600,7 +600,11 @@
         "emailConsent": "I agree to the Privacy Policy",
         "termsConsent": "I agree to the Terms & Conditions",
         "smsConsent": "I consent to receive SMS messages, calls and emails for verification and communication purposes",
-        "disclaimer": "Disclaimer: By submitting this form, you consent to receive SMS messages, calls and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services."
+        "disclaimer": "Disclaimer: By submitting this form, you consent to receive SMS messages, calls and emails from AnyRide for verification and communication purposes. Messages and data rates may apply. You can opt-out at any time by replying STOP to any message. This consent is not required to purchase goods or services.",
+        "countries": {
+        "US": "United States",
+        "CG": "Congo"
+       }
       },
       "submit": "Submit",
       "errors": {

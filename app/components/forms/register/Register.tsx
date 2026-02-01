@@ -5,9 +5,8 @@ import { useFormik } from "formik";
 import { ILogin } from "@/types";
 import Button from "../../ui/Button";
 import { FcGoogle } from "react-icons/fc";
-import Link from "next/link";
+import { Link, useRouter } from "@/i18n/navigation";
 import { FaApple } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
 import { registerValidationSchema } from "@/lib/validations/userValidations";
 import { useState } from "react";
 

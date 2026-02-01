@@ -184,8 +184,8 @@ const ContactForm = () => {
                 onChange={handleChange}
                 options={[
                   { value: "", label: t("fields.selectCountry") },
-                  { value: "US", label: "United States" },
-                  { value: "CG", label: "Congo" },
+                  { value: "US", label: t("fields.countries.US") },
+                  { value: "CG", label: t("fields.countries.CG") },
                 ]}
               />
               <SelectField

@@ -592,7 +592,11 @@
         "emailConsent": "Nakubali Sera ya Faragha",
         "termsConsent": "Nakubali Sheria na Masharti",
         "smsConsent": "Ninakubali kupokea ujumbe wa SMS, simu na barua pepe kwa uthibitisho na mawasiliano",
-        "disclaimer": "Onyo: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kujiondoa wakati wowote kwa kujibu STOP kwenye ujumbe wowote. Uidhinisho huu hauhitajiki kununua bidhaa au huduma."
+        "disclaimer": "Onyo: Kwa kuwasilisha fomu hii, unakubali kupokea ujumbe wa SMS, simu na barua pepe kutoka AnyRide kwa uthibitisho na mawasiliano. Gharama za ujumbe na data zinaweza kutumika. Unaweza kujiondoa wakati wowote kwa kujibu STOP kwenye ujumbe wowote. Uidhinisho huu hauhitajiki kununua bidhaa au huduma.",
+        "countries": {
+        "US": "Marekani",
+        "CG": "Kongo"
+      }
       },
       "submit": "Tuma",
       "errors": {

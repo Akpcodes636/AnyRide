@@ -2,7 +2,7 @@
 import React from "react";
 import SubTitle from "../ui/Subtitle";
 import Button from "../ui/Button";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 

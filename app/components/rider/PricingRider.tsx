@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaMotorcycle, FaCar } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useJsApiLoader } from "@react-google-maps/api";
 import RideETA from "../RideETA";
 import Button from "../ui/Button";
@@ -31,7 +31,7 @@ export default function PricingForm() {
   const [destination, setDestination] = useState("");
   const [pickupCoords, setPickupCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [destinationCoords, setDestinationCoords] = useState<{ lat: number; lon: number } | null>(null);
- 
+
   const [loading, setLoading] = useState(false);
   const [fareData, setFareData] = useState<any>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -121,16 +121,16 @@ export default function PricingForm() {
               <label className="text-[16px] text-[#02093A] font-normal">
                 {t("form.pickupPlaceholder")}
               </label>
-              
+
               <LocationSearchInput
-                 value={pickup}
-                 onChange={setPickup}
-                 onSelect={(address, lat, lng) => {
-                   setPickup(address);
-                   setPickupCoords({ lat, lon: lng });
-                 }}
-                 placeholder={t("form.pickupPlaceholder")} // Or just use placeholder text directly if key doesn't match
-                 className="w-full h-14 bg-[#F5F5F5] rounded-lg focus-within:ring-2 focus-within:ring-[#A20602]"
+                value={pickup}
+                onChange={setPickup}
+                onSelect={(address, lat, lng) => {
+                  setPickup(address);
+                  setPickupCoords({ lat, lon: lng });
+                }}
+                placeholder={t("form.pickupPlaceholder")} // Or just use placeholder text directly if key doesn't match
+                className="w-full h-14 bg-[#F5F5F5] rounded-lg focus-within:ring-2 focus-within:ring-[#A20602]"
               />
 
             </div>
@@ -140,7 +140,7 @@ export default function PricingForm() {
               <label className="text-[16px] text-[#02093A] font-normal">
                 {t("form.destinationPlaceholder")}
               </label>
-              
+
               <LocationSearchInput
                 value={destination}
                 onChange={setDestination}
