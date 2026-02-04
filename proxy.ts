@@ -24,6 +24,13 @@ export default createMiddleware({
   defaultLocale: "en",
 });
 
+// export const config = {
+//   matcher: ["/((?!_next|favicon.ico|images|icons).*)"],
+// };
+
 export const config = {
-  matcher: ["/((?!_next|favicon.ico|images|icons).*)"],
+  matcher: [
+    "/((?!_next|favicon.ico|images|icons|api).*)", // exclude /api
+  ],
 };
+
