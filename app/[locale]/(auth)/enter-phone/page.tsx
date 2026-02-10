@@ -1,18 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@/app/components/ui/Button";
 import PhoneInput from "../../../components/phoneField/PhoneInputField";
 import { countryList } from "@/app/components/phoneField/countryList";
 import { useRouter } from "next/navigation";
+import { usePhoneNumber } from "@/hooks/useAuthHook";
 
 const Page = () => {
   const router = useRouter();
 
+  /* 
+    PROTECTION:
+    If this page is accessed directly without a token (e.g. user refresh, or manual nav), 
+    the API calls will fail. We should redirect them back to start.
+  */
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Optional: toast.error("Session expired, please login again");
+      router.replace("/login"); 
+    }
+  }, [router]);
+
   const [countryCode, setCountryCode] = useState("+243");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleCodeChange = (code: string) => {
@@ -23,28 +37,41 @@ const Page = () => {
     setPhoneNumber(value);
   };
 
-  const handleSubmit = async () => {
-    if (!phoneNumber || phoneNumber.length < 6) {
-      setError("Please enter a valid phone number.");
-      return;
-    }
+  // const handleSubmit = async () => {
+  //   if (!phoneNumber || phoneNumber.length < 6) {
+  //     setError("Please enter a valid phone number.");
+  //     return;
+  //   }
 
-    setIsLoading(true);
-    setError(null);
+  //   setIsLoading(true);
+  //   setError(null);
 
-    try {
-      console.log("Full phone number:", countryCode + phoneNumber);
+  //   try {
+  //     console.log("Full phone number:", countryCode + phoneNumber);
 
-      // simulate OTP send
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+  //     // simulate OTP send
+  //     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      router.push("/verify");
-    } catch (err) {
-      setError("Failed to send OTP. Try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     router.push("/verify");
+  //   } catch (err) {
+  //     setError("Failed to send OTP. Try again.");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+ 
+  const { mutate, isPending } = usePhoneNumber();
+
+const handleSubmit = () => {
+  if (!phoneNumber || phoneNumber.length < 6) {
+    setError("Please enter a valid phone number.");
+    return;
+  }
+
+  setError(null);
+
+  mutate({ phone: countryCode + phoneNumber });
+};
 
   return (
     <section className="h-screen flex items-center justify-center bg-white">
@@ -78,10 +105,10 @@ const Page = () => {
           css="!rounded-[12px] w-full max-w-[518.5px] h-[57px] text-[18px] tracking-[-2%] leading-[160%] mt-4"
           type="button"
           fn={handleSubmit}
-          loading={isLoading}
-          disabled={isLoading}
+          loading={isPending}
+          disabled={isPending}
         >
-          {isLoading ? "Sending OTP..." : "Send OTP"}
+         Open email app
         </Button>
       </div>
     </section>

@@ -5,8 +5,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "sonner"; // ✅ Import Sonner
-import Script from "next/script";
-
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -47,7 +46,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${sora.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <ReactQueryProvider>{children}</ReactQueryProvider>
           <Toaster /> {/* ✅ Add it here for global notifications */}
         </NextIntlClientProvider>
       </body>

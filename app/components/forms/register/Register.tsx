@@ -1,130 +1,105 @@
 "use client";
 
+import React from "react";
 import InputField from "../../ui/InputField";
 import { useFormik } from "formik";
-import { ILogin } from "@/types";
-import Button from "../../ui/Button";
-import { FcGoogle } from "react-icons/fc";
-import { Link, useRouter } from "@/i18n/navigation";
-import { FaApple } from "react-icons/fa6";
 import { registerValidationSchema } from "@/lib/validations/userValidations";
-import { useState } from "react";
+import Button from "../../ui/Button";
+import { CircleAlert, CircleCheck } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
+import { FaApple } from "react-icons/fa6";
+import { Link, useRouter } from "@/i18n/navigation";
+import { RegisterPayload } from "@/types";
+// import { useRegister } from "@/hooks/useAuthHooks";
+import { toast } from "sonner";
+import { EmailRoute } from "@/app/utils/Route";
+import { useRegister } from "@/hooks/useAuthHook";
 
 const Register = () => {
   const router = useRouter();
+  const { mutate, isPending } = useRegister();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [serverError, setServerError] = useState<string | null>(null);
+  const formik = useFormik<RegisterPayload>({
+  initialValues: {
+    email: "",
+    authProvider: ""
+  },
+  validationSchema: registerValidationSchema,
+  onSubmit: (values) => {
+    mutate({
+      ...values,
+      authProvider: "email",
+    });
+  }
+});
 
-  const formik = useFormik<ILogin>({
-    initialValues: {
-      email: "",
-    },
-    validationSchema: registerValidationSchema,
-    onSubmit: async (values) => {
-      setIsLoading(true);
-      setServerError(null);
 
-      try {
-        console.log("Simulating register:", values);
+ 
 
-        // Fake network delay
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-
-        // Fake success
-      router.push(`/check-email?email=${encodeURIComponent(values.email)}`);
-      } catch (err) {
-        setServerError("Something went wrong. Try again.");
-      } finally {
-        setIsLoading(false);
-      }
-    },
-  });
+  // Apple Sign-in handler placeholder
+  const handleApple = async () => {
+    toast("Apple sign-in not implemented yet");
+  };
 
   return (
-    <>
-      <form onSubmit={formik.handleSubmit}>
-        <InputField
-          name="email"
-          label=""
-          css="focus:border-[#A20602]! max-w-full lg:max-w-full"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={
-            formik.touched.email && formik.errors.email
-              ? formik.errors.email
-              : null
-          }
-        />
+    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
+      {/* Email */}
+      <InputField
+        name="email"
+        label="Email"
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
+      />
 
-        {serverError && (
-          <p className="text-red-500 text-sm mt-2 text-center">
-            {serverError}
-          </p>
-        )}
+      {/* OR Divider */}
+      <div className="flex items-center justify-center gap-4 my-4">
+        <div className="h-[2px] w-full bg-[#0000001A]" />
+        <div>Or</div>
+        <div className="h-[2px] w-full bg-[#0000001A]" />
+      </div>
 
-        <div className="mt-[24px]">
-          <div className="flex items-center justify-center gap-4 w-full max-w-full lg:max-w-full">
-            <div className="h-[2px] w-full bg-[#E6E6E6]" />
-            <div>Or</div>
-            <div className="h-[2px] w-full bg-[#E6E6E6]" />
-          </div>
-
-          {/* Google */}
-          <Button
-            css="mt-4 w-full rounded-[12px]! h-[48px]! max-w-full lg:max-w-full text-[#8A8C91]"
-            style="reverse"
-            type="button"
-            disabled={isLoading}
-          >
-            <div className="flex items-center gap-2">
-              <FcGoogle size={24} />
-              <span>Sign up with Google</span>
-            </div>
-          </Button>
-
-          {/* Apple */}
-          <Button
-            css="mt-[16px] w-full rounded-[12px]! h-[48px]! max-w-full lg:max-w-full text-[#8A8C91]"
-            style="reverse"
-            type="button"
-            disabled={isLoading}
-          >
-            <div className="flex items-center gap-2">
-              <FaApple size={24} color="black" />
-              <span>Sign up with Apple</span>
-            </div>
-          </Button>
-
-          {/* Continue */}
-          <div className="pt-[80px] pb-[32px]">
-            <Button
-              style="tertiary"
-              css="!rounded-[12px] w-full max-w-full lg:max-w-full h-[57px] text-[18px] tracking-[-2%] text-center leading-[160%]"
-              type="submit"
-              loading={isLoading}
-              disabled={isLoading}
-            >
-              {isLoading ? "Creating account..." : "Continue"}
-            </Button>
-          </div>
-
-          <p className="text-center">
-            <span className="text-[#545454] text-[16px] font-normal leading-[140%]">
-              By clicking “Continue”, you&apos;re accepting our{" "}
-            </span>
-            <Link href="/terms" className="underline">
-              Terms & Conditions
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy" className="underline">
-              Privacy Policy
-            </Link>
-          </p>
+      {/* Social Buttons */}
+      <Button style="reverse" type="button" disabled={isPending} css="!rounded-[12px]">
+        <div className="flex items-center gap-2">
+          <FcGoogle size={20} />
+          <span>Continue with Google</span>
         </div>
-      </form>
-    </>
+      </Button>
+
+      <Button style="reverse" type="button" fn={handleApple} disabled={isPending} css="!rounded-[12px]">
+        <div className="flex items-center gap-2">
+          <FaApple size={20} color="black" />
+          <span>Continue with Apple</span>
+        </div>
+      </Button>
+
+
+      {/* Submit Button */}
+      <Button
+        style="primary"
+        type="submit"
+        loading={isPending}
+        disabled={isPending || Object.keys(formik.errors).length > 0}
+        css="!bg-[#010C4A] text-white"
+      >
+        continue
+      </Button>
+
+      {/* Terms & Conditions */}
+      <p className="text-center mt-4 text-sm text-gray-500">
+        By clicking “Continue”, you're agree to our{" "}
+        <Link href="/terms" className="underline text-[#333333] font-bold">Terms & Conditions</Link> and{" "}
+        <Link href="/privacy" className="underline text-[#333333] font-bold">Privacy Policy</Link>.
+      </p>
+
+      {/* Login link */}
+      <p className="text-center mt-2">
+        Already have an account?{" "}
+        <Link href="/login" className="font-bold underline">Login</Link>
+      </p>
+    </form>
   );
 };
 

@@ -8,7 +8,7 @@ const HeroRider = () => {
   const locale = useLocale();
 
   return (
-   <section className="bg-cover bg-center bg-no-repeat bg-red-600"style={{ backgroundImage: "url('/en/riders.svg')" }}>
+   <section className="bg-cover h-screen bg-center bg-no-repeat bg-red-600"style={{ backgroundImage: "url('/images/rider-1.jpg')" }}>
       <div className="flex items-center justify-center min-h-screen container">
         <div className="">
           <div>

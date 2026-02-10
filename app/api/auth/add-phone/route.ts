@@ -1,43 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import bcrypt from "bcrypt";
+import { getAuthUser } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {
   try {
-    const { user_id, phone } = await req.json(); // match snake_case
-    if (!user_id || !phone) {
+    const { phone } = await req.json();
+
+    if (!phone) {
       return NextResponse.json(
-        { error: "user_id & phone required" },
+        { error: "Phone number required" },
         { status: 400 }
       );
     }
 
-    // Save phone as unverified
-    await prisma.users.update({
-      where: { id: user_id },
-      data: { phone, phone_verified: false },
-    });
+    // ✅ Extract user from JWT
+    const { userId } = getAuthUser(req);
 
-    // Create OTP
-    const otp = Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit
-    const otp_hash = await bcrypt.hash(otp, 10); // match snake_case
-    const expires_at = new Date(Date.now() + 1000 * 60 * 5); // 5 minutes
-
-    await prisma.phone_otps.create({
+    const user = await prisma.users.update({
+      where: { id: userId },
       data: {
-        user_id,
-        code_hash: otp_hash,
-        expires_at,
-        attempts: 0,
+        phone,
+        phone_verified: false,
       },
     });
 
-    // TODO: send SMS via Twilio / Termii / Africa’s Talking
-    // sendSMS(phone, `Your AnyRide OTP is: ${otp}`);
-
-    return NextResponse.json({ message: "OTP sent to phone!" });
+    return NextResponse.json({
+      message: "Phone saved successfully",
+      phone: user.phone,
+    });
   } catch (err: any) {
-    console.error("Error sending OTP:", err);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    console.error("Add phone error:", err.message);
+
+    return NextResponse.json(
+      { error: err.message || "Unauthorized" },
+      { status: 401 }
+    );
   }
 }
+

@@ -38,6 +38,7 @@ model users {
   phone_verified            Boolean?                    @default(false)
   onboarding_step           String?                     @default("EMAIL_PENDING")
   role                      String?
+  pin_hash                  String?
   email_verification_tokens email_verification_tokens[]
   phone_otps                phone_otps[]
 }

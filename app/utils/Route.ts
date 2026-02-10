@@ -1,0 +1,1 @@
+export const EmailRoute = "/check-email";
