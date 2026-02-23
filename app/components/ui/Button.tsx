@@ -16,7 +16,8 @@ interface ButtonProps {
     | "reverseLight"
     | "secondary"
     | "disabled"
-    | "tertiary";
+    | "tertiary"
+    | "neutral";
   css?: string;
 }
 
@@ -58,6 +59,10 @@ const Button: React.FC<ButtonProps> = ({
       } ${
         style === "tertiary" && 
        "bg-[#010C4A] border border-white text-white hover:bg-[#06135F] active:bg-[#0A1A6E] transition-colors duration-200 ease-in-out"
+      }
+      } ${
+        style === "neutral" && 
+       "bg-[#ba4a4a]  text-[#8A8C91] transition-colors duration-200 ease-in-out !rounded-[24px]"
       }
       `}
     >

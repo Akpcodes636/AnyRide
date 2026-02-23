@@ -11,6 +11,7 @@ interface LocationSearchInputProps {
   placeholder?: string;
   className?: string;
   disabled?: boolean;
+   label?: string; // ✅ optional label prop
 }
 
 interface Prediction {
@@ -29,6 +30,7 @@ export default function LocationSearchInput({
   placeholder = "Enter location",
   className,
   disabled = false,
+  label
 }: LocationSearchInputProps) {
   const [predictions, setPredictions] = useState<Prediction[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -160,8 +162,8 @@ export default function LocationSearchInput({
 
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="relative w-full h-full flex items-center">
-        {/* Input */}
+      <div className="relative w-full h-full flex items-center bg-purple-800">
+        
         <input
           ref={inputRef}
           type="text"
@@ -178,19 +180,6 @@ export default function LocationSearchInput({
           )}
         />
 
-        {/* Icons (Loading or Clear) */}
-        <div className="absolute right-4 flex items-center gap-2">
-          {isLoading && <Loader2 className="w-4 h-4 text-gray-400 animate-spin" />}
-          {value && !isLoading && !disabled && (
-            <button
-              type="button"
-              onClick={clearInput}
-              className="p-1 hover:bg-gray-100 rounded-full transition-colors"
-            >
-              <X className="w-4 h-4 text-gray-400" />
-            </button>
-          )}
-        </div>
       </div>
 
       {/* Dropdown */}

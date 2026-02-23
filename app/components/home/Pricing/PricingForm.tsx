@@ -8,6 +8,8 @@ import { useRouter } from "@/i18n/navigation";
 import { useJsApiLoader } from "@react-google-maps/api";
 import RideETA from "../../RideETA";
 import LocationSearchInput from "../../ui/LocationSearchInput";
+import { FareData } from "@/types";
+import Image from "next/image";
 
 /* ------------------ CONSTANTS ------------------ */
 const RIDE_TYPES = [
@@ -37,12 +39,18 @@ export default function PricingForm() {
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
 
-  const [pickupCoords, setPickupCoords] = useState<{ lat: number; lon: number } | null>(null);
-  const [destinationCoords, setDestinationCoords] = useState<{ lat: number; lon: number } | null>(null);
+  const [pickupCoords, setPickupCoords] = useState<{
+    lat: number;
+    lon: number;
+  } | null>(null);
+  const [destinationCoords, setDestinationCoords] = useState<{
+    lat: number;
+    lon: number;
+  } | null>(null);
 
   const [rideType, setRideType] = useState<string>("Motorcycle");
   const [loading, setLoading] = useState(false);
-  const [fareData, setFareData] = useState<any>(null);
+  const [fareData, setFareData] = useState<FareData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   if (!isLoaded) return null;
@@ -72,8 +80,13 @@ export default function PricingForm() {
             dropoff_lon: destinationCoords.lon,
             vehicle_type: rideType,
           }),
-        }
+        },
       );
+
+      // ✅ Handle HTTP errors first
+      if (!res.ok) {
+        throw new Error("Network error. Please try again.");
+      }
 
       const json = await res.json();
 
@@ -82,8 +95,13 @@ export default function PricingForm() {
       }
 
       setFareData(json.data);
-    } catch (err: any) {
-      setError(err.message || t("errors.generic"));
+    } catch (err: unknown) {
+      // ✅ Properly narrow the error type
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError(t("errors.generic"));
+      }
     } finally {
       setLoading(false);
     }
@@ -94,7 +112,6 @@ export default function PricingForm() {
   return (
     <div className="pt-4 bg-white flex items-center justify-center">
       <div className="w-full flex flex-col gap-y-5">
-
         {/* Pickup */}
         <div className="space-y-2">
           <label className="text-sm font-medium text-gray-700">
@@ -174,21 +191,25 @@ export default function PricingForm() {
         {/* Fare Result */}
         {fareData && (
           <div className="mt-4 space-y-4">
-            {fareData.vehicle_options.map((v: any, i: number) => (
+            {fareData.vehicle_options.map((v, i) => (
               <div
                 key={i}
                 className="flex justify-between items-center border rounded-xl p-4 hover:border-black transition"
               >
                 <div className="flex items-center gap-3">
-                  <img
+                  <Image
                     src={`${BASE_URL}${v.icon_url}`}
                     alt={v.vehicle_type}
                     className="w-14 h-14 object-contain"
+                    width={50}
+                    height={50}
                   />
 
                   <div>
                     <p className="font-bold">{v.vehicle_type}</p>
-                    <RideETA estimated_duration_minutes={v.estimated_duration_minutes} />
+                    <RideETA
+                      estimated_duration_minutes={v.estimated_duration_minutes}
+                    />
                   </div>
                 </div>
 

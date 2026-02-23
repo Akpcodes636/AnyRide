@@ -80,8 +80,14 @@ export async function POST(req: NextRequest) {
     ]);
 
     return NextResponse.json({ message: "Phone verified successfully!" });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Verify phone error:", err);
-    return NextResponse.json({ error: err.message || "Server error" }, { status: 500 });
+
+    let message = "Server error";
+    if (err instanceof Error) {
+      message = err.message;
+    }
+
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

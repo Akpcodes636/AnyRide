@@ -195,5 +195,19 @@
     top: 100%;     /* move to bottom */
   }
 }
+
+/* In your CSS file */
+.PhoneInputInput:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  ring: 0 !important;
+}
+
+.PhoneInput:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #000000 !important;
+}
 }
 
