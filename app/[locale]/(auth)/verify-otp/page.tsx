@@ -2,7 +2,6 @@
 
 import OtpForm from "@/app/components/forms/register/OtpForm";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -14,18 +13,6 @@ export default function Page() {
     /(\+\d{3})\d+(\d{2})/,
     "$1******$2"
   );
-
-  /* 
-    PROTECTION:
-    If this page is accessed directly without a token (e.g. user refresh, or manual nav), 
-    the API calls will fail. We should redirect them back to start.
-  */
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     router.replace("/login"); 
-  //   }
-  // }, [router]);
 
   return (
     <section className="h-screen flex items-start justify-center flex-col">
