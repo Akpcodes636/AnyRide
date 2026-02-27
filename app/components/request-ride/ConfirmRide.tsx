@@ -1,14 +1,15 @@
 "use client";
 import Button from "@/app/components/ui/Button";
 import LocationSearchInput from "@/app/components/ui/LocationSearchInput";
+import { useRideStore } from "@/store/rideStore";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const ConfirmRide = () => {
+  const next = useRideStore((s) => s.next);
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
-  const router = useRouter();
 
   const [pickupCoords, setPickupCoords] = useState<{
     lat: number;
@@ -18,6 +19,10 @@ const ConfirmRide = () => {
     lat: number;
     lon: number;
   } | null>(null);
+
+  const handleContinue = () => {
+    next(); // move to  accepting Offer
+  };
   return (
     <section className="min-h-screen">
       <div className="container mx-auto">
@@ -33,11 +38,7 @@ const ConfirmRide = () => {
               </h2>
               <div className="mb-4 bg-[#F5F5F7] rounded-[25px] p-2">
                 <div className="space-y-2">
-                  {/* <label className="text-[10px] font-medium text-gray-700">
-                    Pickup
-                  </label> */}
-
-                  <div className="relative w-full">
+                  <div className="relative w-full mb-[12px]">
                     <LocationSearchInput
                       value={pickup}
                       onChange={setPickup}
@@ -47,6 +48,7 @@ const ConfirmRide = () => {
                       }}
                       placeholder="4827 Willowbrook Lane, OH 44126"
                       className="w-full h-14 pl-10 bg-[#F5F5F5] border-b border-[#E6E6E6] focus:border-b-[#A20602] focus:outline-none"
+                      label="Driver's location"
                     />
 
                     <Image
@@ -54,7 +56,7 @@ const ConfirmRide = () => {
                       alt="Map Icon"
                       width={20}
                       height={20}
-                      className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
                     />
                   </div>
                 </div>
@@ -83,7 +85,7 @@ const ConfirmRide = () => {
                       alt="Map Icon"
                       width={20}
                       height={20}
-                      className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
                     />
                   </div>
                 </div>
@@ -133,7 +135,8 @@ const ConfirmRide = () => {
                 style="tertiary"
                 type="button"
                 css="w-full text-white h-[48px] rounded-[12px] font-semibold text-[16px]"
-                fn={() => router.push("/finding-ride")}
+                // fn={() => router.push("/finding-ride")}
+                fn={handleContinue}
               >
                 Confirm Ride
               </Button>

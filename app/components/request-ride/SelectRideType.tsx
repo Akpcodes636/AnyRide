@@ -6,10 +6,11 @@ import { LuMapPin } from "react-icons/lu";
 import { useRideTypes } from "@/hooks/useAuthHook";
 import Loader from "../ui/Loader";
 import { useRouter } from "next/navigation";
+import { useRideStore } from "@/store/rideStore";
 
 interface VehicleOption {
   vehicle_type: string;
-  icon_url: string; 
+  icon_url: string;
   formatted_fare: string;
   estimated_duration_minutes: number;
   capacity: string;
@@ -30,11 +31,16 @@ const RideETA = ({
 const SelectRideType = () => {
   const router = useRouter();
   const [payWithCash, setPayWithCash] = useState(true);
+  const next = useRideStore((s) => s.next);
   const [pickup, setPickup] = useState("");
   const [enterDestination, setEnterDestination] = useState("");
 
   const { data: rideTypes, isLoading, isError } = useRideTypes();
   console.log("Ride types data:", rideTypes); // Debug log to check the structure of rideTypes
+
+  const handleContinue = () => {
+    next(); // move to findingRoute
+  };
 
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-[0.9fr_2fr] max-w-full mx-auto bg-white gap-x-4">
@@ -172,11 +178,14 @@ const SelectRideType = () => {
         </div>
 
         {/* Request Ride Button */}
-        <button onClick={() => router.push("/confirm-ride")} className="w-full bg-[#02093A] text-white py-4 rounded-lg font-semibold text-[16px] mt-4 hover:bg-[#030B4D] transition-colors cursor-pointer">
+        <button
+          onClick={handleContinue}
+          className="w-full bg-[#02093A] text-white py-4 rounded-lg font-semibold text-[16px] mt-4 hover:bg-[#030B4D] transition-colors cursor-pointer"
+        >
           Request ride
         </button>
       </div>
-    </div> 
+    </div>
   );
 };
 

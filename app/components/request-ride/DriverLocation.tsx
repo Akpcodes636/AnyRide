@@ -83,16 +83,6 @@ function LocationRow({ icon, label, placeholder, active, suggestions = [] }: Loc
   );
 }
 
-function Connector() {
-  return (
-    <div className="flex items-center px-4">
-      <div className="w-7 flex justify-center flex-shrink-0">
-        {/* <div className="w-px h-5 border-l border-dashed border-gray-300" /> */}
-      </div>
-      <div className="flex-1 h-[5px] bg-red-900 ml-3" />
-    </div>
-  );
-}
 
 export default function DriverLocation() {
   return (
@@ -105,14 +95,14 @@ export default function DriverLocation() {
           active={true}
           suggestions={[{ label: "240 Hug × 20 Hug" }]}
         />
-        <Connector />
+        
         <LocationRow
           icon={<Pin />}
           label="Pickup"
           placeholder="123 Main St, Springfield, IL 62704"
           active={false}
         />
-        <Connector />
+        
         <LocationRow
           icon={<Pin />}
           label="Your Destination"

@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { Toaster } from "sonner"; // ✅ Import Sonner
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import { AuthProvider } from "@/providers/AuthProvider";
+import ModalManager from "../components/modals/ModalManager";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -48,7 +49,9 @@ export default async function RootLayout({
       <body className={`${sora.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReactQueryProvider>
-            <AuthProvider>{children}</AuthProvider>
+            <AuthProvider>{children}
+              <ModalManager /> 
+            </AuthProvider>
           </ReactQueryProvider>
           <Toaster /> {/* ✅ Add it here for global notifications */}
         </NextIntlClientProvider>

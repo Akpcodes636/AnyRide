@@ -1,10 +1,10 @@
 "use client";
-
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
+
 
 const containerStyle = {
   width: "100%",
-  height: "700px",
+height: "150vh",
 };
 
 const center = {

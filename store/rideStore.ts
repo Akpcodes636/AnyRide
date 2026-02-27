@@ -1,9 +1,9 @@
 import { create } from "zustand";
 
-type RideStep = "request" | "rideType" | "findingRide" | "confirmRide";
+type RideStep = "request" | "rideType" | "findingRide" | "confirmRide" | "acceptingOffer" | "rideTracker" ;
 
 type RideLocation = {
-  address: string;
+  address: string
   lat: number;
   lng: number;
 };
@@ -39,13 +39,15 @@ export const useRideStore = create<RideStore>((set, get) => ({
 
   setStep: (step) => set({ step }),
 
-  next: () => {
-    const step = get().step;
+ next: () => {
+  const step = get().step;
 
-    if (step === "request") set({ step: "rideType" });
-    else if (step === "rideType") set({ step: "findingRide" });
-    else if (step === "findingRide") set({ step: "confirmRide" });
-  },
+  if (step === "request") set({ step: "rideType" });
+  else if (step === "rideType") set({ step: "findingRide" });
+  else if (step === "findingRide") set({ step: "confirmRide" });
+  else if (step === "confirmRide") set({ step: "acceptingOffer" }); 
+  else if (step === "acceptingOffer") set({ step: "rideTracker" });
+},
 
   back: () => {
     const step = get().step;

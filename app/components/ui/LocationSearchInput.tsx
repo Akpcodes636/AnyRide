@@ -11,7 +11,7 @@ interface LocationSearchInputProps {
   placeholder?: string;
   className?: string;
   disabled?: boolean;
-   label?: string; // ✅ optional label prop
+  label?: string; // ✅ optional label prop
 }
 
 interface Prediction {
@@ -30,14 +30,15 @@ export default function LocationSearchInput({
   placeholder = "Enter location",
   className,
   disabled = false,
-  label
+  label,
 }: LocationSearchInputProps) {
   const [predictions, setPredictions] = useState<Prediction[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const autocompleteService = useRef<google.maps.places.AutocompleteService | null>(null);
+  const autocompleteService =
+    useRef<google.maps.places.AutocompleteService | null>(null);
   const placesService = useRef<google.maps.places.PlacesService | null>(null);
 
   // Close dropdown when clicking outside
@@ -61,12 +62,15 @@ export default function LocationSearchInput({
   useEffect(() => {
     if (window.google && window.google.maps && window.google.maps.places) {
       if (!autocompleteService.current) {
-        autocompleteService.current = new window.google.maps.places.AutocompleteService();
+        autocompleteService.current =
+          new window.google.maps.places.AutocompleteService();
       }
       if (!placesService.current) {
         // PlacesService requires a DOM node, even if we don't use it for map display
         const dummyNode = document.createElement("div");
-        placesService.current = new window.google.maps.places.PlacesService(dummyNode);
+        placesService.current = new window.google.maps.places.PlacesService(
+          dummyNode,
+        );
       }
     }
   }, []); // Run once on mount, check for window.google
@@ -79,31 +83,31 @@ export default function LocationSearchInput({
     }
 
     try {
-        autocompleteService.current.getPlacePredictions(
+      autocompleteService.current.getPlacePredictions(
         {
-            input,
-            componentRestrictions: { country: [] }, // Remove or customize country restriction
+          input,
+          componentRestrictions: { country: [] }, // Remove or customize country restriction
         },
         (results, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+          if (status === google.maps.places.PlacesServiceStatus.OK && results) {
             setPredictions(
-                results.map((place) => ({
+              results.map((place) => ({
                 place_id: place.place_id,
                 description: place.description,
                 structured_formatting: {
-                    main_text: place.structured_formatting.main_text,
-                    secondary_text: place.structured_formatting.secondary_text,
+                  main_text: place.structured_formatting.main_text,
+                  secondary_text: place.structured_formatting.secondary_text,
                 },
-                }))
+              })),
             );
             setIsOpen(true);
-            } else {
+          } else {
             setPredictions([]);
-            }
-        }
-        );
+          }
+        },
+      );
     } catch (error) {
-        console.error("Error fetching predictions:", error);
+      console.error("Error fetching predictions:", error);
     }
   }, []);
 
@@ -143,12 +147,12 @@ export default function LocationSearchInput({
             onSelect(
               place.formatted_address || prediction.description,
               place.geometry.location.lat(),
-              place.geometry.location.lng()
+              place.geometry.location.lng(),
             );
           } else {
             console.error("Failed to fetch place details");
           }
-        }
+        },
       );
     }
   };
@@ -162,8 +166,8 @@ export default function LocationSearchInput({
 
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="relative w-full h-full flex items-center bg-purple-800">
-        
+      <div className="relative w-full h-full flex items-start justify-start flex-col">
+        <label className="text-[10px] text-[#02093A] leading-[120%] font-light">{label}</label>
         <input
           ref={inputRef}
           type="text"
@@ -175,11 +179,10 @@ export default function LocationSearchInput({
           disabled={disabled}
           placeholder={placeholder}
           className={cn(
-            "w-full h-full px-4 py-3 outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed",
-            "bg-transparent text-gray-900 placeholder:text-gray-400"
+            "w-full h-full py-4 outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed",
+            "bg-transparent text-gray-900 placeholder:text-gray-400",
           )}
         />
-
       </div>
 
       {/* Dropdown */}
@@ -208,9 +211,13 @@ export default function LocationSearchInput({
               </div>
             </button>
           ))}
-          
+
           <div className="px-3 py-2 bg-gray-50 border-t border-gray-100 flex justify-end">
-             <img src="https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png" alt="Powered by Google" className="h-4 opacity-70" />
+            <img
+              src="https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png"
+              alt="Powered by Google"
+              className="h-4 opacity-70"
+            />
           </div>
         </div>
       )}

@@ -268,3 +268,8 @@ export interface StarsProps {
   rating: number;
   size?: number;
 };
+
+export interface CountdownBarProps {
+  seconds: number;
+  total: number;
+}

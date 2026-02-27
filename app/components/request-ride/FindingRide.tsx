@@ -4,8 +4,15 @@ import Image from "next/image";
 import LoadingBar from "../LoadingBar";
 import Button from "../ui/Button";
 import RideAcceptanceCard from "../RideAcceptanceCard";
+import { useRideStore } from "@/store/rideStore";
 
 const FindingRide = () => {
+  const next = useRideStore((s) => s.next);
+
+  const handleContinue = () => {
+    next(); // move to accepting Offer
+  };
+
   return (
     <div>
       <div className="bg-[#E6E6EB] w-full max-w-[512px] h-[378px] rounded-[25px] px-[20px] py-[25px]">
@@ -51,7 +58,7 @@ const FindingRide = () => {
           </h3>
 
           {/* Driver avatars */}
-          <div className="flex">
+          <div className="flex p-4">
             {[
               "/images/img.png",
               "/images/img-1.png",
@@ -78,6 +85,7 @@ const FindingRide = () => {
           style="disabled"
           type="button"
           css="w-full h-[18px]  button rounded-[8px] mt-6"
+          fn={handleContinue}
         >
           Add to price
         </Button>
