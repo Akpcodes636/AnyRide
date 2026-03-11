@@ -5,19 +5,9 @@ import EmergencyContact from "./EmergencyContact";
 import { useTripModal } from "@/store/Modals";
 import TripCompleted from "../modals/TripCompleted";
 import DriverCardUi from "../ui/DriverCardUi";
+import { Coords, StageConfig } from "@/types";
 
 type Stage = "assigned" | "pickup" | "onway" | "completed";
-
-interface StageConfig {
-  title: string;
-  greenSub?: boolean;
-  subtitle?: string;
-}
-
-interface Coords {
-  lat: number;
-  lon: number;
-}
 
 const STAGES: Stage[] = ["assigned", "pickup", "onway", "completed"];
 const STAGE_DURATION = 5;
@@ -33,7 +23,7 @@ export default function RideTracker() {
   const [destinationCoords, setDestinationCoords] = useState<Coords | null>(
     null,
   );
- const { modal,openModal } = useTripModal();
+  const { modal,openModal } = useTripModal();
 
   const advance = (): void => {
     if (stage >= STAGES.length - 1) return;
@@ -157,6 +147,7 @@ export default function RideTracker() {
                       className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
                     />
                   </div>
+                  
                   <div className="relative w-full mb-[12px]">
                     <LocationSearchInput
                       value={destination}

@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { motion, AnimatePresence } from "framer-motion"; // optional for smooth animation
+import Link from "next/link";
 
 export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
+  const [showBanner, setShowBanner] = useState(() => {
+  if (typeof window === "undefined") return false;
+  return !Cookies.get("cookiesAccepted");
+});
 
-  useEffect(() => {
-    const accepted = Cookies.get("cookiesAccepted");
-    if (!accepted) setShowBanner(true);
-  }, []);
 
   const acceptCookies = () => {
     Cookies.set("cookiesAccepted", "true", { expires: 30 });
@@ -29,9 +29,9 @@ export default function CookieBanner() {
         >
           <p className="text-sm md:text-base text-center md:text-left">
             We use cookies to improve your experience. By using our site, you agree to our{" "}
-            <a href="/privacy" className="underline text-blue-400 hover:text-blue-500">
+            <Link href="/privacy" className="underline text-blue-400 hover:text-blue-500">
               Privacy Policy
-            </a>.
+            </Link>
           </p>
           <button
             onClick={acceptCookies}

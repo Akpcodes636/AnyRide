@@ -1,5 +1,5 @@
 import { create } from "zustand";
-type ModalType = "tripCompleted" | "review" | "dispute" | "tip" ;
+type ModalType = "tripCompleted" | "review" | "dispute" | "tip" | "fund";
 
 interface ModalStore {
   modal:ModalType | null;

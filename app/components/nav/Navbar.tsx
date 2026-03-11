@@ -142,13 +142,13 @@ const Navbar = () => {
                       </Link>
                     </button>
                     <button className="flex flex-col items-center gap-2 p-3 hover:bg-gray-50 rounded-lg transition">
-                      <Link href="/wallet">
+                      <Link href="/saved">
                         <Bookmark className="w-5 h-5 text-gray-600" />
                         <span className="text-xs text-gray-700">Saved</span>
                       </Link>
                     </button>
                     <button className="flex flex-col items-center gap-2 p-3 hover:bg-gray-50 rounded-lg transition">
-                      <Link href="/wallet">
+                      <Link href="/support">
                         <HelpCircle className="w-5 h-5 text-gray-600" />
                         <span className="text-xs text-gray-700">Support</span>
                       </Link>
@@ -157,15 +157,27 @@ const Navbar = () => {
 
                   {/* Menu Items */}
                   <div className="py-2">
+                     <Link href="/manage">
                     <MenuItem icon={<User />} label="Manage account" />
+                     </Link>
                     <Link href="/request-ride">
-                    <MenuItem icon={<Route />} label="Book a ride" />
+                      <MenuItem icon={<Route />} label="Book a ride" />
                     </Link>
-                    <MenuItem icon={<Car />} label="My Rides" />
-                    <MenuItem icon={<Car />} label="Drive & Earn" />
-                    <MenuItem icon={<Bell />} label="Notifications" />
-                    <MenuItem icon={<Shield />} label="Safety" />
-                    <MenuItem icon={<Info />} label="About" />
+                    <Link href="/my-rides">
+                      <MenuItem icon={<Car />} label="My Rides" />
+                    </Link>
+                    <Link href="/drive-and-earn">
+                      <MenuItem icon={<Car />} label="Drive & Earn" />
+                    </Link>
+                    <Link href="/notifications">
+                      <MenuItem icon={<Bell />} label="Notifications" />
+                    </Link>
+                    <Link href="/safety">
+                      <MenuItem icon={<Shield />} label="Safety" />
+                    </Link>
+                    <Link href="/about">
+                      <MenuItem icon={<Info />} label="About" />
+                    </Link>
                   </div>
 
                   {/* Sign Out */}

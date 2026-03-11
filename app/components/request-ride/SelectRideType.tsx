@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Navigation, Plus } from "lucide-react";
+import {  Plus } from "lucide-react";
 import Image from "next/image";
-import { LuMapPin } from "react-icons/lu";
 import { useRideTypes } from "@/hooks/useAuthHook";
 import Loader from "../ui/Loader";
 import { useRouter } from "next/navigation";

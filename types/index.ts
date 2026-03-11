@@ -1,3 +1,5 @@
+import { ElementType } from "react";
+
 // ─── Register ────────────────────────────────────────────
 export interface RegisterPayload {
   phonenumber: string;
@@ -272,4 +274,55 @@ export interface StarsProps {
 export interface CountdownBarProps {
   seconds: number;
   total: number;
+}
+
+export interface TooltipPayload {
+  value: number;
+  name: string;
+}
+
+export interface CustomTooltipProps {
+  active?: boolean;
+  payload?: TooltipPayload[];
+}
+
+export interface FormState {
+  cardNumber: string;
+  expiry: string;
+  cvv: string;
+  accountName: string;
+}
+
+export interface SettingsItemProps {
+  icon: ElementType; // 👈 works for Lucide + React Icons
+  label: string;
+  onClick?: () => void;
+}
+
+export interface Ride {
+  label: string;
+  status: string;
+  statusColor: string;
+  pickup: string;
+  destination: string;
+};
+
+export interface RideCardProps {
+  ride: Ride;
+};
+
+export interface Coords {
+  lat: number;
+  lon: number;
+}
+
+export interface StageConfig {
+  title: string;
+  greenSub?: boolean;
+  subtitle?: string;
+}
+
+export interface Coords {
+  lat: number;
+  lon: number;
 }

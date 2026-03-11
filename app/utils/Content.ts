@@ -545,3 +545,208 @@ export const items2 = [
   "Long-term impact over short-term hype",
   "Real responsibility, real ownership"
 ]
+
+
+export const weekData = [
+  { label: "10km", value: 800 },
+  { label: "20km", value: 1400 },
+  { label: "30km", value: 2586 },
+  { label: "40km", value: 2200 },
+  { label: "50km", value: 3000 },
+];
+
+export const monthData = [
+  { label: "10km", value: 1200 },
+  { label: "20km", value: 2100 },
+  { label: "30km", value: 1800 },
+  { label: "40km", value: 2700 },
+  { label: "50km", value: 3200 },
+];
+
+export const yearData = [
+  { label: "10km", value: 2000 },
+  { label: "20km", value: 2800 },
+  { label: "30km", value: 2400 },
+  { label: "40km", value: 3100 },
+  { label: "50km", value: 2900 },
+];
+
+
+export const Africanpayment =[
+  {
+    img:"/images/anypay.png",
+  },
+  {
+    img:"/images/airtel.png",
+  },
+  {
+    img:"/images/pesapal.png",
+  },
+  {
+    img:"/images/equitel-logo.png"
+  },
+  {
+    img:"/images/IntaSend.png"
+  },
+  {
+    img:"/images/Mpesa.png"
+  },
+  {
+    img:"/images/momo.png"
+  },
+  {
+    img:"/images/opay.png"
+  },
+  {
+    img:"/images/orange.png"
+  },
+]
+
+export const Americanpayments = [
+  {
+    img:"/images/payoner.png"
+  },
+  {
+    img:"/images/gpay.png"
+  },
+  {
+    img:"/images/paypal.png"
+  },
+  {
+    img:"/images/zelle.png"
+  },
+  {
+    img:"/images/cash.png"
+  },
+  {
+    img:"/images/group.png"
+  },
+  {
+    img:"/images/Skrill.png"
+  },
+  {
+    img:"/images/wordpay.png"
+  },
+  {
+    img:"/images/wise-1.png"
+  }
+]
+
+export const cardPayment = [
+  {
+    img:"/images/masterCard.png"
+  },
+  {
+    img:"/images/visa.png"
+  },
+  {
+    img:"/images/verve.png"
+  }
+]
+
+export const SECURITY_ITEMS = [
+  {
+    id: "password",
+    title: "Set/Change Password",
+    description: "Create a strong password to secure your account and personal information.",
+    type: "link",
+    route: "/account/login/set-password",
+  },
+  {
+    id: "pin",
+    title: "Set/Change PIN",
+    description: "Set a quick 4-digit PIN to log in and confirm key actions instantly.",
+    type: "link",
+    route: "/account/login/reset-password",
+  },
+  {
+    id: "biometric",
+    title: "Allow Biometric",
+    description: "Set a quick 4-digit PIN to log in and confirm key actions instantly.",
+    type: "toggle",
+    route: null,
+  },
+];
+
+export const rides = [
+  {
+    id: 1,
+    label: "Today",
+    status: "Completed",
+    statusColor: "text-green-600 bg-green-50 border border-green-200",
+    pickup: "4827 Willowbrook Lane, OH 44126",
+    destination: "123 Main St, Springfield, IL 62704",
+  },
+  {
+    id: 2,
+    label: "Yesterday",
+    status: "Completed",
+    statusColor: "text-green-600 bg-green-50 border border-green-200",
+    pickup: "4827 Willowbrook Lane, OH 44126",
+    destination: "123 Main St, Springfield, IL 62704",
+  },
+  {
+    id: 3,
+    label: "Sun, 25 Sept • 22:06",
+    status: "Cancelled",
+    statusColor: "text-red-500 bg-red-50 border border-red-200",
+    pickup: "4827 Willowbrook Lane, OH 44126",
+    destination: "123 Main St, Springfield, IL 62704",
+  },
+];
+
+export const signupContent = [
+  {
+    img:"/images/globe.png",
+    text:"Choose when you’re online"
+  },
+  {
+    img:"/images/bike.png",
+    text:"Drive with your car or motorcycle"
+  },
+  {
+    img:"/images/wallet-1.png",
+    text:"Get paid per trip, transparently"
+  }
+]
+
+export const stepOne = [
+  {
+    id: 1,
+    label: "Personal Information",
+    badge: { text: "Verified", color: "bg-[#E9F9EE] text-[8px] leading-[120%] border border-[#22C553] text-green-600" },
+  },
+  {
+    id: 2,
+    label: "Valid ID & driver's license",
+    badge: { text: "Verified", color: "bg-[#E9F9EE] text-[8px] leading-[120%] border border-[#22C553] text-green-600" },
+  },
+  {
+    id: 3,
+    label: "Vehicle details (you can add more than one)",
+    badge: { text: "Verification required", color: "bg-[#FEF5E7] border border-[#F59E0B] text-[8px] text-[#F59E0B] leading-[120%]" },
+  },
+  {
+    id: 4,
+    label: "Clear photos for verification",
+    badge: { text: "Verification required", color: "bg-[#FEF5E7] border border-[#F59E0B] text-[8px] text-[#F59E0B] leading-[120%]" },
+  },
+];
+
+
+export const requests = [
+    {
+      id: 1,
+      name: "Mike Brown",
+      code: "CF 1084",
+      pickup: "4827 Willowbrook Lane, OH 45056",
+      dropoff: "123 Main St, Springfield, IL 62701",
+    },
+    {
+      id: 2,
+      name: "Mike Brown",
+      code: "CF 1084",
+      pickup: "4827 Willowbrook Lane, OH 45056",
+      dropoff: "123 Main St, Springfield, IL 62701",
+    },
+  ];

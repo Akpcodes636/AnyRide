@@ -51,10 +51,7 @@ const MobileNav = () => {
           <Logo />
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <button
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
-            >
+            <button aria-label="Open menu" onClick={() => setOpen(true)}>
               <GiHamburgerMenu size={24} color="#02093A" />
             </button>
           </div>
@@ -81,10 +78,7 @@ const MobileNav = () => {
             <Logo />
             <div className="flex items-center gap-3">
               <LanguageSwitcher />
-              <button
-                aria-label="Close menu"
-                onClick={() => setOpen(false)}
-              >
+              <button aria-label="Close menu" onClick={() => setOpen(false)}>
                 <X size={26} />
               </button>
             </div>
@@ -141,27 +135,30 @@ const MobileNav = () => {
 
               {/* Quick Actions */}
               <div className="grid grid-cols-3 gap-3 pb-6 border-b">
-                <button
-                  onClick={() => setOpen(false)}
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition"
-                >
-                  <Wallet className="w-6 h-6 text-gray-700" />
-                  <span className="text-xs font-medium text-gray-700">Wallet</span>
-                </button>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition"
-                >
-                  <Bookmark className="w-6 h-6 text-gray-700" />
-                  <span className="text-xs font-medium text-gray-700">Saved</span>
-                </button>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition"
-                >
-                  <HelpCircle className="w-6 h-6 text-gray-700" />
-                  <span className="text-xs font-medium text-gray-700">Support</span>
-                </button>
+                <Link href="/wallet" onClick={() => setOpen(false)}>
+                  <button className="flex flex-col items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition">
+                    <Wallet className="w-6 h-6 text-gray-700" />
+                    <span className="text-xs font-medium text-gray-700">
+                      Wallet
+                    </span>
+                  </button>
+                </Link>
+                <Link href="/saved" onClick={() => setOpen(false)}>
+                  <button className="flex flex-col items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition">
+                    <Bookmark className="w-6 h-6 text-gray-700" />
+                    <span className="text-xs font-medium text-gray-700">
+                      Saved
+                    </span>
+                  </button>
+                </Link>
+                <Link href="/support" onClick={() => setOpen(false)}>
+                  <button className="flex flex-col items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition">
+                    <HelpCircle className="w-6 h-6 text-gray-700" />
+                    <span className="text-xs font-medium text-gray-700">
+                      Support
+                    </span>
+                  </button>
+                </Link>
               </div>
 
               {/* Menu Items */}
@@ -171,36 +168,48 @@ const MobileNav = () => {
                   label="Manage account"
                   onClick={() => setOpen(false)}
                 />
-                <MobileMenuItem
-                  icon={<Route className="w-5 h-5" />}
-                  label="Book a ride"
-                  onClick={() => setOpen(false)}
-                />
-                <MobileMenuItem
-                  icon={<Car className="w-5 h-5" />}
-                  label="My Rides"
-                  onClick={() => setOpen(false)}
-                />
-                <MobileMenuItem
-                  icon={<Car className="w-5 h-5" />}
-                  label="Drive & Earn"
-                  onClick={() => setOpen(false)}
-                />
-                <MobileMenuItem
-                  icon={<Bell className="w-5 h-5" />}
-                  label="Notifications"
-                  onClick={() => setOpen(false)}
-                />
-                <MobileMenuItem
-                  icon={<Shield className="w-5 h-5" />}
-                  label="Safety"
-                  onClick={() => setOpen(false)}
-                />
-                <MobileMenuItem
-                  icon={<Info className="w-5 h-5" />}
-                  label="About"
-                  onClick={() => setOpen(false)}
-                />
+                <Link href="/request-ride">
+                  <MobileMenuItem
+                    icon={<Route className="w-5 h-5" />}
+                    label="Book a ride"
+                    onClick={() => setOpen(false)}
+                  />
+                </Link>
+                <Link href="/my-rides">
+                  <MobileMenuItem
+                    icon={<Car className="w-5 h-5" />}
+                    label="My Rides"
+                    onClick={() => setOpen(false)}
+                  />
+                </Link>
+                <Link href="/drive-and-earn">
+                  <MobileMenuItem
+                    icon={<Car className="w-5 h-5" />}
+                    label="Drive & Earn"
+                    onClick={() => setOpen(false)}
+                  />
+                </Link>
+                <Link href="/notifications">
+                  <MobileMenuItem
+                    icon={<Bell className="w-5 h-5" />}
+                    label="Notifications"
+                    onClick={() => setOpen(false)}
+                  />
+                </Link>
+                <Link href="/safety">
+                  <MobileMenuItem
+                    icon={<Shield className="w-5 h-5" />}
+                    label="Safety"
+                    onClick={() => setOpen(false)}
+                  />
+                </Link>
+                <Link href="/about">
+                  <MobileMenuItem
+                    icon={<Info className="w-5 h-5" />}
+                    label="About"
+                    onClick={() => setOpen(false)}
+                  />
+                </Link>
               </div>
 
               {/* Sign Out */}
@@ -239,9 +248,7 @@ function MobileMenuItem({
       className="w-full flex items-center justify-between px-4 py-4 hover:bg-gray-50 rounded-xl transition group"
     >
       <div className="flex items-center gap-3">
-        <span className="text-gray-600 group-hover:text-gray-900">
-          {icon}
-        </span>
+        <span className="text-gray-600 group-hover:text-gray-900">{icon}</span>
         <span className="text-gray-700 group-hover:text-gray-900 font-medium">
           {label}
         </span>
