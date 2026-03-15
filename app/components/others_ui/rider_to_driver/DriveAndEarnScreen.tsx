@@ -1,0 +1,66 @@
+"use client";
+
+import React from 'react';
+import { Globe, Bike, Banknote, ChevronDown } from 'lucide-react';
+
+export default function DriveAndEarnScreen() {
+    return (
+        <div className="w-full max-w-5xl mx-auto bg-white overflow-hidden font-sans">
+            {/* Header */}
+            <header className="flex justify-between items-center p-5 md:px-8 border-b border-gray-50">
+                <img src="/images/Anyride.png" alt="AnyRide Logo" className="h-7 object-contain" />
+                <button className="flex items-center gap-2 bg-[#F5F5F7] px-4 py-2 rounded-full text-[14px] font-semibold text-[#0B153D] hover:bg-gray-200 transition-colors">
+                    <Globe size={16} /> EN <ChevronDown size={14} />
+                </button>
+            </header>
+
+            {/* Content Box */}
+            <div className="flex flex-col items-center justify-center p-8 md:p-16 lg:py-24 max-w-4xl mx-auto w-full text-center">
+                <h1 className="text-[36px] md:text-[45px] font-extrabold text-[#0B153D] leading-[1.15] mb-6">
+                    Drive and Earn<br />on AnyRide
+                </h1>
+                <p className="text-[15px] text-[#0B153D] mb-12 max-w-[480px] font-medium leading-[1.6]">
+                    Earn on your own schedule by driving people in your city.<br className="hidden md:block" />
+                    Use your car or motorcycle and start making money when<br className="hidden md:block" />
+                    it works for you.
+                </p>
+
+                <div className="flex flex-col md:flex-row gap-5 mb-16 w-full justify-center">
+                    {/* Card 1 */}
+                    <div className="bg-[#FFF4F4] px-5 py-4 rounded-[12px] flex items-center gap-4 text-left w-full md:w-1/3 max-w-[280px]">
+                        <div className="w-10 h-10 rounded-[8px] bg-[#E53935] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                            <Globe size={20} />
+                        </div>
+                        <span className="text-[13px] sm:text-[14px] font-bold text-[#0B153D] leading-snug">
+                            Choose when<br />you're online
+                        </span>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="bg-[#F0F5FF] px-5 py-4 rounded-[12px] flex items-center gap-4 text-left w-full md:w-1/3 max-w-[280px]">
+                        <div className="w-10 h-10 rounded-[8px] bg-[#4285F4] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                            <Bike size={20} />
+                        </div>
+                        <span className="text-[13px] sm:text-[14px] font-bold text-[#0B153D] leading-snug">
+                            Drive with your car or<br />motorcycle
+                        </span>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="bg-[#F0FFF4] px-5 py-4 rounded-[12px] flex items-center gap-4 text-left w-full md:w-1/3 max-w-[280px]">
+                        <div className="w-10 h-10 rounded-[8px] bg-[#0F9D58] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                            <Banknote size={20} />
+                        </div>
+                        <span className="text-[13px] sm:text-[14px] font-bold text-[#0B153D] leading-snug">
+                            Get paid per trip,<br />transparently
+                        </span>
+                    </div>
+                </div>
+
+                <button className="bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-4 md:py-4 px-12 rounded-[12px] w-full max-w-[400px] text-[15px] transition-colors shadow-md">
+                    Continue as Driver
+                </button>
+            </div>
+        </div>
+    );
+}
