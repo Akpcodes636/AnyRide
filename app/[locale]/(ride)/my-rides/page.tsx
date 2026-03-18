@@ -4,8 +4,6 @@ import { useTripModal } from "@/store/Modals";
 import { RideCardProps } from "@/types";
 import Image from "next/image";
 
-
-
 function StarIcon() {
   return (
     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
@@ -124,7 +122,7 @@ export default function Page() {
                 This week ▾
               </button>
             </div>
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
           {/* Left Panel — My Rides */}
           <div className="bg-white w-full h-full">
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const BASE_URL = "https://fysi-api.onrender.com";
 const BASE_URL = "https://anyride.techenex.online";
 
 

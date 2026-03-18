@@ -1,7 +1,9 @@
 "use client";
-
 import Image from "next/image";
 import { RideAcceptanceCardProps } from "@/types";
+import { Loader2 } from "lucide-react";
+import { useRideStore } from "@/store/rideStore";
+import { useAcceptRideRequest, useRejectRideRequest } from "@/hooks/useRideHooks";
 
 const RideAcceptanceCard: React.FC<RideAcceptanceCardProps> = ({
   driverName,
@@ -12,13 +14,33 @@ const RideAcceptanceCard: React.FC<RideAcceptanceCardProps> = ({
   distance,
   rating,
   image,
+  requestId,
 }) => {
+  const next = useRideStore((s) => s.next);
+  const acceptRide = useAcceptRideRequest();
+  const rejectRide = useRejectRideRequest();
+
+  const handleAccept = (): void => {
+    console.log("Accept button clicked"); 
+    if (!requestId) return;
+    acceptRide.mutate(requestId, {
+      onSuccess: () => next(),
+      
+    });
+  };
+
+  const handleDecline = (): void => {
+    if (!requestId) return;
+    rejectRide.mutate({ requestId, driver_id: 1, reason: "Customer declined" });
+  };
+
+  const isLoading = acceptRide.isPending || rejectRide.isPending;
+
   return (
     <div className="bg-white w-full max-w-[512px] rounded-[25px] shadow-lg p-[16px] mt-6">
       {/* Top Row */}
       <div className="flex items-center justify-between mb-[12px] flex-wrap sm:flex-nowrap">
         <div className="flex items-center gap-[8px]">
-          {/* driver image — FIXED */}
           <div className="w-[32px] h-[32px] rounded-full overflow-hidden">
             <Image
               src={image}
@@ -28,7 +50,6 @@ const RideAcceptanceCard: React.FC<RideAcceptanceCardProps> = ({
               alt="Driver"
             />
           </div>
-
           <div>
             <h3 className="text-[#02093A] font-semibold leading-[120%] text-[14px]">
               {driverName}
@@ -38,7 +59,6 @@ const RideAcceptanceCard: React.FC<RideAcceptanceCardProps> = ({
             </p>
           </div>
         </div>
-
         <p className="text-[#02093A] font-bold leading-[120%] text-[18px] mt-2 sm:mt-0">
           {rideCode}
         </p>
@@ -55,14 +75,29 @@ const RideAcceptanceCard: React.FC<RideAcceptanceCardProps> = ({
         <span>⭐ {rating}</span>
       </div>
 
-      {/* Buttons — 36px height, 17px gap */}
+      {/* Buttons */}
       <div className="flex flex-row gap-[17px]">
-        <button className="w-full h-[36px] rounded-[24px] bg-[#F5F5F7] rounded-[8px] cursor-pointer">
-          Accept
+        <button
+          onClick={handleAccept}
+          disabled={isLoading}
+          className="w-full h-[36px] bg-[#F5F5F7] rounded-[8px] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
+        >
+          {acceptRide.isPending ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            "Accept"
+          )}
         </button>
-
-        <button className="w-full h-[36px] rounded-[24px] bg-[#010C4A] rounded-[8px] text-white cursor-pointer">
-          Decline
+        <button
+          onClick={handleDecline}
+          disabled={isLoading}
+          className="w-full h-[36px] bg-[#010C4A] rounded-[8px] text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
+        >
+          {rejectRide.isPending ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            "Decline"
+          )}
         </button>
       </div>
 
