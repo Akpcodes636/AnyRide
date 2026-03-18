@@ -194,11 +194,11 @@
       ]
     },
     "comingSoon": {
-  "title": "Bientôt disponible !",
-  "description": "Notre application mobile est actuellement en développement et sera bientôt lancée. Rejoignez notre liste d’attente pour être parmi les premiers informés !",
-  "joinWaitlist": "Rejoindre la liste d’attente",
-  "maybeLater": "Peut-être plus tard"
-}
+      "title": "Bientôt disponible !",
+      "description": "Notre application mobile est actuellement en développement et sera bientôt lancée. Rejoignez notre liste d’attente pour être parmi les premiers informés !",
+      "joinWaitlist": "Rejoindre la liste d’attente",
+      "maybeLater": "Peut-être plus tard"
+    }
   },
   "DriversPage": {
     "hero": {
@@ -319,6 +319,10 @@
           {
             "label": "Rejoindre l'équipe",
             "href": "/careers"
+          },
+          {
+            "label": "UI Screens",
+            "href": "/additional-ui"
           }
         ]
       },
@@ -501,39 +505,39 @@
       "title": "Rejoignez notre communauté grandissante"
     },
     "form": {
-  "selectOption": "Sélectionnez une option",
-  "userTypes": {
-    "rider": "Coureur",
-    "driver": "Conducteur",
-    "fleet_owner": "Propriétaire de flotte",
-    "partner": "Partenaire",
-    "team_member": "Membre de l'équipe"
-  },
-  "firstNamePlaceholder": "Prénom",
-  "lastNamePlaceholder": "Nom de famille",
-  "emailPlaceholder": "Adresse e-mail",
-  "submit": "Rejoindre la liste d’attente",
-  "agreements": {
-    "privacyPolicy": "J'accepte la politique de confidentialité",
-    "termsConditions": "J'accepte les termes et conditions",
-    "consentMessages": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
-    "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de AnyRide à des fins de vérification et de communication. Des frais de messages et données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à un message. Ce consentement n'est pas requis pour acheter des biens ou services."
-  },
-  "toast": {
-    "success": "Vous avez rejoint la liste d’attente avec succès !",
-    "genericError": "Une erreur est survenue.",
-    "retryError": "Une erreur est survenue. Veuillez réessayer."
-  },
-  "validation": {
-    "required": "Requis",
-    "invalidEmail": "E-mail invalide"
-  },
-   "modal": {
-    "title": "Vous êtes sur la liste !",
-    "message": "Merci de vous être inscrit sur notre liste d'attente. Nous vous contacterons bientôt !",
-    "close": "Fermer"
-  }
-},
+      "selectOption": "Sélectionnez une option",
+      "userTypes": {
+        "rider": "Coureur",
+        "driver": "Conducteur",
+        "fleet_owner": "Propriétaire de flotte",
+        "partner": "Partenaire",
+        "team_member": "Membre de l'équipe"
+      },
+      "firstNamePlaceholder": "Prénom",
+      "lastNamePlaceholder": "Nom de famille",
+      "emailPlaceholder": "Adresse e-mail",
+      "submit": "Rejoindre la liste d’attente",
+      "agreements": {
+        "privacyPolicy": "J'accepte la politique de confidentialité",
+        "termsConditions": "J'accepte les termes et conditions",
+        "consentMessages": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
+        "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de AnyRide à des fins de vérification et de communication. Des frais de messages et données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à un message. Ce consentement n'est pas requis pour acheter des biens ou services."
+      },
+      "toast": {
+        "success": "Vous avez rejoint la liste d’attente avec succès !",
+        "genericError": "Une erreur est survenue.",
+        "retryError": "Une erreur est survenue. Veuillez réessayer."
+      },
+      "validation": {
+        "required": "Requis",
+        "invalidEmail": "E-mail invalide"
+      },
+      "modal": {
+        "title": "Vous êtes sur la liste !",
+        "message": "Merci de vous être inscrit sur notre liste d'attente. Nous vous contacterons bientôt !",
+        "close": "Fermer"
+      }
+    },
     "FAQ": {
       "subtitle": "FAQ",
       "title": "Questions fréquemment posées",
@@ -595,10 +599,9 @@
         "smsConsent": "Je consens à recevoir des SMS, appels et e-mails à des fins de vérification et de communication",
         "disclaimer": "Avertissement : En soumettant ce formulaire, vous consentez à recevoir des SMS, appels et e-mails de la part d'AnyRide à des fins de vérification et de communication. Des frais de messages et de données peuvent s'appliquer. Vous pouvez vous désinscrire à tout moment en répondant STOP à tout message. Ce consentement n'est pas nécessaire pour acheter des biens ou des services.",
         "countries": {
-        "US": "États-Unis",
-        "CG": "Congo"
-      }
-
+          "US": "États-Unis",
+          "CG": "Congo"
+        }
       },
       "submit": "Soumettre",
       "errors": {
@@ -623,7 +626,7 @@
       "futureCategories": "8+",
       "safetyTrust": "Sécurité et Confiance"
     },
- "whyUs": {
+    "whyUs": {
       "eyebrow": "Pourquoi nous ?",
       "title": "Pourquoi devenir partenaire d'AnyRide",
       "subtitle": "Accédez à des marchés structurés et à forte croissance",
@@ -650,7 +653,6 @@
         }
       ]
     },
-   
     "whoCanPartner": {
       "title": "Qui peut s'associer avec AnyRide",
       "categories": [
@@ -825,16 +827,16 @@
       ]
     }
   },
-   "partnerBanner": {
-      "title": "Avec qui nous collaborons",
-      "subtitle": "AnyRide collabore avec des organisations qui soutiennent l'infrastructure de transport, la sécurité, la conformité, les opérations et la croissance."
-    },
-    "partnerBanner1": {
+  "partnerBanner": {
+    "title": "Avec qui nous collaborons",
+    "subtitle": "AnyRide collabore avec des organisations qui soutiennent l'infrastructure de transport, la sécurité, la conformité, les opérations et la croissance."
+  },
+  "partnerBanner1": {
     "title": "Intéressé à collaborer avec AnyRide ?",
     "cta": "Devenir Partenaire"
   },
   "partnerTrust": {
-     "subtitle": "CONFIANCE ET CRÉDIBILITÉ",
+    "subtitle": "CONFIANCE ET CRÉDIBILITÉ",
     "headline": "Conçu pour un transport responsable et réglementé",
     "subtext": "AnyRide est conçu pour fonctionner dans des conditions réglementaires, de sécurité et de marché réelles, en soutenant des partenariats crédibles et à long terme.",
     "cards": [
@@ -858,7 +860,7 @@
   "partnerFormIntro": {
     "title": "Vous souhaitez devenir partenaire avec nous ?",
     "subtitle": "Remplissez le formulaire ci-dessous avec les informations nécessaires pour nous rejoindre",
-     "fields": {
+    "fields": {
       "fullName": {
         "label": "Nom complet",
         "placeholder": "Entrez votre nom complet"
@@ -884,25 +886,22 @@
         "placeholder": "Fournissez votre message ou les détails de votre proposition"
       }
     },
-
     "buttons": {
       "submit": "Envoyer",
       "loading": "Envoi en cours..."
     },
-
     "errors": {
       "required": "Veuillez remplir tous les champs obligatoires.",
       "invalidEmail": "Veuillez entrer une adresse email valide.",
       "submissionFailed": "L’envoi a échoué.",
       "network": "Erreur réseau. Veuillez réessayer."
     },
-
     "success": {
       "submitted": "Formulaire envoyé avec succès !"
     }
   },
   "partnershipwork": {
-    "label":"COMMENT FONCTIONNENT LES PARTENARIATS",
+    "label": "COMMENT FONCTIONNENT LES PARTENARIATS",
     "title": "Comment fonctionne le partenariat avec AnyRide",
     "subtitle": "Voici des étapes simples pour collaborer avec nous",
     "steps": [
@@ -986,7 +985,7 @@
   "Navbar": {
     "about": "À propos",
     "rider": "Passager",
-    "fleet":"Flotte",
+    "fleet": "Flotte",
     "driver": "Chauffeur",
     "partners": "Partenaires",
     "contactUs": "Contactez-nous",
@@ -1323,40 +1322,40 @@
     },
     "definition": {
       "title": "Qu’est-ce qu’un propriétaire de flotte ?",
-      "label":"Propriétaire de flotte",
+      "label": "Propriétaire de flotte",
       "description": "Un propriétaire de flotte sur AnyRide est une personne ou une organisation qui exploite plusieurs véhicules via la plateforme. Au lieu de conduire eux-mêmes, les propriétaires de flotte gèrent des chauffeurs employés qui utilisent leurs véhicules pour fournir des services de transport. La gestion de flotte permet une exploitation à l’échelle de l’entreprise avec des outils centralisés, le suivi des performances et des rapports financiers consolidés."
     },
-   "whoCanJoin": {
-    "title": "Qui peut rejoindre en tant que propriétaire de flotte ?",
-    "item1Title": "Propriétaires de plusieurs taxis",
-    "item1Description": "Exploitez et gérez plusieurs taxis sur une seule plateforme centralisée.",
-    "item2Title": "Compagnies de transport",
-    "item2Description": "Exécutez des opérations de transport structurées avec des véhicules et des conducteurs coordonnés.",
-    "item3Title": "Opérateurs de services de transport",
-    "item3Description": "Développez vos services de transport avec une meilleure gestion, suivi et paiements.",
-    "item4Title": "Fournisseurs de navettes d'entreprise",
-    "item4Description": "Gérez le transport des employés ou de l'organisation avec des opérations planifiées et fiables.",
-    "item5Title": "Entreprises de location de véhicules",
-    "item5Description": "Déployez efficacement des véhicules loués avec suivi de l'utilisation et de la performance.",
-    "item6Title": "Entrepreneurs gérant des chauffeurs embauchés",
-    "item6Description": "Exploitez des véhicules conduits par des chauffeurs dans le cadre d'une entreprise structurée et génératrice de revenus."
-  },
+    "whoCanJoin": {
+      "title": "Qui peut rejoindre en tant que propriétaire de flotte ?",
+      "item1Title": "Propriétaires de plusieurs taxis",
+      "item1Description": "Exploitez et gérez plusieurs taxis sur une seule plateforme centralisée.",
+      "item2Title": "Compagnies de transport",
+      "item2Description": "Exécutez des opérations de transport structurées avec des véhicules et des conducteurs coordonnés.",
+      "item3Title": "Opérateurs de services de transport",
+      "item3Description": "Développez vos services de transport avec une meilleure gestion, suivi et paiements.",
+      "item4Title": "Fournisseurs de navettes d'entreprise",
+      "item4Description": "Gérez le transport des employés ou de l'organisation avec des opérations planifiées et fiables.",
+      "item5Title": "Entreprises de location de véhicules",
+      "item5Description": "Déployez efficacement des véhicules loués avec suivi de l'utilisation et de la performance.",
+      "item6Title": "Entrepreneurs gérant des chauffeurs embauchés",
+      "item6Description": "Exploitez des véhicules conduits par des chauffeurs dans le cadre d'une entreprise structurée et génératrice de revenus."
+    },
     "benefits": {
-    "title": "Pourquoi gérer votre flotte sur AnyRide",
-    "item1Title": "Tableau de bord centralisé de la flotte",
-    "item1Description": "Surveillez tous les véhicules, conducteurs et opérations depuis une interface unique.",
-    "item2Title": "Suivi de la performance des conducteurs",
-    "item2Description": "Suivez les métriques, notes et activités de chaque conducteur de votre flotte.",
-    "item3Title": "Paiements et rapports automatisés",
-    "item3Description": "Recevez des rapports financiers consolidés et des paiements automatisés.",
-    "item4Title": "Meilleure utilisation des véhicules",
-    "item4Description": "Maximisez l'utilisation des véhicules et le potentiel de revenus grâce à une affectation efficace des conducteurs.",
-    "item5Title": "Opérations évolutives",
-    "item5Description": "Développez votre flotte efficacement avec des outils conçus pour la gestion multi-véhicules.",
-    "item6Title": "Réduction de la coordination manuelle",
-    "item6Description": "Minimisez la charge administrative avec la planification et la gestion automatisées."
-  },
-  "tools": {
+      "title": "Pourquoi gérer votre flotte sur AnyRide",
+      "item1Title": "Tableau de bord centralisé de la flotte",
+      "item1Description": "Surveillez tous les véhicules, conducteurs et opérations depuis une interface unique.",
+      "item2Title": "Suivi de la performance des conducteurs",
+      "item2Description": "Suivez les métriques, notes et activités de chaque conducteur de votre flotte.",
+      "item3Title": "Paiements et rapports automatisés",
+      "item3Description": "Recevez des rapports financiers consolidés et des paiements automatisés.",
+      "item4Title": "Meilleure utilisation des véhicules",
+      "item4Description": "Maximisez l'utilisation des véhicules et le potentiel de revenus grâce à une affectation efficace des conducteurs.",
+      "item5Title": "Opérations évolutives",
+      "item5Description": "Développez votre flotte efficacement avec des outils conçus pour la gestion multi-véhicules.",
+      "item6Title": "Réduction de la coordination manuelle",
+      "item6Description": "Minimisez la charge administrative avec la planification et la gestion automatisées."
+    },
+    "tools": {
       "title": "Outils et capacités du propriétaire de flotte",
       "feature1Title": "Tableau de bord de la flotte",
       "feature1Description": "Vue en temps réel de tous les véhicules, conducteurs actifs et opérations en cours dans votre flotte.",
@@ -1386,29 +1385,29 @@
       "title": "Revenus et contrôle de l’entreprise",
       "description": "En tant que propriétaire de flotte, vous gardez le contrôle total de votre structure commerciale, des accords avec les chauffeurs et du partage des revenus. AnyRide fournit l’infrastructure technologique. Les revenus dépendent du marché, des décisions opérationnelles et des performances des chauffeurs. Les propriétaires sont responsables de la maintenance, de l’assurance et de la conformité réglementaire."
     },
-  "fullNameLabel": "Nom complet",
-  "fullNamePlaceholder": "Entrez votre nom complet",
-  "fleetNameLabel": "Nom de l'entreprise / flotte",
-  "fleetNamePlaceholder": "Entrez le nom de votre flotte ou entreprise",
-  "emailLabel": "Adresse e-mail",
-  "emailPlaceholder": "Entrez votre e-mail",
-  "phoneLabel": "Numéro de téléphone",
-  "phonePlaceholder": "Entrez votre numéro de téléphone",
-  "vehicleCountLabel": "Nombre de véhicules",
-  "vehicleCountPlaceholder": "ex: 5, 20, 100",
-  "operatingAreaLabel": "Ville / zone d'exploitation",
-  "operatingAreaPlaceholder": "Où opère votre flotte?",
-  "messageLabel": "Message / détails supplémentaires",
-  "messagePlaceholder": "Parlez-nous plus de votre flotte",
-  "emailUpdates": "Je souhaite recevoir des mises à jour par e-mail",
-  "emailConsent": "J'accepte de recevoir des e-mails marketing",
-  "termsConsent": "J'accepte les termes et conditions",
-  "smsConsent": "J'accepte de recevoir des SMS",
-  "disclaimer": "Nous ne partagerons jamais vos informations.",
-  "submit": "Envoyer la demande de flotte",
-  "errorsRequired": "Veuillez remplir tous les champs obligatoires",
-      "success": "Votre demande de flotte a été envoyée avec succès",
-     "cta": {
+    "fullNameLabel": "Nom complet",
+    "fullNamePlaceholder": "Entrez votre nom complet",
+    "fleetNameLabel": "Nom de l'entreprise / flotte",
+    "fleetNamePlaceholder": "Entrez le nom de votre flotte ou entreprise",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "phoneLabel": "Numéro de téléphone",
+    "phonePlaceholder": "Entrez votre numéro de téléphone",
+    "vehicleCountLabel": "Nombre de véhicules",
+    "vehicleCountPlaceholder": "ex: 5, 20, 100",
+    "operatingAreaLabel": "Ville / zone d'exploitation",
+    "operatingAreaPlaceholder": "Où opère votre flotte?",
+    "messageLabel": "Message / détails supplémentaires",
+    "messagePlaceholder": "Parlez-nous plus de votre flotte",
+    "emailUpdates": "Je souhaite recevoir des mises à jour par e-mail",
+    "emailConsent": "J'accepte de recevoir des e-mails marketing",
+    "termsConsent": "J'accepte les termes et conditions",
+    "smsConsent": "J'accepte de recevoir des SMS",
+    "disclaimer": "Nous ne partagerons jamais vos informations.",
+    "submit": "Envoyer la demande de flotte",
+    "errorsRequired": "Veuillez remplir tous les champs obligatoires",
+    "success": "Votre demande de flotte a été envoyée avec succès",
+    "cta": {
       "title": "Prêt à exploiter votre flotte sur AnyRide ?",
       "button": "Postuler en tant que propriétaire de flotte"
     },
@@ -1628,8 +1627,8 @@
     }
   },
   "WhoCanApply": {
-  "subtitle": "Qui nous recherchons",
-  "title": "Qui devrait postuler ?",
-  "description": "AnyRide recherche des personnes qui apportent des compétences, du discernement et une compréhension du monde réel — en particulier dans les secteurs liés au transport et aux opérations."
-}
+    "subtitle": "Qui nous recherchons",
+    "title": "Qui devrait postuler ?",
+    "description": "AnyRide recherche des personnes qui apportent des compétences, du discernement et une compréhension du monde réel — en particulier dans les secteurs liés au transport et aux opérations."
+  }
 }
