@@ -4,38 +4,21 @@ import Logo from "../ui/Logo";
 import Button from "../ui/Button";
 import { navLinks } from "@/app/utils/Content";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useRouter, usePathname, Link } from "@/i18n/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { useAuth } from "@/providers/AuthProvider";
 import {
-  User,
-  Wallet,
-  Bookmark,
-  HelpCircle,
-  Car,
-  Route,
-  Bell,
-  Shield,
-  Info,
-  LogOut,
   ChevronDown,
 } from "lucide-react";
-
-function MenuItem({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#F5F7FA] transition cursor-pointer">
-      <span className="w-5 h-5 text-[#353A61]">{icon}</span>
-      <span className="text-[#000000] text-[18px] leading-[160%] tracking-[-2%]">{label}</span>
-    </button>
-  );
-}
+import ProfilePopover from "./ProfilePopover";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
   const router = useRouter();
   const locale = useLocale();
-  const { isAuthenticated, userName, logout } = useAuth();
+  const { isAuthenticated, userName } = useAuth();
   const pathname = usePathname();
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const navGap =
     locale === "fr" || locale === "sw" || locale === "ln" ? "gap-2" : "gap-8";
@@ -61,9 +44,9 @@ const Navbar = () => {
 
                 return (
                   <li key={i} className="relative flex items-center">
-                    <Link
-                      href={l.router}
-                      className={`text-[18px] font-medium leading-[120%] whitespace-nowrap transition-colors
+                    <button
+                      onClick={() => router.push(l.router)}
+                      className={`text-[18px] font-medium leading-[120%] whitespace-nowrap transition-colors cursor-pointer
                         ${isActive
                           ? "text-[#A20602]"
                           : "text-text-black hover:text-[#A20602]"
@@ -71,7 +54,7 @@ const Navbar = () => {
                       `}
                     >
                       {t(l.key)}
-                    </Link>
+                    </button>
 
                     <span
                       className={`absolute -bottom-2 left-0 h-[2px] w-full bg-[#A20602] transition-all duration-300
@@ -105,94 +88,25 @@ const Navbar = () => {
         {/* If authenticated, show Profile button with real user name */}
         {isAuthenticated && (
           <>
-            <div className="flex items-end justify-end gap-3">
+            <div className="flex items-center justify-end gap-3">
               <LanguageSwitcher />
-              <div className="relative group">
-                <Button
-                  style="danger"
-                  type="button"
-                  css="w-[188px] flex items-center justify-between px-3"
+              <div className="relative">
+                <button
+                  onClick={() => setIsProfileOpen(!isProfileOpen)}
+                  className="w-[188px] flex items-center justify-between px-4 py-2 bg-[#A20602] text-white rounded-full font-bold text-[14px] transition-colors hover:bg-[#8e0502] cursor-pointer"
                 >
                   <span className="truncate">{displayName}</span>
-                  <ChevronDown className="text-sm" />
-                </Button>
+                  <ChevronDown size={16} />
+                </button>
 
-                <div className="absolute right-0 mt-2 w-[280px] hidden group-hover:block bg-white shadow-xl rounded-lg overflow-hidden z-50">
-                  {/* Profile Header */}
-                  <div className="p-6 border-b">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                        <User className="w-6 h-6 text-gray-500" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">
-                          {displayName}
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Quick Actions */}
-                  <div className="grid grid-cols-3 gap-4 p-4 border-b">
-                    <button className="flex flex-col items-center gap-2 p-3 hover:bg-gray-50 rounded-lg transition">
-                      <Wallet className="w-5 h-5 text-gray-600" />
-                      <Link href="/wallet">
-                        <span className="text-xs text-gray-700">Wallet</span>
-                      </Link>
-                    </button>
-                    <button className="flex flex-col items-center gap-2 p-3 hover:bg-gray-50 rounded-lg transition">
-                      <Link href="/saved">
-                        <Bookmark className="w-5 h-5 text-gray-600" />
-                        <span className="text-xs text-gray-700">Saved</span>
-                      </Link>
-                    </button>
-                    <button className="flex flex-col items-center gap-2 p-3 hover:bg-gray-50 rounded-lg transition">
-                      <Link href="/support">
-                        <HelpCircle className="w-5 h-5 text-gray-600" />
-                        <span className="text-xs text-gray-700">Support</span>
-                      </Link>
-                    </button>
-                  </div>
-
-                  {/* Menu Items */}
-                  <div className="py-2">
-                     <Link href="/manage">
-                    <MenuItem icon={<User />} label="Manage account" />
-                     </Link>
-                    <Link href="/request-ride">
-                      <MenuItem icon={<Route />} label="Book a ride" />
-                    </Link>
-                    <Link href="/my-rides">
-                      <MenuItem icon={<Car />} label="My Rides" />
-                    </Link>
-                    <Link href="/drive-and-earn">
-                      <MenuItem icon={<Car />} label="Drive & Earn" />
-                    </Link>
-                    <Link href="/notifications">
-                      <MenuItem icon={<Bell />} label="Notifications" />
-                    </Link>
-                    <Link href="/safety">
-                      <MenuItem icon={<Shield />} label="Safety" />
-                    </Link>
-                    <Link href="/about">
-                      <MenuItem icon={<Info />} label="About" />
-                    </Link>
-                  </div>
-
-                  {/* Sign Out */}
-                  <div className="border-t p-2">
-                    <button
-                      onClick={logout}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition"
-                    >
-                      <LogOut className="w-5 h-5" />
-                      <span className="font-medium">Sign out</span>
-                    </button>
-                  </div>
-                </div>
+                {/* Profile Dialog Dropdown */}
+                <ProfilePopover
+                  isOpen={isProfileOpen}
+                  onClose={() => setIsProfileOpen(false)}
+                />
               </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>
