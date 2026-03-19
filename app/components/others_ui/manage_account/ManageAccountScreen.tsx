@@ -1,16 +1,17 @@
 "use client";
-
 import React from 'react';
 import { User, Key, Bell, Shield, Globe, FileText, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function ManageAccountScreen() {
+    const router = useRouter();
     const menuItems = [
-        { icon: User, label: "Personal info" },
-        { icon: Key, label: "Login & Security" },
-        { icon: Bell, label: "Notifications" },
-        { icon: Shield, label: "Safety & Privacy" },
-        { icon: Globe, label: "Language" },
-        { icon: FileText, label: "Terms and conditions" },
+        { icon: User, label: "Personal info", href: "/account/personal-info" },
+        { icon: Key, label: "Login & Security", href: "/account/login" },
+        { icon: Bell, label: "Notifications", href: "/account/notifications" },
+        { icon: Shield, label: "Safety & Privacy", href: "/account/safety" },
+        { icon: Globe, label: "Language", href: "/account/language" },
+        { icon: FileText, label: "Terms and conditions", href: "/account/terms" },
     ];
 
     return (
@@ -37,7 +38,10 @@ export default function ManageAccountScreen() {
                 <div className="bg-[#F5F5F7] rounded-[16px] flex flex-col overflow-hidden">
                     {menuItems.map((item, index) => (
                         <React.Fragment key={index}>
-                            <div className="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-200 transition-colors">
+                            <div
+                                onClick={() => router.push(item.href)}
+                                className="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-200 transition-colors"
+                            >
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-transparent">
                                         <item.icon size={20} className="text-[#0B153D]" strokeWidth={1.5} />
@@ -48,7 +52,7 @@ export default function ManageAccountScreen() {
                             </div>
                             {/* Divider except for last item */}
                             {index < menuItems.length - 1 && (
-                                <div className="w-full h-[1px] bg-gray-200 ml-16"></div>
+                                <div className="w-full h-[1px] bg-gray-200 ml-11"></div>
                             )}
                         </React.Fragment>
                     ))}

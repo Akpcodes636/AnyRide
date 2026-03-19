@@ -1,23 +1,17 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Globe, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function WhereToEarnScreen() {
     const [location, setLocation] = useState('Congo');
+    const router = useRouter();
 
     return (
-        <div className="w-full max-w-5xl mx-auto bg-white overflow-hidden font-sans">
-            {/* Header */}
-            <header className="flex justify-between items-center p-5 md:px-8 border-b border-gray-50">
-                <img src="/images/Anyride.png" alt="AnyRide Logo" className="h-7 object-contain" />
-                <button className="flex items-center gap-2 bg-[#F5F5F7] px-4 py-2 rounded-full text-[14px] font-semibold text-[#0B153D] hover:bg-gray-200 transition-colors">
-                    <Globe size={16} /> EN <ChevronDown size={14} />
-                </button>
-            </header>
-
+        <div className="w-full max-w-5xl mx-auto bg-white font-sans">
             {/* Content Box */}
-            <div className="flex flex-col items-center justify-center p-8 py-20 md:py-32 max-w-lg mx-auto w-full text-center">
+            <div className="flex flex-col items-center justify-center p-8 py-20 md:pt-16 md:pb-32 max-w-lg mx-auto w-full text-center">
                 <h1 className="text-[36px] md:text-[45px] font-extrabold text-[#0B153D] leading-[1.15] mb-12">
                     Where will you<br />like to Earn?
                 </h1>
@@ -43,10 +37,15 @@ export default function WhereToEarnScreen() {
                     </div>
                 </div>
 
-                <button className="bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-4 px-12 rounded-[12px] w-full text-[15px] transition-colors shadow-md">
+                <button
+                    onClick={() => router.push("/drivers/driver-requirements")}
+                    className="bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-4 px-12 rounded-[12px] w-full text-[15px] transition-colors shadow-md"
+                >
                     Continue
                 </button>
             </div>
         </div>
     );
 }
+
+

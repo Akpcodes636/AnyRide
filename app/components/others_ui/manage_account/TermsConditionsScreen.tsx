@@ -1,16 +1,17 @@
 "use client";
-
 import React from 'react';
 import { User, Key, Bell, Shield, Globe, FileText, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function TermsConditionsScreen() {
+    const router = useRouter();
     const menuItems = [
-        { icon: User, label: "Personal info" },
-        { icon: Key, label: "Login & Security" },
-        { icon: Bell, label: "Notifications" },
-        { icon: Shield, label: "Safety & Privacy" },
-        { icon: Globe, label: "Language" },
-        { icon: FileText, label: "Terms and conditions", active: true },
+        { icon: User, label: "Personal info", href: "/account/personal-info" },
+        { icon: Key, label: "Login & Security", href: "/account/login" },
+        { icon: Bell, label: "Notifications", href: "/account/notifications" },
+        { icon: Shield, label: "Safety & Privacy", href: "/account/safety" },
+        { icon: Globe, label: "Language", href: "/account/language" },
+        { icon: FileText, label: "Terms and conditions", active: true, href: "/account/terms" },
     ];
 
     return (
@@ -25,7 +26,10 @@ export default function TermsConditionsScreen() {
                 <div className="w-full md:w-[320px] bg-[#F5F5F7] rounded-[16px] flex flex-col overflow-hidden h-fit flex-shrink-0">
                     {menuItems.map((item, index) => (
                         <React.Fragment key={index}>
-                            <div className={`flex items-center justify-between px-6 py-4 cursor-pointer transition-colors ${item.active ? 'bg-[#EAEBEF]' : 'hover:bg-gray-200'}`}>
+                            <div
+                                onClick={() => router.push(item.href || "#")}
+                                className={`flex items-center justify-between px-6 py-4 cursor-pointer transition-colors ${item.active ? 'bg-[#EAEBEF]' : 'hover:bg-gray-200'}`}
+                            >
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-transparent text-[#0B153D]">
                                         <item.icon size={20} className="" strokeWidth={1.5} />

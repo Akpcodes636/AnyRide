@@ -1,50 +1,90 @@
 "use client";
-import DriverInfo from "@/app/components/(drivers)/AcceptRideCard/DriverInfo";
-import PaymentInfo from "@/app/components/(drivers)/AcceptRideCard/PaymentInfo";
-import RideActions from "@/app/components/(drivers)/AcceptRideCard/RideActions";
-import RideHeader from "@/app/components/(drivers)/AcceptRideCard/RideHeader";
-import RouteDetails from "@/app/components/(drivers)/AcceptRideCard/RouteDetails";
-import FundWallet from "@/app/components/modals/FundWallet";
-import LocationSearchInput from "@/app/components/ui/LocationSearchInput";
-import { useTripModal } from "@/store/Modals";
-import { Coords } from "@/types";
-import Image from "next/image";
-import { useState } from "react";
 
-export default function AcceptRideCard() {
-  const TOTAL = 20;
+import React, { useState } from 'react';
+import AcceptWithScreen from '@/app/components/others_ui/driver_trip/AcceptWithScreen';
+import AwaitingResponseScreen from '@/app/components/others_ui/driver_trip/AwaitingResponseScreen';
+import RiderAssignedScreen from '@/app/components/others_ui/driver_trip/RiderAssignedScreen';
+import TopUpWalletModal from '@/app/components/others_ui/driver_trip/TopUpWalletModal';
+import OnTripScreen from '@/app/components/others_ui/driver_trip/OnTripScreen';
+import TripCompletedModal from '@/app/components/others_ui/driver_trip/TripCompletedModal';
+import { useRouter } from 'next/navigation';
 
-  const [seconds] = useState(TOTAL);
-  
+type TripStep = 'incoming' | 'awaiting' | 'assigned' | 'on-trip';
 
-  const [paymentMethod, setPaymentMethod] = useState<"cash" | "inapp">("inapp");
-  const [requestState, setRequestState] = useState<"incoming" | "waiting" |"confirmed">("incoming");
+export default function IncomingRequestPage() {
+  const [currentStep, setCurrentStep] = useState<TripStep>('incoming');
+  const [isTopUpOpen, setIsTopUpOpen] = useState(false);
+  const [isCompletedOpen, setIsCompletedOpen] = useState(false);
+  const router = useRouter();
 
-  const { modal, openModal } = useTripModal();
-  console.log("Current modal:", modal, openModal);
+  const handleAccept = () => {
+    setCurrentStep('awaiting');
+  };
 
-  const pct = (seconds / TOTAL) * 100;
-  const color = seconds > 10 ? "#1A3FD8" : seconds > 5 ? "#F59E0B" : "#EF4444";
-  
+  const handleDecline = () => {
+    router.push("/drivers/availability");
+  };
+
+  const handleAwaitingToAssigned = () => {
+    setCurrentStep('assigned');
+  };
+
+  const handlePickUp = () => {
+    setCurrentStep('on-trip');
+  };
+
+  const handleEndTrip = () => {
+    setIsCompletedOpen(true);
+  };
+
+  const handleFinish = () => {
+    setIsCompletedOpen(false);
+    router.push("/drivers/availability");
+  };
+
+  const resetFlow = () => {
+    setCurrentStep('incoming');
+  };
+
   return (
-    <div className="flex items-center justify-center">
-      <div className="bg-white rounded-2xl overflow-hidden w-full max-w-[512px] shadow-[0px_4px_20px_0px_#00000017]">
-        {/* Header */}
-        <RideHeader />
+    <div className="relative">
+      {currentStep === 'incoming' && (
+        <AcceptWithScreen
+          onAccept={handleAccept}
+          onDecline={handleDecline}
+          onToggleTopUp={() => setIsTopUpOpen(true)}
+        />
+      )}
 
-        {/* Driver */}
-        <DriverInfo />
+      {currentStep === 'awaiting' && (
+        <AwaitingResponseScreen
+          onNext={handleAwaitingToAssigned}
+        />
+      )}
 
-        {/* Route */}
-        <RouteDetails />
+      {currentStep === 'assigned' && (
+        <RiderAssignedScreen
+          onBack={resetFlow}
+          onPickUp={handlePickUp}
+        />
+      )}
 
-        {/* Payment */}
-        <PaymentInfo />
+      {currentStep === 'on-trip' && (
+        <OnTripScreen
+          onEndTrip={handleEndTrip}
+        />
+      )}
 
-        {/* Buttons */}
-        <RideActions />
-        
-      </div>
+      {/* Modals */}
+      <TopUpWalletModal
+        isOpen={isTopUpOpen}
+        onClose={() => setIsTopUpOpen(false)}
+      />
+
+      <TripCompletedModal
+        isOpen={isCompletedOpen}
+        onClose={handleFinish}
+      />
     </div>
   );
 }

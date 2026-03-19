@@ -1,10 +1,11 @@
 "use client";
-
 import React, { useState } from 'react';
 import { Wallet } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function WalletScreen() {
     const [cashEnabled, setCashEnabled] = useState(true);
+    const router = useRouter();
 
     return (
         <div className="w-full max-w-5xl mx-auto p-4 md:p-8 font-sans">
@@ -12,7 +13,10 @@ export default function WalletScreen() {
             {/* Top Header */}
             <div className="flex justify-between items-start mb-8">
                 <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#333333] leading-none mb-10">Wallet</h2>
-                <button className="text-[#A20602] font-semibold text-[15px] hover:underline mt-2">
+                <button
+                    onClick={() => router.push("/wallet/spending-trends")}
+                    className="text-[#A20602] font-semibold text-[15px] hover:underline mt-2"
+                >
                     See trends
                 </button>
             </div>
@@ -37,8 +41,17 @@ export default function WalletScreen() {
                         </div>
                     </div>
 
-                    <button className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-[18px] px-6 rounded-[12px] text-[16px] transition-colors shadow-sm">
+                    <button
+                        onClick={() => router.push("/wallet/add-funds")}
+                        className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-[18px] px-6 rounded-[12px] text-[16px] transition-colors shadow-sm"
+                    >
                         Add funds
+                    </button>
+                    <button
+                        onClick={() => router.push("/wallet/spending-trends")}
+                        className="w-full bg-[#F5F5F7] hover:bg-[#EAEBEF] text-[#333333] font-semibold py-[18px] px-6 rounded-[12px] text-[16px] transition-colors shadow-sm"
+                    >
+                        Spending trends
                     </button>
                 </div>
 

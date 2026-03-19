@@ -1,18 +1,19 @@
 "use client";
-
 import React, { useState } from 'react';
 import { User, Key, Bell, Shield, Globe, FileText, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function LoginSecurityScreen() {
     const [biometricEnabled, setBiometricEnabled] = useState(true);
+    const router = useRouter();
 
     const menuItems = [
-        { icon: User, label: "Personal info" },
-        { icon: Key, label: "Login & Security", active: true },
-        { icon: Bell, label: "Notifications" },
-        { icon: Shield, label: "Safety & Privacy" },
-        { icon: Globe, label: "Language" },
-        { icon: FileText, label: "Terms and conditions" },
+        { icon: User, label: "Personal info", href: "/account/personal-info" },
+        { icon: Key, label: "Login & Security", active: true, href: "/account/login" },
+        { icon: Bell, label: "Notifications", href: "/account/notifications" },
+        { icon: Shield, label: "Safety & Privacy", href: "/account/safety" },
+        { icon: Globe, label: "Language", href: "/account/language" },
+        { icon: FileText, label: "Terms and conditions", href: "/account/terms" },
     ];
 
     return (
@@ -30,7 +31,10 @@ export default function LoginSecurityScreen() {
                 <div className="w-full md:w-[320px] bg-[#F5F5F7] rounded-[16px] flex flex-col overflow-hidden h-fit flex-shrink-0">
                     {menuItems.map((item, index) => (
                         <React.Fragment key={index}>
-                            <div className={`flex items-center justify-between px-6 py-4 cursor-pointer transition-colors ${item.active ? 'bg-[#EAEBEF]' : 'hover:bg-gray-200'}`}>
+                            <div
+                                onClick={() => router.push(item.href || "#")}
+                                className={`flex items-center justify-between px-6 py-4 cursor-pointer transition-colors ${item.active ? 'bg-[#EAEBEF]' : 'hover:bg-gray-200'}`}
+                            >
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-transparent text-[#0B153D]">
                                         <item.icon size={20} className="" strokeWidth={1.5} />
@@ -54,7 +58,10 @@ export default function LoginSecurityScreen() {
                     <div className="bg-[#F5F5F7] rounded-[16px] flex flex-col pt-2 pb-2 overflow-hidden">
 
                         {/* Item 1 */}
-                        <div className="flex flex-col py-5 px-6 cursor-pointer hover:bg-gray-200/50 transition-colors">
+                        <div
+                            onClick={() => router.push("/account/login/reset-password")}
+                            className="flex flex-col py-5 px-6 cursor-pointer hover:bg-gray-200/50 transition-colors"
+                        >
                             <span className="text-[16px] font-medium text-[#c62828] mb-1">Set/Change Password</span>
                             <span className="text-[13px] text-[#666666]">Create a strong password to secure your account and personal information.</span>
                         </div>

@@ -1,18 +1,19 @@
 "use client";
-
 import React, { useState } from 'react';
 import { User, Key, Bell, Shield, Globe, FileText, ChevronRight, Check } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function LanguageScreen() {
     const [selectedLanguage, setSelectedLanguage] = useState('English');
+    const router = useRouter();
 
     const menuItems = [
-        { icon: User, label: "Personal info" },
-        { icon: Key, label: "Login & Security" },
-        { icon: Bell, label: "Notifications" },
-        { icon: Shield, label: "Safety & Privacy" },
-        { icon: Globe, label: "Language", active: true },
-        { icon: FileText, label: "Terms and conditions" },
+        { icon: User, label: "Personal info", href: "/account/personal-info" },
+        { icon: Key, label: "Login & Security", href: "/account/login" },
+        { icon: Bell, label: "Notifications", href: "/account/notifications" },
+        { icon: Shield, label: "Safety & Privacy", href: "/account/safety" },
+        { icon: Globe, label: "Language", active: true, href: "/account/language" },
+        { icon: FileText, label: "Terms and conditions", href: "/account/terms" },
     ];
 
     const languages = [
@@ -34,7 +35,10 @@ export default function LanguageScreen() {
                 <div className="w-full md:w-[320px] bg-[#F5F5F7] rounded-[16px] flex flex-col overflow-hidden h-fit flex-shrink-0">
                     {menuItems.map((item, index) => (
                         <React.Fragment key={index}>
-                            <div className={`flex items-center justify-between px-6 py-4 cursor-pointer transition-colors ${item.active ? 'bg-[#EAEBEF]' : 'hover:bg-gray-200'}`}>
+                            <div
+                                onClick={() => router.push(item.href || "#")}
+                                className={`flex items-center justify-between px-6 py-4 cursor-pointer transition-colors ${item.active ? 'bg-[#EAEBEF]' : 'hover:bg-gray-200'}`}
+                            >
                                 <div className="flex items-center gap-4">
                                     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-transparent text-[#0B153D]">
                                         <item.icon size={20} className="" strokeWidth={1.5} />
@@ -67,8 +71,8 @@ export default function LanguageScreen() {
                                 <span className="text-[15px] font-medium text-[#0B153D]">{lang}</span>
 
                                 <div className={`w-5 h-5 rounded-full flex items-center justify-center transition-colors ${selectedLanguage === lang
-                                        ? 'bg-[#0B153D] border-none'
-                                        : 'border border-gray-300 bg-transparent group-hover:border-gray-400'
+                                    ? 'bg-[#0B153D] border-none'
+                                    : 'border border-gray-300 bg-transparent group-hover:border-gray-400'
                                     }`}>
                                     {selectedLanguage === lang && (
                                         <Check size={12} className="text-white" strokeWidth={3} />

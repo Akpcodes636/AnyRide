@@ -1,14 +1,16 @@
 "use client";
-
 import React, { useState } from 'react';
 import { Wallet } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function FundWalletScreen() {
     const [amount, setAmount] = useState('');
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Funding: ", amount);
+        router.push("/wallet/add-funds/payment-method");
     };
 
     return (

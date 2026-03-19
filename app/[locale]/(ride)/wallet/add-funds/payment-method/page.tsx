@@ -1,12 +1,15 @@
 "use client";
+import React from 'react';
 import Header from "@/app/components/Header";
-import PaymentHero from "@/app/components/wallet/PaymentHero";
+import PayWithScreen from "@/app/components/others_ui/wallet_rider/PayWithScreen";
 
 export default function Page() {
   return (
-    <>
-      <Header />
-      <PaymentHero  />
-    </>
+    <div className="min-h-screen bg-white">
+      <main className="container mx-auto py-10 pt-32">
+        <Header />
+        <PayWithScreen />
+      </main>
+    </div>
   );
 }

@@ -1,14 +1,18 @@
 "use client";
-
 import React, { useState } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function PayWithScreen() {
     const [searchQuery, setSearchQuery] = useState('');
+    const router = useRouter();
 
     // Logo mockups for presentation since actual assets aren't provided
     const PaymentLogo = ({ name, color = "#333" }: { name: string, color?: string }) => (
-        <div className="flex items-center justify-center w-full h-[54px] bg-white rounded-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-gray-50/50 hover:border-gray-200 transition-colors cursor-pointer px-4">
+        <div
+            onClick={() => router.push("/wallet/add-funds/payment-method/add-card")}
+            className="flex items-center justify-center w-full h-[54px] bg-white rounded-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-gray-50/50 hover:border-gray-200 transition-colors cursor-pointer px-4"
+        >
             <span className="font-bold text-[14px] truncate" style={{ color }}>{name}</span>
         </div>
     );

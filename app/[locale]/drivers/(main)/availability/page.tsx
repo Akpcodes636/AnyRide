@@ -1,163 +1,138 @@
 "use client";
-import LocationSearchInput from "@/app/components/ui/LocationSearchInput";
-import { useTripModal } from "@/store/Modals";
-import { Coords } from "@/types";
+
+import React, { useState } from 'react';
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Navigation, MapPin, ChevronRight, Globe, ChevronDown } from 'lucide-react';
 
-
-
-export default function Page() {
+export default function AvailabilityPage() {
   const [isOnline, setIsOnline] = useState(false);
-  const [stage, setStage] = useState<number>(0);
-  const [visible, setVisible] = useState<boolean>(true);
-  const [pickup, setPickup] = useState<string>("");
-  const [destination, setDestination] = useState<string>("");
-  const [pickupCoords, setPickupCoords] = useState<Coords | null>(null);
-  const { modal, openModal } = useTripModal();
-  const router = useRouter()
+  const router = useRouter();
 
   const requests = [
     {
       id: 1,
       name: "Mike Brown",
       code: "CF 1084",
-      pickup: "4827 Willowbrook Lane, OH 45056",
-      dropoff: "123 Main St, Springfield, IL 62701",
+      pickup: "4827 Willowbrook Lane, OH 44126",
+      dropoff: "123 Main St, Springfield, IL 62704",
     },
     {
       id: 2,
       name: "Mike Brown",
       code: "CF 1084",
-      pickup: "4827 Willowbrook Lane, OH 45056",
-      dropoff: "123 Main St, Springfield, IL 62701",
+      pickup: "4827 Willowbrook Lane, OH 44126",
+      dropoff: "123 Main St, Springfield, IL 62704",
     },
   ];
 
   return (
-    <div>
-      {isOnline ? (
-        <div>
-          <h2>You&apos;re Online</h2>
-          <p>Wait for requests...</p>
-          <button
-            onClick={() => setIsOnline(false)}
-            className="cursor-pointer rounded-full w-[129px] h-[48px] bg-[#EF4444] text-[#FFFFFF] text-[16px] mb-[24px]"
-          >
-            Go offline
-          </button>
-
-          {requests.map((req) => (
-            <div
-              key={req.id}
-              className="w-full max-w-[507px] min-h-[200px] rounded-[18px] bg-white shadow-[0_4px_16px_#00000026] mb-4 p-4 border-b-4 border-[#A20602]"
-            >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-3">
-                {/* Left side */}
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full overflow-hidden">
-                    <Image
-                      src="https://i.pravatar.cc/50"
-                      width={32}
-                      height={32}
-                      className="w-full h-full object-cover"
-                      alt="Driver"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="flex items-center justify-center gap-2">
-
-                    <div className="w-[6px] h-[6px] bg-[#22C553] rounded-full">
-                        .
-                    </div>
-                    <p className="text-[10px] font-light text-[#02093A]">
-                      New Request
-                    </p>
-                    </div>
-
-                    <h3 className="text-[#02093A] font-bold text-[14px] leading-[120%]">
-                      {req.name}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Right side */}
-                <p className="text-[#010C4A] font-bold text-[20px]">
-                  {req.code}
-                </p>
-              </div>
-
-              {/* Location section */}
-              <div className="bg-[#F5F5F7] p-3 rounded-lg space-y-2  ">
-                <div className="relative w-full">
-                  <LocationSearchInput
-                    value={pickup}
-                    onChange={setPickup}
-                    onSelect={(address: string, lat: number, lng: number) => {
-                      setPickup(address);
-                      setPickupCoords({ lat, lon: lng });
-                    }}
-                    placeholder="4827 Willowbrook Lane, OH 44126"
-                    className="w-full h-12 text-[12px] pl-9  border-b border-[#E6E6E6] focus:border-b-[#A20602] focus:outline-none"
-                    label="Pickup"
-                  />
-
-                  <Image
-                    src="/images/Map.png"
-                    alt="Map Icon"
-                    width={14}
-                    height={14}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
-                  />
-                </div>
-
-                <div className="relative w-full">
-                  <LocationSearchInput
-                    value={pickup}
-                    onChange={setPickup}
-                    onSelect={(address, lat, lng) => {
-                      setPickup(address);
-                      setPickupCoords({ lat, lon: lng });
-                    }}
-                    placeholder="123 Main St, Springfield, IL 62704"
-                    className="w-full h-12 text-[12px] pl-9  border-[#E6E6E6] focus:border-b-[#A20602] focus:outline-none"
-                    label="Destination"
-                  />
-
-                  <Image
-                    src="/images/Maps.png"
-                    alt="Map Icon"
-                    width={14}
-                    height={14}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
-                  />
-                </div>
-              </div>
-
-              {/* Button */}
-              <button className="w-full bg-[#02093A] text-white rounded-lg py-2 mt-3 cursor-pointer" onClick={()=> router.push("/drivers/incoming-request")}>
-                View request
-              </button>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div>
-          <h2>You&apos;re Offline</h2>
-          <p className="text-[18px] text-[#02093A] font-normal leading-[160%] mb-[17px]">
+    <div className="w-full max-w-xl mx-auto py-4 md:py-8 font-sans">
+      {!isOnline ? (
+        /* --- OFFLINE STATE --- */
+        <div className="flex flex-col items-start">
+          <h1 className="text-[40px] font-extrabold text-[#0B153D] leading-none mb-3">
+            You're Offline
+          </h1>
+          <p className="text-[15px] font-medium text-[#666666] mb-8">
             Go online to be seen by riders.
           </p>
           <button
             onClick={() => setIsOnline(true)}
-            className="cursor-pointer rounded-full w-[129px] h-[48px] bg-[#22C553] text-[16px] leading-[160%] text-center text-white"
+            className="bg-[#22C553] hover:bg-[#1faa4b] text-white font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors shadow-sm mb-12"
           >
             Go online
           </button>
+
+          {/* Empty State Cards / Placeholders */}
+          <div className="w-full flex flex-col gap-4">
+            <div className="w-full h-40 bg-[#F5F5F7] rounded-[20px]"></div>
+            <div className="w-full h-40 bg-[#F5F5F7] rounded-[20px]"></div>
+          </div>
+        </div>
+      ) : (
+        /* --- ONLINE STATE --- */
+        <div className="flex flex-col items-start">
+          <h1 className="text-[40px] font-extrabold text-[#0B153D] leading-none mb-3">
+            You're Online
+          </h1>
+          <p className="text-[15px] font-medium text-[#666666] mb-8">
+            Wait for requests...
+          </p>
+          <button
+            onClick={() => setIsOnline(false)}
+            className="bg-[#E53935] hover:bg-[#d4312d] text-white font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors shadow-sm mb-12"
+          >
+            Go offline
+          </button>
+
+          {/* Request Cards */}
+          <div className="w-full flex flex-col gap-5">
+            {requests.map((req) => (
+              <div key={req.id} className="w-full bg-white rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden relative">
+                <div className="p-5">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-100 shrink-0">
+                        <Image
+                          src="/images/Customer-1.jpg"
+                          width={40}
+                          height={40}
+                          className="w-full h-full object-cover"
+                          alt="Rider"
+                          onError={(e) => { e.currentTarget.src = "/images/About-rider.jpg"; }}
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-1.5 h-1.5 bg-[#22C553] rounded-full"></div>
+                          <span className="text-[10px] font-bold text-[#A0A0A0] uppercase tracking-wider leading-none">New Request</span>
+                        </div>
+                        <span className="text-[14px] font-extrabold text-[#333333]">{req.name}</span>
+                      </div>
+                    </div>
+                    <span className="text-[18px] font-bold text-[#0B153D]">{req.code}</span>
+                  </div>
+
+                  {/* Location details */}
+                  <div className="flex flex-col gap-5 mb-6 pl-1 pr-4">
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-[#A0A0A0]">
+                        <Navigation size={14} className="rotate-45" />
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-[10px] font-bold text-[#A0A0A0] leading-none uppercase tracking-wide">Pickup</span>
+                        <span className="text-[12px] font-medium text-[#666666]">{req.pickup}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="mt-1 text-[#0B153D]">
+                        <MapPin size={14} />
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-[10px] font-bold text-[#A0A0A0] leading-none uppercase tracking-wide">Destination</span>
+                        <span className="text-[12px] font-medium text-[#666666]">{req.dropoff}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => router.push("/drivers/incoming-request")}
+                    className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold py-3.5 rounded-[12px] text-[15px] transition-colors"
+                  >
+                    View request
+                  </button>
+                </div>
+                {/* Red accent at the bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#E53935]/10">
+                  <div className="h-full w-1/3 bg-[#E53935]"></div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
   );
 }
+

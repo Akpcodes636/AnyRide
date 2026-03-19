@@ -1,188 +1,164 @@
 "use client";
-import { useState } from "react";
-import {  Plus } from "lucide-react";
+import React, { useState } from "react";
+import { Plus, Navigation, Star, Banknote } from "lucide-react";
 import Image from "next/image";
 import { useRideTypes } from "@/hooks/useAuthHook";
 import Loader from "../ui/Loader";
 import { useRouter } from "next/navigation";
 import { useRideStore } from "@/store/rideStore";
 
-interface VehicleOption {
-  vehicle_type: string;
-  icon_url: string;
-  formatted_fare: string;
-  estimated_duration_minutes: number;
-  capacity: string;
-}
-
-const RideETA = ({
-  estimated_duration_minutes,
-}: {
-  estimated_duration_minutes: number;
-}) => {
-  return (
-    <p className="text-[12px] text-[#666666]">
-      {estimated_duration_minutes} min away
-    </p>
-  );
+const RideETA = ({ estimated_duration_minutes }: { estimated_duration_minutes: number }) => {
+  return <p className="text-[12px] text-[#666666]">{estimated_duration_minutes} min away</p>;
 };
 
 const SelectRideType = () => {
   const router = useRouter();
   const [payWithCash, setPayWithCash] = useState(true);
   const next = useRideStore((s) => s.next);
-  const [pickup, setPickup] = useState("");
-  const [enterDestination, setEnterDestination] = useState("");
+  const [pickup, setPickup] = useState("Abuja, Nigeria");
+  const [enterDestination, setEnterDestination] = useState("Lagos, Nigeria");
 
   const { data: rideTypes, isLoading, isError } = useRideTypes();
-  console.log("Ride types data:", rideTypes); // Debug log to check the structure of rideTypes
 
   const handleContinue = () => {
-    next(); // move to findingRoute
+    next();
   };
 
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-[0.9fr_2fr] max-w-full mx-auto bg-white gap-x-4">
-      {/* Header Section */}
-      <div className="mb-6">
-        <h1 className="text-[20px] md:text-[21px] font-bold text-[#1A1A1A] mb-4">
-          Enter your route
+    <div className="flex flex-col xl:flex-row gap-8 items-start">
+
+      {/* Column 1: Route Form */}
+      <div className="w-full xl:w-[45%] flex flex-col pt-4">
+        <h1 className="text-[32px] font-bold text-[#333333] mb-8 leading-tight">
+          Enter your <br className="hidden xl:block" /> route
         </h1>
 
-        {/* Route Inputs */}
-        <div className="space-y-3 mb-6">
-          <div className="relative">
-            <div className="relative">
-              <Image
-                src="/images/Map.png"
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5"
-                alt="Arrow Icon"
-                width={50}
-                height={50}
-              />
-              <input
-                type="text"
-                value={enterDestination}
-                onChange={(e) => setEnterDestination(e.target.value)}
-                placeholder="Enter destination"
-                className="w-full max-w-[550px] h-[56px] pl-10 pr-12 bg-[#F5F5F5] rounded-lg border-none text-[14px] focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-              />
-              <button className="absolute right-3 top-1/2 -translate-y-1/2">
-                <Plus className="w-5 h-5 text-[#02093A]" />
-              </button>
+        <div className="flex flex-col gap-5">
+          <div className="relative group">
+            <div className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A0A0A0] group-focus-within:text-[#0B153D] transition-colors">
+              <Navigation size={18} className="rotate-45" />
             </div>
+            <input
+              type="text"
+              value={pickup}
+              onChange={(e) => setPickup(e.target.value)}
+              placeholder="Pickup"
+              className="w-full h-16 bg-[#F5F5F7] rounded-[16px] pl-14 pr-12 text-[15px] font-medium text-[#333333] border-none focus:outline-none focus:ring-1 focus:ring-[#0B153D]/10"
+            />
+            <Plus size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#333] cursor-pointer" />
           </div>
-          <div className="space-y-4">
-            <div className="relative">
-              <div className="relative">
-                <Image
-                  src="/images/Map.png"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5"
-                  alt="Arrow Icon"
-                  width={50}
-                  height={50}
-                />
-                <input
-                  type="text"
-                  value={pickup}
-                  onChange={(e) => setPickup(e.target.value)}
-                  placeholder="Enter pickup"
-                  className="w-full max-w-[550px] h-[56px] pl-10 pr-12 bg-[#F5F5F5] rounded-lg border-none text-[14px] text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-                />
-                <button className="absolute right-3 top-1/2 -translate-y-1/2">
-                  <Plus className="w-5 h-5 text-[#02093A]" />
-                </button>
-              </div>
+
+          <div className="relative group">
+            <div className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A0A0A0] group-focus-within:text-[#0B153D] transition-colors">
+              <Navigation size={18} className="rotate-45" />
             </div>
+            <input
+              type="text"
+              value={enterDestination}
+              onChange={(e) => setEnterDestination(e.target.value)}
+              placeholder="Destination"
+              className="w-full h-16 bg-[#F5F5F7] rounded-[16px] pl-14 pr-12 text-[15px] font-medium text-[#333333] border-none focus:outline-none focus:ring-1 focus:ring-[#0B153D]/10"
+            />
+            <Plus size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#333] cursor-pointer" />
           </div>
         </div>
       </div>
 
-      {/* Select Ride Type Section */}
-      <div className="bg-[#F5F5F5] rounded-[20px] p-4">
-        <h2 className="text-[16px] font-semibold text-[#1A1A1A] mb-4">
+      {/* Column 2: Select Ride Type List */}
+      <div className="w-full xl:w-[55%] bg-[#F5F5F7] rounded-[32px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col min-h-[600px]">
+        <h2 className="text-[22px] font-bold text-[#333333] mb-8">
           Select ride type
         </h2>
 
-        {/* Ride Options */}
-        {isLoading && (
-          <div>
-            <Loader />
-          </div>
-        )}
+        <div className="flex flex-col gap-4 flex-1">
+          {isLoading && <Loader />}
+          {isError && <p className="text-red-500 text-sm py-4">Failed to load ride types</p>}
 
-        {isError && (
-          <p className="text-[14px] text-[#E53935] text-center py-6">
-            Failed to load ride types. Please try again.
-          </p>
-        )}
-
-        {Array.isArray(rideTypes) &&
-          rideTypes.map((v, i) => (
+          {Array.isArray(rideTypes) ? rideTypes.map((v, i) => (
             <div
               key={i}
-              className="flex justify-between items-center bg-[#F5F5F7] border-2 border-transparent rounded-xl p-4 hover:border-[#1A1A1A] transition-all cursor-pointer"
+              className="flex items-center justify-between bg-white p-4 lg:p-5 rounded-[20px] border-2 border-transparent hover:border-[#0B153D] transition-all cursor-pointer group shadow-sm hover:shadow-md"
             >
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/images/_car.png"
-                  alt={v.name}
-                  className="w-12 h-12 object-contain"
-                  width={48}
-                  height={48}
-                />
+              <div className="flex items-center gap-4 lg:gap-6">
+                <div className="w-16 h-16 bg-[#F5F5F7] rounded-2xl flex items-center justify-center overflow-hidden group-hover:bg-[#EAEBEF] transition-colors">
+                  <Image
+                    src={v.vehicle_type === "Motorcycle/Moto" ? "/images/_moto.png" : "/images/_car.png"}
+                    alt={v.name}
+                    width={56}
+                    height={56}
+                    className="object-contain"
+                  />
+                </div>
                 <div>
-                  <p className="font-semibold text-[14px] text-[#1A1A1A]">
-                    {v.name}
-                  </p>
-                  <p className="text-[12px] text-[#666666]">{v.description}</p>
+                  <h4 className="text-[16px] font-bold text-[#0B153D] mb-1">{v.name}</h4>
+                  <div className="flex items-center gap-2.5 text-[13px] text-[#666666]">
+                    <span>{v.estimated_duration_minutes || 10}min</span>
+                    <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
+                    <span>{v.capacity || '4 seats'}</span>
+                    <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
+                    <span className="flex items-center gap-1 font-bold text-[#333]"> 4.8 <Star size={12} fill="#FFB800" className="text-[#FFB800]" /></span>
+                  </div>
                 </div>
               </div>
-              <p className="font-bold text-[16px] text-[#1A1A1A]">
-                FC{v.base_price}
-              </p>
+              <span className="text-[18px] font-black text-[#0B153D] tracking-tight">FC{v.base_price}</span>
             </div>
-          ))}
-
-        {/* Pay with Cash Toggle */}
-        <div className="bg-[#FFE6E6] rounded-lg px-4 py-3 flex items-center justify-between mt-4">
-          <div className="flex items-center gap-2">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-[#E53935]"
-            >
-              <path
-                d="M17.5 5H2.5C1.67 5 1 5.67 1 6.5V13.5C1 14.33 1.67 15 2.5 15H17.5C18.33 15 19 14.33 19 13.5V6.5C19 5.67 18.33 5 17.5 5Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-            </svg>
-            <p className="text-[14px] font-medium text-[#E53935]">
-              Pay with Cash
-            </p>
-          </div>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              className="sr-only peer"
-              checked={payWithCash}
-              onChange={(e) => setPayWithCash(e.target.checked)}
-            />
-            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#E53935]"></div>
-          </label>
+          )) : (
+            // Enhanced Fallback UI matching screenshot
+            [
+              { name: 'Premium / Black', price: '76', img: '/images/_car.png' },
+              { name: 'Shared / Pool', price: '76', img: '/images/_car.png' },
+              { name: 'Comfort', price: '76', img: '/images/_car.png' },
+              { name: 'Moto / Bike', price: '76', img: '/images/_moto.png' },
+            ].map((v, i) => (
+              <div key={i} className="flex items-center justify-between bg-white p-4 lg:p-5 rounded-[20px] border-2 border-transparent hover:border-[#0B153D] transition-all cursor-pointer group shadow-sm hover:shadow-md">
+                <div className="flex items-center gap-4 lg:gap-6">
+                  <div className="w-16 h-16 bg-[#F5F5F7] rounded-2xl flex items-center justify-center overflow-hidden group-hover:bg-[#EAEBEF] transition-colors">
+                    <img src={v.img} alt={v.name} className="w-12 h-12 object-contain" />
+                  </div>
+                  <div>
+                    <h4 className="text-[16px] font-bold text-[#0B153D] mb-1">{v.name}</h4>
+                    <div className="flex items-center gap-2.5 text-[13px] text-[#666666]">
+                      <span>10min</span>
+                      <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
+                      <span>3 seats</span>
+                      <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
+                      <span className="flex items-center gap-1 font-bold text-[#333]"> 4.8 <Star size={12} fill="#FFB800" className="text-[#FFB800]" /></span>
+                    </div>
+                  </div>
+                </div>
+                <span className="text-[18px] font-black text-[#0B153D] tracking-tight">FC{v.price}</span>
+              </div>
+            ))
+          )}
         </div>
 
-        {/* Request Ride Button */}
-        <button
-          onClick={handleContinue}
-          className="w-full bg-[#02093A] text-white py-4 rounded-lg font-semibold text-[16px] mt-4 hover:bg-[#030B4D] transition-colors cursor-pointer"
-        >
-          Request ride
-        </button>
+        {/* Bottom Panel */}
+        <div className="mt-8 space-y-5">
+          <div className="flex items-center justify-between bg-[#FFF4F4] px-5 py-4 rounded-[16px] border border-[#FFE6E6]">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#E53935] flex items-center justify-center text-white shadow-sm">
+                <Banknote size={20} />
+              </div>
+              <span className="text-[15px] font-extrabold text-[#E53935]">Pay with Cash</span>
+            </div>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={payWithCash}
+                onChange={(e) => setPayWithCash(e.target.checked)}
+              />
+              <div className="w-12 h-6.5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5.5 after:w-5.5 after:transition-all peer-checked:bg-[#E53935]"></div>
+            </label>
+          </div>
+
+          <button
+            onClick={handleContinue}
+            className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white py-5 rounded-[16px] font-bold text-[17px] transition-all shadow-lg active:scale-[0.98]"
+          >
+            Request ride
+          </button>
+        </div>
       </div>
     </div>
   );
