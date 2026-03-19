@@ -209,5 +209,24 @@
   box-shadow: none !important;
   border-color: #000000 !important;
 }
+
+
+.dropDown {
+  display: none;
+}
+
+.items:hover .dropDown {
+  display: block;
+}
+
+/* in your global CSS file */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, Edge */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* for IE and Edge */
+  scrollbar-width: none;  /* for Firefox */
+}
+
 }
 

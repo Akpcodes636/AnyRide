@@ -17,6 +17,7 @@ interface AuthUser {
   email: string;
   phonenumber?: string;
   profile_image_url?: string;
+  userId: string;
 }
 
 interface DecodedToken {
@@ -30,6 +31,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (accessToken: string, refreshToken: string) => Promise<void>;
   logout: () => void;
+  setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>; 
 }
 
 /* ================= CONTEXT ================= */
@@ -132,6 +134,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         isAuthenticated: !!user,
         login,
         logout,
+        setUser 
       }}
     >
       {children}

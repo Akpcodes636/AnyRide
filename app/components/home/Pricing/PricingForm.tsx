@@ -27,7 +27,7 @@ export default function PricingForm() {
   const t = useTranslations("HomePage.pricing.form");
   const router = useRouter();
 
-  const gotoWaitlist = () => router.push("/waitlist");
+  const gotoWaitlist = () => router.push("/login");
 
   /* ------------------ GOOGLE MAPS LOADER ------------------ */
   const { isLoaded } = useJsApiLoader({

@@ -38,7 +38,7 @@ const PinForm: React.FC<PinFormProps> = ({
         pinArray[5] || "",
       ];
     }
-    return ["", "", "", "", "", ""];
+    return ["", "", "", "", "",""];
   }, [value]);
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const PinForm: React.FC<PinFormProps> = ({
 
   return (
     <div>
-      <div className="flex justify-center gap-4 mb-4">
+      <div className="flex justify-center gap-2 md:gap-2 lg:gap-4 mb-4">
         {pin.map((pinValue, index) => (
           <input
             key={index}
@@ -98,7 +98,7 @@ const PinForm: React.FC<PinFormProps> = ({
               if (/^\d?$/.test(val)) handleChange(index, val);
             }}
             onKeyDown={(e) => handleKeyDown(index, e)}
-            className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-[16px] border border-[#E6E6E7] text-center text-2xl font-bold focus:border-[#010C4A] outline-none transition-colors"
+            className="w-full max-w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-[16px] border border-[#E6E6E7] text-center text-2xl font-bold focus:border-[#010C4A] outline-none transition-colors"
           />
         ))}
       </div>
@@ -107,7 +107,7 @@ const PinForm: React.FC<PinFormProps> = ({
         <p className="text-red-500 text-sm text-center mb-4">{error}</p>
       )}
 
-      <Button
+      {/* <Button
         style="primary"
         css="w-full !bg-[#010C4A] text-white mt-8"
         type="button"
@@ -116,7 +116,7 @@ const PinForm: React.FC<PinFormProps> = ({
         disabled={isLoading || pin.includes("")}
       >
         {buttonText}
-      </Button>
+      </Button> */}
     </div>
   );
 };

@@ -60,18 +60,42 @@ export default function LocationSearchInput({
 
   // Initialize Google Services
   useEffect(() => {
-    if (window.google && window.google.maps && window.google.maps.places) {
-      if (!autocompleteService.current) {
-        autocompleteService.current =
-          new window.google.maps.places.AutocompleteService();
+    const initializeServices = () => {
+      if (window.google && window.google.maps && window.google.maps.places) {
+        try {
+          if (!autocompleteService.current) {
+            autocompleteService.current =
+              new window.google.maps.places.AutocompleteService();
+          }
+          if (!placesService.current) {
+            // PlacesService requires a DOM node, even if we don't use it for map display
+            const dummyNode = document.createElement("div");
+            placesService.current = new window.google.maps.places.PlacesService(
+              dummyNode,
+            );
+          }
+        } catch (error) {
+          console.error("Error initializing Google Places services:", error);
+        }
       }
-      if (!placesService.current) {
-        // PlacesService requires a DOM node, even if we don't use it for map display
-        const dummyNode = document.createElement("div");
-        placesService.current = new window.google.maps.places.PlacesService(
-          dummyNode,
-        );
-      }
+    };
+
+    // Try to initialize immediately
+    initializeServices();
+
+    // If Google Maps isn't loaded yet, wait for it
+    if (!window.google || !window.google.maps || !window.google.maps.places) {
+      const checkInterval = setInterval(() => {
+        if (window.google && window.google.maps && window.google.maps.places) {
+          initializeServices();
+          clearInterval(checkInterval);
+        }
+      }, 100);
+
+      // Cleanup after 10 seconds to prevent infinite checking
+      setTimeout(() => clearInterval(checkInterval), 10000);
+
+      return () => clearInterval(checkInterval);
     }
   }, []); // Run once on mount, check for window.google
 
@@ -79,6 +103,18 @@ export default function LocationSearchInput({
   const fetchPredictions = useCallback((input: string) => {
     if (!input || !autocompleteService.current) {
       setPredictions([]);
+      // Try to reinitialize services if they're not available
+      if (window.google && window.google.maps && window.google.maps.places) {
+        try {
+          autocompleteService.current = new window.google.maps.places.AutocompleteService();
+          if (!placesService.current) {
+            const dummyNode = document.createElement("div");
+            placesService.current = new window.google.maps.places.PlacesService(dummyNode);
+          }
+        } catch (error) {
+          console.error("Error reinitializing services:", error);
+        }
+      }
       return;
     }
 
@@ -103,11 +139,14 @@ export default function LocationSearchInput({
             setIsOpen(true);
           } else {
             setPredictions([]);
+            setIsOpen(false);
           }
         },
       );
     } catch (error) {
       console.error("Error fetching predictions:", error);
+      setPredictions([]);
+      setIsOpen(false);
     }
   }, []);
 
@@ -115,8 +154,32 @@ export default function LocationSearchInput({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVal = e.target.value;
     onChange(newVal);
+    
+    // Only fetch predictions if Google services are available
     if (newVal.length > 2) {
-      fetchPredictions(newVal);
+      if (autocompleteService.current) {
+        fetchPredictions(newVal);
+      } else {
+        // Try to initialize services again if they're not available
+        if (window.google && window.google.maps && window.google.maps.places) {
+          try {
+            autocompleteService.current = new window.google.maps.places.AutocompleteService();
+            if (!placesService.current) {
+              const dummyNode = document.createElement("div");
+              placesService.current = new window.google.maps.places.PlacesService(dummyNode);
+            }
+            // Now try to fetch predictions
+            fetchPredictions(newVal);
+          } catch (error) {
+            console.error("Error initializing services on input:", error);
+            // Still allow manual input even if autocomplete fails
+            setIsOpen(false);
+          }
+        } else {
+          // Google Maps not loaded, allow manual input
+          setIsOpen(false);
+        }
+      }
     } else {
       setIsOpen(false);
     }

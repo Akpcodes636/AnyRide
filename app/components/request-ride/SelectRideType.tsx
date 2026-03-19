@@ -1,165 +1,210 @@
 "use client";
-import React, { useState } from "react";
-import { Plus, Navigation, Star, Banknote } from "lucide-react";
-import Image from "next/image";
-import { useRideTypes } from "@/hooks/useAuthHook";
-import Loader from "../ui/Loader";
-import { useRouter } from "next/navigation";
-import { useRideStore } from "@/store/rideStore";
 
-const RideETA = ({ estimated_duration_minutes }: { estimated_duration_minutes: number }) => {
-  return <p className="text-[12px] text-[#666666]">{estimated_duration_minutes} min away</p>;
-};
+import { useState } from "react";
+import { Plus, ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import { useRideStore } from "@/store/rideStore";
+import { useRideTypes } from "@/hooks/useRideHooks";
+import Loader from "../ui/Loader";
+import { FareVehicleOption } from "@/types";
 
 const SelectRideType = () => {
-  const router = useRouter();
-  const [payWithCash, setPayWithCash] = useState(true);
   const next = useRideStore((s) => s.next);
-  const [pickup, setPickup] = useState("Abuja, Nigeria");
-  const [enterDestination, setEnterDestination] = useState("Lagos, Nigeria");
+  const back = useRideStore((s) => s.back);
+  const setRideData = useRideStore((s) => s.setRideData);
+  const fareEstimate = useRideStore((s) => s.rideData.fareEstimate);
+  const pickup = useRideStore((s) => s.rideData.pickup);
+  const destination = useRideStore((s) => s.rideData.destination);
+
+  const [payWithCash, setPayWithCash] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const { data: rideTypes, isLoading, isError } = useRideTypes();
 
+  // Use fare estimate vehicle options if available, otherwise fall back to ride types
+  const vehicleOptions = fareEstimate?.vehicle_options || [];
+  const hasEstimate = vehicleOptions.length > 0;
+
+  const handleSelectVehicle = (index: number, option: FareVehicleOption) => {
+    setSelectedIndex(index);
+    setRideData({ selectedVehicle: option });
+  };
+
   const handleContinue = () => {
+    // Store selected vehicle if from fare estimate
+    if (hasEstimate && vehicleOptions[selectedIndex]) {
+      setRideData({ selectedVehicle: vehicleOptions[selectedIndex] });
+    }
     next();
   };
 
   return (
-    <div className="flex flex-col xl:flex-row gap-8 items-start">
+    <div className="w-full max-w-full mx-auto">
+      {/* Back button + header */}
+      <button
+        onClick={back}
+        className="flex items-center gap-1 text-[14px] text-[#666] hover:text-[#1A1A1A] mb-4 transition-colors cursor-pointer"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Back
+      </button>
 
-      {/* Column 1: Route Form */}
-      <div className="w-full xl:w-[45%] flex flex-col pt-4">
-        <h1 className="text-[32px] font-bold text-[#333333] mb-8 leading-tight">
-          Enter your <br className="hidden xl:block" /> route
-        </h1>
-
-        <div className="flex flex-col gap-5">
-          <div className="relative group">
-            <div className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A0A0A0] group-focus-within:text-[#0B153D] transition-colors">
-              <Navigation size={18} className="rotate-45" />
-            </div>
-            <input
-              type="text"
-              value={pickup}
-              onChange={(e) => setPickup(e.target.value)}
-              placeholder="Pickup"
-              className="w-full h-16 bg-[#F5F5F7] rounded-[16px] pl-14 pr-12 text-[15px] font-medium text-[#333333] border-none focus:outline-none focus:ring-1 focus:ring-[#0B153D]/10"
-            />
-            <Plus size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#333] cursor-pointer" />
+      {/* Route summary */}
+      <div className="bg-[#F5F5F7] rounded-[16px] p-4 mb-4">
+        <div className="flex gap-3">
+          <div className="flex flex-col items-center pt-1 gap-[2px]">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#02093A]" />
+            <div className="w-[2px] flex-1 bg-[#D1D1D6] min-h-[20px]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#A20602]" />
           </div>
-
-          <div className="relative group">
-            <div className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A0A0A0] group-focus-within:text-[#0B153D] transition-colors">
-              <Navigation size={18} className="rotate-45" />
+          <div className="flex-1 space-y-3">
+            <div>
+              <p className="text-[10px] text-[#999] uppercase tracking-wide">Pickup</p>
+              <p className="text-[14px] text-[#1A1A1A] font-semibold truncate">
+                {pickup?.address || "Not set"}
+              </p>
             </div>
-            <input
-              type="text"
-              value={enterDestination}
-              onChange={(e) => setEnterDestination(e.target.value)}
-              placeholder="Destination"
-              className="w-full h-16 bg-[#F5F5F7] rounded-[16px] pl-14 pr-12 text-[15px] font-medium text-[#333333] border-none focus:outline-none focus:ring-1 focus:ring-[#0B153D]/10"
-            />
-            <Plus size={20} className="absolute right-5 top-1/2 -translate-y-1/2 text-[#333] cursor-pointer" />
+            <div className="pt-1">
+              <p className="text-[10px] text-[#999] uppercase tracking-wide">Destination</p>
+              <p className="text-[14px] text-[#1A1A1A] font-semibold truncate">
+                {destination?.address || "Not set"}
+              </p>
+            </div>
           </div>
         </div>
+
+        {fareEstimate && (
+          <div className="flex items-center justify-between mt-3 pt-3 border-t border-[#E6E6E6]">
+            <span className="text-[12px] text-[#666]">{fareEstimate.distance_km?.toFixed(1)} km · ~{fareEstimate.estimated_duration_minutes} min</span>
+            {fareEstimate.available_drivers > 0 && (
+              <span className="text-[12px] text-[#02093A] font-medium">{fareEstimate.available_drivers} drivers available</span>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Column 2: Select Ride Type List */}
-      <div className="w-full xl:w-[55%] bg-[#F5F5F7] rounded-[32px] p-6 lg:p-8 shadow-sm border border-gray-100 flex flex-col min-h-[600px]">
-        <h2 className="text-[22px] font-bold text-[#333333] mb-8">
-          Select ride type
+      {/* Ride type selection */}
+      <div className="mb-4">
+        <h2 className="text-[18px] font-bold text-[#1A1A1A] mb-4">
+          Choose a ride
         </h2>
 
-        <div className="flex flex-col gap-4 flex-1">
-          {isLoading && <Loader />}
-          {isError && <p className="text-red-500 text-sm py-4">Failed to load ride types</p>}
-
-          {Array.isArray(rideTypes) ? rideTypes.map((v, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between bg-white p-4 lg:p-5 rounded-[20px] border-2 border-transparent hover:border-[#0B153D] transition-all cursor-pointer group shadow-sm hover:shadow-md"
-            >
-              <div className="flex items-center gap-4 lg:gap-6">
-                <div className="w-16 h-16 bg-[#F5F5F7] rounded-2xl flex items-center justify-center overflow-hidden group-hover:bg-[#EAEBEF] transition-colors">
-                  <Image
-                    src={v.vehicle_type === "Motorcycle/Moto" ? "/images/_moto.png" : "/images/_car.png"}
-                    alt={v.name}
-                    width={56}
-                    height={56}
-                    className="object-contain"
-                  />
-                </div>
-                <div>
-                  <h4 className="text-[16px] font-bold text-[#0B153D] mb-1">{v.name}</h4>
-                  <div className="flex items-center gap-2.5 text-[13px] text-[#666666]">
-                    <span>{v.estimated_duration_minutes || 10}min</span>
-                    <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
-                    <span>{v.capacity || '4 seats'}</span>
-                    <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
-                    <span className="flex items-center gap-1 font-bold text-[#333]"> 4.8 <Star size={12} fill="#FFB800" className="text-[#FFB800]" /></span>
-                  </div>
-                </div>
-              </div>
-              <span className="text-[18px] font-black text-[#0B153D] tracking-tight">FC{v.base_price}</span>
-            </div>
-          )) : (
-            // Enhanced Fallback UI matching screenshot
-            [
-              { name: 'Premium / Black', price: '76', img: '/images/_car.png' },
-              { name: 'Shared / Pool', price: '76', img: '/images/_car.png' },
-              { name: 'Comfort', price: '76', img: '/images/_car.png' },
-              { name: 'Moto / Bike', price: '76', img: '/images/_moto.png' },
-            ].map((v, i) => (
-              <div key={i} className="flex items-center justify-between bg-white p-4 lg:p-5 rounded-[20px] border-2 border-transparent hover:border-[#0B153D] transition-all cursor-pointer group shadow-sm hover:shadow-md">
-                <div className="flex items-center gap-4 lg:gap-6">
-                  <div className="w-16 h-16 bg-[#F5F5F7] rounded-2xl flex items-center justify-center overflow-hidden group-hover:bg-[#EAEBEF] transition-colors">
-                    <img src={v.img} alt={v.name} className="w-12 h-12 object-contain" />
-                  </div>
-                  <div>
-                    <h4 className="text-[16px] font-bold text-[#0B153D] mb-1">{v.name}</h4>
-                    <div className="flex items-center gap-2.5 text-[13px] text-[#666666]">
-                      <span>10min</span>
-                      <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
-                      <span>3 seats</span>
-                      <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
-                      <span className="flex items-center gap-1 font-bold text-[#333]"> 4.8 <Star size={12} fill="#FFB800" className="text-[#FFB800]" /></span>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-[18px] font-black text-[#0B153D] tracking-tight">FC{v.price}</span>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* Bottom Panel */}
-        <div className="mt-8 space-y-5">
-          <div className="flex items-center justify-between bg-[#FFF4F4] px-5 py-4 rounded-[16px] border border-[#FFE6E6]">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#E53935] flex items-center justify-center text-white shadow-sm">
-                <Banknote size={20} />
-              </div>
-              <span className="text-[15px] font-extrabold text-[#E53935]">Pay with Cash</span>
-            </div>
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                className="sr-only peer"
-                checked={payWithCash}
-                onChange={(e) => setPayWithCash(e.target.checked)}
-              />
-              <div className="w-12 h-6.5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5.5 after:w-5.5 after:transition-all peer-checked:bg-[#E53935]"></div>
-            </label>
+        {isLoading && (
+          <div className="flex justify-center py-8">
+            <Loader />
           </div>
+        )}
 
-          <button
-            onClick={handleContinue}
-            className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white py-5 rounded-[16px] font-bold text-[17px] transition-all shadow-lg active:scale-[0.98]"
-          >
-            Request ride
-          </button>
-        </div>
+        {isError && (
+          <p className="text-[14px] text-[#E53935] text-center py-6">
+            Failed to load ride types. Please try again.
+          </p>
+        )}
+
+        {/* Fare estimate vehicle options (preferred) */}
+        {hasEstimate && (
+          <div className="space-y-2">
+            {vehicleOptions.map((option, i) => (
+              <button
+                key={i}
+                onClick={() => handleSelectVehicle(i, option)}
+                className={`w-full flex justify-between items-center rounded-[14px] p-4 transition-all cursor-pointer ${selectedIndex === i
+                    ? "bg-[#02093A] text-white shadow-lg shadow-[#02093A]/15"
+                    : "bg-white border border-gray-100 hover:bg-[#F5F5F7]"
+                  }`}
+              >
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={option.vehicle_type.toLowerCase().includes('moto') ? "/images/_moto.png" : "/images/_car.png"}
+                    alt={option.vehicle_type}
+                    className="w-14 h-10 object-contain"
+                    width={56}
+                    height={40}
+                  />
+                  <div className="text-left">
+                    <p className={`font-bold text-[15px] capitalize ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                      {option.vehicle_type}
+                    </p>
+                    <p className={`text-[12px] ${selectedIndex === i ? "text-white/70" : "text-[#666]"}`}>
+                      ~{option.estimated_duration_minutes} min · {option.surge_multiplier > 1 ? `${option.surge_multiplier}x surge` : "Standard rate"}
+                    </p>
+                  </div>
+                </div>
+                <p className={`font-bold text-[18px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                  {option.formatted_fare}
+                </p>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Fallback Rendering ride types if no estimate */}
+        {!hasEstimate && !isLoading && !isError && Array.isArray(rideTypes) && rideTypes.length > 0 && (
+          <div className="space-y-2">
+            {rideTypes.map((v, i) => (
+              <button
+                key={v.id}
+                onClick={() => setSelectedIndex(i)}
+                className={`w-full flex justify-between items-center rounded-[14px] p-4 transition-all cursor-pointer ${selectedIndex === i
+                    ? "bg-[#02093A] text-white shadow-lg shadow-[#02093A]/15"
+                    : "bg-white border border-gray-100 hover:bg-[#F5F5F7]"
+                  }`}
+              >
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={v.name.toLowerCase().includes('moto') ? "/images/_moto.png" : "/images/_car.png"}
+                    alt={v.name}
+                    className="w-14 h-10 object-contain"
+                    width={56}
+                    height={40}
+                  />
+                  <div className="text-left">
+                    <p className={`font-bold text-[15px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                      {v.name}
+                    </p>
+                    <p className={`text-[12px] ${selectedIndex === i ? "text-white/70" : "text-[#666]"}`}>
+                      {v.description || `Capacity: ${v.capacity}`}
+                    </p>
+                  </div>
+                </div>
+                <p className={`font-bold text-[18px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                  FC {v.base_fare}
+                </p>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
+
+      {/* Pay with Cash toggle */}
+      <div className="bg-[#FFF4F4] rounded-[16px] px-5 py-4 flex items-center justify-between mb-6 border border-[#FFE6E6]">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-[#E53935] flex items-center justify-center text-white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <p className="text-[15px] font-bold text-[#E53935]">Pay with Cash</p>
+        </div>
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            className="sr-only peer"
+            checked={payWithCash}
+            onChange={(e) => setPayWithCash(e.target.checked)}
+          />
+          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#E53935]"></div>
+        </label>
+      </div>
+
+      {/* Request ride button */}
+      <button
+        onClick={handleContinue}
+        className="w-full bg-[#02093A] text-white py-5 rounded-[16px] font-bold text-[17px] hover:bg-[#030B4D] transition-all cursor-pointer shadow-lg shadow-[#02093A]/20 active:scale-[0.98]"
+      >
+        Request ride
+      </button>
     </div>
   );
 };

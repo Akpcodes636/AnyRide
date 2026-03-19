@@ -3,10 +3,12 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "../ui/Button";
 import { useRouter } from "next/navigation";
+import { useWalletBalance } from "@/hooks/useRideHooks";
 
 export default function WalletPayment() {
   const [balanceVisible, setBalanceVisible] = useState(false);
   const router = useRouter();
+  const { data: walletBalance, isLoading } = useWalletBalance();
 
   return (
     <div className="">
@@ -31,7 +33,12 @@ export default function WalletPayment() {
               {/* Balance + Eye aligned side by side */}
               <div className="flex items-center gap-3">
                 <span className="text-[32px] md:text-[48px] font-bold text-[#02093A] tracking-tight">
-                  {balanceVisible ? "CF 12,400" : "****"}
+                  {balanceVisible 
+                    ? walletBalance 
+                      ? `${walletBalance.balance.toFixed(2)} ${walletBalance.currency || 'USD'}`
+                      : "Loading..."
+                    : "****"
+                  }
                 </span>
 
                 <button
