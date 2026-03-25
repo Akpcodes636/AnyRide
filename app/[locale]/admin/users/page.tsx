@@ -1,23 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminSidebar from "@/app/components/others_ui/admin/AdminSidebar";
 import AdminHeader from "@/app/components/others_ui/admin/AdminHeader";
 import UserDetailsModal from "@/app/components/others_ui/admin/UserDetailsModal";
 import { Search, ChevronDown, ChevronRight } from 'lucide-react';
-
-const driversData = [
-    { name: 'Noor Hayat', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Active' },
-    { name: 'Ajr Noah', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Pending' },
-    { name: 'Tom Ferry', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Suspended' },
-    { name: 'Tom Ferry', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Active' },
-];
-
-const ridersData = [
-    { name: 'Mustapha Hassan', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Active' },
-    { name: 'Praise Jummy', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Active' },
-    { name: 'Tom Ferry', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Suspended' },
-];
 
 const partnersData = [
     { name: 'Noor Hayat', phone: '08037281938', email: 'exampleemail@gmail.com', date: '12 Oct 2025', status: 'Active', partnerType: 'Fleet Owner' },
@@ -30,25 +17,85 @@ const partnersData = [
 const StatusBadge = ({ status }: { status: string }) => {
     const styles: Record<string, string> = {
         'Active': 'text-[#00B230] bg-[#E6F7EB] border-[#CFEFD8]',
+        'Verified': 'text-[#00B230] bg-[#E6F7EB] border-[#CFEFD8]',
         'Pending': 'text-[#FFB800] bg-[#FFF8E6] border-[#FFEBBF]',
         'Suspended': 'text-[#E53935] bg-[#FFF4F4] border-[#FFE6E6]',
         'Blocked': 'text-[#E53935] bg-[#FFF4F4] border-[#FFE6E6]',
+        'Offline': 'text-[#666666] bg-[#F5F5F7] border-[#E6E6EB]', // added for rider offline state
     };
-    const c = styles[status] || styles['Active'];
+    // Format db status strings (e.g. "verified" -> "Verified")
+    const formattedStatus = status ? status.charAt(0).toUpperCase() + status.slice(1).toLowerCase() : 'Active';
+    const c = styles[formattedStatus] || styles['Active'];
 
     return (
         <span className={`px-4 py-1.5 rounded-full text-[12px] md:text-[13px] font-bold border ${c} min-w-[80px] md:min-w-[100px] inline-block text-center shadow-xs`}>
-            {status}
+            {formattedStatus}
         </span>
     );
 };
 
 export default function UserManagementPage() {
-    const [activeTab, setActiveTab] = useState<'Drivers' | 'Riders' | 'Partners'>('Partners');
+    const [activeTab, setActiveTab] = useState<'Drivers' | 'Riders' | 'Partners'>('Drivers');
     const [selectedUser, setSelectedUser] = useState<any>(null);
     const [showFilter, setShowFilter] = useState(false);
+    
+    // Live Data State
+    const [driversData, setDriversData] = useState<any[]>([]);
+    const [ridersData, setRidersData] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const tabs = ['Drivers', 'Riders', 'Partners'];
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const token = localStorage.getItem('admin_token');
+                
+                // Fetch Drivers
+                const driversRes = await fetch('https://anyride.techenex.online/api/v1/admin/drivers', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const driversJson = await driversRes.json();
+                
+                // Fetch Riders
+                const ridersRes = await fetch('https://anyride.techenex.online/api/v1/admin/users', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const ridersJson = await ridersRes.json();
+
+                if (driversRes.ok && driversJson.data?.drivers) {
+                    const mappedDrivers = driversJson.data.drivers.map((d: any) => ({
+                        ...d,
+                        name: d.name || 'Unknown',
+                        phone: d.phone || 'N/A',
+                        email: d.email || 'N/A',
+                        date: new Date(d.created_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+                        status: d.account_status === 'verified' ? 'Active' : d.account_status // Active visually looks better for verified drivers
+                    }));
+                    setDriversData(mappedDrivers);
+                }
+
+                if (ridersRes.ok && ridersJson.data?.users) {
+                    const mappedRiders = ridersJson.data.users.map((r: any) => ({
+                        ...r, 
+                        name: `${r.firstname || ''} ${r.lastname || ''}`.trim() || 'Unknown User',
+                        phone: r.phonenumber || 'N/A',
+                        email: r.email || 'N/A',
+                        date: new Date(r.created_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+                        status: r.status // typically 'offline' or 'online'
+                    }));
+                    setRidersData(mappedRiders);
+                }
+            } catch (error) {
+                console.error("Error fetching live users:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     const currentData = activeTab === 'Drivers' ? driversData : activeTab === 'Riders' ? ridersData : partnersData;
 
     return (
@@ -120,7 +167,15 @@ export default function UserManagementPage() {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-[#F5F5F7]">
-                                    {currentData.map((user, idx) => (
+                                    {isLoading && activeTab !== 'Partners' ? (
+                                        <tr>
+                                            <td colSpan={5} className="py-10 text-center font-bold text-[#A0A0A0]">Loading members from live database...</td>
+                                        </tr>
+                                    ) : currentData.length === 0 ? (
+                                        <tr>
+                                            <td colSpan={5} className="py-10 text-center font-bold text-[#A0A0A0]">No users found.</td>
+                                        </tr>
+                                    ) : currentData.map((user, idx) => (
                                         <tr key={idx} className="group hover:bg-[#F5F5F7]/40 transition-all cursor-default relative">
                                             <td className="py-5 lg:py-8 px-6">
                                                 <span className="text-[14px] md:text-[15px] font-black text-[#262626] group-hover:text-[#A10602] transition-colors">{user.name}</span>

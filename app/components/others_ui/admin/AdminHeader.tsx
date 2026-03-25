@@ -3,6 +3,7 @@
 import React from 'react';
 import { Search, Bell } from 'lucide-react';
 import Image from 'next/image';
+import Avatar from './Avatar';
 
 export default function AdminHeader() {
     return (
@@ -28,9 +29,7 @@ export default function AdminHeader() {
                         <div className="absolute top-2.5 right-2.5 w-2 h-2 bg-[#A20602] rounded-full border border-white shadow-xs"></div>
                     </button>
                     <div className="flex items-center gap-3 bg-white/50 border border-[#E6E6EB] md:border-none p-1 pr-4 md:p-0 rounded-full md:rounded-none">
-                        <div className="w-11 h-11 md:w-12 md:h-12 bg-gray-200 rounded-full shrink-0 border border-[#E6E6EB] shadow-inner overflow-hidden">
-                            <Image src="/images/driverprofile.png" width={48} height={48} alt="Profile" className="object-cover" />
-                        </div>
+                        <Avatar name="Sam Malik" className="w-11 h-11 md:w-12 md:h-12 border border-[#E6E6EB] shadow-inner text-[16px]" />
                         <div className="flex flex-col">
                             <span className="text-[14px] md:text-[16px] font-extrabold text-[#333333] leading-tight">Sam Malik</span>
                             <span className="text-[11px] md:text-[12px] font-bold text-[#A0A0A0]">Manager</span>

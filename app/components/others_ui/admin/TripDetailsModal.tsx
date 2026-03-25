@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Search, MapPin, Phone, MessageSquare, AlertCircle, X, Navigation, CreditCard, Clock, RotateCcw, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
+import Avatar from './Avatar';
 
 interface TripDetailProps {
     trip: any;
@@ -13,9 +14,7 @@ const UserMiniProfile = ({ name, role, isOnline = true }: { name: string, role: 
     <div className="bg-white border-2 border-[#F5F5F7] rounded-[24px] p-6 flex flex-col gap-6 flex-1 min-w-[280px]">
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#F5F5F7] shrink-0">
-                    <Image src="/admin_user_avatar_rider_1773934010183.png" width={64} height={64} alt="Avatar" className="object-cover" />
-                </div>
+                <Avatar name={name} className="w-16 h-16 text-[22px] border-2 border-[#F5F5F7]" />
                 <div className="flex flex-col">
                     <h4 className="text-[18px] font-black text-[#A10601] leading-none">{name} | {role}</h4>
                     <span className="text-[12px] font-bold text-[#A0A0A0] mt-1 flex items-center gap-1.5 font-sans">
@@ -45,7 +44,18 @@ const UserMiniProfile = ({ name, role, isOnline = true }: { name: string, role: 
 );
 
 export default function TripDetailsModal({ trip, onClose }: TripDetailProps) {
-    const status = trip.status || 'Ongoing';
+    const status = trip.status ? trip.status.charAt(0).toUpperCase() + trip.status.slice(1).toLowerCase() : 'Ongoing';
+    const raw = trip._raw || {};
+
+    // Helper to calculate duration if start & end are present
+    const getDuration = () => {
+        if (!raw.start_time || !raw.end_time) return 'N/A';
+        const s = new Date(raw.start_time).getTime();
+        const e = new Date(raw.end_time).getTime();
+        const diffMs = e - s;
+        if (diffMs <= 0) return '0 mins';
+        return `${Math.ceil(diffMs / 60000)} mins`;
+    };
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 lg:p-10">
@@ -57,25 +67,25 @@ export default function TripDetailsModal({ trip, onClose }: TripDetailProps) {
                     <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
                         <div className="flex flex-col">
                             <span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Trip ID</span>
-                            <span className="text-[15px] font-black text-[#333]">#JDN783</span>
+                            <span className="text-[15px] font-black text-[#333]">{trip.id}</span>
                         </div>
                         <div className="flex flex-col">
                             <span className="text-[11px] font-bold text-[#A0A0A0] uppercase">{status === 'Completed' ? 'Date' : 'Start time'}</span>
-                            <span className="text-[15px] font-black text-[#333]">25/03/2025 • 5:30 GMT</span>
+                            <span className="text-[15px] font-black text-[#333]">{trip.dateTime}</span>
                         </div>
                         {status === 'Completed' && (
                             <div className="flex flex-col">
                                 <span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Duration</span>
-                                <span className="text-[15px] font-black text-[#333]">58mins</span>
+                                <span className="text-[15px] font-black text-[#333]">{getDuration()}</span>
                             </div>
                         )}
                         <div className="flex flex-col">
                             <span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Estimated fare</span>
-                            <span className="text-[15px] font-black text-[#333]">CDF 56.000</span>
+                            <span className="text-[15px] font-black text-[#333]">{raw.ride_price ? `CDF ${raw.ride_price}` : 'N/A'}</span>
                         </div>
                         <div className="flex flex-col">
                             <span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Vehicle type</span>
-                            <span className="text-[15px] font-black text-[#333]">Motorcycle</span>
+                            <span className="text-[15px] font-black text-[#333]">{trip.vehicle || 'Standard'}</span>
                         </div>
                         <div className="flex flex-col">
                             <span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Status</span>
@@ -84,7 +94,7 @@ export default function TripDetailsModal({ trip, onClose }: TripDetailProps) {
                                     status === 'Completed' ? 'text-[#00B230] bg-[#E6F7EB] border-[#CFEFD8]' :
                                         'text-[#E53935] bg-[#FFF4F4] border-[#FFE6E6]'}
                             `}>
-                                {status}
+                                {status.toUpperCase()}
                             </span>
                         </div>
                     </div>
@@ -129,15 +139,15 @@ export default function TripDetailsModal({ trip, onClose }: TripDetailProps) {
                         <div className="bg-white border-2 border-[#F5F5F7] rounded-[24px] p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
                             <div className="flex flex-col gap-1">
                                 <span className="text-[12px] font-bold text-[#A0A0A0]">Base fare</span>
-                                <span className="text-[14px] font-black text-[#333]">CDF 67.00</span>
+                                <span className="text-[14px] font-black text-[#333]">{raw.base_price ? `CDF ${raw.base_price}` : 'N/A'}</span>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="text-[12px] font-bold text-[#A0A0A0]">Distance/time</span>
-                                <span className="text-[14px] font-black text-[#333]">96km • 30mins 2sec</span>
+                                <span className="text-[14px] font-black text-[#333]">- • {getDuration()}</span>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="text-[12px] font-bold text-[#A0A0A0]">Total paid</span>
-                                <span className="text-[14px] font-black text-[#333]">CDF 80.00</span>
+                                <span className="text-[14px] font-black text-[#333]">{raw.ride_price ? `CDF ${raw.ride_price}` : 'N/A'}</span>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="text-[12px] font-bold text-[#A0A0A0]">Payment method</span>
@@ -148,8 +158,8 @@ export default function TripDetailsModal({ trip, onClose }: TripDetailProps) {
 
                     {/* Profiles Section */}
                     <div className="flex flex-col md:flex-row gap-6">
-                        <UserMiniProfile name="Estime Sa." role="Rider" />
-                        <UserMiniProfile name="Jay Ok." role="Driver" />
+                        <UserMiniProfile name={trip.rider || 'Unknown Rider'} role="Rider" />
+                        <UserMiniProfile name={trip.driver || 'Unknown Driver'} role="Driver" isOnline={false} />
                     </div>
 
                     {/* Disputed Evidences Section */}
@@ -195,6 +205,10 @@ export default function TripDetailsModal({ trip, onClose }: TripDetailProps) {
                                     <button className="flex-1 bg-[#FFF4F4] text-[#E53935] border border-[#FFE6E6] py-4 rounded-[16px] font-black">Dismiss Dispute</button>
                                     <button className="flex-1 bg-[#02093A] text-white py-4 rounded-[16px] font-black shadow-xl">Resolve dispute</button>
                                 </div>
+                            </div>
+                        ) : status === 'Cancelled' ? (
+                            <div className="w-full bg-[#FFF4F4] border-2 border-[#E53935] p-8 rounded-[24px] text-center">
+                                <span className="text-[16px] font-black text-[#E53935]">This trip was cancelled.</span>
                             </div>
                         ) : (
                             <div className="w-full bg-white border-2 border-[#E6E6EB] p-8 rounded-[24px] text-center">

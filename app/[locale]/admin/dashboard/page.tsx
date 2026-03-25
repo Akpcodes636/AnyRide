@@ -1,6 +1,7 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import AdminSidebar from "@/app/components/others_ui/admin/AdminSidebar";
 import AdminHeader from "@/app/components/others_ui/admin/AdminHeader";
 import {
@@ -25,6 +26,67 @@ const StatCard = ({ label, value, trend, trendValue }: { label: string, value: s
 );
 
 export default function AdminDashboardPage() {
+    const [stats, setStats] = useState({
+        total_trips: "...",
+        active_drivers: "...",
+        active_riders: "...",
+        revenue: "..."
+    });
+
+    const [apiError, setApiError] = useState<string | null>(null);
+    const [analytics, setAnalytics] = useState<any>(null);
+    const [commissionRate, setCommissionRate] = useState<number>(20); // Default to 20%
+
+    useEffect(() => {
+        const fetchStats = async () => {
+            console.log("Dashboard mount: Beginning fetch for Admin Stats...");
+            try {
+                const token = localStorage.getItem('admin_token');
+                console.log("Checking for token in localStorage:", token ? "Token Exists!" : "No Token Found!");
+                
+                const res = await fetch('https://anyride.techenex.online/api/v1/admin/dashboard/stats', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const statsRaw = await res.json();
+                
+                const analyticsRes = await fetch('https://anyride.techenex.online/api/v1/admin/dashboard/analytics', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const analyticsRaw = await analyticsRes.json();
+
+                const settingsRes = await fetch('https://anyride.techenex.online/api/v1/admin/settings', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const settingsRaw = await settingsRes.json();
+
+                if (res.ok) {
+                    const statsData = statsRaw.data || statsRaw; // Handle backend wrapping
+                    setStats({
+                        total_trips: statsData.rides?.total?.toLocaleString() || "0",
+                        active_drivers: statsData.drivers?.total?.toLocaleString() || "0",
+                        active_riders: statsData.users?.total?.toLocaleString() || "0",
+                        revenue: `CDF ${statsData.revenue?.total?.toLocaleString() || "0"}`
+                    });
+                    
+                    if (analyticsRes.ok) setAnalytics(analyticsRaw.data || analyticsRaw);
+                    if (settingsRes.ok) {
+                        const comRate = settingsRaw.data?.commission?.platform_commission_percentage;
+                        if (comRate !== undefined) setCommissionRate(comRate);
+                    }
+
+                    console.log("React UI successfully updated with live API data.");
+                } else {
+                    console.warn("Backend rejected the API Request:", statsRaw.message);
+                    setApiError(statsRaw.message || 'API Error');
+                }
+            } catch (error) {
+                console.error("Dashboard Stats Fetch Error:", error);
+                setApiError("Network Error - Check console");
+            }
+        };
+        fetchStats();
+    }, []);
+
     return (
         <div className="flex min-h-screen bg-[#F5F5F7] font-sans">
             <AdminSidebar />
@@ -48,83 +110,102 @@ export default function AdminDashboardPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-                        <StatCard label="Total trips" value="269" trend="up" trendValue="+1.5%/last wk" />
-                        <StatCard label="Active Drivers" value="1,240" trend="down" trendValue="-1.42%/last wk" />
-                        <StatCard label="Active Riders" value="165" trend="up" trendValue="+1.5%/last mo" />
-                        <StatCard label="Revenue" value="CDF 52,252" />
+                        <StatCard label="Total trips" value={apiError ? "Auth Error" : (stats.total_trips !== "..." ? stats.total_trips : "...")} trend="up" trendValue="+1.5%/last wk" />
+                        <StatCard label="Active Drivers" value={apiError ? "Auth Error" : (stats.active_drivers !== "..." ? stats.active_drivers : "...")} trend="down" trendValue="-1.42%/last wk" />
+                        <StatCard label="Active Riders" value={apiError ? "Auth Error" : (stats.active_riders !== "..." ? stats.active_riders : "...")} trend="up" trendValue="+1.5%/last mo" />
+                        <StatCard label="Revenue" value={apiError ? "Auth Error" : (stats.revenue !== "..." ? stats.revenue : "...")} />
                     </div>
+                    {apiError && (
+                        <div className="mt-4 p-4 text-[13px] font-bold text-red-600 bg-red-50 border border-red-200 rounded-xl">
+                            API Connection Live: Server rejected request with reason: "{apiError}". We must implement Admin Login to generate access tokens first.
+                        </div>
+                    )}
                 </section>
 
                 {/* Overviews Section Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mb-8 lg:mb-10">
-                    {/* Linear Chart Mock up */}
+                    {/* Linear Chart */}
                     <div className="bg-white rounded-[24px] p-6 lg:p-8 border border-[#E6E6EB] shadow-sm min-h-[420px] lg:min-h-[480px] flex flex-col relative overflow-hidden">
                         <div className="flex justify-between items-start mb-10 overflow-x-auto">
                             <h3 className="text-[18px] lg:text-[20px] font-extrabold text-[#333333] shrink-0">Trips Overview</h3>
                             <button className="text-[13px] font-bold text-[#A20602] hover:underline shrink-0">View all trips</button>
                         </div>
 
-                        <div className="flex-1 w-full relative border-b border-l border-[#E6E6EB]/50 pb-6 ml-6 md:ml-10">
-                            {/* Y-axis Labels - Hidden on small mobile */}
-                            <div className="absolute -left-12 lg:-left-16 inset-y-0 flex flex-col justify-between items-end text-[10px] lg:text-[11px] font-bold text-[#A0A0A0] pr-2 pointer-events-none">
-                                <span>1.4M</span>
-                                <span>1M</span>
-                                <span>800K</span>
-                                <span>600K</span>
-                                <span>400K</span>
-                                <span>200K</span>
-                            </div>
-
-                            <div className="w-full h-full relative group">
-                                <svg width="100%" height="100%" viewBox="0 0 1000 300" preserveAspectRatio="none" className="overflow-visible">
-                                    <path
-                                        d="M0,180 Q150,140 250,230 T500,80 T750,280 T1000,130"
-                                        fill="none"
-                                        stroke="#0B153D"
-                                        strokeWidth="6"
-                                        strokeLinecap="round"
-                                    />
-                                    <circle cx="500" cy="80" r="10" fill="#333333" stroke="#F5F5F7" strokeWidth="3" />
-                                </svg>
-
-                                <div className="absolute top-[60px] left-[50%] -translate-x-1/2 -translate-y-[100%] bg-[#333333] text-white px-4 py-2 rounded-[8px] text-[13px] font-bold shadow-xl">
-                                    CDF 920K
-                                </div>
-                                <div className="absolute top-[80px] left-[50%] -translate-x-1/2 w-[2px] h-[78%] bg-[#0B153D]/10"></div>
-                            </div>
-                        </div>
-
-                        <div className="flex justify-between items-center text-[11px] font-bold text-[#A0A0A0] mt-6 px-4 md:px-12">
-                            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                        <div className="flex-1 w-full relative mb-4">
+                            {!analytics ? (
+                                <div className="absolute inset-0 flex items-center justify-center text-[#A0A0A0] font-bold text-[14px]">Loading...</div>
+                            ) : (
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <AreaChart data={analytics?.rides_over_time || []} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
+                                        <defs>
+                                            <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="5%" stopColor="#0B153D" stopOpacity={0.2}/>
+                                                <stop offset="95%" stopColor="#0B153D" stopOpacity={0}/>
+                                            </linearGradient>
+                                        </defs>
+                                        <XAxis dataKey="date" tick={{fontSize: 10, fill: '#A0A0A0', fontWeight: 'bold'}} tickLine={false} axisLine={false} tickFormatter={(val) => { const d = new Date(val); return d.getDate().toString(); }} />
+                                        <Tooltip 
+                                            contentStyle={{backgroundColor: '#333333', color: '#fff', borderRadius: '8px', border: 'none', fontWeight: 'bold'}}
+                                            itemStyle={{color: '#fff'}}
+                                        />
+                                        <Area type="monotone" dataKey="count" stroke="#0B153D" strokeWidth={4} fillOpacity={1} fill="url(#colorCount)" />
+                                    </AreaChart>
+                                </ResponsiveContainer>
+                            )}
                         </div>
                     </div>
 
-                    {/* Pie Chart Mock up */}
+                    {/* Pie Chart */}
                     <div className="bg-white rounded-[24px] p-6 lg:p-8 border border-[#E6E6EB] shadow-sm min-h-[420px] lg:min-h-[480px] flex flex-col">
                         <div className="flex justify-between items-start mb-8">
-                            <h3 className="text-[18px] lg:text-[20px] font-extrabold text-[#333333]">Trips Overview</h3>
+                            <h3 className="text-[18px] lg:text-[20px] font-extrabold text-[#333333]">Revenue Split</h3>
                             <button className="text-[13px] font-bold text-[#A20602] hover:underline">View info</button>
                         </div>
 
-                        <div className="flex-1 flex flex-col items-center justify-center">
-                            <div className="relative w-[180px] h-[180px] md:w-[240px] md:h-[240px]">
-                                <svg viewBox="0 0 100 100" className="transform -rotate-90 filter drop-shadow-md">
-                                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="#0B153D" strokeWidth="20" strokeDasharray="188 251" />
-                                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="#FFB800" strokeWidth="20" strokeDasharray="63 251" strokeDashoffset="-188" />
-                                </svg>
-                                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                                    <div className="bg-[#FFB800] text-white text-[10px] font-bold py-1 px-3 rounded-full mb-10 translate-y-[-10px]">CDF 920K</div>
-                                </div>
-                            </div>
+                        <div className="flex-1 flex flex-col items-center justify-center relative">
+                            {!analytics ? (
+                                <div className="text-[#A0A0A0] font-bold text-[14px]">Loading...</div>
+                            ) : (
+                                <>
+                                    <div className="w-full h-[220px] md:h-[260px]">
+                                        <ResponsiveContainer width="100%" height="100%">
+                                            <PieChart>
+                                                <Pie
+                                                    data={[
+                                                        { name: 'Earnings', value: analytics.revenue_over_time?.reduce((a:any,b:any)=>a+b.revenue,0) * ((100 - commissionRate) / 100) || (100 - commissionRate) },
+                                                        { name: 'Commission', value: analytics.revenue_over_time?.reduce((a:any,b:any)=>a+b.revenue,0) * (commissionRate / 100) || commissionRate }
+                                                    ]}
+                                                    cx="50%"
+                                                    cy="50%"
+                                                    innerRadius="65%"
+                                                    outerRadius="100%"
+                                                    paddingAngle={2}
+                                                    dataKey="value"
+                                                    stroke="none"
+                                                >
+                                                    <Cell fill="#0B153D" />
+                                                    <Cell fill="#FFB800" />
+                                                </Pie>
+                                                <Tooltip contentStyle={{ borderRadius: '12px', fontWeight: 'bold', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                                            </PieChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                    <div className="absolute flex flex-col items-center justify-center pointer-events-none mt-[-40px]">
+                                        <div className="bg-[#FFB800] text-white text-[11px] font-bold py-1 px-3 rounded-full shadow-lg">
+                                            {stats.revenue === 'CDF 0' || stats.revenue === '...' ? 'No Data' : stats.revenue}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
 
                             <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-10 items-center justify-center w-full">
                                 <div className="flex items-center gap-3">
                                     <div className="w-4 h-4 rounded-[4px] bg-[#0B153D]"></div>
-                                    <span className="text-[13px] font-bold text-[#666666]">Earnings</span>
+                                    <span className="text-[13px] font-bold text-[#666666]">Earnings ({100 - commissionRate}%)</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <div className="w-4 h-4 rounded-[4px] bg-[#FFB800]"></div>
-                                    <span className="text-[13px] font-bold text-[#666666]">Commission</span>
+                                    <span className="text-[13px] font-bold text-[#666666]">Commission ({commissionRate}%)</span>
                                 </div>
                             </div>
                         </div>
@@ -142,12 +223,12 @@ export default function AdminDashboardPage() {
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
                         {[
-                            { label: 'Rider signups', value: '50,918' },
-                            { label: 'Driver signups', value: '12,202' },
-                            { label: 'Verified', value: '10,081' },
-                            { label: 'Pending', value: '108' },
-                            { label: 'Suspended', value: '68' },
-                            { label: 'Blocked', value: '28' },
+                            { label: 'Rider signups', value: analytics?.user_growth?.reduce((a:number,b:any)=>a+b.count,0)?.toLocaleString() || '0' },
+                            { label: 'Driver check-ins', value: analytics?.driver_status_distribution?.reduce((a:number,b:any)=>a+b.count,0)?.toLocaleString() || '0' },
+                            { label: 'Verified', value: analytics?.driver_status_distribution?.find((s:any)=>s.status==='verified')?.count?.toLocaleString() || '0' },
+                            { label: 'Pending', value: analytics?.driver_status_distribution?.find((s:any)=>s.status==='pending')?.count?.toLocaleString() || '0' },
+                            { label: 'Completed Rides', value: analytics?.ride_status_distribution?.find((s:any)=>s.status==='COMPLETED')?.count?.toLocaleString() || '0' },
+                            { label: 'Cancelled Rides', value: analytics?.ride_status_distribution?.find((s:any)=>s.status==='CANCELLED')?.count?.toLocaleString() || '0' },
                         ].map((stat, i) => (
                             <div key={i} className="flex flex-col gap-4 py-4 rounded-xl border border-transparent hover:border-[#F5F5F7] hover:bg-[#F5F5F7]/20 transition-all">
                                 <span className="text-[11px] font-bold text-[#A0A0A0] px-2 min-h-[30px]">{stat.label}</span>

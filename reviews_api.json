@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "message": "Method Not Allowed",
+  "error_code": "HTTP_405"
+}

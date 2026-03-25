@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminSidebar from "@/app/components/others_ui/admin/AdminSidebar";
 import AdminHeader from "@/app/components/others_ui/admin/AdminHeader";
 import { ChevronDown, Lock, Bell, PieChart, Shield, Globe, Users, Briefcase } from 'lucide-react';
@@ -21,10 +21,11 @@ const SettingsField = ({ label, children }: { label: string, children: React.Rea
     </div>
 );
 
-const SettingsInput = ({ value, placeholder, type = "text" }: { value?: string, placeholder?: string, type?: string }) => (
+const SettingsInput = ({ value, placeholder, type = "text", onChange }: { value?: string | number, placeholder?: string, type?: string, onChange?: (e: any) => void }) => (
     <input
         type={type}
-        defaultValue={value}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         className="w-full h-[56px] bg-[#F5F5F7] border border-[#E6E6EB] rounded-xl px-6 text-[14px] font-black text-[#333] focus:ring-1 focus:ring-[#A10602] outline-none transition-shadow"
     />
@@ -40,20 +41,103 @@ const SettingsSelect = ({ value }: { value: string }) => (
 
 export default function SettingsScreen() {
     const [activeTab, setActiveTab] = useState('General');
-    const [toggles, setToggles] = useState({
-        riderReg: true,
-        driverReg: true,
-        partnerReg: true,
-        motorcycleTrips: true,
-        carTrips: true,
-        emailNotif: true,
-        systemAlerts: true,
-        ticketAlerts: true,
-        twoFA: true,
+    const [isLoading, setIsLoading] = useState(true);
+    const [isSaving, setIsSaving] = useState(false);
+
+    // Live Payload State matching the exact openapi.json SystemSettingsUpdateRequest shape
+    const [settings, setSettings] = useState<any>({
+        pricing: { minimum_fare: 100 },
+        features: { 
+            rider_registration_enabled: true, 
+            driver_registration_enabled: true, 
+            partner_registration_enabled: true,
+            motorcycle_trips_enabled: true,
+            car_trips_enabled: true,
+            email_notifications: true,
+            system_alerts: true,
+            ticket_alerts: true,
+            two_factor_auth: true
+        },
+        limits: {},
+        commission: { platform_commission_percentage: 20 },
+        configuration: {
+            platform_name: 'AnyRide',
+            default_currency: 'CDF',
+            default_language: 'English',
+            time_zone: 'UTC'
+        }
     });
 
-    const handleToggle = (key: keyof typeof toggles) => {
-        setToggles(prev => ({ ...prev, [key]: !prev[key] }));
+    useEffect(() => {
+        const fetchSettings = async () => {
+            try {
+                const token = localStorage.getItem('admin_token');
+                if (!token) return;
+                const res = await fetch('https://anyride.techenex.online/api/v1/admin/settings', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const json = await res.json();
+                if (json.data) {
+                    // Merge live backend payload over defaults
+                    setSettings((prev: any) => ({
+                        pricing: { ...prev.pricing, ...json.data.pricing },
+                        features: { ...prev.features, ...json.data.features },
+                        limits: { ...prev.limits, ...json.data.limits },
+                        commission: { ...prev.commission, ...json.data.commission },
+                        configuration: { ...prev.configuration, ...json.data.configuration }
+                    }));
+                }
+            } catch (err) {
+                console.error(err);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchSettings();
+    }, []);
+
+    const handleFeatureToggle = (key: string) => {
+        setSettings((prev: any) => ({
+            ...prev,
+            features: {
+                ...prev.features,
+                [key]: !prev.features[key]
+            }
+        }));
+    };
+
+    const handleNestedChange = (category: string, key: string, val: string | number) => {
+        setSettings((prev: any) => ({
+            ...prev,
+            [category]: {
+                ...prev[category],
+                [key]: val
+            }
+        }));
+    };
+
+    const saveChanges = async () => {
+        setIsSaving(true);
+        try {
+            const token = localStorage.getItem('admin_token');
+            const res = await fetch('https://anyride.techenex.online/api/v1/admin/settings', {
+                method: 'PATCH',
+                headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(settings)
+            });
+            if (res.ok) {
+                alert("Settings successfully saved to the backend!");
+            } else {
+                alert("Failed to save settings to the backend.");
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setIsSaving(false);
+        }
     };
 
     const tabs = [
@@ -97,10 +181,10 @@ export default function SettingsScreen() {
                             {activeTab === 'General' && (
                                 <div className="flex flex-col gap-8">
                                     <h3 className="text-[24px] font-black text-[#0B153D]">General Information</h3>
-                                    <SettingsField label="Platform Name"><SettingsInput value="AnyRide" /></SettingsField>
-                                    <SettingsField label="Default currency"><SettingsSelect value="CDF" /></SettingsField>
-                                    <SettingsField label="Default language"><SettingsSelect value="Nigeria" /></SettingsField>
-                                    <SettingsField label="Time Zone"><SettingsSelect value="Auto/Select" /></SettingsField>
+                                    <SettingsField label="Platform Name"><SettingsInput value={settings.configuration.platform_name} onChange={(e) => handleNestedChange('configuration', 'platform_name', e.target.value)} /></SettingsField>
+                                    <SettingsField label="Default currency"><SettingsInput value={settings.configuration.default_currency} onChange={(e) => handleNestedChange('configuration', 'default_currency', e.target.value)} /></SettingsField>
+                                    <SettingsField label="Default language"><SettingsInput value={settings.configuration.default_language} onChange={(e) => handleNestedChange('configuration', 'default_language', e.target.value)} /></SettingsField>
+                                    <SettingsField label="Time Zone"><SettingsInput value={settings.configuration.time_zone} onChange={(e) => handleNestedChange('configuration', 'time_zone', e.target.value)} /></SettingsField>
                                 </div>
                             )}
 
@@ -108,13 +192,13 @@ export default function SettingsScreen() {
                                 <div className="flex flex-col gap-8">
                                     <h3 className="text-[24px] font-black text-[#0B153D]">Control who can do what</h3>
                                     {[
-                                        { label: 'Enable Rider registration', key: 'riderReg' },
-                                        { label: 'Enable Driver registration', key: 'driverReg' },
-                                        { label: 'Enable Partner registration', key: 'partnerReg' },
+                                        { label: 'Enable Rider registration', key: 'rider_registration_enabled' },
+                                        { label: 'Enable Driver registration', key: 'driver_registration_enabled' },
+                                        { label: 'Enable Partner registration', key: 'partner_registration_enabled' },
                                     ].map(item => (
                                         <div key={item.key} className="flex items-center justify-between max-w-[600px] py-2">
                                             <span className="text-[15px] font-bold text-[#333]">{item.label}</span>
-                                            <ToggleSwitch active={toggles[item.key as keyof typeof toggles]} onToggle={() => handleToggle(item.key as keyof typeof toggles)} />
+                                            <ToggleSwitch active={!!settings.features[item.key]} onToggle={() => handleFeatureToggle(item.key)} />
                                         </div>
                                     ))}
                                 </div>
@@ -123,15 +207,19 @@ export default function SettingsScreen() {
                             {activeTab === 'Trip & Pricing' && (
                                 <div className="flex flex-col gap-8">
                                     <h3 className="text-[24px] font-black text-[#0B153D]">Core business control</h3>
-                                    <SettingsField label="Commission Percentage (%)"><SettingsInput value="20%" /></SettingsField>
-                                    <SettingsField label="Minimum Trip Fare"><SettingsSelect value="CDF 10,000" /></SettingsField>
+                                    <SettingsField label="Commission Percentage (%)">
+                                        <SettingsInput type="number" value={settings.commission.platform_commission_percentage} onChange={(e) => handleNestedChange('commission', 'platform_commission_percentage', Number(e.target.value))} />
+                                    </SettingsField>
+                                    <SettingsField label="Minimum Trip Fare (CDF)">
+                                        <SettingsInput type="number" value={settings.pricing.minimum_fare} onChange={(e) => handleNestedChange('pricing', 'minimum_fare', Number(e.target.value))} />
+                                    </SettingsField>
                                     {[
-                                        { label: 'Enable Motorcycle Trips', key: 'motorcycleTrips' },
-                                        { label: 'Enable Car Trips', key: 'carTrips' },
+                                        { label: 'Enable Motorcycle Trips', key: 'motorcycle_trips_enabled' },
+                                        { label: 'Enable Car Trips', key: 'car_trips_enabled' },
                                     ].map(item => (
                                         <div key={item.key} className="flex items-center justify-between max-w-[600px] py-2">
                                             <span className="text-[15px] font-bold text-[#333]">{item.label}</span>
-                                            <ToggleSwitch active={toggles[item.key as keyof typeof toggles]} onToggle={() => handleToggle(item.key as keyof typeof toggles)} />
+                                            <ToggleSwitch active={!!settings.features[item.key]} onToggle={() => handleFeatureToggle(item.key)} />
                                         </div>
                                     ))}
                                 </div>
@@ -141,13 +229,13 @@ export default function SettingsScreen() {
                                 <div className="flex flex-col gap-8">
                                     <h3 className="text-[24px] font-black text-[#0B153D]">Control system alerts</h3>
                                     {[
-                                        { label: 'Email notifications', key: 'emailNotif' },
-                                        { label: 'System alerts', key: 'systemAlerts' },
-                                        { label: 'Support ticket alerts', key: 'ticketAlerts' },
+                                        { label: 'Email notifications', key: 'email_notifications' },
+                                        { label: 'System alerts', key: 'system_alerts' },
+                                        { label: 'Support ticket alerts', key: 'ticket_alerts' },
                                     ].map(item => (
                                         <div key={item.key} className="flex items-center justify-between max-w-[600px] py-2">
                                             <span className="text-[15px] font-bold text-[#333]">{item.label}</span>
-                                            <ToggleSwitch active={toggles[item.key as keyof typeof toggles]} onToggle={() => handleToggle(item.key as keyof typeof toggles)} />
+                                            <ToggleSwitch active={!!settings.features[item.key]} onToggle={() => handleFeatureToggle(item.key)} />
                                         </div>
                                     ))}
                                 </div>
@@ -167,7 +255,7 @@ export default function SettingsScreen() {
                                             <span className="text-[16px] font-black text-[#333]">Change Password</span>
                                             <span className="text-[15px] font-bold text-[#333] mt-2">Enable 2FA</span>
                                         </div>
-                                        <ToggleSwitch active={toggles.twoFA} onToggle={() => handleToggle('twoFA')} />
+                                        <ToggleSwitch active={!!settings.features.two_factor_auth} onToggle={() => handleFeatureToggle('two_factor_auth')} />
                                     </div>
                                 </div>
                             )}
@@ -175,7 +263,13 @@ export default function SettingsScreen() {
                             {/* Sticky Footer for current tab */}
                             <div className="flex gap-4 mt-auto pt-10 max-w-[600px]">
                                 <button className="flex-1 h-[56px] bg-[#F5F5F7] text-[#333] rounded-xl font-black text-[14px]">Cancel</button>
-                                <button className="flex-[2] h-[56px] bg-[#02093A] text-white rounded-xl font-black text-[14px] shadow-xl active:scale-95 transition-all">Save Changes</button>
+                                <button 
+                                    onClick={saveChanges}
+                                    disabled={isLoading || isSaving}
+                                    className="flex-[2] h-[56px] bg-[#02093A] text-white rounded-xl font-black text-[14px] shadow-xl active:scale-95 transition-all outline-none"
+                                >
+                                    {isSaving ? 'Saving Configurations...' : 'Save Changes'}
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/api/v1/rides/{ride_id}/review",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/rides/reviews/",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/rides/reviews/ride/{ride_id}",
+    "methods": [
+      "get"
+    ]
+  }
+]

@@ -1,21 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminSidebar from "@/app/components/others_ui/admin/AdminSidebar";
 import AdminHeader from "@/app/components/others_ui/admin/AdminHeader";
 import TripDetailsModal from "@/app/components/others_ui/admin/TripDetailsModal";
 import { Search, ChevronDown, ChevronRight, Filter } from 'lucide-react';
-
-const tripsData = [
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Car', dateTime: '25/03/2025 • 5:30 GMT', status: 'Completed' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Motorcycle', dateTime: '25/03/2025 • 5:30 GMT', status: 'Ongoing' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Motorcycle', dateTime: '25/03/2025 • 5:30 GMT', status: 'Cancelled' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Car', dateTime: '25/03/2025 • 5:30 GMT', status: 'Disputed' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Car', dateTime: '25/03/2025 • 5:30 GMT', status: 'Disputed' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Motorcycle', dateTime: '25/03/2025 • 5:30 GMT', status: 'Cancelled' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Motorcycle', dateTime: '25/03/2025 • 5:30 GMT', status: 'Completed' },
-    { id: '#JDN783', rider: 'Esteem Salah', driver: 'Jay Okocha', vehicle: 'Car', dateTime: '25/03/2025 • 5:30 GMT', status: 'Ongoing' },
-];
 
 const StatusBadge = ({ status }: { status: string }) => {
     const styles: Record<string, string> = {
@@ -24,11 +13,14 @@ const StatusBadge = ({ status }: { status: string }) => {
         'Cancelled': 'text-[#E53935] bg-[#FFF4F4] border-[#FFE6E6]',
         'Disputed': 'text-[#FFB800] bg-[#FFF8E6] border-[#FFEBBF]',
     };
-    const c = styles[status] || styles['Completed'];
+    
+    // Format status safely since it comes capitalized from backend e.g. "COMPLETED"
+    const formattedStatus = status ? status.charAt(0).toUpperCase() + status.slice(1).toLowerCase() : 'Completed';
+    const c = styles[formattedStatus] || styles['Completed'];
 
     return (
         <span className={`px-4 py-1.5 rounded-full text-[12px] font-bold border ${c} min-w-[100px] inline-block text-center shadow-xs`}>
-            {status}
+            {formattedStatus}
         </span>
     );
 };
@@ -39,6 +31,10 @@ export default function TripManagementScreen() {
     const [showFilterBy, setShowFilterBy] = useState(false);
     const [showStatusFilter, setShowStatusFilter] = useState(false);
 
+    // Live Data State
+    const [tripsData, setTripsData] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
     const statusFilters = [
         { label: 'Ongoing', color: 'text-[#3E86F5] border-[#3E86F5]' },
         { label: 'Completed', color: 'text-[#00B230] border-[#00B230]' },
@@ -46,6 +42,37 @@ export default function TripManagementScreen() {
         { label: 'Disputed', color: 'text-[#FFB800] border-[#FFB800]' },
         { label: 'All trips', color: 'text-[#02093A] border-[#02093A]' },
     ];
+
+    useEffect(() => {
+        const fetchTrips = async () => {
+            try {
+                const token = localStorage.getItem('admin_token');
+                const res = await fetch('https://anyride.techenex.online/api/v1/admin/rides', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const json = await res.json();
+                
+                if (res.ok && json.data?.rides) {
+                    const mappedTrips = json.data.rides.map((r: any) => ({
+                        _raw: r, // pass original object down too
+                        id: `#${r.id.toString().padStart(5, '0')}`,
+                        rider: r.customer_name || 'N/A',
+                        driver: r.driver_name || 'N/A',
+                        vehicle: 'Standard', // backend currently doesn't specify vehicle in rides obj
+                        dateTime: new Date(r.created_at).toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' GMT',
+                        status: r.status // e.g., 'COMPLETED', 'CANCELLED'
+                    }));
+                    setTripsData(mappedTrips);
+                }
+            } catch (error) {
+                console.error("Failed to fetch live trips:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchTrips();
+    }, []);
 
     return (
         <div className="flex min-h-screen bg-[#F5F5F7] font-sans">
@@ -135,7 +162,15 @@ export default function TripManagementScreen() {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-[#F5F5F7]">
-                                    {tripsData.map((trip, idx) => (
+                                    {isLoading ? (
+                                        <tr>
+                                            <td colSpan={7} className="py-10 text-center font-bold text-[#A0A0A0]">Loading fast live trips database...</td>
+                                        </tr>
+                                    ) : tripsData.length === 0 ? (
+                                        <tr>
+                                            <td colSpan={7} className="py-10 text-center font-bold text-[#A0A0A0]">No trips taken yet.</td>
+                                        </tr>
+                                    ) : tripsData.filter(t => activeFilter === 'All trips' || (t.status && t.status.toLowerCase() === activeFilter.toLowerCase())).map((trip, idx) => (
                                         <tr key={idx} className="group hover:bg-[#F5F5F7]/40 transition-all cursor-default relative">
                                             <td className="py-6 lg:py-8 px-8">
                                                 <span className="text-[14px] font-black text-[#333]">{trip.id}</span>

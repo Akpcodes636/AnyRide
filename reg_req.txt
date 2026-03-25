@@ -1,0 +1,93 @@
+{
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "title": "Firstname"
+    },
+    "lastname": {
+      "type": "string",
+      "title": "Lastname"
+    },
+    "gender": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Gender"
+    },
+    "email": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "email"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Email"
+    },
+    "phonenumber": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Phonenumber"
+    },
+    "uid": {
+      "type": "string",
+      "title": "Uid"
+    },
+    "password": {
+      "type": "string",
+      "title": "Password"
+    },
+    "department": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Department"
+    },
+    "role": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Role"
+    }
+  },
+  "type": "object",
+  "required": [
+    "firstname",
+    "lastname",
+    "uid",
+    "password"
+  ],
+  "title": "RegisterRequest",
+  "description": "Schema for user registration request",
+  "example": {
+    "email": "john.doe@example.com",
+    "firstname": "John",
+    "lastname": "Doe",
+    "password": "securepassword123",
+    "phonenumber": "+1234567890",
+    "uid": "unique-user-id-123"
+  }
+}

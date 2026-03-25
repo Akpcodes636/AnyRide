@@ -1,0 +1,22 @@
+\n--- /api/v1/admin/dashboard/stats ---\n{
+  "description": "Successful Response",
+  "content": {
+    "application/json": {
+      "schema": {}
+    }
+  }
+}\n--- /api/v1/admin/dashboard/analytics ---\n{
+  "description": "Successful Response",
+  "content": {
+    "application/json": {
+      "schema": {}
+    }
+  }
+}\n--- /api/v1/admin/dashboard/recent-activities ---\n{
+  "description": "Successful Response",
+  "content": {
+    "application/json": {
+      "schema": {}
+    }
+  }
+}

@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import { Search, ChevronDown, ChevronRight, X, AlertCircle, CheckCircle2, MoreHorizontal, User, MessageCircle, Clock, Paperclip, Send, Check } from 'lucide-react';
 import Image from 'next/image';
+import Avatar from './Avatar';
 
 interface TicketDetailProps {
     ticket: any;
     onClose: () => void;
+    onUpdateStatus: (ticketId: string, newStatus: string) => void;
 }
 
 const InputField = ({ label, value, required = false }: { label: string, value: string, required?: boolean }) => (
@@ -20,12 +22,39 @@ const InputField = ({ label, value, required = false }: { label: string, value: 
     </div>
 );
 
-export default function TicketDetailsModal({ ticket, onClose }: TicketDetailProps) {
-    const [priority, setPriority] = useState('Low');
-    const [status, setStatus] = useState('Resolved');
+export default function TicketDetailsModal({ ticket, onClose, onUpdateStatus }: TicketDetailProps) {
+    const [priority, setPriority] = useState('Medium');
+    const [status, setStatus] = useState(ticket?.status || 'Open');
     const [showPriorityMenu, setShowPriorityMenu] = useState(false);
     const [showStatusMenu, setShowStatusMenu] = useState(false);
     const [sendEmail, setSendEmail] = useState(true);
+    const [isUpdatingStatus, setIsUpdatingStatus] = useState(false);
+
+    const handleStatusUpdate = async (uiStatus: string, backendString: string) => {
+        setStatus(uiStatus);
+        setShowStatusMenu(false);
+        setIsUpdatingStatus(true);
+        try {
+            const token = localStorage.getItem('admin_token');
+            const res = await fetch(`https://anyride.techenex.online/api/v1/admin/support/tickets/${ticket._raw.id}/status`, {
+                method: 'PATCH',
+                headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({ status: backendString })
+            });
+            if (res.ok) {
+                onUpdateStatus(ticket.id, uiStatus);
+            } else {
+                console.error("Failed to update status");
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            setIsUpdatingStatus(false);
+        }
+    };
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 lg:p-10">
@@ -35,7 +64,7 @@ export default function TicketDetailsModal({ ticket, onClose }: TicketDetailProp
 
                 {/* Header Row */}
                 <div className="bg-white px-8 py-8 border-b border-[#F5F5F7] flex flex-wrap items-center justify-between gap-y-6 shrink-0 relative z-20">
-                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Trip ID</span><span className="text-[14px] font-black text-[#333]">#JDN783</span></div>
+                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Ticket ID</span><span className="text-[14px] font-black text-[#333]">{ticket.id}</span></div>
 
                     <div className="flex flex-col relative">
                         <span className="text-[11px] font-bold text-[#A0A0A0] uppercase mb-1">Set priority as</span>
@@ -60,30 +89,31 @@ export default function TicketDetailsModal({ ticket, onClose }: TicketDetailProp
                         </div>
                     </div>
 
-                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Issue category</span><span className="text-[14px] font-black text-[#666]">Trip issue</span></div>
-                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Date created</span><span className="text-[14px] font-black text-[#666]">25/03/2025</span></div>
-                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Last updated</span><span className="text-[14px] font-black text-[#666]">25/03/2025</span></div>
+                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Issue category</span><span className="text-[14px] font-black text-[#666]">{ticket.category}</span></div>
+                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Date created</span><span className="text-[14px] font-black text-[#666]">{ticket.dateTime}</span></div>
+                    <div className="flex flex-col"><span className="text-[11px] font-bold text-[#A0A0A0] uppercase">Last updated</span><span className="text-[14px] font-black text-[#666]">{new Date(ticket._raw?.updated_at || Date.now()).toLocaleDateString('en-GB')}</span></div>
 
                     <div className="flex flex-col relative">
                         <span className="text-[11px] font-bold text-[#A0A0A0] uppercase mb-1">Mark status as</span>
                         <div className="relative">
                             <button
                                 onClick={() => setShowStatusMenu(!showStatusMenu)}
-                                className={`flex items-center gap-3 px-6 py-2 rounded-full text-[12px] font-bold border transition-all
+                                disabled={isUpdatingStatus}
+                                className={`flex items-center gap-3 px-6 py-2 rounded-full text-[12px] font-bold border transition-all disabled:opacity-50
                                     ${status === 'Resolved' ? 'text-[#00B230] bg-[#E6F7EB] border-[#CFEFD8]' :
                                         status === 'Open' ? 'text-[#FFB800] bg-[#FFF8E6] border-[#FFEBBF]' :
                                             status === 'In progress' ? 'text-[#3E86F5] bg-[#EBF3FF] border-[#D0E2FF]' :
                                                 'text-[#666] bg-[#F5F5F7] border-[#E6E6EB]'}
                                 `}
                             >
-                                {status} <ChevronDown size={14} />
+                                {isUpdatingStatus ? 'Saving...' : status} <ChevronDown size={14} />
                             </button>
                             {showStatusMenu && (
                                 <div className="absolute right-0 mt-2 w-32 bg-white rounded-2xl shadow-xl border border-[#E6E6EB] z-30 py-2 p-1 flex flex-col gap-1">
-                                    <button onClick={() => { setStatus('Open'); setShowStatusMenu(false); }} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#FFB800] hover:bg-[#FFF8E6] border border-[#FFEBBF]">Open</button>
-                                    <button onClick={() => { setStatus('In progress'); setShowStatusMenu(false); }} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#3E86F5] hover:bg-[#EBF3FF] border border-[#D0E2FF]">In progress</button>
-                                    <button onClick={() => { setStatus('Resolved'); setShowStatusMenu(false); }} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#00B230] hover:bg-[#E6F7EB] border border-[#CFEFD8]">Resolved</button>
-                                    <button onClick={() => { setStatus('Closed'); setShowStatusMenu(false); }} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#666] hover:bg-[#F5F5F7] border border-[#E6E6EB]">Closed</button>
+                                    <button onClick={() => handleStatusUpdate('Open', 'open')} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#FFB800] hover:bg-[#FFF8E6] border border-[#FFEBBF]">Open</button>
+                                    <button onClick={() => handleStatusUpdate('In progress', 'in_progress')} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#3E86F5] hover:bg-[#EBF3FF] border border-[#D0E2FF]">In progress</button>
+                                    <button onClick={() => handleStatusUpdate('Resolved', 'resolved')} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#00B230] hover:bg-[#E6F7EB] border border-[#CFEFD8]">Resolved</button>
+                                    <button onClick={() => handleStatusUpdate('Closed', 'closed')} className="w-full px-4 py-2 text-left rounded-xl text-[12px] font-bold text-[#666] hover:bg-[#F5F5F7] border border-[#E6E6EB]">Closed</button>
                                 </div>
                             )}
                         </div>
@@ -96,32 +126,22 @@ export default function TicketDetailsModal({ ticket, onClose }: TicketDetailProp
                         <h3 className="text-[22px] font-black text-[#0B153D]">Reported Issue</h3>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <InputField label="Subject" value="Enter subject." required />
-                            <InputField label="Full Name" value="Samad Phoenix" required />
-                            <InputField label="Email" value="exampleemail@gmail.com" required />
-                            <InputField label="Phone Number" value="09073729374" />
-                            <InputField label="Category" value="Driver behavior" />
+                            <InputField label="Subject" value={ticket._raw?.subject || 'N/A'} required />
+                            <InputField label="Full Name" value={ticket.userName || 'N/A'} required />
+                            <InputField label="Email" value={ticket._raw?.user_email || 'N/A'} required />
+                            <InputField label="Phone Number" value={ticket._raw?.user_phone || 'N/A'} />
+                            <InputField label="Category" value={ticket.category || 'N/A'} />
                             <InputField label="Country" value="Congo" />
-                            <InputField label="Response language" value="Spanish" />
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="text-[13px] font-bold text-[#333] flex items-center gap-1.5">User Message<span className="text-[#A10602]">*</span></label>
-                            <div className="w-full bg-[#F5F5F7] border border-[#E6E6EB] rounded-[24px] p-8 text-[14px] font-bold text-[#333]/70 leading-relaxed italic min-h-[160px]">
-                                The Driver was suppose to was suppose to was suppose to was suppose to was suppose to was suppose to...
+                            <div className="w-full bg-[#F5F5F7] border border-[#E6E6EB] rounded-[24px] p-8 text-[14px] font-bold text-[#333]/70 leading-relaxed italic min-h-[120px]">
+                                "{ticket._raw?.message || 'No explicit message body provided by the user.'}"
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-4">
-                            <span className="text-[13px] font-bold text-[#A0A0A0] uppercase tracking-wider">Attachment(s)</span>
-                            <div className="flex gap-4">
-                                {[1, 2, 3, 4].map(i => (
-                                    <div key={i} className="w-28 h-28 rounded-[16px] overflow-hidden border-2 border-[#F5F5F7]">
-                                        <Image src="/images/driverCar.png" width={112} height={112} alt="Evidence" className="object-cover" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+
 
                         <div className="flex flex-col gap-6 pt-6 border-t border-[#F5F5F7]">
                             <h4 className="text-[18px] font-black text-[#0B153D]">Add response</h4>
@@ -134,8 +154,11 @@ export default function TicketDetailsModal({ ticket, onClose }: TicketDetailProp
                                 <span className="text-[14px] font-bold text-[#333]">Send updates via email</span>
                             </div>
 
-                            <button className="w-full bg-[#A10602] text-white py-5 rounded-full font-black text-[15px] shadow-xl hover:bg-[#8B0501] active:scale-[0.98] transition-all">
-                                Submit
+                            <button 
+                                onClick={() => alert("Waiting for Backend Implementation: The API endpoint for sending email replies directly to the user (e.g. POST /api/v1/admin/support/tickets/{id}/reply) has not been built yet. I've added this to our backend requirements logic!")}
+                                className="w-full bg-[#A10602] text-white py-5 rounded-full font-black text-[15px] shadow-xl hover:bg-[#8B0501] active:scale-[0.98] transition-all"
+                            >
+                                Submit Reply
                             </button>
                         </div>
                     </div>
@@ -145,20 +168,18 @@ export default function TicketDetailsModal({ ticket, onClose }: TicketDetailProp
                         <h3 className="text-[18px] font-black text-[#0B153D]">User</h3>
                         <div className="bg-white border border-[#E6E6EB] rounded-[32px] p-8 flex flex-col gap-8 shadow-sm">
                             <div className="flex items-center gap-6">
-                                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#F5F5F7] shadow-inner">
-                                    <Image src="/admin_user_avatar_rider_1773934010183.png" width={96} height={96} alt="User" className="object-cover" />
-                                </div>
+                                <Avatar name={ticket.userName} className="w-24 h-24 text-[32px] border-4 border-[#F5F5F7] shadow-inner shrink-0" />
                                 <div className="flex flex-col gap-1">
-                                    <h2 className="text-[26px] font-black text-[#A10602] leading-none">Estime Sa. | Rider</h2>
-                                    <p className="text-[13px] font-bold text-[#A0A0A0]">last seen today 9:40 GMT</p>
+                                    <h2 className="text-[26px] font-black text-[#A10602] leading-none">{ticket.userName} | {ticket.userType}</h2>
+                                    <p className="text-[13px] font-bold text-[#A0A0A0]">Sent a request over</p>
                                 </div>
                             </div>
 
                             <div className="bg-white border-2 border-[#F5F5F7] rounded-[24px] overflow-hidden">
                                 {[
-                                    { label: 'Phone', value: '08037281938' },
-                                    { label: 'Email', value: 'exampleemail@gmail.com' },
-                                    { label: 'Location', value: 'Kimshasha, Congo' },
+                                    { label: 'Phone', value: ticket._raw?.user_phone || 'N/A' },
+                                    { label: 'Email', value: ticket._raw?.user_email || 'N/A' },
+                                    { label: 'Location', value: 'Congo' },
                                 ].map((item, id) => (
                                     <div key={id} className={`flex items-center gap-10 p-5 ${id !== 2 ? 'border-b-2 border-[#F5F5F7]' : ''}`}>
                                         <span className="text-[12px] font-black text-[#A0A0A0] uppercase tracking-wider w-24 shrink-0">{item.label}</span>

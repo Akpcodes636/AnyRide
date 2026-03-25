@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { X, Phone, Mail, MapPin, Calendar, Wallet, FileText, CheckCircle2, AlertCircle, File, Eye, TrendingUp, Users, Car, Star, Briefcase, Hash, Building2, CreditCard } from 'lucide-react';
 import Image from 'next/image';
+import Avatar from './Avatar';
 
 interface UserDetailProps {
     user: any;
@@ -87,15 +88,17 @@ export default function UserDetailsModal({ user, userType, onClose }: UserDetail
                         <div className="lg:col-span-5 flex flex-col gap-8">
 
                             <div className="bg-white border border-[#E6E6EB] rounded-[32px] p-4 pr-10 shadow-sm flex items-center gap-6">
-                                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-full overflow-hidden border-4 border-[#F5F5F7] shadow-inner shrink-0 scale-90">
-                                    <Image src="/images/driverprofile.png" width={128} height={128} alt="User" className="object-cover" />
-                                </div>
+                                <Avatar name={user.name || 'Unknown'} className="w-24 h-24 md:w-32 md:h-32 text-[36px] bg-gray-100 shrink-0 scale-90 border-4 border-[#F5F5F7] shadow-inner" />
                                 <div className="flex flex-col gap-1">
                                     <h2 className="text-[22px] md:text-[26px] font-black text-[#A10602] leading-none tracking-tight">
                                         {user.name} | {userType}
                                     </h2>
-                                    <p className="text-[13px] font-bold text-[#A0A0A0] mb-2 tracking-wide uppercase">last seen today 9:40 GMT</p>
-                                    <span className="bg-[#E6F7EB] text-[#00B230] border border-[#CFEFD8] px-4 py-1.5 rounded-full text-[12px] font-bold w-fit shadow-xs">Active</span>
+                                    <p className="text-[13px] font-bold text-[#A0A0A0] mb-2 tracking-wide uppercase">
+                                        {user.last_active ? `Last active: ${new Date(user.last_active).toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}` : 'Account active'}
+                                    </p>
+                                    <span className="bg-[#E6F7EB] text-[#00B230] border border-[#CFEFD8] px-4 py-1.5 rounded-full text-[12px] font-bold w-fit shadow-xs capitalize">
+                                        {user.status || user.account_status || 'Active'}
+                                    </span>
                                 </div>
                             </div>
 
@@ -114,39 +117,36 @@ export default function UserDetailsModal({ user, userType, onClose }: UserDetail
                             <div className="grid grid-cols-2 gap-4">
                                 {isPartner ? (
                                     <>
-                                        <StatMiniCard label="Numbers of Vehicles" value="68" />
-                                        <StatMiniCard label="Number of drivers assigned" value="28" />
-                                        <StatMiniCard label="Average reviews received" value="5.0" icon={Star} />
-                                        <StatMiniCard label="Total earnings" value="CDF 25K" />
-                                        <StatMiniCard label="Pending payouts" value="CDF 1.2K" />
-                                        <StatMiniCard label="Completed payouts" value="CDF 19K" />
+                                        <StatMiniCard label="Numbers of Vehicles" value="0" />
+                                        <StatMiniCard label="Number of drivers assigned" value="0" />
+                                        <StatMiniCard label="Average reviews received" value="0.0" icon={Star} />
+                                        <StatMiniCard label="Total earnings" value="CDF 0" />
+                                        <StatMiniCard label="Pending payouts" value="CDF 0" />
+                                        <StatMiniCard label="Completed payouts" value="CDF 0" />
                                     </>
                                 ) : (
                                     <>
-                                        <StatMiniCard label={isDriver ? "Total earnings" : "Total spent"} value="CDF 6k+" />
-                                        <StatMiniCard label="Completed trips" value="1,240" />
-                                        <StatMiniCard label={isDriver ? "Registered vehicles" : "Avg reviews"} value={isDriver ? "2" : "5.0"} icon={isDriver ? null : Star} />
-                                        <StatMiniCard label="Wallet balance" value="CDF 25K" icon={Wallet} />
+                                        <StatMiniCard label={isDriver ? "Total earnings" : "Total spent"} value={`CDF ${user.total_earnings?.toLocaleString() || "0"}`} />
+                                        <StatMiniCard label="Completed trips" value={user.total_trips?.toLocaleString() || "0"} />
+                                        <StatMiniCard label={isDriver ? "Registered vehicles" : "Avg reviews"} value={isDriver ? "N/A" : (user.rating || "0.0")} icon={isDriver ? null : Star} />
+                                        <StatMiniCard label="Wallet balance" value={isDriver ? `CDF ${user.total_earnings?.toLocaleString() || "0"}` : "CDF 0"} icon={Wallet} />
                                     </>
                                 )}
                             </div>
 
                             {isDriver && (
-                                <div className="flex flex-col gap-6 mt-4">
+                                <div className="flex flex-col gap-6 mt-4 opacity-75">
                                     <h3 className="text-[20px] font-black text-[#0B153D]">Trip metrics and analytics</h3>
                                     <div className="bg-white border-2 border-[#F5F5F7] rounded-[24px] p-6 flex flex-col gap-6">
                                         <div className="flex flex-col gap-2">
                                             <span className="text-[13px] font-bold text-[#666]">Total Rides</span>
                                             <div className="flex items-center gap-4">
-                                                <span className="text-[28px] font-black text-[#333]">49</span>
-                                                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold text-[#00B230] bg-[#E6F7EB] border border-[#CFEFD8]">
-                                                    <TrendingUp size={14} /> +1.5% / last month
-                                                </div>
+                                                <span className="text-[28px] font-black text-[#333]">{user.total_trips?.toLocaleString() || "0"}</span>
                                             </div>
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <span className="text-[13px] font-bold text-[#666]">Acceptance rates</span>
-                                            <span className="text-[28px] font-black text-[#333]">92%</span>
+                                            <span className="text-[28px] font-black text-[#333]">{user.total_trips > 0 ? '100%' : 'N/A'}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -162,9 +162,9 @@ export default function UserDetailsModal({ user, userType, onClose }: UserDetail
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#F5F5F7] pb-6 mb-2">
                                         <span className="text-[14px] font-black text-[#666]">Account status</span>
                                         <div className="flex flex-wrap items-center gap-3">
-                                            <button className="bg-[#E6F7EB] text-[#00B230] border border-[#CFEFD8] px-5 py-2 rounded-full text-[12px] font-bold shadow-xs">Activate</button>
-                                            <button className="bg-[#FFF8E6] text-[#FFB800] border border-[#FFEBBF] px-5 py-2 rounded-full text-[12px] font-bold shadow-xs">Suspend</button>
-                                            <button className="bg-[#FFF4F4] text-[#E53935] border border-[#FFE6E6] px-5 py-2 rounded-full text-[12px] font-bold shadow-xs">{isPartner || !isDriver ? 'Block' : 'Disactivate'}</button>
+                                            <button className="bg-[#E6F7EB] text-[#00B230] border border-[#CFEFD8] px-5 py-2 rounded-full text-[12px] font-bold shadow-xs hover:bg-[#D4F3DE]">Activate</button>
+                                            <button className="bg-[#FFF8E6] text-[#FFB800] border border-[#FFEBBF] px-5 py-2 rounded-full text-[12px] font-bold shadow-xs hover:bg-[#FFF2CC]">Suspend</button>
+                                            <button className="bg-[#FFF4F4] text-[#E53935] border border-[#FFE6E6] px-5 py-2 rounded-full text-[12px] font-bold shadow-xs hover:bg-[#FFE0E0]">{isPartner || !isDriver ? 'Block' : 'Disactivate'}</button>
                                         </div>
                                     </div>
                                     <ToggleSwitch label="Flag for Review" active />

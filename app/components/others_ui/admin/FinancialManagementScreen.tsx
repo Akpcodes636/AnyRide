@@ -1,27 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminSidebar from "@/app/components/others_ui/admin/AdminSidebar";
 import AdminHeader from "@/app/components/others_ui/admin/AdminHeader";
 import { Search, ChevronDown, ChevronRight, TrendingUp, TrendingDown, Clock, Download, Calendar } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, Cell } from 'recharts';
-
-const revenueData = [
-    { name: '12', value: 300000 },
-    { name: '13', value: 650000 },
-    { name: '14', value: 450000 },
-    { name: '15', value: 920000 },
-    { name: '16', value: 500000 },
-    { name: '17', value: 600000 },
-];
-
-const earningsData = [
-    { name: 'Jan', platform: 400000, drivers: 800000 },
-    { name: 'Feb', platform: 500000, drivers: 700000 },
-    { name: 'Mar', platform: 300000, drivers: 900000 },
-    { name: 'Apr', platform: 250000, drivers: 450000 },
-    { name: 'May', platform: 600000, drivers: 600000 },
-];
 
 const StatCard = ({ label, value, trend, isPositive = true }: { label: string, value: string, trend?: string, isPositive?: boolean }) => (
     <div className="bg-white border border-[#E6E6EB] rounded-[24px] p-6 lg:p-8 flex flex-col gap-3 shadow-xs flex-1 min-w-[240px]">
@@ -40,6 +23,88 @@ const StatCard = ({ label, value, trend, isPositive = true }: { label: string, v
 export default function FinancialManagementScreen() {
     const [activeTab, setActiveTab] = useState('All');
     const [showStatusFilter, setShowStatusFilter] = useState(false);
+
+    // Live State
+    const [stats, setStats] = useState({ totalRevenue: 0, completedTrips: 0, platformCommission: 0, driverPayouts: 0 });
+    const [revenueData, setRevenueData] = useState<any[]>([]);
+    const [earningsData, setEarningsData] = useState<any[]>([]);
+    const [tripsData, setTripsData] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchFinancials = async () => {
+            try {
+                const token = localStorage.getItem('admin_token');
+                if (!token) return;
+                const headers = { 'Authorization': `Bearer ${token}` };
+
+                const [settingsRes, statsRes, analyticsRes, ridesRes] = await Promise.all([
+                    fetch('https://anyride.techenex.online/api/v1/admin/settings', { headers }),
+                    fetch('https://anyride.techenex.online/api/v1/admin/dashboard/stats', { headers }),
+                    fetch('https://anyride.techenex.online/api/v1/admin/dashboard/analytics', { headers }),
+                    fetch('https://anyride.techenex.online/api/v1/admin/rides', { headers }),
+                ]);
+
+                const settings = await settingsRes.json();
+                const statsData = await statsRes.json();
+                const analyticsData = await analyticsRes.json();
+                const ridesDataObj = await ridesRes.json();
+
+                // Determine split from backend or default 20% platform cut
+                const commissionRate = settings.data?.commission_percentage ? (settings.data.commission_percentage / 100) : 0.20;
+
+                // Set Cards
+                if (statsData.data) {
+                    const totalRev = statsData.data.revenue?.total || 0;
+                    setStats({
+                        totalRevenue: totalRev,
+                        completedTrips: statsData.data.rides?.completed || 0,
+                        platformCommission: totalRev * commissionRate,
+                        driverPayouts: totalRev * (1 - commissionRate)
+                    });
+                }
+
+                // Set Charts
+                if (analyticsData.data?.revenue_over_time) {
+                    const last7 = analyticsData.data.revenue_over_time.slice(-7);
+                    
+                    const revArr = last7.map((item: any) => ({
+                        name: item.date.split('-')[2], // day of month
+                        value: item.revenue
+                    }));
+                    setRevenueData(revArr);
+
+                    const earnArr = last7.map((item: any) => ({
+                        name: item.date.split('-')[2],
+                        platform: item.revenue * commissionRate,
+                        drivers: item.revenue * (1 - commissionRate)
+                    }));
+                    setEarningsData(earnArr);
+                }
+
+                // Set Table
+                if (ridesDataObj.data?.rides) {
+                    const mapped = ridesDataObj.data.rides.map((r: any) => ({
+                        id: `#${r.id.toString().padStart(5, '0')}`,
+                        date: new Date(r.created_at).toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+                        rider: r.customer_name || 'N/A',
+                        driver: r.driver_name || 'N/A',
+                        fare: r.ride_price || 0,
+                        commission: (r.ride_price || 0) * commissionRate,
+                        driverEarnings: (r.ride_price || 0) * (1 - commissionRate),
+                        status: r.status ? r.status.charAt(0).toUpperCase() + r.status.slice(1).toLowerCase() : 'Unknown'
+                    }));
+                    setTripsData(mapped);
+                }
+
+            } catch (error) {
+                console.error("Failed to fetch financials:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchFinancials();
+    }, []);
 
     return (
         <div className="flex min-h-screen bg-[#F5F5F7] font-sans">
@@ -65,10 +130,10 @@ export default function FinancialManagementScreen() {
 
                     {/* Stats Grid */}
                     <div className="flex flex-wrap gap-6 select-none">
-                        <StatCard label="Total Revenues" value="CDF 600k" trend="+1.5%" />
-                        <StatCard label="Completed trips" value="20,089" />
-                        <StatCard label="Platform commission" value="CDF 12,108" trend="-1.42%" isPositive={false} />
-                        <StatCard label="Driver payouts" value="CDF 52,252" trend="+1.5%" />
+                        <StatCard label="Total Revenues" value={`CDF ${stats.totalRevenue.toLocaleString()}`} />
+                        <StatCard label="Completed trips" value={stats.completedTrips.toLocaleString()} />
+                        <StatCard label="Platform commission" value={`CDF ${stats.platformCommission.toLocaleString()}`} />
+                        <StatCard label="Driver payouts" value={`CDF ${stats.driverPayouts.toLocaleString()}`} />
                     </div>
 
                     {/* Charts Row */}
@@ -102,7 +167,7 @@ export default function FinancialManagementScreen() {
                                         <Tooltip
                                             contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 40px rgba(0,0,0,0.1)', padding: '12px 20px' }}
                                             itemStyle={{ fontSize: '14px', fontWeight: '900', color: '#0B153D' }}
-                                            formatter={(val) => [`CDF ${Number(val) / 1000}K`, 'Revenue']}
+                                            formatter={(val) => [`CDF ${Number(val).toLocaleString()}`, 'Revenue']}
                                             cursor={{ stroke: '#E6E6EB', strokeWidth: 1 }}
                                         />
                                         <Area type="monotone" dataKey="value" stroke="#333" strokeWidth={4} fillOpacity={1} fill="url(#colorVal)" />
@@ -184,21 +249,29 @@ export default function FinancialManagementScreen() {
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-[#F5F5F7]">
-                                        {[1, 2, 3, 4, 5].map((_, idx) => (
+                                        {isLoading ? (
+                                            <tr>
+                                                <td colSpan={8} className="py-10 text-center font-bold text-[#A0A0A0]">Loading fast live ledger database...</td>
+                                            </tr>
+                                        ) : tripsData.length === 0 ? (
+                                            <tr>
+                                                <td colSpan={8} className="py-10 text-center font-bold text-[#A0A0A0]">No financial trips found.</td>
+                                            </tr>
+                                        ) : tripsData.map((trip, idx) => (
                                             <tr key={idx} className="group hover:bg-[#F5F5F7]/40 transition-all cursor-default">
-                                                <td className="py-6 px-8"><span className="text-[13px] font-black text-[#333]">#JDN783</span></td>
-                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#A0A0A0]">12 Oct 2025</span></td>
-                                                <td className="py-6 px-8"><span className="text-[14px] font-black text-[#333]">Noor Hayat</span></td>
-                                                <td className="py-6 px-8"><span className="text-[14px] font-black text-[#333]">Noor Hayat</span></td>
-                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#333]">CDF 5,000</span></td>
-                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#333]">CDF 5,000</span></td>
-                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#333]">CDF 5,000</span></td>
+                                                <td className="py-6 px-8"><span className="text-[13px] font-black text-[#333]">{trip.id}</span></td>
+                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#A0A0A0]">{trip.date}</span></td>
+                                                <td className="py-6 px-8"><span className="text-[14px] font-black text-[#333]">{trip.rider}</span></td>
+                                                <td className="py-6 px-8"><span className="text-[14px] font-black text-[#333]">{trip.driver}</span></td>
+                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#333]">CDF {trip.fare.toLocaleString()}</span></td>
+                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#A20601]">CDF {trip.commission.toLocaleString()}</span></td>
+                                                <td className="py-6 px-8"><span className="text-[13px] font-bold text-[#00B230]">CDF {trip.driverEarnings.toLocaleString()}</span></td>
                                                 <td className="py-6 px-8">
                                                     <span className={`px-4 py-1.5 rounded-full text-[11px] font-bold border min-w-[80px] inline-block text-center
-                                                        ${idx === 0 ? 'text-[#00B230] bg-[#E6F7EB] border-[#CFEFD8]' :
-                                                            idx === 1 ? 'text-[#FFB800] bg-[#FFF8E6] border-[#FFEBBF]' :
+                                                        ${trip.status === 'Completed' ? 'text-[#00B230] bg-[#E6F7EB] border-[#CFEFD8]' :
+                                                            trip.status === 'Ongoing' ? 'text-[#FFB800] bg-[#FFF8E6] border-[#FFEBBF]' :
                                                                 'text-[#E53935] bg-[#FFF4F4] border-[#FFE6E6]'}`}>
-                                                        {idx === 0 ? 'Paid' : idx === 1 ? 'Pending' : 'Failed'}
+                                                        {trip.status === 'Completed' ? 'Paid' : trip.status === 'Ongoing' ? 'Pending' : 'Failed'}
                                                     </span>
                                                 </td>
                                             </tr>

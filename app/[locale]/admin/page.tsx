@@ -5,13 +5,46 @@ import { useRouter } from 'next/navigation';
 
 export default function AdminLoginPage() {
     const router = useRouter();
-    const [email, setEmail] = useState('exampleofemail@gmail.com');
-    const [password, setPassword] = useState('JBNDFJ87W3Y');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Mock login
-        router.push('/en/admin/dashboard');
+        setErrorMsg(null);
+        setIsLoading(true);
+
+        try {
+            const res = await fetch('https://anyride.techenex.online/api/v1/auth/login/admin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    role: "admin"
+                })
+            });
+
+            const resBody = await res.json();
+
+            if (res.ok) {
+                // The API wraps the token in a data object
+                const token = resBody.data?.access_token || resBody.access_token || 'fake_token';
+                console.log("Login successful! Saved Token:", token);
+                localStorage.setItem('admin_token', token);
+                router.push('/en/admin/dashboard');
+            } else {
+                console.error("Login failed with response:", resBody);
+                setErrorMsg(resBody.message || 'Invalid credentials or unauthorized access');
+            }
+        } catch (err) {
+            setErrorMsg('Network error occurred. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
@@ -32,6 +65,12 @@ export default function AdminLoginPage() {
                     <p className="text-[14px] md:text-[16px] font-bold text-[#A0A0A0] mb-8 md:mb-10 lg:mb-12">
                         Enter username/email and password to login.
                     </p>
+
+                    {errorMsg && (
+                        <div className="mb-6 p-4 text-[13px] font-bold text-[#A20602] bg-[#FFF4F4] border border-[#FFE6E6] rounded-[12px] flex items-center justify-between">
+                            {errorMsg}
+                        </div>
+                    )}
 
                     <form onSubmit={handleLogin} className="space-y-6 md:space-y-8">
                         <div>
@@ -63,9 +102,10 @@ export default function AdminLoginPage() {
                         <div className="pt-6">
                             <button
                                 type="submit"
-                                className="w-full bg-[#02093A] hover:bg-[#070e28] text-white font-black text-[16px] md:text-[17px] py-4.5 rounded-[14px] lg:rounded-[16px] transition-all shadow-xl active:scale-[0.98] transform hover:shadow-2xl hover:translate-y-[-2px] cursor-pointer"
+                                disabled={isLoading}
+                                className={`w-full ${isLoading ? 'bg-[#A0A0A0] cursor-not-allowed' : 'bg-[#02093A] hover:bg-[#070e28] hover:shadow-2xl hover:translate-y-[-2px] active:scale-[0.98] cursor-pointer'} text-white font-black text-[16px] md:text-[17px] py-4.5 rounded-[14px] lg:rounded-[16px] transition-all shadow-xl transform`}
                             >
-                                Login
+                                {isLoading ? 'Authenticating...' : 'Login'}
                             </button>
                         </div>
                     </form>

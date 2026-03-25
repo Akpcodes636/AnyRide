@@ -1,20 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminSidebar from "@/app/components/others_ui/admin/AdminSidebar";
 import AdminHeader from "@/app/components/others_ui/admin/AdminHeader";
 import TicketDetailsModal from "@/app/components/others_ui/admin/TicketDetailsModal";
 import { Search, ChevronDown, ChevronRight, Filter, AlertCircle, Clock, CheckCircle2, MoreHorizontal } from 'lucide-react';
-
-const ticketsData = [
-    { id: '#JDN783', userType: 'Rider', userName: 'Esteem Salah', category: 'Trip issue', priority: 'Low', dateTime: '25/03/2025', status: 'Resolved' },
-    { id: '#JDN783', userType: 'Rider', userName: 'Esteem Salah', category: 'Payment issue', priority: 'Medium', dateTime: '25/03/2025', status: 'Resolved' },
-    { id: '#JDN783', userType: 'Driver', userName: 'Esteem Salah', category: 'Driver behavior', priority: 'High', dateTime: '25/03/2025', status: 'In progress' },
-    { id: '#JDN783', userType: 'Rider', userName: 'Esteem Salah', category: 'App bug', priority: 'High', dateTime: '25/03/2025', status: 'In progress' },
-    { id: '#JDN783', userType: 'Rider', userName: 'Esteem Salah', category: 'Account Issue', priority: 'Low', dateTime: '25/03/2025', status: 'Open' },
-    { id: '#JDN783', userType: 'Driver', userName: 'Esteem Salah', category: 'Account Issue', priority: 'High', dateTime: '25/03/2025', status: 'Open' },
-    { id: '#JDN783', userType: 'Driver', userName: 'Esteem Salah', category: 'Account Issue', priority: 'Medium', dateTime: '25/03/2025', status: 'Closed' },
-];
 
 const PriorityBadge = ({ priority }: { priority: string }) => {
     const styles: Record<string, string> = {
@@ -47,6 +37,51 @@ const StatusBadge = ({ status }: { status: string }) => {
 export default function SupportTicketScreen() {
     const [selectedTicket, setSelectedTicket] = useState<any>(null);
     const [showStatusFilter, setShowStatusFilter] = useState(false);
+    
+    // Live State
+    const [ticketsData, setTicketsData] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchTickets = async () => {
+            try {
+                const token = localStorage.getItem('admin_token');
+                if (!token) return;
+
+                const res = await fetch('https://anyride.techenex.online/api/v1/admin/support/tickets', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                const json = await res.json();
+                if (res.ok && Array.isArray(json)) {
+                    // Helper to map snake_case API status to UI Status
+                    const formatStatus = (s: string) => {
+                        if (s === 'in_progress') return 'In progress';
+                        if (s) return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+                        return 'Open';
+                    };
+
+                    const mapped = json.map((t: any) => ({
+                        _raw: t,
+                        id: `#${t.id.toString().padStart(5, '0')}`,
+                        userType: 'User', // Backend currently doesn't provide explicit user type inside ticket
+                        userName: t.user_name || 'N/A',
+                        category: t.subject || 'Support',
+                        priority: 'Medium', // Priority is missing from payload, defaulting to Medium
+                        dateTime: new Date(t.created_at).toLocaleString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+                        status: formatStatus(t.status)
+                    }));
+                    setTicketsData(mapped);
+                }
+            } catch (error) {
+                console.error("Failed to fetch tickets:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchTickets();
+    }, []);
 
     return (
         <div className="flex min-h-screen bg-[#F5F5F7] font-sans">
@@ -111,7 +146,15 @@ export default function SupportTicketScreen() {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-[#F5F5F7]">
-                                    {ticketsData.map((ticket, idx) => (
+                                    {isLoading ? (
+                                        <tr>
+                                            <td colSpan={8} className="py-10 text-center font-bold text-[#A0A0A0]">Loading fast live tickets database...</td>
+                                        </tr>
+                                    ) : ticketsData.length === 0 ? (
+                                        <tr>
+                                            <td colSpan={8} className="py-10 text-center font-bold text-[#A0A0A0]">No support tickets found.</td>
+                                        </tr>
+                                    ) : ticketsData.map((ticket, idx) => (
                                         <tr key={idx} className="group hover:bg-[#F5F5F7]/40 transition-all cursor-default relative">
                                             <td className="py-6 lg:py-8 px-8"><span className="text-[14px] font-black text-[#333]">{ticket.id}</span></td>
                                             <td className="py-6 lg:py-8 px-8"><span className="text-[13px] font-bold text-[#666]">{ticket.userType}</span></td>
@@ -131,7 +174,16 @@ export default function SupportTicketScreen() {
                     </div>
                 </div>
             </main>
-            {selectedTicket && <TicketDetailsModal ticket={selectedTicket} onClose={() => setSelectedTicket(null)} />}
+            {selectedTicket && (
+                <TicketDetailsModal 
+                    ticket={selectedTicket} 
+                    onClose={() => setSelectedTicket(null)} 
+                    onUpdateStatus={(ticketId, newStatus) => {
+                        setTicketsData(prev => prev.map(t => t.id === ticketId ? { ...t, status: newStatus } : t));
+                        setSelectedTicket((prev: any) => ({ ...prev, status: newStatus }));
+                    }}
+                />
+            )}
         </div>
     );
 }

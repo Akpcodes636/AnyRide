@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "data": {
+    "pricing": {
+      "base_fare": 50,
+      "per_km_rate": 15,
+      "per_minute_rate": 2,
+      "minimum_fare": 100,
+      "cancellation_fee": 25,
+      "surge_multiplier": 1
+    },
+    "features": {
+      "ride_sharing_enabled": true,
+      "scheduled_rides_enabled": true,
+      "cash_payment_enabled": true,
+      "card_payment_enabled": true,
+      "driver_tips_enabled": true,
+      "ride_negotiation_enabled": true
+    },
+    "limits": {
+      "max_ride_distance_km": 100,
+      "max_waiting_time_minutes": 10,
+      "driver_search_radius_km": 5,
+      "max_passengers": 4
+    },
+    "commission": {
+      "platform_commission_percentage": 20,
+      "payment_processing_fee_percentage": 2.5
+    },
+    "configuration": {
+      "STRIPE_CONNECTED_ACCOUNT_ID": "acct_1SahTuKKPQhOKGC4",
+      "NEW_CONFIG_KEY": "new_value"
+    }
+  }
+}
