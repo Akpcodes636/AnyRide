@@ -14,7 +14,7 @@ export default function CareersPartner() {
         <div className="grid grid-cols-1 md:grid-cols-[1.8fr_2fr] lg:grid-cols-[1.8fr_2fr] gap-[16px]">
           <div className=" h-full w-full">
             <Image
-              src="/images/robots.png"
+              src="/images/robots.webp"
               width={500}
               height={500}
               alt="two robot holding hands"

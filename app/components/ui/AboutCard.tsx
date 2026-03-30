@@ -100,9 +100,9 @@ export default function AboutCards() {
 
   // Define images for each card
   const images = [
-    "/icons/box.svg",      // or whatever your car icon path is
-    "/icons/box-1.svg", // or whatever your motorcycle icon path is
-    "/icons/box-2.svg"   // or whatever your verified icon path is
+    "/icons/box.webp",      // or whatever your car icon path is
+    "/icons/box-1.webp", // or whatever your motorcycle icon path is
+    "/icons/box-2.webp"   // or whatever your verified icon path is
   ];
 
   return (

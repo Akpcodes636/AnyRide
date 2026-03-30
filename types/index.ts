@@ -651,3 +651,269 @@ export interface RideData  {
   rideType?: string | null;
 };
 
+// ─── Vehicle Types ───────────────────────────────────────────
+export interface Vehicle {
+  id: number;
+  make: string;
+  model: string;
+  year: number;
+  plate_number: string;
+  seating_capacity: number;
+  vehicle_type: string;
+  color?: string;
+  is_active: boolean;
+  verification_status: "verified" | "under-review" | "declined" | "pending";
+  created_at: string;
+  updated_at: string;
+  images?: VehicleImage[];
+}
+
+export interface VehicleImage {
+  id: number;
+  vehicle_id: number;
+  image_url: string;
+  image_type: "front" | "back" | "side" | "interior" | "document";
+  is_primary: boolean;
+  created_at: string;
+}
+
+export interface VehicleCreateRequest {
+  make: string;
+  model: string;
+  year: number;
+  plate_number: string;
+  seating_capacity: number;
+  vehicle_type: string;
+  color?: string;
+}
+
+export interface VehicleUpdateRequest {
+  make?: string;
+  model?: string;
+  year?: number;
+  plate_number?: string;
+  seating_capacity?: number;
+  vehicle_type?: string;
+  color?: string;
+  is_active?: boolean;
+}
+
+export interface VehicleListResponse {
+  status: string;
+  message: string;
+  data: Vehicle[];
+}
+
+// ─── Review Types ───────────────────────────────────────────
+export interface Review {
+  id: number;
+  ride_id: number;
+  driver_id: number;
+  rider_id: number;
+  rating: number;
+  comment?: string;
+  created_at: string;
+  updated_at: string;
+  ride?: {
+    id: number;
+    pickup_address: string;
+    dropoff_address?: string;
+    total_price?: number;
+    created_at: string;
+  };
+  rider?: {
+    id: number;
+    name: string;
+    phonenumber: string;
+  };
+}
+
+export interface ReviewCreateRequest {
+  ride_id: number;
+  rating: number;
+  comment?: string;
+}
+
+export interface ReviewListResponse {
+  status: string;
+  message: string;
+  data: Review[];
+}
+
+// ─── Driver Document Types ───────────────────────────────────
+export interface DocumentType {
+  id: number;
+  name: string;
+  description: string;
+  is_required: boolean;
+  document_format: string;
+  max_file_size_mb: number;
+  created_at: string;
+}
+
+export interface DriverDocument {
+  id: number;
+  driver_id: number;
+  document_type_id: number;
+  file_url: string;
+  file_name: string;
+  verification_status: "pending" | "approved" | "rejected" | "expired";
+  rejection_reason?: string;
+  expires_at?: string;
+  uploaded_at: string;
+  updated_at: string;
+  document_type?: DocumentType;
+}
+
+export interface DocumentUploadRequest {
+  document_type_id: number;
+  file: File;
+  expires_at?: string;
+}
+
+export interface VerificationStatusResponse {
+  status: string;
+  message: string;
+  data: {
+    overall_status: "verified" | "pending" | "rejected" | "incomplete";
+    verified_documents: number;
+    total_required_documents: number;
+    documents: DriverDocument[];
+  };
+}
+
+// ─── Driver Ride Lifecycle Types ───────────────────────────────
+export interface ActiveRide {
+  id: number;
+  driver_id: number;
+  customer_id: number;
+  vehicle_id: number;
+  pickup_address: string;
+  dropoff_address: string;
+  pickup_lat: number;
+  pickup_lon: number;
+  dropoff_lat: number;
+  dropoff_lon: number;
+  status: "requested" | "accepted" | "arrived" | "started" | "completed" | "cancelled";
+  ride_type: string;
+  estimated_price: number;
+  actual_price?: number;
+  duration_minutes?: number;
+  started_at?: string;
+  completed_at?: string;
+  created_at: string;
+  updated_at: string;
+  customer?: {
+    name: string;
+    phonenumber: string;
+  };
+  vehicle?: {
+    make: string;
+    model: string;
+    plate_number: string;
+  };
+}
+
+export interface RideNegotiation {
+  id: number;
+  ride_request_id: number;
+  driver_id: number;
+  negotiation_offer: string;
+  status: "pending" | "accepted" | "rejected" | "expired";
+  created_at: string;
+  updated_at: string;
+}
+
+export interface NegotiationCreateRequest {
+  ride_request_id: number;
+  negotiation_offer: string;
+}
+
+export interface NegotiationAcceptRequest {
+  ride_request_id: number;
+  negotiation_id: number;
+}
+
+// ─── Transaction Types ───────────────────────────────────────
+export interface Transaction {
+  id: number;
+  user_id: number;
+  amount: number;
+  transaction_type: "credit" | "debit" | "transfer" | "withdrawal" | "topup";
+  status: "pending" | "completed" | "failed" | "cancelled";
+  description?: string;
+  reference_id?: string;
+  reference_type?: "ride" | "transfer" | "withdrawal" | "topup";
+  created_at: string;
+  updated_at: string;
+  ride?: {
+    id: number;
+    pickup_address: string;
+    dropoff_address?: string;
+  };
+}
+
+export interface TransactionListResponse {
+  status: string;
+  message: string;
+  data: Transaction[];
+}
+
+// ─── Component Props Types ───────────────────────────────────
+export interface VehicleCardProps {
+  vehicle: Vehicle;
+  onActivate?: (vehicleId: number) => void;
+  onDeactivate?: (vehicleId: number) => void;
+  onEdit?: (vehicleId: number) => void;
+  onDelete?: (vehicleId: number) => void;
+}
+
+export interface ReviewCardProps {
+  review: Review;
+  showEarnings?: boolean;
+}
+
+export interface TransactionCardProps {
+  transaction: Transaction;
+  showDate?: boolean;
+}
+
+export interface StatusBadgeProps {
+  status: "verified" | "under-review" | "declined" | "pending" | "approved" | "rejected" | "expired" | "incomplete";
+  size?: "sm" | "md" | "lg";
+}
+
+export interface NavigationItem {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+  badge?: {
+    text: string;
+    color: string;
+  };
+}
+
+// ─── UI State Types ─────────────────────────────────────────
+export interface LoadingState {
+  isLoading: boolean;
+  error?: string;
+}
+
+export interface PaginationState {
+  page: number;
+  limit: number;
+  total: number;
+  hasNext: boolean;
+  hasPrev: boolean;
+}
+
+export interface FilterState {
+  rating?: number;
+  status?: string;
+  dateRange?: {
+    start: string;
+    end: string;
+  };
+  search?: string;
+}
+

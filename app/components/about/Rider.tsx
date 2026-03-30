@@ -16,7 +16,7 @@ export default function Rider() {
           {/* Image */}
           <div className="h-[335px] md:h-[335px] lg:h-[645px] rounded-[8px]">
             <Image
-              src="/images/about-12.jpg"
+              src="/images/about-12.webp"
               width={500}
               height={500}
               priority

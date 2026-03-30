@@ -227,9 +227,9 @@ export const rider =[
 ]
 
 export const pricingClarity = [
-  { key: "baseFare", img: "/icons/wallet.svg" },
-  { key: "perKm", img: "/icons/cars.svg" },
-  { key: "perMinutes", img: "/icons/partner.svg" }
+  { key: "baseFare", img: "/icons/wallet-1.webp" },
+  { key: "perKm", img: "/icons/cars.webp" },
+  { key: "perMinutes", img: "/icons/partner.webp" }
 ];
 
 export const benefits = [
@@ -410,32 +410,32 @@ export const fleetFeatures = [
   {
     title: "Fleet Overview Dashboard",
     description: "Real-time view of all vehicles, active drivers, and current operations across your fleet.",
-    img: "/images/icons.png",
+    img: "/images/icons.webp",
   },
   {
     title: "Vehicle Management",
     description: "Add, remove, and manage vehicle profiles with registration and compliance tracking.",
-    img: "/images/icons.png",
+    img: "/images/icons.webp",
   },
   {
     title: "Driver Assignment",
     description: "Assign and reassign drivers to vehicles with flexible scheduling capabilities.",
-    img: "/images/icons.png",
+    img: "/images/icons.webp",
   },
   {
     title: "Earnings & Payout Reports",
     description: "Consolidated financial reporting showing earnings by vehicle, driver, and time period.",
-    img: "/images/icons.png",
+    img: "/images/icons.webp",
   },
   {
     title: "Performance Analytics",
     description: "Track key metrics including utilization rates, driver ratings, and fleet efficiency.",
-    img: "/images/icons.png",
+    img: "/images/icons.webp",
   },
   {
     title: "Support Access",
     description: "Direct access to fleet owner support team for operational assistance.",
-    img: "/images/icons.png",
+    img: "/images/icons.webp",
   },
 ];
 
@@ -714,21 +714,25 @@ export const stepOne = [
   {
     id: 1,
     label: "Personal Information",
+    route: "/drivers/driver-requirements/getting-started/personal-information",
     badge: { text: "Verified", color: "bg-[#E9F9EE] text-[8px] leading-[120%] border border-[#22C553] text-green-600" },
   },
   {
     id: 2,
     label: "Valid ID & driver's license",
+    route: "/drivers/verifications/drivers-license",
     badge: { text: "Verified", color: "bg-[#E9F9EE] text-[8px] leading-[120%] border border-[#22C553] text-green-600" },
   },
   {
     id: 3,
     label: "Vehicle details (you can add more than one)",
+    route: "/drivers/my-vehicles",
     badge: { text: "Verification required", color: "bg-[#FEF5E7] border border-[#F59E0B] text-[8px] text-[#F59E0B] leading-[120%]" },
   },
   {
     id: 4,
     label: "Clear photos for verification",
+    route: "/drivers/verifications/profile-photo",
     badge: { text: "Verification required", color: "bg-[#FEF5E7] border border-[#F59E0B] text-[8px] text-[#F59E0B] leading-[120%]" },
   },
 ];
@@ -750,3 +754,4 @@ export const requests = [
       dropoff: "123 Main St, Springfield, IL 62701",
     },
   ];
+

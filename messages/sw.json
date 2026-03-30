@@ -996,19 +996,19 @@
           "steps": "01. ",
           "title": "Weka safari yako",
           "description": "Weka mahali pa kuanzia na unakoenda, chagua gari au pikipiki, na uone bei mapema.",
-          "image": "/images/rider-1.png"
+          "image": "/images/rider-1.webp"
         },
         {
           "steps": "02. ",
           "title": "Linganishwa na dereva",
           "description": "Tunakunganisha na dereva aliye karibu na aliyethibitishwa. Ona jina, aina ya gari, na muda wa kufika mara moja.",
-          "image": "/images/rider-2.png"
+          "image": "/images/rider-2.webp"
         },
         {
           "steps": "03. ",
           "title": "Safiri na ulipe",
           "description": "Fuata safari yako moja kwa moja, thibitisha kuchukuliwa kwa nambari ya siri, na ulipe kwa pesa taslimu au pochi.",
-          "image": "/images/rider-3.png"
+          "image": "/images/rider-3.webp"
         }
       ]
     },
@@ -1204,22 +1204,22 @@
       "title": "Kwa nini tunajenga AnyRide",
       "items": [
         {
-          "img": "/images/icons-2.png",
+          "img": "/images/icons-2.webp",
           "title": "Kuboresha usafirishaji",
           "text": "Tunajenga mifumo ya kisasa ya usafirishaji inayobadilisha shughuli zilizogawanyika na zisizo rasmi kwa suluhisho za usafirishaji zilizopangwa na zenye teknolojia."
         },
         {
-          "img": "/images/lock-icons.png",
+          "img": "/images/lock-icons.webp",
           "title": "Kuunda mifumo iliyopangwa na inayofuata sheria",
           "text": "AnyRide imeundwa kuzingatia uzingatiaji, uwajibikaji, na nidhamu ya kiutendaji — ikiunga mkono mifumo ya usafirishaji inayolingana na kanuni na uendelevu wa muda mrefu."
         },
         {
-          "img": "/images/partners-icons.png",
+          "img": "/images/partners-icons.webp",
           "title": "Kusaidia madereva, waendeshaji, na miji",
           "text": "Jukwaa letu linasaidia mfumo wote, ikiwezesha madereva na waendeshaji kufanya kazi kwa ufanisi zaidi huku ikisaidia miji kuboresha upatikanaji wa usafirishaji wa kuaminika."
         },
         {
-          "img": "/images/cars.png",
+          "img": "/images/cars.webp",
           "title": "Kujenga miundombinu ya usafirishaji ya kuaminika",
           "text": "Tunazingatia kuunda miundombinu ya usafirishaji inayotegemewa ambayo taasisi, biashara, na jamii zinaweza kuamini na kukua kwa wakati."
         }

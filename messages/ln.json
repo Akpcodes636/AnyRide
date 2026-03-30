@@ -632,22 +632,22 @@
       "subtitle": "Kokota na masoko oyo ezali na ndakisa mpe oyo ezali na croissance",
       "items": [
         {
-          "img": "/images/Icon.png",
+          "img": "/images/Icon.webp",
           "title": "Kokota na masoko oyo ezali na ndakisa mpe oyo ezali na croissance",
           "description": "Tala masoko oyo ezali na ndakisa mpe ekoki kokola na potentiel ya croissance"
         },
         {
-          "img": "/images/Bulb.png",
+          "img": "/images/Bulb.webp",
           "title": "Misala ya Transports esalemi na Teknoloji",
           "description": "Salela na infrastructure ya mobilité ya moderne mpe oyo ezali na data"
         },
         {
-          "img": "/images/Aim.png",
+          "img": "/images/Aim.webp",
           "title": "Design ya Platforme oyo ezangi kozanga mibeko",
           "description": "Esalemi mpo na kobakisa réglementation, sécurité mpe exigences ya risque"
         },
         {
-          "img": "/images/partner.png",
+          "img": "/images/partner.webp",
           "title": "Modèles ya Partenariat oyo ekola",
           "description": "Structures flexibles oyo ekola na ndenge ya besoins ya opération"
         }
@@ -1009,19 +1009,19 @@
           "steps": "Hatua 1",
           "title": "Tyá transport na yo",
           "description": "Kota esika ya kokóta mpe esika okokende, pona motuka to moto, mpe mona mbongo na yo liboso.",
-          "image": "/images/rider-1.png"
+          "image": "/images/rider-1.webp"
         },
         {
           "steps": "Hatua 2",
           "title": "Kangama",
           "description": "Tokangisi yo na motambwisi ya solo oyo azali penepene. Mona nkombo, motuka, mpe ntango akoya nokinoki.",
-          "image": "/images/rider-2.png"
+          "image": "/images/rider-2.webp"
         },
         {
           "step": "Hatua 3",
           "title": "Tambola & futa",
           "description": "Landela transport na yo na ntango ya solo, ndimá kokóta na code, mpe futa na mbongo to portefeuille.",
-          "image": "/images/rider-3.png"
+          "image": "/images/rider-3.webp"
         }
       ]
     },
@@ -1217,22 +1217,22 @@
       "title": "Mpo na nini tozali kotonga AnyRide",
       "items": [
         {
-          "img": "/images/icons-2.png",
+          "img": "/images/icons-2.webp",
           "title": "Kobongisa transport ya lelo",
           "text": "Tozali kotonga ba-systèmes ya transport ya moderne oyo ezali kobongola ba-opérations ya fragmenté mpe informel na ba-solutions ya mobilité structuré mpe ya technologie."
         },
         {
-          "img": "/images/lock-icons.png",
+          "img": "/images/lock-icons.webp",
           "title": "Kokela ba-systèmes ya structuré mpe conformes",
           "text": "AnyRide ebongisami na kati ya conformité, responsabilité, mpe discipline opérationnelle — kosalisa ba-modèles ya transport oyo ekokani na ba-règlements mpe soutenabilité ya ntango molai."
         },
         {
-          "img": "/images/partners-icons.png",
+          "img": "/images/partners-icons.webp",
           "title": "Kosunga batambwisi, ba-opérateurs, mpe bingumba",
           "text": "Plateforme na biso esaleli écosystème mobimba, kopesa nzela na batambwisi mpe ba-opérateurs ya kosala na ndenge ya malamu koleka ntango ezali kosalisa bingumba kobongisa accès na mobilité ya kondima."
         },
         {
-          "img": "/images/cars.png",
+          "img": "/images/cars.webp",
           "title": "Kotonga infrastructure ya mobilité ya kondima",
           "text": "Tozali kotalisa na kokela infrastructure ya transport ya kondima oyo ba-institutions, ba-entreprises, mpe ba-communautés bakoki kotyela motema mpe kokola na ntango."
         }

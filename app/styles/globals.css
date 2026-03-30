@@ -59,13 +59,13 @@
 @layer utilities {
   .bg-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/images/Hero-2.jpg");
+      url("/images/Hero-2.webp");
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
   }
   .bg-values {
-    background-image: url("/images/Values.png");
+    background-image: url("/images/Values.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,7 +77,7 @@
         rgba(0, 0, 0, 0) 4.78%,
         rgba(1, 2, 12, 0.8) 100%
       ),
-      url("/images/driver-2.jpg");
+      url("/images/driver-2.webp");
     background-size: cover;
     background-position: 5% 2%; /* move image downward */
     background-repeat: no-repeat;
@@ -88,7 +88,7 @@
         rgba(0, 0, 0, 0) 4.78%,
         rgba(1, 2, 12, 0.8) 100%
       ),
-      url("/images/Customer-1.jpg");
+      url("/images/Customer-1.webp");
     background-size: cover;
     /* background-position: 60% 90%; */
     background-position: top;
@@ -109,7 +109,7 @@
         rgba(0, 0, 0, 0) 4.78%,
         rgba(1, 2, 12, 0.8) 100%
       ),
-      url("/en/partners.png");
+      url("/en/partners.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -128,7 +128,7 @@
   }
   .bg-fleet {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/images/fleetHero.png");
+      url("/images/fleetHero.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -136,34 +136,34 @@
   }
   .bg-banners {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/images/Banner.png");
+      url("/images/Banner.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
   }
   .bg-partners {
       background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/images/partners.png");
+      url("/images/partners-1.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
   }
   .bg-career {
      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/images/join.png");
+      url("/images/join.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
   }
   .bg-careers {
      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url("/images/partnerbg.png");
+      url("/images/partnerbg.webp");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
   }
   .bg-About {
-     background-image: url("/images/About-img.png");
+     background-image: url("/images/About-img.webp");
     background-size: cover;
     /* background-position: top; */
     height:200vh;

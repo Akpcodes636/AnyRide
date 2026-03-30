@@ -48,7 +48,7 @@ export default function FleetTool() {
             height={500}
             alt="picture of image"
             className="w-full h-full object-cover"
-            src="/images/User.png"
+            src="/images/User.webp"
           />
         </div>
       </div>

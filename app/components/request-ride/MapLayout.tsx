@@ -102,7 +102,7 @@ export default function MapLayout() {
     return (
       <div
         style={containerStyle}
-        className="bg-[#F0F0F5] flex items-center justify-center"
+        className="bg-[#F0F0F5] flex items-center justify-center min-h-screen"
       >
         <div className="flex flex-col items-center gap-2">
           <div className="w-8 h-8 border-3 border-[#02093A] border-t-transparent rounded-full animate-spin" />

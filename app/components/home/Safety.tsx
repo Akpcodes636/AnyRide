@@ -22,9 +22,7 @@ const Safety = () => {
           <SubTitle text={t("subtitle")} css="rounded-[40px] font-normal" />
         </div>
 
-        <h2 className="text-center">
-          {t("title")}
-        </h2>
+        <h2 className="text-center">{t("title")}</h2>
 
         <p className="text-[16px] md:text-[18px] leading-[160%] tracking-[-2%] text-center text-[#333333] font-normal w-full max-w-[299px] md:max-w-[643px] mx-auto">
           {t("description")}
@@ -36,12 +34,13 @@ const Safety = () => {
         {/* Phone Image */}
         <div className="w-full max-w-[220px] md:max-w-[360px] mx-auto flex items-center justify-center">
           <Image
-            src="/images/Phone-1.png"
-            priority
-            width={360}
-            height={720}
-            className="w-full h-auto object-contain"
+            src="/images/Phone-1.webp"
             alt={t("title")}
+            priority
+            width={220}
+            height={359} // match actual display size
+            sizes="(max-width: 640px) 180px, 220px"
+            className="w-full h-auto object-contain"
           />
         </div>
 
@@ -59,7 +58,6 @@ const Safety = () => {
             >
               <div className="p-6 xl:p-[60px]">
                 <div className="flex items-start gap-4 md:gap-6 lg:gap-8">
-                  
                   {/* Number (DESKTOP ONLY) */}
                   <h3 className="hidden xl:block text-6xl text-[#A20602] font-bold leading-none flex-shrink-0">
                     {String(index + 1).padStart(2, "0")}
@@ -75,7 +73,6 @@ const Safety = () => {
                       {item.description}
                     </p>
                   </div>
-
                 </div>
               </div>
             </div>

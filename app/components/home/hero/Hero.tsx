@@ -64,7 +64,6 @@ const Hero = () => {
             </p>
             <div className="w-full">
               <HeroSearch />
-
             </div>
           </div>
         </div>

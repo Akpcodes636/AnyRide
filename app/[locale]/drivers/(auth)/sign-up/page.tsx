@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <div className="h-screen">
-        <div className="container mx-auto pt-[150px]">
+        <div className="container mx-auto py-[100px]">
           <div className="mb-[74px]">
             <h1 className="text-[#02093A] font-bold text-[25px] md:text-[32px] lg:text-[48px] text-center w-full max-w-[387px] mx-auto leading-[120%] tracking-[-4%] mb-[8px]">
               Drive and Earn on AnyRide

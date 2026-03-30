@@ -2,26 +2,24 @@
 
 import { stepOne } from "@/app/utils/Content";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-
-
 
 export default function GettingStartedPage() {
- 
-   const router = useRouter();
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
       {/* ── Main ── */}
       <main className="flex-1 flex flex-col items-center px-4 pt-[80px] pb-20">
         <div className="w-full container mx-auto">
+
           {/* Title block */}
           <div className="mb-8">
             <h2 className="mb-2 w-full max-w-[941px] mx-auto">
               Before you get started
             </h2>
             <p className="text-[18px] text-[#545454] leading-[160%] tracking-[-2%] max-w-[941px] mx-auto w-full">
-              To keep riders safe and maintain quality, we&apos;ll need a few details from you.
+              To keep riders safe and maintain quality, we&apos;ll need a few
+              details from you.
             </p>
           </div>
 
@@ -30,7 +28,8 @@ export default function GettingStartedPage() {
             {stepOne.map((step) => (
               <button
                 key={step.id}
-                className="w-full flex items-center justify-between bg-[#F5F5F7] transition-all rounded-[24px] w-full max-w-[941px] mx-auto h-[88px] px-4 text-left group"
+                onClick={() => router.push(step.route)}
+                className="w-full flex items-center justify-between bg-[#F5F5F7] transition-all rounded-[24px] w-full max-w-[941px] mx-auto h-[88px] px-4 text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-3 flex-wrap">
                   <span className="text-[14px] md:text-[18px] lg:text-[20px] leading-[120%] font-semibold text-[#000000]">
@@ -58,6 +57,8 @@ export default function GettingStartedPage() {
               </button>
             ))}
           </div>
+
+
         </div>
       </main>
     </div>

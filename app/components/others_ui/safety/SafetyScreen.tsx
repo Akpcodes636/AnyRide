@@ -23,7 +23,7 @@ export default function SafetyScreen() {
                         Safety
                     </h2>
                     <p className="text-[#666666] text-[15px] mb-8">
-                        Here's how we get you protected
+                        Here&apos;s how we get you protected
                     </p>
 
                     <div className="flex flex-col rounded-[12px] bg-[#F5F5F7] overflow-hidden mb-6">

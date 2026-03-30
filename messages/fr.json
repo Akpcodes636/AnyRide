@@ -632,22 +632,22 @@
       "subtitle": "Accédez à des marchés structurés et à forte croissance",
       "items": [
         {
-          "img": "/images/Icon.png",
+          "img": "/images/Icon.webp",
           "title": "Accédez à des marchés structurés et à forte croissance",
           "description": "Exploitez des marchés organisés et évolutifs avec un vrai potentiel de croissance"
         },
         {
-          "img": "/images/Bulb.png",
+          "img": "/images/Bulb.webp",
           "title": "Opérations de transport pilotées par la technologie",
           "description": "Opérez avec une infrastructure de mobilité moderne et basée sur les données"
         },
         {
-          "img": "/images/Aim.png",
+          "img": "/images/Aim.webp",
           "title": "Conception de plateforme conforme",
           "description": "Conçu pour respecter la réglementation, la sécurité et les exigences de risque"
         },
         {
-          "img": "/images/partner.png",
+          "img": "/images/partner.webp",
           "title": "Modèles de partenariat évolutifs",
           "description": "Structures flexibles qui évoluent avec les besoins opérationnels"
         }
@@ -1008,19 +1008,19 @@
           "steps": "Étape 1:",
           "title": "Définissez votre trajet",
           "description": "Entrez votre point de départ et votre destination, choisissez une voiture ou une moto, et voyez le prix à l’avance.",
-          "image": "/images/rider-1.png"
+          "image": "/images/rider-1.webp"
         },
         {
           "steps": "Étape 2:",
           "title": "Soyez mis en relation",
           "description": "Nous vous connectons à un chauffeur vérifié à proximité. Consultez son nom, son véhicule et son heure d’arrivée instantanément.",
-          "image": "/images/rider-2.png"
+          "image": "/images/rider-2.webp"
         },
         {
           "steps": "Étape 3:",
           "title": "Roulez et payez",
           "description": "Suivez votre trajet en temps réel, confirmez la prise en charge avec un code et payez en espèces ou via votre portefeuille.",
-          "image": "/images/rider-3.png"
+          "image": "/images/rider-3.webp"
         }
       ]
     },
@@ -1216,22 +1216,22 @@
       "title": "Pourquoi nous construisons AnyRide",
       "items": [
         {
-          "img": "/images/icons-2.png",
+          "img": "/images/icons-2.webp",
           "title": "Moderniser le transport",
           "text": "Nous construisons des systèmes de transport modernes qui remplacent les opérations fragmentées et informelles par des solutions de mobilité structurées et technologiques."
         },
         {
-          "img": "/images/lock-icons.png",
+          "img": "/images/lock-icons.webp",
           "title": "Créer des systèmes structurés et conformes",
           "text": "AnyRide est conçu autour de la conformité, de la responsabilité et de la discipline opérationnelle — soutenant des modèles de transport alignés sur la réglementation et la durabilité à long terme."
         },
         {
-          "img": "/images/partners-icons.png",
+          "img": "/images/partners-icons.webp",
           "title": "Soutenir les conducteurs, les opérateurs et les villes",
           "text": "Notre plateforme sert l'ensemble de l'écosystème, permettant aux conducteurs et aux opérateurs de travailler plus efficacement tout en aidant les villes à améliorer l'accès à une mobilité fiable."
         },
         {
-          "img": "/images/cars.png",
+          "img": "/images/cars.webp",
           "title": "Construire une infrastructure de mobilité fiable",
           "text": "Nous nous concentrons sur la création d'une infrastructure de transport fiable sur laquelle les institutions, les entreprises et les communautés peuvent compter et évoluer au fil du temps."
         }

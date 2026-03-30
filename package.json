@@ -2,17 +2,13 @@
   "name": "anyride",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "postinstall": "prisma generate",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint"
+},
   "dependencies": {
-    "@prisma/adapter-pg": "^7.3.0",
-    "@prisma/client": "^7.4.0",
-    "@prisma/extension-accelerate": "^3.0.1",
     "@react-google-maps/api": "^2.20.8",
     "@sendgrid/mail": "^8.1.6",
     "@tanstack/react-query": "^5.90.20",
@@ -52,6 +48,7 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.0",
     "@tailwindcss/postcss": "^4",
     "@types/bcrypt": "^6.0.0",
     "@types/google.maps": "^3.58.1",
@@ -64,7 +61,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.0",
-    "prisma": "^7.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

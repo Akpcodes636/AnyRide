@@ -37,7 +37,7 @@ const Pricing = () => {
           {/* Image */}
           <div className="h-full w-full max-w-full md:max-w-full lg:max-w-[618px] h-[272px] mx-auto order-1 md:order-2">
             <Image
-              src="/en/Rectangle.svg"
+              src="/en/Rectangle.webp"
               alt={t("title")}
               width={500}
               height={500}

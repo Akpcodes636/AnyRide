@@ -28,7 +28,7 @@ export default function AcceptRideCard() {
   
   return (
     <div className="flex items-center justify-center">
-      <div className="bg-white rounded-2xl overflow-hidden w-full max-w-[512px] shadow-[0px_4px_20px_0px_#00000017]">
+      <div className="bg-white rounded-2xl overflow-hidden w-full max-w-[512px] min-h-[480px] shadow-[0px_4px_20px_0px_#00000017]">
         {/* Header */}
         <RideHeader />
 

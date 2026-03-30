@@ -64,7 +64,7 @@ export default function Why() {
 
           <div className="h-[401px] md:h-[401px] lg:h-[645px]">
             <Image
-              src="/images/About-rider.jpg"
+              src="/images/About-rider.webp"
               width={500}
               height={500}
               priority

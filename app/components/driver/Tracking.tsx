@@ -46,7 +46,7 @@ export default function Tracking() {
           <div className="w-full max-w-full md:max-w-full lg:max-w-[512px] h-[675px] bg-[#F5F5F7] flex items-center justify-center">
             <div className="w-[284px] h-[581px]">
               <Image
-                 src="/images/Ride-Recoveres.png"
+                 src="/images/Ride-Recoveres-.png"
                 width={500}
                 height={500}
                 priority

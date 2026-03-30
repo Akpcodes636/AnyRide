@@ -1,46 +1,61 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+// import axiosAuth from "@/lib/axiosAuth";
+
 import { AxiosError } from "axios";
-import { toast } from "sonner";
-import { axiosAuth } from "@/config/axios";
-import {
-  FareEstimateRequest,
-  FareEstimateResponse,
-  RideRequestCreate,
-  RideRequestOut,
-  RideRequestListResponse,
-  FareUpdate,
-  SavedLocationCreate,
-  SavedLocationOut,
-  RideType,
+import { 
+  Vehicle, 
+  VehicleCreateRequest, 
+  VehicleUpdateRequest,
+  Review, 
+  ReviewCreateRequest,
+  DriverDocument,
+  DocumentUploadRequest,
+  ActiveRide,
+  NegotiationCreateRequest,
+  NegotiationAcceptRequest,
+  Transaction,
+  TransferRequest,
+  TopUpRequest,
+  WalletBalanceResponse,
+  CustomerCard,
+  PaymentIntentRequest,
+  PaymentSimulateRequest,
   Notification,
   NotificationListResponse,
   UnreadCountResponse,
+  SavedLocationOut,
+  RideRequestOut,
+  RideRequestListResponse,
+  FareEstimateRequest,
+  FareEstimateResponse,
+  RideType,
+  RideTypesResponse,
+  RideRequestCreate,
+  FareUpdate,
+  SavedLocationCreate,
   WalletSetupRequest,
   WalletLoginRequest,
   WalletStatusResponse,
-  WalletBalanceResponse,
-  CustomerCard,
-  TransferRequest,
-  TopUpRequest,
-  PublishableKeyResponse,
-  PaymentIntentRequest,
-  PaymentSimulateRequest,
+  PublishableKeyResponse
 } from "@/types";
+import { toast } from "sonner";
+import { axiosAuth } from "@/config/axios";
 
 // ──────────────────────────────────────────────────────────
 // Helper: extract error message from API
 // ──────────────────────────────────────────────────────────
-function getErrorMessage(error: unknown, fallback: string): string {
-  if (error instanceof AxiosError && error.response?.data) {
-    const data = error.response.data;
-    if (typeof data.message === "string") return data.message;
-    if (typeof data.detail === "string") return data.detail;
-    if (Array.isArray(data.detail) && data.detail[0]?.msg) return data.detail[0].msg;
-    if (data.error) return data.error;
+const getErrorMessage = (error: unknown, defaultMessage: string): string => {
+  if (error && typeof error === 'object' && 'response' in error) {
+    const axiosError = error as AxiosError;
+    const data = axiosError.response?.data as any;
+    if (typeof data?.message === "string") return data.message;
+    if (typeof data?.detail === "string") return data.detail;
+    if (Array.isArray(data?.detail) && data.detail[0]?.msg) return data.detail[0].msg;
+    if (data?.error) return data.error;
   }
   if (error instanceof Error) return error.message;
-  return fallback;
-}
+  return defaultMessage;
+};
 
 // ──────────────────────────────────────────────────────────
 // POST /api/v1/rides/estimate-fare
@@ -548,6 +563,17 @@ export const useWalletBalance = () => {
   });
 };
 
+// GET /api/v1/wallets/transactions
+export const useTransactionHistory = () => {
+  return useQuery<Transaction[], AxiosError>({
+    queryKey: ["transactions"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/wallets/transactions");
+      return res.data;
+    },
+  });
+};
+
 // GET /api/v1/wallets/card
 export const useCustomerCard = () => {
   return useQuery<CustomerCard, AxiosError>({
@@ -559,20 +585,338 @@ export const useCustomerCard = () => {
   });
 };
 
-// POST /api/v1/wallets/transfer
-export const useTransferFunds = () => {
+// ──────────────────────────────────────────────────
+// Driver Ride Lifecycle Hooks
+// ──────────────────────────────────────────────────
+
+// POST /api/v1/rides/{id}/arrived
+// ──────────────────────────────────────────────────
+export const useDriverArrived = () => {
   const queryClient = useQueryClient();
 
-  return useMutation<void, AxiosError, TransferRequest>({
-    mutationFn: async (data) => {
-      await axiosAuth.post("/api/v1/wallets/transfer", data);
+  return useMutation<void, AxiosError, { rideId: number }>({
+    mutationFn: async ({ rideId }) => {
+      await axiosAuth.post(`/api/v1/rides/${rideId}/arrived`);
     },
     onSuccess: () => {
-      toast.success("Transfer completed successfully!");
-      queryClient.invalidateQueries({ queryKey: ["walletBalance"] });
+      toast.success("Driver has arrived!");
     },
     onError: (error) => {
-      toast.error(getErrorMessage(error, "Failed to transfer funds."));
+      toast.error(getErrorMessage(error, "Failed to mark arrival."));
+    },
+  });
+};
+
+// POST /api/v1/rides/{id}/start
+// ──────────────────────────────────────────────────
+export const useStartTrip = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<void, AxiosError, { rideId: number }>({
+    mutationFn: async ({ rideId }) => {
+      await axiosAuth.post(`/api/v1/rides/${rideId}/start`);
+    },
+    onSuccess: () => {
+      toast.success("Trip started!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to start trip."));
+    },
+  });
+};
+
+// POST /api/v1/rides/{id}/complete
+// ──────────────────────────────────────────────────
+export const useCompleteTrip = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<void, AxiosError, { rideId: number; total_price?: number; duration_minutes?: number }>({
+    mutationFn: async ({ rideId, total_price, duration_minutes }) => {
+      await axiosAuth.post(`/api/v1/rides/${rideId}/complete`, {
+        total_price,
+        duration_minutes,
+      });
+    },
+    onSuccess: () => {
+      toast.success("Trip completed successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to complete trip."));
+    },
+  });
+};
+
+// GET /api/v1/rides/active/{ride_id}
+// ──────────────────────────────────────────────────
+export const useActiveRide = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["activeRide"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/rides/active");
+      return res.data;
+    },
+  });
+};
+
+// POST /api/v1/rides/negotiations/{request_id}/negotiations
+// ──────────────────────────────────────────────────
+export const useCreateNegotiation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<any, AxiosError, { request_id: number; negotiation_offer: string }>({
+    mutationFn: async ({ request_id, negotiation_offer }) => {
+      const res = await axiosAuth.post(`/api/v1/rides/negotiations/${request_id}/negotiations`, {
+        negotiation_offer,
+      });
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Negotiation sent!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to send negotiation."));
+    },
+  });
+};
+
+// POST /api/v1/rides/negotiations/{request_id}/negotiations/{negotiation_id}/accept
+// ──────────────────────────────────────────────────
+export const useAcceptNegotiation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<void, AxiosError, { request_id: number; negotiation_id: number }>({
+    mutationFn: async ({ request_id, negotiation_id }) => {
+      await axiosAuth.post(`/api/v1/rides/negotiations/${request_id}/negotiations/${negotiation_id}/accept`);
+    },
+    onSuccess: () => {
+      toast.success("Negotiation accepted!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to accept negotiation."));
+    },
+  });
+};
+
+// POST /api/v1/rides/reviews/
+// ──────────────────────────────────────────────────
+export const useCreateReview = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<any, AxiosError, { ride_id: number; rating: number; comment: string }>({
+    mutationFn: async ({ ride_id, rating, comment }) => {
+      const res = await axiosAuth.post(`/api/v1/rides/reviews/`, {
+        ride_id,
+        rating,
+        comment,
+      });
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Review submitted!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to submit review."));
+    },
+  });
+};
+
+// GET /api/v1/rides/reviews/ride/{ride_id}
+// ──────────────────────────────────────────────────
+export const useRideReviews = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["rideReviews"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/rides/reviews/");
+      return res.data;
+    },
+  });
+};
+
+// GET /api/v1/rides/track/{token}
+// ──────────────────────────────────────────────────
+export const useTrackRide = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["trackRide"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/rides/track/");
+      return res.data;
+    },
+  });
+};
+
+// POST /api/v1/vehicles
+// ──────────────────────────────────────────────────
+export const useCreateVehicle = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<any, AxiosError, any>({
+    mutationFn: async (data) => {
+      const res = await axiosAuth.post("/api/v1/vehicles", data);
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Vehicle created successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to create vehicle."));
+    },
+  });
+};
+
+// GET /api/v1/vehicles
+// ──────────────────────────────────────────────────
+export const useGetVehicles = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["vehicles"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/vehicles");
+      return res.data;
+    },
+  });
+};
+
+// GET /api/v1/vehicles/{vehicle_id}
+// ──────────────────────────────────────────────────
+export const useGetVehicle = (vehicleId?: number) => {
+  return useQuery<Vehicle, AxiosError>({
+    queryKey: ["vehicle", vehicleId],
+    queryFn: async () => {
+      if (!vehicleId) throw new Error("Vehicle ID is required");
+      const res = await axiosAuth.get(`/api/v1/vehicles/${vehicleId}`);
+      return res.data;
+    },
+    enabled: !!vehicleId,
+  });
+};
+
+// PUT /api/v1/vehicles/{vehicle_id}
+// ──────────────────────────────────────────────────
+export const useUpdateVehicle = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<any, AxiosError, { vehicle_id: number }>({
+    mutationFn: async ({ vehicle_id, ...data }) => {
+      const res = await axiosAuth.put(`/api/v1/vehicles/${vehicle_id}`, data);
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Vehicle updated successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to update vehicle."));
+    },
+  });
+};
+
+// DELETE /api/v1/vehicles/{vehicle_id}
+// ──────────────────────────────────────────────────
+export const useDeleteVehicle = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<void, AxiosError, { vehicle_id: number }>({
+    mutationFn: async (vehicle_id) => {
+      await axiosAuth.delete(`/api/v1/vehicles/${vehicle_id}`);
+    },
+    onSuccess: () => {
+      toast.success("Vehicle deleted successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to delete vehicle."));
+    },
+  });
+};
+
+// POST /api/v1/vehicles/{vehicle_id}/images
+// ──────────────────────────────────────────────────
+export const useUploadVehicleImage = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<any, AxiosError, { vehicle_id: number }>({
+    mutationFn: async ({ vehicle_id, ...data }) => {
+      const res = await axiosAuth.post(`/api/v1/vehicles/${vehicle_id}/images`, data);
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Image uploaded successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to upload image."));
+    },
+  });
+};
+
+// DELETE /api/v1/vehicles/{vehicle_id}/images/{image_id}
+// ──────────────────────────────────────────────────
+export const useDeleteVehicleImage = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<void, AxiosError, { vehicle_id: number; image_id: number }>({
+    mutationFn: async ({ vehicle_id, image_id }) => {
+      await axiosAuth.delete(`/api/v1/vehicles/${vehicle_id}/images/${image_id}`);
+    },
+    onSuccess: () => {
+      toast.success("Image deleted successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to delete image."));
+    },
+  });
+};
+
+// Driver Documents
+// ──────────────────────────────────────────────────
+
+// GET /api/v1/drivers/documents/types
+// ──────────────────────────────────────────────────
+export const useDocumentTypes = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["documentTypes"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/drivers/documents/types");
+      return res.data;
+    },
+  });
+};
+
+// GET /api/v1/drivers/documents/my-documents
+// ──────────────────────────────────────────────────
+export const useMyDocuments = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["myDocuments"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/drivers/documents/my-documents");
+      return res.data;
+    },
+  });
+};
+
+// POST /api/v1/drivers/documents/upload
+// ──────────────────────────────────────────────────
+export const useUploadDocument = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<any, AxiosError, any>({
+    mutationFn: async (data) => {
+      const res = await axiosAuth.post("/api/v1/drivers/documents/upload", data);
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Document uploaded successfully!");
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to upload document."));
+    },
+  });
+};
+
+// GET /api/v1/drivers/documents/verification-status
+// ──────────────────────────────────────────────────
+export const useVerificationStatus = () => {
+  return useQuery<any, AxiosError>({
+    queryKey: ["verificationStatus"],
+    queryFn: async () => {
+      const res = await axiosAuth.get("/api/v1/drivers/documents/verification-status");
+      return res.data;
     },
   });
 };

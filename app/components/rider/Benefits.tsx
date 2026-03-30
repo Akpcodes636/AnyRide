@@ -16,8 +16,8 @@ export default function Benefits() {
           <div className="w-full h-full">
             <div className="w-full max-w-full lg:max-w-[512px] h-[830px] bg-[#F5F5F7] flex items-center justify-center">
               <div className="w-[358px] h-[712px]">
-                <img
-                  src="/images/Ridegh_1.png"
+                <Image
+                  src="/images/Ridegh_1.webp"
                   width={500}
                   height={500}
                   alt={t("title")}

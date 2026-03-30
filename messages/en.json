@@ -632,22 +632,22 @@
       "subtitle": "Expand into structured, high growth transportation ecosystems",
       "items": [
         {
-          "img": "/images/Icon.png",
+          "img": "/images/Icon.webp",
           "title": "Expand into structured, high growth transportation ecosystems",
           "description": "Tap into organized, scalable markets with real growth potential"
         },
         {
-          "img": "/images/Bulb.png",
+          "img": "/images/Bulb.webp",
           "title": "Technology Driven Transport Operations",
           "description": "Operate with modern, data-enabled mobility infrastructure"
         },
         {
-          "img": "/images/Aim.png",
+          "img": "/images/Aim.webp",
           "title": "Compliance First Platform Design",
           "description": "Built to align with regulation, safety, and risk requirements"
         },
         {
-          "img": "/images/partner.png",
+          "img": "/images/partner.webp",
           "title": "Scalable Partnership Models",
           "description": "Flexible structures that grow with operational needs"
         }
@@ -1009,19 +1009,19 @@
           "steps": "Steps 1:",
           "title": "Set your trip",
           "description": "Enter your pickup and destination, choose a car or motorcycle, and see your price upfront.",
-          "image": "/images/rider-1.png"
+          "image": "/images/rider-1.webp"
         },
         {
           "steps": "Step 2",
           "title": "Get matched",
           "description": "We connect you with a nearby verified driver. See their name, vehicle, and arrival time instantly.",
-          "image": "/images/rider-2.png"
+          "image": "/images/rider-2.webp"
         },
         {
           "steps": "Step 3",
           "title": "Ride & pay",
           "description": "Track your trip live, confirm pickup with a code, and pay with cash or wallet.",
-          "image": "/images/rider-3.png"
+          "image": "/images/rider-3.webp"
         }
       ]
     },
@@ -1217,22 +1217,22 @@
       "title": "Why we're Building AnyRide",
       "items": [
         {
-          "img": "/images/icons-2.png",
+          "img": "/images/icons-2.webp",
           "title": "Modernizing transportation",
           "text": "We are building modern transportation systems that replace fragmented and informal operations with structured, technology‑enabled mobility solutions."
         },
         {
-          "img": "/images/lock-icons.png",
+          "img": "/images/lock-icons.webp",
           "title": "Creating structured, compliant systems",
           "text": "AnyRide is designed around compliance, accountability, and operational discipline—supporting transportation models that align with regulation and long‑term sustainability."
         },
         {
-          "img": "/images/partners-icons.png",
+          "img": "/images/partners-icons.webp",
           "title": "Supporting drivers, operators, and cities",
           "text": "Our platform serves the entire ecosystem, enabling drivers and operators to work more efficiently while helping cities improve access to reliable mobility."
         },
         {
-          "img": "/images/cars.png",
+          "img": "/images/cars.webp",
           "title": "Building reliable mobility infrastructure",
           "text": "We focus on creating dependable transportation infrastructure that institutions, businesses, and communities can trust and scale over time."
         }

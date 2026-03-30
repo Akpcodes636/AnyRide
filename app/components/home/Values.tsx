@@ -67,7 +67,7 @@ const Values = () => {
               alt={t("title")}
             /> */}
              <Image
-            src="/icons/Phone.svg"
+            src="/icons/Phone.png"
              width={360}
               height={720}
            className="w-full h-auto object-contain"

@@ -1,9 +1,11 @@
 "use client";
-import Image from "next/image";
+
+
 import { useState } from "react";
 import Button from "../ui/Button";
 import SubTitle from "../ui/Subtitle";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export interface GuideItem {
   title: string;
@@ -90,7 +92,7 @@ const About = () => {
             <div className="bg-About">
               {/* <h1 className="text-6xl font-bold">Hello World</h1> */}
               <div className="car-container">
-                <img src="/images/dd.png" className="car" />
+                <Image src="/images/dd.webp" className="car" width={40} height={40} alt="this is a car" />
               </div>
             </div>
           </div>

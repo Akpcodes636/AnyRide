@@ -26,7 +26,7 @@ export default function FleetWork() {
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-[22px]">
             <div className="w-full h-full">
               <Image
-                src="/images/fleet.png"
+                src="/images/fleet.webp"
                 width={500}
                 height={500}
                 alt="Fleet operations illustration"

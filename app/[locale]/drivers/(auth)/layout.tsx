@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -16,6 +17,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </section>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

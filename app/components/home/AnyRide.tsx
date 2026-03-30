@@ -13,14 +13,14 @@ const AnyRide = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         {/* Left Side Image */}
         <div className="">
-          <Image
-            src="/icons/Anyride.svg"
+         <Image
+            src="/images/Anyride-1.webp"
             alt={t("HomePage.appDownload.title")}
             className="w-full h-auto object-contain"
-            loading="eager"
-            width={500}
-            height={500}
+            width={412}
+            height={424}  // match actual display
             priority
+            sizes="(max-width: 640px) 300px, 412px"
           />
         </div>
 
@@ -41,7 +41,7 @@ const AnyRide = () => {
                 width={135}
                 height={40}
                 priority
-                src="/icons/apple.svg"
+                src="/icons/apple.webp"
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.apple")}
               />
@@ -54,7 +54,7 @@ const AnyRide = () => {
                 width={135}
                 height={40}
                 priority
-                src="/icons/google.svg"
+                src="/icons/google.webp"
                 className="w-full h-full object-cover"
                 alt={t("HomePage.appDownload.platforms.google")}
               />

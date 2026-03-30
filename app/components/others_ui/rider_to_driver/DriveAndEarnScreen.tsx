@@ -32,7 +32,7 @@ export default function DriveAndEarnScreen() {
                             <Globe size={20} />
                         </div>
                         <span className="text-[13px] sm:text-[14px] font-bold text-[#0B153D] leading-snug">
-                            Choose when<br />you're online
+                            Choose when<br />you&apos;re online
                         </span>
                     </div>
 

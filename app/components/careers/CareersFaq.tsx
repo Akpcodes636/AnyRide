@@ -56,9 +56,41 @@ export default function CareersFaq() {
     emergency: false,
   });
 
-  const panels = useRef<Record<SectionKey, HTMLDivElement | null>>({} as any);
-  const chevrons = useRef<Record<SectionKey, SVGSVGElement | null>>({} as any);
-  const contentRefs = useRef<Record<SectionKey, HTMLDivElement | null>>({} as any);
+  const panels = useRef<Record<SectionKey, HTMLDivElement | null>>({
+  fuel: null,
+  compliance: null,
+  driver: null,
+  vehicle: null,
+  government: null,
+  finance: null,
+  hardware: null,
+  mapping: null,
+  emergency: null,
+});
+
+const chevrons = useRef<Record<SectionKey, SVGSVGElement | null>>({
+  fuel: null,
+  compliance: null,
+  driver: null,
+  vehicle: null,
+  government: null,
+  finance: null,
+  hardware: null,
+  mapping: null,
+  emergency: null,
+});
+
+const contentRefs = useRef<Record<SectionKey, HTMLDivElement | null>>({
+  fuel: null,
+  compliance: null,
+  driver: null,
+  vehicle: null,
+  government: null,
+  finance: null,
+  hardware: null,
+  mapping: null,
+  emergency: null,
+});
 
   const toggle = (id: SectionKey) => {
     setOpen((prev) => {

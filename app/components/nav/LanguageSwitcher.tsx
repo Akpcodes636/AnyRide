@@ -102,7 +102,7 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 const languages = [
-  { code: "en", label: "English", flag: "/en/us.png" },
+  { code: "en", label: "English", flag: "/en/us.webp" },
   { code: "fr", label: "French", flag: "/en/fr.svg" },
   { code: "sw", label: "Swahili", flag: "/en/kenya.svg" },
   { code: "ln", label: "Lingala", flag: "/en/congo.svg" },

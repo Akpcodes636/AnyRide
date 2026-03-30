@@ -3,6 +3,8 @@ import createMiddleware from "next-intl/middleware";
 export default createMiddleware({
   locales: ["en", "fr", "sw", "ln"], // add Lingala if needed
   defaultLocale: "en",
+  // localeDetection: false,
+  localePrefix: "as-needed",
 });
 
 export const config = {

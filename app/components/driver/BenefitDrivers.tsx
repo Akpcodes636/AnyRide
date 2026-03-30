@@ -61,7 +61,7 @@ export default function BenefitDriver() {
           <div className="flex items-center justify-center">
             <div className="h-[567px] w-[276px]">
               <Image
-                src="/icons/Ride-1.svg"
+                src="/icons/Ride-1.webp"
                 width={500}
                 height={500}
                 priority

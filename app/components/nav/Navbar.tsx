@@ -18,6 +18,7 @@ import {
   Info,
   LogOut,
   ChevronDown,
+  Star,
 } from "lucide-react";
 import { useRef, useState } from "react";
 
@@ -30,7 +31,7 @@ function MenuItem({ icon, label }: { icon: React.ReactNode; label: string }) {
   );
 }
 
-const Navbar = () => {
+const Navbar = ({ navItems = [] }: { navItems?: { href: string; icon: React.ReactNode; label: string }[] }) => {
   const t = useTranslations("Navbar");
   const router = useRouter();
   const locale = useLocale();
@@ -41,6 +42,9 @@ const Navbar = () => {
 
   const navGap =
     locale === "fr" || locale === "sw" || locale === "ln" ? "gap-2" : "gap-8";
+
+  // Check if user is a driver based on current route
+  const isDriver = pathname?.startsWith("/drivers") || false;
 
   // Truncate long names
   const displayName =
@@ -170,33 +174,57 @@ const Navbar = () => {
 
                   {/* Menu Items */}
                   <div className="p-6">
-                    <Link href="/account" className="cursor-pointer">
-                      <MenuItem icon={<User />} label="Manage account" />
-                    </Link>
-
-                    <Link href="/request-ride" className="cursor-pointer">
-                      <MenuItem icon={<Route />} label="Book a ride" />
-                    </Link>
-
-                    <Link href="/my-rides" className="cursor-pointer">
-                      <MenuItem icon={<Car />} label="My Rides" />
-                    </Link>
-
-                    <Link href="/drive-and-earn" className="cursor-pointer">
-                      <MenuItem icon={<Car />} label="Drive & Earn" />
-                    </Link>
-
-                    <Link href="/notifications" className="cursor-pointer">
-                      <MenuItem icon={<Bell />} label="Notifications" />
-                    </Link>
-
-                    <Link href="/safety" className="cursor-pointer">
-                      <MenuItem icon={<Shield />} label="Safety" />
-                    </Link>
-
-                    <Link href="/about" className="cursor-pointer">
-                      <MenuItem icon={<Info />} label="About" />
-                    </Link>
+                    {isDriver ? (
+                      // Driver-specific menu items
+                      <>
+                        <Link href="/drivers/verifications" className="cursor-pointer">
+                          <MenuItem icon={<Shield />} label="Verifications" />
+                        </Link>
+                        <Link href="/drivers/main/drive-and-earn" className="cursor-pointer">
+                          <MenuItem icon={<Car />} label="Drive & Earn" />
+                        </Link>
+                        <Link href="/request-ride" className="cursor-pointer">
+                          <MenuItem icon={<Route />} label="Book a ride" />
+                        </Link>
+                        <Link href="/drivers/main/reviews" className="cursor-pointer">
+                          <MenuItem icon={<Star />} label="Reviews" />
+                        </Link>
+                        <Link href="/drivers/main/my-vehicles" className="cursor-pointer">
+                          <MenuItem icon={<Car />} label="My Vehicles" />
+                        </Link>
+                        <Link href="/notifications" className="cursor-pointer">
+                          <MenuItem icon={<Bell />} label="Notifications" />
+                        </Link>
+                        <Link href="/about" className="cursor-pointer">
+                          <MenuItem icon={<Info />} label="About" />
+                        </Link>
+                      </>
+                    ) : (
+                      // Customer menu items
+                      <>
+                        <Link href="/account" className="cursor-pointer">
+                          <MenuItem icon={<User />} label="Manage account" />
+                        </Link>
+                        <Link href="/request-ride" className="cursor-pointer">
+                          <MenuItem icon={<Route />} label="Book a ride" />
+                        </Link>
+                        <Link href="/my-rides" className="cursor-pointer">
+                          <MenuItem icon={<Car />} label="My Rides" />
+                        </Link>
+                        <Link href="/drivers/sign-up" className="cursor-pointer">
+                          <MenuItem icon={<Car />} label="Drive & Earn" />
+                        </Link>
+                        <Link href="/notifications" className="cursor-pointer">
+                          <MenuItem icon={<Bell />} label="Notifications" />
+                        </Link>
+                        <Link href="/safety" className="cursor-pointer">
+                          <MenuItem icon={<Shield />} label="Safety" />
+                        </Link>
+                        <Link href="/about" className="cursor-pointer">
+                          <MenuItem icon={<Info />} label="About" />
+                        </Link>
+                      </>
+                    )}
                   </div>
 
                   {/* Logout */}

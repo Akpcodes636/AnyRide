@@ -7,12 +7,12 @@ export default function EligibleFleet() {
  const t = useTranslations("fleetOwner.whoCanJoin");
 
 const items = [
-  { title: t("item1Title"), description: t("item1Description"), icon: "/images/icons.png" },
-  { title: t("item2Title"), description: t("item2Description"), icon: "/images/icons.png" },
-  { title: t("item3Title"), description: t("item3Description"), icon: "/images/icons.png" },
-  { title: t("item4Title"), description: t("item4Description"), icon: "/images/icons.png" },
-  { title: t("item5Title"), description: t("item5Description"), icon: "/images/icons.png" },
-  { title: t("item6Title"), description: t("item6Description"), icon: "/images/icons.png" }
+  { title: t("item1Title"), description: t("item1Description"), icon: "/images/icons.webp" },
+  { title: t("item2Title"), description: t("item2Description"), icon: "/images/icons.webp" },
+  { title: t("item3Title"), description: t("item3Description"), icon: "/images/icons.webp" },
+  { title: t("item4Title"), description: t("item4Description"), icon: "/images/icons.webp" },
+  { title: t("item5Title"), description: t("item5Description"), icon: "/images/icons.webp" },
+  { title: t("item6Title"), description: t("item6Description"), icon: "/images/icons.webp" }
 ];
 
   return (
