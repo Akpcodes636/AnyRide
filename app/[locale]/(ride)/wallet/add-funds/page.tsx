@@ -1,14 +1,15 @@
 "use client";
+import React from 'react';
 import Header from "@/app/components/Header";
-import FundHero from "@/app/components/wallet/FundsHero";
+import FundWalletScreen from "@/app/components/others_ui/wallet_rider/FundWalletScreen";
 
-const Page = ()=> {
+export default function Page() {
     return (
-       <>
-       <Header />
-       <FundHero />
-       </>
-    )
+        <div className="min-h-screen bg-white">
+            <main className="container mx-auto py-10 pt-32">
+                <Header />
+                <FundWalletScreen />
+            </main>
+        </div>
+    );
 }
-
-export default Page;

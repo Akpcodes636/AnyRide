@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { useRideReviews } from "@/hooks/useRideHooks";
-import { ReviewCardProps, FilterState, type Review } from "@/types";
+import { ReviewCardProps, FilterState, type Review, type RideReview } from "@/types";
 
 interface FilterOption {
   label: string;
@@ -57,21 +57,29 @@ function Avatar({}: AvatarProps) {
 export default function Review() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const { data: reviewsData, isLoading, error } = useRideReviews();
+  console.log(reviewsData);
 
   // Transform API data to match our interface
-  const reviews: Review[] = reviewsData?.map((review: Review) => ({
-    ...review,
+  const reviews: Review[] = reviewsData?.map((review: RideReview) => ({
+    id: review.id,
+    ride_id: review.ride_id,
+    driver_id: 0, // Add default value since RideReview doesn't have this
+    rider_id: review.user_id, // Map user_id to rider_id
+    rating: review.rating,
+    comment: review.comment,
+    created_at: review.created_at,
+    updated_at: review.created_at, // Use created_at as fallback since RideReview doesn't have updated_at
     rider: {
-      id: review.rider?.id || 0,
-      name: review.rider?.name || "Rider's name",
-      phonenumber: review.rider?.phonenumber || "",
+      id: 0, // Default value since RideReview doesn't have rider info
+      name: "Rider's name",
+      phonenumber: "",
     },
     ride: {
-      id: review.ride?.id || 0,
-      pickup_address: review.ride?.pickup_address || "",
-      dropoff_address: review.ride?.dropoff_address,
-      total_price: review.ride?.total_price,
-      created_at: review.ride?.created_at || "",
+      id: review.ride_id,
+      pickup_address: "",
+      dropoff_address: undefined,
+      total_price: undefined,
+      created_at: review.created_at,
     },
   })) || [];
 
@@ -105,7 +113,7 @@ export default function Review() {
     return (
       <>
         <Header />
-        <div className="container mx-auto py-[100px]">
+        <div className="container mx-auto py-[140px]">
           <div className="text-center">
             <h2 className="text-red-600 mb-4">Failed to load reviews</h2>
             <p className="text-gray-600">Please try again later.</p>
@@ -124,7 +132,7 @@ export default function Review() {
         
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-          <h2 className="text-lg sm:text-xl font-semibold">
+          <h2 className="text-lg sm:text-[48px] font-semibold">
             Review history
           </h2>
 

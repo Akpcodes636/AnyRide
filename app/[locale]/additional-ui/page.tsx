@@ -242,7 +242,7 @@ export default function AdditionalUIPage() {
                     <h2 className="text-xl font-semibold mb-4 border-b pb-2 text-gray-400 max-w-5xl mx-auto px-4 md:px-8">
                         26. My Vehicles (Empty)
                     </h2>
-                    <MyVehiclesEmptyScreen />
+                    {/* <MyVehiclesEmptyScreen /> */}
                 </section>
 
                 {/* Add New Vehicle Modal Step 1 */}
@@ -250,7 +250,7 @@ export default function AdditionalUIPage() {
                     <h2 className="text-xl font-semibold mb-4 border-b pb-2 text-gray-400 max-w-5xl mx-auto px-4 md:px-8">
                         27. Add New Vehicle Modal (Step 1)
                     </h2>
-                    <AddNewVehicleModalStep1 />
+                    {/* <AddNewVehicleModalStep1 /> */}
                 </section>
 
                 {/* Add New Vehicle Modal Step 2 */}
@@ -258,7 +258,7 @@ export default function AdditionalUIPage() {
                     <h2 className="text-xl font-semibold mb-4 border-b pb-2 text-gray-400 max-w-5xl mx-auto px-4 md:px-8">
                         28. Add New Vehicle Modal (Step 2)
                     </h2>
-                    <AddNewVehicleModalStep2 />
+                    {/* <AddNewVehicleModalStep2 /> */}
                 </section>
 
                 {/* Vehicle Under Review Component */}
@@ -266,7 +266,7 @@ export default function AdditionalUIPage() {
                     <h2 className="text-xl font-semibold mb-4 border-b pb-2 text-gray-400 max-w-5xl mx-auto px-4 md:px-8">
                         29. Vehicle Under Review
                     </h2>
-                    <VehicleUnderReviewScreen />
+                    {/* <VehicleUnderReviewScreen /> */}
                 </section>
 
                 {/* My Vehicles List Component */}

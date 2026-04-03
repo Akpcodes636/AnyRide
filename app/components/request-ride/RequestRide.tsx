@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Home, Briefcase, Plus, Crosshair, ChevronRight, Loader2, Star, Navigation } from "lucide-react";
+import { Home, Briefcase, Plus, Crosshair, ChevronRight, Loader2, Star, Navigation, MapPin } from "lucide-react";
 import { useRideStore } from "@/store/rideStore";
 import { useEstimateFare, useSavedLocations, useAddSavedLocation } from "@/hooks/useRideHooks";
 import { SavedLocationCreate, SavedLocationOut } from "@/types";
 import { toast } from "sonner";
 import LocationSearchInput from "@/app/components/ui/LocationSearchInput";
-import { useCreateRideRequest } from "@/hooks/useRideHooks"; // make sure path is correct
+import { useCreateRideRequest } from "@/hooks/useRideHooks";
 
 const RequestRide = () => {
   const next = useRideStore((s) => s.next);
@@ -18,12 +18,13 @@ const RequestRide = () => {
   const [pickupCoords, setPickupCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [destinationCoords, setDestinationCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [isLocating, setIsLocating] = useState<boolean>(false);
-  const createRideRequest = useCreateRideRequest();
-  // const addLocation = useAddSavedLocation(); // not ready yet
 
-  // const { data: savedLocations = [], isLoading: locationsLoading } = useSavedLocations();
+  const createRideRequest = useCreateRideRequest();
   const fareEstimate = useEstimateFare();
   const addLocation = useAddSavedLocation();
+
+  // FETCH REAL SAVED LOCATIONS
+  const { data: savedLocations = [], isLoading: locationsLoading } = useSavedLocations();
 
   // Auto-estimate fare when both coords are set
   useEffect(() => {
@@ -102,12 +103,70 @@ const RequestRide = () => {
     );
   }, []);
 
-  // Select saved location — fills pickup first, then destination
-  const handleSelectSavedLocation = (
-    loc: SavedLocationOut,
-    target: "pickup" | "destination"
-  ): void => {
-    if (target === "pickup") {
+  const buildPayload = (
+    address: string,
+    coords: { lat: number; lng: number } | null
+  ): SavedLocationCreate => ({
+    name: address.split(',')[0] || "Saved Location",
+    address,
+    latitude: coords?.lat ?? 0,
+    longitude: coords?.lng ?? 0,
+  });
+
+  const handleSave = async (): Promise<void> => {
+    if (!pickup && !destination) return;
+
+    try {
+      if (pickup && pickupCoords) {
+        await addLocation.mutateAsync(buildPayload(pickup, pickupCoords));
+      }
+      if (destination && destinationCoords) {
+        await addLocation.mutateAsync(buildPayload(destination, destinationCoords));
+      }
+      toast.success("Locations saved to your profile!");
+    } catch (error) {
+      toast.error("Failed to save locations.");
+    }
+  };
+
+  const handleContinue = async (): Promise<void> => {
+    if (!pickupCoords) {
+      toast.error("Please select a pickup location.");
+      return;
+    }
+    if (!destinationCoords) {
+      toast.error("Please select a destination.");
+      return;
+    }
+
+    const payload = {
+      pickup_lat: pickupCoords.lat,
+      pickup_lon: pickupCoords.lng,
+      dropoff_lat: destinationCoords.lat,
+      dropoff_lon: destinationCoords.lng,
+      pickup_address: pickup,
+      dropoff_address: destination,
+      estimated_price: fareEstimate.data?.data?.base_fare || 0,
+      rideType: "regular",
+      paymentMethod: "CASH",
+      fk_customer_id: 1,
+    };
+
+    createRideRequest.mutate(payload, {
+      onSuccess: (data) => {
+        setRideData({ requestId: data.id });
+        toast.success("Ride request created!");
+        next();
+      },
+      onError: (err) => {
+        console.error("Create ride request failed:", err);
+        toast.error("Failed to create ride request.");
+      },
+    });
+  };
+
+  const handleSelectSavedLocation = (loc: SavedLocationOut) => {
+    if (!pickupCoords) {
       setPickup(loc.address);
       setPickupCoords({ lat: loc.latitude, lng: loc.longitude });
     } else {
@@ -116,200 +175,152 @@ const RequestRide = () => {
     }
   };
 
- const buildPayload = (
-  address: string,
-  coords: { lat: number; lng: number } | null
-): SavedLocationCreate => ({
-  name: address,
-  address,
-  latitude: coords?.lat ?? 0,
-  longitude: coords?.lng ?? 0,
-});
-
-const handleSave = async (): Promise<void> => {
-  if (!pickup && !destination) return;
-
-  await Promise.all([
-    pickup && addLocation.mutateAsync(buildPayload(pickup, pickupCoords)),
-    destination && addLocation.mutateAsync(buildPayload(destination, destinationCoords)),
-  ]);
-};
-
- const handleContinue = async (): Promise<void> => {
-  if (!pickupCoords) {
-    toast.error("Please select a pickup location.");
-    return;
-  }
-  if (!destinationCoords) {
-    toast.error("Please select a destination.");
-    return;
-  }
-
-  // Build payload for the API
-  const payload = {
-    pickup_lat: pickupCoords.lat,
-    pickup_lon: pickupCoords.lng,
-    dropoff_lat: destinationCoords.lat,
-    dropoff_lon: destinationCoords.lng,
-    pickup_address: pickup,
-    dropoff_address: destination,
-    estimated_price: fareEstimate.data?.data?.base_fare || 0,
-    rideType: "regular", // or whatever your UI allows
-    paymentMethod: "CASH", // or user selection
-    fk_customer_id: 1, // TODO: set current customer
+  const getLocationIcon = (name: string) => {
+    const lower = name.toLowerCase();
+    if (lower.includes("home")) return <Home className="w-5 h-5" />;
+    if (lower.includes("work") || lower.includes("office")) return <Briefcase className="w-5 h-5" />;
+    return <Star className="w-5 h-5" />;
   };
-
-  // Call the mutation
-  createRideRequest.mutate(payload, {
-    onSuccess: (data) => {
-      // Store requestId in Zustand
-      setRideData({ requestId: data.id });
-      toast.success("Ride request created!");
-      // Go to next step
-      next();
-    },
-    onError: (err) => {
-      console.error("Create ride request failed:", err);
-    },
-  });
-};
-
-  // const getLocationIcon = (name: string): JSX.Element => {
-  //   const lower = name.toLowerCase();
-  //   if (lower.includes("home")) return <Home className="w-4 h-4" />;
-  //   if (lower.includes("work") || lower.includes("office")) return <Briefcase className="w-4 h-4" />;
-  //   return <Star className="w-4 h-4" />;
-  // };
 
   const canContinue = !!pickupCoords && !!destinationCoords;
 
   return (
-    <div className="w-full max-w-full mx-auto h-screen">
-      {/* Header */}
-      <h1 className="text-[28px] md:text-[48px] font-bold text-[#1A1A1A] mb-1">
+    <div className="w-full max-w-full mx-auto h-full flex flex-col p-2">
+      <h1 className="text-[28px] md:text-[48px] font-bold text-[#1A1A1A] mb-8 leading-tight">
         Request a ride
       </h1>
 
-      {/* Location inputs card */}
-      <div className="rounded-[16px] p-4 mb-4">
-        <div className="flex-1 space-y-2">
-          {/* Pickup */}
-          <div className="relative">
-            <LocationSearchInput
-              value={pickup}
-              onChange={(val: string) => {
-                setPickup(val);
-                setPickupCoords(null);
-              }}
-              onSelect={(address: string, lat: number, lng: number) => {
-                setPickup(address);
-                setPickupCoords({ lat, lng }); // fixed: was { lat, lon: lng }
-              }}
-              placeholder="Enter pickup location"
-              className="w-full h-[56px] pl-10 pr-12 bg-[#F5F5F7] rounded-lg border-none text-[14px] focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-            />
-            <button
-              onClick={handleUseCurrentLocation}
-              disabled={isLocating}
-              className="absolute right-3 top-1/2 -translate-y-1/2 disabled:opacity-50 z-10"
-              title="Use current location"
-            >
-              {isLocating ? (
-                <Loader2 className="w-5 h-5 text-[#02093A] animate-spin" />
-              ) : (
-                <Crosshair className="w-5 h-5 text-[#02093A]" />
-              )}
-            </button>
+      <div className="space-y-4 mb-8">
+        {/* Pickup */}
+        <div className="relative">
+          <LocationSearchInput
+            value={pickup}
+            onChange={(val: string) => {
+              setPickup(val);
+              setPickupCoords(null);
+            }}
+            onSelect={(address: string, lat: number, lng: number) => {
+              setPickup(address);
+              setPickupCoords({ lat, lng });
+            }}
+            placeholder="Enter pickup location"
+            className="w-full h-[64px] pl-14 pr-12 bg-[#F5F5F7] rounded-[16px] border-none text-[15px] font-medium focus:outline-none focus:ring-1 focus:ring-[#0B153D]/10"
+          />
+          <div className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A0A0A0]">
+            <Navigation size={20} className="rotate-45" />
           </div>
+          <button
+            onClick={handleUseCurrentLocation}
+            disabled={isLocating}
+            className="absolute right-5 top-1/2 -translate-y-1/2 disabled:opacity-50 z-10 cursor-pointer hover:scale-110 transition-transform"
+            title="Use current location"
+          >
+            {isLocating ? (
+              <Loader2 className="w-5 h-5 text-[#02093A] animate-spin" />
+            ) : (
+              <Crosshair className="w-5 h-5 text-[#02093A]" />
+            )}
+          </button>
+        </div>
 
-          {/* Destination */}
-          <div className="relative">
-            <LocationSearchInput
-              value={destination}
-              onChange={(val: string) => {
-                setDestination(val);
-                setDestinationCoords(null);
-              }}
-              onSelect={(address: string, lat: number, lng: number) => {
-                setDestination(address);
-                setDestinationCoords({ lat, lng }); // fixed: was { lat, lon: lng }
-              }}
-              placeholder="Enter destination"
-              className="w-full h-[56px] pl-10 pr-12 bg-[#F5F5F7] rounded-lg border-none text-[14px] focus:outline-none focus:ring-2 focus:ring-[#A20602]"
-            />
+        {/* Destination */}
+        <div className="relative">
+          <LocationSearchInput
+            value={destination}
+            onChange={(val: string) => {
+              setDestination(val);
+              setDestinationCoords(null);
+            }}
+            onSelect={(address: string, lat: number, lng: number) => {
+              setDestination(address);
+              setDestinationCoords({ lat, lng });
+            }}
+            placeholder="Enter destination"
+            className="w-full h-[64px] pl-14 pr-12 bg-[#F5F5F7] rounded-[16px] border-none text-[15px] font-medium focus:outline-none focus:ring-1 focus:ring-[#0B153D]/10"
+          />
+          <div className="absolute left-5 top-1/2 -translate-y-1/2 text-[#A0A0A0]">
+            <Navigation size={20} className="rotate-45" />
+          </div>
+          <button className="absolute right-5 top-1/2 -translate-y-1/2 text-[#333333] hover:scale-110 transition-transform cursor-pointer">
+            <Plus size={20} />
+          </button>
+        </div>
+      </div>
+
+      {/* Saved Locations Section */}
+      <div className="flex-1 overflow-y-auto mb-6 scrollbar-hide">
+        {savedLocations.length > 0 && (
+          <div className="mb-6">
+            <h3 className="text-[13px] font-bold text-[#A0A0A0] uppercase tracking-widest mb-4">
+              Saved places
+            </h3>
+            <div className="space-y-4">
+              {savedLocations.slice(0, 3).map((loc) => (
+                <button
+                  key={loc.id}
+                  onClick={() => handleSelectSavedLocation(loc)}
+                  className="w-full flex items-center justify-between p-3.5 bg-white border border-gray-50 rounded-[20px] hover:bg-[#F5F5F7] transition-all group shadow-sm"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 bg-[#F5F5F7] group-hover:bg-white rounded-[14px] flex items-center justify-center text-[#0B153D] transition-colors shadow-inner">
+                      {getLocationIcon(loc.name)}
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-[15px] font-bold text-[#333333]">{loc.name}</span>
+                      <span className="text-[12px] text-[#A0A0A0] truncate max-w-[200px]">{loc.address}</span>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-[#E0E0E0] group-hover:text-[#0B153D] transition-colors" />
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Quick Picks */}
+        <div>
+          <h3 className="text-[13px] font-bold text-[#A0A0A0] uppercase tracking-widest mb-4">
+            Quick picks
+          </h3>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between p-3.5 bg-white opacity-60 rounded-[20px] transition-all cursor-not-allowed border border-dashed border-[#F5F5F7]">
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 bg-[#F5F5F7] rounded-[14px] flex items-center justify-center text-[#A0A0A0]">
+                  <Home className="w-5 h-5" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[15px] font-bold text-[#333333]">Set Home</span>
+                  <span className="text-[12px] text-[#A0A0A0]">Add your home address</span>
+                </div>
+              </div>
+              <Plus className="w-5 h-5 text-[#A0A0A0]" />
+            </div>
+            <div className="flex items-center justify-between p-3.5 bg-white opacity-60 rounded-[20px] transition-all cursor-not-allowed border border-dashed border-[#F5F5F7]">
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 bg-[#F5F5F7] rounded-[14px] flex items-center justify-center text-[#A0A0A0]">
+                  <Briefcase className="w-5 h-5" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[15px] font-bold text-[#333333]">Set Work</span>
+                  <span className="text-[12px] text-[#A0A0A0]">Add your work address</span>
+                </div>
+              </div>
+              <Plus className="w-5 h-5 text-[#A0A0A0]" />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Saved locations */}
-      {/* {savedLocations.length > 0 && (
-        <div className="mb-4">
-          <h3 className="text-[13px] font-semibold text-[#999] uppercase tracking-wide mb-3">
-            Saved places
-          </h3>
-          <div className="space-y-1">
-            {savedLocations.slice(0, 4).map((loc) => (
-              <button
-                key={loc.id}
-                onClick={() => {
-                  const target = !pickupCoords ? "pickup" : "destination";
-                  handleSelectSavedLocation(loc, target);
-                }}
-                className="w-full flex items-center gap-3 px-3 py-3 rounded-[12px] hover:bg-[#F5F5F7] transition-colors text-left cursor-pointer"
-              >
-                <div className="w-9 h-9 rounded-full bg-[#F0F0F5] flex items-center justify-center text-[#555]">
-                  {getLocationIcon(loc.name)}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[14px] font-medium text-[#1A1A1A] truncate">{loc.name}</p>
-                  <p className="text-[12px] text-[#999] truncate">{loc.address}</p>
-                </div>
-                <ChevronRight className="w-4 h-4 text-[#CCC] flex-shrink-0" />
-              </button>
-            ))}
-          </div>
-        </div>
-      )} */}
-
-      {/* Quick picks — shown when no saved locations */}
-      {/* {savedLocations.length === 0 && !locationsLoading && (
-        <div className="mb-4">
-          <h3 className="text-[13px] font-semibold text-[#999] uppercase tracking-wide mb-3">
-            Quick picks
-          </h3>
-          <div className="space-y-1">
-            {[
-              { icon: <Home className="w-4 h-4" />, label: "Set Home", sub: "Save your home address" },
-              { icon: <Briefcase className="w-4 h-4" />, label: "Set Work", sub: "Save your work address" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 px-3 py-3 rounded-[12px] hover:bg-[#F5F5F7] transition-colors cursor-pointer opacity-50"
-              >
-                <div className="w-9 h-9 rounded-full bg-[#F0F0F5] flex items-center justify-center text-[#555]">
-                  {item.icon}
-                </div>
-                <div className="flex-1">
-                  <p className="text-[14px] font-medium text-[#1A1A1A]">{item.label}</p>
-                  <p className="text-[12px] text-[#999]">{item.sub}</p>
-                </div>
-                <Plus className="w-4 h-4 text-[#CCC]" />
-              </div>
-            ))}
-          </div>
-        </div>
-      )} */}
-
       {/* Action Buttons */}
-      <div className="flex gap-3 mt-8">
+      <div className="flex gap-4 mt-auto pt-4 border-t border-gray-50">
         <button
           onClick={handleSave}
           disabled={addLocation.isPending || (!pickup && !destination)}
-          className="flex-1 h-[50px] cursor-pointer bg-[#E8E8E8] text-[#1A1A1A] rounded-lg font-semibold text-[16px] hover:bg-[#D8D8D8] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="flex-1 h-[58px] bg-[#EAEBEF] hover:bg-[#dfe0e5] text-[#0B153D] font-bold rounded-[18px] text-[16px] transition-all disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2 shadow-sm"
         >
           {addLocation.isPending ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin" />
+              <Loader2 className="w-5 h-5 animate-spin" />
               Saving...
             </>
           ) : (
@@ -318,10 +329,14 @@ const handleSave = async (): Promise<void> => {
         </button>
         <button
           onClick={handleContinue}
-          disabled={!canContinue}
-          className="flex-1 h-[50px] cursor-pointer rounded-lg font-semibold text-[16px] bg-[#02093A] text-white hover:bg-[#030B4D] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={!canContinue || createRideRequest.isPending}
+          className="flex-1 h-[58px] bg-[#0B153D] hover:bg-[#070e28] text-white font-bold rounded-[18px] text-[16px] transition-all disabled:opacity-50 cursor-pointer flex items-center justify-center shadow-lg"
         >
-          Continue
+          {createRideRequest.isPending ? (
+            <Loader2 className="w-6 h-6 animate-spin" />
+          ) : (
+            "Continue"
+          )}
         </button>
       </div>
     </div>

@@ -1,0 +1,277 @@
+[
+  {
+    "path": "/api/v1/auth/register/admin",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/auth/login/admin",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/auth/phone/verify-otp/admin",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/auth/firebase/login/admin",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/permissions/",
+    "methods": [
+      "get",
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/permissions/assign",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/permissions/revoke",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/documents/types",
+    "methods": [
+      "get",
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/documents/types/{doc_type_id}",
+    "methods": [
+      "patch",
+      "delete"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/documents/pending",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/{driver_id}/documents",
+    "methods": [
+      "get",
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/documents/{document_id}/verify",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/{driver_id}/verify-all",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/riders/documents/pending",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/riders/{rider_id}/documents",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/riders/documents/{document_id}/verify",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/riders/{rider_id}/verify-all",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/dashboard/stats",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/dashboard/analytics",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/dashboard/recent-activities",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/users",
+    "methods": [
+      "get",
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/users/{user_id}",
+    "methods": [
+      "get",
+      "patch",
+      "delete"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/users/{user_id}/reset-password",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/{driver_id}",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/{driver_id}/status",
+    "methods": [
+      "patch"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/drivers/{driver_id}/history",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/rides",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/rides/active",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/rides/{ride_id}",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/rides/{ride_id}/cancel",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/rides/{ride_id}/status",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/vehicles",
+    "methods": [
+      "get",
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/vehicles/{vehicle_id}",
+    "methods": [
+      "get",
+      "put",
+      "delete"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/vehicles/{vehicle_id}/status",
+    "methods": [
+      "patch"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/vehicles/{vehicle_id}/images",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/vehicles/{vehicle_id}/images/{image_id}",
+    "methods": [
+      "delete"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/settings",
+    "methods": [
+      "get",
+      "patch"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/settings/reset",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/notifications/send",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/notifications/broadcast",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/notifications/user/{user_id}",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/support/tickets",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/support/tickets/{ticket_id}/status",
+    "methods": [
+      "patch"
+    ]
+  }
+]

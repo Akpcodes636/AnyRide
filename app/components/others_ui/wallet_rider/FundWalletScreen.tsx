@@ -1,21 +1,23 @@
 "use client";
-
 import React, { useState } from 'react';
 import { Wallet } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function FundWalletScreen() {
     const [amount, setAmount] = useState('');
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Funding: ", amount);
+        router.push("/wallet/add-funds/payment-method");
     };
 
     return (
-        <div className="w-full max-w-5xl mx-auto p-4 md:p-8 font-sans">
+        <div className="w-full container mx-auto ">
 
             {/* Top Header */}
-            <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#333333] leading-none mb-10">
+            <h2 className="text-[32px] md:text-[48px] font-bold text-[#333333] leading-none mb-10">
                 Fund Wallet
             </h2>
 
@@ -23,7 +25,7 @@ export default function FundWalletScreen() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20">
 
                 {/* Left Column: Balance Card */}
-                <div className="bg-[#F5F5F7] rounded-[16px] px-8 py-10 flex flex-col justify-start min-h-[320px]">
+                <div className="bg-[#F5F5F7] rounded-[8px] px-[16px] py-[32px] flex flex-col justify-start min-h-[320px]">
                     <div className="flex items-start gap-4">
                         <div className="bg-[#0B153D] text-white p-2.5 rounded-lg flex items-center justify-center mt-1">
                             <Wallet size={24} strokeWidth={2.5} />
@@ -40,9 +42,9 @@ export default function FundWalletScreen() {
                 {/* Right Column: Add Funds Form */}
                 <div className="flex flex-col mt-4 md:mt-2">
 
-                    <form className="flex flex-col gap-4 w-full max-w-[380px]" onSubmit={handleSubmit}>
+                    <form className="flex flex-col gap-4 w-full max-w-full md:max-w-full lg:max-w-full" onSubmit={handleSubmit}>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="amount" className="text-[14px] font-semibold text-[#888888]">
+                            <label htmlFor="amount" className="text-[18px] font-semibold text-[#555A7B]">
                                 Amount to fund
                             </label>
 
@@ -60,7 +62,7 @@ export default function FundWalletScreen() {
                         {/* Dark Blue Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-[14px] px-4 rounded-[8px] text-[15px] transition-colors mt-2"
+                            className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-semibold py-[14px] px-4 rounded-[8px] text-[18px] leading-[160%] tracking-[-2%] transition-colors mt-2"
                         >
                             Proceed
                         </button>

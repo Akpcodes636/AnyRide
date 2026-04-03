@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { useGetVehicles } from "@/hooks/useRideHooks";
 import { Plus } from "lucide-react";
 import { Vehicle, VehicleCardProps } from "@/types";
@@ -24,17 +23,18 @@ interface StatusConfig {
 
 export default function VehicleHero() {
   const { data: vehiclesData, isLoading, error } = useGetVehicles();
-  
+  console.log(vehiclesData);
+
   // Transform API data to match our interface
-  const vehicles: VehicleCard[] = vehiclesData?.map((vehicle: Vehicle) => ({
-    id: vehicle.id,
-    name: vehicle.plate_number || `Car-${vehicle.id}`,
-    model: `${vehicle.make} ${vehicle.model} ${vehicle.year}`,
-    year: vehicle.year?.toString() || "2020",
-    capacity: `${vehicle.seating_capacity || 4} Passengers`,
-    activityStatus: vehicle.is_active ? "active" : "inactive",
-    verificationStatus: vehicle.verification_status || "verified",
-  })) || [];
+  const vehicles: VehicleCard[] = vehiclesData?.data?.map((vehicle: Vehicle) => ({
+  id: vehicle.id,
+  name: vehicle.plate_number || `Car-${vehicle.id}`,
+  model: `${vehicle.make} ${vehicle.model} ${vehicle.year}`,
+  year: vehicle.year?.toString() || "2020",
+  capacity: `${vehicle.seating_capacity || 4} Passengers`,
+  activityStatus: vehicle.is_active ? "active" : "inactive",
+  verificationStatus: vehicle.verification_status || "verified",
+})) || [];
 
   const getStatusButton = (status: string): StatusConfig => {
     switch (status) {
@@ -99,7 +99,7 @@ export default function VehicleHero() {
     <section className="py-[100px]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between mb-[15px]">
-          <h2 className="text-[24px] font-bold">My Vehicles</h2>
+          <h2 className="text-[24px] md:text-[48px] leading-[120%] tracking-[-4%] font-bold">My Vehicles</h2>
           <Button
             type="button"
             style="primary"
@@ -117,14 +117,14 @@ export default function VehicleHero() {
             </div>
             <h3 className="text-xl font-semibold mb-2">No vehicles added</h3>
             <p className="text-gray-600 mb-6">Add your first vehicle to start driving</p>
-            <Button
+            {/* <Button
               type="button"
               style="primary"
               css="bg-[#010C4A] px-6 py-3 rounded-[12px] text-white flex items-center justify-center gap-2"
             >
               <Plus size={20} />
               Add Your First Vehicle
-            </Button>
+            </Button> */}
           </div>
         ) : (
           <div className="flex flex-col items-start gap-[24px]">

@@ -36,7 +36,9 @@ import {
   WalletSetupRequest,
   WalletLoginRequest,
   WalletStatusResponse,
-  PublishableKeyResponse
+  PublishableKeyResponse,
+  RideReview,
+  RideReviewsResponse
 } from "@/types";
 import { toast } from "sonner";
 import { axiosAuth } from "@/config/axios";
@@ -722,13 +724,15 @@ export const useCreateReview = () => {
 
 // GET /api/v1/rides/reviews/ride/{ride_id}
 // ──────────────────────────────────────────────────
-export const useRideReviews = () => {
-  return useQuery<any, AxiosError>({
-    queryKey: ["rideReviews"],
+export const useRideReviews = (rideId?: string | number) => {
+  return useQuery<RideReview[], AxiosError>({
+    queryKey: ["rideReviews", rideId],
     queryFn: async () => {
-      const res = await axiosAuth.get("/api/v1/rides/reviews/");
-      return res.data;
+      if (!rideId) return [];
+      const res = await axiosAuth.get<{ data: RideReview[] }>(`/api/v1/rides/reviews/ride/${rideId}`);
+      return res.data.data;
     },
+    enabled: !!rideId,
   });
 };
 
@@ -997,6 +1001,26 @@ export const useSimulatePayment = () => {
     },
     onError: (error) => {
       toast.error(getErrorMessage(error, "Failed to simulate payment."));
+    },
+  });
+};
+
+// POST /api/v1/wallets/transfer
+export const useTransferFunds = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation<WalletBalanceResponse, AxiosError, TransferRequest>({
+    mutationFn: async (data) => {
+      const res = await axiosAuth.post("/api/v1/wallets/transfer", data);
+      return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Funds transferred successfully!");
+      queryClient.invalidateQueries({ queryKey: ["walletBalance"] });
+      queryClient.invalidateQueries({ queryKey: ["transactions"] });
+    },
+    onError: (error) => {
+      toast.error(getErrorMessage(error, "Failed to transfer funds."));
     },
   });
 };

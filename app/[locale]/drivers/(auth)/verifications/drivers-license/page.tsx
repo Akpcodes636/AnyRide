@@ -2,12 +2,15 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Folder } from "lucide-react";
+import { useUploadDriverDocument } from "@/hooks/useApiHooks";
+import { toast } from "sonner";
 
 type UploadedFile = {
   name: string;
   size: string;
   progress: number;
   done: boolean;
+  file: File;
 };
 
 type Stage = "upload" | "uploading" | "success";
@@ -18,52 +21,69 @@ export default function DriversLicensePage() {
   const [stage, setStage] = useState<Stage>("upload");
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [dragging, setDragging] = useState(false);
+  const uploadDocument = useUploadDriverDocument();
 
   const formatSize = (bytes: number) =>
     bytes < 1024 * 1024
       ? `${(bytes / 1024).toFixed(0)}KB`
       : `${(bytes / (1024 * 1024)).toFixed(1)}MB`;
 
-  const simulateUpload = (selected: File[]) => {
+  const uploadFiles = async (selected: File[]) => {
     const initial = selected.map((f) => ({
       name: f.name,
       size: formatSize(f.size),
       progress: 0,
       done: false,
+      file: f,
     }));
     setFiles(initial);
     setStage("uploading");
 
-    // Simulate progress for each file
-    initial.forEach((_, i) => {
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += Math.random() * 20;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-        }
-        setFiles((prev) =>
-          prev.map((f, idx) =>
-            idx === i
-              ? {
-                  ...f,
-                  progress: Math.min(progress, 100),
-                  done: progress >= 100,
-                }
-              : f,
-          ),
-        );
-      }, 200);
-    });
+    // Upload each file
+    for (let i = 0; i < initial.length; i++) {
+      const file = initial[i];
+      
+      try {
+        // Create FormData for the upload
+        const formData = new FormData();
+        formData.append('file', file.file);
+        formData.append('document_type', 'drivers_license');
+        
+        // Update progress
+        setFiles(prev => prev.map((f, idx) => 
+          idx === i ? { ...f, progress: 30 } : f
+        ));
+
+        // Upload the file
+        await uploadDocument.mutateAsync(formData);
+        
+        // Mark as complete
+        setFiles(prev => prev.map((f, idx) => 
+          idx === i ? { ...f, progress: 100, done: true } : f
+        ));
+        
+      } catch (error) {
+        // Mark as failed
+        setFiles(prev => prev.map((f, idx) => 
+          idx === i ? { ...f, progress: 0, done: false } : f
+        ));
+        
+        toast.error(`Failed to upload ${file.name}`);
+      }
+    }
   };
 
   const handleFiles = (selected: FileList | null) => {
     if (!selected || selected.length === 0) return;
-    simulateUpload(Array.from(selected));
+    uploadFiles(Array.from(selected));
+  };
+
+  const removeFile = (index: number) => {
+    setFiles(prev => prev.filter((_, idx) => idx !== index));
   };
 
   const allDone = files.length > 0 && files.every((f) => f.done);
+  const isUploading = stage === "uploading" && !allDone;
 
   return (
     <div className="min-h-screen bg-white font-sans px-4 pt-[60px] pb-20 container mx-auto">
@@ -201,7 +221,11 @@ export default function DriversLicensePage() {
                         <span className="text-[12px] font-medium text-[#0A1128] truncate">
                           {file.name}
                         </span>
-                        <button className="text-gray-400 hover:text-gray-600 ml-2 shrink-0">
+                        <button 
+                          onClick={() => removeFile(i)}
+                          className="text-gray-400 hover:text-red-600 ml-2 shrink-0"
+                          disabled={stage === "uploading"}
+                        >
                           <svg
                             width="14"
                             height="14"
@@ -239,15 +263,20 @@ export default function DriversLicensePage() {
           </div>
           <div className="px-4 pb-4 pt-[24px] bg-white max-w-[618px] mx-auto">
             <button
-              disabled={!allDone}
-              onClick={() => setStage("success")}
+              disabled={!allDone || isUploading}
+              onClick={() => {
+                if (allDone && !isUploading) {
+                  setStage("success");
+                  toast.success("Documents submitted for review!");
+                }
+              }}
               className={`w-full  mx-auto py-3.5 rounded-xl font-semibold text-[15px] transition-all ${
-                allDone
+                allDone && !isUploading
                   ? "bg-[#0A1128] text-white hover:opacity-90"
                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
               }`}
             >
-              Submit
+              {isUploading ? "Uploading..." : allDone ? "Submit" : "Upload files to submit"}
             </button>
           </div>
         </>

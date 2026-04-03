@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Plus, ArrowLeft } from "lucide-react";
 import Image from "next/image";
@@ -59,13 +60,13 @@ const SelectRideType = () => {
           <div className="flex-1 space-y-3">
             <div>
               <p className="text-[10px] text-[#999] uppercase tracking-wide">Pickup</p>
-              <p className="text-[13px] text-[#1A1A1A] font-medium truncate">
+              <p className="text-[14px] text-[#1A1A1A] font-semibold truncate">
                 {pickup?.address || "Not set"}
               </p>
             </div>
-            <div>
+            <div className="pt-1">
               <p className="text-[10px] text-[#999] uppercase tracking-wide">Destination</p>
-              <p className="text-[13px] text-[#1A1A1A] font-medium truncate">
+              <p className="text-[14px] text-[#1A1A1A] font-semibold truncate">
                 {destination?.address || "Not set"}
               </p>
             </div>
@@ -84,7 +85,7 @@ const SelectRideType = () => {
 
       {/* Ride type selection */}
       <div className="mb-4">
-        <h2 className="text-[16px] font-semibold text-[#1A1A1A] mb-3">
+        <h2 className="text-[18px] font-bold text-[#1A1A1A] mb-4">
           Choose a ride
         </h2>
 
@@ -107,22 +108,21 @@ const SelectRideType = () => {
               <button
                 key={i}
                 onClick={() => handleSelectVehicle(i, option)}
-                className={`w-full flex justify-between items-center rounded-[14px] p-4 transition-all cursor-pointer ${
-                  selectedIndex === i
+                className={`w-full flex justify-between items-center rounded-[14px] p-4 transition-all cursor-pointer ${selectedIndex === i
                     ? "bg-[#02093A] text-white shadow-lg shadow-[#02093A]/15"
-                    : "bg-[#F5F5F7] hover:bg-[#EBEBF0]"
-                }`}
+                    : "bg-white border border-gray-100 hover:bg-[#F5F5F7]"
+                  }`}
               >
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/images/_car.png"
+                    src={option.vehicle_type.toLowerCase().includes('moto') ? "/images/_moto.png" : "/images/_car.png"}
                     alt={option.vehicle_type}
                     className="w-14 h-10 object-contain"
                     width={56}
                     height={40}
                   />
                   <div className="text-left">
-                    <p className={`font-semibold text-[14px] capitalize ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                    <p className={`font-bold text-[15px] capitalize ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
                       {option.vehicle_type}
                     </p>
                     <p className={`text-[12px] ${selectedIndex === i ? "text-white/70" : "text-[#666]"}`}>
@@ -130,7 +130,7 @@ const SelectRideType = () => {
                     </p>
                   </div>
                 </div>
-                <p className={`font-bold text-[16px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                <p className={`font-bold text-[18px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
                   {option.formatted_fare}
                 </p>
               </button>
@@ -138,48 +138,54 @@ const SelectRideType = () => {
           </div>
         )}
 
-        {/* Fallback: ride types without fare estimate */}
-        {!hasEstimate && Array.isArray(rideTypes) && rideTypes.map((v, i) => (
-          <button
-            key={v.id}
-            onClick={() => setSelectedIndex(i)}
-            className={`w-full flex justify-between items-center rounded-[14px] p-4 mb-2 transition-all cursor-pointer ${
-              selectedIndex === i
-                ? "bg-[#02093A] text-white shadow-lg shadow-[#02093A]/15"
-                : "bg-[#F5F5F7] hover:bg-[#EBEBF0]"
-            }`}
-          >
-            <div className="flex items-center gap-3">
-              <Image
-                src="/images/_car.png"
-                alt={v.name}
-                className="w-14 h-10 object-contain"
-                width={56}
-                height={40}
-              />
-              <div className="text-left">
-                <p className={`font-semibold text-[14px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
-                  {v.name}
+        {/* Fallback Rendering ride types if no estimate */}
+        {!hasEstimate && !isLoading && !isError && Array.isArray(rideTypes) && rideTypes.length > 0 && (
+          <div className="space-y-2">
+            {rideTypes.map((v, i) => (
+              <button
+                key={v.id}
+                onClick={() => setSelectedIndex(i)}
+                className={`w-full flex justify-between items-center rounded-[14px] p-4 transition-all cursor-pointer ${selectedIndex === i
+                    ? "bg-[#02093A] text-white shadow-lg shadow-[#02093A]/15"
+                    : "bg-white border border-gray-100 hover:bg-[#F5F5F7]"
+                  }`}
+              >
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={v.name.toLowerCase().includes('moto') ? "/images/_moto.png" : "/images/_car.png"}
+                    alt={v.name}
+                    className="w-14 h-10 object-contain"
+                    width={56}
+                    height={40}
+                  />
+                  <div className="text-left">
+                    <p className={`font-bold text-[15px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                      {v.name}
+                    </p>
+                    <p className={`text-[12px] ${selectedIndex === i ? "text-white/70" : "text-[#666]"}`}>
+                      {v.description || `Capacity: ${v.capacity}`}
+                    </p>
+                  </div>
+                </div>
+                <p className={`font-bold text-[18px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
+                  FC {v.base_fare}
                 </p>
-                <p className={`text-[12px] ${selectedIndex === i ? "text-white/70" : "text-[#666]"}`}>
-                  {v.description || `Capacity: ${v.capacity}`}
-                </p>
-              </div>
-            </div>
-            <p className={`font-bold text-[16px] ${selectedIndex === i ? "text-white" : "text-[#1A1A1A]"}`}>
-              FC {v.base_fare}
-            </p>
-          </button>
-        ))}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Pay with Cash toggle */}
-      <div className="bg-[#FFE6E6] rounded-[12px] px-4 py-3 flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#E53935]">
-            <path d="M17.5 5H2.5C1.67 5 1 5.67 1 6.5V13.5C1 14.33 1.67 15 2.5 15H17.5C18.33 15 19 14.33 19 13.5V6.5C19 5.67 18.33 5 17.5 5Z" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-          <p className="text-[14px] font-medium text-[#E53935]">Pay with Cash</p>
+      <div className="bg-[#FFF4F4] rounded-[16px] px-5 py-4 flex items-center justify-between mb-6 border border-[#FFE6E6]">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-[#E53935] flex items-center justify-center text-white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <p className="text-[15px] font-bold text-[#E53935]">Pay with Cash</p>
         </div>
         <label className="relative inline-flex items-center cursor-pointer">
           <input
@@ -195,7 +201,7 @@ const SelectRideType = () => {
       {/* Request ride button */}
       <button
         onClick={handleContinue}
-        className="w-full bg-[#02093A] text-white py-4 rounded-[12px] font-semibold text-[16px] hover:bg-[#030B4D] transition-all cursor-pointer shadow-lg shadow-[#02093A]/20"
+        className="w-full bg-[#02093A] text-white py-5 rounded-[16px] font-bold text-[17px] hover:bg-[#030B4D] transition-all cursor-pointer shadow-lg shadow-[#02093A]/20 active:scale-[0.98]"
       >
         Request ride
       </button>

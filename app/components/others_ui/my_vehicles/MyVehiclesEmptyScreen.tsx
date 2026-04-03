@@ -3,7 +3,7 @@
 import React from 'react';
 import { Info } from 'lucide-react';
 
-export default function MyVehiclesEmptyScreen() {
+export default function MyVehiclesEmptyScreen({ onAdd }: { onAdd: () => void }) {
     return (
         <div className="w-full max-w-5xl mx-auto bg-white p-4 md:p-8 font-sans">
             <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#333333] leading-none mb-10">
@@ -19,7 +19,10 @@ export default function MyVehiclesEmptyScreen() {
                     <p className="text-[14px] font-medium text-[#666666]">Start your driving journey by adding a vehicle</p>
                 </div>
 
-                <button className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold text-[16px] py-4 rounded-[12px] transition-colors shadow-md">
+                <button
+                    onClick={onAdd}
+                    className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold text-[16px] py-4 rounded-[12px] transition-colors shadow-md transform active:scale-[0.98]"
+                >
                     Add New Vehicle
                 </button>
             </div>

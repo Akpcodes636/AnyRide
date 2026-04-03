@@ -4,7 +4,11 @@ import MobileNav from "./nav/MobileNav";
 import Navbar from "./nav/Navbar";
 import { NavigationItem } from "@/types";
 
-interface HeaderProps {}
+interface HeaderProps {
+  title?: string;
+  isDriver?: boolean;
+  isRider?: boolean;
+}
 
 const Header: React.FC<HeaderProps> = () => {
   const isDriverRoute = false; // This would be determined by auth context or route

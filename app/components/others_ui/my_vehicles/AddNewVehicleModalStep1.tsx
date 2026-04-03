@@ -3,12 +3,20 @@
 import React from 'react';
 import { ChevronDown, X } from 'lucide-react';
 
-export default function AddNewVehicleModalStep1() {
+interface Props {
+    onNext: () => void;
+    onClose: () => void;
+}
+
+export default function AddNewVehicleModalStep1({ onNext, onClose }: Props) {
     return (
         <div className="w-full max-w-5xl mx-auto font-sans bg-[#F5F5F7] min-h-[850px] flex items-center justify-center p-4">
             <div className="relative w-full max-w-[480px] bg-white rounded-[24px] p-6 md:p-10 shadow-xl border border-gray-100">
                 {/* Close Button floating outside top-right */}
-                <button className="absolute -top-4 -right-4 md:-top-14 md:right-0 w-10 h-10 bg-[#0B153D] rounded-full flex items-center justify-center text-white hover:bg-black transition-colors shadow-lg z-10">
+                <button
+                    onClick={onClose}
+                    className="absolute -top-4 -right-4 md:-top-14 md:right-0 w-10 h-10 bg-[#0B153D] rounded-full flex items-center justify-center text-white hover:bg-black transition-colors shadow-lg z-10"
+                >
                     <X size={20} strokeWidth={2.5} />
                 </button>
 
@@ -76,8 +84,11 @@ export default function AddNewVehicleModalStep1() {
                     </div>
                 </div>
 
-                <button className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold text-[16px] py-4 rounded-[12px] transition-colors shadow-md">
-                    Add New Vehicle
+                <button
+                    onClick={onNext}
+                    className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold text-[16px] py-4 rounded-[12px] transition-colors shadow-md active:scale-[0.98] transform"
+                >
+                    Continue
                 </button>
             </div>
         </div>

@@ -6,14 +6,13 @@ import {
   useWalletStatus,
   useWalletBalance,
   useCustomerCard,
-  useTransferFunds,
+  // useTransferFunds,
   useTopUpWallet,
   useSetupWallet,
   useLoginWallet,
 } from "@/hooks/useRideHooks";
-import { toast } from "sonner";
 
-const Page = () => {
+const WalletPage = () => {
   const [showSetup, setShowSetup] = useState(false);
   const [showTopUp, setShowTopUp] = useState(false);
   const [showTransfer, setShowTransfer] = useState(false);
@@ -22,7 +21,7 @@ const Page = () => {
   const { data: walletStatus, isLoading: statusLoading } = useWalletStatus();
   const { data: walletBalance, isLoading: balanceLoading } = useWalletBalance();
   const { data: customerCard } = useCustomerCard();
-  const transferFunds = useTransferFunds();
+  // const transferFunds = useTransferFunds();
   const topUpWallet = useTopUpWallet();
   const setupWallet = useSetupWallet();
   const loginWallet = useLoginWallet();
@@ -35,31 +34,33 @@ const Page = () => {
     loginWallet.mutate({ pin });
   };
 
-  const handleTransfer = (recipient: string, amount: number, description?: string) => {
-    transferFunds.mutate({ recipient_phone: recipient, amount, description });
-  };
+  // const handleTransfer = (recipient: string, amount: number, description?: string) => {
+  //   transferFunds.mutate({ recipient_phone: recipient, amount, description });
+  // };
 
   const handleTopUp = (amount: number, paymentMethodId: string, description?: string) => {
     topUpWallet.mutate({ amount, payment_method_id: paymentMethodId, description });
   };
 
-  if (statusLoading || balanceLoading) {
-    return (
-      <>
-        <Header />
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-gray-500">Loading wallet...</div>
-        </div>
-      </>
-    );
-  }
+  // if (statusLoading || balanceLoading) {
+  //   return (
+  //     <>
+  //       <Header />
+  //       <div className="min-h-screen flex items-center justify-center">
+  //         <div className="text-gray-500 font-medium">Loading wallet...</div>
+  //       </div>
+  //     </>
+  //   );
+  // }
 
   return (
     <>
       <Header />
-      <WalletHero />
+      <div className="pt-[140px]">
+        <WalletHero />
+      </div>
     </>
   );
 };
 
-export default Page;
+export default WalletPage;

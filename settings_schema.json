@@ -1,0 +1,72 @@
+{
+  "properties": {
+    "pricing": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pricing"
+    },
+    "features": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "boolean"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Features"
+    },
+    "limits": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Limits"
+    },
+    "commission": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Commission"
+    },
+    "configuration": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Configuration"
+    }
+  },
+  "type": "object",
+  "title": "SystemSettingsUpdateRequest"
+}

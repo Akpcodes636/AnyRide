@@ -3,33 +3,36 @@
 import Header from "@/app/components/Header";
 import MapLayout from "@/app/components/request-ride/MapLayout";
 
-
 interface RideLayoutProps {
   children: React.ReactNode;
 }
 
 const RideLayout = ({ children }: RideLayoutProps) => {
   return (
-    <>
-    <Header />
-    <section className="min-h-screen pt-20 lg:pt-28">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row gap-[19px] items-stretch justify-end">
-          
-          {/* Map Side */}
-          <div className="w-full lg:w-1/2">
-            <MapLayout />
+    <div className="min-h-screen bg-white">
+      <Header />
+
+      {/* Main Flow Container */}
+      <main className="pt-[90px] w-full min-h-[calc(100vh-90px)]">
+        <div className="flex flex-col lg:flex-row h-full">
+
+          {/* PERSISTENT MAP - LEFT SIDE */}
+          <div className="w-full lg:w-[45%] h-[400px] lg:h-full lg:sticky lg:top-[90px] p-4 lg:p-8">
+            <div className="w-full h-full rounded-[20px] overflow-hidden shadw-md ">
+              <MapLayout />
+            </div>
           </div>
 
-          {/* Dynamic Card Side */}
-          <div className="w-full lg:w-1/2">
-            {children}
+          {/* DYNAMIC CONTENT - RIGHT SIDE */}
+          <div className="w-full lg:w-[55%] min-h-[calc(100vh-90px)] overflow-y-auto">
+            <div className="p-4 lg:p-12 xl:p-16">
+              {children}
+            </div>
           </div>
 
         </div>
-      </div>
-    </section>
-    </>
+      </main>
+    </div>
   );
 };
 

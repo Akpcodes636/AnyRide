@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/api/v1/admin/support/tickets",
+    "methods": [
+      "get"
+    ]
+  },
+  {
+    "path": "/api/v1/admin/support/tickets/{ticket_id}/status",
+    "methods": [
+      "patch"
+    ]
+  },
+  {
+    "path": "/api/v1/support/tickets",
+    "methods": [
+      "post"
+    ]
+  },
+  {
+    "path": "/api/v1/support/tickets/me",
+    "methods": [
+      "get"
+    ]
+  }
+]

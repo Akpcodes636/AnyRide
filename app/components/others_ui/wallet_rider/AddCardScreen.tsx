@@ -1,16 +1,18 @@
 "use client";
-
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function AddCardScreen() {
     const [cardNumber, setCardNumber] = useState('4412 8272 72626 9721');
     const [expiry, setExpiry] = useState('07/27');
     const [cvv, setCvv] = useState('****');
     const [accountName, setAccountName] = useState('Saleem Ammar');
+    const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Card Added", { cardNumber, expiry, cvv, accountName });
+        router.push("/wallet");
     };
 
     return (

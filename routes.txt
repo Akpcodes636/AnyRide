@@ -1,0 +1,149 @@
+/api/v1/auth/register/customer/by-uid post
+/api/v1/auth/register/driver/by-uid post
+/api/v1/auth/register/customer post
+/api/v1/auth/register/driver post
+/api/v1/auth/register/admin post
+/api/v1/auth/login/customer post
+/api/v1/auth/login/driver post
+/api/v1/auth/login/admin post
+/api/v1/auth/refresh post
+/api/v1/auth/logout post
+/api/v1/users/me get, put, patch
+/api/v1/users/users/{user_id} get, patch, put, delete
+/api/v1/users/users get
+/api/v1/users/me/push-token post
+/api/v1/users/me/emergency-contact put
+/api/v1/users/me/avatar post
+/api/v1/users/me/register-as-customer post
+/api/v1/users/me/register-as-driver post
+/api/v1/auth/phone/send-otp post
+/api/v1/auth/phone/check post
+/api/v1/auth/phone/verify-otp post
+/api/v1/auth/phone/verify-otp/customer post
+/api/v1/auth/phone/verify-otp/driver post
+/api/v1/auth/phone/verify-otp/admin post
+/api/v1/auth/phone/register post
+/api/v1/auth/phone/set-pin post
+/api/v1/auth/phone/verify-pin post
+/api/v1/auth/phone/reset-pin post
+/api/v1/auth/phone/reverse-otp/init post
+/api/v1/auth/phone/reverse-otp/status post
+/api/v1/auth/firebase/register/customer post
+/api/v1/auth/firebase/register/driver post
+/api/v1/auth/firebase/login/customer post
+/api/v1/auth/firebase/login/driver post
+/api/v1/auth/firebase/login/admin post
+/api/v1/auth/ghl-webhook post
+/api/v1/public/estimate-fare post
+/api/v1/users/me/locations get, post
+/api/v1/users/me/locations/{location_id} delete
+/api/v1/notifications/ get
+/api/v1/notifications/unread-count get
+/api/v1/notifications/{notification_id} get, delete
+/api/v1/notifications/{notification_id}/read patch
+/api/v1/notifications/mark-all-read post
+/api/v1/rides/types get
+/api/v1/rides/ post, get
+/api/v1/rides/{ride_id} get, put, delete
+/api/v1/rides/active/{ride_id} get
+/api/v1/rides/{ride_id}/cancel post
+/api/v1/rides/{ride_id}/arrived post
+/api/v1/rides/{ride_id}/start post
+/api/v1/rides/{ride_id}/complete post
+/api/v1/rides/{ride_id}/review post
+/api/v1/rides/requests/ post, get
+/api/v1/rides/requests/{request_id} get
+/api/v1/rides/requests/{request_id}/accept post
+/api/v1/rides/requests/{request_id}/confirm post
+/api/v1/rides/requests/{request_id}/reject post
+/api/v1/rides/requests/{request_id}/cancel post
+/api/v1/rides/requests/{request_id}/fare put
+/api/v1/rides/estimate-fare post
+/api/v1/rides/negotiations/{request_id}/negotiations post
+/api/v1/rides/negotiations/{request_id}/negotiations/{negotiation_id}/accept post
+/api/v1/rides/reviews/ post
+/api/v1/rides/reviews/ride/{ride_id} get
+/api/v1/rides/track/{token} get
+/api/v1/rides/track/{token}/data get
+/api/v1/rides/requests/{request_id}/negotiations post
+/api/v1/rides/requests/{request_id}/negotiations/{negotiation_id}/accept post
+/api/v1/rides/{ride_id}/chat post
+/api/v1/vehicles post, get
+/api/v1/vehicles/{vehicle_id} get, put, delete
+/api/v1/vehicles/{vehicle_id}/images post
+/api/v1/vehicles/{vehicle_id}/images/{image_id} delete
+/api/v1/drivers/documents/types get
+/api/v1/drivers/documents/my-documents get
+/api/v1/drivers/documents/upload post
+/api/v1/drivers/documents/verification-status get
+/api/v1/riders/documents/types get
+/api/v1/riders/documents/my-documents get
+/api/v1/riders/documents/upload post
+/api/v1/riders/documents/verification-status get
+/api/v1/drivers/{driver_id} get
+/api/v1/admin/permissions/ get, post
+/api/v1/admin/permissions/assign post
+/api/v1/admin/permissions/revoke post
+/api/v1/admin/drivers/documents/types get, post
+/api/v1/admin/drivers/documents/types/{doc_type_id} patch, delete
+/api/v1/admin/drivers/documents/pending get
+/api/v1/admin/drivers/{driver_id}/documents get, post
+/api/v1/admin/drivers/documents/{document_id}/verify post
+/api/v1/admin/drivers/{driver_id}/verify-all post
+/api/v1/admin/riders/documents/pending get
+/api/v1/admin/riders/{rider_id}/documents get
+/api/v1/admin/riders/documents/{document_id}/verify post
+/api/v1/admin/riders/{rider_id}/verify-all post
+/api/v1/admin/dashboard/stats get
+/api/v1/admin/dashboard/analytics get
+/api/v1/admin/dashboard/recent-activities get
+/api/v1/admin/users get, post
+/api/v1/admin/users/{user_id} get, patch, delete
+/api/v1/admin/users/{user_id}/reset-password post
+/api/v1/admin/drivers get
+/api/v1/admin/drivers/{driver_id} get
+/api/v1/admin/drivers/{driver_id}/status patch
+/api/v1/admin/drivers/{driver_id}/history get
+/api/v1/admin/rides get
+/api/v1/admin/rides/active get
+/api/v1/admin/rides/{ride_id} get
+/api/v1/admin/rides/{ride_id}/cancel post
+/api/v1/admin/rides/{ride_id}/status post
+/api/v1/admin/vehicles get, post
+/api/v1/admin/vehicles/{vehicle_id} get, put, delete
+/api/v1/admin/vehicles/{vehicle_id}/status patch
+/api/v1/admin/vehicles/{vehicle_id}/images post
+/api/v1/admin/vehicles/{vehicle_id}/images/{image_id} delete
+/api/v1/admin/settings get, patch
+/api/v1/admin/settings/reset post
+/api/v1/admin/notifications/send post
+/api/v1/admin/notifications/broadcast post
+/api/v1/admin/notifications/user/{user_id} get
+/api/v1/admin/support/tickets get
+/api/v1/admin/support/tickets/{ticket_id}/status patch
+/api/v1/virtual-stops/ get
+/api/v1/ride-types get, post
+/api/v1/ride-types/{ride_type_id} get, put, delete
+/api/v1/ride-types/{ride_type_id}/icon post
+/api/v1/wallets/setup post
+/api/v1/wallets/login post
+/api/v1/wallets/status get
+/api/v1/wallets/balance get
+/api/v1/wallets/card get
+/api/v1/wallets/transfer post
+/api/v1/wallets/topup post
+/api/v1/wallets/payment/publishable-key get
+/api/v1/wallets/payment/create-intent post
+/api/v1/wallets/payment/intent/{payment_intent_id} get
+/api/v1/wallets/payment/simulate post
+/api/v1/support/tickets post
+/api/v1/support/tickets/me get
+/api/v1/health get
+/ride-requests/ post, get
+/ride-requests/{request_id} get
+/ride-requests/{request_id}/accept post
+/ride-requests/{request_id}/confirm post
+/ride-requests/{request_id}/reject post
+/ride-requests/{request_id}/cancel post
+/ride-requests/{request_id}/fare put
+/ get

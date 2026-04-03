@@ -1,12 +1,14 @@
 "use client";
-import AccountSettings from "@/app/components/account/AccountSetting";
 import Header from "@/app/components/Header";
+import ManageAccountScreen from "@/app/components/others_ui/manage_account/ManageAccountScreen";
 
 export default function Page() {
   return (
-    <>
-      <Header />
-      <AccountSettings />
-    </>
+    <div className="min-h-screen bg-white">
+      <main className="container mx-auto py-10 pt-32 lowercase">
+        <Header />
+        <ManageAccountScreen />
+      </main>
+    </div>
   );
 }

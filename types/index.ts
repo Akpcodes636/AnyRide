@@ -917,3 +917,19 @@ export interface FilterState {
   search?: string;
 }
 
+
+export interface RideReview {
+  id: number;
+  ride_id: number;
+  user_id: number;
+  rating: number;
+  comment: string;
+  created_at: string;
+}
+
+export interface RideReviewsResponse {
+  status: "success" | "error";
+  message: string;
+  data: RideReview[];
+}
+

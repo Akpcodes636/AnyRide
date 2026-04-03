@@ -1,0 +1,169 @@
+{
+  "status": "success",
+  "data": {
+    "rides": [
+      {
+        "id": 151,
+        "status": "CANCELLED",
+        "customer_id": 46,
+        "customer_name": "w k",
+        "driver_id": 42,
+        "driver_name": "Fahad Driver",
+        "ride_price": null,
+        "base_price": null,
+        "start_time": null,
+        "end_time": null,
+        "created_at": "2026-01-11T13:43:49.836744+00:00"
+      },
+      {
+        "id": 150,
+        "status": "CANCELLED",
+        "customer_id": 46,
+        "customer_name": "w k",
+        "driver_id": 42,
+        "driver_name": "Fahad Driver",
+        "ride_price": null,
+        "base_price": null,
+        "start_time": null,
+        "end_time": null,
+        "created_at": "2026-01-11T13:43:02.283825+00:00"
+      },
+      {
+        "id": 149,
+        "status": "COMPLETED",
+        "customer_id": 41,
+        "customer_name": "Muhammad Fahad",
+        "driver_id": 41,
+        "driver_name": "Waqar Driver",
+        "ride_price": 16,
+        "base_price": null,
+        "start_time": "2026-01-11T12:19:45.249128+00:00",
+        "end_time": "2026-01-11T12:19:58.757410+00:00",
+        "created_at": "2026-01-11T12:18:51.650122+00:00"
+      },
+      {
+        "id": 148,
+        "status": "COMPLETED",
+        "customer_id": 41,
+        "customer_name": "Muhammad Fahad",
+        "driver_id": 40,
+        "driver_name": "wak khan",
+        "ride_price": 8,
+        "base_price": null,
+        "start_time": "2026-01-10T22:22:35.213605+00:00",
+        "end_time": "2026-01-10T22:22:41.262495+00:00",
+        "created_at": "2026-01-10T22:22:18.184252+00:00"
+      },
+      {
+        "id": 147,
+        "status": "COMPLETED",
+        "customer_id": 41,
+        "customer_name": "Muhammad Fahad",
+        "driver_id": 40,
+        "driver_name": "wak khan",
+        "ride_price": 6,
+        "base_price": null,
+        "start_time": "2026-01-10T22:19:59.988581+00:00",
+        "end_time": "2026-01-10T22:20:36.542351+00:00",
+        "created_at": "2026-01-10T22:19:43.863862+00:00"
+      },
+      {
+        "id": 146,
+        "status": "COMPLETED",
+        "customer_id": 41,
+        "customer_name": "Muhammad Fahad",
+        "driver_id": 40,
+        "driver_name": "wak khan",
+        "ride_price": 6,
+        "base_price": null,
+        "start_time": "2026-01-10T22:09:59.987993+00:00",
+        "end_time": "2026-01-10T22:10:13.126049+00:00",
+        "created_at": "2026-01-10T22:08:37.311765+00:00"
+      },
+      {
+        "id": 145,
+        "status": "CANCELLED",
+        "customer_id": 41,
+        "customer_name": "Muhammad Fahad",
+        "driver_id": 40,
+        "driver_name": "wak khan",
+        "ride_price": null,
+        "base_price": null,
+        "start_time": null,
+        "end_time": null,
+        "created_at": "2026-01-10T21:35:49.212282+00:00"
+      },
+      {
+        "id": 144,
+        "status": "CANCELLED",
+        "customer_id": 41,
+        "customer_name": "Muhammad Fahad",
+        "driver_id": 40,
+        "driver_name": "wak khan",
+        "ride_price": null,
+        "base_price": null,
+        "start_time": null,
+        "end_time": null,
+        "created_at": "2026-01-10T21:34:08.865801+00:00"
+      },
+      {
+        "id": 138,
+        "status": "COMPLETED",
+        "customer_id": 25,
+        "customer_name": "Ahmad Ali",
+        "driver_id": 28,
+        "driver_name": "Ali Raza",
+        "ride_price": 30,
+        "base_price": null,
+        "start_time": "2026-01-03T14:00:10.362299+00:00",
+        "end_time": "2026-01-03T14:00:21.510546+00:00",
+        "created_at": "2026-01-03T13:59:14.052022+00:00"
+      },
+      {
+        "id": 137,
+        "status": "COMPLETED",
+        "customer_id": 25,
+        "customer_name": "Ahmad Ali",
+        "driver_id": 28,
+        "driver_name": "Ali Raza",
+        "ride_price": 30,
+        "base_price": null,
+        "start_time": "2026-01-03T13:58:20.845272+00:00",
+        "end_time": "2026-01-03T13:58:31.691745+00:00",
+        "created_at": "2026-01-03T13:57:36.407469+00:00"
+      },
+      {
+        "id": 136,
+        "status": "CANCELLED",
+        "customer_id": 25,
+        "customer_name": "Ahmad Ali",
+        "driver_id": 28,
+        "driver_name": "Ali Raza",
+        "ride_price": null,
+        "base_price": null,
+        "start_time": null,
+        "end_time": null,
+        "created_at": "2026-01-03T13:32:42.349998+00:00"
+      },
+      {
+        "id": 135,
+        "status": "COMPLETED",
+        "customer_id": 25,
+        "customer_name": "Ahmad Ali",
+        "driver_id": 1,
+        "driver_name": "Ali Asghar",
+        "ride_price": 16,
+        "base_price": null,
+        "start_time": "2026-01-03T13:18:54.086335+00:00",
+        "end_time": "2026-01-03T13:19:09.985040+00:00",
+        "created_at": "2026-01-03T13:18:01.313382+00:00"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 20,
+      "total": 12,
+      "pages": 1
+    }
+  }
+}

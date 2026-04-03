@@ -3,7 +3,7 @@
 import React from 'react';
 import { Info } from 'lucide-react';
 
-export default function VehicleUnderReviewScreen() {
+export default function VehicleUnderReviewScreen({ onDone }: { onDone: () => void }) {
     return (
         <div className="w-full max-w-5xl mx-auto bg-white p-4 md:p-8 font-sans">
             <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#333333] leading-none mb-10">
@@ -22,7 +22,10 @@ export default function VehicleUnderReviewScreen() {
                     <p className="text-[14px] font-medium text-[#666666]">You'll be notified once approved</p>
                 </div>
 
-                <button className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold text-[16px] py-4 rounded-[12px] transition-colors shadow-md">
+                <button
+                    onClick={onDone}
+                    className="w-full bg-[#0B153D] hover:bg-[#070e28] text-white font-bold text-[16px] py-4 rounded-[12px] transition-colors shadow-md active:scale-[0.98] transform"
+                >
                     Done
                 </button>
             </div>

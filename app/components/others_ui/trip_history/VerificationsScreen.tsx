@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { ShieldCheck, Landmark, ScanFace, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function VerificationsScreen() {
+    const router = useRouter();
+
     return (
         <div className="w-full max-w-5xl mx-auto bg-white p-4 md:p-8 font-sans">
             <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#0B153D] leading-none mb-10">
@@ -12,7 +15,10 @@ export default function VerificationsScreen() {
 
             <div className="flex flex-col gap-4">
                 {/* Driver's License */}
-                <div className="bg-[#F5F5F7] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between cursor-pointer hover:bg-[#EAEBEF] transition-colors group gap-4">
+                <div
+                    onClick={() => router.push("/drivers/driving-license")}
+                    className="bg-[#F5F5F7] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between cursor-pointer hover:bg-[#EAEBEF] transition-colors group gap-4"
+                >
                     <div className="flex items-start sm:items-center gap-4">
                         <div className="w-12 h-12 rounded-full bg-[#EAEBEF] flex items-center justify-center shrink-0">
                             <ShieldCheck size={24} className="text-[#0B153D]" strokeWidth={1.5} />
@@ -31,7 +37,10 @@ export default function VerificationsScreen() {
                 </div>
 
                 {/* National ID / Passport */}
-                <div className="bg-[#F5F5F7] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between cursor-pointer hover:bg-[#EAEBEF] transition-colors group gap-4">
+                <div
+                    onClick={() => router.push("/drivers/national-id")}
+                    className="bg-[#F5F5F7] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between cursor-pointer hover:bg-[#EAEBEF] transition-colors group gap-4"
+                >
                     <div className="flex items-start sm:items-center gap-4">
                         <div className="w-12 h-12 rounded-full bg-[#EAEBEF] flex items-center justify-center shrink-0">
                             <Landmark size={24} className="text-[#0B153D]" strokeWidth={1.5} />
@@ -50,7 +59,10 @@ export default function VerificationsScreen() {
                 </div>
 
                 {/* Profile Photo (Selfie) */}
-                <div className="bg-[#F5F5F7] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between cursor-pointer hover:bg-[#EAEBEF] transition-colors group gap-4">
+                <div
+                    onClick={() => router.push("/drivers/profile-photo")}
+                    className="bg-[#F5F5F7] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between cursor-pointer hover:bg-[#EAEBEF] transition-colors group gap-4"
+                >
                     <div className="flex items-start sm:items-center gap-4">
                         <div className="w-12 h-12 rounded-full bg-[#EAEBEF] flex items-center justify-center shrink-0">
                             <ScanFace size={24} className="text-[#0B153D]" strokeWidth={1.5} />
@@ -71,3 +83,4 @@ export default function VerificationsScreen() {
         </div>
     );
 }
+

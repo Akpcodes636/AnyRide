@@ -6,8 +6,8 @@ import WalletPaymentMethod from "./WalletPaymentMethod";
 
 export default function WalletHero() {
   return (
-    <section className="h-screen">
-      <div className="container mx-auto pt-[120px]">
+    <section className="h-scren">
+      <div className="container mx-auto ">
         <div className="flex items-center justify-between">
           <h1 className="text-[24px] md:text-[32px] lg:text-[48px] text-[#333333] tracking-[-4%] leading-[120%]">
             Wallet

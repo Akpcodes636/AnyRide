@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-1 items-stretch">
         {/* RIGHT CONTENT */}
         <div className="flex flex-1 overflow-auto">
-          <section className="w-full pt-8 container mx-auto">
+          <section className="w-full pt-[90px] container mx-auto">
             {children}
           </section>
         </div>

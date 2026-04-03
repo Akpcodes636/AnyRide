@@ -1,0 +1,73 @@
+# AnyRide Admin Dashboard - Backend API Requirements
+
+This document outlines the specific API endpoints and data fields that are currently missing from the backend (`openapi.json`) but are required to fully populate the Admin Dashboard UI.
+
+---
+
+### 1. Partners Management 
+**UI Location:** User Management page -> "Partners" tab
+- **Missing Endpoint:** `GET /api/v1/admin/partners` (Alternatively `/agencies` or `/fleets`)
+- **Reason:** The UI contains a dedicated tab to list Fleet Owners, Cooperate Partners, and Service Providers. Currently, no endpoint exists to fetch these aggregated business entities.
+- **Required Fields per Partner:**
+  - [id](file:///d:/Switch%20To%20Future/Websites/AnyRide/app/components/request-ride/RideFlow.tsx#11-24), `name`, `partner_type` (e.g., "Fleet Owner"), `phone`, `email`, `created_at`, `status` (Active, Pending, Suspended)
+- **Metadata required for the Partner Detail Modal:**
+  - `numbers_of_vehicles`
+  - `numbers_of_drivers_assigned`
+  - `total_earnings`, `pending_payouts`, `average_reviews`
+
+---
+
+### 2. Global Reviews Management
+**UI Location:** Review Management Screen (`/en/admin/reviews`)
+- **Missing Endpoint:** `GET /api/v1/admin/reviews`
+- **Reason:** The backend currently only allows fetching a review for *one specific ride at a time* (`GET /api/v1/rides/reviews/ride/{id}`). The admin panel needs a global, paginated endpoint that returns all recent reviews across the entire platform so they can monitor customer feedback in a table.
+- **Required Fields:**
+  - `trip_id`, `reviewer_type` (Driver or Rider), `reviewer_name`
+  - `reviewed_user_name`, `rating` (1-5), `review_text`
+  - `status` (Approved, Flagged, Hidden), `created_at`
+
+---
+
+### 3. Rides API Enhancements
+**UI Location:** Trips Management table & Trip Detail Modal
+- **Endpoint:** `GET /api/v1/admin/rides`
+- **Missing Fields needed in the response payload:**
+  - `vehicle_type`: The table has a column for vehicle (e.g., "Car", "Motorcycle"), but the API does not currently return the vehicle type used for the ride.
+  - `pickup_address` & `destination_address`: The Detail Modal needs the human-readable string addresses (or GPS coordinates to reverse-geocode) for the pickup and dropoff locations. Currently, they are missing from the `admin/rides` payload.
+  - `duration`: Exact time duration (though currently being calculated manually via `start_time` and `end_time` when available).
+
+---
+
+### 4. Admin Drivers Profile Metrics
+**UI Location:** User Details Modal -> Driver specific view
+- **Endpoint:** `GET /api/v1/admin/drivers` & `GET /api/v1/admin/drivers/{driver_id}`
+- **Missing Fields needed in the response payload:**
+  - `registered_vehicles_count`: Needed to display how many vehicles are registered to a specific driver.
+  - `acceptance_rate`: The UI requires the driver's job acceptance percentage (e.g., "92%").
+  - `wallet_balance`: The actual pending cash balance available to be paid out (currently, the frontend assumes this is equal to `total_earnings`).
+
+---
+
+### 5. Scalable Financial Ledger (Optional but Recommended)
+**UI Location:** Financials Screen -> Trip Revenue Breakdown Table
+- **Missing Endpoint:** `GET /api/v1/admin/financials/ledger`
+- **Reason:** Currently, the frontend calculates platform commissions and driver payouts dynamically by iterating over all rides and doing `ride_price * 0.20`. At scale (thousands of rides), this client-side math will become slow and inaccurate (it won't account for complex promo codes or taxes). 
+- **Recommendation:** Provide a dedicated ledger/transaction endpoint that returns completed payouts, pre-calculated splits (`platform_commission`, `driver_earnings`, `taxes`, `total_paid`), and payment methods per transaction.
+
+---
+
+### 6. Support Tickets Messaging & Automated Replies
+**UI Location:** Support Tickets Screen -> Ticket Detail Modal -> "Add Response"
+- **Missing Endpoint:** `POST /api/v1/admin/support/tickets/{ticket_id}/reply`
+- **Reason:** The admin can currently securely change the *status* of a support ticket (e.g., "In Progress" or "Resolved"). However, there is no connected messaging API endpoint to physically dispatch email replies or save back-and-forth internal dialogue when an Admin writes a reply inside the "Add Response" text-box.
+- **Required implementation:**
+  - Endpoint to accept a JSON payload containing the `message_body` and an optional boolean flag like `send_email_notification = true` to inform the user about the update.
+
+---
+
+### 7. User Specific Audit Logs & Historical Actions
+**UI Location:** User Details Modal -> "Audits & logs" section
+- **Missing Endpoint:** `GET /api/v1/admin/users/{user_id}/logs` (or `/admin/drivers/{driver_id}/logs`)
+- **Reason:** The Admin Dashboard features a detailed modal for deep-diving into a specific User/Driver/Partner. At the bottom of this modal, there is an "Audits & logs" timeline list. Currently, there is only a global `recent-activities` endpoint, but no way to fetch the filtered historical timeline of a specific user.
+- **Required Fields:**
+  - `log_id`, `action_title` (e.g., "Admin marked the account status active"), `created_at` timestamp.
